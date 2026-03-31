@@ -16,7 +16,7 @@
  *   - aliases: neighborhoods, abbreviations, nearby cities for fuzzy matching
  *
  * Last updated: 2026-03-31
- * Total cities: 53
+ * Total cities: 55
  */
 
 var CITIES = [
@@ -36,6 +36,7 @@ var CITIES = [
   { name: 'Dallas, TX', tag: 'city_dallas_tx', aliases: ['dfw', 'dallas fort worth', 'plano', 'frisco tx', 'irving tx', 'arlington tx', 'richardson tx', 'mckinney tx', 'fort worth'] },
   { name: 'Denver, CO', tag: 'city_denver_co', aliases: ['mile high', 'aurora co', 'boulder', 'lakewood co', 'littleton co', 'broomfield'] },
   { name: 'Detroit, MI', tag: 'city_detroit_mi', aliases: ['ann arbor', 'royal oak', 'birmingham mi', 'bloomfield hills', 'troy mi', 'grosse pointe', 'novi mi', 'plymouth mi', 'metro detroit'] },
+  { name: 'Fort Lauderdale, FL', tag: 'city_fort_lauderdale_fl', aliases: ['ft lauderdale', 'lauderdale', 'hollywood fl', 'davie fl', 'plantation fl', 'sunrise fl', 'weston fl', 'coral springs', 'pompano beach'] },
   { name: 'Garden City, NY', tag: 'city_garden_city_ny', aliases: ['mineola', 'hempstead', 'westbury ny'] },
   { name: 'Greenville, SC', tag: 'city_greenville_sc', aliases: ['greer sc', 'simpsonville', 'mauldin', 'travelers rest'] },
   { name: 'Greenwich, CT', tag: 'city_greenwich_ct', aliases: ['cos cob', 'old greenwich', 'riverside ct'] },
@@ -53,7 +54,7 @@ var CITIES = [
   { name: 'Louisville, KY', tag: 'city_louisville_ky', aliases: ['lou', 'st matthews ky', 'prospect ky', 'anchorage ky', 'highlands louisville'] },
   { name: 'Madison, WI', tag: 'city_madison_wi', aliases: ['middleton wi', 'fitchburg wi', 'sun prairie'] },
   { name: 'Manhattan, NY', tag: 'city_manhattan_ny', aliases: ['nyc', 'new york city', 'new york', 'midtown', 'soho', 'tribeca', 'upper east side', 'upper west side', 'harlem', 'chelsea nyc', 'east village', 'west village', 'lower east side', 'fidi'] },
-  { name: 'Miami, FL', tag: 'city_miami_fl', aliases: ['mia', 'south beach', 'wynwood', 'brickell', 'coral gables', 'coconut grove', 'north miami', 'miami beach', 'doral', 'fort lauderdale', 'ft lauderdale', 'hollywood fl'] },
+  { name: 'Miami, FL', tag: 'city_miami_fl', aliases: ['mia', 'south beach', 'wynwood', 'brickell', 'coral gables', 'coconut grove', 'north miami', 'miami beach', 'doral'] },
   { name: 'Minneapolis, MN', tag: 'city_minneapolis_mn', aliases: ['mpls', 'twin cities', 'st paul', 'saint paul', 'bloomington mn', 'edina mn'] },
   { name: 'Nashville, TN', tag: 'city_nashville_tn', aliases: ['nash', 'franklin tn', 'brentwood tn', 'murfreesboro', 'hendersonville tn', 'gallatin tn', 'knoxville'] },
   { name: 'New Haven, CT', tag: 'city_new_haven_ct', aliases: ['yale', 'west haven', 'east haven', 'hamden ct'] },
@@ -73,4 +74,5 @@ var CITIES = [
   { name: 'Seattle, WA', tag: 'city_seattle_wa', aliases: ['sea', 'bellevue wa', 'redmond wa', 'kirkland wa', 'tacoma', 'everett wa'] },
   { name: 'Stamford, CT', tag: 'city_stamford_ct', aliases: ['darien ct', 'norwalk ct', 'westport ct'] },
   { name: 'Washington, DC', tag: 'city_washington_dc', aliases: ['dc', 'dmv', 'georgetown dc', 'dupont circle', 'capitol hill', 'arlington va', 'bethesda md', 'silver spring md', 'alexandria va'] },
+  { name: 'West Palm Beach, FL', tag: 'city_west_palm_beach_fl', aliases: ['wpb', 'palm beach', 'palm beach gardens', 'jupiter fl', 'lake worth', 'royal palm beach', 'wellington fl'] },
 ];
