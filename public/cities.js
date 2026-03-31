@@ -16,14 +16,13 @@
  *   - aliases: neighborhoods, abbreviations, nearby cities for fuzzy matching
  *
  * Last updated: 2026-03-31
- * Total cities: 55
+ * Total cities: 54
  */
 
 var CITIES = [
   { name: 'Atlanta, GA', tag: 'city_atlanta_ga', aliases: ['atl', 'decatur', 'marietta', 'buckhead', 'sandy springs', 'roswell ga', 'alpharetta', 'smyrna ga', 'kennesaw'] },
   { name: 'Austin, TX', tag: 'city_austin_tx', aliases: ['atx', 'dripping springs', 'round rock', 'cedar park', 'pflugerville', 'georgetown tx', 'lakeway'] },
   { name: 'Birmingham, AL', tag: 'city_birmingham_al', aliases: ['hoover al', 'vestavia hills', 'homewood al', 'mountain brook'] },
-  { name: 'Boca Raton, FL', tag: 'city_boca_raton_fl', aliases: ['boca', 'delray beach', 'deerfield beach', 'boynton beach'] },
   { name: 'Boston, MA', tag: 'city_boston_ma', aliases: ['bos', 'cambridge', 'somerville', 'brookline', 'newton ma', 'quincy ma'] },
   { name: 'Brooklyn, NY', tag: 'city_brooklyn_ny', aliases: ['bk', 'williamsburg', 'bushwick', 'park slope', 'dumbo', 'bed stuy', 'flatbush', 'greenpoint'] },
   { name: 'Carlsbad, CA', tag: 'city_carlsbad_ca', aliases: ['encinitas', 'oceanside', 'vista ca'] },
@@ -36,7 +35,7 @@ var CITIES = [
   { name: 'Dallas, TX', tag: 'city_dallas_tx', aliases: ['dfw', 'dallas fort worth', 'plano', 'frisco tx', 'irving tx', 'arlington tx', 'richardson tx', 'mckinney tx', 'fort worth'] },
   { name: 'Denver, CO', tag: 'city_denver_co', aliases: ['mile high', 'aurora co', 'boulder', 'lakewood co', 'littleton co', 'broomfield'] },
   { name: 'Detroit, MI', tag: 'city_detroit_mi', aliases: ['ann arbor', 'royal oak', 'birmingham mi', 'bloomfield hills', 'troy mi', 'grosse pointe', 'novi mi', 'plymouth mi', 'metro detroit'] },
-  { name: 'Fort Lauderdale, FL', tag: 'city_fort_lauderdale_fl', aliases: ['ft lauderdale', 'lauderdale', 'hollywood fl', 'davie fl', 'plantation fl', 'sunrise fl', 'weston fl', 'coral springs', 'pompano beach'] },
+  { name: 'Fort Lauderdale, FL', tag: 'city_fort_lauderdale_fl', aliases: ['ft lauderdale', 'lauderdale', 'hollywood fl', 'davie fl', 'plantation fl', 'sunrise fl', 'weston fl', 'coral springs', 'pompano beach', 'boca raton', 'boca', 'delray beach', 'deerfield beach', 'boynton beach'] },
   { name: 'Garden City, NY', tag: 'city_garden_city_ny', aliases: ['mineola', 'hempstead', 'westbury ny'] },
   { name: 'Greenville, SC', tag: 'city_greenville_sc', aliases: ['greer sc', 'simpsonville', 'mauldin', 'travelers rest'] },
   { name: 'Greenwich, CT', tag: 'city_greenwich_ct', aliases: ['cos cob', 'old greenwich', 'riverside ct'] },
