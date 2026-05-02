@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Personality Pop-Up — Social Proof Banner</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Roboto+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  /* ---------- BRAND TOKENS ---------- */
+  :root {
+    --ink:        #2D2D2D;
+    --ink-soft:   #646363;
+    --paper:      #FFFFFF;
+    --cream:      #FAF9F5;
+    --blush:      #FBDFD9;
+    --hairline:   rgba(45,45,45,0.10);
+
+    --serif: "DM Serif Display", "MADE Mirage", Georgia, serif;
+    --mono:  "Roboto Mono", "Courier New", Courier, monospace;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+  body { background: var(--paper); }
+
+  /* ---------- BANNER (full bleed, edge-to-edge) ---------- */
+  .ppu-banner {
+    width: 100vw;
+    margin-left: calc(50% - 50vw);   /* breaks out of any container padding */
+    background: var(--blush);
+    padding: 36px 0 40px;
+    position: relative;
+    overflow: hidden;
+    font-family: var(--mono);
+    color: var(--ink);
+  }
+
+  /* eyebrow header above the rail */
+  .ppu-banner__head {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    margin-bottom: 32px;
+    padding: 0 20px;
+  }
+
+  .ppu-banner__eyebrow {
+    font-family: var(--mono);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    font-weight: 500;
+    color: var(--ink);
+  }
+
+  .ppu-banner__headline {
+    font-family: var(--serif);
+    font-size: clamp(26px, 3.4vw, 38px);
+    font-weight: 400;
+    line-height: 1.1;
+    color: var(--ink);
+    text-align: center;
+  }
+
+  .ppu-banner__divider {
+    width: 1px;
+    height: 14px;
+    background: var(--ink);
+    opacity: 0.3;
+  }
+
+  .ppu-banner__rating {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--mono);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--ink);
+    background: var(--paper);
+    padding: 12px 22px;
+    border-radius: 80px;
+  }
+
+  .ppu-banner__rating .stars {
+    color: var(--ink);
+    font-size: 18px;
+    letter-spacing: 3px;
+  }
+
+  .ppu-banner__rating .num { font-weight: 600; }
+
+  .ppu-google-g {
+    width: 13px;
+    height: 13px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 4px;
+  }
+
+  /* ---------- MARQUEE / RAIL ---------- */
+  .ppu-rail {
+    display: flex;
+    width: max-content;
+    animation: ppu-scroll 90s linear infinite;
+    will-change: transform;
+  }
+
+  .ppu-rail:hover {
+    animation-play-state: paused;
+  }
+
+  /* fade edges so cards don't hard-stop at the viewport */
+  .ppu-banner::before,
+  .ppu-banner::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 80px;
+    z-index: 2;
+    pointer-events: none;
+  }
+  .ppu-banner::before {
+    left: 0;
+    background: linear-gradient(to right, var(--blush) 0%, rgba(251,223,217,0) 100%);
+  }
+  .ppu-banner::after {
+    right: 0;
+    background: linear-gradient(to left, var(--blush) 0%, rgba(251,223,217,0) 100%);
+  }
+
+  /* ---------- CARDS ---------- */
+  .ppu-card {
+    flex: 0 0 auto;
+    width: 380px;
+    background: var(--paper);
+    padding: 26px 28px 22px;
+    margin: 0 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 200px;
+    border-radius: 20px;
+  }
+
+  .ppu-card__quote {
+    font-family: var(--mono);
+    font-size: 15px;
+    line-height: 1.55;
+    letter-spacing: 0;
+    color: var(--ink);
+    margin-bottom: 18px;
+  }
+
+  .ppu-card__quote::before {
+    content: "\201C";
+    font-family: var(--serif);
+    font-size: 26px;
+    line-height: 0;
+    position: relative;
+    top: 6px;
+    margin-right: 3px;
+    color: var(--ink);
+    opacity: 0.5;
+  }
+
+  /* (cards are uniform white — alt variant retained as no-op for compatibility) */
+  .ppu-card.alt {
+    background: var(--paper);
+  }
+
+  .ppu-card__meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding-top: 14px;
+    border-top: 1px solid var(--hairline);
+  }
+
+  .ppu-card__reviewer {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .ppu-card__avatar {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: var(--blush);
+    color: var(--ink);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--mono);
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 0.04em;
+    flex-shrink: 0;
+  }
+
+  .ppu-card__name {
+    font-family: var(--mono);
+    font-weight: 600;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--ink);
+  }
+
+  .ppu-card__stars {
+    color: var(--ink);
+    font-size: 18px;
+    letter-spacing: 3px;
+  }
+
+  /* ---------- ANIMATION ---------- */
+  @keyframes ppu-scroll {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }   /* we duplicate the cards so 50% = one full set */
+  }
+
+  /* Respect reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    .ppu-rail {
+      animation: none;
+      overflow-x: auto;
+      width: 100%;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+    }
+    .ppu-card { scroll-snap-align: start; }
+    .ppu-banner::before,
+    .ppu-banner::after { display: none; }
+  }
+
+  /* Mobile sizing */
+  @media (max-width: 640px) {
+    .ppu-card { width: 300px; min-height: 180px; padding: 22px 22px 18px; margin: 0 8px; border-radius: 18px; }
+    .ppu-card__quote { font-size: 14px; }
+    .ppu-banner { padding: 28px 0 32px; }
+    .ppu-banner__head { margin-bottom: 22px; gap: 12px; }
+    .ppu-banner::before,
+    .ppu-banner::after { width: 40px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============== EMBED START ============== -->
+<section class="ppu-banner" aria-label="What families are saying about Personality Pop-Up">
+
+  <div class="ppu-banner__head">
+    <span class="ppu-banner__rating">
+      <span class="stars">★★★★★</span>
+      <span class="num">5.0</span>
+      <span class="ppu-banner__divider" aria-hidden="true"></span>
+      <svg class="ppu-google-g" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+        <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+        <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+        <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+      </svg>
+      <span>Google Reviews</span>
+    </span>
+    <span class="ppu-banner__headline">Real Reviews from Real Parents</span>
+  </div>
+
+  <div class="ppu-rail">
+
+    <!-- ======= SET 1 ======= -->
+    <article class="ppu-card alt">
+      <p class="ppu-card__quote">I am literally crying looking at these pictures of my kids. They actually captured my son's real smile.</p>
+      <div class="ppu-card__meta"><span class="ppu-card__name">Olivia</span><span class="ppu-card__stars">★★★★★</span></div>
+    </article>
+
+    <article class="ppu-card">
+      <p class="ppu-card__quote">Somehow they captured not just beautiful photos, but who my children are. Images I will treasure for the rest of my life.</p>
+      <div class="ppu-card__meta"><span class="ppu-card__name">Amanda</span><span class="ppu-card__stars">★★★★★</span></div>
+    </article>
+
+    <article class="ppu-card alt">
+      <p class="ppu-card__quote">I'm literally weeping! These pictures are absolutely priceless.</p>
+      <div class="ppu-card__meta"><span class="ppu-card__name">Vanessa</span><span class="ppu-card__stars">★★★★★</span></div>
+    </article>
+
+    <article class="ppu-card">
+      <p class="ppu-card__quote">I would give you 6 stars if I could. I am so picky and hard to impress, and you KILLED IT.</p>
+      <div class="ppu-card__meta"><span class="ppu-card__name">Natasha</span><span class="ppu-card__stars">★★★★★</span></div>
+    </article>
+
+    <article class="ppu-card">
+      <p class="ppu-card__quote">Showed up frazzled with four kids and late. Allie met us with kindness and calm.</p>
+      <div class="ppu-card__meta"><span class="ppu-card__name">Brandi</span><span class="ppu-card__stars">★★★★★</span></div>
+    </article>
+
+    <article class="ppu-card alt">
+      <p class="ppu-card__quote">There is a difference with this product. The quality, style, experience is unmatched.</p>
+      <div class="ppu-card__meta"><span class="ppu-card__name">Zong</span><span class="ppu-card__stars">★★★★★</span></div>
+    </article>
+
+    <article class="ppu-card">
+      <p class="ppu-card__quote">My husband and I left saying "that was already worth it." 10/10!</p>
+      <div class="ppu-card__meta"><span class="ppu-card__name">Sandy</span><span class="ppu-card__stars">★★★★★</span></div>
+    </article>
+
+    <article class="ppu-card">
+      <p class="ppu-card__quote">They were incredible with our kids who can be slow to trust. Family heirlooms!</p>
+      <div class="ppu-card__meta"><span class="ppu-card__name">Caroline</span><span class="ppu-card__stars">★★★★★</span></div>
+    </article>
+
+    <article class="ppu-card alt">
+      <p class="ppu-card__quote">Just book this. You will absolutely NOT regret it.</p>
+      <div class="ppu-card__meta"><span class="ppu-card__name">Farah</span><span class="ppu-card__stars">★★★★★</span></div>
+    </article>
+
+    <article class="ppu-card">
+      <p class="ppu-card__quote">Joy is bursting from every photo. My biggest problem is narrowing down which ones to print.</p>
+      <div class="ppu-card__meta"><span class="ppu-card__name">Lisa</span><span class="ppu-card__stars">★★★★★</span></div>
+    </article>
+
+    <article class="ppu-card">
+      <p class="ppu-card__quote">My kids got in the car and said "That was so fun!" The easiest, most fun, stress free experience.</p>
+      <div class="ppu-card__meta"><span class="ppu-card__name">Shauna</span><span class="ppu-card__stars">★★★★★</span></div>
+    </article>
+
+    <article class="ppu-card alt">
+      <p class="ppu-card__quote">My absolute favorite photos of our kids ever. I could NOT recommend this more.</p>
+      <div class="ppu-card__meta"><span class="ppu-card__name">Courtney</span><span class="ppu-card__stars">★★★★★</span></div>
+    </article>
+
+    <article class="ppu-card">
+      <p class="ppu-card__quote">One of my daughters showed up in a terrible mood and they pulled her out of her funk.</p>
+      <div class="ppu-card__meta"><span class="ppu-card__name">Alexandra</span><span class="ppu-card__stars">★★★★★</span></div>
+    </article>
+
+    <article class="ppu-card">
+      <p class="ppu-card__quote">Awesome experience, even with my 4 and 6 year old who typically hate getting pics taken.</p>
+      <div class="ppu-card__meta"><span class="ppu-card__name">Tessa</span><span class="ppu-card__stars">★★★★★</span></div>
+    </article>
+
+    <article class="ppu-card alt">
+      <p class="ppu-card__quote">We'll be looking back at these photos every day for the rest of time.</p>
+      <div class="ppu-card__meta"><span class="ppu-card__name">Tasha</span><span class="ppu-card__stars">★★★★★</span></div>
+    </article>
+
+    <article class="ppu-card">
+      <p class="ppu-card__quote">If you're on the fence, just book. Laura is incredibly talented. The kids laughed the entire session.</p>
+      <div class="ppu-card__meta"><span class="ppu-card__name">Komal</span><span class="ppu-card__stars">★★★★★</span></div>
+    </article>
+
+    <article class="ppu-card">
+      <p class="ppu-card__quote">15 minutes in and out. They are great with the littles and the photos are adorable.</p>
+      <div class="ppu-card__meta"><span class="ppu-card__name">Megan</span><span class="ppu-card__stars">★★★★★</span></div>
+    </article>
+
+    <article class="ppu-card alt">
+      <p class="ppu-card__quote">We just got the photos back and cannot stop smiling.</p>
+      <div class="ppu-card__meta"><span class="ppu-card__name">Nicole</span><span class="ppu-card__stars">★★★★★</span></div>
+    </article>
+
+    <article class="ppu-card">
+      <p class="ppu-card__quote">We've done two sessions over the past year, and we'll continue every year we can.</p>
+      <div class="ppu-card__meta"><span class="ppu-card__name">Edward</span><span class="ppu-card__stars">★★★★★</span></div>
+    </article>
+
+    <article class="ppu-card">
+      <p class="ppu-card__quote">I haven't stopped looking at the photos since I received them.</p>
+      <div class="ppu-card__meta"><span class="ppu-card__name">Elena</span><span class="ppu-card__stars">★★★★★</span></div>
+    </article>
+
+    <!-- ======= SET 2 (DUPLICATE for seamless loop) ======= -->
+    <article class="ppu-card alt" aria-hidden="true">
+      <p class="ppu-card__quote">I am literally crying looking at these pictures of my kids. They actually captured my son's real smile.</p>
+      <div class="ppu-card__meta"><span class="ppu-card__name">Olivia</span><span class="ppu-card__stars">★★★★★</span></div>
+    </article>
+
+    <article class="ppu-card" aria-hidden="true">
+      <p class="ppu-card__quote">Somehow they captured not just beautiful photos, but who my children are. Images I will treasure for the rest of my life.</p>
+      <div class="ppu-card__meta"><span class="ppu-card__name">Amanda</span><span class="ppu-card__stars">★★★★★</span></div>
+    </article>
+
+    <article class="ppu-card alt" aria-hidden="true">
+      <p class="ppu-card__quote">I'm literally weeping! These pictures are absolutely priceless.</p>
+      <div class="ppu-card__meta"><span class="ppu-card__name">Vanessa</span><span class="ppu-card__stars">★★★★★</span></div>
+    </article>
+
+    <article class="ppu-card" aria-hidden="true">
+      <p class="ppu-card__quote">I would give you 6 stars if I could. I am so picky and hard to impress, and you KILLED IT.</p>
+      <div class="ppu-card__meta"><span class="ppu-card__name">Natasha</span><span class="ppu-card__stars">★★★★★</span></div>
+    </article>
+
+    <article class="ppu-card" aria-hidden="true">
+      <p class="ppu-card__quote">Showed up frazzled with four kids and late. Allie met us with kindness and calm.</p>
+      <div class="ppu-card__meta"><span class="ppu-card__name">Brandi</span><span class="ppu-card__stars">★★★★★</span></div>
+    </article>
+
+    <article class="ppu-card alt" aria-hidden="true">
+      <p class="ppu-card__quote">There is a difference with this product. The quality, style, experience is unmatched.</p>
+      <div class="ppu-card__meta"><span class="ppu-card__name">Zong</span><span class="ppu-card__stars">★★★★★</span></div>
+    </article>
+
+    <article class="ppu-card" aria-hidden="true">
+      <p class="ppu-card__quote">My husband and I left saying "that was already worth it." 10/10!</p>
+      <div class="ppu-card__meta"><span class="ppu-card__name">Sandy</span><span class="ppu-card__stars">★★★★★</span></div>
+    </article>
+
+    <article class="ppu-card" aria-hidden="true">
+      <p class="ppu-card__quote">They were incredible with our kids who can be slow to trust. Family heirlooms!</p>
+      <div class="ppu-card__meta"><span class="ppu-card__name">Caroline</span><span class="ppu-card__stars">★★★★★</span></div>
+    </article>
+
+    <article class="ppu-card alt" aria-hidden="true">
+      <p class="ppu-card__quote">Just book this. You will absolutely NOT regret it.</p>
+      <div class="ppu-card__meta"><span class="ppu-card__name">Farah</span><span class="ppu-card__stars">★★★★★</span></div>
+    </article>
+
+    <article class="ppu-card" aria-hidden="true">
+      <p class="ppu-card__quote">Joy is bursting from every photo. My biggest problem is narrowing down which ones to print.</p>
+      <div class="ppu-card__meta"><span class="ppu-card__name">Lisa</span><span class="ppu-card__stars">★★★★★</span></div>
+    </article>
+
+    <article class="ppu-card" aria-hidden="true">
+      <p class="ppu-card__quote">My kids got in the car and said "That was so fun!" The easiest, most fun, stress free experience.</p>
+      <div class="ppu-card__meta"><span class="ppu-card__name">Shauna</span><span class="ppu-card__stars">★★★★★</span></div>
+    </article>
+
+    <article class="ppu-card alt" aria-hidden="true">
+      <p class="ppu-card__quote">My absolute favorite photos of our kids ever. I could NOT recommend this more.</p>
+      <div class="ppu-card__meta"><span class="ppu-card__name">Courtney</span><span class="ppu-card__stars">★★★★★</span></div>
+    </article>
+
+    <article class="ppu-card" aria-hidden="true">
+      <p class="ppu-card__quote">One of my daughters showed up in a terrible mood and they pulled her out of her funk.</p>
+      <div class="ppu-card__meta"><span class="ppu-card__name">Alexandra</span><span class="ppu-card__stars">★★★★★</span></div>
+    </article>
+
+    <article class="ppu-card" aria-hidden="true">
+      <p class="ppu-card__quote">Awesome experience, even with my 4 and 6 year old who typically hate getting pics taken.</p>
+      <div class="ppu-card__meta"><span class="ppu-card__name">Tessa</span><span class="ppu-card__stars">★★★★★</span></div>
+    </article>
+
+    <article class="ppu-card alt" aria-hidden="true">
+      <p class="ppu-card__quote">We'll be looking back at these photos every day for the rest of time.</p>
+      <div class="ppu-card__meta"><span class="ppu-card__name">Tasha</span><span class="ppu-card__stars">★★★★★</span></div>
+    </article>
+
+    <article class="ppu-card" aria-hidden="true">
+      <p class="ppu-card__quote">If you're on the fence, just book. Laura is incredibly talented. The kids laughed the entire session.</p>
+      <div class="ppu-card__meta"><span class="ppu-card__name">Komal</span><span class="ppu-card__stars">★★★★★</span></div>
+    </article>
+
+    <article class="ppu-card" aria-hidden="true">
+      <p class="ppu-card__quote">15 minutes in and out. They are great with the littles and the photos are adorable.</p>
+      <div class="ppu-card__meta"><span class="ppu-card__name">Megan</span><span class="ppu-card__stars">★★★★★</span></div>
+    </article>
+
+    <article class="ppu-card alt" aria-hidden="true">
+      <p class="ppu-card__quote">We just got the photos back and cannot stop smiling.</p>
+      <div class="ppu-card__meta"><span class="ppu-card__name">Nicole</span><span class="ppu-card__stars">★★★★★</span></div>
+    </article>
+
+    <article class="ppu-card" aria-hidden="true">
+      <p class="ppu-card__quote">We've done two sessions over the past year, and we'll continue every year we can.</p>
+      <div class="ppu-card__meta"><span class="ppu-card__name">Edward</span><span class="ppu-card__stars">★★★★★</span></div>
+    </article>
+
+    <article class="ppu-card" aria-hidden="true">
+      <p class="ppu-card__quote">I haven't stopped looking at the photos since I received them.</p>
+      <div class="ppu-card__meta"><span class="ppu-card__name">Elena</span><span class="ppu-card__stars">★★★★★</span></div>
+    </article>
+
+  </div>
+</section>
+<!-- ============== EMBED END ============== -->
+
+<script>
+  // Wrap each name with an avatar circle showing the first letter
+  document.querySelectorAll('.ppu-card').forEach(function(card){
+    var nameEl = card.querySelector('.ppu-card__name');
+    if (!nameEl || nameEl.parentElement.classList.contains('ppu-card__reviewer')) return;
+    var initial = (nameEl.textContent.trim().charAt(0) || '').toUpperCase();
+    var wrap = document.createElement('span');
+    wrap.className = 'ppu-card__reviewer';
+    var av = document.createElement('span');
+    av.className = 'ppu-card__avatar';
+    av.setAttribute('aria-hidden', 'true');
+    av.textContent = initial;
+    nameEl.parentElement.replaceChild(wrap, nameEl);
+    wrap.appendChild(av);
+    wrap.appendChild(nameEl);
+  });
+</script>
+
+</body>
+</html>
