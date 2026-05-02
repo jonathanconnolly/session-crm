@@ -243,14 +243,48 @@
     .ppu-banner::after { display: none; }
   }
 
-  /* Mobile sizing */
+  /* Tablet */
+  @media (max-width: 900px) {
+    .ppu-card { width: 340px; min-height: 190px; }
+    .ppu-card__quote { font-size: 14.5px; }
+  }
+
+  /* Mobile */
   @media (max-width: 640px) {
-    .ppu-card { width: 300px; min-height: 180px; padding: 22px 22px 18px; margin: 0 8px; border-radius: 18px; }
-    .ppu-card__quote { font-size: 14px; }
-    .ppu-banner { padding: 28px 0 32px; }
-    .ppu-banner__head { margin-bottom: 22px; gap: 12px; }
-    .ppu-banner::before,
-    .ppu-banner::after { width: 40px; }
+    .ppu-banner { padding: 26px 0 30px; }
+    .ppu-banner__head { margin-bottom: 22px; gap: 12px; padding: 0 16px; }
+    .ppu-banner__rating {
+      font-size: 11px;
+      padding: 10px 18px;
+      gap: 8px;
+    }
+    .ppu-banner__rating .stars { font-size: 16px; letter-spacing: 2px; }
+    .ppu-banner__headline { font-size: 24px; line-height: 1.15; padding: 0 12px; }
+    .ppu-card {
+      width: 280px;
+      min-height: 200px;
+      padding: 20px 20px 16px;
+      margin: 0 6px;
+      border-radius: 18px;
+    }
+    .ppu-card__quote { font-size: 13.5px; line-height: 1.55; margin-bottom: 14px; }
+    .ppu-card__avatar { width: 30px; height: 30px; font-size: 12px; }
+    .ppu-card__name { font-size: 11.5px; letter-spacing: 0.12em; }
+    .ppu-card__stars { font-size: 15px; letter-spacing: 2px; }
+    .ppu-banner::before, .ppu-banner::after { width: 36px; }
+    /* speed up the loop slightly on phones since fewer cards are visible at once */
+    .ppu-rail { animation-duration: 70s; }
+  }
+
+  /* Very small phones */
+  @media (max-width: 380px) {
+    .ppu-banner__rating {
+      flex-wrap: wrap;
+      justify-content: center;
+      max-width: 280px;
+    }
+    .ppu-banner__headline { font-size: 22px; }
+    .ppu-card { width: 260px; }
   }
 </style>
 </head>
@@ -499,6 +533,30 @@
     wrap.appendChild(av);
     wrap.appendChild(nameEl);
   });
+
+  // Tell the parent page how tall this iframe needs to be
+  function ppuSendSize() {
+    var h = Math.max(
+      document.documentElement.scrollHeight,
+      document.body.scrollHeight
+    );
+    if (window.parent !== window) {
+      window.parent.postMessage({ type: 'ppuReviewsHeight', height: h }, '*');
+    }
+  }
+  window.addEventListener('load', ppuSendSize);
+  window.addEventListener('resize', ppuSendSize);
+  // also send after fonts load (font swap can change card heights)
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(ppuSendSize);
+  }
+  // poll briefly in case other layout shifts happen
+  var ppuTicks = 0;
+  var ppuPoll = setInterval(function(){
+    ppuSendSize();
+    ppuTicks++;
+    if (ppuTicks > 10) clearInterval(ppuPoll);
+  }, 400);
 </script>
 
 </body>
