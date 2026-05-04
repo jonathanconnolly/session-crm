@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Personality Pop-Up — Tour Ticker</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --ink:    #1A1A1A;     /* near-black, slightly deeper than the brand ink for ticker */
+    --ink-2:  #2D2D2D;     /* brand ink */
+    --blush:  #FBDFD9;     /* brand blush */
+    --paper:  #FFFFFF;
+    --dim:    rgba(255, 255, 255, 0.55);
+    --muted:  rgba(255, 255, 255, 0.32);
+    --mono:   "Roboto Mono", "Courier New", Courier, monospace;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background: var(--paper);
+    overflow-x: hidden;
+  }
+
+  /* ---------- TICKER BANNER ---------- */
+  .ppu-ticker {
+    width: 100%;
+    background: var(--ink);
+    color: var(--paper);
+    font-family: var(--mono);
+    position: relative;
+    overflow: hidden;
+    border-top: 1px solid var(--blush);
+    border-bottom: 1px solid var(--blush);
+    display: flex;
+    align-items: stretch;
+    height: 64px;
+  }
+
+  /* Fixed left badge — like the route number on a flight board */
+  .ppu-ticker__badge {
+    flex: 0 0 auto;
+    background: var(--blush);
+    color: var(--ink);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0 22px;
+    font-family: var(--mono);
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    white-space: nowrap;
+    z-index: 3;
+    position: relative;
+  }
+
+  .ppu-ticker__badge::after {
+    /* slanted edge so it looks like a stamped label */
+    content: "";
+    position: absolute;
+    top: 0;
+    right: -16px;
+    width: 0;
+    height: 0;
+    border-top: 32px solid var(--blush);
+    border-bottom: 32px solid var(--blush);
+    border-right: 16px solid transparent;
+  }
+
+  /* Live blinking dot — feels alive like a real departures board */
+  .ppu-ticker__dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--ink);
+    animation: ppu-blink 1.6s ease-in-out infinite;
+  }
+
+  /* Plane in the badge — sized to match the ticker plane */
+  .ppu-ticker__plane {
+    font-size: 18px;
+    line-height: 1;
+    transform: translateY(-1px);
+    margin-right: 2px;
+  }
+
+  @keyframes ppu-blink {
+    0%, 50%, 100% { opacity: 1; }
+    25%, 75%      { opacity: 0.25; }
+  }
+
+  /* Scrolling track */
+  .ppu-ticker__track {
+    flex: 1 1 auto;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding-left: 32px;   /* breathing room after the badge slant */
+  }
+
+  .ppu-ticker__rail {
+    display: flex;
+    align-items: center;
+    width: max-content;
+    animation: ppu-scroll 95s linear infinite;
+    will-change: transform;
+  }
+
+  .ppu-ticker:hover .ppu-ticker__rail {
+    animation-play-state: paused;
+  }
+
+  /* Right-edge fade so cities don't hard-stop at the viewport edge */
+  .ppu-ticker__track::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 80px;
+    background: linear-gradient(to left, var(--ink) 0%, rgba(26,26,26,0) 100%);
+    pointer-events: none;
+    z-index: 2;
+  }
+
+  /* Each city stop in the ticker */
+  .ppu-stop {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0 26px 0 0;
+    white-space: nowrap;
+    font-family: var(--mono);
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.10em;
+  }
+
+  .ppu-stop__icon {
+    color: var(--blush);
+    font-size: 18px;
+    transform: translateY(-1px);
+    margin-right: 2px;
+  }
+
+  .ppu-stop__city {
+    color: var(--paper);
+  }
+
+  .ppu-stop__state {
+    color: var(--paper);
+    font-weight: 500;
+  }
+
+  /* Separator dot between stops */
+  .ppu-stop__sep {
+    color: var(--muted);
+    margin-right: 26px;
+    font-size: 14px;
+  }
+
+  /* Reduced motion — fall back to manual horizontal scroll */
+  @media (prefers-reduced-motion: reduce) {
+    .ppu-ticker__rail {
+      animation: none;
+      overflow-x: auto;
+      width: 100%;
+    }
+  }
+
+  @keyframes ppu-scroll {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+
+  /* Mobile — shrink the badge and the city font */
+  @media (max-width: 640px) {
+    .ppu-ticker { height: 54px; border-top-width: 1px; border-bottom-width: 1px; }
+    .ppu-ticker__badge {
+      font-size: 10.5px;
+      padding: 0 16px;
+      gap: 8px;
+      letter-spacing: 0.14em;
+    }
+    .ppu-ticker__badge::after {
+      border-top-width: 27px;
+      border-bottom-width: 27px;
+      border-right-width: 12px;
+      right: -12px;
+    }
+    .ppu-ticker__dot { width: 6px; height: 6px; }
+    .ppu-ticker__plane { font-size: 16px; }
+    .ppu-ticker__track { padding-left: 24px; }
+    .ppu-stop { font-size: 12px; padding-right: 20px; letter-spacing: 0.08em; }
+    .ppu-stop__icon { font-size: 16px; }
+    .ppu-stop__sep { margin-right: 20px; font-size: 12px; }
+    .ppu-ticker__rail { animation-duration: 75s; }
+  }
+</style>
+</head>
+<body>
+
+<section class="ppu-ticker" aria-label="Personality Pop-Up tour cities">
+
+  <div class="ppu-ticker__badge">
+    <span class="ppu-ticker__dot" aria-hidden="true"></span>
+    <span class="ppu-ticker__plane" aria-hidden="true">✈</span>
+    <span>Now Touring</span>
+  </div>
+
+  <div class="ppu-ticker__track">
+    <div class="ppu-ticker__rail" id="ppu-ticker-rail">
+      <!-- cities injected by JS so we can keep the markup short and DRY -->
+    </div>
+  </div>
+
+</section>
+
+<script>
+  // City list pulled from your master cities.js (Apr 2026 — 55 metros)
+  var CITIES = [
+    "Ann Arbor, MI","Atlanta, GA","Austin, TX","Birmingham, AL","Boston, MA",
+    "Brooklyn, NY","Carlsbad, CA","Charleston, SC","Charlotte, NC","Chicago, IL",
+    "Cincinnati, OH","Cleveland, OH","Columbus, OH","Dallas, TX","Denver, CO",
+    "Detroit, MI","Fort Lauderdale, FL","Fort Worth, TX","Greenville, SC","Houston, TX",
+    "Indianapolis, IN","Irvine, CA","Jersey City, NJ","Kansas City, MO","Knoxville, TN",
+    "Las Vegas, NV","London, UK","Long Beach, CA","Long Island, NY","Los Angeles, CA",
+    "Louisville, KY","Madison, WI","Manhattan, NY","Miami, FL","Minneapolis, MN",
+    "Nashville, TN","New Haven, CT","New Orleans, LA","Oklahoma City, OK","Orlando, FL",
+    "Philadelphia, PA","Phoenix, AZ","Pittsburgh, PA","Portland, OR","Raleigh, NC",
+    "Salt Lake City, UT","San Diego, CA","San Francisco, CA","San Jose, CA","Savannah, GA",
+    "Seattle, WA","Stamford, CT","Tampa, FL","Washington, DC","West Palm Beach, FL"
+  ];
+
+  function makeStop(cityStr) {
+    var parts = cityStr.split(", ");
+    var city = parts[0];
+    var state = parts[1] || "";
+    return (
+      '<span class="ppu-stop">' +
+        '<span class="ppu-stop__icon" aria-hidden="true">✈</span>' +
+        '<span class="ppu-stop__city">' + city + '</span>' +
+        '<span class="ppu-stop__state">' + state + '</span>' +
+      '</span>' +
+      '<span class="ppu-stop__sep" aria-hidden="true">•</span>'
+    );
+  }
+
+  // Build one full set of cities, then duplicate for the seamless loop
+  var oneSet = CITIES.map(makeStop).join("");
+  document.getElementById("ppu-ticker-rail").innerHTML = oneSet + oneSet;
+
+  // Tell the parent page how tall the iframe needs to be
+  function ppuTickerSendSize() {
+    var h = Math.max(document.documentElement.scrollHeight, document.body.scrollHeight);
+    if (window.parent !== window) {
+      window.parent.postMessage({ type: 'ppuTickerHeight', height: h }, '*');
+    }
+  }
+  window.addEventListener('load', ppuTickerSendSize);
+  window.addEventListener('resize', ppuTickerSendSize);
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(ppuTickerSendSize);
+  }
+</script>
+
+</body>
+</html>
