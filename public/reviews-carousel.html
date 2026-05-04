@@ -32,7 +32,7 @@
     width: 100vw;
     margin-left: calc(50% - 50vw);   /* breaks out of any container padding */
     background: var(--blush);
-    padding: 36px 0 40px;
+    padding: 56px 0 60px;
     position: relative;
     overflow: hidden;
     font-family: var(--mono);
@@ -172,6 +172,18 @@
     opacity: 0.5;
   }
 
+  .ppu-card__quote::after {
+    content: "\201D";
+    font-family: var(--serif);
+    font-size: 26px;
+    line-height: 0;
+    position: relative;
+    top: 8px;
+    margin-left: 2px;
+    color: var(--ink);
+    opacity: 0.5;
+  }
+
   /* (cards are uniform white — alt variant retained as no-op for compatibility) */
   .ppu-card.alt {
     background: var(--paper);
@@ -251,7 +263,7 @@
 
   /* Mobile */
   @media (max-width: 640px) {
-    .ppu-banner { padding: 26px 0 30px; }
+    .ppu-banner { padding: 40px 0 44px; }
     .ppu-banner__head { margin-bottom: 22px; gap: 12px; padding: 0 16px; }
     .ppu-banner__rating {
       font-size: 11px;
