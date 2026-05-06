@@ -1,5 +1,5 @@
 {
-  "_comment": "Source of truth for the /book/ Coming Soon Board widget. Auto-published from the LP+PPU Dashboard Schedule tab + Use Session admin. on_sale = published on Session with public booking URL. date_confirmed = T-90/T-60 city, scheduled but not yet on Session. sold_out = on Session with no spots remaining.",
+  "_comment": "Source of truth for /book/ widgets. Sold-out math: 1-day cap=21, 2-day cap=42 (the 30/60 raw Session capacity includes 9/18 reserves we never expose). Status: now_open | sold_out | coming_soon. spotsLeft is computed; if < 10 the widget shows 'X SPOTS LEFT' urgency text instead of 'Now Open'.",
   "updated": "2026-05-06",
   "scheduled": [
     {
@@ -8,8 +8,12 @@
       "metroTag": "city_lancaster_pa",
       "weekend": "May 9",
       "weekendStart": "2026-05-09",
-      "status": "on_sale",
-      "sessionUrl": "https://book.usesession.com/s/25o8A2l1xT"
+      "days": 1,
+      "booked": 20,
+      "spotsLeft": 1,
+      "status": "now_open",
+      "sessionUrl": "https://book.usesession.com/s/25o8A2l1xT",
+      "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/5a0f7f4e-ba28-45e4-b526-affb1c18d38c-sm.jpg"
     },
     {
       "city": "Charleston, SC",
@@ -17,8 +21,12 @@
       "metroTag": "city_charleston_sc",
       "weekend": "May 9",
       "weekendStart": "2026-05-09",
-      "status": "on_sale",
-      "sessionUrl": "https://book.usesession.com/s/3D1RGUM0Uu"
+      "days": 1,
+      "booked": 22,
+      "spotsLeft": 0,
+      "status": "sold_out",
+      "sessionUrl": "https://book.usesession.com/s/3D1RGUM0Uu",
+      "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/8aa36f9d-07f4-4397-a742-c8dc263f8b59-sm.jpg"
     },
     {
       "city": "Austin, TX",
@@ -26,8 +34,12 @@
       "metroTag": "city_austin_tx",
       "weekend": "May 16-17",
       "weekendStart": "2026-05-16",
-      "status": "on_sale",
-      "sessionUrl": "https://book.usesession.com/s/JxW93HhDRf"
+      "days": 2,
+      "booked": 42,
+      "spotsLeft": 0,
+      "status": "sold_out",
+      "sessionUrl": "https://book.usesession.com/s/JxW93HhDRf",
+      "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/4451185b-a27d-4438-a8ad-0d86efe0e4d1-sm.jpg"
     },
     {
       "city": "Garden City, NY",
@@ -35,8 +47,12 @@
       "metroTag": "city_long_island_ny",
       "weekend": "May 16-17",
       "weekendStart": "2026-05-16",
-      "status": "on_sale",
-      "sessionUrl": "https://book.usesession.com/s/rYyC9fPZ7h"
+      "days": 2,
+      "booked": 34,
+      "spotsLeft": 8,
+      "status": "now_open",
+      "sessionUrl": "https://book.usesession.com/s/rYyC9fPZ7h",
+      "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/cc74de75-d907-4fab-800f-22de814c3af0-sm.jpg"
     },
     {
       "city": "Irvine, CA",
@@ -44,8 +60,12 @@
       "metroTag": "city_irvine_ca",
       "weekend": "May 16-17",
       "weekendStart": "2026-05-16",
-      "status": "on_sale",
-      "sessionUrl": "https://book.usesession.com/s/7gLtR_4FHw"
+      "days": 2,
+      "booked": 43,
+      "spotsLeft": 0,
+      "status": "sold_out",
+      "sessionUrl": "https://book.usesession.com/s/7gLtR_4FHw",
+      "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/8cc9bbeb-b6b2-4c90-ac9f-cc0872eb2276-sm.jpg"
     },
     {
       "city": "Denver, CO",
@@ -53,8 +73,12 @@
       "metroTag": "city_denver_co",
       "weekend": "May 30-31",
       "weekendStart": "2026-05-30",
-      "status": "on_sale",
-      "sessionUrl": "https://book.usesession.com/s/cAcV-bGVTl"
+      "days": 2,
+      "booked": 42,
+      "spotsLeft": 0,
+      "status": "sold_out",
+      "sessionUrl": "https://book.usesession.com/s/cAcV-bGVTl",
+      "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/c1a3f91c-1404-4302-a4b5-c60374f17fd7-sm.jpg"
     },
     {
       "city": "Norwalk, CT",
@@ -62,8 +86,12 @@
       "metroTag": "city_stamford_ct",
       "weekend": "May 30-31",
       "weekendStart": "2026-05-30",
-      "status": "on_sale",
-      "sessionUrl": "https://book.usesession.com/s/hYnq6Px_Bo"
+      "days": 2,
+      "booked": 26,
+      "spotsLeft": 16,
+      "status": "now_open",
+      "sessionUrl": "https://book.usesession.com/s/hYnq6Px_Bo",
+      "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/a50e3f1e-51e9-4082-9398-22339e198a1e-sm.jpg"
     },
     {
       "city": "Seattle, WA",
@@ -71,8 +99,12 @@
       "metroTag": "city_seattle_wa",
       "weekend": "Jun 6-7",
       "weekendStart": "2026-06-06",
-      "status": "on_sale",
-      "sessionUrl": "https://book.usesession.com/s/TCW-FBgpw2"
+      "days": 2,
+      "booked": 23,
+      "spotsLeft": 19,
+      "status": "now_open",
+      "sessionUrl": "https://book.usesession.com/s/TCW-FBgpw2",
+      "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/bd01fb21-7fb3-499a-97cb-4b7cc7ed827d-sm.jpg"
     },
     {
       "city": "Ridgewood, NJ",
@@ -80,8 +112,12 @@
       "metroTag": "city_ridgewood_nj",
       "weekend": "Jun 13",
       "weekendStart": "2026-06-13",
-      "status": "on_sale",
-      "sessionUrl": "https://book.usesession.com/s/BBa_5p-Y2A"
+      "days": 1,
+      "booked": 0,
+      "spotsLeft": 21,
+      "status": "now_open",
+      "sessionUrl": "https://book.usesession.com/s/BBa_5p-Y2A",
+      "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/ef3b3f77-0e69-4bb0-8a04-3389158445d3-sm.jpg"
     },
     {
       "city": "Summit, NJ",
@@ -89,8 +125,10 @@
       "metroTag": "city_summit_nj",
       "weekend": "Jun 14",
       "weekendStart": "2026-06-14",
-      "status": "date_confirmed",
-      "sessionUrl": null
+      "days": 1,
+      "status": "coming_soon",
+      "sessionUrl": null,
+      "imageUrl": null
     },
     {
       "city": "Alpharetta, GA",
@@ -98,8 +136,12 @@
       "metroTag": "city_atlanta_ga",
       "weekend": "Jun 13-14",
       "weekendStart": "2026-06-13",
-      "status": "on_sale",
-      "sessionUrl": "https://book.usesession.com/s/f7HLzf3BUP"
+      "days": 2,
+      "booked": 18,
+      "spotsLeft": 24,
+      "status": "now_open",
+      "sessionUrl": "https://book.usesession.com/s/f7HLzf3BUP",
+      "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/faaedc3d-8d1d-460b-a844-7dc83de71b35-sm.jpg"
     },
     {
       "city": "Asheville, NC",
@@ -107,8 +149,10 @@
       "metroTag": "city_charlotte_nc",
       "weekend": "Jun 21",
       "weekendStart": "2026-06-21",
-      "status": "date_confirmed",
-      "sessionUrl": null
+      "days": 1,
+      "status": "coming_soon",
+      "sessionUrl": null,
+      "imageUrl": null
     },
     {
       "city": "Miami, FL",
@@ -116,8 +160,12 @@
       "metroTag": "city_miami_fl",
       "weekend": "Jun 27-28",
       "weekendStart": "2026-06-27",
-      "status": "on_sale",
-      "sessionUrl": "https://book.usesession.com/s/8i6kiI-K7m"
+      "days": 2,
+      "booked": 13,
+      "spotsLeft": 29,
+      "status": "now_open",
+      "sessionUrl": "https://book.usesession.com/s/8i6kiI-K7m",
+      "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/6bdb0296-e1a6-4d52-b0f3-0d96629ae985-sm.jpg"
     },
     {
       "city": "Santa Clara, CA",
@@ -125,8 +173,12 @@
       "metroTag": "city_san_jose_ca",
       "weekend": "Jun 27-28",
       "weekendStart": "2026-06-27",
-      "status": "on_sale",
-      "sessionUrl": "https://book.usesession.com/s/rSEDBXFAcG"
+      "days": 2,
+      "booked": 13,
+      "spotsLeft": 29,
+      "status": "now_open",
+      "sessionUrl": "https://book.usesession.com/s/rSEDBXFAcG",
+      "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/4cc5113e-1267-4789-90cd-f991f39b6926-sm.jpg"
     },
     {
       "city": "Calabasas, CA",
@@ -134,8 +186,10 @@
       "metroTag": "city_los_angeles_ca",
       "weekend": "Jul 11-12",
       "weekendStart": "2026-07-11",
-      "status": "date_confirmed",
-      "sessionUrl": null
+      "days": 2,
+      "status": "coming_soon",
+      "sessionUrl": null,
+      "imageUrl": null
     },
     {
       "city": "Santa Barbara, CA",
@@ -143,8 +197,10 @@
       "metroTag": "city_los_angeles_ca",
       "weekend": "Jul 11-12",
       "weekendStart": "2026-07-11",
-      "status": "date_confirmed",
-      "sessionUrl": null
+      "days": 2,
+      "status": "coming_soon",
+      "sessionUrl": null,
+      "imageUrl": null
     },
     {
       "city": "Overland Park, KS",
@@ -152,8 +208,10 @@
       "metroTag": "city_kansas_city_mo",
       "weekend": "Jul 11-12",
       "weekendStart": "2026-07-11",
-      "status": "date_confirmed",
-      "sessionUrl": null
+      "days": 2,
+      "status": "coming_soon",
+      "sessionUrl": null,
+      "imageUrl": null
     },
     {
       "city": "Leawood, KS",
@@ -161,8 +219,10 @@
       "metroTag": "city_kansas_city_mo",
       "weekend": "Jul 11-12",
       "weekendStart": "2026-07-11",
-      "status": "date_confirmed",
-      "sessionUrl": null
+      "days": 2,
+      "status": "coming_soon",
+      "sessionUrl": null,
+      "imageUrl": null
     },
     {
       "city": "Alexandria, VA",
@@ -170,8 +230,10 @@
       "metroTag": "city_washington_dc",
       "weekend": "Jul 11-12",
       "weekendStart": "2026-07-11",
-      "status": "date_confirmed",
-      "sessionUrl": null
+      "days": 2,
+      "status": "coming_soon",
+      "sessionUrl": null,
+      "imageUrl": null
     },
     {
       "city": "Columbus, OH",
@@ -179,8 +241,12 @@
       "metroTag": "city_columbus_oh",
       "weekend": "Jul 18-19",
       "weekendStart": "2026-07-18",
-      "status": "on_sale",
-      "sessionUrl": "https://book.usesession.com/s/okT5MGR0b9"
+      "days": 2,
+      "booked": 0,
+      "spotsLeft": 42,
+      "status": "now_open",
+      "sessionUrl": "https://book.usesession.com/s/okT5MGR0b9",
+      "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/8031b01f-eaa2-4555-a263-83e3913be2dc-sm.jpg"
     },
     {
       "city": "Boca Raton, FL",
@@ -188,8 +254,10 @@
       "metroTag": "city_fort_lauderdale_fl",
       "weekend": "Jul 18-19",
       "weekendStart": "2026-07-18",
-      "status": "date_confirmed",
-      "sessionUrl": null
+      "days": 2,
+      "status": "coming_soon",
+      "sessionUrl": null,
+      "imageUrl": null
     },
     {
       "city": "Palm Beach Gardens, FL",
@@ -197,8 +265,10 @@
       "metroTag": "city_west_palm_beach_fl",
       "weekend": "Jul 18-19",
       "weekendStart": "2026-07-18",
-      "status": "date_confirmed",
-      "sessionUrl": null
+      "days": 2,
+      "status": "coming_soon",
+      "sessionUrl": null,
+      "imageUrl": null
     },
     {
       "city": "Salt Lake City, UT",
@@ -206,8 +276,10 @@
       "metroTag": "city_salt_lake_city_ut",
       "weekend": "Jul 18-19",
       "weekendStart": "2026-07-18",
-      "status": "date_confirmed",
-      "sessionUrl": null
+      "days": 2,
+      "status": "coming_soon",
+      "sessionUrl": null,
+      "imageUrl": null
     },
     {
       "city": "Minneapolis, MN",
@@ -215,8 +287,10 @@
       "metroTag": "city_minneapolis_mn",
       "weekend": "Jul 25-26",
       "weekendStart": "2026-07-25",
-      "status": "date_confirmed",
-      "sessionUrl": null
+      "days": 2,
+      "status": "coming_soon",
+      "sessionUrl": null,
+      "imageUrl": null
     },
     {
       "city": "Ann Arbor, MI",
@@ -224,8 +298,10 @@
       "metroTag": "city_ann_arbor_mi",
       "weekend": "August",
       "weekendStart": "2026-08-15",
-      "status": "date_confirmed",
-      "sessionUrl": null
+      "days": 2,
+      "status": "coming_soon",
+      "sessionUrl": null,
+      "imageUrl": null
     },
     {
       "city": "Birmingham, MI",
@@ -233,8 +309,10 @@
       "metroTag": "city_detroit_mi",
       "weekend": "August",
       "weekendStart": "2026-08-15",
-      "status": "date_confirmed",
-      "sessionUrl": null
+      "days": 2,
+      "status": "coming_soon",
+      "sessionUrl": null,
+      "imageUrl": null
     },
     {
       "city": "Bluffton, SC",
@@ -242,8 +320,10 @@
       "metroTag": "city_savannah_ga",
       "weekend": "August",
       "weekendStart": "2026-08-15",
-      "status": "date_confirmed",
-      "sessionUrl": null
+      "days": 2,
+      "status": "coming_soon",
+      "sessionUrl": null,
+      "imageUrl": null
     },
     {
       "city": "Boston, MA",
@@ -251,8 +331,10 @@
       "metroTag": "city_boston_ma",
       "weekend": "August",
       "weekendStart": "2026-08-15",
-      "status": "date_confirmed",
-      "sessionUrl": null
+      "days": 2,
+      "status": "coming_soon",
+      "sessionUrl": null,
+      "imageUrl": null
     },
     {
       "city": "Dallas, TX",
@@ -260,8 +342,10 @@
       "metroTag": "city_dallas_tx",
       "weekend": "August",
       "weekendStart": "2026-08-15",
-      "status": "date_confirmed",
-      "sessionUrl": null
+      "days": 2,
+      "status": "coming_soon",
+      "sessionUrl": null,
+      "imageUrl": null
     },
     {
       "city": "Denver, CO",
@@ -269,8 +353,10 @@
       "metroTag": "city_denver_co",
       "weekend": "August",
       "weekendStart": "2026-08-16",
-      "status": "date_confirmed",
-      "sessionUrl": null
+      "days": 2,
+      "status": "coming_soon",
+      "sessionUrl": null,
+      "imageUrl": null
     },
     {
       "city": "Henderson, NV",
@@ -278,8 +364,10 @@
       "metroTag": "city_las_vegas_nv",
       "weekend": "August",
       "weekendStart": "2026-08-15",
-      "status": "date_confirmed",
-      "sessionUrl": null
+      "days": 2,
+      "status": "coming_soon",
+      "sessionUrl": null,
+      "imageUrl": null
     },
     {
       "city": "Manhattan, NY",
@@ -287,8 +375,10 @@
       "metroTag": "city_manhattan_ny",
       "weekend": "August",
       "weekendStart": "2026-08-15",
-      "status": "date_confirmed",
-      "sessionUrl": null
+      "days": 2,
+      "status": "coming_soon",
+      "sessionUrl": null,
+      "imageUrl": null
     },
     {
       "city": "Sacramento, CA",
@@ -296,8 +386,10 @@
       "metroTag": "city_sacramento_ca",
       "weekend": "August",
       "weekendStart": "2026-08-15",
-      "status": "date_confirmed",
-      "sessionUrl": null
+      "days": 2,
+      "status": "coming_soon",
+      "sessionUrl": null,
+      "imageUrl": null
     },
     {
       "city": "Sausalito, CA",
@@ -305,8 +397,10 @@
       "metroTag": "city_san_francisco_ca",
       "weekend": "August",
       "weekendStart": "2026-08-15",
-      "status": "date_confirmed",
-      "sessionUrl": null
+      "days": 2,
+      "status": "coming_soon",
+      "sessionUrl": null,
+      "imageUrl": null
     },
     {
       "city": "Savannah, GA",
@@ -314,8 +408,10 @@
       "metroTag": "city_savannah_ga",
       "weekend": "August",
       "weekendStart": "2026-08-16",
-      "status": "date_confirmed",
-      "sessionUrl": null
+      "days": 2,
+      "status": "coming_soon",
+      "sessionUrl": null,
+      "imageUrl": null
     },
     {
       "city": "Summerlin, NV",
@@ -323,8 +419,10 @@
       "metroTag": "city_las_vegas_nv",
       "weekend": "August",
       "weekendStart": "2026-08-16",
-      "status": "date_confirmed",
-      "sessionUrl": null
+      "days": 2,
+      "status": "coming_soon",
+      "sessionUrl": null,
+      "imageUrl": null
     }
   ]
 }
