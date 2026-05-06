@@ -1,0 +1,276 @@
+{
+  "_comment": "Source of truth for the /book/ Coming Soon Board widget. Auto-published by tour-schedule-sync.gs. Statuses: on_sale (booking open, has sessionUrl) | sold_out (no spots, sessionUrl points to Session waitlist) | date_confirmed (announced but not yet on sale, no sessionUrl). Past events with status on_sale or sold_out stay listed because Session keeps their waitlist open.",
+  "updated": "2026-05-05",
+  "scheduled": [
+    {
+      "city": "Charleston, SC",
+      "metro": "Charleston, SC",
+      "metroTag": "city_charleston_sc",
+      "weekend": "May 9 (1-day)",
+      "weekendStart": "2026-05-09",
+      "status": "on_sale",
+      "sessionUrl": "https://app.usesession.com/personality-pop-up"
+    },
+    {
+      "city": "Birmingham, AL",
+      "metro": "Birmingham, AL",
+      "metroTag": "city_birmingham_al",
+      "weekend": "May 9 (1-day)",
+      "weekendStart": "2026-05-09",
+      "status": "on_sale",
+      "sessionUrl": "https://app.usesession.com/personality-pop-up"
+    },
+    {
+      "city": "Garden City, NY",
+      "metro": "Long Island, NY",
+      "metroTag": "city_long_island_ny",
+      "weekend": "May 16-17",
+      "weekendStart": "2026-05-16",
+      "status": "on_sale",
+      "sessionUrl": "https://app.usesession.com/personality-pop-up"
+    },
+    {
+      "city": "Irvine, CA",
+      "metro": "Irvine, CA",
+      "metroTag": "city_irvine_ca",
+      "weekend": "May 16-17",
+      "weekendStart": "2026-05-16",
+      "status": "sold_out",
+      "sessionUrl": "https://app.usesession.com/personality-pop-up"
+    },
+    {
+      "city": "Norwalk, CT",
+      "metro": "Stamford, CT",
+      "metroTag": "city_stamford_ct",
+      "weekend": "May 30-31",
+      "weekendStart": "2026-05-30",
+      "status": "on_sale",
+      "sessionUrl": "https://app.usesession.com/personality-pop-up"
+    },
+    {
+      "city": "Long Beach, CA",
+      "metro": "Long Beach, CA",
+      "metroTag": "city_long_beach_ca",
+      "weekend": "May 30-31",
+      "weekendStart": "2026-05-30",
+      "status": "on_sale",
+      "sessionUrl": "https://app.usesession.com/personality-pop-up"
+    },
+    {
+      "city": "Sausalito, CA",
+      "metro": "San Francisco, CA",
+      "metroTag": "city_san_francisco_ca",
+      "weekend": "Jun 6-7",
+      "weekendStart": "2026-06-06",
+      "status": "date_confirmed",
+      "sessionUrl": null
+    },
+    {
+      "city": "Los Altos, CA",
+      "metro": "San Jose, CA",
+      "metroTag": "city_san_jose_ca",
+      "weekend": "Jun 6-7",
+      "weekendStart": "2026-06-06",
+      "status": "date_confirmed",
+      "sessionUrl": null
+    },
+    {
+      "city": "Raleigh, NC",
+      "metro": "Raleigh, NC",
+      "metroTag": "city_raleigh_nc",
+      "weekend": "Jun 13-14",
+      "weekendStart": "2026-06-13",
+      "status": "date_confirmed",
+      "sessionUrl": null
+    },
+    {
+      "city": "Charlotte, NC",
+      "metro": "Charlotte, NC",
+      "metroTag": "city_charlotte_nc",
+      "weekend": "Jun 13-14",
+      "weekendStart": "2026-06-13",
+      "status": "date_confirmed",
+      "sessionUrl": null
+    },
+    {
+      "city": "Boston, MA",
+      "metro": "Boston, MA",
+      "metroTag": "city_boston_ma",
+      "weekend": "Jun 20-21",
+      "weekendStart": "2026-06-20",
+      "status": "date_confirmed",
+      "sessionUrl": null
+    },
+    {
+      "city": "Hoboken, NJ",
+      "metro": "Jersey City, NJ",
+      "metroTag": "city_jersey_city_nj",
+      "weekend": "Jun 20-21",
+      "weekendStart": "2026-06-20",
+      "status": "date_confirmed",
+      "sessionUrl": null
+    },
+    {
+      "city": "La Jolla, CA",
+      "metro": "San Diego, CA",
+      "metroTag": "city_san_diego_ca",
+      "weekend": "Jun 27-28",
+      "weekendStart": "2026-06-27",
+      "status": "date_confirmed",
+      "sessionUrl": null
+    },
+    {
+      "city": "Newport Beach, CA",
+      "metro": "Irvine, CA",
+      "metroTag": "city_irvine_ca",
+      "weekend": "Jun 27-28",
+      "weekendStart": "2026-06-27",
+      "status": "date_confirmed",
+      "sessionUrl": null
+    },
+    {
+      "city": "Manhattan, NY",
+      "metro": "Manhattan, NY",
+      "metroTag": "city_manhattan_ny",
+      "weekend": "Jul 11-12",
+      "weekendStart": "2026-07-11",
+      "status": "date_confirmed",
+      "sessionUrl": null
+    },
+    {
+      "city": "Brooklyn, NY",
+      "metro": "Brooklyn, NY",
+      "metroTag": "city_brooklyn_ny",
+      "weekend": "Jul 11-12",
+      "weekendStart": "2026-07-11",
+      "status": "date_confirmed",
+      "sessionUrl": null
+    },
+    {
+      "city": "Houston, TX",
+      "metro": "Houston, TX",
+      "metroTag": "city_houston_tx",
+      "weekend": "Jul 18-19",
+      "weekendStart": "2026-07-18",
+      "status": "date_confirmed",
+      "sessionUrl": null
+    },
+    {
+      "city": "Fort Worth, TX",
+      "metro": "Fort Worth, TX",
+      "metroTag": "city_fort_worth_tx",
+      "weekend": "Jul 18-19",
+      "weekendStart": "2026-07-18",
+      "status": "date_confirmed",
+      "sessionUrl": null
+    },
+    {
+      "city": "San Francisco, CA",
+      "metro": "San Francisco, CA",
+      "metroTag": "city_san_francisco_ca",
+      "weekend": "Jul 25-26",
+      "weekendStart": "2026-07-25",
+      "status": "date_confirmed",
+      "sessionUrl": null
+    },
+    {
+      "city": "Los Altos, CA",
+      "metro": "San Jose, CA",
+      "metroTag": "city_san_jose_ca",
+      "weekend": "Jul 25-26",
+      "weekendStart": "2026-07-25",
+      "status": "date_confirmed",
+      "sessionUrl": null
+    },
+    {
+      "city": "Raleigh, NC",
+      "metro": "Raleigh, NC",
+      "metroTag": "city_raleigh_nc",
+      "weekend": "Aug 1-2",
+      "weekendStart": "2026-08-01",
+      "status": "date_confirmed",
+      "sessionUrl": null
+    },
+    {
+      "city": "Birmingham, AL",
+      "metro": "Birmingham, AL",
+      "metroTag": "city_birmingham_al",
+      "weekend": "Aug 1-2",
+      "weekendStart": "2026-08-01",
+      "status": "date_confirmed",
+      "sessionUrl": null
+    },
+    {
+      "city": "Stamford, CT",
+      "metro": "Stamford, CT",
+      "metroTag": "city_stamford_ct",
+      "weekend": "Aug 8-9",
+      "weekendStart": "2026-08-08",
+      "status": "date_confirmed",
+      "sessionUrl": null
+    },
+    {
+      "city": "Garden City, NY",
+      "metro": "Long Island, NY",
+      "metroTag": "city_long_island_ny",
+      "weekend": "Aug 8-9",
+      "weekendStart": "2026-08-08",
+      "status": "date_confirmed",
+      "sessionUrl": null
+    },
+    {
+      "city": "Irvine, CA",
+      "metro": "Irvine, CA",
+      "metroTag": "city_irvine_ca",
+      "weekend": "Aug 15-16",
+      "weekendStart": "2026-08-15",
+      "status": "date_confirmed",
+      "sessionUrl": null
+    },
+    {
+      "city": "Pasadena, CA",
+      "metro": "Los Angeles, CA",
+      "metroTag": "city_los_angeles_ca",
+      "weekend": "Aug 15-16",
+      "weekendStart": "2026-08-15",
+      "status": "date_confirmed",
+      "sessionUrl": null
+    },
+    {
+      "city": "Charlotte, NC",
+      "metro": "Charlotte, NC",
+      "metroTag": "city_charlotte_nc",
+      "weekend": "Aug 22-23",
+      "weekendStart": "2026-08-22",
+      "status": "date_confirmed",
+      "sessionUrl": null
+    },
+    {
+      "city": "Columbus, OH",
+      "metro": "Columbus, OH",
+      "metroTag": "city_columbus_oh",
+      "weekend": "Aug 22-23",
+      "weekendStart": "2026-08-22",
+      "status": "date_confirmed",
+      "sessionUrl": null
+    },
+    {
+      "city": "Miami, FL",
+      "metro": "Miami, FL",
+      "metroTag": "city_miami_fl",
+      "weekend": "Aug 29-30",
+      "weekendStart": "2026-08-29",
+      "status": "date_confirmed",
+      "sessionUrl": null
+    },
+    {
+      "city": "Washington, DC",
+      "metro": "Washington, DC",
+      "metroTag": "city_washington_dc",
+      "weekend": "Aug 29-30",
+      "weekendStart": "2026-08-29",
+      "status": "date_confirmed",
+      "sessionUrl": null
+    }
+  ]
+}
