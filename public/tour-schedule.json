@@ -9,8 +9,8 @@
       "weekend": "May 16-17",
       "weekendStart": "2026-05-16",
       "days": 2,
-      "booked": 40,
-      "spotsLeft": 2,
+      "booked": 41,
+      "spotsLeft": 1,
       "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/rYyC9fPZ7h",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/d8f15666-09de-45f1-87e3-3e65f8525a03-sm.jpg"
@@ -61,8 +61,8 @@
       "weekend": "May 30-31",
       "weekendStart": "2026-05-30",
       "days": 2,
-      "booked": 33,
-      "spotsLeft": 9,
+      "booked": 34,
+      "spotsLeft": 8,
       "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/hYnq6Px_Bo",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/33e67e8b-aacf-4346-b379-1fc1755479d6-sm.jpg"
@@ -139,8 +139,8 @@
       "weekend": "Jun 27-28",
       "weekendStart": "2026-06-27",
       "days": 2,
-      "booked": 16,
-      "spotsLeft": 26,
+      "booked": 17,
+      "spotsLeft": 25,
       "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/rSEDBXFAcG",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/ac0f7a7e-647b-4a2d-9c33-c13bb1b66b89-sm.jpg"
