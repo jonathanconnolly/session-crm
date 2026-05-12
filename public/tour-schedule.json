@@ -380,6 +380,17 @@
       "imageUrl": null
     },
     {
+      "city": "Summit, NJ",
+      "metro": "Summit, NJ",
+      "metroTag": "city_summit_nj",
+      "weekend": "Jun",
+      "weekendStart": "2026-06-01",
+      "days": 2,
+      "status": "scheduling",
+      "sessionUrl": null,
+      "imageUrl": null
+    },
+    {
       "city": "Columbia, SC",
       "metro": "Columbia, SC",
       "metroTag": "city_columbia_sc",
