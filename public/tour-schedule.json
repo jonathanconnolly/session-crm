@@ -1,6 +1,6 @@
 {
-  "_comment": "Source of truth for /book/ widgets. The 'scheduled' array is split conceptually: the first 12 entries mirror the published cities on https://book.usesession.com/i/pN8nwzWsHa (Now Booking grid), and the remaining entries are the Coming Soon roadmap (T-46 to T-90 days). Sold-out math: 1-day cap=21, 2-day cap=42 (the 30/60 raw Session capacity includes 9/18 reserves we never expose). Status: now_open | sold_out | coming_soon. spotsLeft drives the urgency badge if < 10. Last synced 2026-05-08 from Use Session published page.",
-  "updated": "2026-05-08",
+  "_comment": "Source of truth for /book/ widgets. The 'scheduled' array is split conceptually: the first 12 entries mirror the published cities on https://book.usesession.com/i/pN8nwzWsHa (Now Booking grid), and the remaining entries are the Coming Soon roadmap. Coming Soon is sorted latest-first (Aug → Jul → Jun) per Jonathan's preference. Sold-out math: 1-day cap=21, 2-day cap=42 (the 30/60 raw Session capacity includes 9/18 reserves we never expose). Status: now_open | sold_out (Use Session published) | opening_soon (date locked, not yet on sale) | scheduling (month known, weekend TBD). spotsLeft drives the urgency badge if < 10. Last synced 2026-05-11.",
+  "updated": "2026-05-11",
   "scheduled": [
     {
       "city": "Charleston, SC",
@@ -158,127 +158,7 @@
       "sessionUrl": "https://book.usesession.com/s/rSEDBXFAcG",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/0fa65d7d-cb5d-447b-8fd7-510d2b70b23d-sm.jpg"
     },
-    {
-      "city": "Asheville, NC",
-      "metro": "Asheville, NC",
-      "metroTag": "city_charlotte_nc",
-      "weekend": "Jun 21",
-      "weekendStart": "2026-06-21",
-      "days": 1,
-      "status": "coming_soon",
-      "sessionUrl": null,
-      "imageUrl": null
-    },
-    {
-      "city": "Summit, NJ",
-      "metro": "Summit, NJ",
-      "metroTag": "city_summit_nj",
-      "weekend": "Jun 27",
-      "weekendStart": "2026-06-27",
-      "days": 1,
-      "status": "coming_soon",
-      "sessionUrl": null,
-      "imageUrl": null
-    },
-    {
-      "city": "Minneapolis, MN",
-      "metro": "Minneapolis, MN",
-      "metroTag": "city_minneapolis_mn",
-      "weekend": "June",
-      "weekendStart": "2026-06-01",
-      "days": 2,
-      "status": "coming_soon",
-      "sessionUrl": null,
-      "imageUrl": null
-    },
-    {
-      "city": "Alexandria, VA",
-      "metro": "Washington, DC",
-      "metroTag": "city_washington_dc",
-      "weekend": "June",
-      "weekendStart": "2026-06-01",
-      "days": 2,
-      "status": "coming_soon",
-      "sessionUrl": null,
-      "imageUrl": null
-    },
-    {
-      "city": "Five Forks, SC",
-      "metro": "Greenville, SC",
-      "metroTag": "city_greenville_sc",
-      "weekend": "June",
-      "weekendStart": "2026-06-01",
-      "days": 2,
-      "status": "coming_soon",
-      "sessionUrl": null,
-      "imageUrl": null
-    },
-    {
-      "city": "Overland Park, KS",
-      "metro": "Kansas City, MO",
-      "metroTag": "city_kansas_city_mo",
-      "weekend": "Jul 11-12",
-      "weekendStart": "2026-07-11",
-      "days": 2,
-      "status": "coming_soon",
-      "sessionUrl": null,
-      "imageUrl": null
-    },
-    {
-      "city": "Leawood, KS",
-      "metro": "Kansas City, MO",
-      "metroTag": "city_kansas_city_mo",
-      "weekend": "Jul 11-12",
-      "weekendStart": "2026-07-11",
-      "days": 2,
-      "status": "coming_soon",
-      "sessionUrl": null,
-      "imageUrl": null
-    },
-    {
-      "city": "Columbus, OH",
-      "metro": "Columbus, OH",
-      "metroTag": "city_columbus_oh",
-      "weekend": "Jul 18-19",
-      "weekendStart": "2026-07-18",
-      "days": 2,
-      "status": "coming_soon",
-      "sessionUrl": null,
-      "imageUrl": null
-    },
-    {
-      "city": "Boca Raton, FL",
-      "metro": "Fort Lauderdale, FL",
-      "metroTag": "city_fort_lauderdale_fl",
-      "weekend": "Jul 18-19",
-      "weekendStart": "2026-07-18",
-      "days": 2,
-      "status": "coming_soon",
-      "sessionUrl": null,
-      "imageUrl": null
-    },
-    {
-      "city": "Palm Beach Gardens, FL",
-      "metro": "West Palm Beach, FL",
-      "metroTag": "city_west_palm_beach_fl",
-      "weekend": "Jul 18-19",
-      "weekendStart": "2026-07-18",
-      "days": 2,
-      "status": "coming_soon",
-      "sessionUrl": null,
-      "imageUrl": null
-    },
-    {
-      "city": "Salt Lake City, UT",
-      "metro": "Salt Lake City, UT",
-      "metroTag": "city_salt_lake_city_ut",
-      "weekend": "Jul 18-19",
-      "weekendStart": "2026-07-18",
-      "days": 2,
-      "status": "coming_soon",
-      "sessionUrl": null,
-      "imageUrl": null
-    },
+
     {
       "city": "Savannah, GA",
       "metro": "Savannah, GA",
@@ -286,7 +166,7 @@
       "weekend": "Aug",
       "weekendStart": "2026-08-01",
       "days": 2,
-      "status": "coming_soon",
+      "status": "scheduling",
       "sessionUrl": null,
       "imageUrl": null
     },
@@ -297,7 +177,7 @@
       "weekend": "Aug",
       "weekendStart": "2026-08-01",
       "days": 2,
-      "status": "coming_soon",
+      "status": "scheduling",
       "sessionUrl": null,
       "imageUrl": null
     },
@@ -308,7 +188,7 @@
       "weekend": "Aug",
       "weekendStart": "2026-08-01",
       "days": 2,
-      "status": "coming_soon",
+      "status": "scheduling",
       "sessionUrl": null,
       "imageUrl": null
     },
@@ -319,7 +199,7 @@
       "weekend": "Aug",
       "weekendStart": "2026-08-01",
       "days": 2,
-      "status": "coming_soon",
+      "status": "scheduling",
       "sessionUrl": null,
       "imageUrl": null
     },
@@ -330,7 +210,7 @@
       "weekend": "Aug",
       "weekendStart": "2026-08-01",
       "days": 2,
-      "status": "coming_soon",
+      "status": "scheduling",
       "sessionUrl": null,
       "imageUrl": null
     },
@@ -341,7 +221,7 @@
       "weekend": "Aug",
       "weekendStart": "2026-08-01",
       "days": 2,
-      "status": "coming_soon",
+      "status": "scheduling",
       "sessionUrl": null,
       "imageUrl": null
     },
@@ -352,7 +232,7 @@
       "weekend": "Aug",
       "weekendStart": "2026-08-01",
       "days": 2,
-      "status": "coming_soon",
+      "status": "scheduling",
       "sessionUrl": null,
       "imageUrl": null
     },
@@ -363,7 +243,7 @@
       "weekend": "Aug",
       "weekendStart": "2026-08-01",
       "days": 2,
-      "status": "coming_soon",
+      "status": "scheduling",
       "sessionUrl": null,
       "imageUrl": null
     },
@@ -374,7 +254,7 @@
       "weekend": "Aug",
       "weekendStart": "2026-08-01",
       "days": 2,
-      "status": "coming_soon",
+      "status": "scheduling",
       "sessionUrl": null,
       "imageUrl": null
     },
@@ -385,7 +265,7 @@
       "weekend": "Aug",
       "weekendStart": "2026-08-01",
       "days": 2,
-      "status": "coming_soon",
+      "status": "scheduling",
       "sessionUrl": null,
       "imageUrl": null
     },
@@ -396,7 +276,7 @@
       "weekend": "Aug",
       "weekendStart": "2026-08-01",
       "days": 2,
-      "status": "coming_soon",
+      "status": "scheduling",
       "sessionUrl": null,
       "imageUrl": null
     },
@@ -407,7 +287,119 @@
       "weekend": "Aug",
       "weekendStart": "2026-08-01",
       "days": 2,
-      "status": "coming_soon",
+      "status": "scheduling",
+      "sessionUrl": null,
+      "imageUrl": null
+    },
+
+    {
+      "city": "Minneapolis, MN",
+      "metro": "Minneapolis, MN",
+      "metroTag": "city_minneapolis_mn",
+      "weekend": "Jul",
+      "weekendStart": "2026-07-01",
+      "days": 2,
+      "status": "scheduling",
+      "sessionUrl": null,
+      "imageUrl": null
+    },
+    {
+      "city": "Alexandria, VA",
+      "metro": "Washington, DC",
+      "metroTag": "city_washington_dc",
+      "weekend": "Jul",
+      "weekendStart": "2026-07-01",
+      "days": 2,
+      "status": "scheduling",
+      "sessionUrl": null,
+      "imageUrl": null
+    },
+    {
+      "city": "Columbus, OH",
+      "metro": "Columbus, OH",
+      "metroTag": "city_columbus_oh",
+      "weekend": "Jul 18-19",
+      "weekendStart": "2026-07-18",
+      "days": 2,
+      "status": "opening_soon",
+      "sessionUrl": null,
+      "imageUrl": null
+    },
+    {
+      "city": "Palm Beach Gardens, FL",
+      "metro": "West Palm Beach, FL",
+      "metroTag": "city_west_palm_beach_fl",
+      "weekend": "Jul 18-19",
+      "weekendStart": "2026-07-18",
+      "days": 2,
+      "status": "opening_soon",
+      "sessionUrl": null,
+      "imageUrl": null
+    },
+    {
+      "city": "Boca Raton, FL",
+      "metro": "Fort Lauderdale, FL",
+      "metroTag": "city_fort_lauderdale_fl",
+      "weekend": "Jul 18-19",
+      "weekendStart": "2026-07-18",
+      "days": 2,
+      "status": "opening_soon",
+      "sessionUrl": null,
+      "imageUrl": null
+    },
+    {
+      "city": "Salt Lake City, UT",
+      "metro": "Salt Lake City, UT",
+      "metroTag": "city_salt_lake_city_ut",
+      "weekend": "Jul 18-19",
+      "weekendStart": "2026-07-18",
+      "days": 2,
+      "status": "opening_soon",
+      "sessionUrl": null,
+      "imageUrl": null
+    },
+    {
+      "city": "Overland Park, KS",
+      "metro": "Kansas City, MO",
+      "metroTag": "city_kansas_city_mo",
+      "weekend": "Jul 11-12",
+      "weekendStart": "2026-07-11",
+      "days": 2,
+      "status": "opening_soon",
+      "sessionUrl": null,
+      "imageUrl": null
+    },
+    {
+      "city": "Leawood, KS",
+      "metro": "Kansas City, MO",
+      "metroTag": "city_kansas_city_mo",
+      "weekend": "Jul 11-12",
+      "weekendStart": "2026-07-11",
+      "days": 2,
+      "status": "opening_soon",
+      "sessionUrl": null,
+      "imageUrl": null
+    },
+
+    {
+      "city": "Five Forks, SC",
+      "metro": "Greenville, SC",
+      "metroTag": "city_greenville_sc",
+      "weekend": "Jun",
+      "weekendStart": "2026-06-01",
+      "days": 2,
+      "status": "scheduling",
+      "sessionUrl": null,
+      "imageUrl": null
+    },
+    {
+      "city": "Asheville, NC",
+      "metro": "Asheville, NC",
+      "metroTag": "city_charlotte_nc",
+      "weekend": "Jun 21",
+      "weekendStart": "2026-06-21",
+      "days": 1,
+      "status": "opening_soon",
       "sessionUrl": null,
       "imageUrl": null
     }
