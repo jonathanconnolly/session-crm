@@ -1,5 +1,5 @@
 {
-  "_comment": "Source of truth for /book/ widgets. The first block of entries mirrors the published cities on https://book.usesession.com/i/pN8nwzWsHa (Now Booking grid), and the remaining entries are the Coming Soon roadmap. Coming Soon is sorted soonest-first within its block. Sold-out math: 1-day cap=21, 2-day cap=42 (the 30/60 raw Session capacity includes 9/18 reserves we never expose). Status: now_open | sold_out (Use Session published) | opening_soon (date locked, not yet on sale) | scheduling (month known, weekend TBD). spotsLeft drives the urgency badge if < 10. Last synced 2026-05-14 from Use Session — Seattle, WA renamed to Bellevue, WA (same Jun 6-7 session, URL + image unchanged); spot counts refreshed on Bellevue (17 left), Ridgewood (8 left), Atlanta GA (9 left), Santa Clara (21 left); all other Now Booking cities unchanged; Coming Soon block untouched.",
+  "_comment": "Source of truth for /book/ widgets. The first block of entries mirrors the published cities on https://book.usesession.com/i/pN8nwzWsHa (Now Booking grid), and the remaining entries are the Coming Soon roadmap. Coming Soon is sorted soonest-first within its block. Sold-out math: 1-day cap=21, 2-day cap=42 (the 30/60 raw Session capacity includes 9/18 reserves we never expose). Status: now_open | sold_out (Use Session published) | opening_soon (date locked, not yet on sale) | scheduling (month known, weekend TBD). spotsLeft drives the urgency badge if < 10. Last synced 2026-05-14 from Use Session (re-sync) — Summit, NJ Jun 28 added as a published sold-out 1-day session (moved out of Coming Soon); Norwalk, CT down to 5 spots; all 12 published cities now mirror the Use Session index.",
   "updated": "2026-05-14",
   "scheduled": [
     {
@@ -61,8 +61,8 @@
       "weekend": "May 30-31",
       "weekendStart": "2026-05-30",
       "days": 2,
-      "booked": 36,
-      "spotsLeft": 6,
+      "booked": 37,
+      "spotsLeft": 5,
       "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/hYnq6Px_Bo",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/33e67e8b-aacf-4346-b379-1fc1755479d6-sm.jpg"
@@ -144,6 +144,19 @@
       "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/rSEDBXFAcG",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/ac0f7a7e-647b-4a2d-9c33-c13bb1b66b89-sm.jpg"
+    },
+    {
+      "city": "Summit, NJ",
+      "metro": "Summit, NJ",
+      "metroTag": "city_summit_nj",
+      "weekend": "Jun 28",
+      "weekendStart": "2026-06-28",
+      "days": 1,
+      "booked": 21,
+      "spotsLeft": 0,
+      "status": "sold_out",
+      "sessionUrl": "https://book.usesession.com/s/-Hm4r-KEdp",
+      "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/96dd8ae6-3272-4c5b-ad75-f94ea8c760f4-sm.jpg"
     },
 
     {
@@ -372,17 +385,6 @@
       "city": "Five Forks, SC",
       "metro": "Greenville, SC",
       "metroTag": "city_greenville_sc",
-      "weekend": "Jun",
-      "weekendStart": "2026-06-01",
-      "days": 2,
-      "status": "scheduling",
-      "sessionUrl": null,
-      "imageUrl": null
-    },
-    {
-      "city": "Summit, NJ",
-      "metro": "Summit, NJ",
-      "metroTag": "city_summit_nj",
       "weekend": "Jun",
       "weekendStart": "2026-06-01",
       "days": 2,
