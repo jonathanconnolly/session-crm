@@ -1,6 +1,6 @@
 {
-  "_comment": "Source of truth for /book/ widgets. The first block of entries mirrors the published cities on https://book.usesession.com/i/pN8nwzWsHa (Now Booking grid), and the remaining entries are the Coming Soon roadmap. Coming Soon is sorted soonest-first within its block. Sold-out math: 1-day cap=21, 2-day cap=42 (the 30/60 raw Session capacity includes 9/18 reserves we never expose). Status: now_open | sold_out (Use Session published) | opening_soon (date locked, not yet on sale) | scheduling (month known, weekend TBD). spotsLeft drives the urgency badge if < 10. Last synced 2026-05-12 from Use Session — Charleston + Lancaster (May 9) rolled off (past); Alpharetta now 1-day Jun 13 sold-out (was 2-day with spots); Atlanta GA Jun 14 added (new 1-day session); spot counts refreshed; all image UUIDs refreshed.",
-  "updated": "2026-05-12",
+  "_comment": "Source of truth for /book/ widgets. The first block of entries mirrors the published cities on https://book.usesession.com/i/pN8nwzWsHa (Now Booking grid), and the remaining entries are the Coming Soon roadmap. Coming Soon is sorted soonest-first within its block. Sold-out math: 1-day cap=21, 2-day cap=42 (the 30/60 raw Session capacity includes 9/18 reserves we never expose). Status: now_open | sold_out (Use Session published) | opening_soon (date locked, not yet on sale) | scheduling (month known, weekend TBD). spotsLeft drives the urgency badge if < 10. Last synced 2026-05-14 from Use Session — Seattle, WA renamed to Bellevue, WA (same Jun 6-7 session, URL + image unchanged); spot counts refreshed on Bellevue (17 left), Ridgewood (8 left), Atlanta GA (9 left), Santa Clara (21 left); all other Now Booking cities unchanged; Coming Soon block untouched.",
+  "updated": "2026-05-14",
   "scheduled": [
     {
       "city": "Garden City, NY",
@@ -68,14 +68,14 @@
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/33e67e8b-aacf-4346-b379-1fc1755479d6-sm.jpg"
     },
     {
-      "city": "Seattle, WA",
+      "city": "Bellevue, WA",
       "metro": "Seattle, WA",
       "metroTag": "city_seattle_wa",
       "weekend": "Jun 6-7",
       "weekendStart": "2026-06-06",
       "days": 2,
-      "booked": 24,
-      "spotsLeft": 18,
+      "booked": 25,
+      "spotsLeft": 17,
       "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/TCW-FBgpw2",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/9d29a07b-8ba6-4aca-a062-82f391371cdb-sm.jpg"
@@ -100,8 +100,8 @@
       "weekend": "Jun 13-14",
       "weekendStart": "2026-06-13",
       "days": 2,
-      "booked": 32,
-      "spotsLeft": 10,
+      "booked": 34,
+      "spotsLeft": 8,
       "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/BBa_5p-Y2A",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/bb0a2ce4-c949-4265-bf4c-6711ac80247d-sm.jpg"
@@ -113,8 +113,8 @@
       "weekend": "Jun 14",
       "weekendStart": "2026-06-14",
       "days": 1,
-      "booked": 10,
-      "spotsLeft": 11,
+      "booked": 12,
+      "spotsLeft": 9,
       "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/J4ugbdXaJ0",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/ff0f1d8c-5653-46e9-bd2d-c437bbf00f4f-sm.jpg"
@@ -139,8 +139,8 @@
       "weekend": "Jun 27-28",
       "weekendStart": "2026-06-27",
       "days": 2,
-      "booked": 18,
-      "spotsLeft": 24,
+      "booked": 21,
+      "spotsLeft": 21,
       "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/rSEDBXFAcG",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/ac0f7a7e-647b-4a2d-9c33-c13bb1b66b89-sm.jpg"
