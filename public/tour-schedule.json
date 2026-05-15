@@ -1,5 +1,5 @@
 {
-  "_comment": "Source of truth for /book/ widgets. The first block of entries mirrors the published cities on https://book.usesession.com/i/pN8nwzWsHa (Now Booking grid), and the remaining entries are the Coming Soon roadmap. Coming Soon is sorted soonest-first within its block. Sold-out math: 1-day cap=21, 2-day cap=42 (the 30/60 raw Session capacity includes 9/18 reserves we never expose). Status: now_open | sold_out (Use Session published) | opening_soon (date locked, not yet on sale) | scheduling (month known, weekend TBD). spotsLeft drives the urgency badge if < 10. Last synced 2026-05-14 from Use Session — Now Booking spot counts refreshed (Ridgewood NJ down to 1, Atlanta GA 6, Miami 26, Bellevue 16, Norwalk 6); 12 published cities mirror the Use Session index; Coming Soon roadmap matches the Schedule tab.",
+  "_comment": "Source of truth for /book/ widgets. The first block of entries mirrors the published cities on https://book.usesession.com/i/pN8nwzWsHa (Now Booking grid), and the remaining entries are the Coming Soon roadmap. Coming Soon is sorted soonest-first within its block. Sold-out math: 1-day cap=21, 2-day cap=42 (the 30/60 raw Session capacity includes 9/18 reserves we never expose). Status: now_open | sold_out (Use Session published) | opening_soon (date locked, not yet on sale) | scheduling (month known, weekend TBD). spotsLeft drives the urgency badge if < 10. Last synced 2026-05-14 from Use Session — Now Booking spot counts refreshed (Ridgewood NJ down to 1, Atlanta GA 6, Miami 26, Bellevue 15, Norwalk 6); 12 published cities mirror the Use Session index; Coming Soon roadmap matches the Schedule tab.",
   "updated": "2026-05-14",
   "scheduled": [
     {
@@ -74,8 +74,8 @@
       "weekend": "Jun 6-7",
       "weekendStart": "2026-06-06",
       "days": 2,
-      "booked": 26,
-      "spotsLeft": 16,
+      "booked": 27,
+      "spotsLeft": 15,
       "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/TCW-FBgpw2",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/9d29a07b-8ba6-4aca-a062-82f391371cdb-sm.jpg"
