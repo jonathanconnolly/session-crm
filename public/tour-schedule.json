@@ -1,5 +1,5 @@
 {
-  "_comment": "Source of truth for /book/ widgets. The first block of entries mirrors the published cities on https://book.usesession.com/i/pN8nwzWsHa (Now Booking grid), and the remaining entries are the Coming Soon roadmap. Coming Soon is sorted soonest-first within its block. Sold-out math: 1-day cap=21, 2-day cap=42 (the 30/60 raw Session capacity includes 9/18 reserves we never expose). Status: now_open | sold_out (Use Session published) | opening_soon (date locked, not yet on sale) | scheduling (month known, weekend TBD). spotsLeft drives the urgency badge if < 10. Last updated 2026-05-15 — Ridgewood NJ and Summit NJ removed from Now Booking grid per Jonathan; 10 published cities remain in the Now Booking block.",
+  "_comment": "Source of truth for /book/ widgets. The first block of entries mirrors the published cities on https://book.usesession.com/i/pN8nwzWsHa (Now Booking grid), and the remaining entries are the Coming Soon roadmap. Coming Soon is sorted soonest-first within its block. Sold-out math: 1-day cap=21, 2-day cap=42 (the 30/60 raw Session capacity includes 9/18 reserves we never expose). Status: now_open | sold_out (Use Session published) | opening_soon (date locked, not yet on sale) | scheduling (month known, weekend TBD). spotsLeft drives the urgency badge if < 10. Last synced 2026-05-15 from Use Session — Garden City NY went sold out, Bellevue WA 15→14, Miami FL 26→24. Ridgewood NJ and Summit NJ remain hidden from the Now Booking grid per Jonathan (still published on Use Session but not surfaced on /book/). 10 published cities in the Now Booking block.",
   "updated": "2026-05-15",
   "scheduled": [
     {
@@ -9,9 +9,9 @@
       "weekend": "May 16-17",
       "weekendStart": "2026-05-16",
       "days": 2,
-      "booked": 41,
-      "spotsLeft": 1,
-      "status": "now_open",
+      "booked": 42,
+      "spotsLeft": 0,
+      "status": "sold_out",
       "sessionUrl": "https://book.usesession.com/s/rYyC9fPZ7h",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/d8f15666-09de-45f1-87e3-3e65f8525a03-sm.jpg"
     },
@@ -74,8 +74,8 @@
       "weekend": "Jun 6-7",
       "weekendStart": "2026-06-06",
       "days": 2,
-      "booked": 27,
-      "spotsLeft": 15,
+      "booked": 28,
+      "spotsLeft": 14,
       "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/TCW-FBgpw2",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/9d29a07b-8ba6-4aca-a062-82f391371cdb-sm.jpg"
@@ -113,8 +113,8 @@
       "weekend": "Jun 27-28",
       "weekendStart": "2026-06-27",
       "days": 2,
-      "booked": 16,
-      "spotsLeft": 26,
+      "booked": 18,
+      "spotsLeft": 24,
       "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/8i6kiI-K7m",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/f505a8e4-aa54-447d-97a0-fcf926fea2f5-sm.jpg"
