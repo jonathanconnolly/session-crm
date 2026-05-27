@@ -1,5 +1,5 @@
 {
-  "_comment": "Source of truth for /book/ widgets. The first block of entries mirrors the published cities on https://book.usesession.com/i/pN8nwzWsHa (Now Booking grid), and the remaining entries are the Coming Soon roadmap. Coming Soon is sorted soonest-first within its block. Sold-out math: 1-day cap=21, 2-day cap=42 (the 30/60 raw Session capacity includes 9/18 reserves we never expose). Status: now_open | sold_out (Use Session published) | opening_soon (date locked, not yet on sale) | scheduling (month known, weekend TBD). spotsLeft drives the urgency badge if < 10. Last synced 2026-05-21 from Use Session — Norwalk CT and Atlanta GA sold out; Bellevue WA 6→5, Santa Clara CA 15→13 spots left. 7 published cities in the Now Booking block.",
+  "_comment": "Source of truth for /book/ widgets. The first block of entries mirrors the published cities on https://book.usesession.com/i/pN8nwzWsHa (Now Booking grid), and the remaining entries are the Coming Soon roadmap. Coming Soon is sorted soonest-first within its block. Sold-out math: 1-day cap=21, 2-day cap=42 (the 30/60 raw Session capacity includes 9/18 reserves we never expose). Status: now_open | sold_out (Use Session published) | opening_soon (date locked, not yet on sale) | scheduling (month known, weekend TBD). spotsLeft drives the urgency badge if < 10. Last synced 2026-05-21 from Use Session — Bellevue WA 5→3, Miami FL 14→13, Santa Clara CA 13→9 spots left. 7 published cities in the Now Booking block (4 sold out, 3 open).",
   "updated": "2026-05-21",
   "scheduled": [
     {
@@ -35,8 +35,8 @@
       "weekend": "Jun 6-7",
       "weekendStart": "2026-06-06",
       "days": 2,
-      "booked": 37,
-      "spotsLeft": 5,
+      "booked": 39,
+      "spotsLeft": 3,
       "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/TCW-FBgpw2",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/9d29a07b-8ba6-4aca-a062-82f391371cdb-sm.jpg"
@@ -74,8 +74,8 @@
       "weekend": "Jun 27-28",
       "weekendStart": "2026-06-27",
       "days": 2,
-      "booked": 28,
-      "spotsLeft": 14,
+      "booked": 29,
+      "spotsLeft": 13,
       "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/8i6kiI-K7m",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/f505a8e4-aa54-447d-97a0-fcf926fea2f5-sm.jpg"
@@ -87,8 +87,8 @@
       "weekend": "Jun 27-28",
       "weekendStart": "2026-06-27",
       "days": 2,
-      "booked": 29,
-      "spotsLeft": 13,
+      "booked": 33,
+      "spotsLeft": 9,
       "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/rSEDBXFAcG",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/ac0f7a7e-647b-4a2d-9c33-c13bb1b66b89-sm.jpg"
