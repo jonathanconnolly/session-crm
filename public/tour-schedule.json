@@ -1,5 +1,5 @@
 {
-  "_comment": "Source of truth for /book/ widgets. The first block of entries mirrors the published cities on https://book.usesession.com/i/pN8nwzWsHa (Now Booking grid), and the remaining entries are the Coming Soon roadmap. Coming Soon is sorted soonest-first within its block. Sold-out math: 1-day cap=21, 2-day cap=42 (the 30/60 raw Session capacity includes 9/18 reserves we never expose). Status: now_open | sold_out (Use Session published) | opening_soon (date locked, not yet on sale) | scheduling (month known, weekend TBD). spotsLeft drives the urgency badge if < 10. Coming Soon entries intentionally leave `weekend` blank — the widget no longer surfaces the month/year to visitors so distant cities don't feel 'too far' and bounce; weekendStart is kept internally so the Opens Soon pill still highlights the soonest month. Coming Soon is also intentionally trimmed to the next ~16 cities (full Aug block + 4 hand-picked Sep cities) — surfacing the entire 4-month roadmap (a) overwhelms casual visitors, (b) hands competitors a free deployment schedule, and (c) dilutes the urgency cue (when half the list glows, none of it feels urgent). The full pipeline still lives in Jonathan's Schedule tab; we just don't publish it. The widget adds a '+N more cities' footer line and shuffles row order within each month so the deployment sequence isn't leaked. Last synced 2026-05-28. Summit NJ and Ridgewood NJ Jun are hidden per Jonathan (not on Use Session public index). 9 published cities in the Now Booking block (4 sold out, 5 open); 12 Aug + 4 Sep cities in Coming Soon (~30 more cities tracked internally for Sep through Nov).",
+  "_comment": "Source of truth for /book/ widgets. The first block of entries mirrors the published cities on https://book.usesession.com/i/pN8nwzWsHa (Now Booking grid), and the remaining entries are the Coming Soon roadmap. Coming Soon is sorted soonest-first within its block. Sold-out math: 1-day cap=21, 2-day cap=42 (the 30/60 raw Session capacity includes 9/18 reserves we never expose). Status: now_open | sold_out (Use Session published) | opening_soon (date locked or near-term tier, not yet on sale) | scheduling (further-out tier). spotsLeft drives the urgency badge if < 10. Coming Soon entries intentionally leave `weekend` blank — the widget no longer surfaces the month/year to visitors so distant cities don't feel 'too far' and bounce; weekendStart is kept internally so the Opens Soon pill still highlights the soonest month. Coming Soon now exposes the full Aug + Sep pipeline (23 cities); Oct+Nov stay internal on Jonathan's Schedule tab. The widget adds a '+N more cities' footer line and shuffles row order within each month so the deployment sequence isn't leaked. Last synced 2026-05-28 — Overland Park KS, Alexandria VA, Boca Raton FL, West Palm Beach FL went live on Use Session and joined Now Booking; Santa Clara CA 8→7 spots left (West Palm Beach FL at 9 left also crossed under the urgency threshold). 13 published cities in Now Booking (4 sold out, 9 open); 12 Aug (opening_soon tier) + 11 Sep (scheduling tier) in Coming Soon. Summit NJ and Ridgewood NJ Jun are hidden per Jonathan (not on Use Session public index).",
   "updated": "2026-05-28",
   "scheduled": [
     {
@@ -100,8 +100,8 @@
       "weekend": "Jun 27-28",
       "weekendStart": "2026-06-27",
       "days": 2,
-      "booked": 34,
-      "spotsLeft": 8,
+      "booked": 35,
+      "spotsLeft": 7,
       "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/rSEDBXFAcG",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/ac0f7a7e-647b-4a2d-9c33-c13bb1b66b89-sm.jpg"
@@ -119,6 +119,58 @@
       "sessionUrl": "https://book.usesession.com/s/kZO6K4SZSA",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/2d9b0c2b-9504-4123-a1dc-720c37c1ed3b-sm.jpg"
     },
+    {
+      "city": "Alexandria, VA",
+      "metro": "Washington, DC",
+      "metroTag": "city_washington_dc",
+      "weekend": "Jul 11-12",
+      "weekendStart": "2026-07-11",
+      "days": 2,
+      "booked": 23,
+      "spotsLeft": 19,
+      "status": "now_open",
+      "sessionUrl": "https://book.usesession.com/s/sbATX5R4ZE",
+      "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/accb9220-3fbf-42b8-8f9b-b0ac6d437525-sm.jpg"
+    },
+    {
+      "city": "Overland Park, KS",
+      "metro": "Kansas City, MO",
+      "metroTag": "city_kansas_city_mo",
+      "weekend": "Jul 11-12",
+      "weekendStart": "2026-07-11",
+      "days": 2,
+      "booked": 24,
+      "spotsLeft": 18,
+      "status": "now_open",
+      "sessionUrl": "https://book.usesession.com/s/li5v87H-Zc",
+      "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/9bd66c90-a8e6-401f-9adc-1f2c2cc66b60-sm.jpg"
+    },
+    {
+      "city": "Boca Raton, FL",
+      "metro": "Fort Lauderdale, FL",
+      "metroTag": "city_fort_lauderdale_fl",
+      "weekend": "Jul 18",
+      "weekendStart": "2026-07-18",
+      "days": 1,
+      "booked": 11,
+      "spotsLeft": 10,
+      "status": "now_open",
+      "sessionUrl": "https://book.usesession.com/s/M0wdFfJg0X",
+      "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/e919aa4d-8630-49d6-be53-c7f48232754a-sm.jpg"
+    },
+    {
+      "city": "West Palm Beach, FL",
+      "metro": "West Palm Beach, FL",
+      "metroTag": "city_west_palm_beach_fl",
+      "weekend": "Jul 19",
+      "weekendStart": "2026-07-19",
+      "days": 1,
+      "booked": 12,
+      "spotsLeft": 9,
+      "status": "now_open",
+      "sessionUrl": "https://book.usesession.com/s/WqcySWP0Eo",
+      "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/228bc3ec-a1fb-4f71-9772-b8570745176b-sm.jpg"
+    },
 
     {
       "city": "Providence, RI",
@@ -127,7 +179,7 @@
       "weekend": "",
       "weekendStart": "2026-08-01",
       "days": 2,
-      "status": "scheduling",
+      "status": "opening_soon",
       "sessionUrl": null,
       "imageUrl": null
     },
@@ -138,7 +190,7 @@
       "weekend": "",
       "weekendStart": "2026-08-01",
       "days": 2,
-      "status": "scheduling",
+      "status": "opening_soon",
       "sessionUrl": null,
       "imageUrl": null
     },
@@ -149,7 +201,7 @@
       "weekend": "",
       "weekendStart": "2026-08-01",
       "days": 2,
-      "status": "scheduling",
+      "status": "opening_soon",
       "sessionUrl": null,
       "imageUrl": null
     },
@@ -160,7 +212,7 @@
       "weekend": "",
       "weekendStart": "2026-08-15",
       "days": 2,
-      "status": "scheduling",
+      "status": "opening_soon",
       "sessionUrl": null,
       "imageUrl": null
     },
@@ -171,7 +223,7 @@
       "weekend": "",
       "weekendStart": "2026-08-01",
       "days": 2,
-      "status": "scheduling",
+      "status": "opening_soon",
       "sessionUrl": null,
       "imageUrl": null
     },
@@ -182,7 +234,7 @@
       "weekend": "",
       "weekendStart": "2026-08-01",
       "days": 2,
-      "status": "scheduling",
+      "status": "opening_soon",
       "sessionUrl": null,
       "imageUrl": null
     },
@@ -193,7 +245,7 @@
       "weekend": "",
       "weekendStart": "2026-08-01",
       "days": 2,
-      "status": "scheduling",
+      "status": "opening_soon",
       "sessionUrl": null,
       "imageUrl": null
     },
@@ -204,7 +256,7 @@
       "weekend": "",
       "weekendStart": "2026-08-01",
       "days": 2,
-      "status": "scheduling",
+      "status": "opening_soon",
       "sessionUrl": null,
       "imageUrl": null
     },
@@ -215,7 +267,7 @@
       "weekend": "",
       "weekendStart": "2026-08-01",
       "days": 2,
-      "status": "scheduling",
+      "status": "opening_soon",
       "sessionUrl": null,
       "imageUrl": null
     },
@@ -226,7 +278,7 @@
       "weekend": "",
       "weekendStart": "2026-08-01",
       "days": 2,
-      "status": "scheduling",
+      "status": "opening_soon",
       "sessionUrl": null,
       "imageUrl": null
     },
@@ -237,7 +289,7 @@
       "weekend": "",
       "weekendStart": "2026-08-01",
       "days": 2,
-      "status": "scheduling",
+      "status": "opening_soon",
       "sessionUrl": null,
       "imageUrl": null
     },
@@ -248,15 +300,15 @@
       "weekend": "",
       "weekendStart": "2026-08-01",
       "days": 2,
-      "status": "scheduling",
+      "status": "opening_soon",
       "sessionUrl": null,
       "imageUrl": null
     },
 
     {
-      "city": "Chicago, IL",
-      "metro": "Chicago, IL",
-      "metroTag": "city_chicago_il",
+      "city": "Savannah, GA",
+      "metro": "Savannah, GA",
+      "metroTag": "city_savannah_ga",
       "weekend": "",
       "weekendStart": "2026-09-01",
       "days": 2,
@@ -265,9 +317,31 @@
       "imageUrl": null
     },
     {
-      "city": "Charleston, SC",
-      "metro": "Charleston, SC",
-      "metroTag": "city_charleston_sc",
+      "city": "Jacksonville, FL",
+      "metro": "Jacksonville, FL",
+      "metroTag": "city_jacksonville_fl",
+      "weekend": "",
+      "weekendStart": "2026-09-01",
+      "days": 2,
+      "status": "scheduling",
+      "sessionUrl": null,
+      "imageUrl": null
+    },
+    {
+      "city": "London, UK",
+      "metro": "London, UK",
+      "metroTag": "city_london_uk",
+      "weekend": "",
+      "weekendStart": "2026-09-01",
+      "days": 2,
+      "status": "scheduling",
+      "sessionUrl": null,
+      "imageUrl": null
+    },
+    {
+      "city": "Ridgewood, NJ",
+      "metro": "Ridgewood, NJ",
+      "metroTag": "city_ridgewood_nj",
       "weekend": "",
       "weekendStart": "2026-09-01",
       "days": 2,
@@ -287,9 +361,64 @@
       "imageUrl": null
     },
     {
+      "city": "Garden City, NY",
+      "metro": "Long Island, NY",
+      "metroTag": "city_long_island_ny",
+      "weekend": "",
+      "weekendStart": "2026-09-01",
+      "days": 2,
+      "status": "scheduling",
+      "sessionUrl": null,
+      "imageUrl": null
+    },
+    {
+      "city": "Charleston, SC",
+      "metro": "Charleston, SC",
+      "metroTag": "city_charleston_sc",
+      "weekend": "",
+      "weekendStart": "2026-09-01",
+      "days": 2,
+      "status": "scheduling",
+      "sessionUrl": null,
+      "imageUrl": null
+    },
+    {
+      "city": "Chicago, IL",
+      "metro": "Chicago, IL",
+      "metroTag": "city_chicago_il",
+      "weekend": "",
+      "weekendStart": "2026-09-01",
+      "days": 2,
+      "status": "scheduling",
+      "sessionUrl": null,
+      "imageUrl": null
+    },
+    {
+      "city": "Orange County, CA",
+      "metro": "Irvine, CA",
+      "metroTag": "city_irvine_ca",
+      "weekend": "",
+      "weekendStart": "2026-09-01",
+      "days": 2,
+      "status": "scheduling",
+      "sessionUrl": null,
+      "imageUrl": null
+    },
+    {
       "city": "Houston, TX",
       "metro": "Houston, TX",
       "metroTag": "city_houston_tx",
+      "weekend": "",
+      "weekendStart": "2026-09-01",
+      "days": 2,
+      "status": "scheduling",
+      "sessionUrl": null,
+      "imageUrl": null
+    },
+    {
+      "city": "Minnetonka, MN",
+      "metro": "Minneapolis, MN",
+      "metroTag": "city_minneapolis_mn",
       "weekend": "",
       "weekendStart": "2026-09-01",
       "days": 2,
