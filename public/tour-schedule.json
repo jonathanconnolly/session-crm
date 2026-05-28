@@ -1,5 +1,5 @@
 {
-  "_comment": "Source of truth for /book/ widgets. The first block of entries mirrors the published cities on https://book.usesession.com/i/pN8nwzWsHa (Now Booking grid), and the remaining entries are the Coming Soon roadmap. Coming Soon is sorted soonest-first within its block. Sold-out math: 1-day cap=21, 2-day cap=42 (the 30/60 raw Session capacity includes 9/18 reserves we never expose). Status: now_open | sold_out (Use Session published) | opening_soon (date locked or near-term tier, not yet on sale) | scheduling (further-out tier). spotsLeft drives the urgency badge if < 10. Coming Soon entries intentionally leave `weekend` blank — the widget no longer surfaces the month/year to visitors so distant cities don't feel 'too far' and bounce; weekendStart is kept internally so the Opens Soon pill still highlights the soonest month. Coming Soon now exposes the full Aug + Sep pipeline (23 cities); Oct+Nov stay internal on Jonathan's Schedule tab. The widget adds a '+N more cities' footer line and shuffles row order within each month so the deployment sequence isn't leaked. Last synced 2026-05-28 — Overland Park KS, Alexandria VA, Boca Raton FL, West Palm Beach FL went live on Use Session and joined Now Booking; Santa Clara CA 8→7 spots left (West Palm Beach FL at 9 left also crossed under the urgency threshold). 13 published cities in Now Booking (4 sold out, 9 open); 12 Aug (opening_soon tier) + 11 Sep (scheduling tier) in Coming Soon. Summit NJ and Ridgewood NJ Jun are hidden per Jonathan (not on Use Session public index).",
+  "_comment": "Source of truth for /book/ widgets. The first block of entries mirrors the published cities on https://book.usesession.com/i/pN8nwzWsHa (Now Booking grid), and the remaining entries are the Coming Soon roadmap. Coming Soon is sorted soonest-first within its block. Sold-out math: 1-day cap=21, 2-day cap=42 (the 30/60 raw Session capacity includes 9/18 reserves we never expose). Status: now_open | sold_out (Use Session published) | opening_soon (date locked or near-term tier, not yet on sale) | scheduling (further-out tier). spotsLeft drives the urgency badge if < 10. Coming Soon entries intentionally leave `weekend` blank — the widget no longer surfaces the month/year to visitors so distant cities don't feel 'too far' and bounce; weekendStart is kept internally so the Opens Soon pill still highlights the soonest month. Coming Soon now exposes the full Aug + Sep pipeline (23 cities); Oct+Nov stay internal on Jonathan's Schedule tab. The widget adds a '+N more cities' footer line and shuffles row order within each month so the deployment sequence isn't leaked. Last synced 2026-05-28 — Overland Park KS, Alexandria VA, Boca Raton FL, West Palm Beach FL went live on Use Session and joined Now Booking; Santa Clara CA 8→7 spots left (West Palm Beach FL at 9 left also crossed under the urgency threshold). Also refreshed 7 stale thumbnail UUIDs (Denver, Norwalk CT, Bellevue, Alpharetta, Miami, Santa Clara, Five Forks, Charlotte) — Use Session reassigns image UUIDs whenever a session's cover photo is re-uploaded, so the imageUrl field needs periodic refresh from the React fibers. 13 published cities in Now Booking (4 sold out, 9 open); 12 Aug (opening_soon tier) + 11 Sep (scheduling tier) in Coming Soon. Summit NJ and Ridgewood NJ Jun are hidden per Jonathan (not on Use Session public index).",
   "updated": "2026-05-28",
   "scheduled": [
     {
@@ -13,7 +13,7 @@
       "spotsLeft": 0,
       "status": "sold_out",
       "sessionUrl": "https://book.usesession.com/s/cAcV-bGVTl",
-      "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/deabd869-91f8-425f-ae16-285316785959-sm.jpg"
+      "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/d00f1021-cd5b-4c8a-82a6-ac1ccdd902b9-sm.jpg"
     },
     {
       "city": "Norwalk, CT",
@@ -26,7 +26,7 @@
       "spotsLeft": 1,
       "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/hYnq6Px_Bo",
-      "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/33e67e8b-aacf-4346-b379-1fc1755479d6-sm.jpg"
+      "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/b6a6c309-6c10-4e1c-aaa2-23ea4f9482d4-sm.jpg"
     },
     {
       "city": "Bellevue, WA",
@@ -39,7 +39,7 @@
       "spotsLeft": 3,
       "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/TCW-FBgpw2",
-      "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/9d29a07b-8ba6-4aca-a062-82f391371cdb-sm.jpg"
+      "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/00db049e-c4ab-42da-b72c-8ae12ae026ee-sm.jpg"
     },
     {
       "city": "Alpharetta, GA",
@@ -52,7 +52,7 @@
       "spotsLeft": 0,
       "status": "sold_out",
       "sessionUrl": "https://book.usesession.com/s/f7HLzf3BUP",
-      "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/b0d7feb2-bc64-4411-9883-f5f3eae9a50b-sm.jpg"
+      "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/15b1c525-b01f-4c52-be5b-54a1e7c32ac6-sm.jpg"
     },
     {
       "city": "Atlanta, GA",
@@ -78,7 +78,7 @@
       "spotsLeft": 18,
       "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/RBHzhJHtFq",
-      "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/cf0a6b2e-6f62-4373-9796-4bfa00397f5a-sm.jpg"
+      "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/3322208e-0ffa-4096-903e-3b230426ff38-sm.jpg"
     },
     {
       "city": "Miami, FL",
@@ -91,7 +91,7 @@
       "spotsLeft": 13,
       "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/8i6kiI-K7m",
-      "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/f505a8e4-aa54-447d-97a0-fcf926fea2f5-sm.jpg"
+      "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/d5ac7138-48d4-41eb-ab1d-fdaa18b5dd53-sm.jpg"
     },
     {
       "city": "Santa Clara, CA",
@@ -104,7 +104,7 @@
       "spotsLeft": 7,
       "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/rSEDBXFAcG",
-      "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/ac0f7a7e-647b-4a2d-9c33-c13bb1b66b89-sm.jpg"
+      "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/195981f7-1ee9-426e-a7f3-bd2168f91826-sm.jpg"
     },
     {
       "city": "Charlotte, NC",
@@ -117,7 +117,7 @@
       "spotsLeft": 11,
       "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/kZO6K4SZSA",
-      "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/2d9b0c2b-9504-4123-a1dc-720c37c1ed3b-sm.jpg"
+      "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/33a0999b-a113-4fbb-80d6-7142ef90a553-sm.jpg"
     },
     {
       "city": "Alexandria, VA",
