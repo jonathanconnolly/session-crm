@@ -1,6 +1,6 @@
 {
-  "_comment": "Source of truth for /book/ widgets. The first block of entries mirrors the published cities on https://book.usesession.com/i/pN8nwzWsHa (Now Booking grid), and the second block is the Opening Soon roadmap. Opening Soon is sorted soonest-first. Sold-out math: 1-day cap=21, 2-day cap=42 (the 30/60 raw Session capacity includes 9/18 reserves we never expose). Status: now_open | sold_out (Use Session published) | opening_soon (date locked or near-term tier, not yet on sale). Per Jonathan 2026-05-28: widget now shows only 2 months at a time — Now Booking + a single Opening Soon month (the calendar month immediately AFTER the last booked weekend). The further-out 'scheduling' tier has been retired (no September entries until they roll up into Opening Soon next month). spotsLeft drives the urgency badge if < 10. Opening Soon entries intentionally leave weekend blank — the widget no longer surfaces the month/year to visitors so distant cities don't feel 'too far' and bounce; weekendStart is kept internally so the Opens Soon pill still highlights the soonest month. The widget adds a '+N more cities' footer line and shuffles row order within each month so the deployment sequence isn't leaked. Last synced 2026-05-28 — dropped 11 September scheduling entries to conform to the new 2-month rule; Now Booking + Opening Soon (August) unchanged from earlier today's sync. 13 published cities in Now Booking (4 sold out, 9 open); 12 Aug opening_soon. Summit NJ and Ridgewood NJ Jun are hidden per Jonathan (not on Use Session public index). Daily refresh handled by scheduled task 'now-booking-grid-sync' at 8:30am.",
-  "updated": "2026-05-28",
+  "_comment": "Source of truth for /book/ widgets. Now Booking entries mirror the published cities on https://book.usesession.com/i/pN8nwzWsHa, and Opening Soon entries are the next-month roadmap pulled from the Schedule tab of the LP + PPU Dashboard. Per Jonathan 2026-05-28 the widget now shows only 2 months at a time (Now Booking + a single Opening Soon month) — the `scheduling` tier is retired. Sold-out math: 1-day cap=21, 2-day cap=42 (the 30/60 raw Session capacity includes 9/18 reserves we never expose). Status: now_open | sold_out | opening_soon. spotsLeft drives the urgency badge if < 10. Last synced 2026-05-29 — only change vs prior sync: Alexandria, VA Jul 11-12 picked up 1 booking (19→18 spots left, 23→24 booked). All 13 Now Booking thumbnail UUIDs unchanged. Dropped the 11 carry-over September `scheduling` entries to enforce the 2-month rule. 13 Now Booking (3 sold out: Denver/Alpharetta/Atlanta; 10 open) + 12 August Opening Soon. Summit NJ and Ridgewood NJ hidden per Jonathan (not on Use Session public index).",
+  "updated": "2026-05-29",
   "scheduled": [
     {
       "city": "Denver, CO",
@@ -126,8 +126,8 @@
       "weekend": "Jul 11-12",
       "weekendStart": "2026-07-11",
       "days": 2,
-      "booked": 23,
-      "spotsLeft": 19,
+      "booked": 24,
+      "spotsLeft": 18,
       "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/sbATX5R4ZE",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/accb9220-3fbf-42b8-8f9b-b0ac6d437525-sm.jpg"
@@ -200,17 +200,6 @@
       "metroTag": "city_denver_co",
       "weekend": "",
       "weekendStart": "2026-08-01",
-      "days": 2,
-      "status": "opening_soon",
-      "sessionUrl": null,
-      "imageUrl": null
-    },
-    {
-      "city": "Manhattan, NY",
-      "metro": "Manhattan, NY",
-      "metroTag": "city_manhattan_ny",
-      "weekend": "",
-      "weekendStart": "2026-08-15",
       "days": 2,
       "status": "opening_soon",
       "sessionUrl": null,
@@ -299,6 +288,17 @@
       "metroTag": "city_orlando_fl",
       "weekend": "",
       "weekendStart": "2026-08-01",
+      "days": 2,
+      "status": "opening_soon",
+      "sessionUrl": null,
+      "imageUrl": null
+    },
+    {
+      "city": "Manhattan, NY",
+      "metro": "Manhattan, NY",
+      "metroTag": "city_manhattan_ny",
+      "weekend": "",
+      "weekendStart": "2026-08-15",
       "days": 2,
       "status": "opening_soon",
       "sessionUrl": null,
