@@ -1,5 +1,5 @@
 {
-  "_comment": "Source of truth for /book/ widgets. The first block mirrors the published cities on https://book.usesession.com/i/pN8nwzWsHa (Now Booking grid); the second block is the Opening Soon roadmap (single most-recent month only, weekend left blank). Sold-out math: 1-day cap=21, 2-day cap=42 (the 30/60 raw Session capacity includes 9/18 reserves we never expose). Status: now_open | sold_out (Use Session published) | opening_soon (date locked but not yet on sale; weekend blank so distant cities don't feel 'too far' and bounce, weekendStart kept internally so the Opens Soon pill highlights the soonest month). spotsLeft drives the urgency badge if < 10. The 'scheduling' further-out tier was retired 2026-05-28 — the widget now shows only Now Booking + Opening Soon. Last synced 2026-06-02 (re-synced same day for live status) — Bellevue WA (Jun 6-7) reopened to 1 spot left (a booking freed up); Santa Clara CA (Jun 27-28) is now SOLD OUT (last spot filled). Denver CO and Norwalk CT (both May 30-31) rolled off as past dates earlier today. Refreshed 2 stale thumbnail UUIDs (Five Forks SC, Charlotte NC; cover photos re-uploaded). 11 published cities in Now Booking (3 sold out: Alpharetta/Atlanta/Santa Clara, 8 open); 12 Opening Soon cities in August. Summit NJ and Ridgewood NJ hidden per Jonathan (not on Use Session public index).",
+  "_comment": "Source of truth for /book/ widgets. The first block mirrors the published cities on https://book.usesession.com/i/pN8nwzWsHa (Now Booking grid); the second block is the Opening Soon roadmap (single most-recent month only, weekend left blank). Sold-out math: 1-day cap=21, 2-day cap=42 (the 30/60 raw Session capacity includes 9/18 reserves we never expose). Status: now_open | sold_out (Use Session published) | opening_soon (date locked but not yet on sale; weekend blank so distant cities don't feel 'too far' and bounce, weekendStart kept internally so the Opens Soon pill highlights the soonest month). spotsLeft drives the urgency badge if < 10. The 'scheduling' further-out tier was retired 2026-05-28 — the widget now shows only Now Booking + Opening Soon. Last synced 2026-06-02 (3rd sync of the day) — Bellevue WA (Jun 6-7) is SOLD OUT again (its single reopened spot was rebooked). Spots moved since prior sync: Miami 13->11, Charlotte 8->5 left. Refreshed 1 thumbnail UUID (Overland Park KS; cover photo re-uploaded). 11 published cities in Now Booking (4 sold out: Bellevue/Alpharetta/Atlanta/Santa Clara, 7 open); 12 Opening Soon cities in August. Summit NJ and Ridgewood NJ hidden per Jonathan (not on Use Session public index).",
   "updated": "2026-06-02",
   "scheduled": [
     {
@@ -9,9 +9,9 @@
       "weekend": "Jun 6-7",
       "weekendStart": "2026-06-06",
       "days": 2,
-      "booked": 41,
-      "spotsLeft": 1,
-      "status": "now_open",
+      "booked": 42,
+      "spotsLeft": 0,
+      "status": "sold_out",
       "sessionUrl": "https://book.usesession.com/s/TCW-FBgpw2",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/00db049e-c4ab-42da-b72c-8ae12ae026ee-sm.jpg"
     },
@@ -48,8 +48,8 @@
       "weekend": "Jun 27-28",
       "weekendStart": "2026-06-27",
       "days": 2,
-      "booked": 29,
-      "spotsLeft": 13,
+      "booked": 31,
+      "spotsLeft": 11,
       "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/8i6kiI-K7m",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/d5ac7138-48d4-41eb-ab1d-fdaa18b5dd53-sm.jpg"
@@ -91,7 +91,7 @@
       "spotsLeft": 18,
       "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/li5v87H-Zc",
-      "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/9bd66c90-a8e6-401f-9adc-1f2c2cc66b60-sm.jpg"
+      "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/da9d1691-6ce5-411f-8290-85a8f72eea95-sm.jpg"
     },
     {
       "city": "Alexandria, VA",
@@ -113,8 +113,8 @@
       "weekend": "Jul 11",
       "weekendStart": "2026-07-11",
       "days": 1,
-      "booked": 13,
-      "spotsLeft": 8,
+      "booked": 16,
+      "spotsLeft": 5,
       "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/kZO6K4SZSA",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/d7aa2d67-48ed-4955-9aa7-062b11fb5f61-sm.jpg"
