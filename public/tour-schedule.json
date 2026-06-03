@@ -1,5 +1,5 @@
 {
-  "_comment": "Source of truth for /book/ widgets. The first block mirrors the published cities on https://book.usesession.com/i/pN8nwzWsHa (Now Booking grid); the second block is the Opening Soon roadmap (single most-recent month only, weekend left blank). Sold-out math: 1-day cap=21, 2-day cap=42 (the 30/60 raw Session capacity includes 9/18 reserves we never expose). Status: now_open | sold_out (Use Session published) | opening_soon (date locked but not yet on sale; weekend blank so distant cities don't feel 'too far' and bounce, weekendStart kept internally so the Opens Soon pill highlights the soonest month). spotsLeft drives the urgency badge if < 10. The 'scheduling' further-out tier was retired 2026-05-28 — the widget now shows only Now Booking + Opening Soon. Last synced 2026-06-02 — Denver CO (May 30-31) and Norwalk CT (May 30-31) rolled off as past dates; Bellevue WA (Jun 6-7) is NEWLY SOLD OUT (was 3 spots left). Spots moved since prior sync: Santa Clara 7->1, Charlotte 11->8, Alexandria 19->16, West Palm Beach 9->7, Five Forks 18->15 left. Refreshed 1 stale thumbnail UUID (Five Forks SC, cover photo re-uploaded). 11 published cities in Now Booking (3 sold out: Bellevue/Alpharetta/Atlanta, 8 open); 12 Opening Soon cities in August. Summit NJ and Ridgewood NJ hidden per Jonathan (not on Use Session public index).",
+  "_comment": "Source of truth for /book/ widgets. The first block mirrors the published cities on https://book.usesession.com/i/pN8nwzWsHa (Now Booking grid); the second block is the Opening Soon roadmap (single most-recent month only, weekend left blank). Sold-out math: 1-day cap=21, 2-day cap=42 (the 30/60 raw Session capacity includes 9/18 reserves we never expose). Status: now_open | sold_out (Use Session published) | opening_soon (date locked but not yet on sale; weekend blank so distant cities don't feel 'too far' and bounce, weekendStart kept internally so the Opens Soon pill highlights the soonest month). spotsLeft drives the urgency badge if < 10. The 'scheduling' further-out tier was retired 2026-05-28 — the widget now shows only Now Booking + Opening Soon. Last synced 2026-06-02 (re-synced same day for live status) — Bellevue WA (Jun 6-7) reopened to 1 spot left (a booking freed up); Santa Clara CA (Jun 27-28) is now SOLD OUT (last spot filled). Denver CO and Norwalk CT (both May 30-31) rolled off as past dates earlier today. Refreshed 2 stale thumbnail UUIDs (Five Forks SC, Charlotte NC; cover photos re-uploaded). 11 published cities in Now Booking (3 sold out: Alpharetta/Atlanta/Santa Clara, 8 open); 12 Opening Soon cities in August. Summit NJ and Ridgewood NJ hidden per Jonathan (not on Use Session public index).",
   "updated": "2026-06-02",
   "scheduled": [
     {
@@ -9,9 +9,9 @@
       "weekend": "Jun 6-7",
       "weekendStart": "2026-06-06",
       "days": 2,
-      "booked": 42,
-      "spotsLeft": 0,
-      "status": "sold_out",
+      "booked": 41,
+      "spotsLeft": 1,
+      "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/TCW-FBgpw2",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/00db049e-c4ab-42da-b72c-8ae12ae026ee-sm.jpg"
     },
@@ -61,9 +61,9 @@
       "weekend": "Jun 27-28",
       "weekendStart": "2026-06-27",
       "days": 2,
-      "booked": 41,
-      "spotsLeft": 1,
-      "status": "now_open",
+      "booked": 42,
+      "spotsLeft": 0,
+      "status": "sold_out",
       "sessionUrl": "https://book.usesession.com/s/rSEDBXFAcG",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/195981f7-1ee9-426e-a7f3-bd2168f91826-sm.jpg"
     },
@@ -117,7 +117,7 @@
       "spotsLeft": 8,
       "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/kZO6K4SZSA",
-      "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/33a0999b-a113-4fbb-80d6-7142ef90a553-sm.jpg"
+      "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/d7aa2d67-48ed-4955-9aa7-062b11fb5f61-sm.jpg"
     },
     {
       "city": "Boca Raton, FL",
