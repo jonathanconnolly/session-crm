@@ -1,6 +1,6 @@
 {
-  "_comment": "Source of truth for /book/ widgets. The first block mirrors the published cities on https://book.usesession.com/i/pN8nwzWsHa (Now Booking grid); the remaining entries are the Opening Soon roadmap (a single most-recent month). Sold-out math: 1-day cap=21, 2-day cap=42 (the 30/60 raw Session capacity includes 9/18 reserves we never expose). Status: now_open | sold_out (Use Session published) | opening_soon (next month's pipeline, not yet on sale). spotsLeft drives the urgency badge if < 10. Opening Soon entries intentionally leave `weekend` blank — the widget no longer surfaces month/year to visitors so distant cities don't feel 'too far' and bounce; weekendStart is kept internally so the Opens Soon pill still highlights the soonest month. The `scheduling` further-out tier is RETIRED per Jonathan 2026-05-28 — the file now carries Now Booking + one Opening Soon month only. Last synced 2026-06-05 (prior 2026-06-04) — Bellevue WA sold out (was 1 spot left, a cancellation seat got taken back); seats filled across Miami FL (10->6), Five Forks SC (15->5), Overland Park KS (17->12), Charlotte NC (5->4), Dallas TX (29->27) and West Palm Beach FL (7->6); Alexandria, Dublin and Boca Raton held steady. No thumbnail UUIDs changed this run. Now Booking holds at 13 cities — now 4 sold out (Bellevue, Alpharetta, Atlanta, Santa Clara) and 9 open. Opening Soon unchanged: 12 Aug cities. Summit NJ and Ridgewood NJ hidden per Jonathan (not on Use Session public index).",
-  "updated": "2026-06-05",
+  "_comment": "Source of truth for /book/ widgets. The first block mirrors the published cities on https://book.usesession.com/i/pN8nwzWsHa (Now Booking grid); the remaining entries are the Opening Soon roadmap (a single most-recent month). Sold-out math: 1-day cap=21, 2-day cap=42 (the 30/60 raw Session capacity includes 9/18 reserves we never expose). Status: now_open | sold_out (Use Session published) | opening_soon (next month's pipeline, not yet on sale). spotsLeft drives the urgency badge if < 10. Opening Soon entries intentionally leave `weekend` blank — the widget no longer surfaces month/year to visitors so distant cities don't feel 'too far' and bounce; weekendStart is kept internally so the Opens Soon pill still highlights the soonest month. The `scheduling` further-out tier is RETIRED per Jonathan 2026-05-28 — the file now carries Now Booking + one Opening Soon month only. Last synced 2026-06-07 (prior 2026-06-05) — the Five Forks SC card was relabeled to Greenville, SC on Use Session (same session, slug RBHzhJHtFq, still 5 spots left); seats filled across Miami FL (6->3), West Palm Beach FL (6->1, now nearly sold out), Overland Park KS (12->10), Alexandria VA (16->14) and Dallas TX (27->24); Charlotte, Dublin and Boca Raton held steady. No thumbnail UUIDs changed this run. Now Booking holds at 13 cities — 4 sold out (Bellevue, Alpharetta, Atlanta, Santa Clara) and 9 open. Opening Soon unchanged: 12 Aug cities. Summit NJ and Ridgewood NJ hidden per Jonathan (not on Use Session public index).",
+  "updated": "2026-06-07",
   "scheduled": [
     {
       "city": "Bellevue, WA",
@@ -48,8 +48,8 @@
       "weekend": "Jun 27-28",
       "weekendStart": "2026-06-27",
       "days": 2,
-      "booked": 36,
-      "spotsLeft": 6,
+      "booked": 39,
+      "spotsLeft": 3,
       "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/8i6kiI-K7m",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/d5ac7138-48d4-41eb-ab1d-fdaa18b5dd53-sm.jpg"
@@ -68,7 +68,7 @@
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/195981f7-1ee9-426e-a7f3-bd2168f91826-sm.jpg"
     },
     {
-      "city": "Five Forks, SC",
+      "city": "Greenville, SC",
       "metro": "Greenville, SC",
       "metroTag": "city_greenville_sc",
       "weekend": "Jun 27",
@@ -87,8 +87,8 @@
       "weekend": "Jul 11-12",
       "weekendStart": "2026-07-11",
       "days": 2,
-      "booked": 30,
-      "spotsLeft": 12,
+      "booked": 32,
+      "spotsLeft": 10,
       "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/li5v87H-Zc",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/da9d1691-6ce5-411f-8290-85a8f72eea95-sm.jpg"
@@ -100,8 +100,8 @@
       "weekend": "Jul 11-12",
       "weekendStart": "2026-07-11",
       "days": 2,
-      "booked": 26,
-      "spotsLeft": 16,
+      "booked": 28,
+      "spotsLeft": 14,
       "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/sbATX5R4ZE",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/accb9220-3fbf-42b8-8f9b-b0ac6d437525-sm.jpg"
@@ -152,8 +152,8 @@
       "weekend": "Jul 18-19",
       "weekendStart": "2026-07-18",
       "days": 2,
-      "booked": 15,
-      "spotsLeft": 27,
+      "booked": 18,
+      "spotsLeft": 24,
       "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/NGPitAZo9i",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/d7c7b7e6-d432-4c2c-8f98-d5d9e222071e-sm.jpg"
@@ -165,8 +165,8 @@
       "weekend": "Jul 19",
       "weekendStart": "2026-07-19",
       "days": 1,
-      "booked": 15,
-      "spotsLeft": 6,
+      "booked": 20,
+      "spotsLeft": 1,
       "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/WqcySWP0Eo",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/228bc3ec-a1fb-4f71-9772-b8570745176b-sm.jpg"
