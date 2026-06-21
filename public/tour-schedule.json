@@ -1,6 +1,6 @@
 {
-  "_comment": "Source of truth for /book/ widgets. First block = Now Booking (mirrors the published cities on https://book.usesession.com/i/pN8nwzWsHa), second block = the Opening Soon roadmap (single most-recent month, weekend left blank so distant cities don't feel 'too far'). Sold-out math: 1-day cap=21, 2-day cap=42 (the raw Session 30/60 capacity includes 9/18 reserves we never expose). Status: now_open | sold_out (both published on Use Session, with sessionUrl + imageUrl) | opening_soon (weekendStart set, weekend/sessionUrl/imageUrl null). The 'scheduling' tier was retired 2026-05-28 and is never emitted. spotsLeft drives the urgency badge if < 10. Last synced 2026-06-16 — Atlanta, GA (Jun 14) dropped from Now Booking (event date passed). 10 Now Booking rows (4 sold out: Miami, Santa Clara, Dublin, West Palm Beach; 6 open). Spot moves vs prior (2026-06-15): Overland Park KS 2→3 and Charlotte NC 1→2 (reopened spots), Alexandria VA 4→3 (one booked). No thumbnail UUID changes this run — all live card cover photos match the prior file. Opening Soon = 13 August cities (Henderson NV, Summerlin NV, Ann Arbor MI, Birmingham MI, Sacramento CA, Sausalito CA, Manhattan NY, Windham NH, East Providence RI, Denver CO, Greenville SC, Philadelphia PA, Orlando FL), unchanged from prior. Summit NJ and Ridgewood NJ hidden per Jonathan.",
-  "updated": "2026-06-16",
+  "_comment": "Source of truth for /book/ widgets. First block mirrors the published cities on https://book.usesession.com/i/pN8nwzWsHa (Now Booking grid); the second block is the Opening Soon roadmap (single most-recent month only). Sold-out math: 1-day cap=21, 2-day cap=42 (the 30/60 raw Session capacity includes 9/18 reserves we never expose). Status: now_open | sold_out | opening_soon. The 'scheduling' tier is RETIRED — the widget shows only Now Booking + Opening Soon. Opening Soon entries leave weekend blank (weekendStart kept internally for the Opens-Soon pill). Last synced 2026-06-21 — 10 published Now Booking cities (8 sold out, 2 open: Greenville SC 2 left, Dallas TX 6 left). Since the prior 2026-05-28 sync: May/early-June weekends rolled off (Denver, Norwalk CT, Bellevue, Alpharetta GA, Atlanta GA); Dublin OH (Jul 18-19) and Dallas TX (Jul 18-19) are newly live; Miami, Santa Clara, Overland Park, Alexandria, Charlotte, Boca Raton, West Palm Beach all sold out since last sync; Five Forks now shows as 'Greenville, SC' (2 spots left). Refreshed thumbnail UUIDs: Greenville, Overland Park, Charlotte. Opening Soon = August (12 cities). Inferred child->parent maps this run: Lake Forest IL->Chicago, Windham NH->Boston, East Providence->Providence, Winter Garden->Orlando, Sausalito->San Francisco, Birmingham MI->Detroit (confirm Lake Forest with Jonathan). Summit NJ and Ridgewood NJ hidden per Jonathan.",
+  "updated": "2026-06-21",
   "scheduled": [
     {
       "city": "Miami, FL",
@@ -35,8 +35,8 @@
       "weekend": "Jun 27",
       "weekendStart": "2026-06-27",
       "days": 1,
-      "booked": 17,
-      "spotsLeft": 4,
+      "booked": 19,
+      "spotsLeft": 2,
       "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/RBHzhJHtFq",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/ab63403c-311f-4563-97af-044b81475da0-sm.jpg"
@@ -48,9 +48,9 @@
       "weekend": "Jul 11-12",
       "weekendStart": "2026-07-11",
       "days": 2,
-      "booked": 39,
-      "spotsLeft": 3,
-      "status": "now_open",
+      "booked": 42,
+      "spotsLeft": 0,
+      "status": "sold_out",
       "sessionUrl": "https://book.usesession.com/s/li5v87H-Zc",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/da9d1691-6ce5-411f-8290-85a8f72eea95-sm.jpg"
     },
@@ -61,9 +61,9 @@
       "weekend": "Jul 11-12",
       "weekendStart": "2026-07-11",
       "days": 2,
-      "booked": 39,
-      "spotsLeft": 3,
-      "status": "now_open",
+      "booked": 42,
+      "spotsLeft": 0,
+      "status": "sold_out",
       "sessionUrl": "https://book.usesession.com/s/sbATX5R4ZE",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/accb9220-3fbf-42b8-8f9b-b0ac6d437525-sm.jpg"
     },
@@ -74,9 +74,9 @@
       "weekend": "Jul 11",
       "weekendStart": "2026-07-11",
       "days": 1,
-      "booked": 19,
-      "spotsLeft": 2,
-      "status": "now_open",
+      "booked": 21,
+      "spotsLeft": 0,
+      "status": "sold_out",
       "sessionUrl": "https://book.usesession.com/s/kZO6K4SZSA",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/d7aa2d67-48ed-4955-9aa7-062b11fb5f61-sm.jpg"
     },
@@ -100,9 +100,9 @@
       "weekend": "Jul 18",
       "weekendStart": "2026-07-18",
       "days": 1,
-      "booked": 16,
-      "spotsLeft": 5,
-      "status": "now_open",
+      "booked": 21,
+      "spotsLeft": 0,
+      "status": "sold_out",
       "sessionUrl": "https://book.usesession.com/s/M0wdFfJg0X",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/e919aa4d-8630-49d6-be53-c7f48232754a-sm.jpg"
     },
@@ -113,8 +113,8 @@
       "weekend": "Jul 18-19",
       "weekendStart": "2026-07-18",
       "days": 2,
-      "booked": 25,
-      "spotsLeft": 17,
+      "booked": 36,
+      "spotsLeft": 6,
       "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/NGPitAZo9i",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/d7c7b7e6-d432-4c2c-8f98-d5d9e222071e-sm.jpg"
@@ -134,53 +134,20 @@
     },
 
     {
-      "city": "Henderson, NV",
-      "metro": "Las Vegas, NV",
-      "metroTag": "city_las_vegas_nv",
-      "weekend": "",
-      "weekendStart": "2026-08-01",
-      "days": 2,
-      "status": "opening_soon",
-      "sessionUrl": null,
-      "imageUrl": null
-    },
-    {
-      "city": "Summerlin, NV",
-      "metro": "Las Vegas, NV",
-      "metroTag": "city_las_vegas_nv",
-      "weekend": "",
-      "weekendStart": "2026-08-01",
-      "days": 2,
-      "status": "opening_soon",
-      "sessionUrl": null,
-      "imageUrl": null
-    },
-    {
-      "city": "Ann Arbor, MI",
-      "metro": "Ann Arbor, MI",
-      "metroTag": "city_ann_arbor_mi",
-      "weekend": "",
-      "weekendStart": "2026-08-01",
-      "days": 2,
-      "status": "opening_soon",
-      "sessionUrl": null,
-      "imageUrl": null
-    },
-    {
-      "city": "Birmingham, MI",
-      "metro": "Detroit, MI",
-      "metroTag": "city_detroit_mi",
-      "weekend": "",
-      "weekendStart": "2026-08-01",
-      "days": 2,
-      "status": "opening_soon",
-      "sessionUrl": null,
-      "imageUrl": null
-    },
-    {
       "city": "Sacramento, CA",
       "metro": "Sacramento, CA",
       "metroTag": "city_sacramento_ca",
+      "weekend": "",
+      "weekendStart": "2026-08-01",
+      "days": 2,
+      "status": "opening_soon",
+      "sessionUrl": null,
+      "imageUrl": null
+    },
+    {
+      "city": "Chicago, IL",
+      "metro": "Chicago, IL",
+      "metroTag": "city_chicago_il",
       "weekend": "",
       "weekendStart": "2026-08-01",
       "days": 2,
@@ -211,7 +178,7 @@
       "imageUrl": null
     },
     {
-      "city": "Windham, NH",
+      "city": "Boston, MA",
       "metro": "Boston, MA",
       "metroTag": "city_boston_ma",
       "weekend": "",
@@ -222,9 +189,31 @@
       "imageUrl": null
     },
     {
-      "city": "East Providence, RI",
+      "city": "Birmingham, MI",
+      "metro": "Detroit, MI",
+      "metroTag": "city_detroit_mi",
+      "weekend": "",
+      "weekendStart": "2026-08-01",
+      "days": 2,
+      "status": "opening_soon",
+      "sessionUrl": null,
+      "imageUrl": null
+    },
+    {
+      "city": "Providence, RI",
       "metro": "Providence, RI",
       "metroTag": "city_providence_ri",
+      "weekend": "",
+      "weekendStart": "2026-08-01",
+      "days": 2,
+      "status": "opening_soon",
+      "sessionUrl": null,
+      "imageUrl": null
+    },
+    {
+      "city": "Ann Arbor, MI",
+      "metro": "Ann Arbor, MI",
+      "metroTag": "city_ann_arbor_mi",
       "weekend": "",
       "weekendStart": "2026-08-01",
       "days": 2,
@@ -236,6 +225,17 @@
       "city": "Denver, CO",
       "metro": "Denver, CO",
       "metroTag": "city_denver_co",
+      "weekend": "",
+      "weekendStart": "2026-08-01",
+      "days": 2,
+      "status": "opening_soon",
+      "sessionUrl": null,
+      "imageUrl": null
+    },
+    {
+      "city": "Orlando, FL",
+      "metro": "Orlando, FL",
+      "metroTag": "city_orlando_fl",
       "weekend": "",
       "weekendStart": "2026-08-01",
       "days": 2,
@@ -258,17 +258,6 @@
       "city": "Philadelphia, PA",
       "metro": "Philadelphia, PA",
       "metroTag": "city_philadelphia_pa",
-      "weekend": "",
-      "weekendStart": "2026-08-01",
-      "days": 2,
-      "status": "opening_soon",
-      "sessionUrl": null,
-      "imageUrl": null
-    },
-    {
-      "city": "Orlando, FL",
-      "metro": "Orlando, FL",
-      "metroTag": "city_orlando_fl",
       "weekend": "",
       "weekendStart": "2026-08-01",
       "days": 2,
