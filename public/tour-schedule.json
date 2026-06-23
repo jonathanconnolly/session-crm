@@ -1,6 +1,6 @@
 {
-  "_comment": "Source of truth for /book/ widgets. First block mirrors the published cities on https://book.usesession.com/i/pN8nwzWsHa (Now Booking grid); the second block is the Opening Soon roadmap (single most-recent month only). Sold-out math: 1-day cap=21, 2-day cap=42 (the 30/60 raw Session capacity includes 9/18 reserves we never expose). Status: now_open | sold_out | opening_soon. The 'scheduling' tier is RETIRED — the widget shows only Now Booking + Opening Soon. Opening Soon entries leave weekend blank (weekendStart kept internally for the Opens-Soon pill). Last synced 2026-06-22 — 10 published Now Booking cities (7 sold out, 3 open: Miami FL 3 left, Greenville SC 2 left, Dallas TX 6 left). Since the prior 2026-06-21 sync: Miami FL (Jun 27-28) reopened from sold_out to 3 spots left (likely a cancellation freed seats); no other Now Booking status changes and no thumbnail UUID changes this run. Opening Soon = August (12 cities), unchanged from prior. Inferred child->parent maps: Dublin OH->Columbus, Lake Forest IL->Chicago, Windham NH->Boston, East Providence->Providence, Winter Garden->Orlando, Sausalito->San Francisco, Birmingham MI->Detroit (confirm Lake Forest with Jonathan). Summit NJ and Ridgewood NJ hidden per Jonathan.",
-  "updated": "2026-06-22",
+  "_comment": "Source of truth for /book/ widgets. First block mirrors the published cities on https://book.usesession.com/i/pN8nwzWsHa (Now Booking grid); the second block is the Opening Soon roadmap (single most-recent month only). Sold-out math: 1-day cap=21, 2-day cap=42 (the 30/60 raw Session capacity includes 9/18 reserves we never expose). Status: now_open | sold_out | opening_soon. The 'scheduling' tier is RETIRED — the widget shows only Now Booking + Opening Soon. Opening Soon entries leave weekend blank (weekendStart kept internally for the Opens-Soon pill). Last synced 2026-06-23 — 10 published Now Booking cities (7 sold out, 3 open: Miami FL 3 left, Greenville SC 2 left, Dallas TX 5 left). Since the prior 2026-06-22 sync: Dallas TX (Jul 18-19) ticked from 6 to 5 spots left (one new booking); no status changes, and no thumbnail UUID changes this run. Opening Soon = August (12 cities), unchanged from prior. Inferred child->parent maps: Dublin OH->Columbus, Lake Forest IL->Chicago, Windham NH->Boston, East Providence->Providence, Winter Garden->Orlando, Sausalito->San Francisco, Birmingham MI->Detroit (confirm Lake Forest with Jonathan). Summit NJ and Ridgewood NJ hidden per Jonathan.",
+  "updated": "2026-06-23",
   "scheduled": [
     {
       "city": "Miami, FL",
@@ -113,8 +113,8 @@
       "weekend": "Jul 18-19",
       "weekendStart": "2026-07-18",
       "days": 2,
-      "booked": 36,
-      "spotsLeft": 6,
+      "booked": 37,
+      "spotsLeft": 5,
       "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/NGPitAZo9i",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/d7c7b7e6-d432-4c2c-8f98-d5d9e222071e-sm.jpg"
