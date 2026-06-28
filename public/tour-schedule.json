@@ -1,5 +1,5 @@
 {
-  "_comment": "Source of truth for /book/ widgets. The first block mirrors the published cities on https://book.usesession.com/i/pN8nwzWsHa (Now Booking grid); the remaining entries are the Opening Soon roadmap (single month, soonest-first). Sold-out math: 1-day cap=21, 2-day cap=42 (the 30/60 raw Session capacity includes 9/18 reserves we never expose). Status: now_open | sold_out (Use Session published) | opening_soon (date locked or near-term, not yet on sale). Opening Soon entries leave `weekend` blank so distant cities don't feel 'too far'; weekendStart is kept internally so the Opens Soon pill still highlights the soonest month. Last synced 2026-06-28 — Jonathan published the full August slate on Use Session, so 12 cities graduated from Opening Soon to Now Booking: Dublin OH + Dallas TX (Jul) plus the August set (Sacramento, Sausalito, Manhattan, Windham NH, Birmingham MI, Ann Arbor, East Providence RI, Philadelphia, Denver, Winter Garden FL). Now Booking is now 20 cities (8 sold out, 12 open). Newly SOLD OUT since the 05-28 sync: Santa Clara, Overland Park, Alexandria, Charlotte, Boca Raton, West Palm Beach. Dropped off the live index (past events, unpublished by Session): Denver May 30, Norwalk CT May 30, Bellevue WA Jun 6, Alpharetta GA Jun 13, Atlanta GA Jun 14 (Denver returns as a new Aug 29-30 session). Refreshed thumbnail UUIDs vs prior file: Greenville, Overland Park, Charlotte. Opening Soon now exposes 12 September cities (Ridgewood NJ hidden per Jonathan). The `scheduling` tier is retired — no entries carry it.",
+  "_comment": "Source of truth for /book/ widgets. The first block mirrors the published cities on https://book.usesession.com/i/pN8nwzWsHa (Now Booking grid); the remaining entries are the Opening Soon roadmap (single month, soonest-first). Sold-out math: 1-day cap=21, 2-day cap=42 (the 30/60 raw Session capacity includes 9/18 reserves we never expose). Status: now_open | sold_out (Use Session published) | opening_soon (date locked or near-term, not yet on sale). Opening Soon entries leave `weekend` blank so distant cities don't feel 'too far'; weekendStart is kept internally so the Opens Soon pill still highlights the soonest month. Last synced 2026-06-28 — Jonathan published the full August slate on Use Session, so 12 cities graduated from Opening Soon to Now Booking: Dublin OH + Dallas TX (Jul) plus the August set (Sacramento, Sausalito, Manhattan, Windham NH, Birmingham MI, Ann Arbor, East Providence RI, Philadelphia, Denver, Winter Garden FL). Now Booking is now 20 cities (8 sold out, 12 open). Newly SOLD OUT since the 05-28 sync: Santa Clara, Overland Park, Alexandria, Charlotte, Boca Raton, West Palm Beach. Dropped off the live index (past events, unpublished by Session): Denver May 30, Norwalk CT May 30, Bellevue WA Jun 6, Alpharetta GA Jun 13, Atlanta GA Jun 14 (Denver returns as a new Aug 29-30 session). Refreshed thumbnail UUIDs vs prior file: Greenville, Overland Park, Charlotte. Opening Soon now exposes 12 September cities (Ridgewood NJ hidden per Jonathan). The `scheduling` tier is retired — no entries carry it. 2026-06-28 thumbnail re-sync: refreshed Sacramento, East Providence, Winter Garden UUIDs after Jonathan updated their Session cover photos; all other cards unchanged.",
   "updated": "2026-06-28",
   "scheduled": [
     {
@@ -143,7 +143,7 @@
       "spotsLeft": 29,
       "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/uZWXnEuZwp",
-      "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/7d5dd7c0-0104-4ae1-a67e-37d2522e9217-sm.jpg"
+      "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/a3299c6b-3d28-47ad-a0fe-67776ebd5131-sm.jpg"
     },
     {
       "city": "Sausalito, CA",
@@ -221,7 +221,7 @@
       "spotsLeft": 15,
       "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/5f5X27zaow",
-      "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/543601cb-3066-44b3-ae05-e5bcf2e66655-sm.jpg"
+      "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/cc4fcc87-931a-44e8-b328-d68d7df277d3-sm.jpg"
     },
     {
       "city": "Philadelphia, PA",
@@ -260,7 +260,7 @@
       "spotsLeft": 24,
       "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/5XDoFfxFRI",
-      "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/8c066c8d-f82f-4bbb-9eed-f424f57c1c16-sm.jpg"
+      "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/d043b6fc-21dc-4d88-a548-a9058bd89ee0-sm.jpg"
     },
 
     {
