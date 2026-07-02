@@ -1,6 +1,6 @@
 {
-  "_comment": "Source of truth for /book/ widgets. First block mirrors the published cities on https://book.usesession.com/i/pN8nwzWsHa (Now Booking grid); the rest is the Opening Soon roadmap (single month). Sold-out math: 1-day cap=21, 2-day cap=42 (raw 30/60 Session capacity includes 9/18 reserves we never expose). Status: now_open | sold_out (Use Session published) | opening_soon (next month, not yet on sale). 2-month window only -- scheduling tier retired. Synced 2026-07-01: 17 Now Booking rows (8 sold out, 9 open) + 12 Opening Soon (September). Changes vs the 2026-06-29 sync: Miami FL and Santa Clara CA rolled off the live index (Jun 27-28 dates passed) so Now Booking went 19 -> 17 rows; Birmingham MI sold out (was 1 spot left). Spot moves on open cities: Sacramento 24 -> 22, Sausalito 18 -> 16, Manhattan 18 -> 17, Ann Arbor 6 -> 2 spots left. No thumbnail UUID changes vs prior. Sacramento + East Providence cards remain PNG (-sm.png), all others -sm.jpg. Opening Soon = September (12 cities), unchanged. Summit NJ + Ridgewood NJ hidden per Jonathan.",
-  "updated": "2026-07-01",
+  "_comment": "Source of truth for /book/ widgets. First block mirrors the published cities on https://book.usesession.com/i/pN8nwzWsHa (Now Booking grid); the rest is the Opening Soon roadmap (single month). Sold-out math: 1-day cap=21, 2-day cap=42 (raw 30/60 Session capacity includes 9/18 reserves we never expose). Status: now_open | sold_out (Use Session published) | opening_soon (next month, not yet on sale). 2-month window only -- scheduling tier retired. Synced 2026-07-02: 17 Now Booking rows (9 sold out, 8 open) + 12 Opening Soon (September). Changes vs the 2026-07-01 sync: Ann Arbor MI sold out (was 2 spots left). Spot moves on open cities: Sausalito 16 -> 13, Manhattan 17 -> 15, Philadelphia 6 -> 4, Denver 26 -> 23, Winter Garden 23 -> 19 spots left. Philadelphia (4 left) now under the urgency threshold. No thumbnail UUID changes vs prior. Sacramento + East Providence cards remain PNG (-sm.png), all others -sm.jpg. Opening Soon = September (12 cities), unchanged. Summit NJ + Ridgewood NJ hidden per Jonathan.",
+  "updated": "2026-07-02",
   "scheduled": [
     {
       "city": "Overland Park, KS",
@@ -113,8 +113,8 @@
       "weekend": "Aug 8-9",
       "weekendStart": "2026-08-08",
       "days": 2,
-      "booked": 26,
-      "spotsLeft": 16,
+      "booked": 29,
+      "spotsLeft": 13,
       "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/ImgxA6TKfU",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/5015c9fe-c3fb-4023-9d62-c427d2e2db05-sm.jpg"
@@ -126,8 +126,8 @@
       "weekend": "Aug 15-16",
       "weekendStart": "2026-08-15",
       "days": 2,
-      "booked": 25,
-      "spotsLeft": 17,
+      "booked": 27,
+      "spotsLeft": 15,
       "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/S_XJj81WrL",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/074005ab-718e-404b-b46e-1ae5ab020682-sm.jpg"
@@ -165,9 +165,9 @@
       "weekend": "Aug 23",
       "weekendStart": "2026-08-23",
       "days": 1,
-      "booked": 19,
-      "spotsLeft": 2,
-      "status": "now_open",
+      "booked": 21,
+      "spotsLeft": 0,
+      "status": "sold_out",
       "sessionUrl": "https://book.usesession.com/s/aTs1vPRh6X",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/35d5467e-5c12-4b9f-af08-487e16f9763c-sm.jpg"
     },
@@ -191,8 +191,8 @@
       "weekend": "Aug 29",
       "weekendStart": "2026-08-29",
       "days": 1,
-      "booked": 15,
-      "spotsLeft": 6,
+      "booked": 17,
+      "spotsLeft": 4,
       "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/ZF3IrAcjgG",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/88f21e5f-feab-4091-a9e1-595968154077-sm.jpg"
@@ -204,8 +204,8 @@
       "weekend": "Aug 29-30",
       "weekendStart": "2026-08-29",
       "days": 2,
-      "booked": 16,
-      "spotsLeft": 26,
+      "booked": 19,
+      "spotsLeft": 23,
       "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/SWqqWPytgc",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/42ecfcd5-910e-4915-9518-6b3a75784e88-sm.jpg"
@@ -217,8 +217,8 @@
       "weekend": "Aug 29-30",
       "weekendStart": "2026-08-29",
       "days": 2,
-      "booked": 19,
-      "spotsLeft": 23,
+      "booked": 23,
+      "spotsLeft": 19,
       "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/5XDoFfxFRI",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/bf4c1308-3229-49fa-946d-1a0b9ac48eaf-sm.jpg"
