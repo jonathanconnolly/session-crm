@@ -1,6 +1,6 @@
 {
-  "_comment": "Source of truth for /book/ widgets. First block mirrors the published cities on https://book.usesession.com/i/pN8nwzWsHa (Now Booking grid); the rest is the Opening Soon roadmap (single month). Sold-out math: 1-day cap=21, 2-day cap=42 (raw 30/60 Session capacity includes 9/18 reserves we never expose). Status: now_open | sold_out (Use Session published) | opening_soon (next month, not yet on sale). 2-month window only -- scheduling tier retired. Synced 2026-07-02: 17 Now Booking rows (9 sold out, 8 open) + 12 Opening Soon (September). Changes vs the 2026-07-01 sync: Ann Arbor MI sold out (was 2 spots left). Spot moves on open cities: Sausalito 16 -> 13, Manhattan 17 -> 15, Philadelphia 6 -> 4, Denver 26 -> 23, Winter Garden 23 -> 19 spots left. Philadelphia (4 left) now under the urgency threshold. No thumbnail UUID changes vs prior. Sacramento + East Providence cards remain PNG (-sm.png), all others -sm.jpg. Opening Soon = September (12 cities), unchanged. Summit NJ + Ridgewood NJ hidden per Jonathan.",
-  "updated": "2026-07-02",
+  "_comment": "Source of truth for /book/ widgets. First block mirrors the published cities on https://book.usesession.com/i/pN8nwzWsHa (Now Booking grid); the rest is the Opening Soon roadmap (single month). Sold-out math: 1-day cap=21, 2-day cap=42 (raw 30/60 Session capacity includes 9/18 reserves we never expose). Status: now_open | sold_out (Use Session published) | opening_soon (next month, not yet on sale). 2-month window only -- scheduling tier retired. Synced 2026-07-03: 17 Now Booking rows (9 sold out, 8 open) + 12 Opening Soon (September). Changes vs the 2026-07-02 sync: spot moves only -- Sausalito 13 -> 12, Manhattan 15 -> 14, Windham 13 -> 12, Philadelphia 4 -> 3 spots left. No status changes, no new/removed cities, no thumbnail UUID changes. Sacramento + East Providence cards remain PNG (-sm.png), all others -sm.jpg. Opening Soon = September (12 cities), unchanged. Summit NJ + Ridgewood NJ hidden per Jonathan.",
+  "updated": "2026-07-03",
   "scheduled": [
     {
       "city": "Overland Park, KS",
@@ -113,8 +113,8 @@
       "weekend": "Aug 8-9",
       "weekendStart": "2026-08-08",
       "days": 2,
-      "booked": 29,
-      "spotsLeft": 13,
+      "booked": 30,
+      "spotsLeft": 12,
       "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/ImgxA6TKfU",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/5015c9fe-c3fb-4023-9d62-c427d2e2db05-sm.jpg"
@@ -126,8 +126,8 @@
       "weekend": "Aug 15-16",
       "weekendStart": "2026-08-15",
       "days": 2,
-      "booked": 27,
-      "spotsLeft": 15,
+      "booked": 28,
+      "spotsLeft": 14,
       "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/S_XJj81WrL",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/074005ab-718e-404b-b46e-1ae5ab020682-sm.jpg"
@@ -139,8 +139,8 @@
       "weekend": "Aug 22",
       "weekendStart": "2026-08-22",
       "days": 1,
-      "booked": 8,
-      "spotsLeft": 13,
+      "booked": 9,
+      "spotsLeft": 12,
       "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/x4806-bLSx",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/098f024b-57a7-4819-8e28-a8fd2d0f5809-sm.jpg"
@@ -191,8 +191,8 @@
       "weekend": "Aug 29",
       "weekendStart": "2026-08-29",
       "days": 1,
-      "booked": 17,
-      "spotsLeft": 4,
+      "booked": 18,
+      "spotsLeft": 3,
       "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/ZF3IrAcjgG",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/88f21e5f-feab-4091-a9e1-595968154077-sm.jpg"
