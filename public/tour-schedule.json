@@ -1,6 +1,6 @@
 {
-  "_comment": "Source of truth for /book/ widgets. First block mirrors the published cities on https://book.usesession.com/i/pN8nwzWsHa (Now Booking grid); the rest is the Opening Soon roadmap (single month). Sold-out math: 1-day cap=21, 2-day cap=42 (raw 30/60 Session capacity includes 9/18 reserves we never expose). Status: now_open | sold_out (Use Session published) | opening_soon (next month, not yet on sale). 2-month window only -- scheduling tier retired. Synced 2026-07-11: 17 Now Booking rows (9 sold out, 8 open) + 12 Opening Soon (September). Changes vs the 2026-07-10 sync: Charlotte NC + East Providence RI REOPENED (both 1 spot left, were sold out). Spot moves: Sacramento 9 -> 8, Denver 9 -> 6, Winter Garden 6 -> 2 spots left. Overland Park holds at 1, Manhattan 8, Windham 7. No new/removed cities, no thumbnail UUID changes. Sacramento + East Providence cards remain PNG (-sm.png), all others -sm.jpg. Opening Soon = September (12 cities), unchanged. Summit NJ + Ridgewood NJ hidden per Jonathan.",
-  "updated": "2026-07-11",
+  "_comment": "Source of truth for /book/ widgets. First block mirrors the published cities on https://book.usesession.com/i/pN8nwzWsHa (Now Booking grid); the rest is the Opening Soon roadmap (single month). Sold-out math: 1-day cap=21, 2-day cap=42 (raw 30/60 Session capacity includes 9/18 reserves we never expose). Status: now_open | sold_out (Use Session published) | opening_soon (next month, not yet on sale). 2-month window only -- scheduling tier retired. Synced 2026-07-12: 17 Now Booking rows (9 sold out, 8 open) + 12 Opening Soon (September). Changes vs the 2026-07-11 sync: Alexandria VA REOPENED (1 spot left, was sold out); Charlotte NC sold out again (was 1 spot left). All other spot counts hold (Overland Park 1, Sacramento 8, Manhattan 8, Windham 7, East Providence 1, Denver 6, Winter Garden 2). No new/removed cities, no thumbnail UUID changes. Sacramento + East Providence cards remain PNG (-sm.png), all others -sm.jpg. Opening Soon = September (12 cities), unchanged. Summit NJ + Ridgewood NJ hidden per Jonathan.",
+  "updated": "2026-07-12",
   "scheduled": [
     {
       "city": "Overland Park, KS",
@@ -22,9 +22,9 @@
       "weekend": "Jul 11-12",
       "weekendStart": "2026-07-11",
       "days": 2,
-      "booked": 42,
-      "spotsLeft": 0,
-      "status": "sold_out",
+      "booked": 41,
+      "spotsLeft": 1,
+      "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/sbATX5R4ZE",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/accb9220-3fbf-42b8-8f9b-b0ac6d437525-sm.jpg"
     },
@@ -35,9 +35,9 @@
       "weekend": "Jul 11",
       "weekendStart": "2026-07-11",
       "days": 1,
-      "booked": 20,
-      "spotsLeft": 1,
-      "status": "now_open",
+      "booked": 21,
+      "spotsLeft": 0,
+      "status": "sold_out",
       "sessionUrl": "https://book.usesession.com/s/kZO6K4SZSA",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/d7aa2d67-48ed-4955-9aa7-062b11fb5f61-sm.jpg"
     },
