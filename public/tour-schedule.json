@@ -1,6 +1,6 @@
 {
-  "_comment": "Source of truth for /book/ widgets. First block mirrors the published cities on https://book.usesession.com/i/pN8nwzWsHa (Now Booking grid); the rest is the Opening Soon roadmap (single month). Sold-out math: 1-day cap=21, 2-day cap=42 (raw 30/60 Session capacity includes 9/18 reserves we never expose). Status: now_open | sold_out (Use Session published) | opening_soon (next month, not yet on sale). 2-month window only -- scheduling tier retired. Synced 2026-07-14: 14 Now Booking rows (9 sold out, 5 open) + 11 Opening Soon (September). Changes vs the 2026-07-13 sync: Overland Park KS + Alexandria VA dropped off the index (Jul 11-12 weekend passed); Dublin OH REOPENED with 2 spots left (was sold out); West Palm Beach FL REOPENED with 1 spot left (was sold out); Manhattan NY SOLD OUT (was 5 left); Denver 6->5 spots left. Sacramento (7) and Windham (7) hold. No new cities, no thumbnail UUID changes. Sacramento + East Providence cards remain PNG (-sm.png), all others -sm.jpg. Opening Soon = September, now 11 cities: Savannah GA dropped (Schedule tab moved it to an Aug 1 mini pop-up, no longer a September row). Summit NJ + Ridgewood NJ hidden per Jonathan.",
-  "updated": "2026-07-14",
+  "_comment": "Source of truth for /book/ widgets. First block mirrors the published cities on https://book.usesession.com/i/pN8nwzWsHa (Now Booking grid); the rest is the Opening Soon roadmap (single month). Sold-out math: 1-day cap=21, 2-day cap=42 (raw 30/60 Session capacity includes 9/18 reserves we never expose). Status: now_open | sold_out (Use Session published) | opening_soon (next month, not yet on sale). 2-month window only -- scheduling tier retired. Synced 2026-07-15: 14 Now Booking rows (10 sold out, 4 open) + 11 Opening Soon (September). Changes vs the 2026-07-14 sync: West Palm Beach FL SOLD OUT again (was 1 left after yesterday's reopen); Dublin OH 2->1 spot left; Denver 5->3 spots left. Same 14 cities, no thumbnail UUID changes (Sacramento + East Providence cards remain PNG -sm.png, all others -sm.jpg). Opening Soon = September, same 11 cities. Summit NJ + Ridgewood NJ hidden per Jonathan.",
+  "updated": "2026-07-15",
   "scheduled": [
     {
       "city": "Dublin, OH",
@@ -9,8 +9,8 @@
       "weekend": "Jul 18-19",
       "weekendStart": "2026-07-18",
       "days": 2,
-      "booked": 40,
-      "spotsLeft": 2,
+      "booked": 41,
+      "spotsLeft": 1,
       "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/okT5MGR0b9",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/86cb511b-705c-4e65-88d0-8cafbaaf19c8-sm.jpg"
@@ -48,9 +48,9 @@
       "weekend": "Jul 19",
       "weekendStart": "2026-07-19",
       "days": 1,
-      "booked": 20,
-      "spotsLeft": 1,
-      "status": "now_open",
+      "booked": 21,
+      "spotsLeft": 0,
+      "status": "sold_out",
       "sessionUrl": "https://book.usesession.com/s/WqcySWP0Eo",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/228bc3ec-a1fb-4f71-9772-b8570745176b-sm.jpg"
     },
@@ -165,8 +165,8 @@
       "weekend": "Aug 29-30",
       "weekendStart": "2026-08-29",
       "days": 2,
-      "booked": 37,
-      "spotsLeft": 5,
+      "booked": 39,
+      "spotsLeft": 3,
       "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/SWqqWPytgc",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/42ecfcd5-910e-4915-9518-6b3a75784e88-sm.jpg"
