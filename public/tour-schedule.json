@@ -1,6 +1,6 @@
 {
-  "_comment": "Source of truth for /book/ widgets. First block mirrors the published cities on https://book.usesession.com/i/pN8nwzWsHa (Now Booking grid); the rest is the Opening Soon roadmap (single month). Sold-out math: 1-day cap=21, 2-day cap=42 (raw 30/60 Session capacity includes 9/18 reserves we never expose). Status: now_open | sold_out (Use Session published) | opening_soon (next month, not yet on sale). 2-month window only -- scheduling tier retired. Synced 2026-07-19: 14 Now Booking rows (10 sold out, 4 open) + 11 Opening Soon (September). Changes vs the 2026-07-15 sync: Dublin OH SOLD OUT (was 1 left); Boca Raton FL REOPENED with 1 spot left (was sold out); Sacramento 7->5, Windham NH 7->6, Denver 3->1 spots left. Same 14 cities, no thumbnail UUID changes (Sacramento + East Providence cards remain PNG -sm.png, all others -sm.jpg). Opening Soon = September, same 11 cities. Summit NJ + Ridgewood NJ hidden per Jonathan.",
-  "updated": "2026-07-19",
+  "_comment": "Source of truth for /book/ widgets. First block mirrors the published cities on https://book.usesession.com/i/pN8nwzWsHa (Now Booking grid); the rest is the Opening Soon roadmap (single month). Sold-out math: 1-day cap=21, 2-day cap=42 (raw 30/60 Session capacity includes 9/18 reserves we never expose). Status: now_open | sold_out (Use Session published) | opening_soon (next month, not yet on sale). 2-month window only -- scheduling tier retired. Synced 2026-07-20: 13 Now Booking rows (10 sold out, 3 open) + 11 Opening Soon (September). Changes vs the 2026-07-19 sync: Boca Raton FL REMOVED (Jul 18 weekend passed, card dropped off the Use Session index); Sacramento 5->3 spots left. No other spot moves; no thumbnail UUID changes (Sacramento + East Providence cards remain -sm.png, all others -sm.jpg). Opening Soon = September, same 11 cities; Schedule tab renamed the Minnetonka row to Greater Minneapolis, so the tile now reads Minneapolis, MN. Summit NJ + Ridgewood NJ hidden per Jonathan.",
+  "updated": "2026-07-20",
   "scheduled": [
     {
       "city": "Dublin, OH",
@@ -14,19 +14,6 @@
       "status": "sold_out",
       "sessionUrl": "https://book.usesession.com/s/okT5MGR0b9",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/86cb511b-705c-4e65-88d0-8cafbaaf19c8-sm.jpg"
-    },
-    {
-      "city": "Boca Raton, FL",
-      "metro": "Fort Lauderdale, FL",
-      "metroTag": "city_fort_lauderdale_fl",
-      "weekend": "Jul 18",
-      "weekendStart": "2026-07-18",
-      "days": 1,
-      "booked": 20,
-      "spotsLeft": 1,
-      "status": "now_open",
-      "sessionUrl": "https://book.usesession.com/s/M0wdFfJg0X",
-      "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/e919aa4d-8630-49d6-be53-c7f48232754a-sm.jpg"
     },
     {
       "city": "Dallas, TX",
@@ -61,8 +48,8 @@
       "weekend": "Aug 1-2",
       "weekendStart": "2026-08-01",
       "days": 2,
-      "booked": 37,
-      "spotsLeft": 5,
+      "booked": 39,
+      "spotsLeft": 3,
       "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/uZWXnEuZwp",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/a3299c6b-3d28-47ad-a0fe-67776ebd5131-sm.png"
@@ -274,7 +261,7 @@
       "imageUrl": null
     },
     {
-      "city": "Minnetonka, MN",
+      "city": "Minneapolis, MN",
       "metro": "Minneapolis, MN",
       "metroTag": "city_minneapolis_mn",
       "weekend": "",
