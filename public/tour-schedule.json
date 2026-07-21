@@ -1,46 +1,7 @@
 {
-  "_comment": "Source of truth for /book/ widgets. First block mirrors the published cities on https://book.usesession.com/i/pN8nwzWsHa (Now Booking grid); the rest is the Opening Soon roadmap (single month). Sold-out math: 1-day cap=21, 2-day cap=42 (raw 30/60 Session capacity includes 9/18 reserves we never expose). Status: now_open | sold_out (Use Session published) | opening_soon (next month, not yet on sale). 2-month window only -- scheduling tier retired. Synced 2026-07-20: 13 Now Booking rows (10 sold out, 3 open) + 11 Opening Soon (September). Changes vs the 2026-07-19 sync: Boca Raton FL REMOVED (Jul 18 weekend passed, card dropped off the Use Session index); Sacramento 5->3 spots left. No other spot moves; no thumbnail UUID changes (Sacramento + East Providence cards remain -sm.png, all others -sm.jpg). Opening Soon = September, same 11 cities; Schedule tab renamed the Minnetonka row to Greater Minneapolis, so the tile now reads Minneapolis, MN. Summit NJ + Ridgewood NJ hidden per Jonathan.",
-  "updated": "2026-07-20",
+  "_comment": "Source of truth for /book/ widgets. First block mirrors the published cities on https://book.usesession.com/i/pN8nwzWsHa (Now Booking grid); the rest is the Opening Soon roadmap (single month). Sold-out math: 1-day cap=21, 2-day cap=42 (raw 30/60 Session capacity includes 9/18 reserves we never expose). Status: now_open | sold_out (Use Session published) | opening_soon (next month, not yet on sale). 2-month window only -- scheduling tier retired. Synced 2026-07-21: 10 Now Booking rows (7 sold out, 3 open) + 11 Opening Soon (September). Changes vs the 2026-07-20 sync: Dublin OH, Dallas TX, West Palm Beach FL REMOVED (Jul 18-19 weekends passed, cards dropped off the Use Session index); Sacramento 3->2 spots left. No other spot moves; no thumbnail UUID changes (Sacramento + East Providence cards remain -sm.png, all others -sm.jpg). Opening Soon = September, same 11 cities. Summit NJ + Ridgewood NJ hidden per Jonathan.",
+  "updated": "2026-07-21",
   "scheduled": [
-    {
-      "city": "Dublin, OH",
-      "metro": "Columbus, OH",
-      "metroTag": "city_columbus_oh",
-      "weekend": "Jul 18-19",
-      "weekendStart": "2026-07-18",
-      "days": 2,
-      "booked": 42,
-      "spotsLeft": 0,
-      "status": "sold_out",
-      "sessionUrl": "https://book.usesession.com/s/okT5MGR0b9",
-      "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/86cb511b-705c-4e65-88d0-8cafbaaf19c8-sm.jpg"
-    },
-    {
-      "city": "Dallas, TX",
-      "metro": "Dallas, TX",
-      "metroTag": "city_dallas_tx",
-      "weekend": "Jul 18-19",
-      "weekendStart": "2026-07-18",
-      "days": 2,
-      "booked": 42,
-      "spotsLeft": 0,
-      "status": "sold_out",
-      "sessionUrl": "https://book.usesession.com/s/NGPitAZo9i",
-      "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/d7c7b7e6-d432-4c2c-8f98-d5d9e222071e-sm.jpg"
-    },
-    {
-      "city": "West Palm Beach, FL",
-      "metro": "West Palm Beach, FL",
-      "metroTag": "city_west_palm_beach_fl",
-      "weekend": "Jul 19",
-      "weekendStart": "2026-07-19",
-      "days": 1,
-      "booked": 21,
-      "spotsLeft": 0,
-      "status": "sold_out",
-      "sessionUrl": "https://book.usesession.com/s/WqcySWP0Eo",
-      "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/228bc3ec-a1fb-4f71-9772-b8570745176b-sm.jpg"
-    },
     {
       "city": "Sacramento, CA",
       "metro": "Sacramento, CA",
@@ -48,8 +9,8 @@
       "weekend": "Aug 1-2",
       "weekendStart": "2026-08-01",
       "days": 2,
-      "booked": 39,
-      "spotsLeft": 3,
+      "booked": 40,
+      "spotsLeft": 2,
       "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/uZWXnEuZwp",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/a3299c6b-3d28-47ad-a0fe-67776ebd5131-sm.png"
