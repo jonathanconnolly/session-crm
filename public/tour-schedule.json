@@ -1,6 +1,6 @@
 {
-  "_comment": "Source of truth for /book/ widgets. First block mirrors the published cities on https://book.usesession.com/i/pN8nwzWsHa (Now Booking grid); the rest is the Opening Soon roadmap (single month). Sold-out math: 1-day cap=21, 2-day cap=42 (raw 30/60 Session capacity includes 9/18 reserves we never expose). Status: now_open | sold_out (Use Session published) | opening_soon (next month, not yet on sale). 2-month window only -- scheduling tier retired. Synced 2026-07-23 (second run today): 11 Now Booking rows (8 sold out, 3 open) + 12 Opening Soon (October). Changes vs the earlier 2026-07-23 sync: London, UK Sep 5-6 went live on Use Session (30 spots left, new card); Opening Soon month advanced September -> October per the month-after-last-NB-weekend rule -- the 9 unpublished September cities (Jacksonville, Norwalk, Garden City, Charleston, Chicago, Houston, Minneapolis, Henderson, Summerlin) rotated off the widget and will reappear as Now Booking when they publish on Use Session. October pipeline (all T-90 Leads on the Schedule tab): Boca Raton, West Palm Beach, Dallas, Alpharetta, Atlanta, Raleigh, Alexandria, Washington DC, Phoenix, Orange County, Bellevue, Los Altos. No spot or thumbnail UUID changes on carryover cards (Sacramento + East Providence remain -sm.png). Summit NJ + Ridgewood NJ hidden per Jonathan.",
-  "updated": "2026-07-23",
+  "_comment": "Source of truth for /book/ widgets. First block mirrors the published cities on https://book.usesession.com/i/pN8nwzWsHa (Now Booking grid); the rest is the Opening Soon roadmap (single month). Sold-out math: 1-day cap=21, 2-day cap=42 (raw 30/60 Session capacity includes 9/18 reserves we never expose). Status: now_open | sold_out (Use Session published) | opening_soon (next month, not yet on sale). 2-month window only -- scheduling tier retired. Synced 2026-07-27: 15 Now Booking rows (8 sold out, 7 open) + 12 Opening Soon (October). Changes vs 2026-07-23: 4 September cities went live on Use Session -- Highwood, IL Sep 12-13 (9 left; card/sheet label 'Highwood (Chicago)', mapped metro Chicago), Minneapolis, MN Sep 12-13 (25 left; live card reads 'Greater Minneapolis, MN', emitting Minneapolis per 2026-07-20 convention), Garden City, NY Sep 19-20 (21 left, metro Long Island), The Woodlands, TX Sep 19-20 (21 left; sheet labels it 'Houston (Woodlands)', mapped metro Houston). Birmingham, MI reopened: sold_out -> now_open with 1 spot left. Spot moves: Windham NH 5->4, London UK 30->24; Sacramento holds at 2. No thumbnail UUID changes on the 11 carryover cards; 4 new imageUrls added for the new cities. Opening Soon month stays October (last NB weekend = Sep 19-20); same 12 T-90 cities from the Schedule tab. Summit NJ + Ridgewood NJ hidden per Jonathan.",
+  "updated": "2026-07-27",
   "scheduled": [
     {
       "city": "Sacramento, CA",
@@ -48,8 +48,8 @@
       "weekend": "Aug 22",
       "weekendStart": "2026-08-22",
       "days": 1,
-      "booked": 16,
-      "spotsLeft": 5,
+      "booked": 17,
+      "spotsLeft": 4,
       "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/x4806-bLSx",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/098f024b-57a7-4819-8e28-a8fd2d0f5809-sm.jpg"
@@ -61,9 +61,9 @@
       "weekend": "Aug 22",
       "weekendStart": "2026-08-22",
       "days": 1,
-      "booked": 21,
-      "spotsLeft": 0,
-      "status": "sold_out",
+      "booked": 20,
+      "spotsLeft": 1,
+      "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/xdJKVSK41K",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/aa5bf2ca-12bb-4e8d-a856-49f6bc262688-sm.jpg"
     },
@@ -139,11 +139,63 @@
       "weekend": "Sep 5-6",
       "weekendStart": "2026-09-05",
       "days": 2,
-      "booked": 12,
-      "spotsLeft": 30,
+      "booked": 18,
+      "spotsLeft": 24,
       "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/ku2HCtnsMR",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/3342edff-1f88-4471-89d3-556532c81839-sm.jpg"
+    },
+    {
+      "city": "Highwood, IL",
+      "metro": "Chicago, IL",
+      "metroTag": "city_chicago_il",
+      "weekend": "Sep 12-13",
+      "weekendStart": "2026-09-12",
+      "days": 2,
+      "booked": 33,
+      "spotsLeft": 9,
+      "status": "now_open",
+      "sessionUrl": "https://book.usesession.com/s/Ev7QPGIcIw",
+      "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/0ac15b40-bdfb-4e46-ba84-7e62e61d84e8-sm.jpg"
+    },
+    {
+      "city": "Minneapolis, MN",
+      "metro": "Minneapolis, MN",
+      "metroTag": "city_minneapolis_mn",
+      "weekend": "Sep 12-13",
+      "weekendStart": "2026-09-12",
+      "days": 2,
+      "booked": 17,
+      "spotsLeft": 25,
+      "status": "now_open",
+      "sessionUrl": "https://book.usesession.com/s/p5C87KYxiY",
+      "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/c311dd7b-e648-457a-affd-3a91eab8b076-sm.jpg"
+    },
+    {
+      "city": "Garden City, NY",
+      "metro": "Long Island, NY",
+      "metroTag": "city_long_island_ny",
+      "weekend": "Sep 19-20",
+      "weekendStart": "2026-09-19",
+      "days": 2,
+      "booked": 21,
+      "spotsLeft": 21,
+      "status": "now_open",
+      "sessionUrl": "https://book.usesession.com/s/riaT0FADtE",
+      "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/90d85d35-d64a-45de-a1af-3dc93986b9a6-sm.jpg"
+    },
+    {
+      "city": "The Woodlands, TX",
+      "metro": "Houston, TX",
+      "metroTag": "city_houston_tx",
+      "weekend": "Sep 19-20",
+      "weekendStart": "2026-09-19",
+      "days": 2,
+      "booked": 21,
+      "spotsLeft": 21,
+      "status": "now_open",
+      "sessionUrl": "https://book.usesession.com/s/E2vH1jKZHE",
+      "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/6d9c388d-64aa-4244-9512-2bf512e16b30-sm.jpg"
     },
 
     {
