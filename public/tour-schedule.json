@@ -1,6 +1,6 @@
 {
-  "_comment": "Source of truth for /book/ widgets. First block mirrors the published cities on https://book.usesession.com/i/pN8nwzWsHa (Now Booking grid); the rest is the Opening Soon roadmap (single month). Sold-out math: 1-day cap=21, 2-day cap=42 (raw 30/60 Session capacity includes 9/18 reserves we never expose). Status: now_open | sold_out (Use Session published) | opening_soon (next month, not yet on sale). 2-month window only -- scheduling tier retired. Synced 2026-08-05: 14 Now Booking rows (8 sold out, 6 open) + 12 Opening Soon (October, roster unchanged). Changes vs 2026-08-04 sync: Highwood, IL (Sep 12-13) SOLD OUT (was 4 left); Minneapolis, MN (Sep 12-13) SOLD OUT (was 1 left); London, UK 19->18 left. No new cards, no roll-offs, no slug changes, no thumbnail UUID changes. Summit NJ + Ridgewood NJ hidden per Jonathan.",
-  "updated": "2026-08-05",
+  "_comment": "Source of truth for /book/ widgets. First block mirrors the published cities on https://book.usesession.com/i/pN8nwzWsHa (Now Booking grid); the rest is the Opening Soon roadmap (single month). Sold-out math: 1-day cap=21, 2-day cap=42 (raw 30/60 Session capacity includes 9/18 reserves we never expose). Status: now_open | sold_out (Use Session published) | opening_soon (next month, not yet on sale). 2-month window only -- scheduling tier retired. Synced 2026-08-06: 17 Now Booking rows (8 sold out, 9 open) + 12 Opening Soon (October, roster unchanged). Changes vs 2026-08-05 sync: 3 cities NEWLY LIVE -- Henderson, NV (Sep 19, 12 left), Summerlin, NV (Sep 20, 7 left), Norwalk, CT (Sep 26-27, 28 left); London, UK 18->17 left. No roll-offs, no carryover slug or thumbnail UUID changes; 3 new thumbnails added for the new cities. Summit NJ + Ridgewood NJ hidden per Jonathan.",
+  "updated": "2026-08-06",
   "scheduled": [
     {
       "city": "Sausalito, CA",
@@ -126,8 +126,8 @@
       "weekend": "Sep 5-6",
       "weekendStart": "2026-09-05",
       "days": 2,
-      "booked": 24,
-      "spotsLeft": 18,
+      "booked": 25,
+      "spotsLeft": 17,
       "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/ku2HCtnsMR",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/3342edff-1f88-4471-89d3-556532c81839-sm.jpg"
@@ -159,6 +159,19 @@
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/c311dd7b-e648-457a-affd-3a91eab8b076-sm.jpg"
     },
     {
+      "city": "Henderson, NV",
+      "metro": "Las Vegas, NV",
+      "metroTag": "city_las_vegas_nv",
+      "weekend": "Sep 19",
+      "weekendStart": "2026-09-19",
+      "days": 1,
+      "booked": 9,
+      "spotsLeft": 12,
+      "status": "now_open",
+      "sessionUrl": "https://book.usesession.com/s/_EtE2TSo3F",
+      "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/7743bba2-27bf-4637-93c7-bf39a92af130-sm.jpg"
+    },
+    {
       "city": "Garden City, NY",
       "metro": "Long Island, NY",
       "metroTag": "city_long_island_ny",
@@ -183,6 +196,32 @@
       "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/E2vH1jKZHE",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/6d9c388d-64aa-4244-9512-2bf512e16b30-sm.jpg"
+    },
+    {
+      "city": "Summerlin, NV",
+      "metro": "Las Vegas, NV",
+      "metroTag": "city_las_vegas_nv",
+      "weekend": "Sep 20",
+      "weekendStart": "2026-09-20",
+      "days": 1,
+      "booked": 14,
+      "spotsLeft": 7,
+      "status": "now_open",
+      "sessionUrl": "https://book.usesession.com/s/KEiRePylUO",
+      "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/369124d7-569d-49f8-9785-b40dc350a622-sm.jpg"
+    },
+    {
+      "city": "Norwalk, CT",
+      "metro": "Stamford, CT",
+      "metroTag": "city_stamford_ct",
+      "weekend": "Sep 26-27",
+      "weekendStart": "2026-09-26",
+      "days": 2,
+      "booked": 14,
+      "spotsLeft": 28,
+      "status": "now_open",
+      "sessionUrl": "https://book.usesession.com/s/FhjixZBsG_",
+      "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/bb628376-83cc-47cf-a45d-65771664e9a9-sm.jpg"
     },
 
     {
