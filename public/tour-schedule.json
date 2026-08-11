@@ -1,20 +1,7 @@
 {
-  "_comment": "Source of truth for /book/ widgets. First block mirrors the published cities on https://book.usesession.com/i/pN8nwzWsHa (Now Booking grid); the rest is the Opening Soon roadmap (single month). Sold-out math: 1-day cap=21, 2-day cap=42 (raw 30/60 Session capacity includes 9/18 reserves we never expose). Status: now_open | sold_out (Use Session published) | opening_soon (next month, not yet on sale). 2-month window only -- scheduling tier retired. Synced 2026-08-10 (second sync of the day, on request): 20 Now Booking rows (8 sold out, 12 open) + 7 Opening Soon (November). Changes vs the 2026-08-10 morning sync: 3 October cities went LIVE on Use Session -- Bellevue WA Oct 3-4 (25 left), Los Altos CA Oct 3-4 (11 left), Alexandria VA Oct 10-11 (30 left) -- promoted from opening_soon to now_open with fresh slugs+thumbnails. Opening Soon month therefore advanced October -> November: Boston, Miami, Dallas, Austin, Dublin OH (Columbus metro), Charlotte, Greenville SC (7). November's Denver + Manhattan omitted (already live on Session as sold-out August cards); Franklin TN + Calabasas omitted (LP brand, not PPU). No spot moves, sell-outs, reopenings, or thumbnail changes among carryover cards. Ridgewood NJ is live on the Session index (Sep 26-27, 4 left) but stays hidden per Jonathan. Summit NJ + Ridgewood NJ hidden per Jonathan.",
-  "updated": "2026-08-10",
+  "_comment": "Source of truth for /book/ widgets. First block mirrors the published cities on https://book.usesession.com/i/pN8nwzWsHa (Now Booking grid); the rest is the Opening Soon roadmap (single month). Sold-out math: 1-day cap=21, 2-day cap=42 (raw 30/60 Session capacity includes 9/18 reserves we never expose). Status: now_open | sold_out (Use Session published) | opening_soon (next month, not yet on sale). 2-month window only -- scheduling tier retired. Synced 2026-08-11 (scheduled 8:30am run): 19 Now Booking rows (9 sold out, 10 open) + 7 Opening Soon (November). Changes vs 2026-08-10 second sync: Sausalito CA Aug 8-9 dropped off the index (weekend passed) -- removed. Birmingham MI Aug 22 SOLD OUT (was 1 left). Spot moves: London 15->14, Garden City NY 13->10, The Woodlands TX 17->15, Summerlin NV 4->1 (now urgent), Norwalk CT 24->20, Los Altos CA 11->10, Alexandria VA 30->22. No thumbnail UUID changes among carryover cards (all re-verified live). November Opening Soon unchanged: Boston, Miami, Dallas, Austin, Dublin OH (Columbus metro), Charlotte, Greenville SC. November's Denver + Manhattan still omitted (sold-out August cards still live on the index); Franklin TN + Calabasas omitted (LP brand, not PPU). Ridgewood NJ live on the index (Sep 26-27, 3 left) but hidden per Jonathan. Summit NJ + Ridgewood NJ hidden per Jonathan.",
+  "updated": "2026-08-11",
   "scheduled": [
-    {
-      "city": "Sausalito, CA",
-      "metro": "San Francisco, CA",
-      "metroTag": "city_san_francisco_ca",
-      "weekend": "Aug 8-9",
-      "weekendStart": "2026-08-08",
-      "days": 2,
-      "booked": 41,
-      "spotsLeft": 1,
-      "status": "now_open",
-      "sessionUrl": "https://book.usesession.com/s/ImgxA6TKfU",
-      "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/5015c9fe-c3fb-4023-9d62-c427d2e2db05-sm.jpg"
-    },
     {
       "city": "Manhattan, NY",
       "metro": "Manhattan, NY",
@@ -48,9 +35,9 @@
       "weekend": "Aug 22",
       "weekendStart": "2026-08-22",
       "days": 1,
-      "booked": 20,
-      "spotsLeft": 1,
-      "status": "now_open",
+      "booked": 21,
+      "spotsLeft": 0,
+      "status": "sold_out",
       "sessionUrl": "https://book.usesession.com/s/xdJKVSK41K",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/aa5bf2ca-12bb-4e8d-a856-49f6bc262688-sm.jpg"
     },
@@ -126,8 +113,8 @@
       "weekend": "Sep 5-6",
       "weekendStart": "2026-09-05",
       "days": 2,
-      "booked": 27,
-      "spotsLeft": 15,
+      "booked": 28,
+      "spotsLeft": 14,
       "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/ku2HCtnsMR",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/3342edff-1f88-4471-89d3-556532c81839-sm.jpg"
@@ -178,8 +165,8 @@
       "weekend": "Sep 19-20",
       "weekendStart": "2026-09-19",
       "days": 2,
-      "booked": 29,
-      "spotsLeft": 13,
+      "booked": 32,
+      "spotsLeft": 10,
       "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/riaT0FADtE",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/90d85d35-d64a-45de-a1af-3dc93986b9a6-sm.jpg"
@@ -191,8 +178,8 @@
       "weekend": "Sep 19-20",
       "weekendStart": "2026-09-19",
       "days": 2,
-      "booked": 25,
-      "spotsLeft": 17,
+      "booked": 27,
+      "spotsLeft": 15,
       "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/E2vH1jKZHE",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/6d9c388d-64aa-4244-9512-2bf512e16b30-sm.jpg"
@@ -204,8 +191,8 @@
       "weekend": "Sep 20",
       "weekendStart": "2026-09-20",
       "days": 1,
-      "booked": 17,
-      "spotsLeft": 4,
+      "booked": 20,
+      "spotsLeft": 1,
       "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/KEiRePylUO",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/369124d7-569d-49f8-9785-b40dc350a622-sm.jpg"
@@ -217,8 +204,8 @@
       "weekend": "Sep 26-27",
       "weekendStart": "2026-09-26",
       "days": 2,
-      "booked": 18,
-      "spotsLeft": 24,
+      "booked": 22,
+      "spotsLeft": 20,
       "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/FhjixZBsG_",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/3c77ac7b-2239-4fc8-b9d8-898a863e6763-sm.jpg"
@@ -243,8 +230,8 @@
       "weekend": "Oct 3-4",
       "weekendStart": "2026-10-03",
       "days": 2,
-      "booked": 31,
-      "spotsLeft": 11,
+      "booked": 32,
+      "spotsLeft": 10,
       "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/khzJORsIuo",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/ecc0c91f-2226-48f3-8c12-9bc2c897d365-sm.jpg"
@@ -256,8 +243,8 @@
       "weekend": "Oct 10-11",
       "weekendStart": "2026-10-10",
       "days": 2,
-      "booked": 12,
-      "spotsLeft": 30,
+      "booked": 20,
+      "spotsLeft": 22,
       "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/hpVxa1owYC",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/ac82bc98-6b1a-4e10-ac79-55d43397395e-sm.jpg"
