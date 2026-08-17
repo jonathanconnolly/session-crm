@@ -1,20 +1,7 @@
 {
-  "_comment": "Source of truth for /book/ widgets. First block mirrors the published cities on https://book.usesession.com/i/pN8nwzWsHa (Now Booking grid); the rest is the Opening Soon roadmap (single month). Sold-out math: 1-day cap=21, 2-day cap=42 (raw 30/60 Session capacity includes 9/18 reserves we never expose). Status: now_open | sold_out (Use Session published) | opening_soon (next month, not yet on sale). 2-month window only -- scheduling tier retired. Synced 2026-08-16 (scheduled 8:30am run; no sync ran 8/15, so deltas cover two days vs 2026-08-14): 19 Now Booking rows (10 sold out, 9 open) + 8 Opening Soon (November). Status change: Henderson NV Sep 19 SOLD OUT (was 4 left) -- 10th sold-out city. Nothing newly live. Spot moves (7 cities booked): Los Altos CA 7->4 (3), Garden City NY 8->6 (2), The Woodlands TX 8->6 (2), London UK 14->13, Norwalk CT 17->16, Alexandria VA 18->17, plus Henderson 4->0. Unchanged: Manhattan NY 1 (event happening today Aug 15-16), Windham NH 1 (2 days flat), Bellevue WA 19 (3 days flat, widest-open city -- WATCH). No thumbnail UUID changes -- all 19 image UUIDs and session slugs re-verified live against the index. Opening Soon November now 8 (was 7): added Orange County CA (T-90 Leads on the Schedule tab's November block, no date set yet) alongside Boston, Miami, Dallas, Austin, Dublin OH (Columbus metro), Charlotte, Greenville SC. November's Denver + Manhattan still omitted (their August cards are still live on the index); Franklin TN + Calabasas omitted (LP brand, not PPU). Ridgewood NJ live on the index (Sep 26-27, 3 left) but hidden per Jonathan. Summit NJ + Ridgewood NJ hidden per Jonathan.",
-  "updated": "2026-08-16",
+  "_comment": "Source of truth for /book/ widgets. First block mirrors the published cities on https://book.usesession.com/i/pN8nwzWsHa (Now Booking grid); the rest is the Opening Soon roadmap (single month). Sold-out math: 1-day cap=21, 2-day cap=42 (raw 30/60 Session capacity includes 9/18 reserves we never expose). Status: now_open | sold_out (Use Session published) | opening_soon (next month, not yet on sale). 2-month window only -- scheduling tier retired. Synced 2026-08-17 (scheduled 8:30am run; deltas vs 2026-08-16): 18 Now Booking rows (9 sold out, 9 open) + 9 Opening Soon (November). Manhattan NY Aug 15-16 REMOVED from Now Booking -- the event has now happened (last date Aug 16, today Aug 17) and the card is waitlist-only; a finished weekend should not sit in the Now Booking grid. Manhattan is instead carried into Opening Soon (it is on the Schedule tab's November block, Planning), so the city stays visible on the widget rather than disappearing. Status change: Philadelphia PA Aug 29 REOPENED -- 1 spot back on sale (was sold out), so sold-out count 10 -> 9. Spot moves (4 cities booked): Garden City NY 6->5, The Woodlands TX 6->5, Norwalk CT 16->14 (2), Bellevue WA 19->18. Released back: Windham NH 1->2 (cancellation). Unchanged: London UK 13, Los Altos CA 4, Alexandria VA 17. Nothing newly live on the index. No thumbnail UUID changes -- all 18 image UUIDs and session slugs re-extracted live from the index React fibers and matched the prior file. Opening Soon November now 9 (was 8): Manhattan NY added (see above) alongside Boston, Miami, Dallas, Austin, Dublin OH (Columbus metro), Charlotte, Greenville SC, Orange County CA. November's Denver still omitted (its Aug 29-30 card is still live and sold out on the index); Franklin TN + Calabasas CA omitted (LP brand, not PPU). Ridgewood NJ live on the index (Sep 26-27, 3 left) but hidden per Jonathan. Summit NJ + Ridgewood NJ hidden per Jonathan.",
+  "updated": "2026-08-17",
   "scheduled": [
-    {
-      "city": "Manhattan, NY",
-      "metro": "Manhattan, NY",
-      "metroTag": "city_manhattan_ny",
-      "weekend": "Aug 15-16",
-      "weekendStart": "2026-08-15",
-      "days": 2,
-      "booked": 41,
-      "spotsLeft": 1,
-      "status": "now_open",
-      "sessionUrl": "https://book.usesession.com/s/S_XJj81WrL",
-      "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/074005ab-718e-404b-b46e-1ae5ab020682-sm.jpg"
-    },
     {
       "city": "Windham, NH",
       "metro": "Boston, MA",
@@ -22,8 +9,8 @@
       "weekend": "Aug 22",
       "weekendStart": "2026-08-22",
       "days": 1,
-      "booked": 20,
-      "spotsLeft": 1,
+      "booked": 19,
+      "spotsLeft": 2,
       "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/x4806-bLSx",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/098f024b-57a7-4819-8e28-a8fd2d0f5809-sm.jpg"
@@ -74,9 +61,9 @@
       "weekend": "Aug 29",
       "weekendStart": "2026-08-29",
       "days": 1,
-      "booked": 21,
-      "spotsLeft": 0,
-      "status": "sold_out",
+      "booked": 20,
+      "spotsLeft": 1,
+      "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/ZF3IrAcjgG",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/88f21e5f-feab-4091-a9e1-595968154077-sm.jpg"
     },
@@ -165,8 +152,8 @@
       "weekend": "Sep 19-20",
       "weekendStart": "2026-09-19",
       "days": 2,
-      "booked": 36,
-      "spotsLeft": 6,
+      "booked": 37,
+      "spotsLeft": 5,
       "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/riaT0FADtE",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/90d85d35-d64a-45de-a1af-3dc93986b9a6-sm.jpg"
@@ -178,8 +165,8 @@
       "weekend": "Sep 19-20",
       "weekendStart": "2026-09-19",
       "days": 2,
-      "booked": 36,
-      "spotsLeft": 6,
+      "booked": 37,
+      "spotsLeft": 5,
       "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/E2vH1jKZHE",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/6d9c388d-64aa-4244-9512-2bf512e16b30-sm.jpg"
@@ -204,8 +191,8 @@
       "weekend": "Sep 26-27",
       "weekendStart": "2026-09-26",
       "days": 2,
-      "booked": 26,
-      "spotsLeft": 16,
+      "booked": 28,
+      "spotsLeft": 14,
       "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/FhjixZBsG_",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/3c77ac7b-2239-4fc8-b9d8-898a863e6763-sm.jpg"
@@ -217,8 +204,8 @@
       "weekend": "Oct 3-4",
       "weekendStart": "2026-10-03",
       "days": 2,
-      "booked": 23,
-      "spotsLeft": 19,
+      "booked": 24,
+      "spotsLeft": 18,
       "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/QlZh7U3jSs",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/732465e2-1279-4399-b760-bbb9ff07160a-sm.jpg"
@@ -331,6 +318,17 @@
       "city": "Orange County, CA",
       "metro": "Irvine, CA",
       "metroTag": "city_irvine_ca",
+      "weekend": "",
+      "weekendStart": "2026-11-01",
+      "days": 2,
+      "status": "opening_soon",
+      "sessionUrl": null,
+      "imageUrl": null
+    },
+    {
+      "city": "Manhattan, NY",
+      "metro": "Manhattan, NY",
+      "metroTag": "city_manhattan_ny",
       "weekend": "",
       "weekendStart": "2026-11-01",
       "days": 2,
