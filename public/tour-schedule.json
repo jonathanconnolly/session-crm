@@ -1,6 +1,6 @@
 {
-  "_comment": "Source of truth for /book/ widgets. First block mirrors the published cities on https://book.usesession.com/i/pN8nwzWsHa (Now Booking grid); the rest is the Opening Soon roadmap (single month). Sold-out math: 1-day cap=21, 2-day cap=42 (raw 30/60 Session capacity includes 9/18 reserves we never expose). Status: now_open | sold_out (Use Session published) | opening_soon (next month, not yet on sale). 2-month window only -- scheduling tier retired. Synced 2026-08-21 (scheduled 8:30am run; deltas vs commit of 2026-08-20): 24 Now Booking rows (12 sold out, 12 open) + 9 Opening Soon (November). No status changes. Spot moves (4 cities, 5 bookings): London UK 10->9, Garden City NY 4->3, Bellevue WA 17->15 (2 bookings), Alexandria VA 16->15. Unchanged: Windham NH 1, Philadelphia PA 1, Ridgewood NJ 2, Norwalk CT 13, Los Altos CA 3, Charleston SC 10, Phoenix AZ 30, Raleigh NC 31. No thumbnail changes -- all 24 image UUIDs and session slugs re-extracted live from the index React fibers and matched the prior file. Opening Soon November unchanged at 9: Austin, Boston, Charlotte, Dallas, Dublin OH (Columbus metro), Greenville SC, Manhattan, Miami, Orange County CA. November's Denver still omitted (its Aug 29-30 card is still live and sold out on the index); Franklin TN + Calabasas CA omitted (LP brand, not PPU); Summit NJ hidden per Jonathan.",
-  "updated": "2026-08-21",
+  "_comment": "Source of truth for /book/ widgets. First block mirrors the published cities on https://book.usesession.com/i/pN8nwzWsHa (Now Booking grid); the rest is the Opening Soon roadmap (single month). Sold-out math: 1-day cap=21, 2-day cap=42 (raw 30/60 Session capacity includes 9/18 reserves we never expose). Status: now_open | sold_out (Use Session published) | opening_soon (next month, not yet on sale). 2-month window only -- scheduling tier retired. Synced 2026-08-22 (scheduled 8:30am run; deltas vs commit of 2026-08-21): 24 Now Booking rows (12 sold out, 12 open) + 9 Opening Soon (November). No status changes. Spot moves (6 cities, 7 bookings): Garden City NY 3->2, Norwalk CT 13->12, Los Altos CA 3->1 (2 bookings), Alexandria VA 15->14, Charleston SC 10->9, Phoenix AZ 30->29. Unchanged: Windham NH 1, Philadelphia PA 1, London UK 9, Ridgewood NJ 2, Bellevue WA 15, Raleigh NC 31. No thumbnail changes -- all 24 image UUIDs and session slugs re-extracted live from the index React fibers and matched the prior file. Opening Soon November unchanged at 9: Austin, Boston, Charlotte, Dallas, Dublin OH (Columbus metro), Greenville SC, Manhattan, Miami, Orange County CA. November's Denver still omitted (its Aug 29-30 card is still live and sold out on the index); Franklin TN + Calabasas CA omitted (LP brand, not PPU); Summit NJ hidden per Jonathan.",
+  "updated": "2026-08-22",
   "scheduled": [
     {
       "city": "Birmingham, MI",
@@ -139,8 +139,8 @@
       "weekend": "Sep 19-20",
       "weekendStart": "2026-09-19",
       "days": 2,
-      "booked": 39,
-      "spotsLeft": 3,
+      "booked": 40,
+      "spotsLeft": 2,
       "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/riaT0FADtE",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/90d85d35-d64a-45de-a1af-3dc93986b9a6-sm.jpg"
@@ -191,8 +191,8 @@
       "weekend": "Sep 26-27",
       "weekendStart": "2026-09-26",
       "days": 2,
-      "booked": 29,
-      "spotsLeft": 13,
+      "booked": 30,
+      "spotsLeft": 12,
       "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/FhjixZBsG_",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/3c77ac7b-2239-4fc8-b9d8-898a863e6763-sm.jpg"
@@ -230,8 +230,8 @@
       "weekend": "Oct 3-4",
       "weekendStart": "2026-10-03",
       "days": 2,
-      "booked": 39,
-      "spotsLeft": 3,
+      "booked": 41,
+      "spotsLeft": 1,
       "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/khzJORsIuo",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/ecc0c91f-2226-48f3-8c12-9bc2c897d365-sm.jpg"
@@ -243,8 +243,8 @@
       "weekend": "Oct 10-11",
       "weekendStart": "2026-10-10",
       "days": 2,
-      "booked": 27,
-      "spotsLeft": 15,
+      "booked": 28,
+      "spotsLeft": 14,
       "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/hpVxa1owYC",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/ac82bc98-6b1a-4e10-ac79-55d43397395e-sm.jpg"
@@ -256,8 +256,8 @@
       "weekend": "Oct 10",
       "weekendStart": "2026-10-10",
       "days": 1,
-      "booked": 11,
-      "spotsLeft": 10,
+      "booked": 12,
+      "spotsLeft": 9,
       "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/q7o7L0abMO",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/17a56ce1-c0a6-4147-9baa-2e4ec26062c2-sm.jpg"
@@ -269,8 +269,8 @@
       "weekend": "Oct 24-25",
       "weekendStart": "2026-10-24",
       "days": 2,
-      "booked": 12,
-      "spotsLeft": 30,
+      "booked": 13,
+      "spotsLeft": 29,
       "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/Q_Nx9pUHmp",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/a7eef1cd-06f2-41b9-97b3-bc973d565a4c-sm.jpg"
