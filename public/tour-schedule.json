@@ -1,33 +1,7 @@
 {
-  "_comment": "Source of truth for /book/ widgets. First block mirrors the published cities on https://book.usesession.com/i/pN8nwzWsHa (Now Booking grid); the rest is the Opening Soon roadmap (single month). Sold-out math (updated 2026-08-22 per Jonathan): cap = 20 bookings per event day (1-day=20, 2-day=40); Session's raw capacity above that is blocked/reserved slots we never expose. Status: now_open | sold_out (Use Session published) | opening_soon (next month, not yet on sale). 2-month window only -- scheduling tier retired. Synced 2026-08-24 (scheduled 8:30am run; deltas vs commit of 2026-08-23): 22 Now Booking rows (12 sold out, 10 open) + 9 Opening Soon (November). Status changes: Garden City NY SOLD OUT (2->0, last two spots booked). Removed: Windham NH (Aug 22) and Birmingham MI (Aug 22) -- their past-date cards dropped off the index. Spot moves (10 bookings across 4 cities): Garden City NY 2->0, Norwalk CT 11->9, Charleston SC 9->8, Raleigh NC 30->25 (5 -- best mover). Unchanged: Philadelphia PA 1, London UK 8, Summerlin NV 1, Ridgewood NJ 1, Bellevue WA 15, Alexandria VA 14, Phoenix AZ 29. No thumbnail or slug changes -- all 22 re-extracted live from the index React fibers and matched the prior file. Opening Soon November unchanged at 9: Austin, Boston, Charlotte, Dallas, Dublin OH (Columbus metro), Greenville SC, Manhattan, Miami, Orange County CA. November's Denver still omitted (its Aug 29-30 card is still live and sold out on the index); Franklin TN + Calabasas CA omitted (LP brand, not PPU); Summit NJ hidden per Jonathan.",
-  "updated": "2026-08-24",
+  "_comment": "Source of truth for /book/ widgets. First block mirrors the published cities on https://book.usesession.com/i/pN8nwzWsHa (Now Booking grid); the rest is the Opening Soon roadmap (single month). Sold-out math (updated 2026-08-22 per Jonathan): cap = 20 bookings per event day (1-day=20, 2-day=40); Session's raw capacity above that is blocked/reserved slots we never expose. Status: now_open | sold_out (Use Session published) | opening_soon (next month, not yet on sale). 2-month window only -- scheduling tier retired. Synced 2026-08-25 (scheduled 8:30am run; deltas vs commit of 2026-08-24): 20 Now Booking rows (13 sold out, 7 open) + 9 Opening Soon (November). Status changes: THREE sell-outs -- Philadelphia PA (1->0), Summerlin NV (1->0, reopened spot re-sold), Ridgewood NJ (1->0, 40/40). DATE CHANGE: Raleigh NC moved Oct 24-25 -> Oct 10-11 on Use Session (same card/slug, spots unchanged at 25). Removed: Ann Arbor MI + East Providence RI (Aug 23) -- past-date cards dropped off the index. Spot moves (6 bookings across 6 cities): Philadelphia 1->0, London UK 8->7, Summerlin 1->0, Ridgewood 1->0, Norwalk CT 9->8, Bellevue WA 14 (was 15). Unchanged: Alexandria VA 14, Charleston SC 8, Phoenix AZ 29, Raleigh NC 25. No thumbnail or slug changes -- all 20 re-extracted live from the index React fibers and matched the prior file. Opening Soon November unchanged at 9: Austin, Boston, Charlotte, Dallas, Dublin OH (Columbus metro), Greenville SC, Manhattan, Miami, Orange County CA. November's Denver still omitted (its Aug 29-30 card is still live and sold out on the index); Franklin TN + Calabasas CA omitted (LP brand, not PPU); Summit NJ hidden per Jonathan.",
+  "updated": "2026-08-25",
   "scheduled": [
-    {
-      "city": "Ann Arbor, MI",
-      "metro": "Ann Arbor, MI",
-      "metroTag": "city_ann_arbor_mi",
-      "weekend": "Aug 23",
-      "weekendStart": "2026-08-23",
-      "days": 1,
-      "booked": 20,
-      "spotsLeft": 0,
-      "status": "sold_out",
-      "sessionUrl": "https://book.usesession.com/s/aTs1vPRh6X",
-      "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/35d5467e-5c12-4b9f-af08-487e16f9763c-sm.jpg"
-    },
-    {
-      "city": "East Providence, RI",
-      "metro": "Providence, RI",
-      "metroTag": "city_providence_ri",
-      "weekend": "Aug 23",
-      "weekendStart": "2026-08-23",
-      "days": 1,
-      "booked": 20,
-      "spotsLeft": 0,
-      "status": "sold_out",
-      "sessionUrl": "https://book.usesession.com/s/5f5X27zaow",
-      "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/cc4fcc87-931a-44e8-b328-d68d7df277d3-sm.png"
-    },
     {
       "city": "Philadelphia, PA",
       "metro": "Philadelphia, PA",
@@ -35,9 +9,9 @@
       "weekend": "Aug 29",
       "weekendStart": "2026-08-29",
       "days": 1,
-      "booked": 19,
-      "spotsLeft": 1,
-      "status": "now_open",
+      "booked": 20,
+      "spotsLeft": 0,
+      "status": "sold_out",
       "sessionUrl": "https://book.usesession.com/s/ZF3IrAcjgG",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/88f21e5f-feab-4091-a9e1-595968154077-sm.jpg"
     },
@@ -74,8 +48,8 @@
       "weekend": "Sep 5-6",
       "weekendStart": "2026-09-05",
       "days": 2,
-      "booked": 32,
-      "spotsLeft": 8,
+      "booked": 33,
+      "spotsLeft": 7,
       "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/ku2HCtnsMR",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/3342edff-1f88-4471-89d3-556532c81839-sm.jpg"
@@ -152,9 +126,9 @@
       "weekend": "Sep 20",
       "weekendStart": "2026-09-20",
       "days": 1,
-      "booked": 19,
-      "spotsLeft": 1,
-      "status": "now_open",
+      "booked": 20,
+      "spotsLeft": 0,
+      "status": "sold_out",
       "sessionUrl": "https://book.usesession.com/s/KEiRePylUO",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/369124d7-569d-49f8-9785-b40dc350a622-sm.jpg"
     },
@@ -165,9 +139,9 @@
       "weekend": "Sep 26-27",
       "weekendStart": "2026-09-26",
       "days": 2,
-      "booked": 39,
-      "spotsLeft": 1,
-      "status": "now_open",
+      "booked": 40,
+      "spotsLeft": 0,
+      "status": "sold_out",
       "sessionUrl": "https://book.usesession.com/s/8Bj7v9IzbY",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/d827b9fe-b990-478c-8ae3-6833b20b8369-sm.jpg"
     },
@@ -178,8 +152,8 @@
       "weekend": "Sep 26-27",
       "weekendStart": "2026-09-26",
       "days": 2,
-      "booked": 31,
-      "spotsLeft": 9,
+      "booked": 32,
+      "spotsLeft": 8,
       "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/FhjixZBsG_",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/3c77ac7b-2239-4fc8-b9d8-898a863e6763-sm.jpg"
@@ -191,8 +165,8 @@
       "weekend": "Oct 3-4",
       "weekendStart": "2026-10-03",
       "days": 2,
-      "booked": 25,
-      "spotsLeft": 15,
+      "booked": 26,
+      "spotsLeft": 14,
       "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/QlZh7U3jSs",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/732465e2-1279-4399-b760-bbb9ff07160a-sm.jpg"
@@ -209,6 +183,19 @@
       "status": "sold_out",
       "sessionUrl": "https://book.usesession.com/s/khzJORsIuo",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/ecc0c91f-2226-48f3-8c12-9bc2c897d365-sm.jpg"
+    },
+    {
+      "city": "Raleigh, NC",
+      "metro": "Raleigh, NC",
+      "metroTag": "city_raleigh_nc",
+      "weekend": "Oct 10-11",
+      "weekendStart": "2026-10-10",
+      "days": 2,
+      "booked": 15,
+      "spotsLeft": 25,
+      "status": "now_open",
+      "sessionUrl": "https://book.usesession.com/s/0bkfjR-CZ7",
+      "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/65a0525f-b459-4adb-b2d1-61223ad57401-sm.jpg"
     },
     {
       "city": "Alexandria, VA",
@@ -261,19 +248,6 @@
       "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/Q_Nx9pUHmp",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/a7eef1cd-06f2-41b9-97b3-bc973d565a4c-sm.jpg"
-    },
-    {
-      "city": "Raleigh, NC",
-      "metro": "Raleigh, NC",
-      "metroTag": "city_raleigh_nc",
-      "weekend": "Oct 24-25",
-      "weekendStart": "2026-10-24",
-      "days": 2,
-      "booked": 15,
-      "spotsLeft": 25,
-      "status": "now_open",
-      "sessionUrl": "https://book.usesession.com/s/0bkfjR-CZ7",
-      "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/65a0525f-b459-4adb-b2d1-61223ad57401-sm.jpg"
     },
     {
       "city": "Boca Raton, FL",
