@@ -1,6 +1,6 @@
 {
-  "_comment": "Source of truth for /book/ widgets. First block mirrors the published cities on https://book.usesession.com/i/pN8nwzWsHa (Now Booking grid); the rest is the Opening Soon roadmap (single month). Sold-out math (updated 2026-08-22 per Jonathan): cap = 20 bookings per event day (1-day=20, 2-day=40); Session's raw capacity above that is blocked/reserved slots we never expose. Status: now_open | sold_out (Use Session published) | opening_soon (next month, not yet on sale). 2-month window only -- scheduling tier retired. Synced 2026-08-26 second run (on-request; deltas vs same-day 8:30am commit 2479964): 20 Now Booking rows (13 sold out, 7 open) + 8 Opening Soon (November). No status changes, no sell-outs, no date or thumbnail/slug changes -- all 20 slugs+UUIDs re-verified live. Spot moves (3 intraday bookings): London UK 6->5, Raleigh NC 23->22, Charleston SC 7->6. Unchanged: Norwalk CT 7, Bellevue WA 12, Alexandria VA 13, Phoenix AZ 28. Opening Soon November unchanged at 8 (Dallas TX still Oct 24-25 on the sheet, not yet live on Use Session). November's Denver still omitted (its Aug 29-30 card is still live and sold out on the index); Franklin TN + Calabasas CA omitted (LP brand, not PPU); Summit NJ hidden per Jonathan.",
-  "updated": "2026-08-26",
+  "_comment": "Source of truth for /book/ widgets. First block mirrors the published cities on https://book.usesession.com/i/pN8nwzWsHa (Now Booking grid); the rest is the Opening Soon roadmap (single month). Sold-out math (updated 2026-08-22 per Jonathan): cap = 20 bookings per event day (1-day=20, 2-day=40); Session's raw capacity above that is blocked/reserved slots we never expose. Status: now_open | sold_out (Use Session published) | opening_soon (next month, not yet on sale). 2-month window only -- scheduling tier retired. Synced 2026-08-27 (deltas vs 2026-08-26 second-run commit 8ff14e8): 20 Now Booking rows (13 sold out, 7 open) + 8 Opening Soon (November). No status changes, no sell-outs, no date or thumbnail/slug changes -- all 20 slugs+UUIDs re-verified live. Spot moves (2 bookings): Bellevue WA 12->11, Charleston SC 6->5. Unchanged: London UK 5, Norwalk CT 7, Raleigh NC 22, Alexandria VA 13, Phoenix AZ 28. Opening Soon November unchanged at 8 (Dallas TX still Oct 24-25 on the sheet, not yet live on Use Session). November's Denver still omitted (its Aug 29-30 card is still live and sold out on the index); Franklin TN + Calabasas CA omitted (LP brand, not PPU); Summit NJ hidden per Jonathan.",
+  "updated": "2026-08-27",
   "scheduled": [
     {
       "city": "Philadelphia, PA",
@@ -165,8 +165,8 @@
       "weekend": "Oct 3-4",
       "weekendStart": "2026-10-03",
       "days": 2,
-      "booked": 28,
-      "spotsLeft": 12,
+      "booked": 29,
+      "spotsLeft": 11,
       "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/QlZh7U3jSs",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/732465e2-1279-4399-b760-bbb9ff07160a-sm.jpg"
@@ -217,8 +217,8 @@
       "weekend": "Oct 10",
       "weekendStart": "2026-10-10",
       "days": 1,
-      "booked": 14,
-      "spotsLeft": 6,
+      "booked": 15,
+      "spotsLeft": 5,
       "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/q7o7L0abMO",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/17a56ce1-c0a6-4147-9baa-2e4ec26062c2-sm.jpg"
