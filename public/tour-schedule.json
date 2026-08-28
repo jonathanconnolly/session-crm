@@ -1,6 +1,6 @@
 {
-  "_comment": "Source of truth for /book/ widgets. First block mirrors the published cities on https://book.usesession.com/i/pN8nwzWsHa (Now Booking grid); the rest is the Opening Soon roadmap (single month). Sold-out math (updated 2026-08-22 per Jonathan): cap = 20 bookings per event day (1-day=20, 2-day=40); Session's raw capacity above that is blocked/reserved slots we never expose. Status: now_open | sold_out (Use Session published) | opening_soon (next month, not yet on sale). 2-month window only -- scheduling tier retired. Synced 2026-08-27 (deltas vs 2026-08-26 second-run commit 8ff14e8): 20 Now Booking rows (13 sold out, 7 open) + 8 Opening Soon (November). No status changes, no sell-outs, no date or thumbnail/slug changes -- all 20 slugs+UUIDs re-verified live. Spot moves (2 bookings): Bellevue WA 12->11, Charleston SC 6->5. Unchanged: London UK 5, Norwalk CT 7, Raleigh NC 22, Alexandria VA 13, Phoenix AZ 28. Opening Soon November unchanged at 8 (Dallas TX still Oct 24-25 on the sheet, not yet live on Use Session). November's Denver still omitted (its Aug 29-30 card is still live and sold out on the index); Franklin TN + Calabasas CA omitted (LP brand, not PPU); Summit NJ hidden per Jonathan.",
-  "updated": "2026-08-27",
+  "_comment": "Source of truth for /book/ widgets. First block mirrors the published cities on https://book.usesession.com/i/pN8nwzWsHa (Now Booking grid); the rest is the Opening Soon roadmap (single month). Sold-out math (updated 2026-08-22 per Jonathan): cap = 20 bookings per event day (1-day=20, 2-day=40); Session's raw capacity above that is blocked/reserved slots we never expose. Status: now_open | sold_out (Use Session published) | opening_soon (next month, not yet on sale). 2-month window only -- scheduling tier retired. Synced 2026-08-28 (deltas vs 2026-08-27 commit 86c5bea): 20 Now Booking rows (13 sold out, 7 open) + 8 Opening Soon (November). No status changes, no sell-outs, no date or thumbnail/slug changes -- all 20 slugs+UUIDs re-verified live. Spot moves (8 bookings): Norwalk CT 7->4, Alexandria VA 13->10, Bellevue WA 11->10, Raleigh NC 22->21. Unchanged: London UK 5, Charleston SC 5, Phoenix AZ 28. Opening Soon November unchanged at 8 (Dallas TX still Oct 24-25 on the sheet, not yet live on Use Session; Alpharetta GA Oct 17 on the sheet, not yet live). November's Denver still omitted (its Aug 29-30 card is still live and sold out on the index); Franklin TN + Calabasas CA omitted (LP brand, not PPU); Summit NJ hidden per Jonathan.",
+  "updated": "2026-08-28",
   "scheduled": [
     {
       "city": "Philadelphia, PA",
@@ -152,8 +152,8 @@
       "weekend": "Sep 26-27",
       "weekendStart": "2026-09-26",
       "days": 2,
-      "booked": 33,
-      "spotsLeft": 7,
+      "booked": 36,
+      "spotsLeft": 4,
       "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/FhjixZBsG_",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/3c77ac7b-2239-4fc8-b9d8-898a863e6763-sm.jpg"
@@ -165,8 +165,8 @@
       "weekend": "Oct 3-4",
       "weekendStart": "2026-10-03",
       "days": 2,
-      "booked": 29,
-      "spotsLeft": 11,
+      "booked": 30,
+      "spotsLeft": 10,
       "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/QlZh7U3jSs",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/732465e2-1279-4399-b760-bbb9ff07160a-sm.jpg"
@@ -191,8 +191,8 @@
       "weekend": "Oct 10-11",
       "weekendStart": "2026-10-10",
       "days": 2,
-      "booked": 18,
-      "spotsLeft": 22,
+      "booked": 19,
+      "spotsLeft": 21,
       "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/0bkfjR-CZ7",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/65a0525f-b459-4adb-b2d1-61223ad57401-sm.jpg"
@@ -204,8 +204,8 @@
       "weekend": "Oct 10-11",
       "weekendStart": "2026-10-10",
       "days": 2,
-      "booked": 27,
-      "spotsLeft": 13,
+      "booked": 30,
+      "spotsLeft": 10,
       "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/hpVxa1owYC",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/ac82bc98-6b1a-4e10-ac79-55d43397395e-sm.jpg"
