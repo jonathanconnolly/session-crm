@@ -1,20 +1,7 @@
 {
-  "_comment": "Source of truth for /book/ widgets. First block mirrors the published cities on https://book.usesession.com/i/pN8nwzWsHa (Now Booking grid); the rest is the Opening Soon roadmap (single month). Sold-out math (updated 2026-08-22 per Jonathan): cap = 20 bookings per event day (1-day=20, 2-day=40); Session's raw capacity above that is blocked/reserved slots we never expose. Status: now_open | sold_out (Use Session published) | opening_soon (next month, not yet on sale). 2-month window only -- scheduling tier retired. Synced 2026-08-30 midday (2nd run; deltas vs morning commit 526ae89): 22 Now Booking rows (13 sold out, 9 open) + 9 Opening Soon (November). TWO NEW CITIES LIVE on Use Session: Alpharetta GA Oct 17 (1-day; 4 spots left at launch) and Dallas TX Oct 24-25 (2-day; 9 spots left at launch) -- both heavily pre-sold before publishing. Spot moves: Alexandria VA 7->4 (3 bookings intraday). Unchanged: London UK 5, Norwalk CT 5, Bellevue WA 8, Raleigh NC 21, Charleston SC 4, Phoenix AZ 28. No sell-outs, no date or thumbnail/slug changes on carryover cities. Opening Soon November unchanged at 9 (incl. NEW Overland Park KS from the morning run). November's Denver still omitted (its Aug 29-30 card is still live and sold out on the index); Franklin TN + Calabasas CA omitted (LP brand, not PPU); Summit NJ hidden per Jonathan.",
-  "updated": "2026-08-30",
+  "_comment": "Source of truth for /book/ widgets. First block mirrors the published cities on https://book.usesession.com/i/pN8nwzWsHa (Now Booking grid); the rest is the Opening Soon roadmap (single month). Sold-out math (updated 2026-08-22 per Jonathan): cap = 20 bookings per event day (1-day=20, 2-day=40); Session's raw capacity above that is blocked/reserved slots we never expose. Status: now_open | sold_out (Use Session published) | opening_soon (next month, not yet on sale). 2-month window only -- scheduling tier retired. Synced 2026-08-31 (deltas vs 2026-08-30 midday commit a9aeee6): 21 Now Booking rows (12 sold out, 9 open) + 9 Opening Soon (November). 4 bookings: Norwalk CT 5->4, Alexandria VA 4->3, Alpharetta GA 4->3 (first since launch), Dallas TX 9->8. Philadelphia PA Aug 29 removed -- its past-date card dropped off the Use Session index. No sell-outs, no new cities, no date/thumbnail/slug changes. Opening Soon November unchanged at 9. November's Denver still omitted (its Aug 29-30 card is still live and sold out on the index); Franklin TN + Calabasas CA omitted (LP brand, not PPU); Summit NJ hidden per Jonathan.",
+  "updated": "2026-08-31",
   "scheduled": [
-    {
-      "city": "Philadelphia, PA",
-      "metro": "Philadelphia, PA",
-      "metroTag": "city_philadelphia_pa",
-      "weekend": "Aug 29",
-      "weekendStart": "2026-08-29",
-      "days": 1,
-      "booked": 20,
-      "spotsLeft": 0,
-      "status": "sold_out",
-      "sessionUrl": "https://book.usesession.com/s/ZF3IrAcjgG",
-      "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/88f21e5f-feab-4091-a9e1-595968154077-sm.jpg"
-    },
     {
       "city": "Denver, CO",
       "metro": "Denver, CO",
@@ -152,8 +139,8 @@
       "weekend": "Sep 26-27",
       "weekendStart": "2026-09-26",
       "days": 2,
-      "booked": 35,
-      "spotsLeft": 5,
+      "booked": 36,
+      "spotsLeft": 4,
       "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/FhjixZBsG_",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/3c77ac7b-2239-4fc8-b9d8-898a863e6763-sm.jpg"
@@ -204,8 +191,8 @@
       "weekend": "Oct 10-11",
       "weekendStart": "2026-10-10",
       "days": 2,
-      "booked": 36,
-      "spotsLeft": 4,
+      "booked": 37,
+      "spotsLeft": 3,
       "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/hpVxa1owYC",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/ac82bc98-6b1a-4e10-ac79-55d43397395e-sm.jpg"
@@ -230,8 +217,8 @@
       "weekend": "Oct 17",
       "weekendStart": "2026-10-17",
       "days": 1,
-      "booked": 16,
-      "spotsLeft": 4,
+      "booked": 17,
+      "spotsLeft": 3,
       "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/6WU0B8k-Hf",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/927aa9f7-61bd-48c2-835d-6e7a431f60a3-sm.jpg"
@@ -269,8 +256,8 @@
       "weekend": "Oct 24-25",
       "weekendStart": "2026-10-24",
       "days": 2,
-      "booked": 31,
-      "spotsLeft": 9,
+      "booked": 32,
+      "spotsLeft": 8,
       "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/wv2VHbpmES",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/3f261395-43e8-477f-885e-1a6e8745ee92-sm.png"
