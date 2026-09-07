@@ -1,6 +1,6 @@
 {
-  "_comment": "Sync 2026-09-06 (covers 9/5-9/6; the 9/5 scheduled run did not land). 21 Now Booking cards: 7 open / 14 sold out. THREE SELL-OUTS: Ridgewood NJ (1->0, 40/40), Philadelphia PA (2->0, 20/20), Dallas TX (2->0, 40/40). Bookings: Raleigh 17->15, Phoenix 22->20, Bellevue 3->2, Charleston 3->2, Denver 26->25. Cancellations released spots: London 3->4 (event this weekend), Norwalk 1->2. No new cities, no date/slug/thumbnail changes. Opening Soon: November, 9 cities (unchanged; no December block on the Schedule sheet yet).",
-  "updated": "2026-09-06",
+  "_comment": "Synced 2026-09-07 from Use Session index + Schedule sheet. 21 Now Booking cards (7 open, 14 sold out) — same 21 as 2026-09-06, no new cities, no sell-outs, no reopens, no date/slug/thumbnail changes. Bookings since 2026-09-06: London UK 4->2 (2, event weekend just finished), Norwalk CT 2->1, Raleigh NC 15->14. Capacity math: 20 bookings/day (cap 20/40). Opening Soon = November, 9 cities (unchanged; sheet has no December block).",
+  "updated": "2026-09-07",
   "scheduled": [
     {
       "city": "London, UK",
@@ -9,8 +9,8 @@
       "weekend": "Sep 5-6",
       "weekendStart": "2026-09-05",
       "days": 2,
-      "booked": 36,
-      "spotsLeft": 4,
+      "booked": 38,
+      "spotsLeft": 2,
       "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/ku2HCtnsMR",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/3342edff-1f88-4471-89d3-556532c81839-sm.jpg"
@@ -113,8 +113,8 @@
       "weekend": "Sep 26-27",
       "weekendStart": "2026-09-26",
       "days": 2,
-      "booked": 38,
-      "spotsLeft": 2,
+      "booked": 39,
+      "spotsLeft": 1,
       "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/FhjixZBsG_",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/3c77ac7b-2239-4fc8-b9d8-898a863e6763-sm.jpg"
@@ -165,8 +165,8 @@
       "weekend": "Oct 10-11",
       "weekendStart": "2026-10-10",
       "days": 2,
-      "booked": 25,
-      "spotsLeft": 15,
+      "booked": 26,
+      "spotsLeft": 14,
       "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/0bkfjR-CZ7",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/65a0525f-b459-4adb-b2d1-61223ad57401-sm.jpg"
