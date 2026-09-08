@@ -1,20 +1,7 @@
 {
-  "_comment": "Synced 2026-09-07 from Use Session index + Schedule sheet. 21 Now Booking cards (7 open, 14 sold out) — same 21 as 2026-09-06, no new cities, no sell-outs, no reopens, no date/slug/thumbnail changes. Bookings since 2026-09-06: London UK 4->2 (2, event weekend just finished), Norwalk CT 2->1, Raleigh NC 15->14. Capacity math: 20 bookings/day (cap 20/40). Opening Soon = November, 9 cities (unchanged; sheet has no December block).",
-  "updated": "2026-09-07",
+  "_comment": "Synced 2026-09-08 from Use Session index + Schedule sheet. Now Booking: 20 cards (14 sold out, 6 open). Changes since 2026-09-07 (ba93d1c): London UK Sep 5-6 REMOVED (past-date card dropped off the Use Session index); Denver CO 25->24 (1 booking). No sell-outs, no reopens, no new cities, no date/slug/thumbnail changes. Opening Soon: November, 9 cities (unchanged; no December block on sheet). Capacity math 20/day.",
+  "updated": "2026-09-08",
   "scheduled": [
-    {
-      "city": "London, UK",
-      "metro": "London, UK",
-      "metroTag": "city_london_uk",
-      "weekend": "Sep 5-6",
-      "weekendStart": "2026-09-05",
-      "days": 2,
-      "booked": 38,
-      "spotsLeft": 2,
-      "status": "now_open",
-      "sessionUrl": "https://book.usesession.com/s/ku2HCtnsMR",
-      "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/3342edff-1f88-4471-89d3-556532c81839-sm.jpg"
-    },
     {
       "city": "Highwood, IL",
       "metro": "Chicago, IL",
@@ -269,8 +256,8 @@
       "weekend": "Nov 7-8",
       "weekendStart": "2026-11-07",
       "days": 2,
-      "booked": 15,
-      "spotsLeft": 25,
+      "booked": 16,
+      "spotsLeft": 24,
       "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/wxLeD6B3b8",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/aa594339-2f09-4865-ba0d-eb30675927c2-sm.jpg"
