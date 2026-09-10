@@ -1,6 +1,6 @@
 {
-  "_comment": "Synced 2026-09-09 from the Use Session index (20 cards, all mirrored). Deltas vs 2026-09-08: NORWALK CT SOLD OUT (1->0, 40/40, 20th sold-out city). Two spots REOPENED via cancellation: Summerlin NV (0->1, Sep 20) and West Palm Beach FL (0->1, Oct 24). Bookings: Bellevue WA 2->1, Phoenix AZ 20->19. Flat: Raleigh 14, Charleston 2, Denver 24. Now 13 sold out / 7 open. No new cities, no date/slug/thumbnail changes. Opening Soon = November, 9 cities (unchanged; sheet has no December block). Capacity math 20/day.",
-  "updated": "2026-09-09",
+  "_comment": "Synced 2026-09-10 (run executed ~midday on-request after the 8:30am scheduled run aborted at STEP 0 — Use Session was signed in as Little Personality). Deltas vs 2026-09-09: 4 bookings — Raleigh NC 14→12 (2), Charleston SC 2→1, Phoenix AZ 19→18; Highwood IL briefly reopened 1 spot this morning and re-sold before this commit (stays sold_out). No sell-outs, no new cities, no date/slug/thumbnail changes; same 20 Now Booking cards (13 sold out, 7 open). Opening Soon = November, 9 cities (no December block on the Schedule sheet yet).",
+  "updated": "2026-09-10",
   "scheduled": [
     {
       "city": "Highwood, IL",
@@ -152,8 +152,8 @@
       "weekend": "Oct 10-11",
       "weekendStart": "2026-10-10",
       "days": 2,
-      "booked": 26,
-      "spotsLeft": 14,
+      "booked": 28,
+      "spotsLeft": 12,
       "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/0bkfjR-CZ7",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/65a0525f-b459-4adb-b2d1-61223ad57401-sm.jpg"
@@ -178,8 +178,8 @@
       "weekend": "Oct 10",
       "weekendStart": "2026-10-10",
       "days": 1,
-      "booked": 18,
-      "spotsLeft": 2,
+      "booked": 19,
+      "spotsLeft": 1,
       "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/q7o7L0abMO",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/17a56ce1-c0a6-4147-9baa-2e4ec26062c2-sm.jpg"
@@ -217,8 +217,8 @@
       "weekend": "Oct 24-25",
       "weekendStart": "2026-10-24",
       "days": 2,
-      "booked": 21,
-      "spotsLeft": 19,
+      "booked": 22,
+      "spotsLeft": 18,
       "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/Q_Nx9pUHmp",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/a7eef1cd-06f2-41b9-97b3-bc973d565a4c-sm.jpg"
