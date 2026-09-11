@@ -1,6 +1,6 @@
 {
-  "_comment": "Synced 2026-09-10 (run executed ~midday on-request after the 8:30am scheduled run aborted at STEP 0 — Use Session was signed in as Little Personality). Deltas vs 2026-09-09: 4 bookings — Raleigh NC 14→12 (2), Charleston SC 2→1, Phoenix AZ 19→18; Highwood IL briefly reopened 1 spot this morning and re-sold before this commit (stays sold_out). No sell-outs, no new cities, no date/slug/thumbnail changes; same 20 Now Booking cards (13 sold out, 7 open). Opening Soon = November, 9 cities (no December block on the Schedule sheet yet).",
-  "updated": "2026-09-10",
+  "_comment": "Synced 2026-09-11 (8:30am scheduled run). Changes vs 2026-09-10: WEST PALM BEACH FL Oct 24 SOLD OUT (1→0, 20/20 — reopened spot re-sold). No other spot moves: Summerlin 1, Bellevue 1, Raleigh 12, Charleston 1, Phoenix 18, Denver 24 all flat. Same 20 cards (14 sold out / 6 open); no new cities, no date/slug/thumbnail changes. Opening Soon = November, 9 cities, unchanged (sheet still has no December block).",
+  "updated": "2026-09-11",
   "scheduled": [
     {
       "city": "Highwood, IL",
@@ -204,9 +204,9 @@
       "weekend": "Oct 24",
       "weekendStart": "2026-10-24",
       "days": 1,
-      "booked": 19,
-      "spotsLeft": 1,
-      "status": "now_open",
+      "booked": 20,
+      "spotsLeft": 0,
+      "status": "sold_out",
       "sessionUrl": "https://book.usesession.com/s/LWxQxadG6D",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/7a3787c2-4d48-4f6e-a33d-22775a94caa4-sm.jpg"
     },
