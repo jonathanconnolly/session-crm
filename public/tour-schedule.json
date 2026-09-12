@@ -1,5 +1,5 @@
 {
-  "_comment": "Source of truth for /book/ widgets. First block mirrors the published cities on https://book.usesession.com/i/pN8nwzWsHa (Now Booking grid); the second block is the Opening Soon roadmap (single most-recent month only). Capacity math (Jonathan 2026-08-22): sold out = 20 bookings per event day, cap = 20 x days (1-day=20, 2-day=40); booked = cap - spotsLeft; Session's raw 30/day includes blocked/reserved slots we never expose. Status: now_open | sold_out | opening_soon. The 'scheduling' tier is RETIRED. Last synced 2026-09-12 (8:30am scheduled run) - 20 published Now Booking cities (12 sold out, 8 open: Henderson 1, Summerlin 1, Bellevue 1, Raleigh 13, Charleston 2, Alpharetta 1, Phoenix 18, Denver 24). Since 2026-09-11 (d3b03dc): no new bookings; 4 cities RELEASED a spot (cancellations, not bookings) - Henderson NV Sep 19 REOPENED 0->1, Alpharetta GA Oct 17 REOPENED 0->1, Raleigh NC 12->13, Charleston SC 1->2. Sold-out count 14->12. All 20 slugs and thumbnails unchanged. Opening Soon = November (9 cities) unchanged; no December block on the Schedule tab yet. Summit NJ hidden; LP-brand rows excluded.",
+  "_comment": "Source of truth for /book/ widgets. First block mirrors the published cities on https://book.usesession.com/i/pN8nwzWsHa (Now Booking grid); the second block is the Opening Soon roadmap (single most-recent month only). Capacity math (Jonathan 2026-08-22): sold out = 20 bookings per event day, cap = 20 x days (1-day=20, 2-day=40); booked = cap - spotsLeft; Session's raw 30/day includes blocked/reserved slots we never expose. Status: now_open | sold_out | opening_soon. The 'scheduling' tier is RETIRED. Last synced 2026-09-12 (on-request afternoon re-run; 8:30am run = 8467f04) - 20 published Now Booking cities (12 sold out, 8 open: Henderson 1, Summerlin 1, Bellevue 1, Raleigh 13, Charleston 2, Alpharetta 1, Phoenix 18, Denver 24). Since 2026-09-11 (d3b03dc): no new bookings; 4 cities RELEASED a spot (cancellations, not bookings) - Henderson NV Sep 19 REOPENED 0->1, Alpharetta GA Oct 17 REOPENED 0->1, Raleigh NC 12->13, Charleston SC 1->2. Sold-out count 14->12. All 20 slugs unchanged; Phoenix AZ thumbnail refreshed (cover re-uploaded, new UUID .png). Afternoon re-run: zero booking changes vs the morning. Opening Soon = November (9 cities) unchanged; no December block on the Schedule tab yet. Summit NJ hidden; LP-brand rows excluded.",
   "updated": "2026-09-12",
   "scheduled": [
     {
@@ -221,7 +221,7 @@
       "spotsLeft": 18,
       "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/Q_Nx9pUHmp",
-      "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/a7eef1cd-06f2-41b9-97b3-bc973d565a4c-sm.jpg"
+      "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/fb076c02-b682-459a-a8e0-7010f6947d64-sm.png"
     },
     {
       "city": "Dallas, TX",
