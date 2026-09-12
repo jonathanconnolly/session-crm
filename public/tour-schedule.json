@@ -1,6 +1,6 @@
 {
-  "_comment": "Synced 2026-09-11 (8:30am scheduled run). Changes vs 2026-09-10: WEST PALM BEACH FL Oct 24 SOLD OUT (1→0, 20/20 — reopened spot re-sold). No other spot moves: Summerlin 1, Bellevue 1, Raleigh 12, Charleston 1, Phoenix 18, Denver 24 all flat. Same 20 cards (14 sold out / 6 open); no new cities, no date/slug/thumbnail changes. Opening Soon = November, 9 cities, unchanged (sheet still has no December block).",
-  "updated": "2026-09-11",
+  "_comment": "Source of truth for /book/ widgets. First block mirrors the published cities on https://book.usesession.com/i/pN8nwzWsHa (Now Booking grid); the second block is the Opening Soon roadmap (single most-recent month only). Capacity math (Jonathan 2026-08-22): sold out = 20 bookings per event day, cap = 20 x days (1-day=20, 2-day=40); booked = cap - spotsLeft; Session's raw 30/day includes blocked/reserved slots we never expose. Status: now_open | sold_out | opening_soon. The 'scheduling' tier is RETIRED. Last synced 2026-09-12 (8:30am scheduled run) - 20 published Now Booking cities (12 sold out, 8 open: Henderson 1, Summerlin 1, Bellevue 1, Raleigh 13, Charleston 2, Alpharetta 1, Phoenix 18, Denver 24). Since 2026-09-11 (d3b03dc): no new bookings; 4 cities RELEASED a spot (cancellations, not bookings) - Henderson NV Sep 19 REOPENED 0->1, Alpharetta GA Oct 17 REOPENED 0->1, Raleigh NC 12->13, Charleston SC 1->2. Sold-out count 14->12. All 20 slugs and thumbnails unchanged. Opening Soon = November (9 cities) unchanged; no December block on the Schedule tab yet. Summit NJ hidden; LP-brand rows excluded.",
+  "updated": "2026-09-12",
   "scheduled": [
     {
       "city": "Highwood, IL",
@@ -35,9 +35,9 @@
       "weekend": "Sep 19",
       "weekendStart": "2026-09-19",
       "days": 1,
-      "booked": 20,
-      "spotsLeft": 0,
-      "status": "sold_out",
+      "booked": 19,
+      "spotsLeft": 1,
+      "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/_EtE2TSo3F",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/7743bba2-27bf-4637-93c7-bf39a92af130-sm.jpg"
     },
@@ -152,8 +152,8 @@
       "weekend": "Oct 10-11",
       "weekendStart": "2026-10-10",
       "days": 2,
-      "booked": 28,
-      "spotsLeft": 12,
+      "booked": 27,
+      "spotsLeft": 13,
       "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/0bkfjR-CZ7",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/65a0525f-b459-4adb-b2d1-61223ad57401-sm.jpg"
@@ -178,8 +178,8 @@
       "weekend": "Oct 10",
       "weekendStart": "2026-10-10",
       "days": 1,
-      "booked": 19,
-      "spotsLeft": 1,
+      "booked": 18,
+      "spotsLeft": 2,
       "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/q7o7L0abMO",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/17a56ce1-c0a6-4147-9baa-2e4ec26062c2-sm.jpg"
@@ -191,9 +191,9 @@
       "weekend": "Oct 17",
       "weekendStart": "2026-10-17",
       "days": 1,
-      "booked": 20,
-      "spotsLeft": 0,
-      "status": "sold_out",
+      "booked": 19,
+      "spotsLeft": 1,
+      "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/6WU0B8k-Hf",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/927aa9f7-61bd-48c2-835d-6e7a431f60a3-sm.jpg"
     },
