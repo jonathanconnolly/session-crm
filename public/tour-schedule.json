@@ -1,33 +1,7 @@
 {
-  "_comment": "Source of truth for /book/ widgets. First block mirrors the published cities on https://book.usesession.com/i/pN8nwzWsHa (Now Booking grid); the second block is the Opening Soon roadmap (single most-recent month only). Capacity math (Jonathan 2026-08-22): sold out = 20 bookings per event day, cap = 20 x days (1-day=20, 2-day=40); booked = cap - spotsLeft; Session's raw 30/day includes blocked/reserved slots we never expose. Status: now_open | sold_out | opening_soon. The 'scheduling' tier is RETIRED. Last synced 2026-09-12 (on-request afternoon re-run; 8:30am run = 8467f04) - 20 published Now Booking cities (12 sold out, 8 open: Henderson 1, Summerlin 1, Bellevue 1, Raleigh 13, Charleston 2, Alpharetta 1, Phoenix 18, Denver 24). Since 2026-09-11 (d3b03dc): no new bookings; 4 cities RELEASED a spot (cancellations, not bookings) - Henderson NV Sep 19 REOPENED 0->1, Alpharetta GA Oct 17 REOPENED 0->1, Raleigh NC 12->13, Charleston SC 1->2. Sold-out count 14->12. All 20 slugs unchanged; Phoenix AZ thumbnail refreshed (cover re-uploaded, new UUID .png). Afternoon re-run: zero booking changes vs the morning. Opening Soon = November (9 cities) unchanged; no December block on the Schedule tab yet. Summit NJ hidden; LP-brand rows excluded.",
-  "updated": "2026-09-12",
+  "_comment": "Source of truth for /book/ widgets. First block mirrors the published cities on https://book.usesession.com/i/pN8nwzWsHa (Now Booking grid); the second block is the Opening Soon roadmap (single most-recent month only). Capacity math (Jonathan 2026-08-22): sold out = 20 bookings per event day, cap = 20 x days (1-day=20, 2-day=40); booked = cap - spotsLeft; Session's raw 30/day includes blocked/reserved slots we never expose. Status: now_open | sold_out | opening_soon. The 'scheduling' tier is RETIRED. Last synced 2026-09-14 (scheduled 8:30am run; prior sync 2026-09-12 e2d30fa) - 18 published Now Booking cities (13 sold out, 5 open: Henderson 1, Raleigh 13, Alpharetta 1, Phoenix 18, Denver 24). Since 2026-09-12: 4 bookings - Charleston SC Oct 10 2->0 SOLD OUT, Summerlin NV Sep 20 1->0 SOLD OUT, Bellevue WA Oct 3-4 1->0 SOLD OUT. Highwood IL and Minneapolis MN (Sep 12-13) rolled off - events have happened. All 18 slugs and thumbnails unchanged. Opening Soon = November (10 cities; no December block on the Schedule tab yet): the Schedule tab now lists Coconut Grove FL (Nov 22) and Miami Shores FL (Nov 21) in place of the single 'Miami, FL' row - both map to metro Miami, FL. Summit NJ hidden; Denver already live; LP-brand rows excluded.",
+  "updated": "2026-09-14",
   "scheduled": [
-    {
-      "city": "Highwood, IL",
-      "metro": "Chicago, IL",
-      "metroTag": "city_chicago_il",
-      "weekend": "Sep 12-13",
-      "weekendStart": "2026-09-12",
-      "days": 2,
-      "booked": 40,
-      "spotsLeft": 0,
-      "status": "sold_out",
-      "sessionUrl": "https://book.usesession.com/s/Ev7QPGIcIw",
-      "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/0ac15b40-bdfb-4e46-ba84-7e62e61d84e8-sm.jpg"
-    },
-    {
-      "city": "Minneapolis, MN",
-      "metro": "Minneapolis, MN",
-      "metroTag": "city_minneapolis_mn",
-      "weekend": "Sep 12-13",
-      "weekendStart": "2026-09-12",
-      "days": 2,
-      "booked": 40,
-      "spotsLeft": 0,
-      "status": "sold_out",
-      "sessionUrl": "https://book.usesession.com/s/p5C87KYxiY",
-      "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/c311dd7b-e648-457a-affd-3a91eab8b076-sm.jpg"
-    },
     {
       "city": "Henderson, NV",
       "metro": "Las Vegas, NV",
@@ -74,9 +48,9 @@
       "weekend": "Sep 20",
       "weekendStart": "2026-09-20",
       "days": 1,
-      "booked": 19,
-      "spotsLeft": 1,
-      "status": "now_open",
+      "booked": 20,
+      "spotsLeft": 0,
+      "status": "sold_out",
       "sessionUrl": "https://book.usesession.com/s/KEiRePylUO",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/369124d7-569d-49f8-9785-b40dc350a622-sm.jpg"
     },
@@ -113,9 +87,9 @@
       "weekend": "Oct 3-4",
       "weekendStart": "2026-10-03",
       "days": 2,
-      "booked": 39,
-      "spotsLeft": 1,
-      "status": "now_open",
+      "booked": 40,
+      "spotsLeft": 0,
+      "status": "sold_out",
       "sessionUrl": "https://book.usesession.com/s/QlZh7U3jSs",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/732465e2-1279-4399-b760-bbb9ff07160a-sm.jpg"
     },
@@ -178,9 +152,9 @@
       "weekend": "Oct 10",
       "weekendStart": "2026-10-10",
       "days": 1,
-      "booked": 18,
-      "spotsLeft": 2,
-      "status": "now_open",
+      "booked": 20,
+      "spotsLeft": 0,
+      "status": "sold_out",
       "sessionUrl": "https://book.usesession.com/s/q7o7L0abMO",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/17a56ce1-c0a6-4147-9baa-2e4ec26062c2-sm.jpg"
     },
@@ -297,6 +271,17 @@
       "imageUrl": null
     },
     {
+      "city": "Coconut Grove, FL",
+      "metro": "Miami, FL",
+      "metroTag": "city_miami_fl",
+      "weekend": "",
+      "weekendStart": "2026-11-01",
+      "days": 2,
+      "status": "opening_soon",
+      "sessionUrl": null,
+      "imageUrl": null
+    },
+    {
       "city": "Dublin, OH",
       "metro": "Columbus, OH",
       "metroTag": "city_columbus_oh",
@@ -330,7 +315,7 @@
       "imageUrl": null
     },
     {
-      "city": "Miami, FL",
+      "city": "Miami Shores, FL",
       "metro": "Miami, FL",
       "metroTag": "city_miami_fl",
       "weekend": "",
