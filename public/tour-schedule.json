@@ -1,6 +1,6 @@
 {
-  "_comment": "Source of truth for /book/ widgets. First block mirrors the published cities on https://book.usesession.com/i/pN8nwzWsHa (Now Booking grid); the second block is the Opening Soon roadmap (single most-recent month only). Capacity math (Jonathan 2026-08-22): sold out = 20 bookings per event day, cap = 20 x days (1-day=20, 2-day=40); booked = cap - spotsLeft; Session's raw 30/day includes blocked/reserved slots we never expose. Status: now_open | sold_out | opening_soon. The 'scheduling' tier is RETIRED. Last synced 2026-09-14 (on-request afternoon re-run; 8:30am run = 8f69ae8) - 18 published Now Booking cities (13 sold out, 5 open: Henderson 1, Raleigh 13, Alpharetta 1, Phoenix 17, Denver 22). Since the 8:30am run: 3 bookings - Denver CO Nov 7-8 24->22 (2), Phoenix AZ Oct 24-25 18->17. Earlier today vs 2026-09-12 (e2d30fa): Charleston SC, Summerlin NV, Bellevue WA sold out; Highwood IL + Minneapolis MN (Sep 12-13) rolled off. All 18 slugs and thumbnails unchanged. Opening Soon = November (10 cities; no December block on the Schedule tab yet): the Schedule tab now lists Coconut Grove FL (Nov 22) and Miami Shores FL (Nov 21) in place of the single 'Miami, FL' row - both map to metro Miami, FL. Summit NJ hidden; Denver already live; LP-brand rows excluded.",
-  "updated": "2026-09-14",
+  "_comment": "Source of truth for /book/ widgets. First block mirrors the published cities on https://book.usesession.com/i/pN8nwzWsHa (Now Booking grid); the second block is the Opening Soon roadmap (single most-recent month only). Capacity math (Jonathan 2026-08-22): sold out = 20 bookings per event day, cap = 20 x days (1-day=20, 2-day=40); booked = cap - spotsLeft; Session's raw 30/day includes blocked/reserved slots we never expose. Status: now_open | sold_out | opening_soon. The 'scheduling' tier is RETIRED. Last synced 2026-09-15 (8:30am run, committed via the desktop-app built-in browser because the Chrome extension was down) - 18 published Now Booking cities (13 sold out, 5 open: Henderson 1, Raleigh 13, Alpharetta 1, Phoenix 17, Denver 23). Since 2026-09-14 PM (b3e0ee5): zero new bookings; Denver CO Nov 7-8 released one spot (22->23, cancellation). No sell-outs/reopens; all 18 slugs and thumbnails unchanged. Opening Soon = November (10 cities; no December block on the Schedule tab yet): Overland Park KS dropped (Schedule tab status now Failed), Washington DC added (T-90 Leads, Nov 21-22; metro Washington, DC). Coconut Grove FL + Miami Shores FL both map to metro Miami, FL. Summit NJ hidden; Denver already live; LP-brand rows (Franklin TN, Calabasas CA) excluded.",
+  "updated": "2026-09-15",
   "scheduled": [
     {
       "city": "Henderson, NV",
@@ -230,8 +230,8 @@
       "weekend": "Nov 7-8",
       "weekendStart": "2026-11-07",
       "days": 2,
-      "booked": 18,
-      "spotsLeft": 22,
+      "booked": 17,
+      "spotsLeft": 23,
       "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/wxLeD6B3b8",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/aa594339-2f09-4865-ba0d-eb30675927c2-sm.jpg"
@@ -337,9 +337,9 @@
       "imageUrl": null
     },
     {
-      "city": "Overland Park, KS",
-      "metro": "Kansas City, MO",
-      "metroTag": "city_kansas_city_mo",
+      "city": "Washington, DC",
+      "metro": "Washington, DC",
+      "metroTag": "city_washington_dc",
       "weekend": "",
       "weekendStart": "2026-11-01",
       "days": 2,
