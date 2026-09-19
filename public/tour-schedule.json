@@ -1,6 +1,6 @@
 {
-  "_comment": "Source of truth for /book/ widgets. First block mirrors the published cities on https://book.usesession.com/i/pN8nwzWsHa (Now Booking grid); the second block is the Opening Soon roadmap (single most-recent month only). Capacity math (Jonathan 2026-08-22): sold out = 20 bookings per event day, cap = 20 x days (1-day=20, 2-day=40); booked = cap - spotsLeft; Session's raw 30/day includes blocked/reserved slots we never expose. Status: now_open | sold_out | opening_soon. The 'scheduling' tier is RETIRED. Synced 2026-09-17 (scheduled 8:30am run) from Use Session + Schedule tab. 3 bookings since 2026-09-16 (45aed0c): Raleigh NC 11->9 (2), Phoenix AZ 15->14 (1). Garden City NY Sep 19-20 SOLD OUT again (1->0). Alexandria VA Oct 10-11 REOPENED (0->1, cancellation). Henderson NV released a spot (1->2, cancellation). Denver 21 / Alpharetta 1 unchanged. 18 Now Booking (12 sold out, 6 open: Henderson 2, Raleigh 9, Alexandria 1, Alpharetta 1, Phoenix 14, Denver 21). All 18 slugs and thumbnails unchanged. Opening Soon = November (10 cities, unchanged; no December block on the Schedule tab yet). Summit NJ hidden; Denver already live; Overland Park KS Failed; LP-brand rows (Franklin TN, Calabasas CA) excludedLast synced 2026-09-18 (8:30am scheduled run; Session API + public index; commit via GitHub web editor). Changes since 2026-09-17: 1 booking - Denver CO 21->20. Alexandria VA Oct 10-11 SOLD OUT again (1->0). The Woodlands TX Sep 19-20 REOPENED (0->1, cancellation). No new cities, no thumbnail changes. 18 Now Booking (12 sold out / 6 open). Opening Soon: November, 10 cities (unchanged; no December block on the Schedule tab yet).",
-  "updated": "2026-09-18",
+  "_comment": "Source of truth for /book/ widgets. First block mirrors the published cities on https://book.usesession.com/i/pN8nwzWsHa (Now Booking grid); the second block is the Opening Soon roadmap (single most-recent month only). Capacity math (Jonathan 2026-08-22): sold out = 20 bookings per event day, cap = 20 x days (1-day=20, 2-day=40); booked = cap - spotsLeft; Session's raw 30/day includes blocked/reserved slots we never expose. Status: now_open | sold_out | opening_soon. The 'scheduling' tier is RETIRED. Synced 2026-09-17 (scheduled 8:30am run) from Use Session + Schedule tab. 3 bookings since 2026-09-16 (45aed0c): Raleigh NC 11->9 (2), Phoenix AZ 15->14 (1). Garden City NY Sep 19-20 SOLD OUT again (1->0). Alexandria VA Oct 10-11 REOPENED (0->1, cancellation). Henderson NV released a spot (1->2, cancellation). Denver 21 / Alpharetta 1 unchanged. 18 Now Booking (12 sold out, 6 open: Henderson 2, Raleigh 9, Alexandria 1, Alpharetta 1, Phoenix 14, Denver 21). All 18 slugs and thumbnails unchanged. Opening Soon = November (10 cities, unchanged; no December block on the Schedule tab yet). Summit NJ hidden; Denver already live; Overland Park KS Failed; LP-brand rows (Franklin TN, Calabasas CA) excludedLast synced 2026-09-19 (8+30am scheduled run): 1 booking - Phoenix AZ 14->13. No sell-outs, no reopens, no new cities, no thumbnail changes. 18 Now Booking (12 sold out / 6 open). Opening Soon November: 10 cities (unchanged; no December block on the Schedule tab yet).",
+  "updated": "2026-09-19",
   "scheduled": [
     {
       "city": "Henderson, NV",
@@ -191,8 +191,8 @@
       "weekend": "Oct 24-25",
       "weekendStart": "2026-10-24",
       "days": 2,
-      "booked": 26,
-      "spotsLeft": 14,
+      "booked": 27,
+      "spotsLeft": 13,
       "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/Q_Nx9pUHmp",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/fb076c02-b682-459a-a8e0-7010f6947d64-sm.png"
