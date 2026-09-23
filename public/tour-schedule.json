@@ -1,6 +1,6 @@
 {
-  "_comment": "Last synced 2026-09-22 from Use Session (21 published future flites) + LP + PPU Dashboard Schedule tab. 6 bookings across 3 cities: Raleigh NC 8 to 6, Phoenix AZ 12 to 9, Denver CO 18 to 17. Norwalk CT Sep 26-27 REOPENED (0 to 1, cancellation). Ridgewood NJ Sep 26-27 REMOVED - unpublished on Use Session (was sold out). 8 NEW cities went live from the November roster: Greenville SC, Charlotte NC, Orange County CA, Austin TX, Miami Shores FL, Manhattan NY, Washington DC, Coconut Grove FL. No sell-outs, no thumbnail changes. Now Booking 21 (8 sold out / 13 open). Opening Soon November 2 (Boston MA, Dublin OH) - the rest of the November roster is now live; no December block on the Schedule tab yet.",
-  "updated": "2026-09-22",
+  "_comment": "Last synced 2026-09-23 from Use Session (21 published future flites) + LP + PPU Dashboard Schedule tab. 5 bookings across 4 cities: Raleigh NC 6 to 5, Phoenix AZ 9 to 8, Denver CO 17 to 15, Greenville SC 11 to 10. Norwalk CT Sep 26-27 reopened further (1 to 2, second cancellation) - event in 3 days. No new cities, no removals, no sell-outs, no thumbnail or slug changes; all 21 carryover cards matched the public index exactly. Now Booking 21 (8 sold out / 13 open). Opening Soon November 2 (Boston MA, Dublin OH) - still the only November rows left in Planning; no December block on the Schedule tab yet, so the Opening Soon month stays November.",
+  "updated": "2026-09-23",
   "scheduled": [
     {
       "city": "Norwalk, CT",
@@ -9,8 +9,8 @@
       "weekend": "Sep 26-27",
       "weekendStart": "2026-09-26",
       "days": 2,
-      "booked": 39,
-      "spotsLeft": 1,
+      "booked": 38,
+      "spotsLeft": 2,
       "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/FhjixZBsG_",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/3c77ac7b-2239-4fc8-b9d8-898a863e6763-sm.jpg"
@@ -61,8 +61,8 @@
       "weekend": "Oct 10-11",
       "weekendStart": "2026-10-10",
       "days": 2,
-      "booked": 34,
-      "spotsLeft": 6,
+      "booked": 35,
+      "spotsLeft": 5,
       "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/0bkfjR-CZ7",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/65a0525f-b459-4adb-b2d1-61223ad57401-sm.jpg"
@@ -126,8 +126,8 @@
       "weekend": "Oct 24-25",
       "weekendStart": "2026-10-24",
       "days": 2,
-      "booked": 31,
-      "spotsLeft": 9,
+      "booked": 32,
+      "spotsLeft": 8,
       "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/Q_Nx9pUHmp",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/fb076c02-b682-459a-a8e0-7010f6947d64-sm.png"
@@ -165,8 +165,8 @@
       "weekend": "Nov 7-8",
       "weekendStart": "2026-11-07",
       "days": 2,
-      "booked": 23,
-      "spotsLeft": 17,
+      "booked": 25,
+      "spotsLeft": 15,
       "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/wxLeD6B3b8",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/aa594339-2f09-4865-ba0d-eb30675927c2-sm.jpg"
@@ -178,8 +178,8 @@
       "weekend": "Nov 7",
       "weekendStart": "2026-11-07",
       "days": 1,
-      "booked": 9,
-      "spotsLeft": 11,
+      "booked": 10,
+      "spotsLeft": 10,
       "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/PBhnr6UNgm",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/09cf9065-1a76-4b8a-86bb-5210c0bdb633-sm.jpg"
