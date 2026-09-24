@@ -1,6 +1,6 @@
 {
-  "_comment": "Last synced 2026-09-23 from Use Session (21 published future flites) + LP + PPU Dashboard Schedule tab. 5 bookings across 4 cities: Raleigh NC 6 to 5, Phoenix AZ 9 to 8, Denver CO 17 to 15, Greenville SC 11 to 10. Norwalk CT Sep 26-27 reopened further (1 to 2, second cancellation) - event in 3 days. No new cities, no removals, no sell-outs, no thumbnail or slug changes; all 21 carryover cards matched the public index exactly. Now Booking 21 (8 sold out / 13 open). Opening Soon November 2 (Boston MA, Dublin OH) - still the only November rows left in Planning; no December block on the Schedule tab yet, so the Opening Soon month stays November.",
-  "updated": "2026-09-23",
+  "_comment": "Last synced 2026-09-24 from the Use Session public index (21 published future flites) + LP + PPU Dashboard Schedule tab. 4 bookings across 4 cities: Raleigh NC 5 to 4, Phoenix AZ 8 to 7, Austin TX 24 to 23, Manhattan NY 18 to 17. No new cities, no removals, no sell-outs, no reopens, no thumbnail or slug changes; all 21 carryover cards matched the public index exactly. Now Booking 21 (8 sold out / 13 open). Opening Soon advanced November to DECEMBER 1 (Winter Garden FL, metro Orlando): a DECEMBER block now exists on the Schedule tab (its header is jumbled into the planning-matrix row, which is why prior runs read it as absent), so the month-after rule applies and the November leftovers Boston MA and Dublin OH drop off. Run executed in the desktop built-in browser because the Chrome extension was down past the 5-minute retry; Session GraphQL Step 0 could not run, brand confirmed via the Personality Pop-Up index banner and a 21/21 slug match against the prior commit.",
+  "updated": "2026-09-24",
   "scheduled": [
     {
       "city": "Norwalk, CT",
@@ -61,8 +61,8 @@
       "weekend": "Oct 10-11",
       "weekendStart": "2026-10-10",
       "days": 2,
-      "booked": 35,
-      "spotsLeft": 5,
+      "booked": 36,
+      "spotsLeft": 4,
       "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/0bkfjR-CZ7",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/65a0525f-b459-4adb-b2d1-61223ad57401-sm.jpg"
@@ -126,8 +126,8 @@
       "weekend": "Oct 24-25",
       "weekendStart": "2026-10-24",
       "days": 2,
-      "booked": 32,
-      "spotsLeft": 8,
+      "booked": 33,
+      "spotsLeft": 7,
       "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/Q_Nx9pUHmp",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/fb076c02-b682-459a-a8e0-7010f6947d64-sm.png"
@@ -217,8 +217,8 @@
       "weekend": "Nov 21-22",
       "weekendStart": "2026-11-21",
       "days": 2,
-      "booked": 16,
-      "spotsLeft": 24,
+      "booked": 17,
+      "spotsLeft": 23,
       "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/6h9VAcfZT4",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/80e75133-ede2-4c35-bad6-c2b37161a1fa-sm.jpg"
@@ -243,8 +243,8 @@
       "weekend": "Nov 21-22",
       "weekendStart": "2026-11-21",
       "days": 2,
-      "booked": 22,
-      "spotsLeft": 18,
+      "booked": 23,
+      "spotsLeft": 17,
       "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/1xwpBmrgh1",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/a978464a-22f1-4f47-b4ff-8f3c7112d080-sm.jpg"
@@ -277,22 +277,11 @@
     },
 
     {
-      "city": "Boston, MA",
-      "metro": "Boston, MA",
-      "metroTag": "city_boston_ma",
+      "city": "Winter Garden, FL",
+      "metro": "Orlando, FL",
+      "metroTag": "city_orlando_fl",
       "weekend": "",
-      "weekendStart": "2026-11-01",
-      "days": 2,
-      "status": "opening_soon",
-      "sessionUrl": null,
-      "imageUrl": null
-    },
-    {
-      "city": "Dublin, OH",
-      "metro": "Columbus, OH",
-      "metroTag": "city_columbus_oh",
-      "weekend": "",
-      "weekendStart": "2026-11-01",
+      "weekendStart": "2026-12-01",
       "days": 2,
       "status": "opening_soon",
       "sessionUrl": null,
