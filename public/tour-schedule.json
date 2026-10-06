@@ -1,6 +1,6 @@
 {
-  "_comment": "Last synced 2026-10-05 (2nd pull) from Session (PPU account, 17 published future flites = 17 public-index cards; Summit NJ unpublished/hidden). Capacity 20 per event day (1-day 20, 2-day 40). Changes vs this morning: Alexandria VA SOLD OUT again (0 spots), Austin TX 21->22 booked, Phoenix AZ 36->37 booked. Earlier today: Bellevue WA, Los Altos CA and Philadelphia PA (Oct 3-4) rolled off; Raleigh NC reopened (1 spot left); Greenville SC, Orange County CA, Miami Shores FL, Manhattan NY, Washington DC, Coconut Grove FL took bookings. No new cities, no thumbnail changes. Now Booking 17 (7 sold out / 10 open). Opening Soon: December, 1 (Winter Garden FL).",
-  "updated": "2026-10-05",
+  "_comment": "Daily sync 2026-10-06 (20/day cap math). 17 published future flites = 17 public-index cards; slugs and thumbnails unchanged. Raleigh, NC SOLD OUT (1->0). Bookings: Manhattan 11->9, Washington DC 20->18, Austin 18->17. Now Booking 17 (8 sold out / 9 open). Opening Soon: December, 1 (Winter Garden FL).",
+  "updated": "2026-10-06",
   "scheduled": [
     {
       "city": "Raleigh, NC",
@@ -9,9 +9,9 @@
       "weekend": "Oct 10-11",
       "weekendStart": "2026-10-10",
       "days": 2,
-      "booked": 39,
-      "spotsLeft": 1,
-      "status": "now_open",
+      "booked": 40,
+      "spotsLeft": 0,
+      "status": "sold_out",
       "sessionUrl": "https://book.usesession.com/s/0bkfjR-CZ7",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/65a0525f-b459-4adb-b2d1-61223ad57401-sm.jpg"
     },
@@ -165,8 +165,8 @@
       "weekend": "Nov 21-22",
       "weekendStart": "2026-11-21",
       "days": 2,
-      "booked": 22,
-      "spotsLeft": 18,
+      "booked": 23,
+      "spotsLeft": 17,
       "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/6h9VAcfZT4",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/80e75133-ede2-4c35-bad6-c2b37161a1fa-sm.jpg"
@@ -191,8 +191,8 @@
       "weekend": "Nov 21-22",
       "weekendStart": "2026-11-21",
       "days": 2,
-      "booked": 29,
-      "spotsLeft": 11,
+      "booked": 31,
+      "spotsLeft": 9,
       "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/1xwpBmrgh1",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/a978464a-22f1-4f47-b4ff-8f3c7112d080-sm.jpg"
@@ -204,8 +204,8 @@
       "weekend": "Nov 21-22",
       "weekendStart": "2026-11-21",
       "days": 2,
-      "booked": 20,
-      "spotsLeft": 20,
+      "booked": 22,
+      "spotsLeft": 18,
       "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/5PnbHKGz1X",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/4501a8a8-c7d0-468d-bf6c-c38e38a00162-sm.jpg"
