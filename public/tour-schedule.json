@@ -1,6 +1,6 @@
 {
-  "_comment": "Daily sync 2026-10-06 (20/day cap math). 17 published future flites = 17 public-index cards; slugs and thumbnails unchanged. Raleigh, NC SOLD OUT (1->0). Bookings: Manhattan 11->9, Washington DC 20->18, Austin 18->17. Now Booking 17 (8 sold out / 9 open). Opening Soon: December, 1 (Winter Garden FL).",
-  "updated": "2026-10-06",
+  "_comment": "2026-10-07 sync: 17 Now Booking (6 sold out / 11 open). Raleigh NC and Alexandria VA reopened (0->1). Bookings: Greenville SC 7->6, Denver CO 11->10, Orange County CA 19->18, Coconut Grove FL 7->6. No new cities, no sell-outs. Slugs unchanged. Opening Soon: December, 1 (Winter Garden FL). Capacity 20/day.",
+  "updated": "2026-10-07",
   "scheduled": [
     {
       "city": "Raleigh, NC",
@@ -9,9 +9,9 @@
       "weekend": "Oct 10-11",
       "weekendStart": "2026-10-10",
       "days": 2,
-      "booked": 40,
-      "spotsLeft": 0,
-      "status": "sold_out",
+      "booked": 39,
+      "spotsLeft": 1,
+      "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/0bkfjR-CZ7",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/65a0525f-b459-4adb-b2d1-61223ad57401-sm.jpg"
     },
@@ -22,9 +22,9 @@
       "weekend": "Oct 10-11",
       "weekendStart": "2026-10-10",
       "days": 2,
-      "booked": 40,
-      "spotsLeft": 0,
-      "status": "sold_out",
+      "booked": 39,
+      "spotsLeft": 1,
+      "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/hpVxa1owYC",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/ac82bc98-6b1a-4e10-ac79-55d43397395e-sm.jpg"
     },
@@ -113,8 +113,8 @@
       "weekend": "Nov 7-8",
       "weekendStart": "2026-11-07",
       "days": 2,
-      "booked": 29,
-      "spotsLeft": 11,
+      "booked": 30,
+      "spotsLeft": 10,
       "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/wxLeD6B3b8",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/aa594339-2f09-4865-ba0d-eb30675927c2-sm.jpg"
@@ -126,8 +126,8 @@
       "weekend": "Nov 7",
       "weekendStart": "2026-11-07",
       "days": 1,
-      "booked": 13,
-      "spotsLeft": 7,
+      "booked": 14,
+      "spotsLeft": 6,
       "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/PBhnr6UNgm",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/09cf9065-1a76-4b8a-86bb-5210c0bdb633-sm.jpg"
@@ -152,8 +152,8 @@
       "weekend": "Nov 14-15",
       "weekendStart": "2026-11-14",
       "days": 2,
-      "booked": 21,
-      "spotsLeft": 19,
+      "booked": 22,
+      "spotsLeft": 18,
       "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/z1DO7vqo7w",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/ae96d067-e8c0-4a0f-b2cb-46967368e8e8-sm.jpg"
@@ -217,8 +217,8 @@
       "weekend": "Nov 22",
       "weekendStart": "2026-11-22",
       "days": 1,
-      "booked": 13,
-      "spotsLeft": 7,
+      "booked": 14,
+      "spotsLeft": 6,
       "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/LIBuOz3heI",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/ad0153ca-76ca-4fac-b14b-07ebc8d3e339-sm.jpg"
