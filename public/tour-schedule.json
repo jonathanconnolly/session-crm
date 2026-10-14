@@ -1,6 +1,6 @@
 {
-  "_comment": "Last synced 2026-10-13. Bookings since 10/12: Denver CO 5->4, Austin TX 4->1, Orange County CA 15->14. Boca Raton FL Oct 25 SOLD OUT (1->0). No new cities, no reopens, thumbnails and slugs unchanged. Now Booking 14 (5 sold out / 9 open). Opening Soon November 2 (Boston MA, Dublin OH) - December block on Schedule tab still empty. Capacity: 20 per event day.",
-  "updated": "2026-10-13",
+  "_comment": "Last synced 2026-10-14. Changes since 10/13: Phoenix AZ Oct 24-25 SOLD OUT (2->0), Austin TX Nov 21-22 SOLD OUT (1->0), Coconut Grove FL 3->1, Alpharetta GA Oct 17 reopened (0->1). No new cities, thumbnails and slugs unchanged. Now Booking 14 (6 sold out / 8 open). Opening Soon November 2 (Boston MA, Dublin OH) - unchanged. Capacity: 20 per event day.",
+  "updated": "2026-10-14",
   "scheduled": [
     {
       "city": "Alpharetta, GA",
@@ -9,9 +9,9 @@
       "weekend": "Oct 17",
       "weekendStart": "2026-10-17",
       "days": 1,
-      "booked": 20,
-      "spotsLeft": 0,
-      "status": "sold_out",
+      "booked": 19,
+      "spotsLeft": 1,
+      "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/6WU0B8k-Hf",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/927aa9f7-61bd-48c2-835d-6e7a431f60a3-sm.jpg"
     },
@@ -35,9 +35,9 @@
       "weekend": "Oct 24-25",
       "weekendStart": "2026-10-24",
       "days": 2,
-      "booked": 38,
-      "spotsLeft": 2,
-      "status": "now_open",
+      "booked": 40,
+      "spotsLeft": 0,
+      "status": "sold_out",
       "sessionUrl": "https://book.usesession.com/s/Q_Nx9pUHmp",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/c94c208c-a2c6-48d5-8126-556b89e77af5-sm.jpg"
     },
@@ -126,9 +126,9 @@
       "weekend": "Nov 21-22",
       "weekendStart": "2026-11-21",
       "days": 2,
-      "booked": 39,
-      "spotsLeft": 1,
-      "status": "now_open",
+      "booked": 40,
+      "spotsLeft": 0,
+      "status": "sold_out",
       "sessionUrl": "https://book.usesession.com/s/6h9VAcfZT4",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/80e75133-ede2-4c35-bad6-c2b37161a1fa-sm.jpg"
     },
@@ -178,8 +178,8 @@
       "weekend": "Nov 22",
       "weekendStart": "2026-11-22",
       "days": 1,
-      "booked": 17,
-      "spotsLeft": 3,
+      "booked": 19,
+      "spotsLeft": 1,
       "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/LIBuOz3heI",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/ad0153ca-76ca-4fac-b14b-07ebc8d3e339-sm.jpg"
