@@ -4,6 +4,7 @@
 .block-custom-code:has(.ppuH,.ppuR,.ppu-fof) .element-container__content,.block-custom-code:has(.ppuH,.ppuR,.ppu-fof) .element-container__content-wrapper{display:block!important;line-height:0}
 .block-custom-code:has(.ppuH,.ppuR,.ppu-fof) .element-container__content > *{line-height:normal}
 .block-custom-code:has(.ppuH),.block-custom-code:has(.ppuR),.block-custom-code:has(.ppu-fof){padding-top:0!important;padding-bottom:0!important}
+.block-custom-code:has(.ppuR){margin-top:-1px!important;background:#FBDFD9}
 .ppuH{--ink:#2D2D2D;--text:#373737;--soft:#646363;--paper:#FFFFFF;--cream:#FAF9F5;--blush:#FBDFD9;
 --serif:"MADE Mirage","Orpheus Pro","Cormorant Garamond",Georgia,serif;--mono:"Roboto Mono","Courier New",Courier,monospace;
 --wrap:1180px;--gut:clamp(16px,4.75vw,67px);text-align:left}
@@ -30,7 +31,7 @@ font:600 18px/18px var(--mono)!important;letter-spacing:1.8px!important;text-tra
 .ppuH-tile img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
 .ppuH-tile img+img{opacity:0;animation:ppuHfade 12s ease-in-out infinite;animation-delay:var(--d,0s)}
 @keyframes ppuHfade{0%,38%{opacity:0}50%,88%{opacity:1}100%{opacity:0}}
-.ppuH-hero__tint{position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(0,0,0,.62) 0%,rgba(0,0,0,.5) 60%,rgba(0,0,0,.42) 100%)}
+.ppuH-hero__tint{position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(0,0,0,.74) 0%,rgba(0,0,0,.64) 60%,rgba(0,0,0,.56) 100%)}
 .ppuH-hero__in{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;padding:0 var(--gut);text-align:center}
 .ppuH-hero__eyebrow{font:500 16px/1 var(--mono)!important;letter-spacing:.2em!important;white-space:nowrap;text-transform:uppercase;color:#fff!important;border-bottom:1px solid rgba(255,255,255,.7);padding-bottom:6px!important}
 .ppuH-hero__h{font:400 clamp(46px,6.2vw,92px)/1.02 var(--serif)!important;color:#fff!important;letter-spacing:-.01em!important;max-width:none;text-wrap:balance}
@@ -73,7 +74,7 @@ font:600 18px/18px var(--mono)!important;letter-spacing:1.8px!important;text-tra
 .ppuH-tm img{display:block;width:100%;aspect-ratio:2/3;object-fit:cover;background:#eceae6}
 @keyframes ppuHrail{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 .ppuH-rail img{display:block}
-.ppuH-team::after{content:"";display:block;height:2px;margin-top:-1px;background:var(--blush)}
+.ppuH-team::after{content:"";display:block;height:3px;margin-top:-1px;background:var(--blush)}
 
 @media (max-width:860px){
 .ppuH-hero{height:auto;min-height:640px}
