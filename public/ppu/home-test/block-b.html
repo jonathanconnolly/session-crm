@@ -1,18 +1,15 @@
 <!-- PPU HOME v1 (test) · block 3 of 4 · what to expect, proof, portfolio, quick FAQ, closing band · relies on block 1 CSS · 2026-10-15 -->
 <style>
-/* 4 · WHAT TO EXPECT */
+/* 4 · WHAT TO EXPECT — same layout as the About hero: copy left, 9:16 Vimeo right, facts row */
 .ppuH-exp{padding:104px var(--gut)}
-.ppuH-exp__in{max-width:1080px;margin:0 auto;display:grid;grid-template-columns:330px minmax(0,1fr);column-gap:clamp(40px,7vw,110px);align-items:center}
+.ppuH-exp__in{max-width:1080px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1fr) 330px;column-gap:clamp(40px,7vw,110px);align-items:center}
+.ppuH-exp__copy{display:flex;flex-direction:column;align-items:flex-start;gap:26px;min-width:0}
+.ppuH-exp__title{font:400 clamp(44px,5.4vw,76px)/1.0 var(--serif)!important;color:var(--ink)!important;letter-spacing:-.01em!important;text-transform:none!important;text-wrap:balance}
 .ppuH-exp__vid{position:relative;width:330px;aspect-ratio:310/577;overflow:hidden;border-radius:6px;background:#e9e6e1}
 .ppuH-exp__vid iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
-.ppuH-exp__copy{display:flex;flex-direction:column;align-items:flex-start;gap:26px;min-width:0}
-.ppuH-steps{list-style:none!important;display:grid;gap:0;width:100%;border-top:1px solid rgba(45,45,45,.14)}
-.ppuH-step{display:grid;grid-template-columns:48px minmax(0,1fr);gap:16px;padding:20px 0;border-bottom:1px solid rgba(45,45,45,.14)}
-.ppuH-step__n{font:400 26px/1.2 var(--serif)!important;color:var(--ink)!important}
-.ppuH-step b{display:block;font:400 24px/1.2 var(--serif)!important;color:var(--ink)!important;margin-bottom:6px}
-.ppuH-step span{font:400 15px/1.7 var(--mono)!important;color:var(--text)!important}
-.ppuH-facts{display:flex;flex-wrap:wrap;gap:10px}
-.ppuH-fact{font:500 11px/1 var(--mono)!important;letter-spacing:.14em!important;text-transform:uppercase;color:var(--ink)!important;background:var(--cream);border:1px solid rgba(45,45,45,.1);border-radius:999px;padding:10px 14px}
+.ppuH-facts{display:grid;grid-template-columns:repeat(3,auto);gap:28px;padding-top:26px;border-top:1px solid rgba(45,45,45,.14);width:100%;justify-content:start}
+.ppuH-fact b{display:block;font:400 34px/1 var(--serif)!important;color:var(--ink)!important;margin-bottom:8px}
+.ppuH-fact span{display:block;font:500 11px/1.3 var(--mono)!important;letter-spacing:.14em!important;text-transform:uppercase;color:var(--soft)!important}
 
 /* 5 · PROOF — logo bar + Gigi */
 .ppuH-logos{padding:0}
@@ -30,12 +27,21 @@
 .ppuH-gigi__vid{position:relative;aspect-ratio:16/9;background:#111;overflow:hidden;border-radius:6px}
 .ppuH-gigi__vid iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
 
-/* 6 · PORTFOLIO RAIL */
-.ppuH-port{background:var(--cream);padding:96px 0 88px}
-.ppuH-port__head{max-width:var(--wrap);margin:0 auto 44px;padding:0 var(--gut);display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:20px}
-.ppuH-port .ppuH-rail__track{animation-duration:90s;gap:0}
-.ppuH-port .ppuH-rail__set{gap:14px;padding-right:14px}
-.ppuH-port__img{display:block;height:clamp(300px,30vw,440px);width:auto;aspect-ratio:3/4;object-fit:cover;background:#e6e2dc}
+/* 6 · PORTFOLIO — "every kid has one": personality-labelled grid + a card to the full portfolio */
+.ppuH-port{background:var(--cream);padding:96px var(--gut) 104px}
+.ppuH-port__in{max-width:var(--wrap);margin:0 auto}
+.ppuH-port__head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:18px 40px;margin-bottom:44px}
+.ppuH-port__head .ppuH-eyebrow{display:block;margin-bottom:14px!important}
+.ppuH-port__sub{font:400 15px/1.7 var(--mono)!important;color:var(--soft)!important;max-width:30ch;text-align:right}
+.ppuH-port__grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;padding-bottom:36px}
+.ppuH-pt{position:relative;margin:0;display:block;aspect-ratio:3/4;overflow:hidden;border-radius:4px;background:#e6e2dc;text-decoration:none!important}
+.ppuH-pt:nth-child(4n+2),.ppuH-pt:nth-child(4n+4){transform:translateY(36px)}
+.ppuH-pt img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .7s ease}
+.ppuH-pt:hover img{transform:scale(1.04)}
+.ppuH-pt figcaption{position:absolute;left:50%;bottom:18px;transform:translateX(-50%);background:#fff;color:var(--ink)!important;border-radius:999px;padding:10px 18px;font:500 12px/1 var(--mono)!important;letter-spacing:.18em!important;text-transform:uppercase;white-space:nowrap;box-shadow:0 2px 10px rgba(0,0,0,.10)}
+.ppuH-pt--card{background:var(--blush);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:22px;text-align:center;padding:24px;transition:background .2s}
+.ppuH-pt--card:hover{background:#F8D2CA}
+.ppuH-pt__q{font:400 clamp(30px,2.6vw,40px)/1.1 var(--serif)!important;color:var(--ink)!important;text-wrap:balance}
 
 /* 7 · QUICK FAQ */
 .ppuH-faq{padding:104px var(--gut)}
@@ -54,49 +60,57 @@
 .ppuH-q__a p{font:400 16px/30px var(--mono)!important;color:var(--text)!important;max-width:62ch}
 .ppuH-q__a a{color:var(--ink)!important;font-weight:600!important;text-decoration:underline!important;text-underline-offset:4px;font-family:inherit!important;font-size:inherit!important}
 
-/* 8 · CLOSING BAND */
-.ppuH-close{height:clamp(520px,44vw,640px);overflow:hidden;background:#111}
-.ppuH-close__img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 40%}
-.ppuH-close__tint{position:absolute;inset:0;background:rgba(0,0,0,.45)}
+/* 8 · CLOSING BAND — event B-roll (Vimeo 930488974) autoplaying behind the headline, as on the current homepage */
+.ppuH-close{--bh:600px;height:var(--bh);overflow:hidden;background:#111}
+.ppuH-close__media{position:absolute;inset:0;overflow:hidden;pointer-events:none}
+.ppuH-close__poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.ppuH-close__media iframe{position:absolute;top:50%;left:50%;width:max(100vw,calc(var(--bh) * 16 / 9));height:max(var(--bh),calc(100vw * 9 / 16));transform:translate(-50%,-50%) scale(1.12);border:0}
+.ppuH-close__tint{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(26,26,26,.58),rgba(26,26,26,.46) 45%,rgba(26,26,26,.68))}
 .ppuH-close__in{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:28px;padding:0 var(--gut);text-align:center}
 .ppuH-close__h{font:400 clamp(42px,5.6vw,84px)/1.05 var(--serif)!important;color:#fff!important;max-width:14ch;text-wrap:balance}
-.ppuH + .ppu-fof,.ppuH-close + *{margin-top:0}
 
 @media (max-width:1000px){.ppuH-gigi__in{grid-template-columns:minmax(0,1fr);row-gap:36px}}
 @media (max-width:860px){
 .ppuH-exp{padding:64px var(--gut)}
 .ppuH-exp__in{grid-template-columns:minmax(0,1fr);row-gap:40px}
 .ppuH-exp__vid{width:min(300px,100%);justify-self:center;order:2}
-.ppuH-step b{font-size:21px!important}
+.ppuH-facts{grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.ppuH-fact b{font-size:26px!important}
+.ppuH-fact span{font-size:10px!important;letter-spacing:.1em!important}
 .ppuH-gigi{padding:64px var(--gut) 72px}
-.ppuH-port{padding:64px 0}
-.ppuH-port__img{height:300px}
+.ppuH-port{padding:64px var(--gut) 72px}
+.ppuH-port__head{margin-bottom:28px}
+.ppuH-port__sub{text-align:left}
+.ppuH-port__grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;padding-bottom:22px}
+.ppuH-pt:nth-child(4n+2),.ppuH-pt:nth-child(4n+4){transform:none}
+.ppuH-pt:nth-child(2n){transform:translateY(22px)}
+.ppuH-pt figcaption{bottom:12px;padding:8px 12px;font-size:10px!important;letter-spacing:.14em!important}
+.ppuH-pt__q{font-size:24px!important}
 .ppuH-faq{padding:64px var(--gut)}
 .ppuH-faq__in{grid-template-columns:minmax(0,1fr);row-gap:28px}
 .ppuH-q summary{font-size:20px!important;padding:20px 0}
 .ppuH-q__a{padding-right:0}
 .ppuH-q__a p{font-size:15px!important;line-height:28px!important}
+.ppuH-close{--bh:520px}
 }
+@media (prefers-reduced-motion:reduce){.ppuH-pt img{transition:none}}
 </style>
-
-
 <div class="ppuH">
 <!-- 4 · WHAT TO EXPECT -->
 <section class="ppuH-sec ppuH-exp" id="ppuH-expect">
 <div class="ppuH-exp__in">
-<div class="ppuH-exp__vid"><iframe src="https://player.vimeo.com/video/1174234823?title=0&amp;byline=0&amp;portrait=0" title="No perfect kids allowed — Personality Pop-Up" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>
 <div class="ppuH-exp__copy">
 <p class="ppuH-eyebrow">How it works</p>
-<h2 class="ppuH-h">What to Expect</h2>
+<h2 class="ppuH-exp__title">What to Expect</h2>
 <p class="ppuH-p">Personality Pop-Up™ is taking the pain out of portraits by offering a delightful photo experience for kids in a stress-free studio environment for parents. Say goodbye to fake smiles and forced poses!</p>
-<ol class="ppuH-steps">
-<li class="ppuH-step"><span class="ppuH-step__n">1</span><div><b>Find your city</b><span>Book a 15-minute session when we pop up near you.</span></div></li>
-<li class="ppuH-step"><span class="ppuH-step__n">2</span><div><b>Just show up</b><span>Arrive 10 minutes early. No bribes, no “cheese” — we let your child just be.</span></div></li>
-<li class="ppuH-step"><span class="ppuH-step__n">3</span><div><b>Fall in love</b><span>Your gallery comes in color and black &amp; white, with professional prints available.</span></div></li>
-</ol>
-<div class="ppuH-facts"><span class="ppuH-fact">15-min session</span><span class="ppuH-fact">Ages 6mo–18yrs</span><span class="ppuH-fact">1–2 kids</span></div>
 <a class="ppuH-btn" href="https://www.personalitypopup.com/book/">👉 Find Your City</a>
+<div class="ppuH-facts">
+<div class="ppuH-fact"><b>18+</b><span>Years behind<br>the camera</span></div>
+<div class="ppuH-fact"><b>2013</b><span>Personality<br>Portraits began</span></div>
+<div class="ppuH-fact"><b data-ppu-review-count>418</b><span>Five-star<br>Google reviews</span></div>
 </div>
+</div>
+<div class="ppuH-exp__vid"><iframe src="https://player.vimeo.com/video/1174234823?title=0&amp;byline=0&amp;portrait=0" title="What to Expect — Personality Pop-Up" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>
 </div>
 </section>
 
@@ -111,17 +125,22 @@
 <h2 class="ppuH-h">School Picture Day. Reimagined.</h2>
 <p class="ppuH-gigi__sub">See how Gigi Hadid turns School Picture Day into a Personality Pop-Up™ on Celebrity Substitute.</p>
 </div>
-<div class="ppuH-gigi__vid"><iframe src="https://player.vimeo.com/video/930488974?title=0&amp;byline=0&amp;portrait=0" title="Gigi Hadid — School Picture Day on Celebrity Substitute" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>
+<div class="ppuH-gigi__vid"><iframe src="https://www.youtube.com/embed/2hkonPrhGZA?start=732&amp;autoplay=1&amp;mute=1&amp;rel=0&amp;playsinline=1" title="Gigi Hadid — School Picture Day on Celebrity Substitute" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>
 </div>
 </section>
 
 <!-- 6 · PORTFOLIO -->
 <section class="ppuH-sec ppuH-port" aria-label="Portfolio">
+<div class="ppuH-port__in">
 <div class="ppuH-port__head">
-<h2 class="ppuH-h">Less Perfection. More Personality.</h2>
-<a class="ppuH-link" href="https://www.personalitypopup.com/portfolio/">See the portfolio →</a>
+<div><p class="ppuH-eyebrow">The portfolio</p><h2 class="ppuH-h">Less Perfection. More Personality.</h2></div>
+<p class="ppuH-port__sub">Every kid has one. We just wait for it to show up.</p>
 </div>
-<div class="ppuH-rail"><div class="ppuH-rail__track"><div class="ppuH-rail__set"><img class="ppuH-port__img" src="https://images-pw.pixieset.com/elementfield/zvm347r/PERSONALITY-POP-UP-CLEVELAND-1032-ecf6ae63-1000.jpg" alt="Personality Pop-Up portrait" loading="lazy"><img class="ppuH-port__img" src="https://images-pw.pixieset.com/elementfield/qkvXpbp/251108-PPU-CHICAGO-0353-b7ff8ccd-1000.jpg" alt="Personality Pop-Up portrait" loading="lazy"><img class="ppuH-port__img" src="https://images-pw.pixieset.com/elementfield/ZQrnMKM/260131-PPU-LA-JOLLA-2058-f7dfd718-1000.jpg" alt="Personality Pop-Up portrait" loading="lazy"><img class="ppuH-port__img" src="https://images-pw.pixieset.com/elementfield/zvm347r/PERSONALITY-POP-UP-CHICAGO-1162-2bd96d8f-1000.jpg" alt="Personality Pop-Up portrait" loading="lazy"><img class="ppuH-port__img" src="https://images-pw.pixieset.com/elementfield/qkvXpbp/260314-PPU-ORLANDO-2473-163acadd-1000.jpg" alt="Personality Pop-Up portrait" loading="lazy"><img class="ppuH-port__img" src="https://images-pw.pixieset.com/elementfield/ZQrnMKM/251108-PPU-CHICAGO-1798-056855eb-1000.jpg" alt="Personality Pop-Up portrait" loading="lazy"><img class="ppuH-port__img" src="https://images-pw.pixieset.com/elementfield/zvm347r/PERSONALITY-POP-UP-ANN-ARBOR-0330-4acd6a35-1000.jpg" alt="Personality Pop-Up portrait" loading="lazy"><img class="ppuH-port__img" src="https://images-pw.pixieset.com/elementfield/qkvXpbp/260411-PPU-PHOENIX-0261-33e9978c-1000.jpg" alt="Personality Pop-Up portrait" loading="lazy"><img class="ppuH-port__img" src="https://images-pw.pixieset.com/elementfield/ZQrnMKM/260221-PPU-BROOKLYN-0748-b5545a38-1000.jpg" alt="Personality Pop-Up portrait" loading="lazy"><img class="ppuH-port__img" src="https://images-pw.pixieset.com/elementfield/zvm347r/LITTLE-PERSONALITY-LAKE-FOREST-0320-72336949-1000.jpg" alt="Personality Pop-Up portrait" loading="lazy"><img class="ppuH-port__img" src="https://images-pw.pixieset.com/elementfield/qkvXpbp/260315-PPU-LONDON-2215-e48d482e-1000.jpg" alt="Personality Pop-Up portrait" loading="lazy"><img class="ppuH-port__img" src="https://images-pw.pixieset.com/elementfield/ZQrnMKM/260307-PPU-CHARLESTON-0868-14911c28-1000.jpg" alt="Personality Pop-Up portrait" loading="lazy"></div><div class="ppuH-rail__set" aria-hidden="true"><img class="ppuH-port__img" src="https://images-pw.pixieset.com/elementfield/zvm347r/PERSONALITY-POP-UP-CLEVELAND-1032-ecf6ae63-1000.jpg" alt="" loading="lazy"><img class="ppuH-port__img" src="https://images-pw.pixieset.com/elementfield/qkvXpbp/251108-PPU-CHICAGO-0353-b7ff8ccd-1000.jpg" alt="" loading="lazy"><img class="ppuH-port__img" src="https://images-pw.pixieset.com/elementfield/ZQrnMKM/260131-PPU-LA-JOLLA-2058-f7dfd718-1000.jpg" alt="" loading="lazy"><img class="ppuH-port__img" src="https://images-pw.pixieset.com/elementfield/zvm347r/PERSONALITY-POP-UP-CHICAGO-1162-2bd96d8f-1000.jpg" alt="" loading="lazy"><img class="ppuH-port__img" src="https://images-pw.pixieset.com/elementfield/qkvXpbp/260314-PPU-ORLANDO-2473-163acadd-1000.jpg" alt="" loading="lazy"><img class="ppuH-port__img" src="https://images-pw.pixieset.com/elementfield/ZQrnMKM/251108-PPU-CHICAGO-1798-056855eb-1000.jpg" alt="" loading="lazy"><img class="ppuH-port__img" src="https://images-pw.pixieset.com/elementfield/zvm347r/PERSONALITY-POP-UP-ANN-ARBOR-0330-4acd6a35-1000.jpg" alt="" loading="lazy"><img class="ppuH-port__img" src="https://images-pw.pixieset.com/elementfield/qkvXpbp/260411-PPU-PHOENIX-0261-33e9978c-1000.jpg" alt="" loading="lazy"><img class="ppuH-port__img" src="https://images-pw.pixieset.com/elementfield/ZQrnMKM/260221-PPU-BROOKLYN-0748-b5545a38-1000.jpg" alt="" loading="lazy"><img class="ppuH-port__img" src="https://images-pw.pixieset.com/elementfield/zvm347r/LITTLE-PERSONALITY-LAKE-FOREST-0320-72336949-1000.jpg" alt="" loading="lazy"><img class="ppuH-port__img" src="https://images-pw.pixieset.com/elementfield/qkvXpbp/260315-PPU-LONDON-2215-e48d482e-1000.jpg" alt="" loading="lazy"><img class="ppuH-port__img" src="https://images-pw.pixieset.com/elementfield/ZQrnMKM/260307-PPU-CHARLESTON-0868-14911c28-1000.jpg" alt="" loading="lazy"></div></div></div>
+<div class="ppuH-port__grid">
+<figure class="ppuH-pt"><img src="https://images-pw.pixieset.com/elementfield/qkvXpbp/251108-PPU-CHICAGO-0353-b7ff8ccd-1000.jpg" alt="Girl in a tan sweater resting her chin on her hand" loading="lazy"><figcaption>The Old Soul</figcaption></figure><figure class="ppuH-pt"><img src="https://images-pw.pixieset.com/elementfield/zvm347r/PERSONALITY-POP-UP-CLEVELAND-1032-ecf6ae63-1000.jpg" alt="Toddler mid-laugh with his mouth wide open" loading="lazy"><figcaption>The Loud One</figcaption></figure><figure class="ppuH-pt"><img src="https://images-pw.pixieset.com/elementfield/1zqrnP1/260315-PPU-LONDON-2533-458f3301-1000.jpg" alt="Boy in a denim jacket with a sideways smile" loading="lazy"><figcaption>The Charmer</figcaption></figure><figure class="ppuH-pt"><img src="https://images-pw.pixieset.com/elementfield/zvm347r/LITTLE-PERSONALITY-LAKE-FOREST-0320-72336949-1000.jpg" alt="Boy scrunching his whole face with his eyes shut" loading="lazy"><figcaption>The Skeptic</figcaption></figure><figure class="ppuH-pt"><img src="https://images-pw.pixieset.com/elementfield/bOeql4M/251018-PPU-SALT-LAKE-CITY-1298-5160b1bf-1000.jpg" alt="Boy in round glasses pressing a finger to his nose" loading="lazy"><figcaption>The Goofball</figcaption></figure><figure class="ppuH-pt"><img src="https://images-pw.pixieset.com/elementfield/qkvXpbp/260411-PPU-PHOENIX-0261-33e9978c-1000.jpg" alt="Girl in red crouching with her arms crossed" loading="lazy"><figcaption>The Boss</figcaption></figure><figure class="ppuH-pt"><img src="https://images-pw.pixieset.com/elementfield/1zqrnP1/260321-PPU-CHARLOTTE-0702-99d90960-1000.jpg" alt="Toddler in a cap that says DUDE, looking down" loading="lazy"><figcaption>The Dude</figcaption></figure>
+<a class="ppuH-pt ppuH-pt--card" href="https://www.personalitypopup.com/portfolio/"><span class="ppuH-pt__q">Which one is yours?</span><span class="ppuH-link">See the portfolio →</span></a>
+</div>
+</div>
 </section>
 
 <!-- 7 · QUICK FAQ -->
@@ -143,8 +162,11 @@
 
 <!-- 8 · CLOSING BAND -->
 <section class="ppuH-sec ppuH-close" aria-label="Book your session">
-<img class="ppuH-close__img" src="https://images-pw.pixieset.com/elementfield/L6PARYk/240709-PP-CHARLOTTE-0020-7f48b5cd-2500.jpg" alt="" loading="lazy">
+<div class="ppuH-close__media" aria-hidden="true">
+<img class="ppuH-close__poster" src="https://i.vimeocdn.com/video/1827227214-fd9dca692218d62fbfa38adcef0da68f3c94ff9a4de2fd839de8e4465d183006-d_1600" alt="" loading="lazy">
+<iframe src="https://player.vimeo.com/video/930488974?background=1&amp;autoplay=1&amp;muted=1&amp;loop=1&amp;autopause=0&amp;dnt=1" title="" tabindex="-1" allow="autoplay; encrypted-media" loading="lazy"></iframe>
 <div class="ppuH-close__tint"></div>
+</div>
 <div class="ppuH-close__in">
 <h2 class="ppuH-close__h">They won’t be little forever.</h2>
 <a class="ppuH-btn ppuH-btn--white" href="https://www.personalitypopup.com/book/">📍 Find Your City</a>
