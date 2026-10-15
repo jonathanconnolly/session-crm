@@ -28,19 +28,19 @@ font:600 12px/1 var(--mono)!important;letter-spacing:.12em!important;text-transf
 .ppuH-pill svg{width:15px;height:15px;flex:none;display:block}
 
 /* 1 · HERO — 6×2 rotating faces + current copy */
-.ppuH-hero{height:clamp(600px,46vw,760px);overflow:hidden;background:#111}
+.ppuH-hero{height:clamp(560px,calc(100vh - 110px),780px);overflow:hidden;background:#111}
 .ppuH-hero__grid{position:absolute;inset:0;display:grid;grid-template-columns:repeat(6,1fr);grid-template-rows:repeat(2,1fr)}
 .ppuH-tile{position:relative;overflow:hidden;filter:grayscale(1)}
 .ppuH-tile img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
 .ppuH-tile img+img{opacity:0;animation:ppuHfade 12s ease-in-out infinite;animation-delay:var(--d,0s)}
 @keyframes ppuHfade{0%,38%{opacity:0}50%,88%{opacity:1}100%{opacity:0}}
 .ppuH-hero__tint{position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(0,0,0,.62) 0%,rgba(0,0,0,.5) 60%,rgba(0,0,0,.42) 100%)}
-.ppuH-hero__in{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:24px;padding:0 var(--gut);text-align:center}
+.ppuH-hero__in{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;padding:0 var(--gut);text-align:center}
 .ppuH-hero__eyebrow{font:500 13px/1 var(--mono)!important;letter-spacing:.2em!important;text-transform:uppercase;color:#fff!important;border-bottom:1px solid rgba(255,255,255,.7);padding-bottom:6px!important}
-.ppuH-hero__h{font:400 clamp(46px,6.2vw,92px)/1.02 var(--serif)!important;color:#fff!important;letter-spacing:-.01em!important;max-width:13ch;text-wrap:balance}
+.ppuH-hero__h{font:400 clamp(46px,6.2vw,92px)/1.02 var(--serif)!important;color:#fff!important;letter-spacing:-.01em!important;max-width:none;text-wrap:balance}
 .ppuH-hero__sub{font:500 clamp(13px,1.15vw,16px)/1.7 var(--mono)!important;letter-spacing:.14em!important;text-transform:uppercase;color:rgba(255,255,255,.92)!important;max-width:44ch}
 .ppuH-hero__sub u{text-underline-offset:4px}
-.ppuH-hero__ctas{display:flex;flex-direction:column;align-items:center;gap:16px;margin-top:6px}
+.ppuH-hero__ctas{display:flex;flex-direction:column;align-items:center;gap:14px;margin-top:4px}
 .ppuH-hero__fof{font:500 13px/1.4 var(--mono)!important;letter-spacing:.08em!important;color:rgba(255,255,255,.9)!important;text-decoration:none!important}
 .ppuH-hero__fof b{font-weight:600;text-decoration:underline;text-underline-offset:4px;color:#fff}
 .ppuH-hero__fof:hover b{color:var(--blush)}
@@ -78,7 +78,7 @@ font:600 11px/1 var(--mono)!important;letter-spacing:.18em!important;text-transf
 .ppuH-hero{height:auto;min-height:640px}
 .ppuH-hero__grid{grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(4,1fr)}
 .ppuH-hero__in{position:relative;inset:auto;min-height:640px;padding:56px 20px}
-.ppuH-hero__h{font-size:46px!important}
+.ppuH-hero__h{font-size:42px!important}.ppuH-hero__h br{display:none}
 .ppuH-hero__sub{font-size:12px!important;letter-spacing:.1em!important}
 .ppuH-btn{font-size:15px!important;padding:19px 24px!important}
 .ppuH-p{font-size:15px!important;line-height:28px!important}
@@ -114,7 +114,7 @@ font:600 11px/1 var(--mono)!important;letter-spacing:.18em!important;text-transf
 <div class="ppuH-hero__tint"></div>
 <div class="ppuH-hero__in">
 <p class="ppuH-hero__eyebrow">The Original • Est. 2013</p>
-<h1 class="ppuH-hero__h">Never forget the faces you love most.</h1>
+<h1 class="ppuH-hero__h">Never forget the<br>faces you love most.</h1>
 <p class="ppuH-hero__sub">A simple 15-minute photo experience that captures your child’s <u>real</u> personality.</p>
 <div class="ppuH-hero__ctas">
 <a class="ppuH-btn ppuH-btn--white" href="https://www.personalitypopup.com/book/">📍 Find Your City</a>
