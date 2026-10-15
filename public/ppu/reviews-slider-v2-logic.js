@@ -34,5 +34,5 @@
   var list=d&&d.reviews; if(list&&list.length>=10){clearTimeout(fallback);build(list);} else {clearTimeout(fallback);build(QUOTES);}
  }).catch(function(){clearTimeout(fallback);build(QUOTES);});
  /* live Google review count for [data-ppu-review-count] (same as the site-wide sync; runs once per page) */
- if(!window.__ppuReviewSync){window.__ppuReviewSync=1;fetch('https://raw.githubusercontent.com/jonathanconnolly/session-crm/main/public/google-reviews.json',{cache:'no-store'}).then(function(r){return r.json()}).then(function(d){var n=d&&parseInt(d.count,10);if(!n)return;[].forEach.call(document.querySelectorAll('[data-ppu-review-count]'),function(el){el.textContent=String(n)});}).catch(function(){});}
+ if(!window.__ppuReviewSync){window.__ppuReviewSync=1;fetch('https://raw.githubusercontent.com/jonathanconnolly/session-crm/main/public/google-reviews.json',{cache:'no-store'}).then(function(r){return r.json()}).then(function(d){var n=d&&parseInt(d.count,10);if(!n)return;[].forEach.call(document.querySelectorAll('[data-ppu-review-count]'),function(el){el.textContent=String(n)+'+'});}).catch(function(){});}
 })();
