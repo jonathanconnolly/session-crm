@@ -1,28 +1,5 @@
-<!-- PPU HOME v1 (test) · block 2 of 3 · reviews, what to expect, proof, portfolio, quick FAQ, closing band · relies on block 1 CSS · 2026-10-15 -->
+<!-- PPU HOME v1 (test) · block 3 of 4 · what to expect, proof, portfolio, quick FAQ, closing band · relies on block 1 CSS · 2026-10-15 -->
 <style>
-/* shared reviews slider (ppuR, pink) */
-.ppuR{--r-ink:#2D2D2D;--r-paper:#FFFFFF;--r-blush:#FBDFD9;--r-serif:"MADE Mirage","Orpheus Pro","Cormorant Garamond","DM Serif Display",Georgia,serif;--r-mono:"Roboto Mono","Courier New",Courier,monospace;
---r-bg:var(--r-ink);--r-fg:var(--r-paper);--r-soft:rgba(255,255,255,.6);--r-line:rgba(255,255,255,.3);
-box-sizing:border-box;width:100vw;margin-left:calc(50% - 50vw);background:var(--r-bg);color:var(--r-fg);padding:84px 24px 88px;overflow:hidden;position:relative;display:flex;flex-direction:column;justify-content:center}
-.ppuR--pink{--r-bg:var(--r-blush);--r-fg:var(--r-ink);--r-soft:rgba(45,45,45,.62);--r-line:rgba(45,45,45,.3)}
-.ppuR *,.ppuR *::before,.ppuR *::after{box-sizing:border-box;margin:0;padding:0}
-.ppuR figure,.ppuR blockquote,.ppuR figcaption{border:0!important;background:none!important}
-.ppuR__inner{width:100%;max-width:1040px;margin:0 auto;display:grid;grid-template-columns:44px minmax(0,1fr) 44px;align-items:center;column-gap:clamp(16px,5vw,72px)}
-.ppuR__mid{display:flex;flex-direction:column;align-items:center;gap:28px;min-width:0}
-.ppuR__pill{display:inline-flex;align-items:center;gap:10px;background:#fff;color:var(--r-ink)!important;border-radius:999px;padding:12px 20px;font:600 12px/1 var(--r-mono)!important;letter-spacing:.14em!important;text-transform:uppercase;white-space:nowrap;text-decoration:none!important;box-shadow:0 1px 2px rgba(0,0,0,.06)}
-.ppuR__pill .sp{width:1px;height:12px;background:currentColor;opacity:.3}
-.ppuR__pill svg{width:14px;height:14px;flex:none;display:block}
-.ppuR__stage{display:grid;width:100%;max-width:720px;min-height:200px;align-items:center}
-.ppuR__slide{grid-area:1/1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;text-align:center;opacity:0;visibility:hidden;transform:translateY(6px);transition:opacity .3s ease,transform .3s ease,visibility 0s .3s}
-.ppuR__slide.on{opacity:1;visibility:visible;transform:none;transition:opacity .55s ease .3s,transform .55s ease .3s,visibility 0s .3s}
-.ppuR__text{font-family:var(--r-serif);font-weight:400;color:var(--r-fg);letter-spacing:-.01em;line-height:1.25;text-wrap:balance}
-.ppuR__text::before{content:"\201C"}.ppuR__text::after{content:"\201D"}
-.ppuR__text.s{font-size:clamp(26px,3.4vw,40px)}.ppuR__text.m{font-size:clamp(22px,2.7vw,32px)}.ppuR__text.l{font-size:clamp(19px,2.1vw,26px);line-height:1.35}
-.ppuR__name{font:500 12px/1 var(--r-mono);letter-spacing:.2em;text-transform:uppercase;color:var(--r-soft)}
-.ppuR__nav{width:44px;height:44px;border-radius:50%;border:1px solid var(--r-line);background:transparent;color:var(--r-fg);display:grid;place-items:center;cursor:pointer;transition:border-color .2s;-webkit-appearance:none;appearance:none;padding:0!important}
-.ppuR__nav:hover{border-color:var(--r-fg)}
-.ppuR__nav svg{width:14px;height:14px;display:block}
-
 /* 4 · WHAT TO EXPECT */
 .ppuH-exp{padding:104px var(--gut)}
 .ppuH-exp__in{max-width:1080px;margin:0 auto;display:grid;grid-template-columns:330px minmax(0,1fr);column-gap:clamp(40px,7vw,110px);align-items:center}
@@ -87,11 +64,6 @@ box-sizing:border-box;width:100vw;margin-left:calc(50% - 50vw);background:var(--
 
 @media (max-width:1000px){.ppuH-gigi__in{grid-template-columns:minmax(0,1fr);row-gap:36px}}
 @media (max-width:860px){
-.ppuR{padding:56px 14px 60px}
-.ppuR__inner{grid-template-columns:34px minmax(0,1fr) 34px;column-gap:10px}
-.ppuR__nav{width:34px;height:34px}
-.ppuR__pill{gap:7px;padding:9px 13px;font-size:10px!important}
-.ppuR__text.s{font-size:24px}.ppuR__text.m{font-size:20px}.ppuR__text.l{font-size:17px}
 .ppuH-exp{padding:64px var(--gut)}
 .ppuH-exp__in{grid-template-columns:minmax(0,1fr);row-gap:40px}
 .ppuH-exp__vid{width:min(300px,100%);justify-self:center;order:2}
@@ -106,61 +78,7 @@ box-sizing:border-box;width:100vw;margin-left:calc(50% - 50vw);background:var(--
 .ppuH-q__a p{font-size:15px!important;line-height:28px!important}
 }
 </style>
-<!-- REVIEWS (shared ppuR v2, pink) -->
-<section class="ppuR ppuR--pink" id="ppuR-home" aria-label="What parents are saying">
-<div class="ppuR__inner">
-<button class="ppuR__nav" data-dir="-1" type="button" aria-label="Previous review"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 4 L7 12 L15 20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-<div class="ppuR__mid">
-<a class="ppuR__pill" href="https://www.google.com/search?q=Personality+Pop-Up#lrd=0x89d5209ec3b5b81:0x332a7fee85847322,1" target="_blank" rel="noopener"><span class="st">★★★★★</span>5.0<span class="sp"></span><svg viewBox="0 0 48 48" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.5 0 6.6 1.2 9.1 3.6l6.8-6.8C35.8 2.4 30.3 0 24 0 14.6 0 6.6 5.4 2.7 13.3l7.9 6.2C12.5 13.6 17.8 9.5 24 9.5z"/><path fill="#4285F4" d="M46.1 24.5c0-1.6-.1-3.1-.4-4.5H24v9h12.4c-.5 2.9-2.2 5.3-4.6 6.9l7.2 5.6c4.2-3.9 7.1-9.6 7.1-17z"/><path fill="#FBBC05" d="M10.5 28.6c-.5-1.4-.8-3-.8-4.6s.3-3.2.8-4.6l-7.9-6.2C1 16.5 0 20.1 0 24s1 7.5 2.7 10.8l7.8-6.2z"/><path fill="#34A853" d="M24 48c6.5 0 11.9-2.1 15.9-5.8l-7.2-5.6c-2.2 1.5-5 2.4-8.7 2.4-6.2 0-11.5-4.2-13.4-9.9l-7.9 6.2C6.6 42.6 14.6 48 24 48z"/></svg><span data-ppu-review-count>418</span> Google reviews</a>
-<div class="ppuR__stage" aria-live="polite"></div>
-</div>
-<button class="ppuR__nav" data-dir="1" type="button" aria-label="Next review"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 4 L17 12 L9 20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-</div>
-</section>
 
-<script>
-(function(){
- var QUOTES = [{"q": "I cannot believe these photos!!!!! Best money I spent all year. On anything. And I spend a lot of money 😂 The process was a breeze. Fun for the kids and not stressful. But I would've paid double if I knew they'd come out so incredible. Thank you so so much!!!", "n": "Jessica"}, {"q": "I am literally crying looking at these pictures of my kids. They are pictures I will love and stare at the rest of my life!!!! They actually captured my son's real smile when we usually get strained smiles in photos. He was full on giggling and smiling so genuinely.", "n": "Olivia"}, {"q": "I would give you 6 stars if I could. These are priceless. I am so picky and hard to impress when it comes to pictures or anything aesthetic — and you KILLED IT!! I LOVE all of the photos!! I cannot believe how many great shots you got that truly capture their little (or big) personalities.", "n": "Natasha"}, {"q": "I found them through a random Instagram ad (which I would normally scroll right past), but for some reason decided to give it a shot — and I'm so glad I did. I opened my gallery this morning and actually teared up (in the best way). We will cherish these photos forever.", "n": "Kelly"}, {"q": "I got Instagram targeted for the Personality Popup coming to our area and, against my better judgement, shelled out for the expensive 15 minute session. My husband was less than enthused. We just got the photos back and I am floored. They are better than I even imagined. I would do this shoot every year if I could! 10/10 recommend", "n": "Lindsay"}, {"q": "These pictures brought tears to my eyes INSTANTLY. Thank you for taking the edge off pictures, being so kind and non judgmental with our kids, and being incredibly talented at your craft. These are AMAZING!", "n": "Sara"}, {"q": "This is the most beautiful and amazing thing I have ever seen. I booked this on a whim as a birthday present for myself and this made every penny worth it. Your photos will be a part of our family and all over our home for the rest of our lives!", "n": "Christina"}];
-/* ppuR v2 (2026-10-15): reviews come live from session-crm/public/ppu-reviews.json (ranked, kept fresh by the daily ppu-google-review-count task); the QUOTES above are only a fallback. Each page starts in its own slice of the ranking (home/about/book/jax = 0/1/2/3), starting each day on one of its top 3, so moving between pages shows different reviews. */
- var ROTATE_MS = 7000, ROOT_ID = 'ppuR-home', MODE = 'long', SLOTS = {'ppuR-home':0,'ppuR-about':1,'ppuR-book':2,'ppuR-jax':3};
- var POOL_URL = 'https://raw.githubusercontent.com/jonathanconnolly/session-crm/main/public/ppu-reviews.json';
- var root = document.getElementById(ROOT_ID);
- if (!root) return;
- var stage = root.querySelector('.ppuR__stage'), slides = [], idx = 0, timer = null, built = false;
- function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
- function size(t){return t.length<=120?'s':(t.length<=230?'m':'l');}
- function clean(t){return String(t||'').replace(/^[\s"“]+|[\s"”]+$/g,'');}
- function pick(r){var t=clean(MODE==='short'?(r.s||(String(r.q||'').length<=150?r.q:'')):r.q);return t?{q:t,n:r.n}:null;}
- function slot(){if(ROOT_ID in SLOTS)return SLOTS[ROOT_ID];var h=0;for(var i=0;i<ROOT_ID.length;i++)h=(h*31+ROOT_ID.charCodeAt(i))|0;return Math.abs(h)%4;}
- function arrange(list){
-  var k=slot(), own=[], rest=[], day=Math.floor(Date.now()/864e5);
-  list.forEach(function(x,i){(i%4===k?own:rest).push(x);});
-  if(own.length){var r=day%Math.min(3,own.length);own=own.slice(r).concat(own.slice(0,r));} /* daily: start on one of this page's top 3 */
-  return own.concat(rest);
- }
- function build(list){
-  if (built) return; var items=[]; arrange(list).forEach(function(r){var p=pick(r);if(p)items.push(p);});
-  if (!items.length) return; built = true;
-  stage.innerHTML = items.map(function(x,i){
-   return '<figure class="ppuR__slide'+(i===0?' on':'')+'"><blockquote class="ppuR__text '+size(x.q)+'">'+esc(x.q)+'</blockquote>'
-    +'<figcaption class="ppuR__name">&mdash; '+esc(x.n)+'</figcaption></figure>';
-  }).join('');
-  slides = stage.children; idx = 0; fit(); restart();
- }
- function show(n){if(!slides.length)return;slides[idx].classList.remove('on');idx=(n+slides.length)%slides.length;slides[idx].classList.add('on');restart();}
- function restart(){clearTimeout(timer);timer=setTimeout(function(){show(idx+1);},ROTATE_MS);}
- [].forEach.call(root.querySelectorAll('.ppuR__nav'),function(b){b.addEventListener('click',function(){show(idx+(+b.getAttribute('data-dir')));});});
- function fit(){if(!root.hasAttribute('data-fit'))return;root.style.minHeight='';var host=root.closest&&root.closest('.fb-element');var h=host?host.getBoundingClientRect().height:(self!==top?document.documentElement.clientHeight:0);if(h>root.offsetHeight+2)root.style.minHeight=h+'px';}
- fit();window.addEventListener('load',fit);window.addEventListener('resize',fit);if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fit);
- var fallback = setTimeout(function(){build(QUOTES);}, 2500);
- fetch(POOL_URL,{cache:'no-store'}).then(function(r){return r.json();}).then(function(d){
-  var list=d&&d.reviews; if(list&&list.length>=10){clearTimeout(fallback);build(list);} else {clearTimeout(fallback);build(QUOTES);}
- }).catch(function(){clearTimeout(fallback);build(QUOTES);});
- /* live Google review count for [data-ppu-review-count] (same as the site-wide sync; runs once per page) */
- if(!window.__ppuReviewSync){window.__ppuReviewSync=1;fetch('https://raw.githubusercontent.com/jonathanconnolly/session-crm/main/public/google-reviews.json',{cache:'no-store'}).then(function(r){return r.json()}).then(function(d){var n=d&&parseInt(d.count,10);if(!n)return;[].forEach.call(document.querySelectorAll('[data-ppu-review-count]'),function(el){el.textContent=String(n)});}).catch(function(){});}
-})();
-
-</script>
 
 <div class="ppuH">
 <!-- 4 · WHAT TO EXPECT -->

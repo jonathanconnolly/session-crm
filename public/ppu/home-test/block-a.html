@@ -1,5 +1,5 @@
-<!-- PPU HOME v1 (test) · block 1 of 3 · ALL ppuH CSS + hero faces grid + city ticker + team · 2026-10-15
-     Block 2 = reviews, what to expect, proof, portfolio, quick FAQ, closing band (relies on this CSS). Block 3 = shared ppu-fof VIP form v1.3. -->
+<!-- PPU HOME v1 (test) · block 1 of 4 · ALL ppuH CSS + hero faces grid + city ticker + team · 2026-10-15
+     Block 2 = shared ppuR reviews slider (verbatim copy of the live homepage block). Block 3 = what to expect, proof, portfolio, quick FAQ, closing band (relies on this CSS). Block 4 = shared ppu-fof VIP form v1.3. -->
 <style>
 .block-custom-code:has(.ppuH,.ppuR,.ppu-fof) .element-container__content,.block-custom-code:has(.ppuH,.ppuR,.ppu-fof) .element-container__content-wrapper{display:block!important;line-height:0}
 .block-custom-code:has(.ppuH,.ppuR,.ppu-fof) .element-container__content > *{line-height:normal}
@@ -22,10 +22,6 @@ font:600 18px/18px var(--mono)!important;letter-spacing:1.8px!important;text-tra
 .ppuH-link{font:600 14px/1.4 var(--mono)!important;letter-spacing:.12em!important;text-transform:uppercase;color:var(--ink)!important;text-decoration:underline!important;text-underline-offset:5px;white-space:nowrap}
 .ppuH-link:hover{opacity:.7}
 .ppuH a:focus-visible{outline:2px solid currentColor;outline-offset:3px}
-.ppuH-pill{display:inline-flex;align-items:center;gap:10px;background:#fff;color:var(--ink)!important;border-radius:999px;padding:11px 18px;
-font:600 12px/1 var(--mono)!important;letter-spacing:.12em!important;text-transform:uppercase;white-space:nowrap;text-decoration:none!important;box-shadow:0 2px 10px rgba(0,0,0,.12)}
-.ppuH-pill .st{letter-spacing:.1em}.ppuH-pill .sp{width:1px;height:13px;background:currentColor;opacity:.25}
-.ppuH-pill svg{width:15px;height:15px;flex:none;display:block}
 
 /* 1 · HERO — 6×2 rotating faces + current copy */
 .ppuH-hero{height:clamp(560px,calc(100vh - 110px),780px);overflow:hidden;background:#111}
@@ -36,27 +32,26 @@ font:600 12px/1 var(--mono)!important;letter-spacing:.12em!important;text-transf
 @keyframes ppuHfade{0%,38%{opacity:0}50%,88%{opacity:1}100%{opacity:0}}
 .ppuH-hero__tint{position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(0,0,0,.62) 0%,rgba(0,0,0,.5) 60%,rgba(0,0,0,.42) 100%)}
 .ppuH-hero__in{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;padding:0 var(--gut);text-align:center}
-.ppuH-hero__eyebrow{font:500 13px/1 var(--mono)!important;letter-spacing:.2em!important;text-transform:uppercase;color:#fff!important;border-bottom:1px solid rgba(255,255,255,.7);padding-bottom:6px!important}
+.ppuH-hero__eyebrow{font:500 16px/1 var(--mono)!important;letter-spacing:.2em!important;white-space:nowrap;text-transform:uppercase;color:#fff!important;border-bottom:1px solid rgba(255,255,255,.7);padding-bottom:6px!important}
 .ppuH-hero__h{font:400 clamp(46px,6.2vw,92px)/1.02 var(--serif)!important;color:#fff!important;letter-spacing:-.01em!important;max-width:none;text-wrap:balance}
-.ppuH-hero__sub{font:500 clamp(13px,1.15vw,16px)/1.7 var(--mono)!important;letter-spacing:.14em!important;text-transform:uppercase;color:rgba(255,255,255,.92)!important;max-width:44ch}
+.ppuH-hero__sub{font:500 clamp(13px,1.15vw,16px)/1.7 var(--mono)!important;letter-spacing:.14em!important;text-transform:uppercase;color:rgba(255,255,255,.92)!important;max-width:none}
 .ppuH-hero__sub u{text-underline-offset:4px}
-.ppuH-hero__ctas{display:flex;flex-direction:column;align-items:center;gap:14px;margin-top:4px}
+.ppuH-hero__ctas{display:flex;flex-direction:column;align-items:center;margin-top:10px}
 .ppuH-hero__fof{font:500 13px/1.4 var(--mono)!important;letter-spacing:.08em!important;color:rgba(255,255,255,.9)!important;text-decoration:none!important}
 .ppuH-hero__fof b{font-weight:600;text-decoration:underline;text-underline-offset:4px;color:#fff}
 .ppuH-hero__fof:hover b{color:var(--blush)}
+.ppuH-close .ppuH-hero__fof{margin-top:-6px}
 
-/* 2 · CITY TICKER */
-.ppuH-tick{border-bottom:1px solid rgba(45,45,45,.12);overflow:hidden;display:flex;align-items:center}
-.ppuH-tick__label{flex:none;align-self:stretch;display:flex;align-items:center;gap:8px;background:var(--ink);color:#fff!important;padding:0 18px;
-font:600 11px/1 var(--mono)!important;letter-spacing:.18em!important;text-transform:uppercase;text-decoration:none!important;z-index:1}
-.ppuH-tick__label i{width:7px;height:7px;border-radius:50%;background:#7CD992;animation:ppuHblink 1.6s ease-in-out infinite}
-@keyframes ppuHblink{50%{opacity:.25}}
-.ppuH-tick__view{flex:1;overflow:hidden;padding:17px 0;-webkit-mask-image:linear-gradient(90deg,transparent,#000 4%,#000 96%,transparent);mask-image:linear-gradient(90deg,transparent,#000 4%,#000 96%,transparent)}
-.ppuH-tick__track{display:flex;width:max-content;animation:ppuHtick 160s linear infinite}
+/* 2 · CITY TICKER — same bar as the Find Your City ticker (77px, 20px bold mono, ✈ separators), cities only */
+.ppuH-tick{height:77px;border-top:1px solid rgba(45,45,45,.08);border-bottom:1px solid rgba(45,45,45,.08);overflow:hidden;display:flex;align-items:center}
+.ppuH-tick__view{position:relative;flex:1;overflow:hidden;display:flex;align-items:center;height:100%}
+.ppuH-tick__view::before,.ppuH-tick__view::after{content:"";position:absolute;top:0;bottom:0;width:80px;pointer-events:none;z-index:2}
+.ppuH-tick__view::before{left:0;background:linear-gradient(to right,var(--paper) 0%,rgba(255,255,255,0) 100%)}
+.ppuH-tick__view::after{right:0;background:linear-gradient(to left,var(--paper) 0%,rgba(255,255,255,0) 100%)}
+.ppuH-tick__track{display:flex;align-items:center;width:max-content;animation:ppuHtick 95s linear infinite;will-change:transform}
 .ppuH-tick__view:hover .ppuH-tick__track{animation-play-state:paused}
-.ppuH-tick__item{font:500 13px/1 var(--mono)!important;letter-spacing:.16em!important;text-transform:uppercase;color:var(--ink)!important;white-space:nowrap;padding:0 18px}
-.ppuH-tick__item small{font-size:inherit;color:var(--soft);margin-left:6px}
-.ppuH-tick__sep{color:var(--soft);font-size:12px}
+.ppuH-tick__item{font:700 20px/1 var(--mono)!important;letter-spacing:.08em!important;text-transform:uppercase;color:var(--ink)!important;white-space:nowrap}
+.ppuH-tick__sep{color:var(--ink);opacity:.4;margin:0 30px;font-size:18px;transform:translateY(-1px)}
 @keyframes ppuHtick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
 /* 3 · TEAM */
@@ -77,17 +72,21 @@ font:600 11px/1 var(--mono)!important;letter-spacing:.18em!important;text-transf
 .ppuH-hero{height:auto;min-height:640px}
 .ppuH-hero__grid{grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(4,1fr)}
 .ppuH-hero__in{position:relative;inset:auto;min-height:640px;padding:56px 20px}
+.ppuH-hero__eyebrow{font-size:14px!important;letter-spacing:.18em!important}
 .ppuH-hero__h{font-size:42px!important}.ppuH-hero__h br{display:none}
-.ppuH-hero__sub{font-size:12px!important;letter-spacing:.1em!important}
+.ppuH-hero__sub{font-size:12px!important;letter-spacing:.1em!important;max-width:34ch}.ppuH-hero__sub br{display:none}
 .ppuH-btn{font-size:15px!important;padding:19px 24px!important}
 .ppuH-p{font-size:15px!important;line-height:28px!important}
-.ppuH-tick__label{padding:0 12px;font-size:10px!important}
+.ppuH-tick{height:60px}
+.ppuH-tick__view::before,.ppuH-tick__view::after{width:48px}
+.ppuH-tick__item{font-size:15px!important;letter-spacing:.06em!important}
+.ppuH-tick__sep{margin:0 20px;font-size:14px}
 .ppuH-team{padding-top:64px}
 .ppuH-tm{width:56vw}
 .ppuH-team__foot{padding-bottom:64px}
 }
 
-@media (prefers-reduced-motion:reduce){.ppuH-tile img+img,.ppuH-rail__track,.ppuH-tick__track,.ppuH-logos__track,.ppuH-tick__label i{animation:none}.ppuR__slide,.ppuR__slide.on{transition:none}}
+@media (prefers-reduced-motion:reduce){.ppuH-tile img+img,.ppuH-rail__track,.ppuH-tick__track,.ppuH-logos__track{animation:none}}
 </style>
 
 <div class="ppuH">
@@ -98,18 +97,15 @@ font:600 11px/1 var(--mono)!important;letter-spacing:.18em!important;text-transf
 <div class="ppuH-hero__in">
 <p class="ppuH-hero__eyebrow">The Original • Est. 2013</p>
 <h1 class="ppuH-hero__h">Never forget the <br>faces you love most.</h1>
-<p class="ppuH-hero__sub">A simple 15-minute photo experience that captures your child’s <u>real</u> personality.</p>
+<p class="ppuH-hero__sub">A simple 15-minute photo experience that<br>captures your child’s <u>real</u> personality.</p>
 <div class="ppuH-hero__ctas">
 <a class="ppuH-btn ppuH-btn--white" href="https://www.personalitypopup.com/book/">📍 Find Your City</a>
-<a class="ppuH-pill" href="https://www.google.com/search?q=Personality+Pop-Up#lrd=0x89d5209ec3b5b81:0x332a7fee85847322,1" target="_blank" rel="noopener"><span class="st">★★★★★</span>5.0<span class="sp"></span><svg viewBox="0 0 48 48" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.5 0 6.6 1.2 9.1 3.6l6.8-6.8C35.8 2.4 30.3 0 24 0 14.6 0 6.6 5.4 2.7 13.3l7.9 6.2C12.5 13.6 17.8 9.5 24 9.5z"/><path fill="#4285F4" d="M46.1 24.5c0-1.6-.1-3.1-.4-4.5H24v9h12.4c-.5 2.9-2.2 5.3-4.6 6.9l7.2 5.6c4.2-3.9 7.1-9.6 7.1-17z"/><path fill="#FBBC05" d="M10.5 28.6c-.5-1.4-.8-3-.8-4.6s.3-3.2.8-4.6l-7.9-6.2C1 16.5 0 20.1 0 24s1 7.5 2.7 10.8l7.8-6.2z"/><path fill="#34A853" d="M24 48c6.5 0 11.9-2.1 15.9-5.8l-7.2-5.6c-2.2 1.5-5 2.4-8.7 2.4-6.2 0-11.5-4.2-13.4-9.9l-7.9 6.2C6.6 42.6 14.6 48 24 48z"/></svg><span data-ppu-review-count>418</span> Google reviews</a>
-<a class="ppuH-hero__fof" href="#ppu-fof">Not in your city yet? <b>Find Out First ↓</b></a>
 </div>
 </div>
 </section>
 
 <!-- 2 · CITY TICKER -->
 <section class="ppuH-sec ppuH-tick" aria-label="Cities we travel to">
-<a class="ppuH-tick__label" href="https://www.personalitypopup.com/book/"><i></i>We travel to</a>
 <div class="ppuH-tick__view"><div class="ppuH-tick__track" id="ppuH-tick"></div></div>
 </section>
 
@@ -130,7 +126,7 @@ font:600 11px/1 var(--mono)!important;letter-spacing:.18em!important;text-transf
  var el=document.getElementById('ppuH-tick'); if(!el) return;
  function render(list){
   var a=list.slice(); for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=a[i];a[i]=a[j];a[j]=t;}
-  var set=a.map(function(n){var p=String(n).split(',');return '<span class="ppuH-tick__item">'+p[0].trim()+(p[1]?'<small>'+p[1].trim()+'</small>':'')+'</span><span class="ppuH-tick__sep">✈</span>';}).join('');
+  var set=a.map(function(n){var p=String(n).split(',');return '<span class="ppuH-tick__item">'+p[0].trim()+'</span><span class="ppuH-tick__sep" aria-hidden="true">✈</span>';}).join('');
   el.innerHTML='<div style="display:flex;flex:none;align-items:center">'+set+'</div><div style="display:flex;flex:none;align-items:center" aria-hidden="true">'+set+'</div>';
  }
  render(FALLBACK);
