@@ -134,7 +134,7 @@ font:600 11px/1 var(--mono)!important;letter-spacing:.18em!important;text-transf
   el.innerHTML='<div style="display:flex;flex:none;align-items:center">'+set+'</div><div style="display:flex;flex:none;align-items:center" aria-hidden="true">'+set+'</div>';
  }
  render(FALLBACK);
- function fromCities(){var c=window.CITIES;if(c&&c.length)render(c.map(function(x){return x.name;}));}
+ function fromCities(){var c=window.CITIES;if(c&&c.length)render(c.map(function(x){return x.name;}).filter(function(n){return !/Summit/.test(n);}));}
  if(window.CITIES) fromCities(); else {var s=document.createElement('script');s.src='https://cdn.jsdelivr.net/gh/jonathanconnolly/session-crm@main/public/cities.js';s.async=true;s.onload=fromCities;document.head.appendChild(s);}
 })();
 </script>
