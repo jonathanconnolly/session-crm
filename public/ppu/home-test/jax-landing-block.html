@@ -1,0 +1,668 @@
+<!-- ==================================================================
+  PERSONALITY POP-UP — CITY LANDING PAGE                v5.0 2026-10-15
+  -------------------------------------------------------------------
+  ONE Pixieset Custom Code block = the whole city page (the page has no
+  site header/footer: it is an ad landing page with one job — book).
+  The booking box is the shared AXIS booking widget (book-widget.js):
+
+    <div data-ppu-book data-city="Jacksonville"></div>
+    <script src="https://axis-ppu.vercel.app/ppu/book-widget.js" async></script>
+
+    1. Hero        moving row of portraits · "now booking" · city · dates
+                   (+ venue, spots left, sold-out state — live from AXIS)
+    2. Book        the widget · reassurance row · "Can't make these dates?"
+                   email form (GHL VIP list, tagged city_jacksonville_fl)
+    3. Trust       18+ / 2013 / Google reviews facts + press ticker
+    4. Reviews     shared ppuR slider v2 (live pool, black)
+    5. Team        all-female statement + photographer rail (from /about)
+    6. Expect      3 steps + "No Perfect Kids Allowed" video
+    7. Portfolio   full-image slider
+    8. FAQ         /faq accordion with the approved copy (+ live prices)
+    9. Close       rotating B&W faces + "Little kids don't last."
+   10. Sticky CTA  (mobile) — follows the sold-out state
+
+  NEW CITY: change CITY + STATE + the FALLBACK dates below, data-city on
+  the widget div, and the city tag in GHL (city_<city>_<st>).
+  Built by scripts/build-ppu-landing.py from this file + docs/embeds/parts/.
+=================================================================== -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://axis-ppu.vercel.app" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500&amp;family=Roboto+Mono:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+  [class*="animatable"]{opacity:1!important;transform:none!important}
+  .block-custom-code:has(.ppuL){padding-top:0!important;padding-bottom:0!important}
+  .block-custom-code:has(.ppuL) .element-container__content,.block-custom-code:has(.ppuL) .element-container__content-wrapper{display:block!important}
+  .ppuL{
+    --ink:#2D2D2D;--ink-deep:#1A1A1A;--head:#373737;--soft:#646363;--paper:#fff;--cream:#FAF9F5;--blush:#FBDFD9;--red:#D64530;
+    --line:rgba(45,45,45,.12);--mute:rgba(45,45,45,.62);
+    --serif:"MADE Mirage","Orpheus Pro","Cormorant Garamond","DM Serif Display",Georgia,serif;
+    --mono:"Roboto Mono","Courier New",Courier,monospace;
+    box-sizing:border-box;width:100vw;margin-left:calc(50% - 50vw);background:var(--paper);color:var(--ink);text-align:left;
+    font-family:var(--mono);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;overflow-x:clip;
+  }
+  .ppuL :where(*,*::before,*::after){box-sizing:border-box;margin:0;padding:0}
+  .ppuL [hidden]{display:none!important}
+  .ppuL :where(button){cursor:pointer;background:none;border:0;font:inherit;color:inherit}
+  .ppuL .wrap{max-width:1180px;margin:0 auto;padding:0 32px}
+  .ppuL .eyebrow{display:block;font:500 13px/1.6 var(--mono)!important;letter-spacing:.2em!important;text-transform:uppercase;color:var(--soft)!important}
+  .ppuL h2{font:400 clamp(36px,4.4vw,52px)/1.12 var(--serif)!important;color:var(--head)!important;letter-spacing:-.01em!important;text-transform:none!important;text-wrap:balance}
+  .ppuL .sec-head{text-align:center;margin-bottom:40px}
+  .ppuL .sec-head h2{margin-top:10px}
+  .ppuL a.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:var(--ink);color:var(--paper)!important;
+    border-radius:440px;padding:22px 30px!important;font:600 18px/1 var(--mono)!important;letter-spacing:.1em!important;text-transform:uppercase;
+    text-decoration:none!important;transition:background .15s,transform .15s;white-space:nowrap}
+  .ppuL a.btn:hover{background:var(--ink-deep);transform:translateY(-1px)}
+  .ppuL a.btn--white{background:var(--paper);color:var(--ink)!important}
+  .ppuL a.btn--white:hover{background:var(--blush)}
+  .ppuL a:focus-visible,.ppuL button:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+
+  /* 1. HERO — one row of full portraits, moving */
+  .ppuL-hero{position:relative;height:clamp(580px,82vh,780px);background:#2D2D2D;overflow:hidden;color:#fff}
+  .ppuL-hero__rail{position:absolute;inset:0;display:flex;gap:0;width:max-content;height:100%;animation:ppuLscroll 140s linear infinite}
+  .ppuL-hero__rail img{height:100%;width:auto;aspect-ratio:2/3;flex:0 0 auto;object-fit:cover;filter:grayscale(100%);display:block;background:#3a3a3a}
+  @keyframes ppuLscroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+  .ppuL-hero__scrim{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(26,26,26,.56),rgba(26,26,26,.48) 45%,rgba(26,26,26,.72))}
+  .ppuL-hero__in{position:relative;z-index:2;height:100%;max-width:900px;margin:0 auto;padding:0 24px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+  .ppuL-hero__logo{width:clamp(180px,26vw,280px);height:auto;display:block;margin:0 auto 26px}
+  .ppuL-hero__eyebrow{font:500 12.5px/1.6 var(--mono);letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.78);margin-bottom:14px}
+  .ppuL-hero__eyebrow b{color:#fff;font-weight:600}
+  .ppuL-hero h1{font:400 clamp(44px,6vw,76px)/1.0 var(--serif)!important;letter-spacing:-.01em!important;color:#fff!important;margin-bottom:14px;text-shadow:0 2px 24px rgba(0,0,0,.3);text-wrap:balance}
+  .ppuL-hero__dates{font:600 clamp(15px,1.5vw,19px)/1.5 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:#fff;margin-bottom:18px}
+  .ppuL-hero__dates i{font-style:normal;opacity:.5;margin:0 8px}
+  .ppuL-hero__sub{font:400 16.5px/1.7 var(--mono);letter-spacing:.02em;color:rgba(255,255,255,.9);max-width:560px;margin-bottom:28px;text-wrap:balance}
+  .ppuL-hero__left{display:inline-flex;align-items:center;gap:9px;margin-bottom:18px;background:rgba(0,0,0,.35);border:1px solid rgba(255,255,255,.28);border-radius:80px;padding:9px 16px;font:600 12px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:#fff;backdrop-filter:blur(4px)}
+  .ppuL-hero__left::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--red);box-shadow:0 0 0 3px rgba(214,69,48,.3)}
+  .ppuL-hero__trust{display:inline-flex;align-items:center;gap:10px;margin-top:22px;color:#fff!important;font:500 12.5px/1 var(--mono)!important;letter-spacing:.14em!important;text-transform:uppercase;text-decoration:none!important;opacity:.92}
+  .ppuL-hero__trust:hover{opacity:1;text-decoration:underline!important;text-underline-offset:4px}
+  .ppuL-hero__trust .st{font-size:15px;letter-spacing:.1em;color:#FFD166}
+
+  /* 2. BOOK */
+  .ppuL-book{padding:72px 0 88px;scroll-margin-top:12px;background:var(--paper)}
+  .ppuL-book .ppuW .help{display:none!important}
+  .ppuL-assure{list-style:none!important;max-width:560px;margin:26px auto 0!important;padding:0!important;display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .ppuL-assure li{list-style:none!important;margin:0!important;display:flex;gap:9px;align-items:flex-start;font:400 12.5px/1.5 var(--mono);color:var(--soft);text-wrap:pretty}
+  .ppuL-assure li span{display:block}
+  .ppuL-assure li::before{content:"\2713";font-weight:700;color:var(--ink);flex:none;margin-top:1px}
+  .ppuL-assure b{font-weight:600;color:var(--ink)}
+  .ppuL-cant{max-width:560px;margin:40px auto 0;background:var(--blush);border-radius:18px;padding:30px 28px 24px}
+  .ppuL-cant h2{font-size:clamp(26px,3vw,32px)!important;line-height:1.15!important;margin-bottom:8px}
+  .ppuL-cant__p{font:400 14.5px/1.6 var(--mono);color:var(--head);margin-bottom:18px;text-wrap:pretty}
+  .ppuL-cant__form{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.35fr) auto;gap:10px}
+  .ppuL-cant input{width:100%;background:var(--paper);border:1px solid rgba(45,45,45,.12);color:var(--ink);font:400 14px/1 var(--mono);padding:15px 15px;border-radius:12px;outline:none;transition:border-color .2s}
+  .ppuL-cant input::placeholder{color:rgba(45,45,45,.45)}
+  .ppuL-cant input:focus{border-color:var(--ink)}
+  .ppuL-cant input.bad{border-color:var(--red)}
+  .ppuL-cant .hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+  .ppuL-cant button{background:var(--ink);color:#fff;border-radius:80px;padding:0 22px;font:700 13px/1 var(--mono)!important;letter-spacing:.16em!important;text-transform:uppercase;white-space:nowrap;transition:background .15s}
+  .ppuL-cant button:hover{background:var(--ink-deep)}
+  .ppuL-cant button:disabled{opacity:.6;cursor:not-allowed}
+  .ppuL-cant__ok{font:500 15px/1.6 var(--mono);color:var(--ink);background:var(--paper);border-radius:12px;padding:16px 18px}
+  .ppuL-cant__ok b{display:block;font:400 24px/1.1 var(--serif);margin-bottom:4px}
+  .ppuL-cant__legal{margin-top:12px;font:400 11.5px/1.5 var(--mono);color:rgba(45,45,45,.6)}
+  .ppuL-cant__legal a{color:inherit!important;font:inherit!important;letter-spacing:inherit!important;text-decoration:underline!important;text-underline-offset:2px}
+
+  /* 3. TRUST — facts + press ticker */
+  .ppuL-trust{background:var(--cream);padding:56px 0 0}
+  .ppuL-facts{display:grid;grid-template-columns:repeat(3,auto);justify-content:center;gap:clamp(36px,8vw,120px);padding:0 24px 48px;text-align:center}
+  .ppuL-fact b{display:block;font:400 clamp(38px,4vw,54px)/1 var(--serif);color:var(--ink);margin-bottom:10px}
+  .ppuL-fact span{display:block;font:500 11px/1.4 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--soft)}
+  .ppuL-logos__label{display:block;text-align:center;font:500 12px/1 var(--mono)!important;letter-spacing:.2em!important;text-transform:uppercase;color:var(--soft)!important;margin-bottom:24px}
+  .ppuL-logos__viewport{overflow:hidden;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:28px 0;background:var(--paper);
+    -webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+  .ppuL-logos__track{display:flex;width:max-content;animation:ppuLLogos 60s linear infinite}
+  .ppuL-logos__viewport:hover .ppuL-logos__track{animation-play-state:paused}
+  .ppuL-logos__set{display:flex;align-items:center;flex:none}
+  .ppuL-logos__item{font:400 clamp(24px,2.4vw,34px)/1 var(--serif)!important;color:var(--ink)!important;white-space:nowrap;padding:0 clamp(22px,2.6vw,40px);letter-spacing:0!important}
+  .ppuL-logos__item i{font-style:italic}
+  .ppuL-logos__dot{width:5px;height:5px;border-radius:50%;background:var(--ink);opacity:.35;flex:none}
+  @keyframes ppuLLogos{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+  /* 5. TEAM — statement + photographer rail (from /about) */
+  .ppuL-team{padding:88px 24px 0;background:var(--paper)}
+  .ppuL-team__head{max-width:980px;margin:0 auto 56px;display:flex;flex-direction:column;align-items:center;gap:22px;text-align:center}
+  .ppuL-team__statement{font:400 clamp(34px,4.4vw,60px)/1.12 var(--serif)!important;color:var(--ink)!important;letter-spacing:-.01em!important;text-wrap:balance}
+  .ppuL-team__statement em{font-style:italic}
+  .ppuL-hl{position:relative;z-index:0;padding:0 .06em;white-space:nowrap}
+  .ppuL-hl::before{content:"";position:absolute;left:0;right:0;top:.14em;bottom:.04em;background:var(--blush);border-radius:4px;z-index:-1;transform:scaleX(0);transform-origin:left center;transition:transform .9s cubic-bezier(.2,.7,.2,1) .25s}
+  .ppuL-hl.on::before{transform:scaleX(1)}
+  .ppuL-tmsup{font-size:.38em!important;line-height:0;vertical-align:baseline;position:relative;top:-1.1em;margin-left:.08em;font-family:var(--serif)!important;color:var(--ink)!important}
+  .ppuL-teamrail{width:100vw;margin-left:calc(50% - 50vw);overflow:hidden}
+  .ppuL-teamrail__track{display:flex;width:max-content;animation:ppuLTeam 80s linear infinite}
+  .ppuL-teamrail:hover .ppuL-teamrail__track{animation-play-state:paused}
+  .ppuL-teamrail__set{display:flex;gap:0;flex:none}
+  .ppuL-tm{position:relative;width:clamp(230px,21vw,320px);margin:0;flex:none}
+  .ppuL-tm img{display:block;width:100%;aspect-ratio:2/3;object-fit:cover;background:#eceae6}
+  @keyframes ppuLTeam{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+  /* 6. WHAT TO EXPECT — 3 steps + video */
+  .ppuL-how{padding:96px 0 90px;background:var(--paper)}
+  .ppuL-how__in{max-width:1080px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1fr) 330px;column-gap:clamp(40px,7vw,110px);align-items:center}
+  .ppuL-how .sec-head{text-align:left;margin-bottom:34px}
+  .ppuL-how__grid{display:grid;grid-template-columns:1fr;gap:26px}
+  .ppuL-how__step{border-top:1px solid var(--ink);padding-top:20px;display:grid;grid-template-columns:64px minmax(0,1fr);column-gap:18px;align-items:start}
+  .ppuL-how__n{font:400 44px/1 var(--serif);color:var(--head)}
+  .ppuL-how__step h3{font:400 28px/1.15 var(--serif)!important;color:var(--head)!important;margin-bottom:8px;letter-spacing:0!important;text-transform:none!important}
+  .ppuL-how__step p{font:400 14.5px/1.8 var(--mono);color:var(--head);max-width:46ch}
+  .ppuL-how__vid{position:relative;width:330px;aspect-ratio:310/577;overflow:hidden;border-radius:8px;background:#111;justify-self:end}
+  .ppuL-how__vid iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+  .ppuL-how__cap{margin-top:12px;text-align:center;font:500 11px/1.4 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--soft)}
+
+  /* 7. PORTFOLIO */
+  .ppuL-port{padding:0 0 100px}
+  .ppuL-port .sec-head{margin-bottom:36px}
+  .ppuL-port__stage{position:relative}
+  .ppuL-port__track{display:flex;gap:6px;height:clamp(440px,74vh,780px);overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;scroll-padding:0 24px;padding:0 24px;scrollbar-width:none;overscroll-behavior-x:contain}
+  .ppuL-port__track::-webkit-scrollbar{display:none}
+  .ppuL-port__track img{height:100%;width:auto;aspect-ratio:2/3;flex:0 0 auto;object-fit:contain;display:block;background:#f3f3f3;scroll-snap-align:start}
+  .ppuL-port__track img.ld{background:none}
+  .ppuL-arrow{position:absolute;top:50%;transform:translateY(-50%);z-index:3;width:58px;height:58px;border-radius:50%;background:#fff;color:var(--ink);
+    display:flex;align-items:center;justify-content:center;box-shadow:0 8px 30px rgba(0,0,0,.18);transition:transform .15s,opacity .15s}
+  .ppuL-arrow:hover{transform:translateY(-50%) scale(1.06)}
+  .ppuL-arrow:disabled{opacity:0;pointer-events:none}
+  .ppuL-arrow svg{width:22px;height:22px}
+  .ppuL-arrow--l{left:24px}.ppuL-arrow--r{right:24px}
+  .ppuL-port__bar{display:flex;align-items:center;justify-content:center;gap:18px;margin-top:22px;font:500 13px/1 var(--mono);letter-spacing:.16em;color:var(--mute)}
+  .ppuL-port__prog{width:180px;height:2px;background:var(--line);position:relative;overflow:hidden}
+  .ppuL-port__prog i{position:absolute;left:0;top:0;bottom:0;background:var(--ink);width:0;transition:width .2s}
+
+  /* 8. FAQ — the /faq accordion */
+  .ppuL-faq{padding:0 0 96px}
+  .ppuL-faq__in{max-width:820px;margin:0 auto}
+  .ppuL-faq .sec-head{margin-bottom:26px}
+  .ppuL-faq__list{border-top:1px solid rgba(45,45,45,.14)}
+  .ppuL-q{border-bottom:1px solid rgba(45,45,45,.14)}
+  .ppuL-q summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:22px 0;
+    font:400 23px/1.3 var(--serif)!important;letter-spacing:0!important;text-transform:none!important;color:var(--ink)!important}
+  .ppuL-q summary::-webkit-details-marker{display:none}
+  .ppuL-q__ico{flex:none;width:34px;height:34px;border-radius:50%;border:1px solid rgba(45,45,45,.22);position:relative;transition:background .2s,border-color .2s}
+  .ppuL-q__ico::before,.ppuL-q__ico::after{content:"";position:absolute;left:50%;top:50%;width:12px;height:1.5px;background:var(--ink);transform:translate(-50%,-50%);transition:transform .25s}
+  .ppuL-q__ico::after{transform:translate(-50%,-50%) rotate(90deg)}
+  .ppuL-q[open] .ppuL-q__ico{background:var(--blush);border-color:var(--blush)}
+  .ppuL-q[open] .ppuL-q__ico::after{transform:translate(-50%,-50%) rotate(0deg)}
+  .ppuL-q summary:hover .ppuL-q__ico{border-color:var(--ink)}
+  .ppuL-q__a{padding:0 64px 26px 0}
+  .ppuL-q__a p{font:400 16px/30px var(--mono)!important;letter-spacing:-.15px!important;color:var(--head)!important;max-width:62ch}
+  .ppuL-q__a b{font-weight:600;color:var(--ink)}
+
+  /* 9. CLOSE — rotating B&W faces + CTA (from /faq) */
+  .ppuL-close{position:relative;overflow:hidden;background:#111}
+  .ppuL-close__grid{display:grid;grid-template-columns:repeat(6,1fr)}
+  .ppuL-tile{position:relative;aspect-ratio:3/4;overflow:hidden;filter:grayscale(1)}
+  .ppuL-tile img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+  .ppuL-tile img+img{opacity:0;animation:ppuLfade 12s ease-in-out infinite;animation-delay:var(--d,0s)}
+  @keyframes ppuLfade{0%,38%{opacity:0}50%,88%{opacity:1}100%{opacity:0}}
+  .ppuL-close__tint{position:absolute;inset:0;background:rgba(0,0,0,.6)}
+  .ppuL-close__in{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;padding:0 24px;text-align:center}
+  .ppuL h2.ppuL-close__h{font:400 clamp(40px,5.6vw,84px)/1.05 var(--serif)!important;color:#fff!important;letter-spacing:-.005em!important;max-width:14ch;text-wrap:balance;margin:0!important}
+  .ppuL-close__p{font:400 15.5px/1.7 var(--mono);color:rgba(255,255,255,.88);max-width:46ch;text-wrap:balance;margin-bottom:10px}
+
+  .ppuL-sticky{position:fixed;left:12px;right:12px;bottom:12px;z-index:50;display:none}
+  .ppuL-sticky .btn{width:100%;box-shadow:0 12px 30px rgba(0,0,0,.25)}
+  .ppuL-sticky .btn small{font:500 11px/1 var(--mono);letter-spacing:.1em;opacity:.8;margin-left:6px}
+
+  @media (max-width:980px){
+    .ppuL-how__in{grid-template-columns:minmax(0,1fr);row-gap:44px}
+    .ppuL-how__vid{width:min(330px,100%);justify-self:center}
+    .ppuL-how .sec-head{text-align:center}
+  }
+  @media (max-width:760px){.ppuL-tm{width:62vw}}
+  @media (max-width:640px){
+    .ppuL .wrap{padding:0 16px}
+    .ppuL-hero{height:clamp(560px,86vh,720px)}
+    .ppuL-hero__logo{width:170px;margin-bottom:22px}
+    .ppuL-hero__eyebrow{font-size:10.5px;letter-spacing:.18em}
+    .ppuL-hero h1{font-size:50px!important}
+    .ppuL-hero__dates{font-size:13.5px;letter-spacing:.12em}
+    .ppuL-hero__sub{font-size:14.5px;margin-bottom:22px}
+    .ppuL a.btn{font-size:15px!important;padding:19px 24px!important}
+    .ppuL-hero__trust{font-size:11px!important;margin-top:18px}
+    .ppuL-book{padding:44px 16px 64px}
+    .ppuL-assure{grid-template-columns:1fr;gap:9px;margin-top:20px!important;max-width:360px}
+    .ppuL-cant{margin-top:32px;padding:24px 18px 18px;border-radius:14px}
+    .ppuL-cant__form{grid-template-columns:1fr}
+    .ppuL-cant button{padding:17px 22px}
+    .ppuL-trust{padding-top:44px}
+    .ppuL-facts{gap:18px;padding-bottom:36px;grid-template-columns:repeat(3,minmax(0,1fr))}
+    .ppuL-fact b{font-size:30px}
+    .ppuL-fact span{font-size:9.5px;letter-spacing:.1em}
+    .ppuL-team{padding:64px 16px 0}
+    .ppuL-team__head{margin-bottom:36px;gap:16px}
+    .ppuL-how{padding:64px 0 60px}
+    .ppuL-how__step{grid-template-columns:48px minmax(0,1fr);column-gap:12px}
+    .ppuL-how__n{font-size:34px}
+    .ppuL-how__step h3{font-size:24px!important}
+    .ppuL-port{padding-bottom:70px}
+    .ppuL-port__track{height:64vh;gap:4px;padding:0 12px;scroll-padding:0 12px}
+    .ppuL-arrow{width:44px;height:44px}
+    .ppuL-arrow--l{left:10px}.ppuL-arrow--r{right:10px}
+    .ppuL-faq{padding-bottom:64px}
+    .ppuL-q summary{font-size:19px!important;padding:18px 0}
+    .ppuL-q__a{padding-right:0}
+    .ppuL-q__a p{font-size:14.5px!important;line-height:26px!important}
+    .ppuL-close__grid{grid-template-columns:repeat(4,1fr)}
+    .ppuL-close__in{gap:14px}
+    .ppuL-close__p{font-size:13.5px}
+    .ppuL-sticky.show{display:block}
+  }
+  @media (prefers-reduced-motion:reduce){.ppuL-hero__rail,.ppuL-logos__track,.ppuL-teamrail__track,.ppuL-tile img+img{animation:none}}
+</style>
+
+<div class="ppuL" id="ppuL">
+  <!-- 1. HERO -->
+  <section class="ppuL-hero" aria-label="Personality Pop-Up in Jacksonville">
+    <div class="ppuL-hero__rail" id="ppuL-rail" aria-hidden="true"></div>
+    <div class="ppuL-hero__scrim" aria-hidden="true"></div>
+    <div class="ppuL-hero__in">
+      <img class="ppuL-hero__logo" src="https://axis-ppu.vercel.app/ppu/logo-white.png" alt="Personality Pop-Up" loading="eager" fetchpriority="high">
+      <p class="ppuL-hero__eyebrow">The traveling kids studio · <b id="ppuL-status">Now booking</b></p>
+      <h1 id="ppuL-h1">Jacksonville, FL</h1>
+      <p class="ppuL-hero__dates"><span id="ppuL-dates">January 9–10</span><i>·</i><span id="ppuL-where">One weekend only</span></p>
+      <p class="ppuL-hero__sub">A simple 15-minute photo experience that captures your child's real personality.</p>
+      <span class="ppuL-hero__left" id="ppuL-left" hidden></span>
+      <a class="btn btn--white" href="#ppuL-book" data-cta>Book Your Session</a>
+      <a class="ppuL-hero__trust" href="https://www.google.com/search?q=Personality+Pop-Up#lrd=0x89d5209ec3b5b81:0x332a7fee85847322,1" target="_blank" rel="noopener noreferrer"><span class="st" aria-hidden="true">★★★★★</span>5.0 · <span data-ppu-review-count>418+</span> Google reviews</a>
+    </div>
+  </section>
+
+  <!-- 2. BOOK — shared AXIS booking widget + reassurance + "can't make it" -->
+  <section class="ppuL-book" id="ppuL-book" aria-label="Book your session">
+    <div class="wrap">
+      <div data-ppu-book data-city="Jacksonville"></div>
+      <ul class="ppuL-assure" id="ppuL-assure">
+        <li><span><b><span data-jx="dep">$150</span> deposit</b> holds your time</span></li>
+        <li><span><b>Change your mind</b> within 24 hours and it's refunded</span></li>
+        <li><span><b>Reschedule</b> up to 7 days before</span></li>
+      </ul>
+      <div class="ppuL-cant" id="ppuL-cant">
+        <h2 id="ppuL-cant-h">Can't make <span data-jx="dates">January 9–10</span>?</h2>
+        <p class="ppuL-cant__p" id="ppuL-cant-p">Leave your email and you'll be the first to know when our next Jacksonville dates open.</p>
+        <form class="ppuL-cant__form" id="ppuL-cant-form" novalidate>
+          <input type="text" name="first" placeholder="First name" autocomplete="given-name" required aria-label="First name">
+          <input type="email" name="email" placeholder="Email" autocomplete="email" inputmode="email" required aria-label="Email">
+          <input class="hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <button type="submit" id="ppuL-cant-btn">Notify me</button>
+        </form>
+        <div class="ppuL-cant__ok" id="ppuL-cant-ok" hidden><b>You're on the list.</b>We'll email you first when Jacksonville opens again.</div>
+        <p class="ppuL-cant__legal">No spam, just a heads-up when we're back in Jacksonville. <a href="https://www.personalitypopup.com/privacy-policy/" target="_blank" rel="noopener">Privacy Policy</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. TRUST — facts + press -->
+  <section class="ppuL-trust" aria-label="Why families trust us">
+    <div class="ppuL-facts">
+      <div class="ppuL-fact"><b>18+</b><span>Years behind<br>the camera</span></div>
+      <div class="ppuL-fact"><b>2013</b><span>Personality<br>Portraits began</span></div>
+      <div class="ppuL-fact"><b data-ppu-review-count>418+</b><span>Five-star<br>Google reviews</span></div>
+    </div>
+    <span class="ppuL-logos__label">Worked with &amp; featured in</span>
+    <div class="ppuL-logos__viewport" aria-label="Brands and publications">
+      <div class="ppuL-logos__track">
+        <div class="ppuL-logos__set"><span class="ppuL-logos__item">Vera Wang</span><span class="ppuL-logos__dot"></span><span class="ppuL-logos__item"><i>People</i></span><span class="ppuL-logos__dot"></span><span class="ppuL-logos__item">Airbnb</span><span class="ppuL-logos__dot"></span><span class="ppuL-logos__item"><i>Harper’s Bazaar</i></span><span class="ppuL-logos__dot"></span><span class="ppuL-logos__item">Gigi Hadid</span><span class="ppuL-logos__dot"></span><span class="ppuL-logos__item"><i>Brides</i></span><span class="ppuL-logos__dot"></span><span class="ppuL-logos__item">Neiman Marcus</span><span class="ppuL-logos__dot"></span><span class="ppuL-logos__item"><i>US Weekly</i></span><span class="ppuL-logos__dot"></span><span class="ppuL-logos__item">Williams Sonoma</span><span class="ppuL-logos__dot"></span><span class="ppuL-logos__item"><i>BuzzFeed</i></span><span class="ppuL-logos__dot"></span><span class="ppuL-logos__item">Trader Joe’s</span><span class="ppuL-logos__dot"></span><span class="ppuL-logos__item"><i>HuffPost</i></span><span class="ppuL-logos__dot"></span></div>
+        <div class="ppuL-logos__set" aria-hidden="true"><span class="ppuL-logos__item">Vera Wang</span><span class="ppuL-logos__dot"></span><span class="ppuL-logos__item"><i>People</i></span><span class="ppuL-logos__dot"></span><span class="ppuL-logos__item">Airbnb</span><span class="ppuL-logos__dot"></span><span class="ppuL-logos__item"><i>Harper’s Bazaar</i></span><span class="ppuL-logos__dot"></span><span class="ppuL-logos__item">Gigi Hadid</span><span class="ppuL-logos__dot"></span><span class="ppuL-logos__item"><i>Brides</i></span><span class="ppuL-logos__dot"></span><span class="ppuL-logos__item">Neiman Marcus</span><span class="ppuL-logos__dot"></span><span class="ppuL-logos__item"><i>US Weekly</i></span><span class="ppuL-logos__dot"></span><span class="ppuL-logos__item">Williams Sonoma</span><span class="ppuL-logos__dot"></span><span class="ppuL-logos__item"><i>BuzzFeed</i></span><span class="ppuL-logos__dot"></span><span class="ppuL-logos__item">Trader Joe’s</span><span class="ppuL-logos__dot"></span><span class="ppuL-logos__item"><i>HuffPost</i></span><span class="ppuL-logos__dot"></span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. REVIEWS — shared ppuR slider v2 (black). Quotes come live from
+       session-crm/public/ppu-reviews.json; QUOTES below is only a fallback.
+       Same component as Home / About / Find Your City (see reviews-slider notes). -->
+  <style>
+    .ppuR{--r-ink:#2D2D2D;--r-paper:#FFFFFF;--r-blush:#FBDFD9;
+      --r-serif:"MADE Mirage","Orpheus Pro","Cormorant Garamond","DM Serif Display",Georgia,serif;
+      --r-mono:"Roboto Mono","Courier New",Courier,monospace;
+      --r-bg:var(--r-ink);--r-fg:var(--r-paper);--r-soft:rgba(255,255,255,.6);--r-line:rgba(255,255,255,.3);
+      box-sizing:border-box;width:100vw;margin-left:calc(50% - 50vw);background:var(--r-bg);color:var(--r-fg);
+      padding:64px 24px 68px;overflow:hidden;position:relative;display:flex;flex-direction:column;justify-content:center}
+    .ppuR__inner{width:100%}
+    .ppuR--pink{--r-bg:var(--r-blush);--r-fg:var(--r-ink);--r-soft:rgba(45,45,45,.62);--r-line:rgba(45,45,45,.3)}
+    .ppuR *,.ppuR *::before,.ppuR *::after{box-sizing:border-box;margin:0;padding:0}
+    .ppuR figure,.ppuR blockquote,.ppuR figcaption{border:0!important;background:none!important}
+    .ppuR [class*="animatable"],.ppuR.animatable{opacity:1!important;transform:none!important}
+    .ppuR__inner{max-width:1040px;margin:0 auto;display:grid;grid-template-columns:44px minmax(0,1fr) 44px;align-items:center;column-gap:clamp(16px,5vw,72px)}
+    .ppuR__mid{display:flex;flex-direction:column;align-items:center;gap:36px;min-width:0}
+    .ppuR__pill{display:inline-flex;align-items:center;gap:14px;background:#fff;color:var(--r-ink);border-radius:999px;padding:20px 32px;
+      font:600 15px/1 var(--r-mono);letter-spacing:.12em;text-transform:uppercase;white-space:nowrap;text-decoration:none;box-shadow:0 2px 10px rgba(0,0,0,.08);transition:transform .2s}
+    .ppuR__pill:hover{transform:translateY(-1px)}
+    .ppuR__pill .st{font-size:18px;letter-spacing:.12em}
+    .ppuR__pill .sp{width:1px;height:18px;background:currentColor;opacity:.25}
+    .ppuR__pill svg{width:18px;height:18px;flex:none;display:block}
+    .ppuR__stage{display:grid;width:100%;max-width:720px}
+    .ppuR__slide{grid-area:1/1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;text-align:center;
+      opacity:0;visibility:hidden;transform:translateY(6px);transition:opacity .3s ease,transform .3s ease,visibility 0s .3s}
+    .ppuR__slide.on{opacity:1;visibility:visible;transform:none;transition:opacity .55s ease .3s,transform .55s ease .3s,visibility 0s .3s}
+    .ppuR__text{font-family:var(--r-serif);font-weight:400;font-style:normal;color:var(--r-fg);letter-spacing:-.01em;line-height:1.25;text-wrap:balance}
+    .ppuR__text::before{content:"\201C"}.ppuR__text::after{content:"\201D"}
+    .ppuR__text.s{font-size:clamp(26px,3.4vw,40px)}
+    .ppuR__text.m{font-size:clamp(22px,2.7vw,32px)}
+    .ppuR__text.l{font-size:clamp(19px,2.1vw,26px);line-height:1.35}
+    .ppuR__name{font:500 12px/1 var(--r-mono);letter-spacing:.2em;text-transform:uppercase;color:var(--r-soft)}
+    .ppuR__nav{width:44px;height:44px;border-radius:50%;border:1px solid var(--r-line);background:transparent;color:var(--r-fg);
+      display:grid;place-items:center;cursor:pointer;transition:border-color .2s;-webkit-appearance:none;appearance:none}
+    .ppuR__nav:hover{border-color:var(--r-fg)}
+    .ppuR__nav:focus-visible{outline:2px solid var(--r-fg);outline-offset:3px}
+    .ppuR__nav svg{width:14px;height:14px;display:block}
+    @media (max-width:640px){
+      .ppuR{padding:48px 14px 52px}
+      .ppuR__inner{grid-template-columns:34px minmax(0,1fr) 34px;column-gap:10px}
+      .ppuR__nav{width:34px;height:34px}
+      .ppuR__pill{gap:8px;padding:14px 18px;font-size:11px;letter-spacing:.08em}.ppuR__pill .st{font-size:13px;letter-spacing:.06em}.ppuR__pill svg{width:14px;height:14px}.ppuR__pill .sp{height:14px}
+      .ppuR__mid{gap:24px}
+      .ppuR__text.s{font-size:24px}.ppuR__text.m{font-size:20px}.ppuR__text.l{font-size:17px}
+    }
+    @media (prefers-reduced-motion:reduce){.ppuR__slide,.ppuR__slide.on{transition:none}}
+  </style>
+
+  <section class="ppuR ppuR--black" id="ppuR-jax" aria-label="What parents are saying">
+    <div class="ppuR__inner">
+      <button class="ppuR__nav" data-dir="-1" type="button" aria-label="Previous review"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 4 L7 12 L15 20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <div class="ppuR__mid">
+        <a class="ppuR__pill" href="https://www.google.com/search?q=Personality+Pop-Up#lrd=0x89d5209ec3b5b81:0x332a7fee85847322,1" target="_blank" rel="noopener"><span class="st">★★★★★</span>5.0<span class="sp"></span><svg viewBox="0 0 48 48" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.5 0 6.6 1.2 9.1 3.6l6.8-6.8C35.8 2.4 30.3 0 24 0 14.6 0 6.6 5.4 2.7 13.3l7.9 6.2C12.5 13.6 17.8 9.5 24 9.5z"/><path fill="#4285F4" d="M46.1 24.5c0-1.6-.1-3.1-.4-4.5H24v9h12.4c-.5 2.9-2.2 5.3-4.6 6.9l7.2 5.6c4.2-3.9 7.1-9.6 7.1-17z"/><path fill="#FBBC05" d="M10.5 28.6c-.5-1.4-.8-3-.8-4.6s.3-3.2.8-4.6l-7.9-6.2C1 16.5 0 20.1 0 24s1 7.5 2.7 10.8l7.8-6.2z"/><path fill="#34A853" d="M24 48c6.5 0 11.9-2.1 15.9-5.8l-7.2-5.6c-2.2 1.5-5 2.4-8.7 2.4-6.2 0-11.5-4.2-13.4-9.9l-7.9 6.2C6.6 42.6 14.6 48 24 48z"/></svg><span data-ppu-review-count>418+</span> Google reviews</a>
+        <div class="ppuR__stage" aria-live="polite"></div>
+      </div>
+      <button class="ppuR__nav" data-dir="1" type="button" aria-label="Next review"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 4 L17 12 L9 20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+    </div>
+  </section>
+
+  <script>
+  (function(){
+    var QUOTES = [
+      {"q":"I'm literally weeping! These pictures are absolutely priceless. Best photography experience yet! Personality Pop-up crew was so friendly and approachable! 10/10 recommend!","n":"Vanessa"},
+      {"q":"My daughter had a blast taking these. Would recommend to any parent. Captures their personality perfectly.","n":"Kaitlynn K."},
+      {"q":"I found them through a random Instagram ad (which I would normally scroll right past), but for some reason decided to give it a shot — and I'm so glad I did. I opened my gallery this morning and actually teared up (in the best way). We will cherish these photos forever.","n":"Kelly"},
+      {"q":"Just book this — you will absolutely NOT regret it! I cannot believe how insanely adorable these photos turned out from my two unruly kiddos who are usually everywhere all at once!","n":"Farah"},
+      {"q":"Quick and painless for my 6 and 8 year old boys. The pictures are perfect and the photographers were wonderful!","n":"Leila"},
+      {"q":"I cannot believe these photos!!!!! Best money I spent all year. On anything. And I spend a lot of money 😂 The process was a breeze. Fun for the kids and not stressful. But I would've paid double if I knew they'd come out so incredible. Thank you so so much!!!","n":"Jessica"},
+      {"q":"Wonderful experience! 15 minutes in and out. They are great with the littles and the photos are adorable! Will definitely book again when they come back to Houston.","n":"Megan"},
+      {"q":"They were incredible with our kids who can be slow to trust. Thrilled with the photos we got. Family heirlooms!","n":"Caroline"},
+      {"q":"10/10! I knew the photos would likely turn out lovely, but I wasn't expecting to enjoy the shoot day itself so much. 15 minutes turned out to be more than enough time and the vibes were so easygoing and happy. My husband and I left saying 'that was already worth it'.","n":"Sandy"},
+      {"q":"Somehow they captured not just beautiful photos, but who my children are — their personalities, expressions, and little details I never want to forget. These are images I will treasure for the rest of my life.","n":"Amanda"},
+      {"q":"My little guy does not sit still, & she still managed to capture the most PERFECT photos! The 15 minute session was the perfect length. I can't stop staring at these photos & can't wait to do it again! 10/10 recommend!","n":"Allie"},
+      {"q":"As soon as our session was over my kids got in the car and said 'That was so fun!' Truly the easiest, most fun, stress free experience for me and my kids. They perfectly captured my kids and I couldn't be more happy!","n":"Shauna"},
+      {"q":"Such an easy, lovely experience and got the BEST photos of our 8 month old. Will definitely be going every time they come to our city!","n":"Hayley"},
+      {"q":"We've done two sessions with our daughter over the past year, and we'll continue every year we can.","n":"Edward"}
+    ];
+    /* ppuR v2 (2026-10-15): reviews come live from session-crm/public/ppu-reviews.json (ranked, kept fresh by the daily ppu-google-review-count task); the QUOTES above are only a fallback. Each page starts in its own slice of the ranking (home/about/book/jax = 0/1/2/3), starting each day on one of its top 3, so moving between pages shows different reviews. */
+    var ROTATE_MS = 7000, ROOT_ID = 'ppuR-jax', MODE = 'long', SLOTS = {'ppuR-home':0,'ppuR-about':1,'ppuR-book':2,'ppuR-jax':3};
+    var POOL_URL = 'https://raw.githubusercontent.com/jonathanconnolly/session-crm/main/public/ppu-reviews.json';
+    var root = document.getElementById(ROOT_ID);
+    if (!root) return;
+    var stage = root.querySelector('.ppuR__stage'), slides = [], idx = 0, timer = null, built = false;
+    function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+    function size(t){return t.length<=120?'s':(t.length<=230?'m':'l');}
+    function clean(t){return String(t||'').replace(/^[\s"“]+|[\s"”]+$/g,'');}
+    function pick(r){var t=clean(MODE==='short'?(r.s||(String(r.q||'').length<=150?r.q:'')):r.q);return t?{q:t,n:r.n}:null;}
+    function slot(){if(ROOT_ID in SLOTS)return SLOTS[ROOT_ID];var h=0;for(var i=0;i<ROOT_ID.length;i++)h=(h*31+ROOT_ID.charCodeAt(i))|0;return Math.abs(h)%4;}
+    function arrange(list){
+      var k=slot(), own=[], rest=[], day=Math.floor(Date.now()/864e5);
+      list.forEach(function(x,i){(i%4===k?own:rest).push(x);});
+      if(own.length){var r=day%Math.min(3,own.length);own=own.slice(r).concat(own.slice(0,r));} /* daily: start on one of this page's top 3 */
+      return own.concat(rest);
+    }
+    function build(list){
+      if (built) return; var items=[]; arrange(list).forEach(function(r){var p=pick(r);if(p)items.push(p);});
+      if (!items.length) return; built = true;
+      stage.innerHTML = items.map(function(x,i){
+        return '<figure class="ppuR__slide'+(i===0?' on':'')+'"><blockquote class="ppuR__text '+size(x.q)+'">'+esc(x.q)+'</blockquote>'
+          +'<figcaption class="ppuR__name">&mdash; '+esc(x.n)+'</figcaption></figure>';
+      }).join('');
+      slides = stage.children; idx = 0; fit(); restart();
+    }
+    function show(n){if(!slides.length)return;slides[idx].classList.remove('on');idx=(n+slides.length)%slides.length;slides[idx].classList.add('on');restart();}
+    function restart(){clearTimeout(timer);timer=setTimeout(function(){show(idx+1);},ROTATE_MS);}
+    [].forEach.call(root.querySelectorAll('.ppuR__nav'),function(b){b.addEventListener('click',function(){show(idx+(+b.getAttribute('data-dir')));});});
+    function fit(){if(!root.hasAttribute('data-fit'))return;root.style.minHeight='';var host=root.closest&&root.closest('.fb-element');var h=host?host.getBoundingClientRect().height:(self!==top?document.documentElement.clientHeight:0);if(h>root.offsetHeight+2)root.style.minHeight=h+'px';}
+    fit();window.addEventListener('load',fit);window.addEventListener('resize',fit);if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fit);
+    var fallback = setTimeout(function(){build(QUOTES);}, 2500);
+    fetch(POOL_URL,{cache:'no-store'}).then(function(r){return r.json();}).then(function(d){
+      var list=d&&d.reviews; if(list&&list.length>=10){clearTimeout(fallback);build(list);} else {clearTimeout(fallback);build(QUOTES);}
+    }).catch(function(){clearTimeout(fallback);build(QUOTES);});
+    /* live Google review count for [data-ppu-review-count] (same as the site-wide sync; runs once per page) */
+    if(!window.__ppuReviewSync){window.__ppuReviewSync=1;fetch('https://raw.githubusercontent.com/jonathanconnolly/session-crm/main/public/google-reviews.json',{cache:'no-store'}).then(function(r){return r.json()}).then(function(d){var n=d&&parseInt(d.count,10);if(!n)return;[].forEach.call(document.querySelectorAll('[data-ppu-review-count]'),function(el){el.textContent=String(n)+'+'});}).catch(function(){});}
+  })();
+  </script>
+
+  <!-- 5. TEAM -->
+  <section class="ppuL-team" id="ppuL-team" aria-label="The ladies behind the lens">
+    <div class="ppuL-team__head">
+      <span class="eyebrow">The ladies behind the lens</span>
+      <h2 class="ppuL-team__statement">We are a boutique team of <em>all-female</em> traveling kid photographers, certified in the <span class="ppuL-hl">Personality Method</span><sup class="ppuL-tmsup">™</sup></h2>
+    </div>
+    <div class="ppuL-teamrail">
+      <div class="ppuL-teamrail__track" id="ppuL-teamtrack"></div>
+    </div>
+  </section>
+
+  <!-- 6. WHAT TO EXPECT -->
+  <section class="ppuL-how" aria-label="What to expect">
+    <div class="wrap"><div class="ppuL-how__in">
+      <div>
+        <div class="sec-head"><span class="eyebrow">What to expect</span><h2>Simple from start to finish.</h2></div>
+        <div class="ppuL-how__grid">
+          <div class="ppuL-how__step"><div class="ppuL-how__n">01</div><div><h3>Pick your time</h3><p>Choose a date and a 15-minute time, sign and pay your deposit. It takes about two minutes.</p></div></div>
+          <div class="ppuL-how__step"><div class="ppuL-how__n">02</div><div><h3>Come play</h3><p>Arrive 10 minutes early. No posing, no "say cheese." We let your child just be, and capture who they really are.</p></div></div>
+          <div class="ppuL-how__step"><div class="ppuL-how__n">03</div><div><h3>Get your gallery</h3><p>25+ high-resolution images in color and black &amp; white, in a private gallery to download, print and share.</p></div></div>
+        </div>
+      </div>
+      <div>
+        <div class="ppuL-how__vid"><iframe src="https://player.vimeo.com/video/1174234823?title=0&amp;byline=0&amp;portrait=0&amp;dnt=1" title="No perfect kids allowed — Personality Pop-Up" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>
+        <p class="ppuL-how__cap">No perfect kids allowed · 1 min</p>
+      </div>
+    </div></div>
+  </section>
+
+  <!-- 7. PORTFOLIO -->
+  <section class="ppuL-port" aria-label="Portfolio">
+    <div class="wrap"><div class="sec-head"><span class="eyebrow">Real kids. Real personality.</span><h2>Never forget the faces you love most.</h2></div></div>
+    <div class="ppuL-port__stage">
+      <button type="button" class="ppuL-arrow ppuL-arrow--l" id="ppuL-pl" aria-label="Previous photo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M15 5l-7 7 7 7"/></svg></button>
+      <div class="ppuL-port__track" id="ppuL-track" tabindex="0" aria-label="Portfolio photos, scroll sideways"></div>
+      <button type="button" class="ppuL-arrow ppuL-arrow--r" id="ppuL-pr" aria-label="Next photo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 5l7 7-7 7"/></svg></button>
+    </div>
+    <div class="ppuL-port__bar"><span id="ppuL-pn">1</span><span class="ppuL-port__prog"><i id="ppuL-pp"></i></span><span id="ppuL-pt"></span></div>
+  </section>
+
+  <!-- 8. FAQ — same accordion as /faq (approved 2026-10-15). Price, deposit,
+       balance and dates fill in live from AXIS ([data-jx]); the text is the fallback. -->
+  <section class="ppuL-faq" id="ppuL-faq" aria-label="Questions">
+    <div class="wrap"><div class="ppuL-faq__in">
+      <div class="sec-head"><span class="eyebrow">Questions</span><h2>Good to know</h2></div>
+      <div class="ppuL-faq__list">
+        <details class="ppuL-q" open><summary>What does it cost, and what's included?<i class="ppuL-q__ico"></i></summary><div class="ppuL-q__a"><p>The Jacksonville Personality Pop-Up™ Session is <b data-jx="price">$595</b>. It includes a 15-minute session with a certified Personality Method™ photographer, 25+ high-resolution images (every one in color and black &amp; white) and a private online gallery to download, print and share. A <span data-jx="dep">$150</span> deposit reserves your time; the rest is charged 14 days before your session.</p></div></details>
+        <details class="ppuL-q"><summary>How does payment work?<i class="ppuL-q__ico"></i></summary><div class="ppuL-q__a"><p>A non-refundable <span data-jx="dep">$150</span> deposit reserves your time. The remaining <span data-jx="bal">$445</span> is charged automatically to the same card 14 days before your session, and we email you before it runs.</p></div></details>
+        <details class="ppuL-q"><summary>What if I change my mind or need to reschedule?<i class="ppuL-q__ico"></i></summary><div class="ppuL-q__a"><p>If you change your mind within 24 hours of booking, your deposit can be refunded. If you need to reschedule, please let us know at least 7 days in advance. In the event of illness, family emergencies, or other extenuating circumstances please contact us at your earliest convenience.</p></div></details>
+        <details class="ppuL-q"><summary>What if the day I want is sold out?<i class="ppuL-q__ico"></i></summary><div class="ppuL-q__a"><p>Tap “Join the waitlist” under that day in the booking box. If a spot opens up, you’ll be texted first. Can’t make <span data-jx="dates">January 9–10</span> at all? Leave your email above and you’ll be the first to hear when our next Jacksonville dates open.</p></div></details>
+        <details class="ppuL-q"><summary>Where is the studio?<i class="ppuL-q__ico"></i></summary><div class="ppuL-q__a"><p>We bring a complete portrait studio to Jacksonville for one weekend. <span data-jx="venue">The exact address is in your booking confirmation.</span></p></div></details>
+        <details class="ppuL-q"><summary>How many kids are allowed?<i class="ppuL-q__ico"></i></summary><div class="ppuL-q__a"><p>Each 15 minute session is ideal for 1-2 children (ages 6mo–18yrs), but you know them best and what they will need!</p></div></details>
+        <details class="ppuL-q"><summary>Can I get sibling photos?<i class="ppuL-q__ico"></i></summary><div class="ppuL-q__a"><p>Our main focus is capturing each child individually — their personality, expression, and full range of emotion. That’s what makes this different from anything you’ve done before. If time allows, we’ll try to get a sibling photo at the end, but we can’t guarantee it in one session. If sibling photos are really important to you, we highly recommend adding a second session, so you get the time and focus needed without feeling rushed.</p></div></details>
+        <details class="ppuL-q"><summary>What about family photos?<i class="ppuL-q__ico"></i></summary><div class="ppuL-q__a"><p>Unfortunately, we do not offer any family portraits at this time. Sessions are all about the kids.</p></div></details>
+        <details class="ppuL-q"><summary>What should they wear?<i class="ppuL-q__ico"></i></summary><div class="ppuL-q__a"><p>Most shots will be chest up so you don't have to worry about the entire wardrobe. We highly recommend neutral tones or soft colors without graphics. White or Black are always great options. Keep it simple and timeless.</p></div></details>
+        <details class="ppuL-q"><summary>What should I bring, and when should we arrive?<i class="ppuL-q__ico"></i></summary><div class="ppuL-q__a"><p>Wipes, chapstick, and one favorite toy/lovey. Arrive 10 minutes early so your child can get comfortable.</p></div></details>
+        <details class="ppuL-q"><summary>Do you include color and black &amp; white?<i class="ppuL-q__ico"></i></summary><div class="ppuL-q__a"><p>Yes, we include both color and black &amp; white options in your final gallery. While many photographers only deliver overexposed black &amp; white portraits, we believe in preserving the real details — like your child’s skin tone, eye color, freckles, and those perfect imperfections that make them who they are. Our editing style is natural, timeless, and intentional, developed over 18+ years to stand the test of time. No trendy filters or harsh edits — just beautiful, honest portraits you’ll love forever.</p></div></details>
+        <details class="ppuL-q"><summary>Who will be photographing my child?<i class="ppuL-q__ico"></i></summary><div class="ppuL-q__a"><p>We’re a boutique team of all-female traveling kid photographers, certified in the Personality Method™ — and we’re not just photographers. We’re moms, teachers, and women who genuinely love kids. We don’t make it about our art — we make it about your child. What matters most is capturing real moments, honoring who they are right now, and creating an experience you’ll both remember. We’re patient, empathetic, and fully present!</p></div></details>
+        <details class="ppuL-q"><summary>What is your approach like?<i class="ppuL-q__ico"></i></summary><div class="ppuL-q__a"><p>We don’t bribe kids to smile or act silly — and we definitely don’t say “cheese.” Our approach is calm, honest, and all about letting your child just be. No forced poses. No fake expressions. Just real personality, captured naturally. The best thing you can do? Sit back, relax, and trust the process. This is about personality, not perfection!</p></div></details>
+      </div>
+    </div></div>
+  </section>
+
+
+  <!-- 9. CLOSE -->
+  <section class="ppuL-close" aria-label="Book now">
+    <div class="ppuL-close__grid" id="ppuL-closegrid" aria-hidden="true"></div>
+    <div class="ppuL-close__tint"></div>
+    <div class="ppuL-close__in">
+      <h2 class="ppuL-close__h">Little kids don't last.</h2>
+      <p class="ppuL-close__p">Capture who they are right now, before it's gone. <span id="ppuL-close-sub">Spots are limited and go fast.</span></p>
+      <a class="btn btn--white" href="#ppuL-book" data-cta>Book Your Session</a>
+    </div>
+  </section>
+
+  <div class="ppuL-sticky" id="ppuL-sticky"><a class="btn" href="#ppuL-book" data-cta>Book Your Session</a></div>
+</div>
+
+<script>
+(function(){
+  'use strict';
+  var CITY = 'Jacksonville', STATE = 'FL', API = 'https://axis-ppu.vercel.app';
+  /* shown until AXIS answers (or if it can't) */
+  var FALLBACK = { dates: 'January 9–10', price: 59500, dep: 15000, open: true };
+  var GHL = 'https://services.leadconnectorhq.com/hooks/t9HiHMKOiD67UOAImmi4/webhook-trigger/6WjQsjrVx4WKvh2ijOVB';
+  var CITY_TAG = 'city_jacksonville_fl', CITY_FULL = 'Jacksonville, FL';
+  var PORT_BASE = 'https://images-pw.pixieset.com/elementfield/1zqrnP1/';
+  var PORT = ('251011~NYC-3541-fd0815cc,260613~ALPHARETTA-0810-2b2ef79c,260411~PHOENIX-0261-78cee5f5,260221~BROOKLYN-0748-d6f48358,260314~ORLANDO-2415-27eb3e21,'+
+    '260627~SANTA-CLARA-2292-676ede95,260613~ALPHARETTA-1531-ab4fa117,260627~MIAMI-2182-1533bfac,260315~GARDEN-CITY-1226-22e0e021,260124~LOS-ALTOS-1643-03987be9,'+
+    '260315~LONDON-2228-a7f3b32c,260613~ALPHARETTA-0935-591266c3,260627~SANTA-CLARA-2383-b00a0137,260627~MIAMI-3184-7de35a7d,260228~SEATTLE-0825-1b45ce23,'+
+    '260228~SEATTLE-1696-3baef331,260314~ORLANDO-2867-e31c2368,260314~ORLANDO-2504-548885fe,260315~LONDON-2533-458f3301,260321~CHARLOTTE-0740-16bc47c8,'+
+    '260328~DALLAS-0693-1f13d1e1,260328~LONG-BEACH-0848-16c9231f,260411~PHOENIX-0755-9f4629c9,260124~LOS-ALTOS-2936-783a3e27,260329~FT-WORTH-0686-91b3d25f,'+
+    '260314~ORLANDO-2473-8baebdf4,251108~CHICAGO-4094-cf5dcf84,251011~NYC-1378-5b0d6404,251108~CHICAGO-3423-9c2f0b67,260228~DENVER-0752-4b59407f,'+
+    '251108~CHICAGO-1773-2c1304b4,251108~CHICAGO-0353-aeb5bd76,251101~NEWPORT-BEACH-2900-0f70fb66,251101~NEWPORT-BEACH-2549-fdc77995,251101~NEWPORT-BEACH-0316-4dfb7646,'+
+    '251101~NEWPORT-BEACH-1156-bf4cf4b5,260314~ORLANDO-2567-1690e883,260124~LOS-ALTOS-3048-2b48fac4,260124~LOS-ALTOS-3386-8a8dbcd4,260124~LOS-ALTOS-2555-a3e974ab,'+
+    '260124~LOS-ALTOS-1272-515ef658,PPU-GREENVILLE-0966_websize-6e988994,260124~LOS-ALTOS-2294-d4fca44b,260124~LOS-ALTOS-1810-264b26b8,260124~LOS-ALTOS-1451-47007303,'+
+    '260321~CHARLOTTE-0702-99d90960,260124~LOS-ALTOS-1075-058bfe23,260124~LOS-ALTOS-1356-b5b7f1f0,260124~LOS-ALTOS-0770-56f93ac0,260124~LOS-ALTOS-0638-a44eb833,'+
+    '260627~SANTA-CLARA-0339-02f6f994,PERSONALITY-POP-UP-PORTLAND-0040-f9b0ac4d,260315~LONDON-2367-cdaa3d26,PERSONALITY-POP-UP-ORLANDO-1298-0b072ebe,260124~LOS-ALTOS-0855-f73c7cd0,'+
+    'PERSONALITY-POP-UP-ORLANDO-0944-dc0fac6f,PERSONALITY-POP-UP-LOS-ALTOS-2115-8f7d688c,PERSONALITY-POP-UP-LOS-ALTOS-1762-3f41675f,PERSONALITY-POP-UP-LOS-ALTOS-1032-9e84214f,'+
+    'PERSONALITY-POP-UP-KNOXVILLE-0879-6c9c294e,PERSONALITY-POP-UP-LOS-ALTOS-0656-6c33a3bc,PERSONALITY-POP-UP-IRVINE-DAY2-0798-9e2babbd,PERSONALITY-POP-UP-IRVINE-DAY2-0673copy-3feeedad,'+
+    'PERSONALITY-POP-UP-ANN-ARBOR-0330-973146a4,PERSONALITY-POP-UP-IRVINE-DAY2-0137-2e17a46e,260627~MIAMI-1214-f01479eb,PERSONALITY-POP-UP-IRVINE-DAY1-0735-6bd1baea,'+
+    '260613~ALPHARETTA-0594-ad647b02,PERSONALITY-POP-UP-IRVINE-DAY1-0155-bcb56548,260627~SANTA-CLARA-1910-c6ab9885,PERSONALITY-POP-UP-GREENVILLE-0303-1bab6ee0,'+
+    'PERSONALITY-POP-UP-DETROIT-0882-7172fe7a,PERSONALITY-POP-UP-CLEVELAND-1032-83c57c89,260613~ALPHARETTA-0853-3d91377f,260307~CHARLESTON-0868-fe6b8edc,260627~MIAMI-2159-18bf8a66,'+
+    'PERSONALITY-POP-UP-CHICAGO-1614-d0b7b86a,260614~ATLANTA-0093-dc9a2019,PERSONALITY-POP-UP-CHICAGO-1162-33f9735a,260613~ALPHARETTA-0189-f2596755,PERSONALITY-POP-UP-CHICAGO-1110-c14ef1a9,'+
+    '260613~ALPHARETTA-0031-3e8599cd,260627~SANTA-CLARA-2852-15ab3898,251011~NYC-1981-42fe6a80,PERSONALITY-POP-UP-CHARLOTTE-1676-e3d03f5c,240709-PP-CHARLOTTE-0020-a456c192,'+
+    'PERSONALITY-POP-UP-CHARLOTTE-0110-9186566f,260613~ALPHARETTA-0555-a61afdc0,260614~ATLANTA-0124-88785d3e,260614~ATLANTA-0385-0f6fa57c,PERSONALITY-POP-UP-CHICAGO-0966-8488ef2d')
+    .split(',').map(function(s){return PORT_BASE+s.replace('~','-PPU-')+'-1000.jpg'});
+  var HERO = [2,4,9,14,19,26,31,40,52,60,70,76,81,88].map(function(i){return PORT[i]});
+  var TEAM = ['site/gjknWE/DDyzXZ/PERSONALITY-POP-UP-TEAM-0032-c67d6e2f-1500.jpg','site/gjknWE/q5M4eb/PERSONALITY-POP-UP-TEAM-0014-40605ba7-1500.jpg','site/gjknWE/a5V9qR/PERSONALITY-POP-UP-TEAM-0039-c022b62f-1500.jpg','site/gjknWE/7n5VO1/PERSONALITY-POP-UP-TEAM-0026-1489f9f3-1500.jpg','site/gjknWE/zol1xZ/PERSONALITY-POP-UP-TEAM-0021-fdc16a88-1500.jpg','https://raw.githubusercontent.com/jonathanconnolly/session-crm/main/public/ppu/team/photographer-11.jpg','site/gjknWE/KDLzWk/PERSONALITY-POP-UP-TEAM-0002-218c0477-1500.jpg','site/gjknWE/3a5Wdq/PERSONALITY-POP-UP-TEAM-0019-9a361888-1500.jpg','site/gjknWE/JDnRjo/PERSONALITY-POP-UP-TEAM-0016-3164e6f6-1500.jpg','site/gjknWE/3a5y13/PERSONALITY-POP-UP-TEAM-0030-bb2d549f-1500.jpg','site/gjknWE/ODO3Jk/PERSONALITY-POP-UP-TEAM-0008-e4359385-1500.jpg']
+    .map(function(s){return /^https?:/.test(s)?s:'https://images-pw.pixieset.com/'+s});
+  /* close grid: 12 tiles, two faces each, from the portfolio (first = eager, second fades in) */
+  var CLOSE = [['NYC-3541','NEWPORT-BEACH-1156'],['ALPHARETTA-0810','LOS-ALTOS-2294'],['BROOKLYN-0748','LOS-ALTOS-1810'],['SANTA-CLARA-2292','LOS-ALTOS-0638'],['MIAMI-2182','LONDON-2367'],['MIAMI-3184','LOS-ALTOS-2115'],
+    ['ORLANDO-2867','KNOXVILLE-0879'],['ORLANDO-2504','IRVINE-DAY2-0673'],['LONG-BEACH-0848','ALPHARETTA-0594'],['LOS-ALTOS-2936','GREENVILLE-0303'],['NYC-1378','CHARLOTTE-0020'],['NEWPORT-BEACH-2549','CHICAGO-0966']]
+    .map(function(p){return p.map(function(n){return PORT.filter(function(u){return u.indexOf(n)>=0})[0]||PORT[0]})});
+
+  function $(id){return document.getElementById(id)}
+  function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
+  function money(c){var d=Math.round(c)/100;return '$'+(d%1?d.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2}):d.toLocaleString('en-US'))}
+  function setAll(key,html){[].forEach.call(document.querySelectorAll('[data-jx="'+key+'"]'),function(el){el.innerHTML=html})}
+
+  $('ppuL-h1').textContent=CITY+', '+STATE;
+
+  /* hero: one row of full portraits, moving */
+  (function(){
+    var row=HERO.map(function(u){return '<img src="'+u+'" alt="" decoding="async">'}).join('');
+    var r=$('ppuL-rail');r.innerHTML=row+row;
+    r.querySelectorAll('img').forEach(function(im){function fit(){if(im.naturalWidth)im.style.aspectRatio=im.naturalWidth+'/'+im.naturalHeight}if(im.complete)fit();else im.addEventListener('load',fit)});
+  })();
+
+  /* team rail (two sets for the loop) */
+  (function(){
+    var set=TEAM.map(function(u,i){return '<figure class="ppuL-tm"><img src="'+u+'" alt="'+(i?'':'Personality Pop-Up photographer')+'" loading="lazy"></figure>'}).join('');
+    $('ppuL-teamtrack').innerHTML='<div class="ppuL-teamrail__set">'+set+'</div><div class="ppuL-teamrail__set" aria-hidden="true">'+set+'</div>';
+  })();
+
+  /* close grid */
+  $('ppuL-closegrid').innerHTML=CLOSE.map(function(p,i){return '<div class="ppuL-tile" style="--d:-'+((i*7)%12)+'s"><img src="'+p[0]+'" alt="" loading="lazy"><img src="'+p[1]+'" alt="" loading="lazy"></div>'}).join('');
+
+  /* portfolio slider */
+  (function(){
+    var t=$('ppuL-track'),L=$('ppuL-pl'),R=$('ppuL-pr');
+    t.innerHTML=PORT.map(function(u,i){return '<img src="'+u+'" alt="Personality Pop-Up portrait '+(i+1)+'" loading="'+(i<6?'eager':'lazy')+'" decoding="async" draggable="false">'}).join('');
+    var imgs=[].slice.call(t.children);
+    imgs.forEach(function(im){function fit(){if(im.naturalWidth){im.style.aspectRatio=im.naturalWidth+'/'+im.naturalHeight;im.classList.add('ld')}}
+      if(im.complete)fit();else im.addEventListener('load',fit);im.addEventListener('error',function(){im.remove();imgs=[].slice.call(t.children);upd()})});
+    function pad(){return parseFloat(getComputedStyle(t).paddingLeft)||0}
+    function cur(){var x=t.scrollLeft+pad(),best=0,bd=1e9;imgs.forEach(function(im,i){var d=Math.abs(im.offsetLeft-x);if(d<bd){bd=d;best=i}});return best}
+    function go(i){i=Math.max(0,Math.min(imgs.length-1,i));t.scrollTo({left:imgs[i].offsetLeft-pad(),behavior:'smooth'})}
+    function upd(){var i=cur();$('ppuL-pn').textContent=i+1;$('ppuL-pt').textContent=imgs.length;$('ppuL-pp').style.width=((i+1)/imgs.length*100)+'%';
+      L.disabled=t.scrollLeft<4;R.disabled=t.scrollLeft+t.clientWidth>=t.scrollWidth-4}
+    L.onclick=function(){go(cur()-1)};R.onclick=function(){go(cur()+1)};
+    t.addEventListener('keydown',function(e){if(e.key==='ArrowRight'){e.preventDefault();go(cur()+1)}if(e.key==='ArrowLeft'){e.preventDefault();go(cur()-1)}});
+    var raf;t.addEventListener('scroll',function(){cancelAnimationFrame(raf);raf=requestAnimationFrame(upd)},{passive:true});
+    var down=false,sx=0,sl=0;
+    t.addEventListener('mousedown',function(e){down=true;sx=e.pageX;sl=t.scrollLeft;t.style.scrollSnapType='none';t.style.cursor='grabbing'});
+    window.addEventListener('mousemove',function(e){if(down)t.scrollLeft=sl-(e.pageX-sx)});
+    window.addEventListener('mouseup',function(){if(!down)return;down=false;t.style.cursor='grab';var i=cur();t.style.scrollSnapType='';go(i)});
+    t.style.cursor='grab';setTimeout(upd,50);window.addEventListener('resize',upd);
+  })();
+
+  /* buttons drop to the booking box; mobile sticky CTA once the hero is gone and the box isn't on screen */
+  document.querySelectorAll('.ppuL a[href="#ppuL-book"]').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();$('ppuL-book').scrollIntoView({behavior:'smooth',block:'start'})})});
+  (function(){
+    var s=$('ppuL-sticky'),hero=document.querySelector('.ppuL-hero'),book=$('ppuL-book');
+    if(!('IntersectionObserver' in window))return;
+    var hv=true,bv=false;function u(){s.classList.toggle('show',!hv&&!bv)}
+    new IntersectionObserver(function(e){hv=e[0].isIntersecting;u()}).observe(hero);
+    new IntersectionObserver(function(e){bv=e[0].isIntersecting;u()},{threshold:.05}).observe(book);
+  })();
+
+  /* ---- live event facts from AXIS: dates, venue, price, spots left, sold out ---- */
+  var MONTHS={JAN:'January',FEB:'February',MAR:'March',APR:'April',MAY:'May',JUN:'June',JUL:'July',AUG:'August',SEP:'September',OCT:'October',NOV:'November',DEC:'December'};
+  function fmtDates(days){
+    if(!days.length)return '';var a=days[0],b=days[days.length-1];
+    if(a.mon===b.mon)return MONTHS[a.mon]+' '+a.day+(days.length>1?'–'+b.day:'');
+    return MONTHS[a.mon]+' '+a.day+' – '+MONTHS[b.mon]+' '+b.day;
+  }
+  function applyFacts(f){
+    var bal=f.price-f.dep;
+    setAll('price',esc(money(f.price)));setAll('dep',esc(money(f.dep)));setAll('bal',esc(money(bal)));
+    if(f.dates){setAll('dates',esc(f.dates));$('ppuL-dates').textContent=f.dates}
+    if(f.venue){$('ppuL-where').textContent=f.venue;setAll('venue','The studio is at '+esc(f.venueFull)+'. The full address is in your booking confirmation.')}
+    var left=$('ppuL-left'),ctas=document.querySelectorAll('.ppuL [data-cta]');
+    if(!f.open){
+      $('ppuL-status').textContent='Sold out';
+      left.textContent='Sold out · waitlist open';left.hidden=false;
+      [].forEach.call(ctas,function(a){a.textContent='Join the Waitlist'});
+      $('ppuL-cant-h').innerHTML='Sold out? Don’t miss the next one.';
+      $('ppuL-cant-p').textContent='Leave your email and you’ll be the first to know when our next Jacksonville dates open.';
+      $('ppuL-close-sub').textContent='This weekend is full — get on the list for a cancellation or our next dates.';
+    } else if(f.left>0&&f.left<=10){
+      left.textContent='Only '+f.left+' spot'+(f.left===1?'':'s')+' left';left.hidden=false;
+      $('ppuL-sticky').querySelector('a').innerHTML='Book Your Session<small>'+f.left+' left</small>';
+    }
+  }
+  function fromFeed(j){
+    var want=CITY.toLowerCase(),c=null;(j&&j.cities||[]).forEach(function(x){if(!c&&String(x.city||'').toLowerCase().indexOf(want)===0)c=x});
+    if(!c)return null;
+    var pop=(c.packages||[]).filter(function(p){return (p.kind||'popup')==='popup'})[0]||c.package||{};
+    var days=(c.dates||[]).filter(function(d){return d.slots.some(function(s){return (s.kind||'popup')==='popup'})});
+    var left=0;days.forEach(function(d){d.slots.forEach(function(s){if((s.kind||'popup')==='popup'&&s.open)left++})});
+    var v=String(c.venue||'').trim(),soon=/coming soon|tba|tbd/i.test(v)||!v||v.toLowerCase()===CITY_FULL.toLowerCase();
+    return { dates: fmtDates(days)||FALLBACK.dates, price: pop.priceCents||FALLBACK.price, dep: pop.retainerCents==null?(pop.priceCents||FALLBACK.dep):pop.retainerCents,
+      open: left>0, left: left, venue: soon?'':v.split(',')[0], venueFull: soon?'':v };
+  }
+  applyFacts({dates:'',price:FALLBACK.price,dep:FALLBACK.dep,open:true,left:99});
+  fetch(API+'/api/public/availability',{cache:'no-store'}).then(function(r){return r.json()}).then(function(j){var f=fromFeed(j);if(f)applyFacts(f)}).catch(function(){});
+
+  /* ---- "Can't make these dates?" → GHL VIP list, tagged for Jacksonville ---- */
+  (function(){
+    var form=$('ppuL-cant-form'),btn=$('ppuL-cant-btn'),ok=$('ppuL-cant-ok');
+    form.addEventListener('submit',function(e){
+      e.preventDefault();
+      var first=form.first.value.trim(),email=form.email.value.trim(),bad=false;
+      form.first.classList.toggle('bad',!first);form.email.classList.toggle('bad',!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email));
+      bad=!!form.querySelector('.bad');if(bad){(form.querySelector('.bad')).focus();return}
+      if(form.website.value)return;
+      btn.disabled=true;btn.textContent='Adding you…';
+      var tags=['source_website','status_lead','form_vip_list',CITY_TAG,'landing_'+CITY.toLowerCase()];
+      var payload={first_name:first,last_name:'',email:email,phone:'',city_tags:CITY_TAG,phone_tag:'',tags:tags.join(', '),requested_cities:CITY_FULL,sms_opt_in:false,source_widget:'vip_list',page:location.href};
+      fetch(GHL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload),keepalive:true}).catch(function(){}).then(function(){
+        form.hidden=true;ok.hidden=false;
+        try{if(window.fbq)fbq('track','Lead',{content_name:'jax_next_dates'})}catch(x){}
+        try{if(window.gtag)gtag('event','generate_lead',{form:'jax_next_dates'})}catch(x){}
+      });
+    });
+  })();
+
+  /* ---- Meta pixel + GA4 events from the booking box (nothing fires twice) ---- */
+  (function(){
+    var box=document.querySelector('[data-ppu-book]');if(!box||!('MutationObserver' in window))return;
+    var fired={};function once(k,fn){if(fired[k])return;fired[k]=1;try{fn()}catch(e){}}
+    function price(){var p=document.querySelector('[data-jx="price"]');var n=p?parseFloat(p.textContent.replace(/[^0-9.]/g,'')):0;return n||595}
+    new MutationObserver(function(){
+      var h=box.querySelector('.in h3');if(!h)return;var t=h.textContent||'';
+      if(/Pay Today/i.test(t))once('ic',function(){if(window.fbq)fbq('track','InitiateCheckout',{value:price(),currency:'USD'});if(window.gtag)gtag('event','begin_checkout',{value:price(),currency:'USD'})});
+      else if(/re booked/i.test(t))once('pu',function(){if(window.fbq)fbq('track','Purchase',{value:price(),currency:'USD',content_name:CITY});if(window.gtag)gtag('event','purchase',{value:price(),currency:'USD'})});
+      else if(/on the list/i.test(t))once('wl',function(){if(window.fbq)fbq('track','Lead',{content_name:'jax_waitlist'});if(window.gtag)gtag('event','generate_lead',{form:'jax_waitlist'})});
+    }).observe(box,{childList:true,subtree:true});
+  })();
+})();
+</script>
+<script src="https://axis-ppu.vercel.app/ppu/book-widget.js" async></script>
+<script>(function(){var el=document.querySelector('.ppuL-hl');if(!el)return;if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){el.classList.add('on');io.disconnect();}});},{threshold:.6});io.observe(el);}else{el.classList.add('on');}})();</script>
