@@ -59,7 +59,6 @@ font:600 18px/18px var(--mono)!important;letter-spacing:1.8px!important;text-tra
 /* 3 · TEAM */
 .ppuH-team{padding:96px 0 0}
 .ppuH-team__head{max-width:980px;margin:0 auto 56px;padding:0 var(--gut);display:flex;flex-direction:column;align-items:center;gap:22px;text-align:center}
-.ppuH-team__head .ppuH-link{margin-top:6px}
 .ppuH-team__statement{font:400 clamp(34px,4.4vw,60px)/1.12 var(--serif)!important;color:var(--ink)!important;letter-spacing:-.01em!important;text-wrap:balance}
 .ppuH-team__statement em{font-style:italic}
 .ppuH-hl{position:relative;z-index:0;padding:0 .06em;white-space:nowrap}
@@ -74,6 +73,7 @@ font:600 18px/18px var(--mono)!important;letter-spacing:1.8px!important;text-tra
 .ppuH-tm img{display:block;width:100%;aspect-ratio:2/3;object-fit:cover;background:#eceae6}
 @keyframes ppuHrail{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 .ppuH-rail img{display:block}
+.ppuH-team::after{content:"";display:block;height:2px;margin-top:-1px;background:var(--blush)}
 
 @media (max-width:860px){
 .ppuH-hero{height:auto;min-height:640px}
@@ -120,9 +120,8 @@ font:600 18px/18px var(--mono)!important;letter-spacing:1.8px!important;text-tra
 <!-- 3 · TEAM -->
 <section class="ppuH-sec ppuH-team" aria-label="Our team">
 <div class="ppuH-team__head">
-<p class="ppuH-eyebrow">The people behind the camera</p>
+<p class="ppuH-eyebrow">The ladies behind the lens</p>
 <h2 class="ppuH-team__statement">We are a boutique team of <em>all-female</em> traveling kid photographers, certified in the <span class="ppuH-hl">Personality Method</span><sup class="ppuH-tm">™</sup></h2>
-<a class="ppuH-link" href="https://www.personalitypopup.com/about/">Meet the team →</a>
 </div>
 <div class="ppuH-rail"><div class="ppuH-rail__track"><div class="ppuH-rail__set"><figure class="ppuH-tm"><img src="https://images-pw.pixieset.com/site/gjknWE/DDyzXZ/PERSONALITY-POP-UP-TEAM-0032-c67d6e2f-1500.jpg" alt="Personality Pop-Up photographer" loading="lazy"></figure><figure class="ppuH-tm"><img src="https://images-pw.pixieset.com/site/gjknWE/q5M4eb/PERSONALITY-POP-UP-TEAM-0014-40605ba7-1500.jpg" alt="Personality Pop-Up photographer" loading="lazy"></figure><figure class="ppuH-tm"><img src="https://images-pw.pixieset.com/site/gjknWE/a5V9qR/PERSONALITY-POP-UP-TEAM-0039-c022b62f-1500.jpg" alt="Personality Pop-Up photographer" loading="lazy"></figure><figure class="ppuH-tm"><img src="https://images-pw.pixieset.com/site/gjknWE/7n5VO1/PERSONALITY-POP-UP-TEAM-0026-1489f9f3-1500.jpg" alt="Personality Pop-Up photographer" loading="lazy"></figure><figure class="ppuH-tm"><img src="https://images-pw.pixieset.com/site/gjknWE/zol1xZ/PERSONALITY-POP-UP-TEAM-0021-fdc16a88-1500.jpg" alt="Personality Pop-Up photographer" loading="lazy"></figure><figure class="ppuH-tm"><img src="https://raw.githubusercontent.com/jonathanconnolly/session-crm/main/public/ppu/team/photographer-11.jpg" alt="Personality Pop-Up photographer" loading="lazy"></figure><figure class="ppuH-tm"><img src="https://images-pw.pixieset.com/site/gjknWE/KDLzWk/PERSONALITY-POP-UP-TEAM-0002-218c0477-1500.jpg" alt="Personality Pop-Up photographer" loading="lazy"></figure><figure class="ppuH-tm"><img src="https://images-pw.pixieset.com/site/gjknWE/3a5Wdq/PERSONALITY-POP-UP-TEAM-0019-9a361888-1500.jpg" alt="Personality Pop-Up photographer" loading="lazy"></figure><figure class="ppuH-tm"><img src="https://images-pw.pixieset.com/site/gjknWE/JDnRjo/PERSONALITY-POP-UP-TEAM-0016-3164e6f6-1500.jpg" alt="Personality Pop-Up photographer" loading="lazy"></figure><figure class="ppuH-tm"><img src="https://images-pw.pixieset.com/site/gjknWE/3a5y13/PERSONALITY-POP-UP-TEAM-0030-bb2d549f-1500.jpg" alt="Personality Pop-Up photographer" loading="lazy"></figure><figure class="ppuH-tm"><img src="https://images-pw.pixieset.com/site/gjknWE/ODO3Jk/PERSONALITY-POP-UP-TEAM-0008-e4359385-1500.jpg" alt="Personality Pop-Up photographer" loading="lazy"></figure></div><div class="ppuH-rail__set" aria-hidden="true"><figure class="ppuH-tm"><img src="https://images-pw.pixieset.com/site/gjknWE/DDyzXZ/PERSONALITY-POP-UP-TEAM-0032-c67d6e2f-1500.jpg" alt="" loading="lazy"></figure><figure class="ppuH-tm"><img src="https://images-pw.pixieset.com/site/gjknWE/q5M4eb/PERSONALITY-POP-UP-TEAM-0014-40605ba7-1500.jpg" alt="" loading="lazy"></figure><figure class="ppuH-tm"><img src="https://images-pw.pixieset.com/site/gjknWE/a5V9qR/PERSONALITY-POP-UP-TEAM-0039-c022b62f-1500.jpg" alt="" loading="lazy"></figure><figure class="ppuH-tm"><img src="https://images-pw.pixieset.com/site/gjknWE/7n5VO1/PERSONALITY-POP-UP-TEAM-0026-1489f9f3-1500.jpg" alt="" loading="lazy"></figure><figure class="ppuH-tm"><img src="https://images-pw.pixieset.com/site/gjknWE/zol1xZ/PERSONALITY-POP-UP-TEAM-0021-fdc16a88-1500.jpg" alt="" loading="lazy"></figure><figure class="ppuH-tm"><img src="https://raw.githubusercontent.com/jonathanconnolly/session-crm/main/public/ppu/team/photographer-11.jpg" alt="" loading="lazy"></figure><figure class="ppuH-tm"><img src="https://images-pw.pixieset.com/site/gjknWE/KDLzWk/PERSONALITY-POP-UP-TEAM-0002-218c0477-1500.jpg" alt="" loading="lazy"></figure><figure class="ppuH-tm"><img src="https://images-pw.pixieset.com/site/gjknWE/3a5Wdq/PERSONALITY-POP-UP-TEAM-0019-9a361888-1500.jpg" alt="" loading="lazy"></figure><figure class="ppuH-tm"><img src="https://images-pw.pixieset.com/site/gjknWE/JDnRjo/PERSONALITY-POP-UP-TEAM-0016-3164e6f6-1500.jpg" alt="" loading="lazy"></figure><figure class="ppuH-tm"><img src="https://images-pw.pixieset.com/site/gjknWE/3a5y13/PERSONALITY-POP-UP-TEAM-0030-bb2d549f-1500.jpg" alt="" loading="lazy"></figure><figure class="ppuH-tm"><img src="https://images-pw.pixieset.com/site/gjknWE/ODO3Jk/PERSONALITY-POP-UP-TEAM-0008-e4359385-1500.jpg" alt="" loading="lazy"></figure></div></div></div>
 </section>
@@ -134,14 +133,14 @@ font:600 18px/18px var(--mono)!important;letter-spacing:1.8px!important;text-tra
  var el=document.getElementById('ppuH-tick'); if(!el) return;
  function render(list){
   var a=list.slice(); for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=a[i];a[i]=a[j];a[j]=t;}
-  var set=a.map(function(n){var p=String(n).split(',');return '<span class="ppuH-tick__item">'+p[0].trim()+'</span><span class="ppuH-tick__sep" aria-hidden="true">✈</span>';}).join('');
+  var set=a.map(function(n){var p=String(n).split(',');return '<span class="ppuH-tick__item">'+p[0].trim()+(p[1]?', '+p[1].trim():'')+'</span><span class="ppuH-tick__sep" aria-hidden="true">✈</span>';}).join('');
   el.innerHTML='<div style="display:flex;flex:none;align-items:center">'+set+'</div><div style="display:flex;flex:none;align-items:center" aria-hidden="true">'+set+'</div>';
  }
  render(FALLBACK);
  function fromCities(){var c=window.CITIES;if(c&&c.length)render(c.map(function(x){return x.name;}).filter(function(n){return !/Summit/.test(n);}));}
  if(window.CITIES) fromCities(); else {var s=document.createElement('script');s.src='https://cdn.jsdelivr.net/gh/jonathanconnolly/session-crm@main/public/cities.js';s.async=true;s.onload=fromCities;document.head.appendChild(s);}
- var em=document.querySelector('.ppuH-hl');
- if(em){ if('IntersectionObserver' in window){ var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){em.classList.add('on');io.disconnect();}});},{threshold:.6}); io.observe(em); } else { em.classList.add('on'); } }
+ window.ppuHl=function(root){ [].forEach.call((root||document).querySelectorAll('.ppuH-hl:not(.on)'),function(el){ if('IntersectionObserver' in window){ var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){el.classList.add('on');io.disconnect();}});},{threshold:.6}); io.observe(el); } else { el.classList.add('on'); } }); };
+ window.ppuHl(document);
 })();
 </script>
 
