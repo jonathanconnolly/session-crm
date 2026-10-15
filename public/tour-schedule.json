@@ -1,6 +1,6 @@
 {
-  "_comment": "Last synced 2026-10-14. Changes since 10/13: Phoenix AZ Oct 24-25 SOLD OUT (2->0), Austin TX Nov 21-22 SOLD OUT (1->0), Coconut Grove FL 3->1, Alpharetta GA Oct 17 reopened (0->1). No new cities, thumbnails and slugs unchanged. Now Booking 14 (6 sold out / 8 open). Opening Soon November 2 (Boston MA, Dublin OH) - unchanged. Capacity: 20 per event day.",
-  "updated": "2026-10-14",
+  "_comment": "Last synced 2026-10-15. Changes since 10/14: Coconut Grove FL Nov 22 SOLD OUT (1->0), Orange County CA Nov 14-15 14->13 spots left (booked 27). No new cities, thumbnails and slugs unchanged. Now Booking 14 (7 sold out / 7 open). Opening Soon November 2 (Boston MA, Dublin OH) carried over. Capacity = 20 bookings per event day (cap = 20 x days; booked = cap - spotsLeft).",
+  "updated": "2026-10-15",
   "scheduled": [
     {
       "city": "Alpharetta, GA",
@@ -113,8 +113,8 @@
       "weekend": "Nov 14-15",
       "weekendStart": "2026-11-14",
       "days": 2,
-      "booked": 26,
-      "spotsLeft": 14,
+      "booked": 27,
+      "spotsLeft": 13,
       "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/z1DO7vqo7w",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/ae96d067-e8c0-4a0f-b2cb-46967368e8e8-sm.jpg"
@@ -178,9 +178,9 @@
       "weekend": "Nov 22",
       "weekendStart": "2026-11-22",
       "days": 1,
-      "booked": 19,
-      "spotsLeft": 1,
-      "status": "now_open",
+      "booked": 20,
+      "spotsLeft": 0,
+      "status": "sold_out",
       "sessionUrl": "https://book.usesession.com/s/LIBuOz3heI",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/ad0153ca-76ca-4fac-b14b-07ebc8d3e339-sm.jpg"
     },
