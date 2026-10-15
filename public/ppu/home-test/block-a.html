@@ -43,7 +43,6 @@ font:600 18px/18px var(--mono)!important;letter-spacing:1.8px!important;text-tra
 .ppuH-hero__fof{font:500 13px/1.4 var(--mono)!important;letter-spacing:.08em!important;color:rgba(255,255,255,.9)!important;text-decoration:none!important}
 .ppuH-hero__fof b{font-weight:600;text-decoration:underline;text-underline-offset:4px;color:#fff}
 .ppuH-hero__fof:hover b{color:var(--blush)}
-.ppuH-close .ppuH-hero__fof{margin-top:-6px}
 
 /* 2 · CITY TICKER — same bar as the Find Your City ticker (77px, 20px bold mono, ✈ separators), cities only */
 .ppuH-tick{height:77px;border-top:1px solid rgba(45,45,45,.08);border-bottom:1px solid rgba(45,45,45,.08);overflow:hidden;display:flex;align-items:center}
@@ -62,9 +61,11 @@ font:600 18px/18px var(--mono)!important;letter-spacing:1.8px!important;text-tra
 .ppuH-team__head{max-width:980px;margin:0 auto 56px;padding:0 var(--gut);display:flex;flex-direction:column;align-items:center;gap:22px;text-align:center}
 .ppuH-team__head .ppuH-link{margin-top:6px}
 .ppuH-team__statement{font:400 clamp(34px,4.4vw,60px)/1.12 var(--serif)!important;color:var(--ink)!important;letter-spacing:-.01em!important;text-wrap:balance}
-.ppuH-team__statement em{font-style:italic;position:relative;z-index:0;padding:0 .06em;white-space:nowrap}
-.ppuH-team__statement em::before{content:"";position:absolute;left:0;right:0;top:.14em;bottom:.04em;background:var(--blush);border-radius:4px;z-index:-1;transform:scaleX(0);transform-origin:left center;transition:transform .9s cubic-bezier(.2,.7,.2,1) .25s}
-.ppuH-team__statement em.on::before{transform:scaleX(1)}
+.ppuH-team__statement em{font-style:italic}
+.ppuH-hl{position:relative;z-index:0;padding:0 .06em;white-space:nowrap}
+.ppuH-hl::before{content:"";position:absolute;left:0;right:0;top:.14em;bottom:.04em;background:var(--blush);border-radius:4px;z-index:-1;transform:scaleX(0);transform-origin:left center;transition:transform .9s cubic-bezier(.2,.7,.2,1) .25s}
+.ppuH-hl.on::before{transform:scaleX(1)}
+.ppuH-tm{font-size:.38em!important;line-height:0;vertical-align:baseline;position:relative;top:-1.1em;margin-left:.08em;font-family:var(--serif)!important;color:var(--ink)!important}
 .ppuH-rail{overflow:hidden}
 .ppuH-rail__track{display:flex;width:max-content;animation:ppuHrail 80s linear infinite}
 .ppuH-rail:hover .ppuH-rail__track{animation-play-state:paused}
@@ -91,7 +92,7 @@ font:600 18px/18px var(--mono)!important;letter-spacing:1.8px!important;text-tra
 .ppuH-tm{width:56vw}
 }
 
-@media (prefers-reduced-motion:reduce){.ppuH-tile img+img,.ppuH-rail__track,.ppuH-tick__track,.ppuH-logos__track{animation:none}.ppuH-team__statement em::before{transition:none}}
+@media (prefers-reduced-motion:reduce){.ppuH-tile img+img,.ppuH-rail__track,.ppuH-tick__track,.ppuH-logos__track{animation:none}.ppuH-hl::before{transition:none}}
 .ppuH-hero__trust{margin-top:0}
 </style>
 
@@ -120,7 +121,7 @@ font:600 18px/18px var(--mono)!important;letter-spacing:1.8px!important;text-tra
 <section class="ppuH-sec ppuH-team" aria-label="Our team">
 <div class="ppuH-team__head">
 <p class="ppuH-eyebrow">The people behind the camera</p>
-<h2 class="ppuH-team__statement">We are a boutique team of <em>all-female</em> traveling kid photographers, certified in the Personality Method™.</h2>
+<h2 class="ppuH-team__statement">We are a boutique team of <em>all-female</em> traveling kid photographers, certified in the <span class="ppuH-hl">Personality Method</span><sup class="ppuH-tm">™</sup></h2>
 <a class="ppuH-link" href="https://www.personalitypopup.com/about/">Meet the team →</a>
 </div>
 <div class="ppuH-rail"><div class="ppuH-rail__track"><div class="ppuH-rail__set"><figure class="ppuH-tm"><img src="https://images-pw.pixieset.com/site/gjknWE/DDyzXZ/PERSONALITY-POP-UP-TEAM-0032-c67d6e2f-1500.jpg" alt="Personality Pop-Up photographer" loading="lazy"></figure><figure class="ppuH-tm"><img src="https://images-pw.pixieset.com/site/gjknWE/q5M4eb/PERSONALITY-POP-UP-TEAM-0014-40605ba7-1500.jpg" alt="Personality Pop-Up photographer" loading="lazy"></figure><figure class="ppuH-tm"><img src="https://images-pw.pixieset.com/site/gjknWE/a5V9qR/PERSONALITY-POP-UP-TEAM-0039-c022b62f-1500.jpg" alt="Personality Pop-Up photographer" loading="lazy"></figure><figure class="ppuH-tm"><img src="https://images-pw.pixieset.com/site/gjknWE/7n5VO1/PERSONALITY-POP-UP-TEAM-0026-1489f9f3-1500.jpg" alt="Personality Pop-Up photographer" loading="lazy"></figure><figure class="ppuH-tm"><img src="https://images-pw.pixieset.com/site/gjknWE/zol1xZ/PERSONALITY-POP-UP-TEAM-0021-fdc16a88-1500.jpg" alt="Personality Pop-Up photographer" loading="lazy"></figure><figure class="ppuH-tm"><img src="https://raw.githubusercontent.com/jonathanconnolly/session-crm/main/public/ppu/team/photographer-11.jpg" alt="Personality Pop-Up photographer" loading="lazy"></figure><figure class="ppuH-tm"><img src="https://images-pw.pixieset.com/site/gjknWE/KDLzWk/PERSONALITY-POP-UP-TEAM-0002-218c0477-1500.jpg" alt="Personality Pop-Up photographer" loading="lazy"></figure><figure class="ppuH-tm"><img src="https://images-pw.pixieset.com/site/gjknWE/3a5Wdq/PERSONALITY-POP-UP-TEAM-0019-9a361888-1500.jpg" alt="Personality Pop-Up photographer" loading="lazy"></figure><figure class="ppuH-tm"><img src="https://images-pw.pixieset.com/site/gjknWE/JDnRjo/PERSONALITY-POP-UP-TEAM-0016-3164e6f6-1500.jpg" alt="Personality Pop-Up photographer" loading="lazy"></figure><figure class="ppuH-tm"><img src="https://images-pw.pixieset.com/site/gjknWE/3a5y13/PERSONALITY-POP-UP-TEAM-0030-bb2d549f-1500.jpg" alt="Personality Pop-Up photographer" loading="lazy"></figure><figure class="ppuH-tm"><img src="https://images-pw.pixieset.com/site/gjknWE/ODO3Jk/PERSONALITY-POP-UP-TEAM-0008-e4359385-1500.jpg" alt="Personality Pop-Up photographer" loading="lazy"></figure></div><div class="ppuH-rail__set" aria-hidden="true"><figure class="ppuH-tm"><img src="https://images-pw.pixieset.com/site/gjknWE/DDyzXZ/PERSONALITY-POP-UP-TEAM-0032-c67d6e2f-1500.jpg" alt="" loading="lazy"></figure><figure class="ppuH-tm"><img src="https://images-pw.pixieset.com/site/gjknWE/q5M4eb/PERSONALITY-POP-UP-TEAM-0014-40605ba7-1500.jpg" alt="" loading="lazy"></figure><figure class="ppuH-tm"><img src="https://images-pw.pixieset.com/site/gjknWE/a5V9qR/PERSONALITY-POP-UP-TEAM-0039-c022b62f-1500.jpg" alt="" loading="lazy"></figure><figure class="ppuH-tm"><img src="https://images-pw.pixieset.com/site/gjknWE/7n5VO1/PERSONALITY-POP-UP-TEAM-0026-1489f9f3-1500.jpg" alt="" loading="lazy"></figure><figure class="ppuH-tm"><img src="https://images-pw.pixieset.com/site/gjknWE/zol1xZ/PERSONALITY-POP-UP-TEAM-0021-fdc16a88-1500.jpg" alt="" loading="lazy"></figure><figure class="ppuH-tm"><img src="https://raw.githubusercontent.com/jonathanconnolly/session-crm/main/public/ppu/team/photographer-11.jpg" alt="" loading="lazy"></figure><figure class="ppuH-tm"><img src="https://images-pw.pixieset.com/site/gjknWE/KDLzWk/PERSONALITY-POP-UP-TEAM-0002-218c0477-1500.jpg" alt="" loading="lazy"></figure><figure class="ppuH-tm"><img src="https://images-pw.pixieset.com/site/gjknWE/3a5Wdq/PERSONALITY-POP-UP-TEAM-0019-9a361888-1500.jpg" alt="" loading="lazy"></figure><figure class="ppuH-tm"><img src="https://images-pw.pixieset.com/site/gjknWE/JDnRjo/PERSONALITY-POP-UP-TEAM-0016-3164e6f6-1500.jpg" alt="" loading="lazy"></figure><figure class="ppuH-tm"><img src="https://images-pw.pixieset.com/site/gjknWE/3a5y13/PERSONALITY-POP-UP-TEAM-0030-bb2d549f-1500.jpg" alt="" loading="lazy"></figure><figure class="ppuH-tm"><img src="https://images-pw.pixieset.com/site/gjknWE/ODO3Jk/PERSONALITY-POP-UP-TEAM-0008-e4359385-1500.jpg" alt="" loading="lazy"></figure></div></div></div>
@@ -139,7 +140,7 @@ font:600 18px/18px var(--mono)!important;letter-spacing:1.8px!important;text-tra
  render(FALLBACK);
  function fromCities(){var c=window.CITIES;if(c&&c.length)render(c.map(function(x){return x.name;}).filter(function(n){return !/Summit/.test(n);}));}
  if(window.CITIES) fromCities(); else {var s=document.createElement('script');s.src='https://cdn.jsdelivr.net/gh/jonathanconnolly/session-crm@main/public/cities.js';s.async=true;s.onload=fromCities;document.head.appendChild(s);}
- var em=document.querySelector('.ppuH-team__statement em');
+ var em=document.querySelector('.ppuH-hl');
  if(em){ if('IntersectionObserver' in window){ var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){em.classList.add('on');io.disconnect();}});},{threshold:.6}); io.observe(em); } else { em.classList.add('on'); } }
 })();
 </script>

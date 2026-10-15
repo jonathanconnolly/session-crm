@@ -27,14 +27,22 @@
 .ppuH-gigi__vid{position:relative;aspect-ratio:16/9;background:#111;overflow:hidden;border-radius:6px}
 .ppuH-gigi__vid iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
 
-/* 6 · PORTFOLIO — one auto-scrolling strip; every photo slowly cycles colour → black & white → colour */
-.ppuH-port{background:var(--cream);padding:96px 0 104px}
-.ppuH-port__head{max-width:var(--wrap);margin:0 auto 44px;padding:0 var(--gut);display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:18px 40px}
-.ppuH-port__head .ppuH-eyebrow{display:block;margin-bottom:14px!important}
-.ppuH-port .ppuH-rail__track{animation-duration:110s}
-.ppuH-port .ppuH-rail__set{gap:14px;padding-right:14px}
-.ppuH-port__img{display:block;height:clamp(320px,32vw,460px);width:auto;aspect-ratio:3/4;object-fit:cover;background:#e6e2dc;animation:ppuHbw 16s ease-in-out infinite;animation-delay:var(--d,0s)}
-@keyframes ppuHbw{0%,30%{filter:grayscale(0)}45%,80%{filter:grayscale(1)}95%,100%{filter:grayscale(0)}}
+/* 6 · PORTFOLIO — black band; one strip of untouched photos alternating colour / black & white, flush at the base; auto-scrolls, arrows + drag to scrub */
+.ppuH-port{background:#1A1A1A;padding:96px 0 0;overflow:hidden}
+.ppuH-port__head{max-width:900px;margin:0 auto 56px;padding:0 var(--gut);display:flex;flex-direction:column;align-items:center;text-align:center;gap:28px}
+.ppuH-port__h{font:400 clamp(42px,5.4vw,78px)/1.04 var(--serif)!important;color:#fff!important;letter-spacing:-.01em!important;text-transform:none!important;text-wrap:balance}
+.ppuH-port__h em{font-style:italic;color:var(--blush)}
+.ppuH-port__link{font:600 13px/1 var(--mono)!important;letter-spacing:.14em!important;text-transform:uppercase;color:#fff!important;text-decoration:none!important;border-bottom:1px solid rgba(255,255,255,.45);padding-bottom:7px;transition:border-color .2s}
+.ppuH-port__link:hover{border-color:#fff}
+.ppuH-port__strip{position:relative;overflow:hidden;cursor:grab;touch-action:pan-y;user-select:none;-webkit-user-select:none}
+.ppuH-port__strip.is-drag{cursor:grabbing}
+.ppuH-port__track{display:flex;width:max-content;will-change:transform}
+.ppuH-port__img{display:block;height:clamp(340px,34vw,480px);width:auto;aspect-ratio:3/4;object-fit:cover;background:#2a2a2a;-webkit-user-drag:none;pointer-events:none}
+.ppuH-port__nav{position:absolute;top:50%;transform:translateY(-50%);width:46px;height:46px;border-radius:50%;border:1px solid rgba(255,255,255,.55);background:rgba(26,26,26,.38);color:#fff;display:grid;place-items:center;cursor:pointer;opacity:.75;transition:opacity .2s,background .2s;-webkit-appearance:none;appearance:none;padding:0!important;z-index:2}
+.ppuH-port__nav:hover{opacity:1;background:rgba(26,26,26,.6)}
+.ppuH-port__nav:focus-visible{outline:2px solid #fff;outline-offset:3px}
+.ppuH-port__nav--prev{left:18px}.ppuH-port__nav--next{right:18px}
+.ppuH-port__nav svg{width:14px;height:14px;display:block}
 
 /* 7 · QUICK FAQ */
 .ppuH-faq{padding:104px var(--gut)}
@@ -71,9 +79,10 @@
 .ppuH-fact b{font-size:26px!important}
 .ppuH-fact span{font-size:10px!important;letter-spacing:.1em!important}
 .ppuH-gigi{padding:64px var(--gut) 72px}
-.ppuH-port{padding:64px 0 72px}
-.ppuH-port__head{margin-bottom:28px}
+.ppuH-port{padding:64px 0 0}
+.ppuH-port__head{margin-bottom:32px;gap:20px}
 .ppuH-port__img{height:300px}
+.ppuH-port__nav{width:38px;height:38px}.ppuH-port__nav--prev{left:10px}.ppuH-port__nav--next{right:10px}
 .ppuH-faq{padding:64px var(--gut)}
 .ppuH-faq__in{grid-template-columns:minmax(0,1fr);row-gap:28px}
 .ppuH-q summary{font-size:20px!important;padding:20px 0}
@@ -81,7 +90,7 @@
 .ppuH-q__a p{font-size:15px!important;line-height:28px!important}
 .ppuH-close{--bh:520px}
 }
-@media (prefers-reduced-motion:reduce){.ppuH-port__img{animation:none}}
+@media (prefers-reduced-motion:reduce){.ppuH-port__nav{transition:none}}
 </style>
 <div class="ppuH">
 <!-- 4 · WHAT TO EXPECT -->
@@ -120,10 +129,14 @@
 <!-- 6 · PORTFOLIO -->
 <section class="ppuH-sec ppuH-port" aria-label="Portfolio">
 <div class="ppuH-port__head">
-<div><p class="ppuH-eyebrow">The portfolio</p><h2 class="ppuH-h">Less Perfection. More Personality.</h2></div>
-<a class="ppuH-link" href="https://www.personalitypopup.com/portfolio/">See the portfolio →</a>
+<h2 class="ppuH-port__h">Less Perfection.<br><em>More Personality.</em></h2>
+<a class="ppuH-port__link" href="https://www.personalitypopup.com/portfolio/">See the portfolio →</a>
 </div>
-<div class="ppuH-rail"><div class="ppuH-rail__track"><div class="ppuH-rail__set"><img class="ppuH-port__img" style="--d:-0s" src="https://images-pw.pixieset.com/elementfield/qkvXpbp/251108-PPU-CHICAGO-0353-b7ff8ccd-1000.jpg" alt="Girl in a tan sweater resting her chin on her hand" loading="lazy"><img class="ppuH-port__img" style="--d:-3s" src="https://images-pw.pixieset.com/elementfield/1zqrnP1/260315-PPU-LONDON-2533-458f3301-1000.jpg" alt="Boy in a denim jacket with a sideways smile" loading="lazy"><img class="ppuH-port__img" style="--d:-6s" src="https://images-pw.pixieset.com/elementfield/qkvXpbp/260411-PPU-PHOENIX-0261-33e9978c-1000.jpg" alt="Girl in red crouching with her arms crossed" loading="lazy"><img class="ppuH-port__img" style="--d:-9s" src="https://images-pw.pixieset.com/elementfield/zvm347r/PERSONALITY-POP-UP-CHICAGO-1162-2bd96d8f-1000.jpg" alt="Girl with curly hair laughing" loading="lazy"><img class="ppuH-port__img" style="--d:-12s" src="https://images-pw.pixieset.com/elementfield/1zqrnP1/260328-PPU-DALLAS-0693-1f13d1e1-1000.jpg" alt="Boy in a white polo laughing" loading="lazy"><img class="ppuH-port__img" style="--d:-15s" src="https://images-pw.pixieset.com/elementfield/ZQrnMKM/260307-PPU-CHARLESTON-0868-14911c28-1000.jpg" alt="Girl in a striped sweater peeking over her knees" loading="lazy"><img class="ppuH-port__img" style="--d:-2s" src="https://images-pw.pixieset.com/elementfield/qkvXpbp/260314-PPU-ORLANDO-2473-163acadd-1000.jpg" alt="Boy in a denim bucket hat in profile" loading="lazy"><img class="ppuH-port__img" style="--d:-5s" src="https://images-pw.pixieset.com/elementfield/ZQrnMKM/260131-PPU-LA-JOLLA-2058-f7dfd718-1000.jpg" alt="Blonde girl crouching and smiling" loading="lazy"><img class="ppuH-port__img" style="--d:-8s" src="https://images-pw.pixieset.com/elementfield/1zqrnP1/251108-PPU-CHICAGO-3423-9c2f0b67-1000.jpg" alt="Boy in a beanie with his hands behind his head" loading="lazy"><img class="ppuH-port__img" style="--d:-11s" src="https://images-pw.pixieset.com/elementfield/1zqrnP1/260411-PPU-PHOENIX-0755-9f4629c9-1000.jpg" alt="Teen girl smiling with her chin on her hand" loading="lazy"></div><div class="ppuH-rail__set" aria-hidden="true"><img class="ppuH-port__img" style="--d:-0s" src="https://images-pw.pixieset.com/elementfield/qkvXpbp/251108-PPU-CHICAGO-0353-b7ff8ccd-1000.jpg" alt="" loading="lazy"><img class="ppuH-port__img" style="--d:-3s" src="https://images-pw.pixieset.com/elementfield/1zqrnP1/260315-PPU-LONDON-2533-458f3301-1000.jpg" alt="" loading="lazy"><img class="ppuH-port__img" style="--d:-6s" src="https://images-pw.pixieset.com/elementfield/qkvXpbp/260411-PPU-PHOENIX-0261-33e9978c-1000.jpg" alt="" loading="lazy"><img class="ppuH-port__img" style="--d:-9s" src="https://images-pw.pixieset.com/elementfield/zvm347r/PERSONALITY-POP-UP-CHICAGO-1162-2bd96d8f-1000.jpg" alt="" loading="lazy"><img class="ppuH-port__img" style="--d:-12s" src="https://images-pw.pixieset.com/elementfield/1zqrnP1/260328-PPU-DALLAS-0693-1f13d1e1-1000.jpg" alt="" loading="lazy"><img class="ppuH-port__img" style="--d:-15s" src="https://images-pw.pixieset.com/elementfield/ZQrnMKM/260307-PPU-CHARLESTON-0868-14911c28-1000.jpg" alt="" loading="lazy"><img class="ppuH-port__img" style="--d:-2s" src="https://images-pw.pixieset.com/elementfield/qkvXpbp/260314-PPU-ORLANDO-2473-163acadd-1000.jpg" alt="" loading="lazy"><img class="ppuH-port__img" style="--d:-5s" src="https://images-pw.pixieset.com/elementfield/ZQrnMKM/260131-PPU-LA-JOLLA-2058-f7dfd718-1000.jpg" alt="" loading="lazy"><img class="ppuH-port__img" style="--d:-8s" src="https://images-pw.pixieset.com/elementfield/1zqrnP1/251108-PPU-CHICAGO-3423-9c2f0b67-1000.jpg" alt="" loading="lazy"><img class="ppuH-port__img" style="--d:-11s" src="https://images-pw.pixieset.com/elementfield/1zqrnP1/260411-PPU-PHOENIX-0755-9f4629c9-1000.jpg" alt="" loading="lazy"></div></div></div>
+<div class="ppuH-port__strip" id="ppuH-strip">
+<div class="ppuH-port__track" id="ppuH-strip-track"><img class="ppuH-port__img" src="https://images-pw.pixieset.com/elementfield/qkvXpbp/251108-PPU-CHICAGO-0353-b7ff8ccd-1000.jpg" alt="Girl in a tan sweater resting her chin on her hand" loading="lazy" draggable="false"><img class="ppuH-port__img" src="https://images-pw.pixieset.com/elementfield/zvm347r/PERSONALITY-POP-UP-CLEVELAND-1032-ecf6ae63-1000.jpg" alt="Toddler mid-laugh, black and white" loading="lazy" draggable="false"><img class="ppuH-port__img" src="https://images-pw.pixieset.com/elementfield/1zqrnP1/260315-PPU-LONDON-2533-458f3301-1000.jpg" alt="Boy in a denim jacket with a sideways smile" loading="lazy" draggable="false"><img class="ppuH-port__img" src="https://images-pw.pixieset.com/elementfield/1zqrnP1/260329-PPU-FT-WORTH-0686-91b3d25f-1000.jpg" alt="Girl laughing with her hands on her face, black and white" loading="lazy" draggable="false"><img class="ppuH-port__img" src="https://images-pw.pixieset.com/elementfield/qkvXpbp/260411-PPU-PHOENIX-0261-33e9978c-1000.jpg" alt="Girl in red crouching with her arms crossed" loading="lazy" draggable="false"><img class="ppuH-port__img" src="https://images-pw.pixieset.com/elementfield/bOeql4M/251018-PPU-SALT-LAKE-CITY-1298-5160b1bf-1000.jpg" alt="Boy in round glasses pressing a finger to his nose, black and white" loading="lazy" draggable="false"><img class="ppuH-port__img" src="https://images-pw.pixieset.com/elementfield/1zqrnP1/260328-PPU-DALLAS-0693-1f13d1e1-1000.jpg" alt="Boy in a white polo laughing" loading="lazy" draggable="false"><img class="ppuH-port__img" src="https://images-pw.pixieset.com/elementfield/zvm347r/PERSONALITY-POP-UP-CHICAGO-1162-2bd96d8f-1000.jpg" alt="Girl with curly hair laughing, black and white" loading="lazy" draggable="false"><img class="ppuH-port__img" src="https://images-pw.pixieset.com/elementfield/ZQrnMKM/260307-PPU-CHARLESTON-0868-14911c28-1000.jpg" alt="Blonde girl crouching and smiling" loading="lazy" draggable="false"><img class="ppuH-port__img" src="https://images-pw.pixieset.com/elementfield/1zqrnP1/260321-PPU-CHARLOTTE-0702-99d90960-1000.jpg" alt="Toddler in a cap that says DUDE, black and white" loading="lazy" draggable="false"><img class="ppuH-port__img" src="https://images-pw.pixieset.com/elementfield/1zqrnP1/251108-PPU-CHICAGO-3423-9c2f0b67-1000.jpg" alt="Boy in a beanie with his hands behind his head" loading="lazy" draggable="false"><img class="ppuH-port__img" src="https://images-pw.pixieset.com/elementfield/ZQrnMKM/260131-PPU-LA-JOLLA-2058-f7dfd718-1000.jpg" alt="Girl with her hair flying, black and white" loading="lazy" draggable="false"><img class="ppuH-port__img" src="https://images-pw.pixieset.com/elementfield/qkvXpbp/251108-PPU-CHICAGO-0353-b7ff8ccd-1000.jpg" alt="" loading="lazy" draggable="false" aria-hidden="true"><img class="ppuH-port__img" src="https://images-pw.pixieset.com/elementfield/zvm347r/PERSONALITY-POP-UP-CLEVELAND-1032-ecf6ae63-1000.jpg" alt="" loading="lazy" draggable="false" aria-hidden="true"><img class="ppuH-port__img" src="https://images-pw.pixieset.com/elementfield/1zqrnP1/260315-PPU-LONDON-2533-458f3301-1000.jpg" alt="" loading="lazy" draggable="false" aria-hidden="true"><img class="ppuH-port__img" src="https://images-pw.pixieset.com/elementfield/1zqrnP1/260329-PPU-FT-WORTH-0686-91b3d25f-1000.jpg" alt="" loading="lazy" draggable="false" aria-hidden="true"><img class="ppuH-port__img" src="https://images-pw.pixieset.com/elementfield/qkvXpbp/260411-PPU-PHOENIX-0261-33e9978c-1000.jpg" alt="" loading="lazy" draggable="false" aria-hidden="true"><img class="ppuH-port__img" src="https://images-pw.pixieset.com/elementfield/bOeql4M/251018-PPU-SALT-LAKE-CITY-1298-5160b1bf-1000.jpg" alt="" loading="lazy" draggable="false" aria-hidden="true"><img class="ppuH-port__img" src="https://images-pw.pixieset.com/elementfield/1zqrnP1/260328-PPU-DALLAS-0693-1f13d1e1-1000.jpg" alt="" loading="lazy" draggable="false" aria-hidden="true"><img class="ppuH-port__img" src="https://images-pw.pixieset.com/elementfield/zvm347r/PERSONALITY-POP-UP-CHICAGO-1162-2bd96d8f-1000.jpg" alt="" loading="lazy" draggable="false" aria-hidden="true"><img class="ppuH-port__img" src="https://images-pw.pixieset.com/elementfield/ZQrnMKM/260307-PPU-CHARLESTON-0868-14911c28-1000.jpg" alt="" loading="lazy" draggable="false" aria-hidden="true"><img class="ppuH-port__img" src="https://images-pw.pixieset.com/elementfield/1zqrnP1/260321-PPU-CHARLOTTE-0702-99d90960-1000.jpg" alt="" loading="lazy" draggable="false" aria-hidden="true"><img class="ppuH-port__img" src="https://images-pw.pixieset.com/elementfield/1zqrnP1/251108-PPU-CHICAGO-3423-9c2f0b67-1000.jpg" alt="" loading="lazy" draggable="false" aria-hidden="true"><img class="ppuH-port__img" src="https://images-pw.pixieset.com/elementfield/ZQrnMKM/260131-PPU-LA-JOLLA-2058-f7dfd718-1000.jpg" alt="" loading="lazy" draggable="false" aria-hidden="true"></div>
+<button class="ppuH-port__nav ppuH-port__nav--prev" type="button" aria-label="Previous photos"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 4 L7 12 L15 20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+<button class="ppuH-port__nav ppuH-port__nav--next" type="button" aria-label="Next photos"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 4 L17 12 L9 20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+</div>
 </section>
 
 <!-- 7 · QUICK FAQ -->
@@ -153,7 +166,32 @@
 <div class="ppuH-close__in">
 <h2 class="ppuH-close__h">They won’t be little forever.</h2>
 <a class="ppuH-btn ppuH-btn--white" href="https://www.personalitypopup.com/book/">📍 Find Your City</a>
-<a class="ppuH-hero__fof" href="#ppu-fof">Not in your city yet? <b>Find Out First ↓</b></a>
 </div>
 </section>
 </div>
+<script>
+(function(){
+ var strip=document.getElementById('ppuH-strip'), track=document.getElementById('ppuH-strip-track'); if(!strip||!track) return;
+ var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+ var x=0, speed=reduce?0:26, last=null, hold=false, setW=0, drag={on:false,x0:0,xs:0,moved:0}, holdTimer=null;
+ function measure(){ setW=track.scrollWidth/2; }
+ function render(){ if(setW){ x=((x%setW)+setW)%setW; } track.style.transform='translate3d('+(-x)+'px,0,0)'; }
+ function tick(t){ if(last!==null&&!hold&&!drag.on){ x+=speed*Math.min(50,t-last)/1000; } last=t; render(); requestAnimationFrame(tick); }
+ function pause(ms){ hold=true; clearTimeout(holdTimer); holdTimer=setTimeout(function(){hold=false;},ms); }
+ function step(dir){
+  var img=track.querySelector('img'); var w=img?img.getBoundingClientRect().width:320;
+  var from=x, to=x+dir*w*2, t0=performance.now(), D=560; pause(2200);
+  (function anim(now){ var p=Math.min(1,(now-t0)/D); var e=1-Math.pow(1-p,3); x=from+(to-from)*e; render(); if(p<1) requestAnimationFrame(anim); })(t0);
+ }
+ strip.querySelector('.ppuH-port__nav--prev').addEventListener('click',function(){step(-1);});
+ strip.querySelector('.ppuH-port__nav--next').addEventListener('click',function(){step(1);});
+ strip.addEventListener('pointerdown',function(e){ if(e.target.closest('.ppuH-port__nav')) return; drag.on=true; drag.x0=e.clientX; drag.xs=x; drag.moved=0; strip.classList.add('is-drag'); try{strip.setPointerCapture(e.pointerId);}catch(err){} });
+ strip.addEventListener('pointermove',function(e){ if(!drag.on) return; var dx=e.clientX-drag.x0; drag.moved=Math.max(drag.moved,Math.abs(dx)); x=drag.xs-dx; render(); });
+ function endDrag(){ if(!drag.on) return; drag.on=false; strip.classList.remove('is-drag'); pause(1500); }
+ strip.addEventListener('pointerup',endDrag); strip.addEventListener('pointercancel',endDrag); strip.addEventListener('lostpointercapture',endDrag);
+ strip.addEventListener('mouseenter',function(){ hold=true; clearTimeout(holdTimer); }); strip.addEventListener('mouseleave',function(){ hold=false; });
+ window.addEventListener('resize',measure);
+ [].forEach.call(track.querySelectorAll('img'),function(i){ i.addEventListener('load',measure); });
+ measure(); requestAnimationFrame(tick);
+})();
+</script>
