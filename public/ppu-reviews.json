@@ -1,6 +1,6 @@
 {
  "_comment": "PPU review pool for every ppuR slider on personalitypopup.com. Order = rank (best first). q = full review text (verbatim), s = optional short excerpt for compact sliders (Book). Pages pull this live; the daily ppu-google-review-count task adds new 5-star Google reviews here.",
- "updated": "2026-10-15",
+ "updated": "2026-10-16",
  "reviews": [
   {
    "n": "Jessica",
@@ -193,6 +193,11 @@
    "added": "2026-10-15"
   },
   {
+   "n": "Kristina B.",
+   "q": "I am blown away by how amazing the photos of my kids came out. HIGHLY RECOMMEND!!!!",
+   "added": "2026-10-16"
+  },
+  {
    "n": "Leila",
    "q": "Quick and painless for my 6 and 8 year old boys. The pictures are perfect and the photographers were wonderful!",
    "added": "2026-10-15"
@@ -216,6 +221,11 @@
    "n": "Kristin",
    "q": "Amazing!!! So happy with these pictures that left me speechless!",
    "added": "2026-10-15"
+  },
+  {
+   "n": "Kathryn H.",
+   "q": "Amazing work! They captured the cutest personality-filled photos of my kids",
+   "added": "2026-10-16"
   },
   {
    "n": "Edward",
