@@ -17,7 +17,8 @@
   CONFIG (bottom script): PRICE (per session, yearly / monthly), DOOR,
   MEMBER_CITIES (empty = every city in cities.js), LINKS[plan][sessions]
   (Stripe Payment Links, quantity fixed per link), PORTAL.
-  ?city=dallas pre-selects a city (ads). ?joined=1&plan=…&n=… → "You're in".
+  No city: a membership is good at any pop-up (the usual city is asked at checkout).
+  ?joined=1&plan=…&n=… → "You're in".
   Built by scripts/build-ppu-members.py (+ docs/embeds/parts/reviews.html).
 =================================================================== -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -97,7 +98,8 @@ font:600 18px/18px var(--mono)!important;letter-spacing:1.8px!important;text-tra
 .ppuM-w{--wink:#0E0E0E;--mut:#737373;--ln:#EBEBEB;--wsoft:#F5F5F5;--ui:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;width:100%;color:var(--wink);font-family:var(--ui);font-size:15px;line-height:1.4;text-align:left;position:relative}
 .ppuM-w *,.ppuM-w *::before,.ppuM-w *::after{box-sizing:border-box}
 .ppuM-w p{margin:0!important;padding:0!important;text-wrap:pretty}
-.ppuM-top{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px;align-items:end;margin:0 0 18px}
+.ppuM-top{display:flex;justify-content:center;margin:0 0 18px}
+.ppuM-top .ppuM-seg{width:min(100%,360px)}
 .ppuH .ppuM-lab{display:block;font:600 12px/1.3 var(--ui)!important;letter-spacing:.06em!important;text-transform:uppercase;color:var(--mut)!important;margin:0 0 8px!important}
 .ppuM-sel{position:relative}
 .ppuM-sel select{appearance:none;-webkit-appearance:none;width:100%;border:1.5px solid var(--ln);border-radius:14px;background:#fff;padding:15px 44px 15px 16px;font:600 15px/1.2 var(--ui);color:var(--wink);cursor:pointer;outline:none}
@@ -286,8 +288,7 @@ font:600 18px/18px var(--mono)!important;letter-spacing:1.8px!important;text-tra
 <img class="ppuJ-hero__logo" src="https://axis-ppu.vercel.app/ppu/logo-white.png" alt="Personality Pop-Up" loading="eager" fetchpriority="high">
 <p class="ppuH-hero__eyebrow">Membership</p>
 <h1 class="ppuH-hero__h">A session every year.<br>Your spot guaranteed.</h1>
-<p class="ppuJ-hero__dates"><span>Lock in today’s price</span><i>·</i><span>Book before anyone else</span></p>
-<p class="ppuH-hero__sub">Members get a reserved spot and first access <br>every time Personality Pop-Up comes to their city.</p>
+<p class="ppuJ-hero__dates"><span>Any pop-up, any city</span><i>·</i><span>Book first</span></p>
 <div class="ppuH-hero__ctas">
 <a class="ppuH-btn ppuH-btn--white" href="#ppuM-join" data-cta>👉 Become a Member</a>
 <a class="ppuH-hero__trust" href="https://www.google.com/search?q=Personality+Pop-Up#lrd=0x89d5209ec3b5b81:0x332a7fee85847322,1" target="_blank" rel="noopener"><span class="st" aria-hidden="true">★★★★★</span>5.0 · <span data-ppu-review-count>418+</span> Google reviews</a>
@@ -301,21 +302,18 @@ font:600 18px/18px var(--mono)!important;letter-spacing:1.8px!important;text-tra
 <div class="ppuM-pr__copy">
 <p class="ppuH-eyebrow">Membership</p>
 <h2 class="ppuH-h">One membership. A session every year.</h2>
-<p class="ppuH-p">Pick your city and how many sessions a year your family needs. We hold your spot at every pop-up and let you book first.</p>
+<p class="ppuH-p">Pick how many sessions a year your family needs. Your membership is good at any Personality Pop-Up, in any city, and you book first.</p>
 <ul class="ppuM-checks">
 <li>Same 15-minute session, 25+ images in color and black &amp; white</li>
-<li>Guaranteed spot and first access, every visit</li>
+<li>Good at any pop-up, in any city. Book 48 hours before anyone else</li>
 <li>Unused sessions roll over. Cancel anytime</li>
 </ul>
-<p class="ppuM-rise"><b>Session prices are going up</b> and member spots in each city are limited. Members lock in today’s price for as long as they stay.</p>
+<p class="ppuM-rise"><b>Session prices are going up</b> and member spots at each pop-up are limited. Members lock in today’s price for as long as they stay.</p>
 </div>
 
 <div class="ppuM-w" id="ppuM-w">
 <div id="ppuM-pick">
-<div class="ppuM-top">
-<div><p class="ppuM-lab">Your city</p><div class="ppuM-sel"><select id="ppuM-city" aria-label="Your city"><option value="">Choose your city</option></select></div></div>
-<div><p class="ppuM-lab">How you pay</p><div class="ppuM-seg" role="group" aria-label="How you pay"><button type="button" data-plan="annual" aria-pressed="true">Yearly</button><button type="button" data-plan="monthly" aria-pressed="false">Monthly</button></div></div>
-</div>
+<div class="ppuM-top"><div class="ppuM-seg" role="group" aria-label="How you pay"><button type="button" data-plan="annual" aria-pressed="true">Pay yearly</button><button type="button" data-plan="monthly" aria-pressed="false">Pay monthly</button></div></div>
 <div class="ppuM-cards" id="ppuM-cards"></div>
 <p class="ppuM-fine"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>Stripe secure checkout · Apple Pay &amp; Google Pay · Need 3 or 4 sessions a year? Change the quantity at checkout.</p>
 <p class="ppuM-manage">Already a member? <a href="mailto:hello@personalitypopup.com?subject=My%20membership" id="ppuM-portal">Manage your membership</a></p>
@@ -325,7 +323,7 @@ font:600 18px/18px var(--mono)!important;letter-spacing:1.8px!important;text-tra
 <p>Welcome to the family. Here’s what happens next:</p>
 <ol>
 <li><b>1</b><span>Your receipt is on its way, and your sessions are on your account.</span></li>
-<li><b>2</b><span>The moment dates are set for your city, you’ll get a text and an email with your private booking link, <b>48 hours before anyone else</b>.</span></li>
+<li><b>2</b><span>The moment dates are set near you, you’ll get a text and an email with your private booking link, <b>48 hours before anyone else</b>.</span></li>
 <li><b>3</b><span>Pick your time. No deposit, no balance. Then come play.</span></li>
 </ol>
 </div>
@@ -461,8 +459,8 @@ font:600 18px/18px var(--mono)!important;letter-spacing:1.8px!important;text-tra
 <h2 class="ppuH-exp__title">Never miss a year.</h2>
 <p class="ppuH-p">Our pop-ups sell out fast, and every year we hear the same thing: “I missed it.” Members don’t. Your spot is held before booking opens, and you simply pick a time.</p>
 <ol class="ppuJ-steps">
-<li><b>01</b><div><h3>Join in a minute</h3><p>Pick your city, how many sessions a year, and how you’d like to pay.</p></div></li>
-<li><b>02</b><div><h3>Book first</h3><p>When dates drop in your city, members get the first 48 hours. No deposit, no balance. It’s already covered.</p></div></li>
+<li><b>01</b><div><h3>Join in a minute</h3><p>Pick how many sessions a year and how you’d like to pay. That’s it.</p></div></li>
+<li><b>02</b><div><h3>Book first</h3><p>When dates drop near you, members get the first 48 hours. No deposit, no balance. It’s already covered.</p></div></li>
 <li><b>03</b><div><h3>Come play, every year</h3><p>Same photographers, same simple 15 minutes. The gallery grows a year at a time.</p></div></li>
 </ol>
 <a class="ppuH-btn" href="#ppuM-join" data-cta>👉 Become a Member</a>
@@ -506,14 +504,14 @@ font:600 18px/18px var(--mono)!important;letter-spacing:1.8px!important;text-tra
 <a class="ppuH-link" href="mailto:hello@personalitypopup.com?subject=Membership">Ask us anything →</a>
 </div>
 <div class="ppuH-faq__list">
-<details class="ppuH-q" open><summary>What do I get?<i class="ppuH-ico"></i></summary><div class="ppuH-q__a"><p>The number of sessions you choose, every year, at today’s member price, locked in for as long as you stay. Each session is the same one everyone else books: 15 minutes with a certified Personality Method™ photographer, 25+ high-resolution images in color and black &amp; white, and a private gallery to download, print and share. Plus a <b>guaranteed spot</b> and <b>first access</b> to times at every pop-up in your city.</p></div></details>
+<details class="ppuH-q" open><summary>What do I get?<i class="ppuH-ico"></i></summary><div class="ppuH-q__a"><p>The number of sessions you choose, every year, at today’s member price, locked in for as long as you stay. Each session is the same one everyone else books: 15 minutes with a certified Personality Method™ photographer, 25+ high-resolution images in color and black &amp; white, and a private gallery to download, print and share. Plus a <b>guaranteed spot</b> and <b>first access</b> to times at any Personality Pop-Up, in any city.</p></div></details>
 <details class="ppuH-q"><summary>What if I don’t use a session this year?<i class="ppuH-ico"></i></summary><div class="ppuH-q__a"><p>It rolls over. Unused sessions stay on your account for as long as you’re a member, so you can use two next year, or save one for a sibling. Nothing expires while your membership is active.</p></div></details>
 <details class="ppuH-q"><summary>How many sessions should I choose?<i class="ppuH-ico"></i></summary><div class="ppuH-q__a"><p>One session covers 1 or 2 kids, so most families choose <b>one per visit</b>. Choose Family for two sessions: siblings on their own, or two visits a year. Need three or four? Change the quantity at checkout. You can add sessions any time.</p></div></details>
-<details class="ppuH-q"><summary>How do I book as a member?<i class="ppuH-ico"></i></summary><div class="ppuH-q__a"><p>When dates are set for your city, you get a text and an email with a private booking link, <b>48 hours before booking opens to everyone else</b>. Pick your time like any booking, except there’s no deposit and no balance. Your membership covers it.</p></div></details>
+<details class="ppuH-q"><summary>How do I book as a member?<i class="ppuH-ico"></i></summary><div class="ppuH-q__a"><p>When dates are set near you, you get a text and an email with a private booking link, <b>48 hours before booking opens to everyone else</b>. Pick your time like any booking, except there’s no deposit and no balance. Your membership covers it.</p></div></details>
 <details class="ppuH-q"><summary>Yearly or monthly?<i class="ppuH-ico"></i></summary><div class="ppuH-q__a"><p>Same membership, same sessions. <b>Yearly</b> is <span data-m="yearly">$570</span> per session, paid once a year (that’s <span data-m="yearlyMo">$47.50</span> a month). <b>Monthly</b> is <span data-m="monthly">$50</span> per session each month, so nothing big ever hits your card. Both renew automatically, and you can switch or cancel any time.</p></div></details>
 <details class="ppuH-q"><summary>Will my price go up?<i class="ppuH-ico"></i></summary><div class="ppuH-q__a"><p>No. Session prices go up over time, but your member price is locked for as long as your membership stays active. That’s the main reason families join now.</p></div></details>
 <details class="ppuH-q"><summary>Can I cancel?<i class="ppuH-ico"></i></summary><div class="ppuH-q__a"><p>Yes, any time, from the link in your receipt or by emailing us. Nothing more is charged, and any session you’ve already paid for stays yours to use for 12 months. You keep every image you’ve received.</p></div></details>
-<details class="ppuH-q"><summary>Which cities?<i class="ppuH-ico"></i></summary><div class="ppuH-q__a"><p>Any city in the list above. Your sessions are good at every Personality Pop-Up in the city you choose, and if you move, just tell us. Don’t see your city? <a class="ppuH-link" style="font-size:13px!important" href="https://www.personalitypopup.com/book/">Find out first →</a></p></div></details>
+<details class="ppuH-q"><summary>Which cities?<i class="ppuH-ico"></i></summary><div class="ppuH-q__a"><p>All of them. Your sessions are good at any Personality Pop-Up, wherever we are. At checkout we ask which city you usually visit us in, so we can text you first when those dates drop. <a class="ppuH-link" style="font-size:13px!important" href="https://www.personalitypopup.com/book/">See where we go →</a></p></div></details>
 </div>
 </div>
 </section>
@@ -541,11 +539,10 @@ font:600 18px/18px var(--mono)!important;letter-spacing:1.8px!important;text-tra
 /* ---- CONFIG ---- */
 var PRICE={annual:57000,monthly:5000};   /* per session: yearly ($570 = $47.50/mo) / monthly plan ($50/mo) */
 var PLANS=[
- {n:1,name:'Member',short:'Member',sub:'One session a year. Best for one child, or siblings together.',feat:'Everything a member gets',list:['<b>1 session</b> a year, 1 or 2 kids','Guaranteed spot at every pop-up in your city','First access: book 48 hours before anyone else','Today’s price locked while you’re a member']},
+ {n:1,name:'Member',short:'Member',sub:'One session a year. Best for one child, or siblings together.',feat:'Everything a member gets',list:['<b>1 session</b> a year, 1 or 2 kids','Good at any pop-up, in any city','Guaranteed spot. Book 48 hours before anyone else','Today’s price locked while you’re a member']},
  {n:2,name:'Member <em>Family</em>',short:'Family',rec:true,ribbon:'· Most families',sub:'Two sessions a year. Each child on their own, or spring and fall.',feat:'Everything in Member, plus',list:['<b>2 sessions</b> a year','Unused sessions roll over','Add a session any time at the member price']}
 ];
 var DOOR=59500;                           /* a session without membership */
-var MEMBER_CITIES=[];                     /* e.g. ['Dallas, TX','Houston, TX'] — empty = every city in cities.js */
 var LINKS={annual:{1:'',2:'',3:'',4:''},monthly:{1:'',2:'',3:'',4:''}};
 var PORTAL='';                  /* Stripe customer portal login link ('' = email us) */
 
@@ -557,7 +554,6 @@ var TEAM=[S+'DDyzXZ/PERSONALITY-POP-UP-TEAM-0032-c67d6e2f-1500.jpg',S+'q5M4eb/PE
 /* the homepage strip: untouched photos alternating colour / black & white, plus the four Studio Rules */
 var E='https://images-pw.pixieset.com/elementfield/';
 var STRIP=[[E+'qkvXpbp/251108-PPU-CHICAGO-0353-b7ff8ccd-1000.jpg','Girl in a tan sweater resting her chin on her hand'],[E+'zvm347r/PERSONALITY-POP-UP-CLEVELAND-1032-ecf6ae63-1000.jpg','Toddler mid-laugh, black and white'],{n:1,q:'No<br>perfect kids allowed.'},[E+'1zqrnP1/260315-PPU-LONDON-2533-458f3301-1000.jpg','Boy in a denim jacket with a sideways smile'],[E+'1zqrnP1/260329-PPU-FT-WORTH-0686-91b3d25f-1000.jpg','Girl laughing with her hands on her face, black and white'],[E+'qkvXpbp/260411-PPU-PHOENIX-0261-33e9978c-1000.jpg','Girl in red crouching with her arms crossed'],{n:2,q:'Don’t say cheese.'},[E+'bOeql4M/251018-PPU-SALT-LAKE-CITY-1298-5160b1bf-1000.jpg','Boy in round glasses pressing a finger to his nose, black and white'],[E+'1zqrnP1/260328-PPU-DALLAS-0693-1f13d1e1-1000.jpg','Boy in a white polo laughing'],[E+'zvm347r/PERSONALITY-POP-UP-CHICAGO-1162-2bd96d8f-1000.jpg','Girl with curly hair laughing, black and white'],{n:3,q:'No forced poses.'},[E+'ZQrnMKM/260307-PPU-CHARLESTON-0868-14911c28-1000.jpg','Blonde girl crouching and smiling'],[E+'1zqrnP1/260321-PPU-CHARLOTTE-0702-99d90960-1000.jpg','Toddler in a cap that says DUDE, black and white'],[E+'1zqrnP1/251108-PPU-CHICAGO-3423-9c2f0b67-1000.jpg','Boy in a beanie with his hands behind his head'],{n:4,q:'Let them be them.'},[E+'ZQrnMKM/260131-PPU-LA-JOLLA-2058-f7dfd718-1000.jpg','Girl with her hair flying, black and white']];
-var CITIES_FALLBACK=["Ann Arbor, MI","Atlanta, GA","Austin, TX","Birmingham, AL","Boca Raton, FL","Boise, ID","Boston, MA","Boulder, CO","Brooklyn, NY","Carlsbad, CA","Charleston, SC","Charlotte, NC","Chicago, IL","Cincinnati, OH","Cleveland, OH","Colorado Springs, CO","Columbus, OH","Dallas, TX","Denver, CO","Detroit, MI","Fort Lauderdale, FL","Fort Worth, TX","Greenville, SC","Houston, TX","Indianapolis, IN","Irvine, CA","Jacksonville, FL","Jersey City, NJ","Kansas City, MO","Knoxville, TN","Las Vegas, NV","London, UK","Long Beach, CA","Long Island, NY","Los Angeles, CA","Louisville, KY","Madison, WI","Manhattan, NY","Miami, FL","Minneapolis, MN","Nashville, TN","New Haven, CT","New Orleans, LA","Oklahoma City, OK","Orlando, FL","Philadelphia, PA","Phoenix, AZ","Pittsburgh, PA","Portland, OR","Raleigh, NC","Ridgewood, NJ","Salt Lake City, UT","San Diego, CA","San Francisco, CA","San Jose, CA","Savannah, GA","Seattle, WA","Stamford, CT","Tampa, FL","Washington, DC","West Palm Beach, FL"];
 
 function $(id){return document.getElementById(id)}
 function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
@@ -609,13 +605,8 @@ new IntersectionObserver(function(e){hv=e[0].isIntersecting;u()}).observe(hero);
 
 /* ---- THE MEMBER WIDGET: two plan cards ---- */
 (function(){
-var plan='annual',city='',sel=$('ppuM-city'),q=new URLSearchParams(location.search),segs=document.querySelectorAll('.ppuM-seg button'),wrap=$('ppuM-cards');
-function cities(list){var want=q.get('city')?slug(q.get('city')):'';var a=list.slice();if(MEMBER_CITIES.length){var ok={};MEMBER_CITIES.forEach(function(c){ok[slug(c)]=1});a=a.filter(function(c){return ok[slug(c)]||ok[slug(c.split(',')[0])]})}
-a=a.filter(function(c){return !/Summit/.test(c)}).sort();
-sel.innerHTML='<option value="">Choose your city</option>'+a.map(function(c){return '<option value="'+esc(c)+'">'+esc(c)+'</option>'}).join('');
-if(want){var hit=a.filter(function(c){return slug(c)===want||slug(c.split(',')[0])===want})[0];if(hit){sel.value=hit;city=hit}}
-show()}
-function link(n){var u=(LINKS[plan]||{})[n]||'';if(!u||!city)return '';return u+(u.indexOf('?')>-1?'&':'?')+'client_reference_id='+encodeURIComponent(slug(city)+'-'+n+'-'+plan)+'&utm_source=site&utm_medium=members_page'}
+var plan='annual',q=new URLSearchParams(location.search),segs=document.querySelectorAll('.ppuM-seg button'),wrap=$('ppuM-cards');
+function link(n){var u=(LINKS[plan]||{})[n]||'';if(!u)return '';return u+(u.indexOf('?')>-1?'&':'?')+'client_reference_id='+encodeURIComponent('members-'+n+'-'+plan)+'&utm_source=site&utm_medium=members_page'}
 function mo(c){var d=Math.round(c)/100,i=Math.floor(d),f=Math.round((d-i)*100);return '<b>$'+i.toLocaleString('en-US')+'</b><i>'+(f?'.'+(f<10?'0':'')+f:'')+'/mo</i>'}
 function card(p){var n=p.n,y=PRICE.annual*n,m=PRICE.monthly*n,u=link(n);
 var price=plan==='annual'?mo(y/12):mo(m);
@@ -624,18 +615,14 @@ var alt=plan==='annual'?esc(money(m))+'/month on the monthly plan.':esc(money(y)
 return '<div class="ppuM-card'+(p.rec?' ppuM-card--rec':'')+'">'+(p.rec?'<div class="ppuM-card__rib">★ Recommended<span>'+esc(p.ribbon)+'</span></div>':'')+
 '<div class="ppuM-in"><div class="ppuM-hd"><h3>'+p.name+'</h3></div><p class="ppuM-sub">'+esc(p.sub)+'</p>'+
 '<div class="ppuM-price">'+price+'</div><p class="ppuM-bill">'+bill+'</p><p class="ppuM-alt">'+alt+'</p>'+
-'<a class="ppuM-btn" href="'+(u||'#')+'" target="_top" rel="noopener" aria-disabled="'+(u?'false':'true')+'" data-n="'+n+'">'+(city?'Choose '+esc(p.short)+'':'Choose your city first')+'</a>'+
+'<a class="ppuM-btn" href="'+(u||'#')+'" target="_top" rel="noopener" aria-disabled="'+(u?'false':'true')+'" data-n="'+n+'">'+'Choose '+esc(p.short)+'</a>'+
 '<p class="ppuM-feat">'+esc(p.feat)+'</p><ul class="ppuM-list">'+p.list.map(function(x){return '<li><span>'+x+'</span></li>'}).join('')+'</ul></div></div>'}
 function show(){[].forEach.call(segs,function(b){b.setAttribute('aria-pressed',String(b.getAttribute('data-plan')===plan))});wrap.innerHTML=PLANS.map(card).join('');
-[].forEach.call(wrap.querySelectorAll('.ppuM-btn'),function(go){go.addEventListener('click',function(e){if(go.getAttribute('aria-disabled')==='true'){e.preventDefault();sel.focus();return}var n=+go.getAttribute('data-n'),v=(plan==='annual'?PRICE.annual:PRICE.monthly)*n/100;
+[].forEach.call(wrap.querySelectorAll('.ppuM-btn'),function(go){go.addEventListener('click',function(e){if(go.getAttribute('aria-disabled')==='true'){e.preventDefault();return}var n=+go.getAttribute('data-n'),v=(plan==='annual'?PRICE.annual:PRICE.monthly)*n/100;
 try{if(window.fbq)fbq('track','InitiateCheckout',{value:v,currency:'USD',content_name:'membership_'+plan+'_'+n})}catch(x){}
 try{if(window.gtag)gtag('event','begin_checkout',{value:v,currency:'USD',item_name:'membership_'+plan+'_'+n})}catch(x){}})})}
 [].forEach.call(segs,function(b){b.addEventListener('click',function(){plan=b.getAttribute('data-plan');show()})});
-sel.addEventListener('change',function(){city=sel.value;show()});
 if(PORTAL){$('ppuM-portal').href=PORTAL}
-cities(CITIES_FALLBACK);
-function fromCities(){var c=window.CITIES;if(c&&c.length)cities(c.map(function(x){return x.name}))}
-if(window.CITIES)fromCities();else{var s=document.createElement('script');s.src='https://cdn.jsdelivr.net/gh/jonathanconnolly/session-crm@main/public/cities.js';s.async=true;s.onload=fromCities;document.head.appendChild(s)}
 if(q.get('joined')==='1'){var p=q.get('plan')==='monthly'?'monthly':'annual',k=Math.min(4,Math.max(1,+q.get('n')||1));$('ppuM-pick').hidden=true;$('ppuM-done').hidden=false;
 [].forEach.call(document.querySelectorAll('[data-cta]'),function(a){a.textContent='You’re a member 🎉';a.setAttribute('aria-disabled','true');a.style.pointerEvents='none'});
 var v=(p==='monthly'?PRICE.monthly*12:PRICE.annual)*k/100;
