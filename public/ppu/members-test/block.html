@@ -1,24 +1,25 @@
 <!-- ==================================================================
-  PERSONALITY POP-UP — MEMBERSHIP PAGE (/members)         v2.0 2026-10-16
+  PERSONALITY POP-UP — MEMBERSHIP (/members)              v3.0 2026-10-16
   -------------------------------------------------------------------
-  ONE Pixieset Custom Code block = the whole page. Evergreen: no city in
-  the copy; the member picks their city inside the widget.
-  Built on the approved homepage system (ppuH) + the Jacksonville parts
-  (ppuJ). ppuM = membership parts (the join section + the member widget).
+  ONE Pixieset Custom Code block = the whole page. Written for families
+  who have already had a session: the sell is ACCESS, not the session.
 
-    1. Hero      faces grid · logo · eyebrow · "A session every year.
-                 Your spot guaranteed." · price line · sub · CTA · trust
-    2. Join      facts row · THE MEMBER WIDGET (city · sessions 1–4 ·
-                 yearly/monthly · total · Stripe) · reassurance row
-    3. Reviews   shared ppuR slider (pink)
-    4. How it works   3 steps · CTA · 18+/2013/418+ · video
-    5. Team · 6. Portfolio + Studio Rules · 7. FAQ · 8. Close · 9. Sticky CTA
+    1. Hero      "Never miss another year." · no price
+    2. Calendar  the centrepiece: a year of dates, one public weekend
+                 visible, the rest blurred and held for members
+    3. Why       four reasons (spot held · calendar opens · we remember ·
+                 price locked)
+    4. Pricing   yearly/monthly toggle + two plan cards (monthly rate of
+                 the yearly price, like the fitness-app block)
+    5. Reviews · 6. FAQ · 7. Close · 8. Sticky CTA
+
+  Dropped on purpose (brand and work are already established for this
+  audience): team rail, portfolio strip, press ticker, what-to-expect.
 
   CONFIG (bottom script): PRICE (per session, yearly / monthly), DOOR,
-  MEMBER_CITIES (empty = every city in cities.js), LINKS[plan][sessions]
-  (Stripe Payment Links, quantity fixed per link), PORTAL.
-  No city: a membership is good at any pop-up (the usual city is asked at checkout).
-  ?joined=1&plan=…&n=… → "You're in".
+  PLANS, LINKS[plan][sessions] (Stripe Payment Links), PORTAL.
+  No city: a membership is good at any pop-up (asked at checkout).
+  ?joined=1&plan=…&n=… → the "You're a member" state.
   Built by scripts/build-ppu-members.py (+ docs/embeds/parts/reviews.html).
 =================================================================== -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -28,7 +29,7 @@
 .block-custom-code:has(.ppuH,.ppuR) .element-container__content,.block-custom-code:has(.ppuH,.ppuR) .element-container__content-wrapper{display:block!important;line-height:0}
 .block-custom-code:has(.ppuH,.ppuR) .element-container__content > *{line-height:normal}
 .block-custom-code:has(.ppuH),.block-custom-code:has(.ppuR){padding-top:0!important;padding-bottom:0!important}
-.ppuH{--ink:#2D2D2D;--text:#373737;--soft:#646363;--paper:#FFFFFF;--cream:#FAF9F5;--blush:#FBDFD9;--red:#D64530;
+.ppuH{--ui:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;--ink:#2D2D2D;--text:#373737;--soft:#646363;--paper:#FFFFFF;--cream:#FAF9F5;--blush:#FBDFD9;--red:#D64530;
 --serif:"MADE Mirage","Orpheus Pro","Cormorant Garamond",Georgia,serif;--mono:"Roboto Mono","Courier New",Courier,monospace;
 --wrap:1180px;--gut:clamp(16px,4.75vw,67px);text-align:left;font-family:var(--mono);color:var(--ink);-webkit-font-smoothing:antialiased}
 .ppuH,.ppuH *,.ppuH *::before,.ppuH *::after{box-sizing:border-box}
@@ -141,59 +142,41 @@ font:600 18px/18px var(--mono)!important;letter-spacing:1.8px!important;text-tra
 .ppuM-ok li{list-style:none!important;margin:0!important;display:grid;grid-template-columns:28px minmax(0,1fr);gap:12px;align-items:start;font:400 14px/1.45 var(--ui);color:var(--wink)}
 .ppuM-ok li b{display:flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:var(--blush);font:600 12px/1 var(--ui);color:var(--ink)}
 
-/* 4 · HOW IT WORKS — the homepage What-to-Expect layout + the three steps */
-.ppuH-exp{padding:104px var(--gut)}
-.ppuH-exp__in{max-width:1080px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1fr) 330px;column-gap:clamp(40px,7vw,110px);align-items:center}
-.ppuH-exp__copy{display:flex;flex-direction:column;align-items:flex-start;gap:26px;min-width:0}
-.ppuH-exp__title{font:400 clamp(44px,5.4vw,76px)/1.0 var(--serif)!important;color:var(--ink)!important;letter-spacing:-.01em!important;text-transform:none!important;text-wrap:balance}
-.ppuH-exp__vid{position:relative;width:330px;aspect-ratio:310/577;overflow:hidden;border-radius:6px;background:#e9e6e1}
-.ppuH-exp__vid iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
-.ppuH-facts{display:grid;grid-template-columns:repeat(3,auto);gap:28px;padding-top:26px;border-top:1px solid rgba(45,45,45,.14);width:100%;justify-content:start}
-.ppuH-fact b{display:block;font:400 34px/1 var(--serif)!important;color:var(--ink)!important;margin-bottom:8px}
-.ppuH-fact span{display:block;font:500 11px/1.3 var(--mono)!important;letter-spacing:.14em!important;text-transform:uppercase;color:var(--soft)!important}
-.ppuJ-steps{list-style:none!important;width:100%;display:grid;gap:0;border-top:1px solid rgba(45,45,45,.14)}
-.ppuJ-steps li{list-style:none!important;display:grid;grid-template-columns:56px minmax(0,1fr);column-gap:16px;align-items:start;padding:20px 0;border-bottom:1px solid rgba(45,45,45,.14);margin:0!important}
-.ppuJ-steps b{font:400 30px/1 var(--serif)!important;color:var(--ink)!important;padding-top:2px}
-.ppuJ-steps h3{font:400 24px/1.15 var(--serif)!important;color:var(--ink)!important;letter-spacing:0!important;text-transform:none!important;margin-bottom:6px}
-.ppuJ-steps p{font:400 14.5px/1.75 var(--mono)!important;color:var(--text)!important;max-width:46ch;letter-spacing:0!important}
+/* 3 · THE CALENDAR — what members see (app-style panel, locked dates) */
+.ppuM-cal{padding:104px var(--gut);background:var(--cream)}
+.ppuM-cal__in{max-width:1180px;margin:0 auto}
+.ppuM-cal__head{max-width:760px;margin:0 auto 48px;display:flex;flex-direction:column;align-items:center;gap:18px;text-align:center}
+.ppuM-cal__head .ppuH-p{text-align:center;max-width:58ch}
+.ppuM-panel{--pink:#E8A096;background:#fff;border:1px solid rgba(45,45,45,.1);border-radius:24px;box-shadow:0 40px 90px -50px rgba(0,0,0,.4);overflow:hidden;font-family:var(--ui,"Inter",system-ui,sans-serif)}
+.ppuM-panel__bar{display:flex;align-items:center;gap:10px;padding:14px 20px;border-bottom:1px solid rgba(45,45,45,.1);background:#FBFAF8}
+.ppuM-panel__dot{width:9px;height:9px;border-radius:50%;background:rgba(45,45,45,.16);flex:none}
+.ppuH .ppuM-panel__t{font:600 13px/1 "Inter",system-ui,sans-serif!important;color:var(--ink)!important;letter-spacing:0!important;margin-left:6px!important}
+.ppuH .ppuM-panel__y{margin-left:auto!important;font:500 12px/1 "Inter",system-ui,sans-serif!important;color:var(--soft)!important;letter-spacing:.06em!important;text-transform:uppercase}
+.ppuM-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(45,45,45,.1)}
+.ppuM-mo{background:#fff;padding:16px 16px 18px;min-height:112px;display:flex;flex-direction:column;gap:9px}
+.ppuH .ppuM-mo__n{font:600 11px/1 "Inter",system-ui,sans-serif!important;letter-spacing:.1em!important;text-transform:uppercase;color:var(--soft)!important;margin:0!important}
+.ppuM-chip{display:inline-flex;align-items:center;gap:7px;border-radius:9px;padding:8px 10px;font:600 12.5px/1.15 "Inter",system-ui,sans-serif;width:100%}
+.ppuM-chip--pub{background:var(--ink);color:#fff}
+.ppuM-chip--pub small{font-weight:500;opacity:.7;margin-left:auto;font-size:10.5px;letter-spacing:.04em;text-transform:uppercase}
+.ppuM-chip--mem{background:var(--blush);color:var(--ink)}
+.ppuM-chip--mem b{filter:blur(4.5px);-webkit-filter:blur(4.5px);font-weight:600;user-select:none}
+.ppuM-chip--mem svg{width:12px;height:12px;flex:none;margin-left:auto;opacity:.75}
+.ppuM-panel__foot{display:flex;flex-wrap:wrap;align-items:center;gap:10px 22px;padding:16px 20px;border-top:1px solid rgba(45,45,45,.1);background:#FBFAF8}
+.ppuH .ppuM-key{display:inline-flex;align-items:center;gap:8px;font:500 12px/1.3 "Inter",system-ui,sans-serif!important;color:var(--soft)!important;letter-spacing:0!important;margin:0!important}
+.ppuM-key i{width:14px;height:14px;border-radius:4px;flex:none;font-style:normal}
+.ppuM-key i.pub{background:var(--ink)}.ppuM-key i.mem{background:var(--blush)}
+.ppuH .ppuM-cal__note{text-align:center;margin:22px auto 0!important;font:400 13px/1.6 var(--mono)!important;color:var(--soft)!important;max-width:60ch}
 
-/* 5 · TEAM — the homepage section */
-.ppuH-team{padding:96px 0 0}
-.ppuH-team__head{max-width:980px;margin:0 auto 56px;padding:0 var(--gut);display:flex;flex-direction:column;align-items:center;gap:22px;text-align:center}
-.ppuH-team__statement{font:400 clamp(34px,4.4vw,60px)/1.12 var(--serif)!important;color:var(--ink)!important;letter-spacing:-.01em!important;text-wrap:balance}
-.ppuH-team__statement em{font-style:italic;white-space:nowrap}
-.ppuH-hl{position:relative;z-index:0;padding:0 .06em;white-space:nowrap}
-.ppuH-hl::before{content:"";position:absolute;left:0;right:0;top:.14em;bottom:.04em;background:var(--blush);border-radius:4px;z-index:-1;transform:scaleX(0);transform-origin:left center;transition:transform .9s cubic-bezier(.2,.7,.2,1) .25s}
-.ppuH-hl.on::before{transform:scaleX(1)}
-.ppuH-tmsup{font-size:.38em!important;line-height:0;vertical-align:baseline;position:relative;top:-1.1em;margin-left:.08em;font-family:var(--serif)!important;color:var(--ink)!important}
-.ppuH-rail{overflow:hidden}
-.ppuH-rail__track{display:flex;width:max-content;animation:ppuHrail 80s linear infinite}
-.ppuH-rail:hover .ppuH-rail__track{animation-play-state:paused}
-.ppuH-rail__set{display:flex;flex:none}
-.ppuH-tm{width:clamp(220px,19vw,300px);flex:none}
-.ppuH-tm img{display:block;width:100%;aspect-ratio:2/3;object-fit:cover;background:#eceae6}
-@keyframes ppuHrail{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-.ppuH-rail img{display:block}
-
-/* 6 · PORTFOLIO — the homepage strip, with the four Studio Rules as black cards */
-.ppuH-port{background:var(--paper);padding:104px 0 0;overflow:hidden}
-.ppuH-port__head{max-width:900px;margin:0 auto 56px;padding:0 var(--gut);display:flex;flex-direction:column;align-items:center;text-align:center;gap:28px}
-.ppuH-port__h{font:400 clamp(42px,5.4vw,78px)/1.04 var(--serif)!important;color:var(--ink)!important;letter-spacing:-.01em!important;text-transform:none!important;text-wrap:balance}
-.ppuH-port__h em{font-style:italic}
-.ppuH-port__strip{position:relative;overflow:hidden;cursor:grab;touch-action:pan-y;user-select:none;-webkit-user-select:none}
-.ppuH-port__strip.is-drag{cursor:grabbing}
-.ppuH-port__track{display:flex;width:max-content;will-change:transform}
-.ppuH-port__img{display:block;height:clamp(340px,34vw,480px);width:auto;aspect-ratio:2/3;object-fit:cover;background:#f1efeb;-webkit-user-drag:none;pointer-events:none}
-.ppuJ-rule{height:clamp(340px,34vw,480px);aspect-ratio:2/3;flex:none;position:relative;background:#1A1A1A;color:#fff;container-type:inline-size;margin:0;pointer-events:none}
-.ppuJ-rule__in{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;padding:13cqw 11cqw}
-.ppuJ-rule__num{display:block;font:600 5.2cqw/1 var(--mono)!important;letter-spacing:.16em!important;text-transform:uppercase;opacity:.85;color:#fff!important}
-.ppuJ-rule blockquote{font:400 15cqw/1.08 var(--serif)!important;color:#fff!important;letter-spacing:-.005em;text-wrap:balance;margin:7cqw 0 0!important;padding:0!important;border:0!important;background:none!important;quotes:none}
-.ppuJ-rule blockquote::before,.ppuJ-rule blockquote::after{content:none!important}
-.ppuJ-rule figcaption{margin-top:9cqw;font:600 4.8cqw/1.3 var(--mono)!important;letter-spacing:.16em!important;text-transform:uppercase;opacity:.85;color:#fff!important}
-.ppuH-port__nav{position:absolute;top:50%;transform:translateY(-50%);width:46px;height:46px;border-radius:50%;border:1px solid rgba(45,45,45,.35);background:rgba(255,255,255,.6);color:var(--ink);display:grid;place-items:center;cursor:pointer;opacity:.75;transition:opacity .2s,background .2s;-webkit-appearance:none;appearance:none;padding:0!important;z-index:2}
-.ppuH-port__nav:hover{opacity:1;background:rgba(255,255,255,.9)}
-.ppuH-port__nav--prev{left:18px}.ppuH-port__nav--next{right:18px}
-.ppuH-port__nav svg{width:14px;height:14px;display:block}
+/* 3b · WHY — the repeat-customer case, four reasons */
+.ppuM-why{padding:104px var(--gut)}
+.ppuM-why__in{max-width:1080px;margin:0 auto}
+.ppuM-why__head{max-width:720px;margin:0 0 56px;display:flex;flex-direction:column;align-items:flex-start;gap:20px}
+.ppuM-why__h{font:400 clamp(40px,5vw,68px)/1.04 var(--serif)!important;color:var(--ink)!important;letter-spacing:-.01em!important;text-transform:none!important;text-wrap:balance}
+.ppuM-r{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:rgba(45,45,45,.14);border-top:1px solid rgba(45,45,45,.14);border-bottom:1px solid rgba(45,45,45,.14)}
+.ppuM-r > div{background:var(--paper);padding:30px 30px 32px;display:flex;flex-direction:column;gap:10px}
+.ppuM-r h3{font:400 27px/1.15 var(--serif)!important;color:var(--ink)!important;letter-spacing:0!important;text-transform:none!important}
+.ppuM-r p{font:400 14.5px/1.7 var(--mono)!important;color:var(--text)!important;letter-spacing:0!important;max-width:42ch}
+.ppuH .ppuM-r__n{font:600 11px/1 var(--mono)!important;letter-spacing:.16em!important;text-transform:uppercase;color:var(--soft)!important}
 
 /* 7 · FAQ — the homepage quick-FAQ layout */
 .ppuH-faq{padding:104px var(--gut)}
@@ -245,6 +228,15 @@ font:600 18px/18px var(--mono)!important;letter-spacing:1.8px!important;text-tra
 .ppuJ-ev b{font-size:28px!important}
 .ppuJ-ev span{font-size:10px!important;letter-spacing:.1em!important}
 .ppuJ-assure{grid-template-columns:1fr;gap:9px;margin-top:20px!important;max-width:360px}
+.ppuM-cal{padding:64px var(--gut)}
+.ppuM-cal__head{margin-bottom:32px;gap:14px}
+.ppuM-grid{grid-template-columns:repeat(2,1fr)}
+.ppuM-mo{min-height:96px;padding:13px 13px 15px}
+.ppuM-why{padding:64px var(--gut)}
+.ppuM-why__head{margin-bottom:36px;gap:16px}
+.ppuM-r{grid-template-columns:minmax(0,1fr)}
+.ppuM-r > div{padding:24px 22px 26px}
+.ppuM-r h3{font-size:24px!important}
 .ppuM-pr{grid-template-columns:minmax(0,1fr);row-gap:28px}
 .ppuM-top{grid-template-columns:minmax(0,1fr)}
 .ppuM-cards{grid-template-columns:minmax(0,1fr)}
@@ -286,9 +278,9 @@ font:600 18px/18px var(--mono)!important;letter-spacing:1.8px!important;text-tra
 <div class="ppuH-hero__tint"></div>
 <div class="ppuH-hero__in">
 <img class="ppuJ-hero__logo" src="https://axis-ppu.vercel.app/ppu/logo-white.png" alt="Personality Pop-Up" loading="eager" fetchpriority="high">
-<p class="ppuH-hero__eyebrow">Membership</p>
-<h1 class="ppuH-hero__h">A session every year.<br>Your spot guaranteed.</h1>
-<p class="ppuJ-hero__dates"><span>Any pop-up, any city</span><i>·</i><span>Book first</span></p>
+<p class="ppuH-hero__eyebrow">Annual Membership</p>
+<h1 class="ppuH-hero__h">Never miss<br>another year.</h1>
+<p class="ppuJ-hero__dates"><span>Your spot, held</span><i>·</i><span>The full calendar</span><i>·</i><span>Today’s price, locked</span></p>
 <div class="ppuH-hero__ctas">
 <a class="ppuH-btn ppuH-btn--white" href="#ppuM-join" data-cta>👉 Become a Member</a>
 <a class="ppuH-hero__trust" href="https://www.google.com/search?q=Personality+Pop-Up#lrd=0x89d5209ec3b5b81:0x332a7fee85847322,1" target="_blank" rel="noopener"><span class="st" aria-hidden="true">★★★★★</span>5.0 · <span data-ppu-review-count>418+</span> Google reviews</a>
@@ -296,16 +288,50 @@ font:600 18px/18px var(--mono)!important;letter-spacing:1.8px!important;text-tra
 </div>
 </section>
 
-<!-- 2 · JOIN -->
+<!-- 2 · THE CALENDAR -->
+<section class="ppuH-sec ppuM-cal" aria-label="What members see">
+<div class="ppuM-cal__in">
+<div class="ppuM-cal__head">
+<p class="ppuH-eyebrow">What members see</p>
+<h2 class="ppuH-h">The whole year, not one weekend.</h2>
+<p class="ppuH-p">We hold far more dates in a city than we ever announce. Members open the calendar, see all of them, and pick first. Everyone else waits for the one public weekend, and it usually sells out in days.</p>
+</div>
+<div class="ppuM-panel" aria-label="Example member calendar">
+<div class="ppuM-panel__bar"><span class="ppuM-panel__dot"></span><span class="ppuM-panel__dot"></span><span class="ppuM-panel__dot"></span><span class="ppuM-panel__t">Your calendar</span><span class="ppuM-panel__y">All dates near you</span></div>
+<div class="ppuM-grid" id="ppuM-cal"></div>
+<div class="ppuM-panel__foot"><span class="ppuM-key"><i class="pub"></i>Public weekend, open to everyone</span><span class="ppuM-key"><i class="mem"></i>Held for members, yours to pick</span></div>
+</div>
+<p class="ppuM-cal__note">Illustration of one city’s year. How often we visit, and when, is different in every city.</p>
+</div>
+</section>
+
+<!-- 3 · WHY -->
+<section class="ppuH-sec ppuM-why" aria-label="Why members join">
+<div class="ppuM-why__in">
+<div class="ppuM-why__head">
+<p class="ppuH-eyebrow">Why families join</p>
+<h2 class="ppuM-why__h">You already know <em class="ppuH-hl">how fast it goes.</em></h2>
+<p class="ppuH-p">Open last year’s gallery. That version of them is already gone. A membership makes the next one automatic, and the one after that, so the only thing you have to do is show up.</p>
+</div>
+<div class="ppuM-r">
+<div><span class="ppuM-r__n">01</span><h3>Your spot is held</h3><p>We set member spots aside at every date before a single one goes public. No refreshing, no racing, no sold out.</p></div>
+<div><span class="ppuM-r__n">02</span><h3>The calendar opens up</h3><p>Sign in and every date near you is there, months ahead. Plan around a birthday, a lost tooth, the summer they finally look grown.</p></div>
+<div><span class="ppuM-r__n">03</span><h3>We do the remembering</h3><p>Reminders before, gallery after. Something comes up, move your time in a few taps. No deposit, no balance, no phone call.</p></div>
+<div><span class="ppuM-r__n">04</span><h3>Today’s price, locked</h3><p>Session prices go up. Yours does not, for as long as you stay a member.</p></div>
+</div>
+</div>
+</section>
+
+<!-- 4 · PRICING -->
 <section class="ppuH-sec ppuJ-book" id="ppuM-join" aria-label="Become a member">
 <div class="ppuM-pr">
 <div class="ppuM-pr__copy">
-<p class="ppuH-eyebrow">Membership</p>
-<h2 class="ppuH-h">One membership. A session every year.</h2>
-<p class="ppuH-p">Pick how many sessions a year your family needs. Your membership is good at any Personality Pop-Up, in any city, and you book first.</p>
+<p class="ppuH-eyebrow">Plans</p>
+<h2 class="ppuH-h">Pick how many sessions a year.</h2>
+<p class="ppuH-p">One session covers 1 or 2 kids. Your membership is good at any Personality Pop-Up, in any city.</p>
 <ul class="ppuM-checks">
 <li>Same 15-minute session, 25+ images in color and black &amp; white</li>
-<li>Good at any pop-up, in any city. Book 48 hours before anyone else</li>
+<li>Book 48 hours before anyone else, every visit</li>
 <li>Unused sessions roll over. Cancel anytime</li>
 </ul>
 <p class="ppuM-rise"><b>Session prices are going up</b> and member spots at each pop-up are limited. Members lock in today’s price for as long as they stay.</p>
@@ -320,11 +346,11 @@ font:600 18px/18px var(--mono)!important;letter-spacing:1.8px!important;text-tra
 </div>
 <div class="ppuM-ok" id="ppuM-done" hidden>
 <h3>You’re a member. 🎉</h3>
-<p>Welcome to the family. Here’s what happens next:</p>
+<p>Welcome back. Here’s what happens next:</p>
 <ol>
 <li><b>1</b><span>Your receipt is on its way, and your sessions are on your account.</span></li>
-<li><b>2</b><span>The moment dates are set near you, you’ll get a text and an email with your private booking link, <b>48 hours before anyone else</b>.</span></li>
-<li><b>3</b><span>Pick your time. No deposit, no balance. Then come play.</span></li>
+<li><b>2</b><span>You’ll get your sign-in link, and the full calendar opens up to you.</span></li>
+<li><b>3</b><span>Pick your times for the year. We’ll remind you when each one comes around.</span></li>
 </ol>
 </div>
 </div>
@@ -451,72 +477,27 @@ font:600 18px/18px var(--mono)!important;letter-spacing:1.8px!important;text-tra
   </script>
 
 <div class="ppuH ppuJ ppuM">
-<!-- 4 · HOW IT WORKS -->
-<section class="ppuH-sec ppuH-exp" id="ppuM-how">
-<div class="ppuH-exp__in">
-<div class="ppuH-exp__copy">
-<p class="ppuH-eyebrow">Why members love it</p>
-<h2 class="ppuH-exp__title">Never miss a year.</h2>
-<p class="ppuH-p">Our pop-ups sell out fast, and every year we hear the same thing: “I missed it.” Members don’t. Your spot is held before booking opens, and you simply pick a time.</p>
-<ol class="ppuJ-steps">
-<li><b>01</b><div><h3>Join in a minute</h3><p>Pick how many sessions a year and how you’d like to pay. That’s it.</p></div></li>
-<li><b>02</b><div><h3>Book first</h3><p>When dates drop near you, members get the first 48 hours. No deposit, no balance. It’s already covered.</p></div></li>
-<li><b>03</b><div><h3>Come play, every year</h3><p>Same photographers, same simple 15 minutes. The gallery grows a year at a time.</p></div></li>
-</ol>
-<a class="ppuH-btn" href="#ppuM-join" data-cta>👉 Become a Member</a>
-<div class="ppuH-facts">
-<div class="ppuH-fact"><b>18+</b><span>Years behind<br>the camera</span></div>
-<div class="ppuH-fact"><b>2013</b><span>Personality<br>Portraits began</span></div>
-<div class="ppuH-fact"><b data-ppu-review-count>418+</b><span>Five-star<br>Google reviews</span></div>
-</div>
-</div>
-<div class="ppuH-exp__vid"><iframe src="https://player.vimeo.com/video/1174234823?title=0&amp;byline=0&amp;portrait=0&amp;dnt=1" title="What to Expect at Personality Pop-Up" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>
-</div>
-</section>
-
-<!-- 5 · TEAM -->
-<section class="ppuH-sec ppuH-team" aria-label="Our team">
-<div class="ppuH-team__head">
-<p class="ppuH-eyebrow">The ladies behind the lens</p>
-<h2 class="ppuH-team__statement">We are a boutique team of <em>all-female</em> traveling kid photographers, certified in the <span class="ppuH-hl">Personality Method</span><sup class="ppuH-tmsup">™</sup></h2>
-</div>
-<div class="ppuH-rail"><div class="ppuH-rail__track" id="ppuM-rail"></div></div>
-</section>
-
-<!-- 6 · PORTFOLIO + STUDIO RULES -->
-<section class="ppuH-sec ppuH-port" aria-label="Portfolio">
-<div class="ppuH-port__head">
-<h2 class="ppuH-port__h">Less Perfection.<br>More <em class="ppuH-hl">Personality.</em></h2>
-</div>
-<div class="ppuH-port__strip" id="ppuM-strip">
-<div class="ppuH-port__track" id="ppuM-strip-track"></div>
-<button class="ppuH-port__nav ppuH-port__nav--prev" type="button" aria-label="Previous photos"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 4 L7 12 L15 20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-<button class="ppuH-port__nav ppuH-port__nav--next" type="button" aria-label="Next photos"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 4 L17 12 L9 20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-</div>
-</section>
-
-<!-- 7 · FAQ -->
+<!-- 5 · FAQ -->
 <section class="ppuH-sec ppuH-faq" id="ppuM-faq" aria-label="Before you join">
 <div class="ppuH-faq__in">
 <div class="ppuH-faq__side">
-<p class="ppuH-eyebrow">Still deciding?</p>
+<p class="ppuH-eyebrow">Questions</p>
 <h2 class="ppuH-h">Before you join.</h2>
 <a class="ppuH-link" href="mailto:hello@personalitypopup.com?subject=Membership">Ask us anything →</a>
 </div>
 <div class="ppuH-faq__list">
-<details class="ppuH-q" open><summary>What do I get?<i class="ppuH-ico"></i></summary><div class="ppuH-q__a"><p>The number of sessions you choose, every year, at today’s member price, locked in for as long as you stay. Each session is the same one everyone else books: 15 minutes with a certified Personality Method™ photographer, 25+ high-resolution images in color and black &amp; white, and a private gallery to download, print and share. Plus a <b>guaranteed spot</b> and <b>first access</b> to times at any Personality Pop-Up, in any city.</p></div></details>
-<details class="ppuH-q"><summary>What if I don’t use a session this year?<i class="ppuH-ico"></i></summary><div class="ppuH-q__a"><p>It rolls over. Unused sessions stay on your account for as long as you’re a member, so you can use two next year, or save one for a sibling. Nothing expires while your membership is active.</p></div></details>
-<details class="ppuH-q"><summary>How many sessions should I choose?<i class="ppuH-ico"></i></summary><div class="ppuH-q__a"><p>One session covers 1 or 2 kids, so most families choose <b>one per visit</b>. Choose Family for two sessions: siblings on their own, or two visits a year. Need three or four? Change the quantity at checkout. You can add sessions any time.</p></div></details>
-<details class="ppuH-q"><summary>How do I book as a member?<i class="ppuH-ico"></i></summary><div class="ppuH-q__a"><p>When dates are set near you, you get a text and an email with a private booking link, <b>48 hours before booking opens to everyone else</b>. Pick your time like any booking, except there’s no deposit and no balance. Your membership covers it.</p></div></details>
-<details class="ppuH-q"><summary>Yearly or monthly?<i class="ppuH-ico"></i></summary><div class="ppuH-q__a"><p>Same membership, same sessions. <b>Yearly</b> is <span data-m="yearly">$570</span> per session, paid once a year (that’s <span data-m="yearlyMo">$47.50</span> a month). <b>Monthly</b> is <span data-m="monthly">$50</span> per session each month, so nothing big ever hits your card. Both renew automatically, and you can switch or cancel any time.</p></div></details>
-<details class="ppuH-q"><summary>Will my price go up?<i class="ppuH-ico"></i></summary><div class="ppuH-q__a"><p>No. Session prices go up over time, but your member price is locked for as long as your membership stays active. That’s the main reason families join now.</p></div></details>
-<details class="ppuH-q"><summary>Can I cancel?<i class="ppuH-ico"></i></summary><div class="ppuH-q__a"><p>Yes, any time, from the link in your receipt or by emailing us. Nothing more is charged, and any session you’ve already paid for stays yours to use for 12 months. You keep every image you’ve received.</p></div></details>
-<details class="ppuH-q"><summary>Which cities?<i class="ppuH-ico"></i></summary><div class="ppuH-q__a"><p>All of them. Your sessions are good at any Personality Pop-Up, wherever we are. At checkout we ask which city you usually visit us in, so we can text you first when those dates drop. <a class="ppuH-link" style="font-size:13px!important" href="https://www.personalitypopup.com/book/">See where we go →</a></p></div></details>
+<details class="ppuH-q" open><summary>We’ve booked with you before. What changes?<i class="ppuH-ico"></i></summary><div class="ppuH-q__a"><p>The session itself is exactly the same one you already love. What changes is everything around it: a spot held for you at every date, the full calendar open months ahead, no deposit and no balance to pay when you book, and reminders so it never sneaks up on you.</p></div></details>
+<details class="ppuH-q"><summary>What if we don’t use a session that year?<i class="ppuH-ico"></i></summary><div class="ppuH-q__a"><p>It rolls over. Unused sessions stay on your account for as long as you’re a member, so you can use two next year or save one for a sibling. Nothing expires while your membership is active.</p></div></details>
+<details class="ppuH-q"><summary>How many sessions should we pick?<i class="ppuH-ico"></i></summary><div class="ppuH-q__a"><p>One session covers 1 or 2 kids, so most families pick one a year. Pick two if you want each child photographed on their own, or if you’d rather catch them twice, once in spring and once before the holidays. Need three or four? Change the quantity at checkout.</p></div></details>
+<details class="ppuH-q"><summary>How does booking work?<i class="ppuH-ico"></i></summary><div class="ppuH-q__a"><p>You sign in and the calendar is there. Pick your weekend and your 15-minute time, months ahead if you like. Member spots open <b>48 hours before</b> any date goes public, and your membership already covers the session, so there’s nothing to pay at booking. Change or move your time whenever you need to.</p></div></details>
+<details class="ppuH-q"><summary>Will my price go up?<i class="ppuH-ico"></i></summary><div class="ppuH-q__a"><p>No. Session prices rise over time, but your member price is locked for as long as your membership stays active.</p></div></details>
+<details class="ppuH-q"><summary>Can I cancel?<i class="ppuH-ico"></i></summary><div class="ppuH-q__a"><p>Any time, from the link in your receipt or by emailing us. Nothing more is charged, and any session you’ve already paid for stays yours to use for 12 months. You keep every image you’ve ever received.</p></div></details>
+<details class="ppuH-q"><summary>Which cities does it work in?<i class="ppuH-ico"></i></summary><div class="ppuH-q__a"><p>All of them. Your sessions are good at any Personality Pop-Up, wherever we are. At checkout we ask which city you usually see us in, so we can tell you first when those dates open. <a class="ppuH-link" style="font-size:13px!important" href="https://www.personalitypopup.com/book/">See where we go →</a></p></div></details>
 </div>
 </div>
 </section>
 
-<!-- 8 · CLOSING BAND -->
+<!-- 6 · CLOSING BAND -->
 <section class="ppuH-sec ppuH-close" aria-label="Become a member">
 <div class="ppuH-close__media" aria-hidden="true">
 <img class="ppuH-close__poster" src="https://i.vimeocdn.com/video/1827227214-fd9dca692218d62fbfa38adcef0da68f3c94ff9a4de2fd839de8e4465d183006-d_1600" alt="" loading="lazy">
@@ -525,7 +506,7 @@ font:600 18px/18px var(--mono)!important;letter-spacing:1.8px!important;text-tra
 </div>
 <div class="ppuH-close__in">
 <h2 class="ppuH-close__h">They won’t be little forever.</h2>
-<p class="ppuJ-close__sub">A session every year · Your spot guaranteed</p>
+<p class="ppuJ-close__sub">A session every year · Your spot held · Today’s price, locked</p>
 <a class="ppuH-btn ppuH-btn--white" href="#ppuM-join" data-cta>👉 Become a Member</a>
 </div>
 </section>
@@ -550,10 +531,6 @@ var P='https://images-pw.pixieset.com/elementfield/1zqrnP1/', S='https://images-
 /* hero: 12 tiles, two real black & white files each (no CSS filters anywhere) */
 var HERO=[['251101-PPU-NEWPORT-BEACH-1156-bf4cf4b5','260627-PPU-MIAMI-1214-f01479eb'],['260613-PPU-ALPHARETTA-0810-2b2ef79c','260124-PPU-LOS-ALTOS-1272-515ef658'],['260124-PPU-LOS-ALTOS-2294-d4fca44b','260124-PPU-LOS-ALTOS-3386-8a8dbcd4'],['260221-PPU-BROOKLYN-0748-d6f48358','PERSONALITY-POP-UP-LOS-ALTOS-1762-3f41675f'],['260124-PPU-LOS-ALTOS-1810-264b26b8','260627-PPU-SANTA-CLARA-1910-c6ab9885'],['260627-PPU-SANTA-CLARA-2292-676ede95','240709-PP-CHARLOTTE-0020-a456c192'],['260124-PPU-LOS-ALTOS-0638-a44eb833','PERSONALITY-POP-UP-ANN-ARBOR-0330-973146a4'],['260627-PPU-MIAMI-2182-1533bfac','PERSONALITY-POP-UP-LOS-ALTOS-1032-9e84214f'],['260627-PPU-MIAMI-3184-7de35a7d','PPU-GREENVILLE-0966_websize-6e988994'],['260314-PPU-ORLANDO-2504-548885fe','PERSONALITY-POP-UP-LOS-ALTOS-0656-6c33a3bc'],['PERSONALITY-POP-UP-IRVINE-DAY2-0673copy-3feeedad','PERSONALITY-POP-UP-CHICAGO-1162-33f9735a'],['260328-PPU-LONG-BEACH-0848-16c9231f','PERSONALITY-POP-UP-CLEVELAND-1032-83c57c89']];
 var DELAYS=[0,7,2,9,4,11,6,1,8,3,10,5];
-var TEAM=[S+'DDyzXZ/PERSONALITY-POP-UP-TEAM-0032-c67d6e2f-1500.jpg',S+'q5M4eb/PERSONALITY-POP-UP-TEAM-0014-40605ba7-1500.jpg',S+'a5V9qR/PERSONALITY-POP-UP-TEAM-0039-c022b62f-1500.jpg',S+'7n5VO1/PERSONALITY-POP-UP-TEAM-0026-1489f9f3-1500.jpg',S+'zol1xZ/PERSONALITY-POP-UP-TEAM-0021-fdc16a88-1500.jpg','https://raw.githubusercontent.com/jonathanconnolly/session-crm/main/public/ppu/team/photographer-11.jpg',S+'KDLzWk/PERSONALITY-POP-UP-TEAM-0002-218c0477-1500.jpg',S+'3a5Wdq/PERSONALITY-POP-UP-TEAM-0019-9a361888-1500.jpg',S+'JDnRjo/PERSONALITY-POP-UP-TEAM-0016-3164e6f6-1500.jpg',S+'3a5y13/PERSONALITY-POP-UP-TEAM-0030-bb2d549f-1500.jpg',S+'ODO3Jk/PERSONALITY-POP-UP-TEAM-0008-e4359385-1500.jpg'];
-/* the homepage strip: untouched photos alternating colour / black & white, plus the four Studio Rules */
-var E='https://images-pw.pixieset.com/elementfield/';
-var STRIP=[[E+'qkvXpbp/251108-PPU-CHICAGO-0353-b7ff8ccd-1000.jpg','Girl in a tan sweater resting her chin on her hand'],[E+'zvm347r/PERSONALITY-POP-UP-CLEVELAND-1032-ecf6ae63-1000.jpg','Toddler mid-laugh, black and white'],{n:1,q:'No<br>perfect kids allowed.'},[E+'1zqrnP1/260315-PPU-LONDON-2533-458f3301-1000.jpg','Boy in a denim jacket with a sideways smile'],[E+'1zqrnP1/260329-PPU-FT-WORTH-0686-91b3d25f-1000.jpg','Girl laughing with her hands on her face, black and white'],[E+'qkvXpbp/260411-PPU-PHOENIX-0261-33e9978c-1000.jpg','Girl in red crouching with her arms crossed'],{n:2,q:'Don’t say cheese.'},[E+'bOeql4M/251018-PPU-SALT-LAKE-CITY-1298-5160b1bf-1000.jpg','Boy in round glasses pressing a finger to his nose, black and white'],[E+'1zqrnP1/260328-PPU-DALLAS-0693-1f13d1e1-1000.jpg','Boy in a white polo laughing'],[E+'zvm347r/PERSONALITY-POP-UP-CHICAGO-1162-2bd96d8f-1000.jpg','Girl with curly hair laughing, black and white'],{n:3,q:'No forced poses.'},[E+'ZQrnMKM/260307-PPU-CHARLESTON-0868-14911c28-1000.jpg','Blonde girl crouching and smiling'],[E+'1zqrnP1/260321-PPU-CHARLOTTE-0702-99d90960-1000.jpg','Toddler in a cap that says DUDE, black and white'],[E+'1zqrnP1/251108-PPU-CHICAGO-3423-9c2f0b67-1000.jpg','Boy in a beanie with his hands behind his head'],{n:4,q:'Let them be them.'},[E+'ZQrnMKM/260131-PPU-LA-JOLLA-2058-f7dfd718-1000.jpg','Girl with her hair flying, black and white']];
 
 function $(id){return document.getElementById(id)}
 function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
@@ -566,37 +543,24 @@ setAll('yearly',esc(money(PRICE.annual)));setAll('monthly',esc(money(PRICE.month
 
 /* hero grid */
 $('ppuM-grid').innerHTML=HERO.map(function(p,i){return '<div class="ppuH-tile" style="--d:-'+DELAYS[i]+'s"><img src="'+P+p[0]+'-1000.jpg" alt=""'+(i<6?' fetchpriority="high"':'')+'><img src="'+P+p[1]+'-1000.jpg" alt="" loading="lazy"></div>'}).join('');
-/* team rail */
-(function(){var set=TEAM.map(function(u){return '<figure class="ppuH-tm"><img src="'+u+'" alt="Personality Pop-Up photographer" loading="lazy"></figure>'}).join('');$('ppuM-rail').innerHTML='<div class="ppuH-rail__set">'+set+'</div><div class="ppuH-rail__set" aria-hidden="true">'+set.replace(/alt="[^"]*"/g,'alt=""')+'</div>'})();
+/* the member calendar: one public weekend, the rest held for members (blurred) */
+(function(){
+var MONTHS=['January','February','March','April','May','June','July','August','September','October','November','December'];
+var PUBLIC=9;                                  /* the one weekend everyone sees */
+var MEMBER=[1,3,4,6,9,10];                     /* months that also hold member dates */
+var LOCK='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>';
+var el=$('ppuM-cal'); if(!el) return;
+el.innerHTML=MONTHS.map(function(m,i){
+ var c='';
+ if(i===PUBLIC) c+='<span class="ppuM-chip ppuM-chip--pub">One weekend<small>Public</small></span>';
+ if(MEMBER.indexOf(i)>-1) c+='<span class="ppuM-chip ppuM-chip--mem"><b>Fri 14 \u2013 Sun 16</b>'+LOCK+'</span>';
+ return '<div class="ppuM-mo"><p class="ppuM-mo__n">'+m+'</p>'+c+'</div>';
+}).join('');
+})();
 /* blush highlight draws in on scroll (homepage behaviour) */
 window.ppuHl=function(root){[].forEach.call((root||document).querySelectorAll('.ppuH-hl:not(.on)'),function(el){if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){el.classList.add('on');io.disconnect()}})},{threshold:.6});io.observe(el)}else{el.classList.add('on')}})};
 window.ppuHl(document);
 
-/* portfolio strip: photos + Studio Rules cards, auto-scroll, arrows, drag (homepage logic) */
-(function(){
-var strip=$('ppuM-strip'),track=$('ppuM-strip-track');
-function item(x){if(Array.isArray(x))return '<img class="ppuH-port__img" src="'+x[0]+'" width="1000" height="1500" alt="'+esc(x[1])+'" loading="lazy" draggable="false">';
-return '<figure class="ppuJ-rule"><div class="ppuJ-rule__in"><span class="ppuJ-rule__num">No. '+x.n+'</span><blockquote>'+x.q+'</blockquote><figcaption>Studio Rules</figcaption></div></figure>'}
-var set=STRIP.map(item).join('');
-track.innerHTML=set+set.replace(/alt="[^"]*"/g,'alt="" aria-hidden="true"');
-var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-var x=0,speed=reduce?0:42,last=null,hold=false,setW=0,drag={on:false,x0:0,xs:0,moved:0},holdTimer=null;
-function measure(){setW=track.scrollWidth/2}
-function render(){if(setW){x=((x%setW)+setW)%setW}track.style.transform='translate3d('+(-x)+'px,0,0)'}
-function tick(t){if(last!==null&&!hold&&!drag.on){x+=speed*Math.min(50,t-last)/1000}last=t;render();requestAnimationFrame(tick)}
-function pause(ms){hold=true;clearTimeout(holdTimer);holdTimer=setTimeout(function(){hold=false},ms)}
-function step(dir){var img=track.querySelector('img');var w=img?img.getBoundingClientRect().width:320;var from=x,to=x+dir*w*2,t0=performance.now(),D=560;pause(2200);
-(function anim(now){var p=Math.min(1,(now-t0)/D);var e=1-Math.pow(1-p,3);x=from+(to-from)*e;render();if(p<1)requestAnimationFrame(anim)})(t0)}
-strip.querySelector('.ppuH-port__nav--prev').addEventListener('click',function(){step(-1)});
-strip.querySelector('.ppuH-port__nav--next').addEventListener('click',function(){step(1)});
-strip.addEventListener('pointerdown',function(e){if(e.target.closest('.ppuH-port__nav'))return;drag.on=true;drag.x0=e.clientX;drag.xs=x;drag.moved=0;strip.classList.add('is-drag');try{strip.setPointerCapture(e.pointerId)}catch(err){}});
-strip.addEventListener('pointermove',function(e){if(!drag.on)return;var dx=e.clientX-drag.x0;drag.moved=Math.max(drag.moved,Math.abs(dx));x=drag.xs-dx;render()});
-function endDrag(){if(!drag.on)return;drag.on=false;strip.classList.remove('is-drag');pause(1500)}
-strip.addEventListener('pointerup',endDrag);strip.addEventListener('pointercancel',endDrag);strip.addEventListener('lostpointercapture',endDrag);
-strip.addEventListener('mouseenter',function(){hold=true;clearTimeout(holdTimer)});strip.addEventListener('mouseleave',function(){hold=false});
-window.addEventListener('resize',measure);[].forEach.call(track.querySelectorAll('img'),function(i){i.addEventListener('load',measure)});
-measure();requestAnimationFrame(tick);
-})();
 
 /* buttons drop to the join box; sticky CTA on phones once the hero is gone and the box isn't on screen */
 [].forEach.call(document.querySelectorAll('a[href="#ppuM-join"]'),function(a){a.addEventListener('click',function(e){e.preventDefault();$('ppuM-join').scrollIntoView({behavior:'smooth',block:'start'})})});
