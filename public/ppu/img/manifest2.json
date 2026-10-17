@@ -130,5 +130,16 @@
    "480": 14322,
    "960": 97860
   }
+ },
+ {
+  "src": "https://raw.githubusercontent.com/jonathanconnolly/session-crm/main/public/ppu/team/photographer-11.jpg",
+  "base": "photographer-11",
+  "w": 1067,
+  "h": 1600,
+  "orig": 163866,
+  "sizes": {
+   "480": 28068,
+   "960": 90218
+  }
  }
 ]
