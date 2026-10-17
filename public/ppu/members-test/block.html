@@ -275,8 +275,8 @@ font:600 18px/18px var(--mono)!important;letter-spacing:1.8px!important;text-tra
 <div class="ppuH-hero__in">
 <img class="ppuJ-hero__logo" src="https://axis-ppu.vercel.app/ppu/logo-white.png" alt="Personality Pop-Up" loading="eager" fetchpriority="high">
 <p class="ppuH-hero__eyebrow">The Yearly</p>
-<h1 class="ppuH-hero__h">One portrait.<br>Every year.</h1>
-<p class="ppuJ-hero__dates"><span>Start the Tradition</span></p>
+<h1 class="ppuH-hero__h">They’ve changed<br>since last time.</h1>
+<p class="ppuJ-hero__dates"><span>One session a year, already paid for</span></p>
 <div class="ppuH-hero__ctas">
 <a class="ppuH-btn ppuH-btn--white" href="#ppuM-join" data-cta>👉 Start the Tradition</a>
 <a class="ppuH-hero__trust" href="https://www.google.com/search?q=Personality+Pop-Up#lrd=0x89d5209ec3b5b81:0x332a7fee85847322,1" target="_blank" rel="noopener"><span class="st" aria-hidden="true">★★★★★</span>5.0 · <span data-ppu-review-count>418+</span> Google reviews</a>
@@ -290,7 +290,7 @@ font:600 18px/18px var(--mono)!important;letter-spacing:1.8px!important;text-tra
 <div class="ppuM-pr__head">
 <p class="ppuH-eyebrow">How it works</p>
 <h2 class="ppuH-h">Set a little aside.</h2>
-<p class="ppuH-p">A small amount each month builds up as credit toward your session. Book whenever a date works, in any city. The money is yours either way — it never expires.</p>
+<p class="ppuH-p">A small amount each month builds up as credit toward your next session. Book whenever a date works, in any city. The money is yours either way — it never expires.</p>
 </div>
 
 <div class="ppuM-w" id="ppuM-w">
@@ -384,124 +384,6 @@ font:600 18px/18px var(--mono)!important;letter-spacing:1.8px!important;text-tra
 </section>
 </div>
 
-  <!-- 5. REVIEWS — shared ppuR slider v2 (pink, as on the homepage). Quotes come live from
-       session-crm/public/ppu-reviews.json; QUOTES below is only a fallback.
-       Same component as Home / About / Find Your City (see reviews-slider notes). -->
-  <style>
-    .ppuR{--r-ink:#2D2D2D;--r-paper:#FFFFFF;--r-blush:#FBDFD9;
-      --r-serif:"MADE Mirage","Orpheus Pro","Cormorant Garamond","DM Serif Display",Georgia,serif;
-      --r-mono:"Roboto Mono","Courier New",Courier,monospace;
-      --r-bg:var(--r-ink);--r-fg:var(--r-paper);--r-soft:rgba(255,255,255,.6);--r-line:rgba(255,255,255,.3);
-      box-sizing:border-box;width:100vw;margin-left:calc(50% - 50vw);background:var(--r-bg);color:var(--r-fg);
-      padding:64px 24px 68px;overflow:hidden;position:relative;display:flex;flex-direction:column;justify-content:center}
-    .ppuR__inner{width:100%}
-    .ppuR--pink{--r-bg:var(--r-blush);--r-fg:var(--r-ink);--r-soft:rgba(45,45,45,.62);--r-line:rgba(45,45,45,.3)}
-    .ppuR *,.ppuR *::before,.ppuR *::after{box-sizing:border-box;margin:0;padding:0}
-    .ppuR figure,.ppuR blockquote,.ppuR figcaption{border:0!important;background:none!important}
-    .ppuR [class*="animatable"],.ppuR.animatable{opacity:1!important;transform:none!important}
-    .ppuR__inner{max-width:1040px;margin:0 auto;display:grid;grid-template-columns:44px minmax(0,1fr) 44px;align-items:center;column-gap:clamp(16px,5vw,72px)}
-    .ppuR__mid{display:flex;flex-direction:column;align-items:center;gap:36px;min-width:0}
-    .ppuR__pill{display:inline-flex;align-items:center;gap:14px;background:#fff;color:var(--r-ink);border-radius:999px;padding:20px 32px;
-      font:600 15px/1 var(--r-mono);letter-spacing:.12em;text-transform:uppercase;white-space:nowrap;text-decoration:none;box-shadow:0 2px 10px rgba(0,0,0,.08);transition:transform .2s}
-    .ppuR__pill:hover{transform:translateY(-1px);color:var(--r-ink)!important;box-shadow:0 6px 22px rgba(0,0,0,.2)}
-    .ppuR__pill .st{font-size:18px;letter-spacing:.12em}
-    .ppuR__pill .sp{width:1px;height:18px;background:currentColor;opacity:.25}
-    .ppuR__pill svg{width:18px;height:18px;flex:none;display:block}
-    .ppuR__stage{display:grid;width:100%;max-width:720px}
-    .ppuR__slide{grid-area:1/1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;text-align:center;
-      opacity:0;visibility:hidden;transform:translateY(6px);transition:opacity .3s ease,transform .3s ease,visibility 0s .3s}
-    .ppuR__slide.on{opacity:1;visibility:visible;transform:none;transition:opacity .55s ease .3s,transform .55s ease .3s,visibility 0s .3s}
-    .ppuR__text{font-family:var(--r-serif);font-weight:400;font-style:normal;color:var(--r-fg);letter-spacing:-.01em;line-height:1.25;text-wrap:balance}
-    .ppuR__text::before{content:"\201C"}.ppuR__text::after{content:"\201D"}
-    .ppuR__text.s{font-size:clamp(26px,3.4vw,40px)}
-    .ppuR__text.m{font-size:clamp(22px,2.7vw,32px)}
-    .ppuR__text.l{font-size:clamp(19px,2.1vw,26px);line-height:1.35}
-    .ppuR__name{font:500 12px/1 var(--r-mono);letter-spacing:.2em;text-transform:uppercase;color:var(--r-soft)}
-    .ppuR__nav{width:44px;height:44px;border-radius:50%;border:1px solid var(--r-line);background:transparent;color:var(--r-fg);
-      display:grid;place-items:center;cursor:pointer;transition:border-color .2s;-webkit-appearance:none;appearance:none}
-    .ppuR__nav:hover{border-color:var(--r-fg)}
-    .ppuR__nav:focus-visible{outline:2px solid var(--r-fg);outline-offset:3px}
-    .ppuR__nav svg{width:14px;height:14px;display:block}
-    @media (max-width:640px){
-      .ppuR{padding:48px 14px 52px}
-      .ppuR__inner{grid-template-columns:34px minmax(0,1fr) 34px;column-gap:10px}
-      .ppuR__nav{width:34px;height:34px}
-      .ppuR__pill{gap:8px;padding:14px 18px;font-size:11px;letter-spacing:.08em}.ppuR__pill .st{font-size:13px;letter-spacing:.06em}.ppuR__pill svg{width:14px;height:14px}.ppuR__pill .sp{height:14px}
-      .ppuR__mid{gap:24px}
-      .ppuR__text.s{font-size:24px}.ppuR__text.m{font-size:20px}.ppuR__text.l{font-size:17px}
-    }
-    @media (prefers-reduced-motion:reduce){.ppuR__slide,.ppuR__slide.on{transition:none}}
-  </style>
-
-  <section class="ppuR ppuR--pink" id="ppuR-members" aria-label="What parents are saying">
-    <div class="ppuR__inner">
-      <button class="ppuR__nav" data-dir="-1" type="button" aria-label="Previous review"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 4 L7 12 L15 20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-      <div class="ppuR__mid">
-        <a class="ppuR__pill" href="https://www.google.com/search?q=Personality+Pop-Up#lrd=0x89d5209ec3b5b81:0x332a7fee85847322,1" target="_blank" rel="noopener"><span class="st">★★★★★</span>5.0<span class="sp"></span><svg viewBox="0 0 48 48" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.5 0 6.6 1.2 9.1 3.6l6.8-6.8C35.8 2.4 30.3 0 24 0 14.6 0 6.6 5.4 2.7 13.3l7.9 6.2C12.5 13.6 17.8 9.5 24 9.5z"/><path fill="#4285F4" d="M46.1 24.5c0-1.6-.1-3.1-.4-4.5H24v9h12.4c-.5 2.9-2.2 5.3-4.6 6.9l7.2 5.6c4.2-3.9 7.1-9.6 7.1-17z"/><path fill="#FBBC05" d="M10.5 28.6c-.5-1.4-.8-3-.8-4.6s.3-3.2.8-4.6l-7.9-6.2C1 16.5 0 20.1 0 24s1 7.5 2.7 10.8l7.8-6.2z"/><path fill="#34A853" d="M24 48c6.5 0 11.9-2.1 15.9-5.8l-7.2-5.6c-2.2 1.5-5 2.4-8.7 2.4-6.2 0-11.5-4.2-13.4-9.9l-7.9 6.2C6.6 42.6 14.6 48 24 48z"/></svg><span data-ppu-review-count>418+</span> Google reviews</a>
-        <div class="ppuR__stage" aria-live="polite"></div>
-      </div>
-      <button class="ppuR__nav" data-dir="1" type="button" aria-label="Next review"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 4 L17 12 L9 20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-    </div>
-  </section>
-
-  <script>
-  (function(){
-    var QUOTES = [
-      {"q":"I'm literally weeping! These pictures are absolutely priceless. Best photography experience yet! Personality Pop-up crew was so friendly and approachable! 10/10 recommend!","n":"Vanessa"},
-      {"q":"My daughter had a blast taking these. Would recommend to any parent. Captures their personality perfectly.","n":"Kaitlynn K."},
-      {"q":"I found them through a random Instagram ad (which I would normally scroll right past), but for some reason decided to give it a shot — and I'm so glad I did. I opened my gallery this morning and actually teared up (in the best way). We will cherish these photos forever.","n":"Kelly"},
-      {"q":"Just book this — you will absolutely NOT regret it! I cannot believe how insanely adorable these photos turned out from my two unruly kiddos who are usually everywhere all at once!","n":"Farah"},
-      {"q":"Quick and painless for my 6 and 8 year old boys. The pictures are perfect and the photographers were wonderful!","n":"Leila"},
-      {"q":"I cannot believe these photos!!!!! Best money I spent all year. On anything. And I spend a lot of money 😂 The process was a breeze. Fun for the kids and not stressful. But I would've paid double if I knew they'd come out so incredible. Thank you so so much!!!","n":"Jessica"},
-      {"q":"Wonderful experience! 15 minutes in and out. They are great with the littles and the photos are adorable! Will definitely book again when they come back to Houston.","n":"Megan"},
-      {"q":"They were incredible with our kids who can be slow to trust. Thrilled with the photos we got. Family heirlooms!","n":"Caroline"},
-      {"q":"10/10! I knew the photos would likely turn out lovely, but I wasn't expecting to enjoy the shoot day itself so much. 15 minutes turned out to be more than enough time and the vibes were so easygoing and happy. My husband and I left saying 'that was already worth it'.","n":"Sandy"},
-      {"q":"Somehow they captured not just beautiful photos, but who my children are — their personalities, expressions, and little details I never want to forget. These are images I will treasure for the rest of my life.","n":"Amanda"},
-      {"q":"My little guy does not sit still, & she still managed to capture the most PERFECT photos! The 15 minute session was the perfect length. I can't stop staring at these photos & can't wait to do it again! 10/10 recommend!","n":"Allie"},
-      {"q":"As soon as our session was over my kids got in the car and said 'That was so fun!' Truly the easiest, most fun, stress free experience for me and my kids. They perfectly captured my kids and I couldn't be more happy!","n":"Shauna"},
-      {"q":"Such an easy, lovely experience and got the BEST photos of our 8 month old. Will definitely be going every time they come to our city!","n":"Hayley"},
-      {"q":"We've done two sessions with our daughter over the past year, and we'll continue every year we can.","n":"Edward"}
-    ];
-    /* ppuR v2 (2026-10-15): reviews come live from session-crm/public/ppu-reviews.json (ranked, kept fresh by the daily ppu-google-review-count task); the QUOTES above are only a fallback. Each page starts in its own slice of the ranking (home/about/book/jax = 0/1/2/3), starting each day on one of its top 3, so moving between pages shows different reviews. */
-    var ROTATE_MS = 7000, ROOT_ID = 'ppuR-members', MODE = 'long', SLOTS = {'ppuR-home':0,'ppuR-about':1,'ppuR-book':2,'ppuR-members':3};
-    var POOL_URL = 'https://raw.githubusercontent.com/jonathanconnolly/session-crm/main/public/ppu-reviews.json';
-    var root = document.getElementById(ROOT_ID);
-    if (!root) return;
-    var stage = root.querySelector('.ppuR__stage'), slides = [], idx = 0, timer = null, built = false;
-    function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
-    function size(t){return t.length<=120?'s':(t.length<=230?'m':'l');}
-    function clean(t){return String(t||'').replace(/^[\s"“]+|[\s"”]+$/g,'');}
-    function pick(r){var t=clean(MODE==='short'?(r.s||(String(r.q||'').length<=150?r.q:'')):r.q);return t?{q:t,n:r.n}:null;}
-    function slot(){if(ROOT_ID in SLOTS)return SLOTS[ROOT_ID];var h=0;for(var i=0;i<ROOT_ID.length;i++)h=(h*31+ROOT_ID.charCodeAt(i))|0;return Math.abs(h)%4;}
-    function arrange(list){
-      var k=slot(), own=[], rest=[], day=Math.floor(Date.now()/864e5);
-      list.forEach(function(x,i){(i%4===k?own:rest).push(x);});
-      if(own.length){var r=day%Math.min(3,own.length);own=own.slice(r).concat(own.slice(0,r));} /* daily: start on one of this page's top 3 */
-      return own.concat(rest);
-    }
-    function build(list){
-      if (built) return; var items=[]; arrange(list).forEach(function(r){var p=pick(r);if(p)items.push(p);});
-      if (!items.length) return; built = true;
-      stage.innerHTML = items.map(function(x,i){
-        return '<figure class="ppuR__slide'+(i===0?' on':'')+'"><blockquote class="ppuR__text '+size(x.q)+'">'+esc(x.q)+'</blockquote>'
-          +'<figcaption class="ppuR__name">&mdash; '+esc(x.n)+'</figcaption></figure>';
-      }).join('');
-      slides = stage.children; idx = 0; fit(); restart();
-    }
-    function show(n){if(!slides.length)return;slides[idx].classList.remove('on');idx=(n+slides.length)%slides.length;slides[idx].classList.add('on');restart();}
-    function restart(){clearTimeout(timer);timer=setTimeout(function(){show(idx+1);},ROTATE_MS);}
-    [].forEach.call(root.querySelectorAll('.ppuR__nav'),function(b){b.addEventListener('click',function(){show(idx+(+b.getAttribute('data-dir')));});});
-    function fit(){if(!root.hasAttribute('data-fit'))return;root.style.minHeight='';var host=root.closest&&root.closest('.fb-element');var h=host?host.getBoundingClientRect().height:(self!==top?document.documentElement.clientHeight:0);if(h>root.offsetHeight+2)root.style.minHeight=h+'px';}
-    fit();window.addEventListener('load',fit);window.addEventListener('resize',fit);if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fit);
-    var fallback = setTimeout(function(){build(QUOTES);}, 2500);
-    fetch(POOL_URL,{cache:'no-store'}).then(function(r){return r.json();}).then(function(d){
-      var list=d&&d.reviews; if(list&&list.length>=10){clearTimeout(fallback);build(list);} else {clearTimeout(fallback);build(QUOTES);}
-    }).catch(function(){clearTimeout(fallback);build(QUOTES);});
-    /* live Google review count for [data-ppu-review-count] (same as the site-wide sync; runs once per page) */
-    if(!window.__ppuReviewSync){window.__ppuReviewSync=1;fetch('https://raw.githubusercontent.com/jonathanconnolly/session-crm/main/public/google-reviews.json',{cache:'no-store'}).then(function(r){return r.json()}).then(function(d){var n=d&&parseInt(d.count,10);if(!n)return;[].forEach.call(document.querySelectorAll('[data-ppu-review-count]'),function(el){el.textContent=String(n)+'+'});}).catch(function(){});}
-  })();
-  </script>
-
 
 <div class="ppuH ppuJ ppuM">
 <!-- 5 · FAQ -->
@@ -513,14 +395,14 @@ font:600 18px/18px var(--mono)!important;letter-spacing:1.8px!important;text-tra
 <a class="ppuH-link" href="mailto:hello@personalitypopup.com?subject=The%20Yearly">Ask us anything →</a>
 </div>
 <div class="ppuH-faq__list">
-<details class="ppuH-q" open><summary>What am I actually paying for?<i class="ppuH-ico"></i></summary><div class="ppuH-q__a"><p>Your session, a bit at a time. Each month’s payment becomes credit on your account, and when you book, the credit pays for it. It isn’t a fee for access and it isn’t a subscription you can waste — every dollar goes toward a session you’ll actually have.</p></div></details>
+<details class="ppuH-q" open><summary>I’ve already shot with you. What’s different?<i class="ppuH-ico"></i></summary><div class="ppuH-q__a"><p>The session itself is exactly the one you know — same studio, same team, same fifteen minutes. What changes is that the next one no longer depends on you spotting an announcement at the right moment. You hear before anyone else, your spot is held, and it’s already paid for by the time you walk in.</p></div></details>
+<details class="ppuH-q"><summary>What am I actually paying for?<i class="ppuH-ico"></i></summary><div class="ppuH-q__a"><p>Your session, a bit at a time. Each month’s payment becomes credit on your account, and when you book, the credit pays for it. It isn’t a fee for access and it isn’t a subscription you can waste — every dollar goes toward a session you’ll actually have.</p></div></details>
 <details class="ppuH-q"><summary>What if I never find a date that works?<i class="ppuH-ico"></i></summary><div class="ppuH-q__a"><p>Then your money sits and waits. There’s no expiry date and no forfeit. Pause whenever you like and the balance stays on your account until you use it. This is the part most places get wrong, and it’s the reason we built it this way.</p></div></details>
 <details class="ppuH-q"><summary>Can I book before I’ve saved enough?<i class="ppuH-ico"></i></summary><div class="ppuH-q__a"><p>Yes. Book any date you like and pay whatever your credit doesn’t cover. If you’ve been going three months and a weekend near you opens up, you’re not locked out of it — you just settle the difference at checkout.</p></div></details>
 <details class="ppuH-q"><summary>Why monthly, if the session is once a year?<i class="ppuH-ico"></i></summary><div class="ppuH-q__a"><p>Because <span data-m="mo">$50</span> in a month is a decision you make once, and <span data-m="locked">$595</span> in one go is a decision you keep putting off. Same money, far more likely to actually happen. That’s the entire idea.</p></div></details>
 <details class="ppuH-q"><summary>Can I stop?<i class="ppuH-ico"></i></summary><div class="ppuH-q__a"><p>Any month, from the link in your receipt or by emailing us. Nothing is clawed back. Whatever you’ve set aside stays on your account and you can spend it whenever you want, even years later. You keep every image you’ve ever received.</p></div></details>
 <details class="ppuH-q"><summary>Which cities does it work in?<i class="ppuH-ico"></i></summary><div class="ppuH-q__a"><p>All of them. Your credit and your fixed price are good at any Personality Pop-Up, wherever we turn up — that’s rather the point of a single locked price. When you start we ask which city you usually see us in, so we can tell you first when those dates are set. <a class="ppuH-link" style="font-size:13px!important" href="https://www.personalitypopup.com/book/">See where we go →</a></p></div></details>
 <details class="ppuH-q"><summary>What if the price goes up?<i class="ppuH-ico"></i></summary><div class="ppuH-q__a"><p>Not for you. Sessions run between a few hundred dollars either side of <span data-m="locked">$595</span> depending on the city, and those numbers climb. Yours is fixed at <span data-m="locked">$595</span> from the day you start and stays there for as long as you keep going.</p></div></details>
-<details class="ppuH-q"><summary>We’ve booked with you before. What changes?<i class="ppuH-ico"></i></summary><div class="ppuH-q__a"><p>The session is exactly the one you already know. What changes is that next year doesn’t depend on you catching an announcement at the right moment. You hear first, your spot is held, and it’s already paid for when you get there.</p></div></details>
 </div>
 </div>
 </section>
