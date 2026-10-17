@@ -1,6 +1,6 @@
 {
-  "_comment": "Auto-synced 2026-10-16 from Session. Bookings: Alpharetta, GA 1->2, Denver, CO 4->3, Orange County, CA 13->12, Manhattan, NY 6->3, Washington, DC 16->14. No sell-outs, reopens or new cities; slugs and thumbnails unchanged; 14 Now Booking rows (7 sold out / 7 open). Opening Soon carried over unchanged (Schedule tab not re-pulled). Capacity 20/day.",
-  "updated": "2026-10-16",
+  "_comment": "Auto-synced 2026-10-17 from Session. Bookings: Washington, DC 14->13, Miami Shores, FL 7->5. No sell-outs, reopens or new cities; slugs and thumbnails unchanged; 14 Now Booking rows (7 sold out / 7 open). Opening Soon carried over unchanged (Schedule tab not re-pulled). Capacity 20/day.",
+  "updated": "2026-10-17",
   "scheduled": [
     {
       "city": "Alpharetta, GA",
@@ -139,8 +139,8 @@
       "weekend": "Nov 21",
       "weekendStart": "2026-11-21",
       "days": 1,
-      "booked": 13,
-      "spotsLeft": 7,
+      "booked": 15,
+      "spotsLeft": 5,
       "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/Ptp9XpWzeT",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/68b75d9d-9f87-49fe-914b-d899a5376df6-sm.jpg"
@@ -165,8 +165,8 @@
       "weekend": "Nov 21-22",
       "weekendStart": "2026-11-21",
       "days": 2,
-      "booked": 26,
-      "spotsLeft": 14,
+      "booked": 27,
+      "spotsLeft": 13,
       "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/5PnbHKGz1X",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/4501a8a8-c7d0-468d-bf6c-c38e38a00162-sm.jpg"
