@@ -5,12 +5,13 @@
   who have already had a session: the sell is ACCESS, not the session.
 
     1. Hero      "Never miss another year." · no price
-    2. Pricing   straight under the fold. TWO TIERS:
-                 Full Access $19/mo (calendar + early booking, no session,
-                 cancel anytime) and Membership $595/yr (a session paid up
-                 front, spot held, 1-4 sessions on a stepper, extras at
-                 $535). Sessions are never billed monthly: a monthly plan
-                 lets someone shoot in February and cancel in March.
+    2. Pricing   straight under the fold. ONE tier: Membership $199/yr,
+                 access only. No session is bundled, because sessions run
+                 $495-$749 by city and a national bundle price cannot hold
+                 that spread. Sessions are booked later at the local price;
+                 the only discount is volume: 15% off every session after
+                 the first in a membership year. Nothing is billed monthly,
+                 so nobody shoots in February and cancels in March.
     3. See       the difference, in the brand's big-serif facts row plus a
                  thin 12-month strip (one month dark = the public weekend)
     4. Why       four reasons · 5. Reviews · 6. FAQ · 7. Close · 8. Sticky
@@ -18,8 +19,8 @@
   Dropped on purpose (brand and work are already established for this
   audience): team rail, portfolio strip, press ticker, what-to-expect.
 
-  CONFIG (bottom script): SESSION, SESSION_EXTRA, ACCESS, LINKS
-  (LINKS.membership[1-4] + LINKS.access, Stripe Payment Links), PORTAL.
+  CONFIG (bottom script): ACCESS (per year), MULTI_PCT, SESSION_LOW,
+  SESSION_HIGH, LINKS.membership (one Stripe Payment Link), PORTAL.
   No city: a membership is good at any pop-up (asked at checkout).
   ?joined=1&plan=…&n=… → the "You're a member" state.
   Built by scripts/build-ppu-members.py (+ docs/embeds/parts/reviews.html).
@@ -94,7 +95,7 @@ font:600 18px/18px var(--mono)!important;letter-spacing:1.8px!important;text-tra
 .ppuM-w{--wink:#0E0E0E;--mut:#737373;--ln:#EBEBEB;--wsoft:#F5F5F5;--ui:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;width:100%;color:var(--wink);font-family:var(--ui);font-size:15px;line-height:1.4;text-align:left}
 .ppuM-w *,.ppuM-w *::before,.ppuM-w *::after{box-sizing:border-box}
 .ppuM-w p{margin:0!important;padding:0!important;text-wrap:pretty}
-.ppuM-cards{display:grid;grid-template-columns:1fr 1.08fr;gap:18px;align-items:start}
+.ppuM-cards{max-width:520px;margin:0 auto}
 .ppuM-card{background:#fff;border:1.5px solid var(--ln);border-radius:24px;box-shadow:0 30px 70px -45px rgba(0,0,0,.3);overflow:hidden}
 .ppuM-card--rec{border-color:var(--ink);box-shadow:0 30px 70px -36px rgba(0,0,0,.45)}
 .ppuM-card__rib{background:var(--ink);color:#fff;padding:10px 20px;font:600 12.5px/1.2 var(--ui);white-space:nowrap}
@@ -107,12 +108,12 @@ font:600 18px/18px var(--mono)!important;letter-spacing:1.8px!important;text-tra
 .ppuM-price i{font:700 20px/1 var(--ui);font-style:normal;color:var(--wink);letter-spacing:-.02em}
 .ppuH .ppuM-bill{font:500 13.5px/1.45 var(--ui)!important;color:var(--wink)!important;letter-spacing:0!important}
 .ppuH .ppuM-alt{font:400 12.5px/1.45 var(--ui)!important;color:var(--mut)!important;letter-spacing:0!important;margin:2px 0 0!important}
-.ppuM-n{margin:18px 0 0;padding:16px 0 0;border-top:1px solid var(--ln)}
-.ppuH .ppuM-n__l{display:flex;justify-content:space-between;align-items:baseline;gap:10px;font:600 12px/1.3 var(--ui)!important;letter-spacing:.05em!important;text-transform:uppercase;color:var(--mut)!important;margin:0 0 9px!important}
-.ppuH .ppuM-n__l em{font:400 12px/1.3 var(--ui)!important;font-style:normal;letter-spacing:0!important;text-transform:none;color:var(--mut)!important}
-.ppuM-n__b{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
-.ppuM-n__b button{border:1.5px solid var(--ln)!important;border-radius:11px!important;padding:12px 0!important;font:600 15px/1 var(--ui)!important;color:var(--wink)!important;background:#fff!important;text-align:center!important;letter-spacing:0!important;min-height:0!important;width:100%!important;transition:border-color .15s,background .15s,color .15s}
-.ppuM-n__b button[aria-pressed="true"]{background:var(--wink)!important;border-color:var(--wink)!important;color:#fff!important}
+.ppuM-sess{margin:20px 0 0;padding:18px 20px;border-radius:16px;background:var(--wsoft)}
+.ppuH .ppuM-sess__h{font:600 12px/1.3 var(--ui)!important;letter-spacing:.05em!important;text-transform:uppercase;color:var(--mut)!important;margin:0 0 10px!important}
+.ppuM-sess__r{display:flex;justify-content:space-between;align-items:baseline;gap:14px;font:400 13.5px/1.5 var(--ui);color:var(--wink);padding:6px 0}
+.ppuM-sess__r + .ppuM-sess__r{border-top:1px solid rgba(45,45,45,.08)}
+.ppuM-sess__r b{font-weight:600;white-space:nowrap}
+.ppuM-sess__r em{font-style:normal;color:var(--mut);font-size:12.5px}
 .ppuM-btn{display:flex!important;width:100%!important;align-items:center;justify-content:center;background:var(--wink)!important;color:#fff!important;border-radius:999px!important;padding:16px 20px!important;margin:18px 0 0!important;font:600 15px/1 var(--ui)!important;letter-spacing:0!important;text-transform:none!important;text-decoration:none!important;transition:opacity .15s}
 .ppuM-btn:hover{opacity:.9}
 .ppuM-btn--alt{background:#fff!important;color:var(--wink)!important;border:1.5px solid var(--wink)!important}
@@ -277,63 +278,40 @@ font:600 18px/18px var(--mono)!important;letter-spacing:1.8px!important;text-tra
 <section class="ppuH-sec ppuJ-book" id="ppuM-join" aria-label="Become a member">
 <div class="ppuM-pr">
 <div class="ppuM-pr__head">
-<p class="ppuH-eyebrow">Two ways in</p>
-<h2 class="ppuH-h">Pick your level of access.</h2>
-<p class="ppuH-p">Both open the full calendar. One of them holds a session for you.</p>
+<p class="ppuH-eyebrow">Membership</p>
+<h2 class="ppuH-h">Two hundred dollars<br>buys you the year.</h2>
+<p class="ppuH-p">Not the session. The access. Every date we set, a spot held for you, and the first pick at all of it.</p>
 </div>
 
 <div class="ppuM-w" id="ppuM-w">
 <div id="ppuM-pick">
 <div class="ppuM-cards">
-
-<div class="ppuM-card">
-<div class="ppuM-in">
-<div class="ppuM-hd"><h3>Full Access</h3></div>
-<p class="ppuM-sub">See every date and book before the public. No session included.</p>
-<div class="ppuM-price"><b>$19</b><i>/mo</i></div>
-<p class="ppuM-bill">Billed monthly</p>
-<p class="ppuM-alt">Cancel anytime.</p>
-<a class="ppuM-btn ppuM-btn--alt" id="ppuM-go-a" href="#" target="_top" rel="noopener" aria-disabled="true">Get Full Access</a>
-<p class="ppuM-feat">What you get</p>
-<ul class="ppuM-list">
-<li><span>Every date the moment it’s set, in any city</span></li>
-<li><span>Book before dates go public</span></li>
-<li><span>Reminders, and move your time anytime</span></li>
-<li><span>Sessions at the usual <span data-m="door">$595</span></span></li>
-</ul>
-</div>
-</div>
-
 <div class="ppuM-card ppuM-card--rec">
-<div class="ppuM-card__rib">★ Most families <span>· Your spot is held</span></div>
+<div class="ppuM-card__rib">★ For families who come back <span>· Limited each city</span></div>
 <div class="ppuM-in">
 <div class="ppuM-hd"><h3>Membership</h3></div>
-<p class="ppuM-sub">Everything in Full Access, plus a session already paid for and a spot held at every date.</p>
-<div class="ppuM-price"><b id="ppuM-amt">$595</b><i>/yr</i></div>
-<p class="ppuM-bill" id="ppuM-bill">One session a year, paid once</p>
-<p class="ppuM-alt" id="ppuM-alt">That’s $49.58 a month, paid once a year.</p>
-<div class="ppuM-n">
-<p class="ppuM-n__l">Sessions a year<em id="ppuM-save">Add a second and save</em></p>
-<div class="ppuM-n__b" role="group" aria-label="Sessions a year">
-<button type="button" data-n="1" aria-pressed="true">1</button>
-<button type="button" data-n="2" aria-pressed="false">2</button>
-<button type="button" data-n="3" aria-pressed="false">3</button>
-<button type="button" data-n="4" aria-pressed="false">4</button>
-</div>
-</div>
+<p class="ppuM-sub">The calendar, the first pick, and a spot held for you at every date we set.</p>
+<div class="ppuM-price"><b data-m="access">$199</b><i>/yr</i></div>
+<p class="ppuM-bill">Billed once a year</p>
+<p class="ppuM-alt">Cancel anytime before it renews.</p>
 <a class="ppuM-btn" id="ppuM-go-m" href="#" target="_top" rel="noopener" aria-disabled="true">Become a Member</a>
-<p class="ppuM-feat">Everything in Full Access, plus</p>
+<p class="ppuM-feat">What membership gets you</p>
 <ul class="ppuM-list">
-<li><span><b>Your spot held</b> at every date, before anyone books</span></li>
-<li><span>Sessions already paid for. Nothing due when you book</span></li>
-<li><span>Unused sessions roll over</span></li>
-<li><span>Today’s price locked while you’re a member</span></li>
+<li><span>Every date the moment it’s set, in any city</span></li>
+<li><span><b>Your spot held</b>, and you pick before anyone books</span></li>
+<li><span><b><span data-m="pct">15%</span> off every session after your first</span> each year</span></li>
+<li><span>Reminders, and move your time anytime</span></li>
+<li><span>Today’s session prices locked while you’re a member</span></li>
 </ul>
+<div class="ppuM-sess">
+<p class="ppuM-sess__h">Sessions, when you book them</p>
+<div class="ppuM-sess__r"><span>Your first session<em><br>The same price everyone pays</em></span><b data-m="range">$495 to $749</b></div>
+<div class="ppuM-sess__r"><span>Every one after that<em><br>In the same membership year</em></span><b><span data-m="pct">15%</span> off</b></div>
 </div>
 </div>
-
 </div>
-<p class="ppuM-fine"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>Stripe secure checkout · Apple Pay &amp; Google Pay · One session covers 1 or 2 kids · Good at any pop-up, in any city</p>
+</div>
+<p class="ppuM-fine"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>Stripe secure checkout · Apple Pay &amp; Google Pay · Sessions are billed when you book them · One session covers 1 or 2 kids · Good at any pop-up, in any city</p>
 <p class="ppuM-manage">Already a member? <a href="mailto:hello@personalitypopup.com?subject=My%20membership" id="ppuM-portal">Manage your membership</a></p>
 </div>
 <div class="ppuM-ok" id="ppuM-done" hidden>
@@ -342,7 +320,7 @@ font:600 18px/18px var(--mono)!important;letter-spacing:1.8px!important;text-tra
 <ol>
 <li><b>1</b><span>Your receipt is on its way.</span></li>
 <li><b>2</b><span>You’ll get your sign-in link, and the full calendar opens up to you.</span></li>
-<li><b>3</b><span>Pick your times for the year. We’ll remind you when each one comes around.</span></li>
+<li><b>3</b><span>Pick your times for the year and pay for each session when you book it. We’ll remind you when each one comes around.</span></li>
 </ol>
 </div>
 </div>
@@ -373,13 +351,13 @@ font:600 18px/18px var(--mono)!important;letter-spacing:1.8px!important;text-tra
 <div class="ppuM-why__head">
 <p class="ppuH-eyebrow">Why families join</p>
 <h2 class="ppuM-why__h">You already know <em class="ppuH-hl">how fast it goes.</em></h2>
-<p class="ppuH-p">Open last year’s gallery. That version of them is already gone. Membership makes the next one automatic, and the one after that, so the only thing you have to do is show up.</p>
+<p class="ppuH-p">Open last year’s gallery. That version of them is already gone. Membership makes the next one automatic, and the one after that, so the only thing you have to do is pick a time.</p>
 </div>
 <div class="ppuM-r">
 <div><span class="ppuM-r__n">01</span><h3>Your spot is held</h3><p>We set member spots aside at every date before a single one goes public. No refreshing, no racing, no sold out.</p></div>
 <div><span class="ppuM-r__n">02</span><h3>The calendar opens up</h3><p>Sign in and every date near you is there, months ahead. Plan around a birthday, a lost tooth, the summer they finally look grown.</p></div>
-<div><span class="ppuM-r__n">03</span><h3>We do the remembering</h3><p>Reminders before, gallery after. Something comes up, move your time in a few taps. No deposit, no balance, no phone call.</p></div>
-<div><span class="ppuM-r__n">04</span><h3>Today’s price, locked</h3><p>Session prices go up. Yours does not, for as long as you stay a member.</p></div>
+<div><span class="ppuM-r__n">03</span><h3>We do the remembering</h3><p>Reminders before, gallery after. Something comes up, move your time in a few taps. No phone call, no waiting on an email back.</p></div>
+<div><span class="ppuM-r__n">04</span><h3>Two is cheaper than one</h3><p>Every session after your first is <span data-m="pct">15%</span> off, so photographing each child on their own, or catching them twice a year, costs less than it used to.</p></div>
 </div>
 </div>
 </section>
@@ -513,14 +491,14 @@ font:600 18px/18px var(--mono)!important;letter-spacing:1.8px!important;text-tra
 <a class="ppuH-link" href="mailto:hello@personalitypopup.com?subject=Membership">Ask us anything →</a>
 </div>
 <div class="ppuH-faq__list">
-<details class="ppuH-q" open><summary>What’s the difference between the two?<i class="ppuH-ico"></i></summary><div class="ppuH-q__a"><p><b>Full Access</b> is the key to the calendar: you see every date we set and you book before the public, at the usual <span data-m="door">$595</span> a session. <b>Membership</b> is that plus the session itself, already paid for, with a spot held for you at every date and nothing due when you book.</p></div></details>
-<details class="ppuH-q"><summary>We’ve booked with you before. What changes?<i class="ppuH-ico"></i></summary><div class="ppuH-q__a"><p>The session is exactly the one you already love. What changes is everything around it: the full calendar instead of one weekend, a spot held for you, nothing to pay when you book, and reminders so it never sneaks up on you.</p></div></details>
-<details class="ppuH-q"><summary>Why is membership paid for the year?<i class="ppuH-ico"></i></summary><div class="ppuH-q__a"><p>Because the session is yours the moment you join. We hold a spot for you at every date for the next twelve months, so the year is paid up front and there’s nothing left to settle when you walk in. Full Access is the monthly one if you’d rather keep it light.</p></div></details>
-<details class="ppuH-q"><summary>What if we don’t use a session that year?<i class="ppuH-ico"></i></summary><div class="ppuH-q__a"><p>It rolls over. Unused sessions stay on your account for as long as you’re a member, so you can use two next year or save one for a sibling. Nothing expires while your membership is active.</p></div></details>
-<details class="ppuH-q"><summary>How many sessions should we pick?<i class="ppuH-ico"></i></summary><div class="ppuH-q__a"><p>One session covers 1 or 2 kids, so most families pick one a year. Pick two if you want each child photographed on their own, or to catch them twice, once in spring and once before the holidays. Every session after the first is <span data-m="extra">$535</span>, and you can add one any time.</p></div></details>
-<details class="ppuH-q"><summary>How does booking work?<i class="ppuH-ico"></i></summary><div class="ppuH-q__a"><p>You sign in and the calendar is there. Pick your weekend and your 15-minute time, months ahead if you like. Members pick first, Full Access books next, and the public sees one weekend after that. Change or move your time whenever you need to.</p></div></details>
-<details class="ppuH-q"><summary>Can I cancel?<i class="ppuH-ico"></i></summary><div class="ppuH-q__a"><p>Full Access cancels any time, no notice. Membership runs the year you paid for and then renews, so cancel before the renewal and nothing more is charged. Either way you keep every image you’ve ever received, and any session you’ve paid for stays yours for 12 months.</p></div></details>
-<details class="ppuH-q"><summary>Which cities does it work in?<i class="ppuH-ico"></i></summary><div class="ppuH-q__a"><p>All of them. Your access and your sessions are good at any Personality Pop-Up, wherever we are. At checkout we ask which city you usually see us in, so we can tell you first when those dates open. <a class="ppuH-link" style="font-size:13px!important" href="https://www.personalitypopup.com/book/">See where we go →</a></p></div></details>
+<details class="ppuH-q" open><summary>What does the <span data-m="access">$199</span> cover?<i class="ppuH-ico"></i></summary><div class="ppuH-q__a"><p>Access, not the session. You see every date we set the moment it exists, you pick your time before anyone else can book, and a spot is held for you at every date for the year. Sessions are booked and paid for separately, at the same price everyone pays.</p></div></details>
+<details class="ppuH-q"><summary>So what does a session cost?<i class="ppuH-ico"></i></summary><div class="ppuH-q__a"><p><span data-m="range">$495 to $749</span> depending on the city, the same as anyone walking in. The difference is that you get to book it first, your price is locked for the year, and <b><span data-m="pct">15%</span> comes off every session after your first</b> in the same membership year.</p></div></details>
+<details class="ppuH-q"><summary>Why isn’t a session included?<i class="ppuH-ico"></i></summary><div class="ppuH-q__a"><p>Because a session in one city isn’t the same price as a session in another, and we’d rather not pretend otherwise with one national number. Membership buys the thing that is the same everywhere: the calendar, the first pick, and the held spot. You pay your own city’s price for the photos.</p></div></details>
+<details class="ppuH-q"><summary>We’ve booked with you before. What changes?<i class="ppuH-ico"></i></summary><div class="ppuH-q__a"><p>The session is exactly the one you already love. What changes is everything around it: the full calendar instead of one weekend, a spot held for you, the first pick of times, and reminders so it never sneaks up on you.</p></div></details>
+<details class="ppuH-q"><summary>How does booking work?<i class="ppuH-ico"></i></summary><div class="ppuH-q__a"><p>You sign in and the calendar is there. Pick your weekend and your 15-minute time, months ahead if you like. Members pick first, and the public sees one weekend after that. Change or move your time whenever you need to.</p></div></details>
+<details class="ppuH-q"><summary>Will my price go up?<i class="ppuH-ico"></i></summary><div class="ppuH-q__a"><p>No. Session prices rise over time, but the prices on the day you joined are locked for as long as your membership stays active, and so is the <span data-m="access">$199</span>.</p></div></details>
+<details class="ppuH-q"><summary>Can I cancel?<i class="ppuH-ico"></i></summary><div class="ppuH-q__a"><p>Any time before it renews, from the link in your receipt or by emailing us. Your access runs to the end of the year you paid for. Sessions you’ve already booked are yours either way, and you keep every image you’ve ever received.</p></div></details>
+<details class="ppuH-q"><summary>Which cities does it work in?<i class="ppuH-ico"></i></summary><div class="ppuH-q__a"><p>All of them. Your membership is good at any Personality Pop-Up, wherever we are. At checkout we ask which city you usually see us in, so we can tell you first when those dates open. <a class="ppuH-link" style="font-size:13px!important" href="https://www.personalitypopup.com/book/">See where we go →</a></p></div></details>
 </div>
 </div>
 </section>
@@ -534,7 +512,7 @@ font:600 18px/18px var(--mono)!important;letter-spacing:1.8px!important;text-tra
 </div>
 <div class="ppuH-close__in">
 <h2 class="ppuH-close__h">They won’t be little forever.</h2>
-<p class="ppuJ-close__sub">Unlock the full calendar · Your spot held · Today’s price, locked</p>
+<p class="ppuJ-close__sub">Unlock the full calendar · Your spot held · <span data-m="access">$199</span> a year</p>
 <a class="ppuH-btn ppuH-btn--white" href="#ppuM-join" data-cta>👉 Become a Member</a>
 </div>
 </section>
@@ -546,10 +524,11 @@ font:600 18px/18px var(--mono)!important;letter-spacing:1.8px!important;text-tra
 (function(){
 'use strict';
 /* ---- CONFIG ---- */
-var SESSION=59500;        /* one session a year, paid once */
-var SESSION_EXTRA=53500;  /* each session when you take 2 or more */
-var ACCESS=1900;          /* Full Access, per month */
-var LINKS={membership:{1:'',2:'',3:'',4:''},access:''};
+var ACCESS=19900;         /* membership, per year. Access only: no session included. */
+var MULTI_PCT=15;         /* off every session after the first, in a membership year */
+var SESSION_LOW=49500;    /* session price range across cities */
+var SESSION_HIGH=74900;
+var LINKS={membership:''};
 var PORTAL='';                  /* Stripe customer portal login link ('' = email us) */
 
 var P='https://images-pw.pixieset.com/elementfield/1zqrnP1/', S='https://images-pw.pixieset.com/site/gjknWE/';
@@ -580,38 +559,22 @@ window.ppuHl(document);
 (function(){var s=$('ppuM-sticky'),hero=document.querySelector('.ppuH-hero'),box=$('ppuM-join');if(!('IntersectionObserver' in window))return;var hv=true,bv=false;function u(){s.classList.toggle('show',!hv&&!bv)}
 new IntersectionObserver(function(e){hv=e[0].isIntersecting;u()}).observe(hero);new IntersectionObserver(function(e){bv=e[0].isIntersecting;u()},{threshold:.05}).observe(box)})();
 
-/* ---- PRICING: Full Access (monthly) + Membership (yearly, 1-4 sessions) ---- */
+/* ---- MEMBERSHIP: one price, access only ---- */
 (function(){
-var n=1,q=new URLSearchParams(location.search),nums=document.querySelectorAll('.ppuM-n__b button');
-var goA=$('ppuM-go-a'),goM=$('ppuM-go-m');
-setAll('door',esc(money(SESSION)));setAll('extra',esc(money(SESSION_EXTRA)));
-function total(k){return k<2?SESSION:SESSION_EXTRA*k}
-function link(u,ref){if(!u)return '';return u+(u.indexOf('?')>-1?'&':'?')+'client_reference_id='+encodeURIComponent(ref)+'&utm_source=site&utm_medium=members_page'}
-function show(){
- var t=total(n),mo=t/12,saved=(SESSION*n)-t;
- $('ppuM-amt').textContent=money(t);
- $('ppuM-bill').textContent=n+' session'+(n>1?'s':'')+' a year, paid once';
- $('ppuM-alt').textContent='That\u2019s '+money(Math.round(mo*100)/100)+' a month, paid once a year.';
- $('ppuM-save').textContent=n>1?'You save '+money(saved):'Add a second and save';
- [].forEach.call(nums,function(b){b.setAttribute('aria-pressed',String(+b.getAttribute('data-n')===n))});
- var u=link((LINKS.membership||{})[n],'member-'+n);
- goM.href=u||'#';goM.setAttribute('aria-disabled',u?'false':'true');
- goM.textContent=n>1?'Become a Member \u00b7 '+money(t)+'/yr':'Become a Member';
-}
-[].forEach.call(nums,function(b){b.addEventListener('click',function(){n=+b.getAttribute('data-n');show()})});
-(function(){var u=link(LINKS.access,'access');goA.href=u||'#';goA.setAttribute('aria-disabled',u?'false':'true')})();
-function track(name,val){try{if(window.fbq)fbq('track','InitiateCheckout',{value:val,currency:'USD',content_name:name})}catch(e){}
-try{if(window.gtag)gtag('event','begin_checkout',{value:val,currency:'USD',item_name:name})}catch(e){}}
-goA.addEventListener('click',function(e){if(goA.getAttribute('aria-disabled')==='true'){e.preventDefault();return}track('full_access',ACCESS/100)});
-goM.addEventListener('click',function(e){if(goM.getAttribute('aria-disabled')==='true'){e.preventDefault();return}track('membership_'+n,total(n)/100)});
+var q=new URLSearchParams(location.search),go=$('ppuM-go-m');
+setAll('access',esc(money(ACCESS)));setAll('pct',MULTI_PCT+'%');
+setAll('range',esc(money(SESSION_LOW))+' to '+esc(money(SESSION_HIGH)));
+var u=LINKS.membership?LINKS.membership+(LINKS.membership.indexOf('?')>-1?'&':'?')+'utm_source=site&utm_medium=members_page':'';
+go.href=u||'#';go.setAttribute('aria-disabled',u?'false':'true');
+go.addEventListener('click',function(e){if(go.getAttribute('aria-disabled')==='true'){e.preventDefault();return}
+try{if(window.fbq)fbq('track','InitiateCheckout',{value:ACCESS/100,currency:'USD',content_name:'membership'})}catch(x){}
+try{if(window.gtag)gtag('event','begin_checkout',{value:ACCESS/100,currency:'USD',item_name:'membership'})}catch(x){}});
 if(PORTAL){$('ppuM-portal').href=PORTAL}
 if(q.get('joined')==='1'){$('ppuM-pick').hidden=true;$('ppuM-done').hidden=false;
 [].forEach.call(document.querySelectorAll('[data-cta]'),function(a){a.textContent='You\u2019re in 🎉';a.setAttribute('aria-disabled','true');a.style.pointerEvents='none'});
-var p=q.get('plan')||'',k=Math.min(4,Math.max(1,+q.get('n')||1)),v=p==='access'?ACCESS*12/100:total(k)/100;
-try{if(window.fbq)fbq('track','Purchase',{value:v,currency:'USD',content_name:p==='access'?'full_access':'membership_'+k})}catch(x){}
-try{if(window.gtag)gtag('event','purchase',{value:v,currency:'USD',item_name:p==='access'?'full_access':'membership_'+k})}catch(x){}
+try{if(window.fbq)fbq('track','Purchase',{value:ACCESS/100,currency:'USD',content_name:'membership'})}catch(x){}
+try{if(window.gtag)gtag('event','purchase',{value:ACCESS/100,currency:'USD',item_name:'membership'})}catch(x){}
 setTimeout(function(){$('ppuM-join').scrollIntoView({block:'start'})},50)}
-show();
 })();
 })();
 </script>
