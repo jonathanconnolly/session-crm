@@ -1,5 +1,5 @@
 <!-- ==================================================================
-  PERSONALITY POP-UP — CITY LANDING PAGE                v6.0.2 2026-10-15
+  PERSONALITY POP-UP — CITY LANDING PAGE                v6.2 2026-10-17
   -------------------------------------------------------------------
   ONE Pixieset Custom Code block = the whole city page. The page has no
   site header/footer: it is a Meta-ad landing page with one job — book.
@@ -7,19 +7,27 @@
   it looks like the rest of personalitypopup.com; ppuJ = city-page parts.
 
     1. Hero         6×2 rotating faces (real B&W files, no filters) · logo ·
-                    "The Original • Est. 2013" · city · dates · sub · CTA · trust
-                    (+ "Only N spots left" / sold-out state, live from AXIS)
+                    "The Original • Est. 2013" · city · sub · CTA · trust ·
+                    scroll chevron (+ "Only N spots left" / sold-out pill, live)
     2. City ticker  the homepage bar (Jacksonville included)
-    3. Now Booking  event facts (dates · price · images · deposit) · venue ·
-                    the AXIS booking widget · reassurance · "Can't make it?" email
+    3. Now Booking  "Jacksonville, FL" · big bold dates · offer row (price ·
+                    images · deposit) · "What's the studio address?" card (it's
+                    private, emailed after booking, 24h full refund) · the AXIS
+                    booking widget · "Can't make it?" = the site's VIP form
+                    (first · last · email · phone · city chips with Jacksonville
+                    pre-selected · SMS consent + the filed legal text)
     4. Reviews      shared ppuR slider v2 (pink)
     5. Team         the homepage team section (all-female statement + rail)
-    6. What to Expect  copy · 3 steps · CTA · 18+/2013/418+ · Vimeo 1174234823
-    7. Press        logo ticker
-    8. Portfolio    "Less Perfection. More Personality." strip + Studio Rules cards
-    9. FAQ          "Before you book." (8 questions, live prices)
-   10. Close        "They won't be little forever." over the event B-roll
-   11. Sticky CTA   (mobile)
+    6. What to Expect  the homepage section as is (copy · CTA · 18+/2013/418+ · video)
+    7. Portfolio    "Less Perfection. More Personality." strip + Studio Rules cards
+    8. FAQ          "Before you book." — the FAQ page's own wording, evergreen
+    9. Close        "They won't be little forever." over the event B-roll
+   10. Sticky CTA   (mobile)
+
+  COPY RULES (Jonathan, 2026-10-16): no em dashes in the page copy; dates read
+  "January 9 & 10" (never "9–10"); the FAQ answers are the FAQ page's, not
+  city-specific; the studio address is never on the page (AXIS only sends
+  city/state/ZIP to the public API, see src/lib/public-venue.ts).
 
   NEW CITY: change CITY / STATE / FALLBACK / CITY_TAG / CITY_FULL below,
   data-city on the widget div, the hero h1 and the Jacksonville mentions
@@ -73,8 +81,10 @@ font:600 18px/18px var(--mono)!important;letter-spacing:1.8px!important;text-tra
 .ppuH-hero__trust:hover{opacity:1}
 .ppuH-hero__trust .st{font-size:15px;letter-spacing:.1em;color:#FFD166}
 .ppuJ-hero__logo{width:clamp(150px,18vw,210px);height:auto;display:block;margin-bottom:6px}
-.ppuH .ppuJ-hero__dates{font:700 clamp(15px,1.5vw,20px)/1.4 var(--mono)!important;letter-spacing:.18em!important;text-transform:uppercase;color:#fff!important;margin-top:-6px}
-.ppuJ-hero__dates i{font-style:normal;opacity:.5;margin:0 10px}
+/* scroll cue: the bobbing chevron from the old /book hero, now a link down to the booking box */
+.ppuJ-scroll{position:absolute;left:50%;bottom:18px;z-index:3;width:48px;height:48px;display:grid;place-items:center;color:rgba(255,255,255,.85);transform:translateX(-50%);animation:ppuJcue 2.2s ease-in-out infinite;text-decoration:none!important}
+.ppuJ-scroll svg{width:30px;height:30px;display:block}
+@keyframes ppuJcue{0%,100%{opacity:.4;transform:translate(-50%,0)}50%{opacity:1;transform:translate(-50%,7px)}}
 .ppuJ-left{display:inline-flex;align-items:center;gap:9px;background:rgba(0,0,0,.4);border:1px solid rgba(255,255,255,.3);border-radius:80px;padding:9px 16px;font:600 12px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:#fff;backdrop-filter:blur(4px)}
 .ppuJ-left::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--red);box-shadow:0 0 0 3px rgba(214,69,48,.3)}
 
@@ -91,38 +101,59 @@ font:600 18px/18px var(--mono)!important;letter-spacing:1.8px!important;text-tra
 .ppuH-tick__sep svg{width:16px;height:16px;display:block;fill:currentColor}
 @keyframes ppuHtick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
-/* 3 · NOW BOOKING — event facts, the widget, reassurance, can't-make-it */
+/* 3 · NOW BOOKING — city · big dates · offer row · where card · the widget · VIP form */
 .ppuJ-book{padding:96px var(--gut) 104px;scroll-margin-top:8px}
-.ppuJ-book__head{max-width:900px;margin:0 auto 40px;display:flex;flex-direction:column;align-items:center;gap:18px;text-align:center}
-.ppuJ-book__head .ppuH-p{text-align:center;max-width:60ch}
-.ppuJ-ev{max-width:900px;margin:0 auto 14px;display:grid;grid-template-columns:repeat(4,1fr);gap:16px;border-top:1px solid rgba(45,45,45,.14);border-bottom:1px solid rgba(45,45,45,.14);padding:28px 0}
+.ppuJ-book__head{max-width:900px;margin:0 auto 36px;display:flex;flex-direction:column;align-items:center;gap:18px;text-align:center}
+.ppuH .ppuJ-book__date{font:700 clamp(17px,2vw,24px)/1.3 var(--mono)!important;letter-spacing:.16em!important;text-transform:uppercase;color:var(--ink)!important;margin-top:-2px;white-space:nowrap}
+/* the dates sit on the site's blush highlight bar (draws in on scroll like the team statement) */
+.ppuJ-book__date .ppuJ-book__hl{padding:0 .36em 0 .52em}
+.ppuJ-book__date .ppuJ-book__hl::before{top:-.2em;bottom:-.2em;border-radius:6px}
+.ppuJ-book__head .ppuH-p{text-align:center;max-width:60ch;text-wrap:balance}
+.ppuJ-ev{max-width:760px;margin:0 auto 26px;display:grid;grid-template-columns:repeat(3,1fr);gap:16px;border-top:1px solid rgba(45,45,45,.14);border-bottom:1px solid rgba(45,45,45,.14);padding:28px 0}
 .ppuJ-ev div{text-align:center}
 .ppuJ-ev b{display:block;font:400 clamp(30px,3vw,40px)/1 var(--serif)!important;color:var(--ink)!important;margin-bottom:9px;letter-spacing:-.01em;white-space:nowrap}
 .ppuJ-ev span{display:block;font:500 11px/1.4 var(--mono)!important;letter-spacing:.14em!important;text-transform:uppercase;color:var(--soft)!important}
-.ppuH .ppuJ-where{text-align:center;font:400 13.5px/1.6 var(--mono)!important;color:var(--soft)!important;margin:0 auto 44px;max-width:60ch}
-.ppuJ-where b{font-weight:600;color:var(--ink)}
+/* where's the studio: the address is private; this card says so, plainly, right above the times */
+.ppuJ-where{max-width:560px;margin:0 auto 22px;display:flex;gap:14px;align-items:flex-start;background:var(--cream);border:1px solid rgba(45,45,45,.12);border-radius:14px;padding:16px 18px 17px;text-align:left}
+.ppuJ-where__pin{font-size:20px;line-height:1.3;flex:none}
+.ppuH .ppuJ-where b{display:block;font:600 14px/1.45 var(--mono)!important;color:var(--ink)!important;margin-bottom:5px;letter-spacing:0!important}
+.ppuH .ppuJ-where p{font:400 13px/1.7 var(--mono)!important;color:var(--text)!important;text-wrap:pretty;letter-spacing:0!important;max-width:none}
 .ppuJ-book .ppuW .help{display:none!important}
-.ppuJ-assure{list-style:none!important;max-width:680px;margin:26px auto 0!important;padding:0!important;display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.ppuJ-assure li{list-style:none!important;margin:0!important;display:flex;gap:9px;align-items:flex-start;font:400 12.5px/1.5 var(--mono);color:var(--soft);text-wrap:pretty}
-.ppuJ-assure li span{display:block}
-.ppuJ-assure li::before{content:"\2713";font-weight:700;color:var(--ink);flex:none;margin-top:1px}
-.ppuJ-assure b{font-weight:600;color:var(--ink)}
-.ppuJ-cant{max-width:560px;margin:44px auto 0;background:var(--blush);border-radius:18px;padding:30px 28px 24px}
-.ppuJ-cant h2{font:400 clamp(26px,3vw,32px)/1.15 var(--serif)!important;color:var(--ink)!important;letter-spacing:-.01em!important;text-transform:none!important;margin-bottom:8px}
-.ppuH .ppuJ-cant__p{font:400 14.5px/1.6 var(--mono)!important;color:var(--text)!important;margin-bottom:18px;text-wrap:pretty}
-.ppuJ-cant__form{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.35fr) auto;gap:10px}
-.ppuJ-cant input{width:100%;background:#fff;border:1px solid rgba(45,45,45,.12);color:var(--ink);font:400 14px/1 var(--mono);padding:15px;border-radius:12px;outline:none;transition:border-color .2s}
+/* "Can't make these dates?" — the site's Find Out First / VIP form (v1.3 fields, consent copy word for word) as a blush card */
+.ppuJ-cant{max-width:640px;margin:48px auto 0;background:var(--blush);border-radius:18px;padding:30px 28px 28px}
+.ppuJ-cant__head{text-align:center;margin-bottom:20px}
+.ppuJ-cant h2{font:400 clamp(28px,3.2vw,36px)/1.12 var(--serif)!important;color:var(--ink)!important;letter-spacing:-.01em!important;text-transform:none!important;margin-bottom:8px;text-wrap:balance}
+.ppuH .ppuJ-cant__p{font:400 14.5px/1.6 var(--mono)!important;color:var(--text)!important;text-wrap:pretty;max-width:46ch;margin:0 auto}
+.ppuJ-cant__form{background:#fff;border-radius:14px;padding:16px;box-shadow:0 10px 40px rgba(45,45,45,.06);text-align:left}
+.ppuJ-cant__row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px}
+.ppuJ-cant input[type="text"],.ppuJ-cant input[type="email"],.ppuJ-cant input[type="tel"]{width:100%;background:var(--cream);border:1px solid rgba(45,45,45,.12);color:var(--ink);font:400 14px/1 var(--mono);padding:14px 15px;border-radius:12px;outline:none;transition:border-color .2s,background .2s}
 .ppuJ-cant input::placeholder{color:rgba(45,45,45,.45)}
-.ppuJ-cant input:focus{border-color:var(--ink)}
+.ppuJ-cant input:focus{border-color:var(--ink);background:#fff}
 .ppuJ-cant input.bad{border-color:var(--red)}
 .ppuJ-cant .hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
-.ppuJ-cant button{background:var(--ink);color:#fff;border-radius:80px;padding:0 22px;font:700 13px/1 var(--mono)!important;letter-spacing:.16em!important;text-transform:uppercase;white-space:nowrap;transition:background .15s}
-.ppuJ-cant button:hover{background:#1A1A1A}
-.ppuJ-cant button:disabled{opacity:.6;cursor:not-allowed}
-.ppuJ-cant__ok{font:500 15px/1.6 var(--mono);color:var(--ink);background:#fff;border-radius:12px;padding:16px 18px}
-.ppuJ-cant__ok b{display:block;font:400 24px/1.1 var(--serif);margin-bottom:4px}
-.ppuH .ppuJ-cant__legal{margin-top:12px;font:400 11.5px/1.5 var(--mono)!important;color:rgba(45,45,45,.6)!important}
-.ppuJ-cant__legal a{color:inherit!important;font:inherit!important;letter-spacing:inherit!important;text-decoration:underline!important;text-underline-offset:2px}
+.ppuJ-cant__cities{position:relative;background:var(--cream);border:1px solid rgba(45,45,45,.12);border-radius:12px;padding:6px 10px;min-height:48px;display:flex;flex-wrap:wrap;gap:6px;align-items:center;cursor:text;transition:border-color .2s,background .2s}
+.ppuJ-cant__cities.focus{border-color:var(--ink);background:#fff}
+.ppuJ-cant__chip{display:inline-flex;align-items:center;gap:6px;background:var(--ink);color:var(--blush);font:600 10.5px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;padding:8px 10px;border-radius:80px;white-space:nowrap}
+.ppuJ-cant__chip button{color:var(--blush);font-size:15px;line-height:1;padding:0 2px;opacity:.75}
+.ppuJ-cant__chip button:hover{opacity:1}
+.ppuJ-cant .ppuJ-cant__cities input.ppuJ-cant__cityInput{flex:1;min-width:140px;width:auto;background:transparent;border:0;outline:none;font:400 14px/1 var(--mono);color:var(--ink);padding:8px 4px;border-radius:0}
+.ppuJ-cant .ppuJ-cant__cities input.ppuJ-cant__cityInput:focus{background:transparent;border:0}
+.ppuJ-cant__suggest{position:absolute;top:calc(100% + 4px);left:0;right:0;z-index:4;background:#fff;border:1px solid rgba(45,45,45,.12);border-radius:12px;padding:6px;max-height:220px;overflow-y:auto;box-shadow:0 14px 40px rgba(45,45,45,.18);display:none;text-align:left}
+.ppuJ-cant__suggest.open{display:block}
+.ppuJ-cant__suggest div{font:400 13px/1.4 var(--mono);padding:9px 12px;color:var(--ink);border-radius:8px;cursor:pointer}
+.ppuJ-cant__suggest div:hover{background:var(--cream)}
+.ppuJ-cant__suggest small{color:rgba(45,45,45,.5);font-size:11px;margin-left:6px}
+.ppuJ-cant__consent{margin-top:16px;display:flex;align-items:flex-start;gap:10px;cursor:pointer}
+.ppuJ-cant__consent input{flex:0 0 auto;width:18px;height:18px;margin:2px 0 0;accent-color:var(--ink);cursor:pointer}
+.ppuJ-cant__consent span{font:600 14.5px/1.5 var(--mono)!important;letter-spacing:normal!important;text-transform:none!important;color:var(--ink)!important}
+.ppuH .ppuJ-cant__legal{margin-top:8px;font:400 12px/1.55 var(--mono)!important;letter-spacing:-.005em!important;text-transform:none;color:rgba(45,45,45,.55)!important;text-wrap:pretty;max-width:none}
+.ppuJ-cant__legal a{color:inherit!important;font:inherit!important;letter-spacing:inherit!important;text-decoration:none!important}
+.ppuJ-cant__legal a:hover{text-decoration:underline!important;text-underline-offset:2px}
+.ppuJ-cant button[type="submit"]{margin-top:16px;width:100%;background:var(--ink);color:#fff;border-radius:80px;padding:21px 24px!important;font:700 15px/1 var(--mono)!important;letter-spacing:.18em!important;text-transform:uppercase;white-space:nowrap;transition:background .15s}
+.ppuJ-cant button[type="submit"]:hover{background:#1A1A1A}
+.ppuJ-cant button[type="submit"]:disabled{opacity:.6;cursor:not-allowed}
+.ppuJ-cant__ok{font:400 14.5px/1.6 var(--mono);color:var(--text);background:#fff;border-radius:14px;padding:30px 22px;text-align:center}
+.ppuJ-cant__ok b{display:block;font:400 30px/1.1 var(--serif);color:var(--ink);margin-bottom:6px}
 
 /* 5 · TEAM — the homepage section */
 .ppuH-team{padding:96px 0 0}
@@ -142,7 +173,7 @@ font:600 18px/18px var(--mono)!important;letter-spacing:1.8px!important;text-tra
 @keyframes ppuHrail{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 .ppuH-rail img{display:block}
 
-/* 6 · WHAT TO EXPECT — the homepage layout + the three steps */
+/* 6 · WHAT TO EXPECT — the homepage section as is */
 .ppuH-exp{padding:104px var(--gut)}
 .ppuH-exp__in{max-width:1080px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1fr) 330px;column-gap:clamp(40px,7vw,110px);align-items:center}
 .ppuH-exp__copy{display:flex;flex-direction:column;align-items:flex-start;gap:26px;min-width:0}
@@ -152,23 +183,8 @@ font:600 18px/18px var(--mono)!important;letter-spacing:1.8px!important;text-tra
 .ppuH-facts{display:grid;grid-template-columns:repeat(3,auto);gap:28px;padding-top:26px;border-top:1px solid rgba(45,45,45,.14);width:100%;justify-content:start}
 .ppuH-fact b{display:block;font:400 34px/1 var(--serif)!important;color:var(--ink)!important;margin-bottom:8px}
 .ppuH-fact span{display:block;font:500 11px/1.3 var(--mono)!important;letter-spacing:.14em!important;text-transform:uppercase;color:var(--soft)!important}
-.ppuJ-steps{list-style:none!important;width:100%;display:grid;gap:0;border-top:1px solid rgba(45,45,45,.14)}
-.ppuJ-steps li{list-style:none!important;display:grid;grid-template-columns:56px minmax(0,1fr);column-gap:16px;align-items:start;padding:20px 0;border-bottom:1px solid rgba(45,45,45,.14);margin:0!important}
-.ppuJ-steps b{font:400 30px/1 var(--serif)!important;color:var(--ink)!important;padding-top:2px}
-.ppuJ-steps h3{font:400 24px/1.15 var(--serif)!important;color:var(--ink)!important;letter-spacing:0!important;text-transform:none!important;margin-bottom:6px}
-.ppuJ-steps p{font:400 14.5px/1.75 var(--mono)!important;color:var(--text)!important;max-width:46ch;letter-spacing:0!important}
 
-/* 7 · PRESS — logo ticker */
-.ppuH-logos{padding:0}
-.ppuH-logos__label{display:block;text-align:center;font:500 10px/1 var(--mono)!important;letter-spacing:.26em!important;text-transform:uppercase;color:rgba(45,45,45,.42)!important;margin-bottom:22px!important}
-.ppuH-logos__view{overflow:hidden;border-top:1px solid rgba(45,45,45,.12);border-bottom:1px solid rgba(45,45,45,.12);padding:30px 0;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
-.ppuH-logos__track{display:flex;width:max-content;animation:ppuHrail 60s linear infinite}
-.ppuH-logos__set{display:flex;align-items:center;flex:none}
-.ppuH-logos__item{font:400 clamp(24px,2.4vw,34px)/1 var(--serif)!important;color:var(--ink)!important;white-space:nowrap;padding:0 clamp(22px,2.6vw,40px)}
-.ppuH-logos__item i{font-style:italic}
-.ppuH-logos__dot{width:5px;height:5px;border-radius:50%;background:var(--ink);opacity:.35;flex:none}
-
-/* 8 · PORTFOLIO — the homepage strip, with the four Studio Rules as black cards */
+/* 7 · PORTFOLIO — the homepage strip, with the four Studio Rules as black cards */
 .ppuH-port{background:var(--paper);padding:104px 0 0;overflow:hidden}
 .ppuH-port__head{max-width:900px;margin:0 auto 56px;padding:0 var(--gut);display:flex;flex-direction:column;align-items:center;text-align:center;gap:28px}
 .ppuH-port__h{font:400 clamp(42px,5.4vw,78px)/1.04 var(--serif)!important;color:var(--ink)!important;letter-spacing:-.01em!important;text-transform:none!important;text-wrap:balance}
@@ -220,15 +236,13 @@ font:600 18px/18px var(--mono)!important;letter-spacing:1.8px!important;text-tra
 .ppuJ-sticky .ppuH-btn{width:100%;box-shadow:0 12px 30px rgba(0,0,0,.25)}
 .ppuJ-sticky .ppuH-btn small{font:500 11px/1 var(--mono);letter-spacing:.1em;opacity:.8;margin-left:6px}
 
-@media (max-width:1000px){.ppuJ-ev{grid-template-columns:repeat(2,1fr);row-gap:26px}}
 @media (max-width:860px){
 .ppuH-hero{height:auto;min-height:640px}
 .ppuH-hero__grid{grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(4,1fr)}
-.ppuH-hero__in{position:relative;inset:auto;min-height:640px;padding:48px 20px 56px;gap:16px}
+.ppuH-hero__in{position:relative;inset:auto;min-height:640px;padding:48px 20px 80px;gap:16px}
 .ppuH-hero__eyebrow{font-size:13px!important;letter-spacing:.18em!important}
 .ppuH-hero__h{font-size:48px!important}
-.ppuH .ppuJ-hero__dates{font-size:13.5px!important;letter-spacing:.14em!important}
-.ppuJ-hero__dates i{margin:0 7px}
+.ppuJ-scroll{bottom:14px}
 .ppuH-hero__sub{font-size:12px!important;letter-spacing:.1em!important;max-width:34ch}.ppuH-hero__sub br{display:none}
 .ppuJ-hero__logo{width:150px}
 .ppuH-btn{font-size:15px!important;padding:19px 24px!important}
@@ -238,15 +252,18 @@ font:600 18px/18px var(--mono)!important;letter-spacing:1.8px!important;text-tra
 .ppuH-tick__item{font-size:15px!important;letter-spacing:.06em!important}
 .ppuH-tick__sep{margin:0 18px}.ppuH-tick__sep svg{width:13px;height:13px}
 .ppuJ-book{padding:56px var(--gut) 64px}
-.ppuJ-book__head{margin-bottom:28px;gap:14px}
-.ppuJ-ev{gap:12px;row-gap:22px;padding:22px 0}
-.ppuJ-ev b{font-size:28px!important}
-.ppuJ-ev span{font-size:10px!important;letter-spacing:.1em!important}
-.ppuH .ppuJ-where{margin-bottom:30px;font-size:12.5px!important}
-.ppuJ-assure{grid-template-columns:1fr;gap:9px;margin-top:20px!important;max-width:360px}
-.ppuJ-cant{margin-top:32px;padding:24px 18px 18px;border-radius:14px}
-.ppuJ-cant__form{grid-template-columns:1fr}
-.ppuJ-cant button{padding:17px 22px}
+.ppuJ-book__head{margin-bottom:26px;gap:14px}
+.ppuH .ppuJ-book__date{font-size:16.5px!important;letter-spacing:.12em!important}
+.ppuJ-ev{gap:8px;padding:20px 0;margin-bottom:20px}
+.ppuJ-ev b{font-size:27px!important}
+.ppuJ-ev span{font-size:9.5px!important;letter-spacing:.08em!important}
+.ppuJ-where{padding:14px 14px 15px;gap:10px;margin-bottom:18px}
+.ppuJ-where__pin{font-size:17px}
+.ppuH .ppuJ-where p{font-size:12.5px!important;line-height:1.65!important}
+.ppuJ-cant{margin-top:36px;padding:24px 14px 14px;border-radius:14px}
+.ppuJ-cant__form{padding:12px}
+.ppuJ-cant__row{grid-template-columns:1fr;gap:8px;margin-bottom:8px}
+.ppuJ-cant button[type="submit"]{padding:18px 22px!important;font-size:14px!important}
 .ppuH-team{padding-top:64px}
 .ppuH-team__head{margin-bottom:36px;gap:16px}
 .ppuH-tm{width:56vw}
@@ -256,10 +273,6 @@ font:600 18px/18px var(--mono)!important;letter-spacing:1.8px!important;text-tra
 .ppuH-facts{grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
 .ppuH-fact b{font-size:26px!important}
 .ppuH-fact span{font-size:10px!important;letter-spacing:.1em!important}
-.ppuJ-steps li{grid-template-columns:44px minmax(0,1fr);column-gap:12px;padding:16px 0}
-.ppuJ-steps b{font-size:24px!important}
-.ppuJ-steps h3{font-size:21px!important}
-.ppuJ-steps p{font-size:14px!important}
 .ppuH-port{padding-top:64px}
 .ppuH-port__head{margin-bottom:32px;gap:20px}
 .ppuH-port__img,.ppuJ-rule{height:300px}
@@ -273,7 +286,7 @@ font:600 18px/18px var(--mono)!important;letter-spacing:1.8px!important;text-tra
 .ppuH .ppuJ-close__sub{white-space:normal;max-width:30ch}
 .ppuJ-sticky.show{display:block}
 }
-@media (prefers-reduced-motion:reduce){.ppuH-tile img+img,.ppuH-rail__track,.ppuH-tick__track,.ppuH-logos__track{animation:none}.ppuH-hl::before,.ppuH-port__nav{transition:none}}
+@media (prefers-reduced-motion:reduce){.ppuH-tile img+img,.ppuH-rail__track,.ppuH-tick__track{animation:none}.ppuJ-scroll{animation:none;opacity:.7;transform:translateX(-50%)}.ppuH-hl::before,.ppuH-port__nav{transition:none}}
 </style>
 
 <div class="ppuH ppuJ" id="ppuJ">
@@ -285,7 +298,6 @@ font:600 18px/18px var(--mono)!important;letter-spacing:1.8px!important;text-tra
 <img class="ppuJ-hero__logo" src="https://axis-ppu.vercel.app/ppu/logo-white.png" alt="Personality Pop-Up" loading="eager" fetchpriority="high">
 <p class="ppuH-hero__eyebrow">The Original • Est. 2013</p>
 <h1 class="ppuH-hero__h" id="ppuJ-h1">Jacksonville, FL</h1>
-<p class="ppuJ-hero__dates"><span id="ppuJ-dates">January 9–10</span><i>·</i><span id="ppuJ-where">One weekend only</span></p>
 <p class="ppuH-hero__sub">A simple 15-minute photo experience that <br>captures your child’s <u>real</u> personality.</p>
 <span class="ppuJ-left" id="ppuJ-left" hidden></span>
 <div class="ppuH-hero__ctas">
@@ -293,6 +305,7 @@ font:600 18px/18px var(--mono)!important;letter-spacing:1.8px!important;text-tra
 <a class="ppuH-hero__trust" href="https://www.google.com/search?q=Personality+Pop-Up#lrd=0x89d5209ec3b5b81:0x332a7fee85847322,1" target="_blank" rel="noopener"><span class="st" aria-hidden="true">★★★★★</span>5.0 · <span data-ppu-review-count>418+</span> Google reviews</a>
 </div>
 </div>
+<a class="ppuJ-scroll" href="#ppuJ-book" aria-label="Scroll down to book"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 9 L12 16 L19 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
 </section>
 
 <!-- 2 · CITY TICKER -->
@@ -304,33 +317,49 @@ font:600 18px/18px var(--mono)!important;letter-spacing:1.8px!important;text-tra
 <section class="ppuH-sec ppuJ-book" id="ppuJ-book" aria-label="Book your session">
 <div class="ppuJ-book__head">
 <p class="ppuH-eyebrow" id="ppuJ-book-eyebrow">Now booking · One weekend only</p>
-<h2 class="ppuH-h" id="ppuJ-book-h">Jacksonville, <span data-jx="dates">January 9–10</span>.</h2>
-<p class="ppuH-p" id="ppuJ-book-p">Pick a 15-minute time below — it takes about two minutes.</p>
+<h2 class="ppuH-h" id="ppuJ-book-h">Jacksonville, FL</h2>
+<p class="ppuJ-book__date"><span class="ppuH-hl ppuJ-book__hl" data-jx="dates">January 9 &amp; 10</span></p>
+<p class="ppuH-p" id="ppuJ-book-p">Pick a 15-minute time slot below. Booking takes about two minutes.</p>
 </div>
 <div class="ppuJ-ev" id="ppuJ-ev">
-<div><b data-jx="datesShort">Jan 9–10</b><span data-jx="dows">Saturday &amp; Sunday</span></div>
 <div><b data-jx="price">$595</b><span>15-minute session</span></div>
 <div><b>25+</b><span>Images in color + B&amp;W</span></div>
 <div><b data-jx="dep">$150</b><span>Deposit holds your time</span></div>
 </div>
-<p class="ppuJ-where"><span data-jx="venueLine"><b>Pop-up studio in Jacksonville</b> — the exact address is in your booking confirmation.</span></p>
+<div class="ppuJ-where" id="ppuJ-where">
+<span class="ppuJ-where__pin" aria-hidden="true">📍</span>
+<div>
+<b>What’s the studio address in Jacksonville?</b>
+<p><span data-jx="venueLead" hidden></span>For the safety and privacy of the families we photograph, we never publish it. The exact location is emailed to you the moment your booking is complete. Not the part of town you had in mind? Cancel within 24 hours for a full refund, no matter what.</p>
+</div>
+</div>
 <div data-ppu-book data-city="Jacksonville"></div>
-<ul class="ppuJ-assure">
-<li><span><b>Change your mind</b> within 24 hours and your deposit is refunded</span></li>
-<li><span><b>Reschedule</b> up to 7 days before</span></li>
-<li><span><b>Balance</b> charged 14 days before, never today</span></li>
-</ul>
 <div class="ppuJ-cant" id="ppuJ-cant">
-<h2 id="ppuJ-cant-h">Can’t make <span data-jx="dates">January 9–10</span>?</h2>
-<p class="ppuJ-cant__p" id="ppuJ-cant-p">Leave your email and you’ll be the first to know when our next Jacksonville dates open.</p>
+<div class="ppuJ-cant__head">
+<h2 id="ppuJ-cant-h">Can’t make <span data-jx="dates">January 9 &amp; 10</span>?</h2>
+<p class="ppuJ-cant__p" id="ppuJ-cant-p">Join the VIP list and you’ll be the first to know when our next Jacksonville dates open.</p>
+</div>
 <form class="ppuJ-cant__form" id="ppuJ-cant-form" novalidate>
+<div class="ppuJ-cant__row">
 <input type="text" name="first" placeholder="First name" autocomplete="given-name" required aria-label="First name">
+<input type="text" name="last" placeholder="Last name (optional)" autocomplete="family-name" aria-label="Last name">
+</div>
+<div class="ppuJ-cant__row">
 <input type="email" name="email" placeholder="Email" autocomplete="email" inputmode="email" required aria-label="Email">
+<input type="tel" name="phone" placeholder="Phone" autocomplete="tel" inputmode="tel" aria-label="Phone">
+</div>
+<div class="ppuJ-cant__cities" id="ppuJ-cant-cities">
+<input type="text" class="ppuJ-cant__cityInput" id="ppuJ-cant-cityInput" placeholder="Add another city" autocomplete="off" aria-label="Add a city">
+<div class="ppuJ-cant__suggest" id="ppuJ-cant-suggest"></div>
+</div>
 <input class="hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
-<button type="submit" id="ppuJ-cant-btn">Notify me</button>
+<!-- SMS opt-in: NOT pre-checked, and the fine print is word for word the A2P campaign's filed
+     opt-in description (same as the site's VIP form v1.3). Change one, change both. -->
+<label class="ppuJ-cant__consent"><input type="checkbox" name="sms" id="ppuJ-cant-sms"><span>Yes, notify me by text when my city opens for booking!</span></label>
+<p class="ppuJ-cant__legal">By checking this box you agree to receive recurring automated marketing text messages from Personality Pop-Up (Creative Volition, Inc.) at the number provided. Consent is not a condition of purchase. Message frequency may vary. Msg &amp; data rates may apply. Text HELP for help or STOP to unsubscribe at any time. <a href="https://www.personalitypopup.com/privacy-policy" target="_blank" rel="noopener">Privacy Policy</a> | <a href="https://www.personalitypopup.com/terms-of-service/" target="_blank" rel="noopener">Terms of Service</a></p>
+<button type="submit" id="ppuJ-cant-btn">Join VIP List →</button>
 </form>
-<div class="ppuJ-cant__ok" id="ppuJ-cant-ok" hidden><b>You’re on the list.</b>We’ll email you first when Jacksonville opens again.</div>
-<p class="ppuJ-cant__legal">No spam, just a heads-up when we’re back in Jacksonville. <a href="https://www.personalitypopup.com/privacy-policy/" target="_blank" rel="noopener">Privacy Policy</a></p>
+<div class="ppuJ-cant__ok" id="ppuJ-cant-ok" hidden><b>You’re on the list.</b>We’ll let you know first when our next Jacksonville dates open.</div>
 </div>
 </section>
 </div>
@@ -470,11 +499,6 @@ font:600 18px/18px var(--mono)!important;letter-spacing:1.8px!important;text-tra
 <p class="ppuH-eyebrow">How it works</p>
 <h2 class="ppuH-exp__title">What to Expect</h2>
 <p class="ppuH-p">Personality Pop-Up™ is taking the pain out of portraits by offering a delightful photo experience for kids in a stress-free studio environment for parents. Say goodbye to fake smiles and forced poses!</p>
-<ol class="ppuJ-steps">
-<li><b>01</b><div><h3>Pick your time</h3><p>Choose a date and a 15-minute time, sign and pay your deposit. It takes about two minutes.</p></div></li>
-<li><b>02</b><div><h3>Come play</h3><p>Arrive 10 minutes early. No posing, no “say cheese.” We let your child just be, and capture who they really are.</p></div></li>
-<li><b>03</b><div><h3>Get your gallery</h3><p>25+ high-resolution images in color and black &amp; white, in a private gallery to download, print and share.</p></div></li>
-</ol>
 <a class="ppuH-btn" href="#ppuJ-book" data-cta>👉 Book Your Session</a>
 <div class="ppuH-facts">
 <div class="ppuH-fact"><b>18+</b><span>Years behind<br>the camera</span></div>
@@ -486,13 +510,8 @@ font:600 18px/18px var(--mono)!important;letter-spacing:1.8px!important;text-tra
 </div>
 </section>
 
-<!-- 7 · PRESS -->
-<section class="ppuH-sec ppuH-logos" aria-label="Brands and publications">
-<span class="ppuH-logos__label">Worked with &amp; featured in</span>
-<div class="ppuH-logos__view"><div class="ppuH-logos__track" id="ppuJ-logos"></div></div>
-</section>
 
-<!-- 8 · PORTFOLIO + STUDIO RULES -->
+<!-- 7 · PORTFOLIO + STUDIO RULES -->
 <section class="ppuH-sec ppuH-port" aria-label="Portfolio">
 <div class="ppuH-port__head">
 <h2 class="ppuH-port__h">Less Perfection.<br>More <em class="ppuH-hl">Personality.</em></h2>
@@ -504,9 +523,10 @@ font:600 18px/18px var(--mono)!important;letter-spacing:1.8px!important;text-tra
 </div>
 </section>
 
-  <!-- 9. BEFORE YOU BOOK — the homepage quick-FAQ layout with the questions an ad visitor
-       needs answered here (no other pages). Price / deposit / balance / dates fill live
-       from AXIS ([data-jx]); the text is the fallback. -->
+  <!-- 9. BEFORE YOU BOOK — the homepage quick-FAQ layout. The answers are the FAQ page's own
+       wording (faq-block-1-v5, approved 2026-10-15), kept evergreen: nothing city-specific,
+       no live numbers, so the same block works for every city. "Where is the studio?" is the
+       one addition (Jonathan, 2026-10-16): the address is private until the booking is done. -->
   <section class="ppuH-sec ppuH-faq" id="ppuJ-faq" aria-label="Before you book">
     <div class="ppuH-faq__in">
       <div class="ppuH-faq__side">
@@ -515,20 +535,21 @@ font:600 18px/18px var(--mono)!important;letter-spacing:1.8px!important;text-tra
         <a class="ppuH-link" href="mailto:hello@personalitypopup.com">Ask us anything →</a>
       </div>
       <div class="ppuH-faq__list">
-        <details class="ppuH-q" open><summary>What does it cost, and what’s included?<i class="ppuH-ico"></i></summary><div class="ppuH-q__a"><p>The Jacksonville Personality Pop-Up™ Session is <b data-jx="price">$595</b>: a 15-minute session with a certified Personality Method™ photographer, 25+ high-resolution images (every one in color and black &amp; white) and a private online gallery to download, print and share. A <span data-jx="dep">$150</span> deposit reserves your time; the <span data-jx="bal">$445</span> balance is charged automatically 14 days before your session, and we email you before it runs.</p></div></details>
-        <details class="ppuH-q"><summary>What if I change my mind or need to reschedule?<i class="ppuH-ico"></i></summary><div class="ppuH-q__a"><p>If you change your mind within 24 hours of booking, your deposit can be refunded. If you need to reschedule, please let us know at least 7 days in advance. In the event of illness, family emergencies, or other extenuating circumstances please contact us at your earliest convenience.</p></div></details>
-        <details class="ppuH-q"><summary>What if my child won’t cooperate?<i class="ppuH-ico"></i></summary><div class="ppuH-q__a"><p>We don’t bribe kids to smile or act silly — and we definitely don’t say “cheese.” Our approach is calm, honest, and all about letting your child just be. The best thing you can do? Sit back, relax, and trust the process. This is about personality, not perfection!</p></div></details>
-        <details class="ppuH-q"><summary>How many kids are allowed?<i class="ppuH-ico"></i></summary><div class="ppuH-q__a"><p>Each 15 minute session is ideal for 1-2 children (ages 6mo–18yrs), but you know them best and what they will need! Our focus is capturing each child individually. If time allows, we’ll try for a sibling photo at the end — and if sibling photos really matter to you, add a second session so there’s time to do it right.</p></div></details>
-        <details class="ppuH-q"><summary>What should they wear, and what should I bring?<i class="ppuH-ico"></i></summary><div class="ppuH-q__a"><p>Most shots will be chest up so you don't have to worry about the entire wardrobe. We highly recommend neutral tones or soft colors without graphics. White or Black are always great options. Keep it simple and timeless. Bring wipes, chapstick, and one favorite toy or lovey, and arrive 10 minutes early so your child can get comfortable.</p></div></details>
-        <details class="ppuH-q"><summary>Where is the studio?<i class="ppuH-ico"></i></summary><div class="ppuH-q__a"><p>We bring a complete portrait studio to Jacksonville for one weekend. <span data-jx="venue">The exact address is in your booking confirmation.</span></p></div></details>
-        <details class="ppuH-q"><summary>What if the day I want is sold out?<i class="ppuH-ico"></i></summary><div class="ppuH-q__a"><p>Tap “Join the waitlist” under that day in the booking box — if a spot opens up, you’ll be texted first. Can’t make <span data-jx="dates">January 9–10</span> at all? Leave your email above and you’ll be the first to hear when our next Jacksonville dates open.</p></div></details>
-        <details class="ppuH-q"><summary>Do you include color and black &amp; white?<i class="ppuH-ico"></i></summary><div class="ppuH-q__a"><p>Yes, we include both color and black &amp; white options in your final gallery. While many photographers only deliver overexposed black &amp; white portraits, we believe in preserving the real details — like your child’s skin tone, eye color, freckles, and those perfect imperfections that make them who they are. Our editing style is natural, timeless, and intentional, developed over 18+ years to stand the test of time. No trendy filters or harsh edits — just beautiful, honest portraits you’ll love forever.</p></div></details>
+        <details class="ppuH-q" open><summary>What if my child won’t cooperate?<i class="ppuH-ico"></i></summary><div class="ppuH-q__a"><p>We don’t bribe kids to smile or act silly — and we definitely don’t say “cheese.” Our approach is calm, honest, and all about letting your child just be. The best thing you can do? Sit back, relax, and trust the process. This is about personality, not perfection!</p></div></details>
+        <details class="ppuH-q"><summary>How many kids are allowed?<i class="ppuH-ico"></i></summary><div class="ppuH-q__a"><p>Each 15 minute session is ideal for 1-2 children (ages 6mo–18yrs), but you know them best and what they will need!</p></div></details>
+        <details class="ppuH-q"><summary>Can I get sibling photos?<i class="ppuH-ico"></i></summary><div class="ppuH-q__a"><p>Our main focus is capturing each child individually — their personality, expression, and full range of emotion. That’s what makes this different from anything you’ve done before. If time allows, we’ll try to get a sibling photo at the end, but we can’t guarantee it in one session. Some sessions flow smoothly and we get everything; others can be more unpredictable, especially with younger kids. If sibling photos are really important to you, we highly recommend booking a second session just for that, so you get the time and focus needed without feeling rushed. We come back often, so you don’t have to do it all in one session.</p></div></details>
+        <details class="ppuH-q"><summary>What about family photos?<i class="ppuH-ico"></i></summary><div class="ppuH-q__a"><p>Unfortunately, we do not offer any family portraits at this time.</p></div></details>
+        <details class="ppuH-q"><summary>What to wear?<i class="ppuH-ico"></i></summary><div class="ppuH-q__a"><p>Most shots will be chest up so you don't have to worry about the entire wardrobe. We highly recommend neutral tones or soft colors without graphics. White or Black are always great options. Keep it simple and timeless.</p></div></details>
+        <details class="ppuH-q"><summary>Do you include color and B&amp;W?<i class="ppuH-ico"></i></summary><div class="ppuH-q__a"><p>Yes, we include both color and black &amp; white options in your final gallery. While many photographers only deliver overexposed black &amp; white portraits, we believe in preserving the real details — like your child’s skin tone, eye color, freckles, and those perfect imperfections that make them who they are. Our editing style is natural, timeless, and intentional, developed over 18+ years to stand the test of time. No trendy filters or harsh edits — just beautiful, honest portraits you’ll love forever.</p></div></details>
+        <details class="ppuH-q"><summary>Where is the studio?<i class="ppuH-ico"></i></summary><div class="ppuH-q__a"><p>We bring a complete pop-up studio to your city for one weekend. For the safety and privacy of the families we photograph, we never publish the address. The exact location is emailed to you as soon as your booking is complete. If it turns out to be too far, you’re welcome to cancel within 24 hours for a full refund, no matter what.</p></div></details>
+        <details class="ppuH-q"><summary>Cancellation policy?<i class="ppuH-ico"></i></summary><div class="ppuH-q__a"><p>A non-refundable retainer (booking fee) is required to reserve your time slot. If you change your mind within 24 hours of booking, your retainer can be refunded. If you need to reschedule, please let us know at least 7 days in advance. In the event of illness, family emergencies, or other extenuating circumstances please contact us at your earliest convenience.</p></div></details>
+        <details class="ppuH-q"><summary>What if all spots are booked?<i class="ppuH-ico"></i></summary><div class="ppuH-q__a"><p>If a pop-up is fully booked, please join the waitlist on the specific city booking page. If there are any cancellations, you'll be notified first.</p></div></details>
       </div>
     </div>
   </section>
 
 
-<!-- 10 · CLOSING BAND -->
+<!-- 9 · CLOSING BAND -->
 <section class="ppuH-sec ppuH-close" aria-label="Book your session">
 <div class="ppuH-close__media" aria-hidden="true">
 <img class="ppuH-close__poster" src="https://i.vimeocdn.com/video/1827227214-fd9dca692218d62fbfa38adcef0da68f3c94ff9a4de2fd839de8e4465d183006-d_1600" alt="" loading="lazy">
@@ -537,7 +558,7 @@ font:600 18px/18px var(--mono)!important;letter-spacing:1.8px!important;text-tra
 </div>
 <div class="ppuH-close__in">
 <h2 class="ppuH-close__h">They won’t be little forever.</h2>
-<p class="ppuJ-close__sub" id="ppuJ-close-sub">Jacksonville · <span data-jx="dates">January 9–10</span> · One weekend only</p>
+<p class="ppuJ-close__sub" id="ppuJ-close-sub">Jacksonville · <span data-jx="dates">January 9 &amp; 10</span> · One weekend only</p>
 <a class="ppuH-btn ppuH-btn--white" href="#ppuJ-book" data-cta>👉 Book Your Session</a>
 </div>
 </section>
@@ -550,14 +571,13 @@ font:600 18px/18px var(--mono)!important;letter-spacing:1.8px!important;text-tra
 'use strict';
 var CITY='Jacksonville', STATE='FL', API='https://axis-ppu.vercel.app';
 var CITY_FULL='Jacksonville, FL', CITY_TAG='city_jacksonville_fl';
-var FALLBACK={ dates:'January 9–10', datesShort:'Jan 9–10', dows:'Saturday & Sunday', price:59500, dep:15000 };
+var FALLBACK={ dates:'January 9 & 10', datesShort:'Jan 9 & 10', price:59500, dep:15000 };
 var GHL='https://services.leadconnectorhq.com/hooks/t9HiHMKOiD67UOAImmi4/webhook-trigger/6WjQsjrVx4WKvh2ijOVB';
 var P='https://images-pw.pixieset.com/elementfield/1zqrnP1/', S='https://images-pw.pixieset.com/site/gjknWE/';
 /* hero: 12 tiles, two real black & white files each (no CSS filters anywhere) */
 var HERO=[['251101-PPU-NEWPORT-BEACH-1156-bf4cf4b5','260627-PPU-MIAMI-1214-f01479eb'],['260613-PPU-ALPHARETTA-0810-2b2ef79c','260124-PPU-LOS-ALTOS-1272-515ef658'],['260124-PPU-LOS-ALTOS-2294-d4fca44b','260124-PPU-LOS-ALTOS-3386-8a8dbcd4'],['260221-PPU-BROOKLYN-0748-d6f48358','PERSONALITY-POP-UP-LOS-ALTOS-1762-3f41675f'],['260124-PPU-LOS-ALTOS-1810-264b26b8','260627-PPU-SANTA-CLARA-1910-c6ab9885'],['260627-PPU-SANTA-CLARA-2292-676ede95','240709-PP-CHARLOTTE-0020-a456c192'],['260124-PPU-LOS-ALTOS-0638-a44eb833','PERSONALITY-POP-UP-ANN-ARBOR-0330-973146a4'],['260627-PPU-MIAMI-2182-1533bfac','PERSONALITY-POP-UP-LOS-ALTOS-1032-9e84214f'],['260627-PPU-MIAMI-3184-7de35a7d','PPU-GREENVILLE-0966_websize-6e988994'],['260314-PPU-ORLANDO-2504-548885fe','PERSONALITY-POP-UP-LOS-ALTOS-0656-6c33a3bc'],['PERSONALITY-POP-UP-IRVINE-DAY2-0673copy-3feeedad','PERSONALITY-POP-UP-CHICAGO-1162-33f9735a'],['260328-PPU-LONG-BEACH-0848-16c9231f','PERSONALITY-POP-UP-CLEVELAND-1032-83c57c89']];
 var DELAYS=[0,7,2,9,4,11,6,1,8,3,10,5];
 var TEAM=[S+'DDyzXZ/PERSONALITY-POP-UP-TEAM-0032-c67d6e2f-1500.jpg',S+'q5M4eb/PERSONALITY-POP-UP-TEAM-0014-40605ba7-1500.jpg',S+'a5V9qR/PERSONALITY-POP-UP-TEAM-0039-c022b62f-1500.jpg',S+'7n5VO1/PERSONALITY-POP-UP-TEAM-0026-1489f9f3-1500.jpg',S+'zol1xZ/PERSONALITY-POP-UP-TEAM-0021-fdc16a88-1500.jpg','https://raw.githubusercontent.com/jonathanconnolly/session-crm/main/public/ppu/team/photographer-11.jpg',S+'KDLzWk/PERSONALITY-POP-UP-TEAM-0002-218c0477-1500.jpg',S+'3a5Wdq/PERSONALITY-POP-UP-TEAM-0019-9a361888-1500.jpg',S+'JDnRjo/PERSONALITY-POP-UP-TEAM-0016-3164e6f6-1500.jpg',S+'3a5y13/PERSONALITY-POP-UP-TEAM-0030-bb2d549f-1500.jpg',S+'ODO3Jk/PERSONALITY-POP-UP-TEAM-0008-e4359385-1500.jpg'];
-var LOGOS=['Vera Wang','<i>People</i>','Airbnb','<i>Harper’s Bazaar</i>','Gigi Hadid','<i>Brides</i>','Neiman Marcus','<i>US Weekly</i>','Williams Sonoma','<i>BuzzFeed</i>','Trader Joe’s','<i>HuffPost</i>','Michelin'];
 /* the homepage strip: untouched photos alternating colour / black & white, plus the four Studio Rules */
 var E='https://images-pw.pixieset.com/elementfield/';
 var STRIP=[[E+'qkvXpbp/251108-PPU-CHICAGO-0353-b7ff8ccd-1000.jpg','Girl in a tan sweater resting her chin on her hand'],[E+'zvm347r/PERSONALITY-POP-UP-CLEVELAND-1032-ecf6ae63-1000.jpg','Toddler mid-laugh, black and white'],{n:1,q:'No<br>perfect kids allowed.'},[E+'1zqrnP1/260315-PPU-LONDON-2533-458f3301-1000.jpg','Boy in a denim jacket with a sideways smile'],[E+'1zqrnP1/260329-PPU-FT-WORTH-0686-91b3d25f-1000.jpg','Girl laughing with her hands on her face, black and white'],[E+'qkvXpbp/260411-PPU-PHOENIX-0261-33e9978c-1000.jpg','Girl in red crouching with her arms crossed'],{n:2,q:'Don’t say cheese.'},[E+'bOeql4M/251018-PPU-SALT-LAKE-CITY-1298-5160b1bf-1000.jpg','Boy in round glasses pressing a finger to his nose, black and white'],[E+'1zqrnP1/260328-PPU-DALLAS-0693-1f13d1e1-1000.jpg','Boy in a white polo laughing'],[E+'zvm347r/PERSONALITY-POP-UP-CHICAGO-1162-2bd96d8f-1000.jpg','Girl with curly hair laughing, black and white'],{n:3,q:'No forced poses.'},[E+'ZQrnMKM/260307-PPU-CHARLESTON-0868-14911c28-1000.jpg','Blonde girl crouching and smiling'],[E+'1zqrnP1/260321-PPU-CHARLOTTE-0702-99d90960-1000.jpg','Toddler in a cap that says DUDE, black and white'],[E+'1zqrnP1/251108-PPU-CHICAGO-3423-9c2f0b67-1000.jpg','Boy in a beanie with his hands behind his head'],{n:4,q:'Let them be them.'},[E+'ZQrnMKM/260131-PPU-LA-JOLLA-2058-f7dfd718-1000.jpg','Girl with her hair flying, black and white']];
@@ -572,8 +592,6 @@ function setAll(key,html){[].forEach.call(document.querySelectorAll('[data-jx="'
 $('ppuJ-grid').innerHTML=HERO.map(function(p,i){return '<div class="ppuH-tile" style="--d:-'+DELAYS[i]+'s"><img src="'+P+p[0]+'-1000.jpg" alt=""'+(i<6?' fetchpriority="high"':'')+'><img src="'+P+p[1]+'-1000.jpg" alt="" loading="lazy"></div>'}).join('');
 /* team rail */
 (function(){var set=TEAM.map(function(u){return '<figure class="ppuH-tm"><img src="'+u+'" alt="Personality Pop-Up photographer" loading="lazy"></figure>'}).join('');$('ppuJ-rail').innerHTML='<div class="ppuH-rail__set">'+set+'</div><div class="ppuH-rail__set" aria-hidden="true">'+set.replace(/alt="[^"]*"/g,'alt=""')+'</div>'})();
-/* logos */
-(function(){var set=LOGOS.map(function(l){return '<span class="ppuH-logos__item">'+l+'</span><span class="ppuH-logos__dot"></span>'}).join('');$('ppuJ-logos').innerHTML='<div class="ppuH-logos__set">'+set+'</div><div class="ppuH-logos__set" aria-hidden="true">'+set+'</div>'})();
 /* city ticker (cities.js if it loads, else the list above; Jacksonville always included) */
 (function(){
 var el=$('ppuJ-tick');
@@ -620,25 +638,27 @@ measure();requestAnimationFrame(tick);
 (function(){var s=$('ppuJ-sticky'),hero=document.querySelector('.ppuH-hero'),book=$('ppuJ-book');if(!('IntersectionObserver' in window))return;var hv=true,bv=false;function u(){s.classList.toggle('show',!hv&&!bv)}
 new IntersectionObserver(function(e){hv=e[0].isIntersecting;u()}).observe(hero);new IntersectionObserver(function(e){bv=e[0].isIntersecting;u()},{threshold:.05}).observe(book)})();
 
-/* ---- live event facts from AXIS: dates, venue, price, spots left, sold out ---- */
+/* ---- live event facts from AXIS: dates, area, price, spots left, sold out ---- */
 var MONTHS={JAN:'January',FEB:'February',MAR:'March',APR:'April',MAY:'May',JUN:'June',JUL:'July',AUG:'August',SEP:'September',OCT:'October',NOV:'November',DEC:'December'};
 function cap(m){return m?m.charAt(0)+m.slice(1).toLowerCase():''}
+/* "January 9 & 10" for two days, "January 9 to 11" for a run, never a dash (house rule) */
 function fmt(days,long){if(!days.length)return '';var a=days[0],b=days[days.length-1],M=function(m){return long?MONTHS[m]||cap(m):cap(m)};
-if(a.mon===b.mon)return M(a.mon)+' '+a.day+(days.length>1?'–'+b.day:'');return M(a.mon)+' '+a.day+' – '+M(b.mon)+' '+b.day}
-function dows(days){var d=days.map(function(x){return x.dow});return d.length>2?d[0]+' – '+d[d.length-1]:d.join(' & ')}
+if(days.length===1)return M(a.mon)+' '+a.day;var j=days.length===2?' & ':' to ';
+if(a.mon===b.mon)return M(a.mon)+' '+a.day+j+b.day;return M(a.mon)+' '+a.day+j+M(b.mon)+' '+b.day}
 function applyFacts(f){
 var bal=f.price-f.dep;
 setAll('price',esc(money(f.price)));setAll('dep',esc(money(f.dep)));setAll('bal',esc(money(bal)));
-if(f.dates){setAll('dates',esc(f.dates));setAll('datesShort',esc(f.datesShort));setAll('dows',esc(f.dows));$('ppuJ-dates').textContent=f.dates}
-if(f.venue){$('ppuJ-where').textContent=f.venue;setAll('venue','The studio is at '+esc(f.venueFull)+'. The full address is in your booking confirmation.');setAll('venueLine','<b>'+esc(f.venueFull)+'</b> — the full address is in your booking confirmation.')}
+if(f.dates){setAll('dates',esc(f.dates));setAll('datesShort',esc(f.datesShort))}
+/* AXIS only ever sends the area (city, state, ZIP), never the street: see src/lib/public-venue.ts */
+if(f.venue){[].forEach.call(document.querySelectorAll('[data-jx="venueLead"]'),function(el){el.innerHTML='Our pop-up studio is in '+esc(f.venue)+'. ';el.hidden=false})}
 var left=$('ppuJ-left'),ctas=document.querySelectorAll('[data-cta]');
 if(f.open===false){
-$('ppuJ-where').textContent='Sold out';left.textContent='Sold out · waitlist open';left.hidden=false;
+left.textContent='Sold out · waitlist open';left.hidden=false;
 [].forEach.call(ctas,function(a){a.textContent=(a.closest('.ppuJ-sticky')?'':'👉 ')+'Join the Waitlist'});
 $('ppuJ-book-eyebrow').textContent='Sold out · Waitlist open';$('ppuJ-book-h').innerHTML='Jacksonville is sold out.';
-$('ppuJ-book-p').textContent='Join the waitlist below — if a spot opens up, you’ll be texted first.';
-$('ppuJ-cant-h').innerHTML='Sold out? Don’t miss the next one.';$('ppuJ-cant-p').textContent='Leave your email and you’ll be the first to know when our next Jacksonville dates open.';
-$('ppuJ-close-sub').textContent='Jacksonville is full — get on the list for a cancellation or our next dates.';
+$('ppuJ-book-p').textContent='Join the waitlist below. If a spot opens up, you’ll be texted first.';
+$('ppuJ-cant-h').innerHTML='Sold out? Don’t miss the next one.';
+$('ppuJ-close-sub').textContent='Jacksonville is sold out · Get on the list for a cancellation or our next dates';
 }else if(f.left>0&&f.left<=10){
 left.textContent='Only '+f.left+' spot'+(f.left===1?'':'s')+' left';left.hidden=false;
 $('ppuJ-book-eyebrow').textContent='Now booking · Only '+f.left+' spot'+(f.left===1?'':'s')+' left';
@@ -650,23 +670,63 @@ if(!c)return null;
 var pop=(c.packages||[]).filter(function(p){return (p.kind||'popup')==='popup'})[0]||c.package||{};
 var days=(c.dates||[]).filter(function(d){return d.slots.some(function(s){return (s.kind||'popup')==='popup'})});
 var left=0;days.forEach(function(d){d.slots.forEach(function(s){if((s.kind||'popup')==='popup'&&s.open)left++})});
-var v=String(c.venue||'').trim(),soon=/coming soon|tba|tbd/i.test(v)||!v||v.toLowerCase()===CITY_FULL.toLowerCase();
-return {dates:fmt(days,true)||FALLBACK.dates,datesShort:fmt(days,false)||FALLBACK.datesShort,dows:dows(days)||FALLBACK.dows,price:pop.priceCents||FALLBACK.price,dep:pop.retainerCents==null?(pop.priceCents||FALLBACK.dep):pop.retainerCents,open:left>0,left:left,venue:soon?'':v.split(',')[0],venueFull:soon?'':v}}
+var v=String(c.venue||'').trim(),soon=/coming soon|tba|tbd/i.test(v)||!v||v.toLowerCase()===CITY_FULL.toLowerCase()||/^\d/.test(v);
+return {dates:fmt(days,true)||FALLBACK.dates,datesShort:fmt(days,false)||FALLBACK.datesShort,price:pop.priceCents||FALLBACK.price,dep:pop.retainerCents==null?(pop.priceCents||FALLBACK.dep):pop.retainerCents,open:left>0,left:left,venue:soon?'':v}}
 applyFacts({dates:'',price:FALLBACK.price,dep:FALLBACK.dep,open:true,left:99});
 fetch(API+'/api/public/availability',{cache:'no-store'}).then(function(r){return r.json()}).then(function(j){var f=fromFeed(j);if(f)applyFacts(f)}).catch(function(){});
 
-/* ---- "Can't make these dates?" → the GHL VIP list, tagged for Jacksonville ---- */
+/* ---- "Can't make these dates?" = the site's Find Out First / VIP form (v1.3 logic), Jacksonville pre-selected,
+        posting the same payload to the same GHL webhook, plus a landing_<city> tag ---- */
 (function(){
-var form=$('ppuJ-cant-form'),btn=$('ppuJ-cant-btn'),ok=$('ppuJ-cant-ok');
+var form=$('ppuJ-cant-form'),btn=$('ppuJ-cant-btn'),ok=$('ppuJ-cant-ok'),field=$('ppuJ-cant-cities'),cin=$('ppuJ-cant-cityInput'),sug=$('ppuJ-cant-suggest'),sms=$('ppuJ-cant-sms');
+var LABEL='Join VIP List →',selected=[{city:CITY_FULL,metroTag:CITY_TAG}],cities=[],areaReq=false;
+function note(t,ms){btn.textContent=t;setTimeout(function(){btn.textContent=LABEL},ms||1800)}
+function cityList(){if(!cities.length&&window.CITIES&&window.CITIES.length)cities=window.CITIES;return cities}
+function has(tag){return selected.some(function(s){return s.metroTag===tag})}
+function renderChips(){[].forEach.call(field.querySelectorAll('.ppuJ-cant__chip'),function(c){c.parentNode.removeChild(c)});
+selected.forEach(function(s,i){var chip=document.createElement('span');chip.className='ppuJ-cant__chip';chip.innerHTML=esc(s.city)+' <button type="button" aria-label="Remove '+esc(s.city)+'">×</button>';
+chip.querySelector('button').addEventListener('click',function(){selected.splice(i,1);renderChips()});field.insertBefore(chip,cin)});
+cin.placeholder=selected.length?'Add another city':'Add a city'}
+function addChip(s){if(!s||!s.city||has(s.metroTag))return;selected.push(s);cin.value='';closeSug();renderChips()}
+function lookup(q){q=String(q||'').trim().toLowerCase();var L=cityList();if(!q||!L.length)return [];var m=[];function had(t){return m.some(function(x){return x.metroTag===t})}
+L.forEach(function(c){if(c.name.toLowerCase().indexOf(q)===0&&!had(c.tag))m.push({display:c.name,city:c.name,metroTag:c.tag,hint:''})});
+L.forEach(function(c){(c.aliases||[]).forEach(function(a){if(a.toLowerCase().indexOf(q)===0&&!m.some(function(x){return x.display.toLowerCase()===a.toLowerCase()})){m.push({display:a.replace(/\b\w/g,function(s){return s.toUpperCase()}),city:c.name,metroTag:c.tag,hint:'· '+c.name.split(',')[0]+' metro'})}})});
+L.forEach(function(c){if(c.name.toLowerCase().indexOf(q)>0&&!had(c.tag))m.push({display:c.name,city:c.name,metroTag:c.tag,hint:''})});
+return m.slice(0,8)}
+function openSug(items){if(!items.length){closeSug();return}sug.innerHTML=items.map(function(it,i){return '<div data-i="'+i+'">'+esc(it.display)+(it.hint?'<small>'+esc(it.hint)+'</small>':'')+'</div>'}).join('');sug.classList.add('open');
+[].forEach.call(sug.children,function(el){el.addEventListener('mousedown',function(e){e.preventDefault();addChip(items[+el.getAttribute('data-i')])})})}
+function closeSug(){sug.classList.remove('open')}
+function fmtPhone(el){var v=el.value.replace(/\D/g,'').slice(0,10);el.value=v.length<=3?v:v.length<=6?v.slice(0,3)+'-'+v.slice(3):v.slice(0,3)+'-'+v.slice(3,6)+'-'+v.slice(6)}
+function loadAreaCodes(){if(areaReq||window.AREA_CODES)return;areaReq=true;var s=document.createElement('script');s.src='https://cdn.jsdelivr.net/gh/jonathanconnolly/session-crm@main/public/area-codes.js';s.async=true;document.head.appendChild(s)}
+function phoneTag(p){var A=window.AREA_CODES;if(!A)return '';var d=String(p||'').replace(/\D/g,'');if(!d)return '';var ac=d.length>=10?d.slice(d.length-10,d.length-7):d.slice(0,3);var x=A[ac];if(!x)return '';
+var c=String(x.city||'').toLowerCase().replace(/[^a-z0-9]+/g,'_').replace(/(^_|_$)/g,''),st=String(x.state||'').toLowerCase();return c&&st?'phone_'+c+'_'+st:''}
+renderChips();
+form.addEventListener('focusin',loadAreaCodes,{once:true});
+form.phone.addEventListener('input',function(){fmtPhone(form.phone)});
+sms.addEventListener('change',function(){form.phone.placeholder=sms.checked?'Phone (for text alerts)':'Phone'});
+field.addEventListener('click',function(e){if(e.target===field)cin.focus()});
+cin.addEventListener('focus',function(){field.classList.add('focus')});
+cin.addEventListener('blur',function(){field.classList.remove('focus');setTimeout(closeSug,120)});
+var deb;cin.addEventListener('input',function(){clearTimeout(deb);var q=cin.value;deb=setTimeout(function(){if(q.length<2){closeSug();return}openSug(lookup(q))},80)});
+cin.addEventListener('keydown',function(e){if(e.key==='Backspace'&&!cin.value&&selected.length){selected.pop();renderChips()}
+else if(e.key==='Enter'){e.preventDefault();var q=cin.value.trim();if(!q)return;var m=lookup(q);if(m.length)addChip(m[0]);else if(q.length>=2)addChip({city:q,metroTag:'city_other'})}});
 form.addEventListener('submit',function(e){
 e.preventDefault();
-var first=form.first.value.trim(),email=form.email.value.trim();
+var first=form.first.value.trim(),last=form.last.value.trim(),email=form.email.value.trim(),phone=form.phone.value.replace(/\D/g,'');
 form.first.classList.toggle('bad',!first);form.email.classList.toggle('bad',!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email));
-var bad=form.querySelector('.bad');if(bad){bad.focus();return}
+/* text alerts are the point of the list: a ticked SMS box needs a number (VIP form v1.1 rule) */
+form.phone.classList.toggle('bad',sms.checked&&!phone);
+var bad=form.querySelector('.bad');if(bad){bad.focus();note(bad===form.phone?'Add your phone for text alerts':'Email + first name needed',2200);return}
 if(form.website.value)return;
-btn.disabled=true;btn.textContent='Adding you…';
-var tags=['source_website','status_lead','form_vip_list',CITY_TAG,'landing_'+CITY.toLowerCase()];
-var payload={first_name:first,last_name:'',email:email,phone:'',city_tags:CITY_TAG,phone_tag:'',tags:tags.join(', '),requested_cities:CITY_FULL,sms_opt_in:false,source_widget:'vip_list',page:location.href};
+var typed=cin.value.trim();if(typed){var m=lookup(typed);if(m.length)addChip(m[0]);else if(typed.length>=2)addChip({city:typed,metroTag:'city_other'})}
+btn.disabled=true;btn.textContent='Adding you to the list…';
+var tags=['source_website','status_lead','form_vip_list'];
+selected.forEach(function(s){if(s.metroTag&&tags.indexOf(s.metroTag)<0)tags.push(s.metroTag)});
+var pt=phoneTag(phone);if(pt&&tags.indexOf(pt)<0)tags.push(pt);
+if(sms.checked)tags.push('sms_opt_in');
+tags.push('landing_'+CITY.toLowerCase());
+var payload={first_name:first,last_name:last,email:email,phone:phone,city_tags:selected.map(function(s){return s.metroTag}).filter(Boolean).join(', '),phone_tag:pt,tags:tags.join(', '),
+requested_cities:selected.map(function(s){return s.city}).join(', '),sms_opt_in:!!sms.checked,source_widget:'vip_list',page:location.href};
 fetch(GHL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload),keepalive:true}).catch(function(){}).then(function(){
 form.hidden=true;ok.hidden=false;
 try{if(window.fbq)fbq('track','Lead',{content_name:'jax_next_dates'})}catch(x){}
