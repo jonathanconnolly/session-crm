@@ -5,19 +5,21 @@
   who have already had a session: the sell is ACCESS, not the session.
 
     1. Hero      "Never miss another year." · no price
-    2. Calendar  the centrepiece: a year of dates, one public weekend
-                 visible, the rest blurred and held for members
-    3. Why       four reasons (spot held · calendar opens · we remember ·
-                 price locked)
-    4. Pricing   yearly/monthly toggle + two plan cards (monthly rate of
-                 the yearly price, like the fitness-app block)
-    5. Reviews · 6. FAQ · 7. Close · 8. Sticky CTA
+    2. Pricing   straight under the fold. TWO TIERS:
+                 Full Access $19/mo (calendar + early booking, no session,
+                 cancel anytime) and Membership $595/yr (a session paid up
+                 front, spot held, 1-4 sessions on a stepper, extras at
+                 $535). Sessions are never billed monthly: a monthly plan
+                 lets someone shoot in February and cancel in March.
+    3. See       the difference, in the brand's big-serif facts row plus a
+                 thin 12-month strip (one month dark = the public weekend)
+    4. Why       four reasons · 5. Reviews · 6. FAQ · 7. Close · 8. Sticky
 
   Dropped on purpose (brand and work are already established for this
   audience): team rail, portfolio strip, press ticker, what-to-expect.
 
-  CONFIG (bottom script): PRICE (per session, yearly / monthly), DOOR,
-  PLANS, LINKS[plan][sessions] (Stripe Payment Links), PORTAL.
+  CONFIG (bottom script): SESSION, SESSION_EXTRA, ACCESS, LINKS
+  (LINKS.membership[1-4] + LINKS.access, Stripe Payment Links), PORTAL.
   No city: a membership is good at any pop-up (asked at checkout).
   ?joined=1&plan=…&n=… → the "You're a member" state.
   Built by scripts/build-ppu-members.py (+ docs/embeds/parts/reviews.html).
@@ -85,89 +87,69 @@ font:600 18px/18px var(--mono)!important;letter-spacing:1.8px!important;text-tra
 .ppuJ-assure li::before{content:"\2713";font-weight:700;color:var(--ink);flex:none;margin-top:1px}
 .ppuJ-assure b{font-weight:600;color:var(--ink)}
 
-/* 2b · PRICING — copy left, two plan cards right (book-widget look: Inter, white, 24px) */
-.ppuM-pr{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.3fr);column-gap:clamp(32px,5vw,72px);align-items:start}
-.ppuM-pr__copy{display:flex;flex-direction:column;align-items:flex-start;gap:22px;padding-top:6px}
-.ppuM-pr__copy .ppuH-p{max-width:40ch}
-.ppuM-checks{list-style:none!important;margin:0!important;padding:0!important;display:grid;gap:12px}
-.ppuM-checks li{list-style:none!important;margin:0!important;display:flex;gap:11px;align-items:flex-start;font:400 15px/1.5 var(--mono);color:var(--text)}
-.ppuM-checks li::before{content:"\2713";font-weight:700;color:var(--ink);flex:none}
-.ppuM-pr__trust{display:inline-flex;align-items:center;gap:10px;font:500 12.5px/1 var(--mono)!important;letter-spacing:.14em!important;text-transform:uppercase;color:var(--ink)!important;text-decoration:none!important}
-.ppuM-pr__trust .st{font-size:15px;letter-spacing:.1em;color:#E8B33C}
-.ppuH .ppuM-rise{font:400 14px/1.6 var(--mono)!important;color:var(--text)!important;background:var(--blush);border-radius:14px;padding:16px 20px;max-width:none}
-.ppuM-rise b{font-weight:600;color:var(--ink)}
-.ppuM-w{--wink:#0E0E0E;--mut:#737373;--ln:#EBEBEB;--wsoft:#F5F5F5;--ui:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;width:100%;color:var(--wink);font-family:var(--ui);font-size:15px;line-height:1.4;text-align:left;position:relative}
+/* 2b · PRICING — centred head (Jacksonville rhythm) + two tier cards */
+.ppuM-pr{max-width:1000px;margin:0 auto}
+.ppuM-pr__head{margin:0 auto 40px;display:flex;flex-direction:column;align-items:center;gap:18px;text-align:center}
+.ppuM-pr__head .ppuH-p{text-align:center;max-width:56ch}
+.ppuM-w{--wink:#0E0E0E;--mut:#737373;--ln:#EBEBEB;--wsoft:#F5F5F5;--ui:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;width:100%;color:var(--wink);font-family:var(--ui);font-size:15px;line-height:1.4;text-align:left}
 .ppuM-w *,.ppuM-w *::before,.ppuM-w *::after{box-sizing:border-box}
 .ppuM-w p{margin:0!important;padding:0!important;text-wrap:pretty}
-.ppuM-top{display:flex;justify-content:center;margin:0 0 18px}
-.ppuM-top .ppuM-seg{width:min(100%,360px)}
-.ppuH .ppuM-lab{display:block;font:600 12px/1.3 var(--ui)!important;letter-spacing:.06em!important;text-transform:uppercase;color:var(--mut)!important;margin:0 0 8px!important}
-.ppuM-sel{position:relative}
-.ppuM-sel select{appearance:none;-webkit-appearance:none;width:100%;border:1.5px solid var(--ln);border-radius:14px;background:#fff;padding:15px 44px 15px 16px;font:600 15px/1.2 var(--ui);color:var(--wink);cursor:pointer;outline:none}
-.ppuM-sel select:focus{border-color:var(--wink)}
-.ppuM-sel::after{content:"";position:absolute;right:18px;top:50%;width:9px;height:9px;border-right:1.5px solid var(--wink);border-bottom:1.5px solid var(--wink);transform:translateY(-70%) rotate(45deg);pointer-events:none}
-.ppuM-seg{display:grid;grid-template-columns:1fr 1fr;gap:4px;background:var(--wsoft);border-radius:999px;padding:4px;margin:0}
-.ppuM-seg button{border-radius:999px!important;padding:12px 16px!important;font:600 13.5px/1 var(--ui)!important;color:var(--mut)!important;background:transparent!important;text-align:center!important;letter-spacing:0!important;text-transform:none!important;transition:background .15s,color .15s,box-shadow .15s;min-height:0!important;border:0!important;white-space:nowrap}
-.ppuM-seg button[aria-pressed="true"]{background:#fff!important;color:var(--wink)!important;box-shadow:0 2px 10px rgba(0,0,0,.08)}
-.ppuM-cards{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:start}
-.ppuM-card{background:#fff;border:1.5px solid var(--ln);border-radius:24px;box-shadow:0 30px 70px -40px rgba(0,0,0,.35);overflow:hidden;position:relative}
+.ppuM-cards{display:grid;grid-template-columns:1fr 1.08fr;gap:18px;align-items:start}
+.ppuM-card{background:#fff;border:1.5px solid var(--ln);border-radius:24px;box-shadow:0 30px 70px -45px rgba(0,0,0,.3);overflow:hidden}
 .ppuM-card--rec{border-color:var(--ink);box-shadow:0 30px 70px -36px rgba(0,0,0,.45)}
-.ppuM-card__rib{display:flex;align-items:center;gap:8px;background:var(--ink);color:#fff;padding:10px 18px;font:600 12.5px/1.2 var(--ui);white-space:nowrap;overflow:hidden}
-.ppuM-card__rib span{font-weight:400;opacity:.8;overflow:hidden;text-overflow:ellipsis}
-.ppuM-in{padding:22px 22px 24px}
-.ppuM-hd h3{font:700 22px/1.15 var(--ui)!important;letter-spacing:-.02em!important;color:var(--wink)!important;text-transform:none!important;margin:0 0 4px!important}
-.ppuM-hd h3 em{font-family:var(--serif);font-style:italic;font-weight:400;font-size:1.12em}
-.ppuH .ppuM-sub{font:400 13.5px/1.5 var(--ui)!important;color:var(--mut)!important;margin:0 0 16px!important;letter-spacing:0!important}
+.ppuM-card__rib{background:var(--ink);color:#fff;padding:10px 20px;font:600 12.5px/1.2 var(--ui);white-space:nowrap}
+.ppuM-card__rib span{font-weight:400;opacity:.78}
+.ppuM-in{padding:24px 24px 26px}
+.ppuM-hd h3{font:700 22px/1.15 var(--ui)!important;letter-spacing:-.02em!important;color:var(--wink)!important;text-transform:none!important;margin:0 0 5px!important}
+.ppuH .ppuM-sub{font:400 13.5px/1.5 var(--ui)!important;color:var(--mut)!important;margin:0 0 18px!important;letter-spacing:0!important}
 .ppuM-price{display:flex;align-items:baseline;gap:2px;margin:0 0 6px}
-.ppuM-price b{font:800 46px/1 var(--ui)!important;letter-spacing:-.04em!important;color:var(--wink)!important;font-variant-numeric:tabular-nums}
-.ppuM-price i{font:700 22px/1 var(--ui);font-style:normal;color:var(--wink);letter-spacing:-.02em}
-.ppuH .ppuM-bill{font:500 14px/1.45 var(--ui)!important;color:var(--wink)!important;letter-spacing:0!important}
+.ppuM-price b{font:800 44px/1 var(--ui)!important;letter-spacing:-.04em!important;color:var(--wink)!important;font-variant-numeric:tabular-nums}
+.ppuM-price i{font:700 20px/1 var(--ui);font-style:normal;color:var(--wink);letter-spacing:-.02em}
+.ppuH .ppuM-bill{font:500 13.5px/1.45 var(--ui)!important;color:var(--wink)!important;letter-spacing:0!important}
 .ppuH .ppuM-alt{font:400 12.5px/1.45 var(--ui)!important;color:var(--mut)!important;letter-spacing:0!important;margin:2px 0 0!important}
-.ppuM-btn{display:flex!important;width:100%!important;align-items:center;justify-content:center;gap:10px;background:var(--wink)!important;color:#fff!important;border-radius:999px!important;padding:16px 20px!important;margin:18px 0 0!important;font:600 15px/1 var(--ui)!important;letter-spacing:0!important;text-transform:none!important;text-decoration:none!important;transition:opacity .15s}
+.ppuM-n{margin:18px 0 0;padding:16px 0 0;border-top:1px solid var(--ln)}
+.ppuH .ppuM-n__l{display:flex;justify-content:space-between;align-items:baseline;gap:10px;font:600 12px/1.3 var(--ui)!important;letter-spacing:.05em!important;text-transform:uppercase;color:var(--mut)!important;margin:0 0 9px!important}
+.ppuH .ppuM-n__l em{font:400 12px/1.3 var(--ui)!important;font-style:normal;letter-spacing:0!important;text-transform:none;color:var(--mut)!important}
+.ppuM-n__b{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
+.ppuM-n__b button{border:1.5px solid var(--ln)!important;border-radius:11px!important;padding:12px 0!important;font:600 15px/1 var(--ui)!important;color:var(--wink)!important;background:#fff!important;text-align:center!important;letter-spacing:0!important;min-height:0!important;width:100%!important;transition:border-color .15s,background .15s,color .15s}
+.ppuM-n__b button[aria-pressed="true"]{background:var(--wink)!important;border-color:var(--wink)!important;color:#fff!important}
+.ppuM-btn{display:flex!important;width:100%!important;align-items:center;justify-content:center;background:var(--wink)!important;color:#fff!important;border-radius:999px!important;padding:16px 20px!important;margin:18px 0 0!important;font:600 15px/1 var(--ui)!important;letter-spacing:0!important;text-transform:none!important;text-decoration:none!important;transition:opacity .15s}
 .ppuM-btn:hover{opacity:.9}
+.ppuM-btn--alt{background:#fff!important;color:var(--wink)!important;border:1.5px solid var(--wink)!important}
 .ppuM-btn[aria-disabled="true"]{opacity:.35;pointer-events:none}
-.ppuM-card--rec .ppuM-btn{background:var(--ink)!important}
-.ppuH .ppuM-feat{font:600 13.5px/1.4 var(--ui)!important;color:var(--wink)!important;margin:20px 0 10px!important;letter-spacing:0!important}
+.ppuH .ppuM-feat{font:600 13px/1.4 var(--ui)!important;color:var(--wink)!important;margin:20px 0 10px!important;letter-spacing:0!important}
 .ppuM-list{list-style:none!important;margin:0!important;padding:0!important;display:grid;gap:9px}
 .ppuM-list li{list-style:none!important;margin:0!important;display:flex;gap:10px;align-items:flex-start;font:400 13.5px/1.45 var(--ui);color:var(--wink)}
-.ppuM-list li::before{content:"";flex:none;width:18px;height:18px;border-radius:50%;background:var(--blush) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%232D2D2D' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7.5'/%3E%3C/svg%3E") center/11px no-repeat;margin-top:1px}
-.ppuH .ppuM-fine{display:flex;align-items:flex-start;justify-content:center;gap:8px;margin:16px 0 0!important;font:400 12px/1.5 var(--ui)!important;color:var(--mut)!important;letter-spacing:0!important;text-align:center;text-wrap:pretty}
+.ppuM-list li::before{content:"";flex:none;width:17px;height:17px;border-radius:50%;background:var(--blush) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%232D2D2D' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7.5'/%3E%3C/svg%3E") center/11px no-repeat;margin-top:1px}
+.ppuH .ppuM-fine{display:flex;align-items:flex-start;justify-content:center;gap:8px;margin:20px 0 0!important;font:400 12px/1.5 var(--ui)!important;color:var(--mut)!important;letter-spacing:0!important;text-align:center;text-wrap:pretty}
 .ppuM-fine svg{width:13px;height:13px;flex:none;margin-top:2px}
 .ppuH .ppuM-manage{text-align:center;margin:10px 0 0!important;font:400 12.5px/1.4 var(--ui)!important;color:var(--mut)!important;letter-spacing:0!important}
 .ppuM-manage a{color:var(--wink)!important;font:inherit!important;letter-spacing:0!important;text-decoration:underline!important;text-underline-offset:2px}
-.ppuM-ok{background:#fff;border:1.5px solid var(--ln);border-radius:24px;padding:24px}
+.ppuM-ok{background:#fff;border:1.5px solid var(--ln);border-radius:24px;padding:24px;max-width:600px;margin:0 auto}
 .ppuM-ok h3{font:700 24px/1.15 var(--ui)!important;letter-spacing:-.02em!important;color:var(--wink)!important;text-transform:none!important;margin:0 0 8px!important}
 .ppuH .ppuM-ok p{font:400 14.5px/1.55 var(--ui)!important;color:var(--mut)!important;letter-spacing:0!important}
 .ppuM-ok ol{margin:18px 0 0!important;padding:0!important;list-style:none!important;display:grid;gap:12px}
 .ppuM-ok li{list-style:none!important;margin:0!important;display:grid;grid-template-columns:28px minmax(0,1fr);gap:12px;align-items:start;font:400 14px/1.45 var(--ui);color:var(--wink)}
 .ppuM-ok li b{display:flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:var(--blush);font:600 12px/1 var(--ui);color:var(--ink)}
 
-/* 3 · THE CALENDAR — what members see (app-style panel, locked dates) */
-.ppuM-cal{padding:104px var(--gut);background:var(--cream)}
-.ppuM-cal__in{max-width:1180px;margin:0 auto}
-.ppuM-cal__head{max-width:760px;margin:0 auto 48px;display:flex;flex-direction:column;align-items:center;gap:18px;text-align:center}
-.ppuM-cal__head .ppuH-p{text-align:center;max-width:58ch}
-.ppuM-panel{--pink:#E8A096;background:#fff;border:1px solid rgba(45,45,45,.1);border-radius:24px;box-shadow:0 40px 90px -50px rgba(0,0,0,.4);overflow:hidden;font-family:var(--ui,"Inter",system-ui,sans-serif)}
-.ppuM-panel__bar{display:flex;align-items:center;gap:10px;padding:14px 20px;border-bottom:1px solid rgba(45,45,45,.1);background:#FBFAF8}
-.ppuM-panel__dot{width:9px;height:9px;border-radius:50%;background:rgba(45,45,45,.16);flex:none}
-.ppuH .ppuM-panel__t{font:600 13px/1 "Inter",system-ui,sans-serif!important;color:var(--ink)!important;letter-spacing:0!important;margin-left:6px!important}
-.ppuH .ppuM-panel__y{margin-left:auto!important;font:500 12px/1 "Inter",system-ui,sans-serif!important;color:var(--soft)!important;letter-spacing:.06em!important;text-transform:uppercase}
-.ppuM-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(45,45,45,.1)}
-.ppuM-mo{background:#fff;padding:16px 16px 18px;min-height:112px;display:flex;flex-direction:column;gap:9px}
-.ppuH .ppuM-mo__n{font:600 11px/1 "Inter",system-ui,sans-serif!important;letter-spacing:.1em!important;text-transform:uppercase;color:var(--soft)!important;margin:0!important}
-.ppuM-chip{display:inline-flex;align-items:center;gap:7px;border-radius:9px;padding:8px 10px;font:600 12.5px/1.15 "Inter",system-ui,sans-serif;width:100%}
-.ppuM-chip--pub{background:var(--ink);color:#fff}
-.ppuM-chip--pub small{font-weight:500;opacity:.7;margin-left:auto;font-size:10.5px;letter-spacing:.04em;text-transform:uppercase}
-.ppuM-chip--mem{background:var(--blush);color:var(--ink)}
-.ppuM-chip--mem b{filter:blur(4.5px);-webkit-filter:blur(4.5px);font-weight:600;user-select:none}
-.ppuM-chip--mem svg{width:12px;height:12px;flex:none;margin-left:auto;opacity:.75}
-.ppuM-panel__foot{display:flex;flex-wrap:wrap;align-items:center;gap:10px 22px;padding:16px 20px;border-top:1px solid rgba(45,45,45,.1);background:#FBFAF8}
-.ppuH .ppuM-key{display:inline-flex;align-items:center;gap:8px;font:500 12px/1.3 "Inter",system-ui,sans-serif!important;color:var(--soft)!important;letter-spacing:0!important;margin:0!important}
-.ppuM-key i{width:14px;height:14px;border-radius:4px;flex:none;font-style:normal}
-.ppuM-key i.pub{background:var(--ink)}.ppuM-key i.mem{background:var(--blush)}
-.ppuH .ppuM-cal__note{text-align:center;margin:22px auto 0!important;font:400 13px/1.6 var(--mono)!important;color:var(--soft)!important;max-width:60ch}
+/* 3 · WHAT YOU SEE — the brand's big-serif facts row + a thin 12-month strip */
+.ppuM-see{padding:96px var(--gut) 104px;background:var(--cream)}
+.ppuM-see__in{max-width:980px;margin:0 auto}
+.ppuM-see__head{margin:0 auto 44px;display:flex;flex-direction:column;align-items:center;gap:18px;text-align:center}
+.ppuM-see__head .ppuH-p{text-align:center;max-width:56ch}
+.ppuM-f{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;border-top:1px solid rgba(45,45,45,.14);border-bottom:1px solid rgba(45,45,45,.14);padding:34px 0}
+.ppuM-f div{text-align:center}
+.ppuM-f b{display:block;font:400 clamp(32px,3.4vw,46px)/1 var(--serif)!important;color:var(--ink)!important;margin-bottom:10px;letter-spacing:-.01em;white-space:nowrap}
+.ppuM-f span{display:block;font:500 11px/1.5 var(--mono)!important;letter-spacing:.14em!important;text-transform:uppercase;color:var(--soft)!important}
+.ppuM-yr{display:flex;gap:6px;margin:34px 0 0}
+.ppuM-yr i{flex:1;height:52px;border-radius:8px;background:var(--blush);display:flex;align-items:flex-end;justify-content:center;padding-bottom:7px;font:600 9.5px/1 var(--mono);font-style:normal;letter-spacing:.06em;text-transform:uppercase;color:rgba(45,45,45,.5)}
+.ppuM-yr i.on{background:var(--ink);color:rgba(255,255,255,.75)}
+.ppuH .ppuM-yr__k{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 24px;margin:16px 0 0!important}
+.ppuH .ppuM-yr__k span{display:inline-flex;align-items:center;gap:8px;font:500 12px/1.4 var(--mono)!important;color:var(--soft)!important;letter-spacing:0!important}
+.ppuM-yr__k em{width:13px;height:13px;border-radius:4px;flex:none;font-style:normal}
+.ppuM-yr__k em.a{background:var(--ink)}.ppuM-yr__k em.b{background:var(--blush)}
 
-/* 3b · WHY — the repeat-customer case, four reasons */
+/* 3b · WHY — four reasons */
 .ppuM-why{padding:104px var(--gut)}
 .ppuM-why__in{max-width:1080px;margin:0 auto}
 .ppuM-why__head{max-width:720px;margin:0 0 56px;display:flex;flex-direction:column;align-items:flex-start;gap:20px}
@@ -228,10 +210,12 @@ font:600 18px/18px var(--mono)!important;letter-spacing:1.8px!important;text-tra
 .ppuJ-ev b{font-size:28px!important}
 .ppuJ-ev span{font-size:10px!important;letter-spacing:.1em!important}
 .ppuJ-assure{grid-template-columns:1fr;gap:9px;margin-top:20px!important;max-width:360px}
-.ppuM-cal{padding:64px var(--gut)}
-.ppuM-cal__head{margin-bottom:32px;gap:14px}
-.ppuM-grid{grid-template-columns:repeat(2,1fr)}
-.ppuM-mo{min-height:96px;padding:13px 13px 15px}
+.ppuM-see{padding:60px var(--gut) 64px}
+.ppuM-see__head{margin-bottom:30px;gap:14px}
+.ppuM-f{grid-template-columns:minmax(0,1fr);gap:26px;padding:26px 0}
+.ppuM-f b{font-size:34px!important}
+.ppuM-yr{gap:4px;margin-top:26px}
+.ppuM-yr i{height:40px;font-size:0;padding:0}
 .ppuM-why{padding:64px var(--gut)}
 .ppuM-why__head{margin-bottom:36px;gap:16px}
 .ppuM-r{grid-template-columns:minmax(0,1fr)}
@@ -240,6 +224,7 @@ font:600 18px/18px var(--mono)!important;letter-spacing:1.8px!important;text-tra
 .ppuM-pr{grid-template-columns:minmax(0,1fr);row-gap:28px}
 .ppuM-top{grid-template-columns:minmax(0,1fr)}
 .ppuM-cards{grid-template-columns:minmax(0,1fr)}
+.ppuM-price b{font-size:38px!important}
 .ppuM-in{padding:20px 18px 22px}
 .ppuM-price b{font-size:40px!important}
 .ppuH-team{padding-top:64px}
@@ -288,71 +273,113 @@ font:600 18px/18px var(--mono)!important;letter-spacing:1.8px!important;text-tra
 </div>
 </section>
 
-<!-- 2 · THE CALENDAR -->
-<section class="ppuH-sec ppuM-cal" aria-label="What members see">
-<div class="ppuM-cal__in">
-<div class="ppuM-cal__head">
-<p class="ppuH-eyebrow">What members see</p>
-<h2 class="ppuH-h">The whole year, not one weekend.</h2>
-<p class="ppuH-p">We hold far more dates in a city than we ever announce. Members open the calendar, see all of them, and pick first. Everyone else waits for the one public weekend, and it usually sells out in days.</p>
+<!-- 2 · PRICING -->
+<section class="ppuH-sec ppuJ-book" id="ppuM-join" aria-label="Become a member">
+<div class="ppuM-pr">
+<div class="ppuM-pr__head">
+<p class="ppuH-eyebrow">Two ways in</p>
+<h2 class="ppuH-h">Pick your level of access.</h2>
+<p class="ppuH-p">Both open the full calendar. One of them holds a session for you.</p>
 </div>
-<div class="ppuM-panel" aria-label="Example member calendar">
-<div class="ppuM-panel__bar"><span class="ppuM-panel__dot"></span><span class="ppuM-panel__dot"></span><span class="ppuM-panel__dot"></span><span class="ppuM-panel__t">Your calendar</span><span class="ppuM-panel__y">All dates near you</span></div>
-<div class="ppuM-grid" id="ppuM-cal"></div>
-<div class="ppuM-panel__foot"><span class="ppuM-key"><i class="pub"></i>Public weekend, open to everyone</span><span class="ppuM-key"><i class="mem"></i>Held for members, yours to pick</span></div>
+
+<div class="ppuM-w" id="ppuM-w">
+<div id="ppuM-pick">
+<div class="ppuM-cards">
+
+<div class="ppuM-card">
+<div class="ppuM-in">
+<div class="ppuM-hd"><h3>Full Access</h3></div>
+<p class="ppuM-sub">See every date and book before the public. No session included.</p>
+<div class="ppuM-price"><b>$19</b><i>/mo</i></div>
+<p class="ppuM-bill">Billed monthly</p>
+<p class="ppuM-alt">Cancel anytime.</p>
+<a class="ppuM-btn ppuM-btn--alt" id="ppuM-go-a" href="#" target="_top" rel="noopener" aria-disabled="true">Get Full Access</a>
+<p class="ppuM-feat">What you get</p>
+<ul class="ppuM-list">
+<li><span>Every date the moment it’s set, in any city</span></li>
+<li><span>Book before dates go public</span></li>
+<li><span>Reminders, and move your time anytime</span></li>
+<li><span>Sessions at the usual <span data-m="door">$595</span></span></li>
+</ul>
 </div>
-<p class="ppuM-cal__note">Illustration of one city’s year. How often we visit, and when, is different in every city.</p>
+</div>
+
+<div class="ppuM-card ppuM-card--rec">
+<div class="ppuM-card__rib">★ Most families <span>· Your spot is held</span></div>
+<div class="ppuM-in">
+<div class="ppuM-hd"><h3>Membership</h3></div>
+<p class="ppuM-sub">Everything in Full Access, plus a session already paid for and a spot held at every date.</p>
+<div class="ppuM-price"><b id="ppuM-amt">$595</b><i>/yr</i></div>
+<p class="ppuM-bill" id="ppuM-bill">One session a year, paid once</p>
+<p class="ppuM-alt" id="ppuM-alt">That’s $49.58 a month, paid once a year.</p>
+<div class="ppuM-n">
+<p class="ppuM-n__l">Sessions a year<em id="ppuM-save">Add a second and save</em></p>
+<div class="ppuM-n__b" role="group" aria-label="Sessions a year">
+<button type="button" data-n="1" aria-pressed="true">1</button>
+<button type="button" data-n="2" aria-pressed="false">2</button>
+<button type="button" data-n="3" aria-pressed="false">3</button>
+<button type="button" data-n="4" aria-pressed="false">4</button>
+</div>
+</div>
+<a class="ppuM-btn" id="ppuM-go-m" href="#" target="_top" rel="noopener" aria-disabled="true">Become a Member</a>
+<p class="ppuM-feat">Everything in Full Access, plus</p>
+<ul class="ppuM-list">
+<li><span><b>Your spot held</b> at every date, before anyone books</span></li>
+<li><span>Sessions already paid for. Nothing due when you book</span></li>
+<li><span>Unused sessions roll over</span></li>
+<li><span>Today’s price locked while you’re a member</span></li>
+</ul>
+</div>
+</div>
+
+</div>
+<p class="ppuM-fine"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>Stripe secure checkout · Apple Pay &amp; Google Pay · One session covers 1 or 2 kids · Good at any pop-up, in any city</p>
+<p class="ppuM-manage">Already a member? <a href="mailto:hello@personalitypopup.com?subject=My%20membership" id="ppuM-portal">Manage your membership</a></p>
+</div>
+<div class="ppuM-ok" id="ppuM-done" hidden>
+<h3>You’re in. 🎉</h3>
+<p>Welcome back. Here’s what happens next:</p>
+<ol>
+<li><b>1</b><span>Your receipt is on its way.</span></li>
+<li><b>2</b><span>You’ll get your sign-in link, and the full calendar opens up to you.</span></li>
+<li><b>3</b><span>Pick your times for the year. We’ll remind you when each one comes around.</span></li>
+</ol>
+</div>
+</div>
 </div>
 </section>
 
-<!-- 3 · WHY -->
+<!-- 3 · WHAT YOU SEE -->
+<section class="ppuH-sec ppuM-see" aria-label="What members see">
+<div class="ppuM-see__in">
+<div class="ppuM-see__head">
+<p class="ppuH-eyebrow">The difference</p>
+<h2 class="ppuH-h">One weekend, or all of them.</h2>
+<p class="ppuH-p">We hold far more dates in a city than we ever announce. Everyone else waits for the one public weekend. You see the rest.</p>
+</div>
+<div class="ppuM-f">
+<div><b>1</b><span>Weekend a year<br>announced publicly</span></div>
+<div><b>Every date</b><span>Open to you<br>the moment it’s set</span></div>
+<div><b>48 hrs</b><span>Head start before<br>anyone else books</span></div>
+</div>
+<div class="ppuM-yr" id="ppuM-yr" aria-hidden="true"></div>
+<p class="ppuM-yr__k"><span><em class="a"></em>The public weekend</span><span><em class="b"></em>Yours to see and book</span></p>
+</div>
+</section>
+
+<!-- 4 · WHY -->
 <section class="ppuH-sec ppuM-why" aria-label="Why members join">
 <div class="ppuM-why__in">
 <div class="ppuM-why__head">
 <p class="ppuH-eyebrow">Why families join</p>
 <h2 class="ppuM-why__h">You already know <em class="ppuH-hl">how fast it goes.</em></h2>
-<p class="ppuH-p">Open last year’s gallery. That version of them is already gone. A membership makes the next one automatic, and the one after that, so the only thing you have to do is show up.</p>
+<p class="ppuH-p">Open last year’s gallery. That version of them is already gone. Membership makes the next one automatic, and the one after that, so the only thing you have to do is show up.</p>
 </div>
 <div class="ppuM-r">
 <div><span class="ppuM-r__n">01</span><h3>Your spot is held</h3><p>We set member spots aside at every date before a single one goes public. No refreshing, no racing, no sold out.</p></div>
 <div><span class="ppuM-r__n">02</span><h3>The calendar opens up</h3><p>Sign in and every date near you is there, months ahead. Plan around a birthday, a lost tooth, the summer they finally look grown.</p></div>
 <div><span class="ppuM-r__n">03</span><h3>We do the remembering</h3><p>Reminders before, gallery after. Something comes up, move your time in a few taps. No deposit, no balance, no phone call.</p></div>
 <div><span class="ppuM-r__n">04</span><h3>Today’s price, locked</h3><p>Session prices go up. Yours does not, for as long as you stay a member.</p></div>
-</div>
-</div>
-</section>
-
-<!-- 4 · PRICING -->
-<section class="ppuH-sec ppuJ-book" id="ppuM-join" aria-label="Become a member">
-<div class="ppuM-pr">
-<div class="ppuM-pr__copy">
-<p class="ppuH-eyebrow">Plans</p>
-<h2 class="ppuH-h">Pick how many sessions a year.</h2>
-<p class="ppuH-p">One session covers 1 or 2 kids. Your membership is good at any Personality Pop-Up, in any city.</p>
-<ul class="ppuM-checks">
-<li>Same 15-minute session, 25+ images in color and black &amp; white</li>
-<li>Book 48 hours before anyone else, every visit</li>
-<li>Unused sessions roll over. Cancel anytime</li>
-</ul>
-<p class="ppuM-rise"><b>Session prices are going up</b> and member spots at each pop-up are limited. Members lock in today’s price for as long as they stay.</p>
-</div>
-
-<div class="ppuM-w" id="ppuM-w">
-<div id="ppuM-pick">
-<div class="ppuM-top"><div class="ppuM-seg" role="group" aria-label="How you pay"><button type="button" data-plan="annual" aria-pressed="true">Pay yearly</button><button type="button" data-plan="monthly" aria-pressed="false">Pay monthly</button></div></div>
-<div class="ppuM-cards" id="ppuM-cards"></div>
-<p class="ppuM-fine"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>Stripe secure checkout · Apple Pay &amp; Google Pay · Need 3 or 4 sessions a year? Change the quantity at checkout.</p>
-<p class="ppuM-manage">Already a member? <a href="mailto:hello@personalitypopup.com?subject=My%20membership" id="ppuM-portal">Manage your membership</a></p>
-</div>
-<div class="ppuM-ok" id="ppuM-done" hidden>
-<h3>You’re a member. 🎉</h3>
-<p>Welcome back. Here’s what happens next:</p>
-<ol>
-<li><b>1</b><span>Your receipt is on its way, and your sessions are on your account.</span></li>
-<li><b>2</b><span>You’ll get your sign-in link, and the full calendar opens up to you.</span></li>
-<li><b>3</b><span>Pick your times for the year. We’ll remind you when each one comes around.</span></li>
-</ol>
-</div>
 </div>
 </div>
 </section>
@@ -486,13 +513,14 @@ font:600 18px/18px var(--mono)!important;letter-spacing:1.8px!important;text-tra
 <a class="ppuH-link" href="mailto:hello@personalitypopup.com?subject=Membership">Ask us anything →</a>
 </div>
 <div class="ppuH-faq__list">
-<details class="ppuH-q" open><summary>We’ve booked with you before. What changes?<i class="ppuH-ico"></i></summary><div class="ppuH-q__a"><p>The session itself is exactly the same one you already love. What changes is everything around it: a spot held for you at every date, the full calendar open months ahead, no deposit and no balance to pay when you book, and reminders so it never sneaks up on you.</p></div></details>
+<details class="ppuH-q" open><summary>What’s the difference between the two?<i class="ppuH-ico"></i></summary><div class="ppuH-q__a"><p><b>Full Access</b> is the key to the calendar: you see every date we set and you book before the public, at the usual <span data-m="door">$595</span> a session. <b>Membership</b> is that plus the session itself, already paid for, with a spot held for you at every date and nothing due when you book.</p></div></details>
+<details class="ppuH-q"><summary>We’ve booked with you before. What changes?<i class="ppuH-ico"></i></summary><div class="ppuH-q__a"><p>The session is exactly the one you already love. What changes is everything around it: the full calendar instead of one weekend, a spot held for you, nothing to pay when you book, and reminders so it never sneaks up on you.</p></div></details>
+<details class="ppuH-q"><summary>Why is membership paid for the year?<i class="ppuH-ico"></i></summary><div class="ppuH-q__a"><p>Because the session is yours the moment you join. We hold a spot for you at every date for the next twelve months, so the year is paid up front and there’s nothing left to settle when you walk in. Full Access is the monthly one if you’d rather keep it light.</p></div></details>
 <details class="ppuH-q"><summary>What if we don’t use a session that year?<i class="ppuH-ico"></i></summary><div class="ppuH-q__a"><p>It rolls over. Unused sessions stay on your account for as long as you’re a member, so you can use two next year or save one for a sibling. Nothing expires while your membership is active.</p></div></details>
-<details class="ppuH-q"><summary>How many sessions should we pick?<i class="ppuH-ico"></i></summary><div class="ppuH-q__a"><p>One session covers 1 or 2 kids, so most families pick one a year. Pick two if you want each child photographed on their own, or if you’d rather catch them twice, once in spring and once before the holidays. Need three or four? Change the quantity at checkout.</p></div></details>
-<details class="ppuH-q"><summary>How does booking work?<i class="ppuH-ico"></i></summary><div class="ppuH-q__a"><p>You sign in and the calendar is there. Pick your weekend and your 15-minute time, months ahead if you like. Member spots open <b>48 hours before</b> any date goes public, and your membership already covers the session, so there’s nothing to pay at booking. Change or move your time whenever you need to.</p></div></details>
-<details class="ppuH-q"><summary>Will my price go up?<i class="ppuH-ico"></i></summary><div class="ppuH-q__a"><p>No. Session prices rise over time, but your member price is locked for as long as your membership stays active.</p></div></details>
-<details class="ppuH-q"><summary>Can I cancel?<i class="ppuH-ico"></i></summary><div class="ppuH-q__a"><p>Any time, from the link in your receipt or by emailing us. Nothing more is charged, and any session you’ve already paid for stays yours to use for 12 months. You keep every image you’ve ever received.</p></div></details>
-<details class="ppuH-q"><summary>Which cities does it work in?<i class="ppuH-ico"></i></summary><div class="ppuH-q__a"><p>All of them. Your sessions are good at any Personality Pop-Up, wherever we are. At checkout we ask which city you usually see us in, so we can tell you first when those dates open. <a class="ppuH-link" style="font-size:13px!important" href="https://www.personalitypopup.com/book/">See where we go →</a></p></div></details>
+<details class="ppuH-q"><summary>How many sessions should we pick?<i class="ppuH-ico"></i></summary><div class="ppuH-q__a"><p>One session covers 1 or 2 kids, so most families pick one a year. Pick two if you want each child photographed on their own, or to catch them twice, once in spring and once before the holidays. Every session after the first is <span data-m="extra">$535</span>, and you can add one any time.</p></div></details>
+<details class="ppuH-q"><summary>How does booking work?<i class="ppuH-ico"></i></summary><div class="ppuH-q__a"><p>You sign in and the calendar is there. Pick your weekend and your 15-minute time, months ahead if you like. Members pick first, Full Access books next, and the public sees one weekend after that. Change or move your time whenever you need to.</p></div></details>
+<details class="ppuH-q"><summary>Can I cancel?<i class="ppuH-ico"></i></summary><div class="ppuH-q__a"><p>Full Access cancels any time, no notice. Membership runs the year you paid for and then renews, so cancel before the renewal and nothing more is charged. Either way you keep every image you’ve ever received, and any session you’ve paid for stays yours for 12 months.</p></div></details>
+<details class="ppuH-q"><summary>Which cities does it work in?<i class="ppuH-ico"></i></summary><div class="ppuH-q__a"><p>All of them. Your access and your sessions are good at any Personality Pop-Up, wherever we are. At checkout we ask which city you usually see us in, so we can tell you first when those dates open. <a class="ppuH-link" style="font-size:13px!important" href="https://www.personalitypopup.com/book/">See where we go →</a></p></div></details>
 </div>
 </div>
 </section>
@@ -506,7 +534,7 @@ font:600 18px/18px var(--mono)!important;letter-spacing:1.8px!important;text-tra
 </div>
 <div class="ppuH-close__in">
 <h2 class="ppuH-close__h">They won’t be little forever.</h2>
-<p class="ppuJ-close__sub">A session every year · Your spot held · Today’s price, locked</p>
+<p class="ppuJ-close__sub">Unlock the full calendar · Your spot held · Today’s price, locked</p>
 <a class="ppuH-btn ppuH-btn--white" href="#ppuM-join" data-cta>👉 Become a Member</a>
 </div>
 </section>
@@ -518,13 +546,10 @@ font:600 18px/18px var(--mono)!important;letter-spacing:1.8px!important;text-tra
 (function(){
 'use strict';
 /* ---- CONFIG ---- */
-var PRICE={annual:57000,monthly:5000};   /* per session: yearly ($570 = $47.50/mo) / monthly plan ($50/mo) */
-var PLANS=[
- {n:1,name:'Member',short:'Member',sub:'One session a year. Best for one child, or siblings together.',feat:'Everything a member gets',list:['<b>1 session</b> a year, 1 or 2 kids','Good at any pop-up, in any city','Guaranteed spot. Book 48 hours before anyone else','Today’s price locked while you’re a member']},
- {n:2,name:'Member <em>Family</em>',short:'Family',rec:true,ribbon:'· Most families',sub:'Two sessions a year. Each child on their own, or spring and fall.',feat:'Everything in Member, plus',list:['<b>2 sessions</b> a year','Unused sessions roll over','Add a session any time at the member price']}
-];
-var DOOR=59500;                           /* a session without membership */
-var LINKS={annual:{1:'',2:'',3:'',4:''},monthly:{1:'',2:'',3:'',4:''}};
+var SESSION=59500;        /* one session a year, paid once */
+var SESSION_EXTRA=53500;  /* each session when you take 2 or more */
+var ACCESS=1900;          /* Full Access, per month */
+var LINKS={membership:{1:'',2:'',3:'',4:''},access:''};
 var PORTAL='';                  /* Stripe customer portal login link ('' = email us) */
 
 var P='https://images-pw.pixieset.com/elementfield/1zqrnP1/', S='https://images-pw.pixieset.com/site/gjknWE/';
@@ -539,24 +564,12 @@ function setAll(key,html){[].forEach.call(document.querySelectorAll('[data-m="'+
 function slug(s){return String(s).toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'')}
 
 /* numbers everywhere come from CONFIG */
-setAll('yearly',esc(money(PRICE.annual)));setAll('monthly',esc(money(PRICE.monthly)));setAll('door',esc(money(DOOR)));setAll('yearlyMo',esc(money(PRICE.annual/12)));
 
 /* hero grid */
 $('ppuM-grid').innerHTML=HERO.map(function(p,i){return '<div class="ppuH-tile" style="--d:-'+DELAYS[i]+'s"><img src="'+P+p[0]+'-1000.jpg" alt=""'+(i<6?' fetchpriority="high"':'')+'><img src="'+P+p[1]+'-1000.jpg" alt="" loading="lazy"></div>'}).join('');
-/* the member calendar: one public weekend, the rest held for members (blurred) */
-(function(){
-var MONTHS=['January','February','March','April','May','June','July','August','September','October','November','December'];
-var PUBLIC=9;                                  /* the one weekend everyone sees */
-var MEMBER=[1,3,4,6,9,10];                     /* months that also hold member dates */
-var LOCK='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>';
-var el=$('ppuM-cal'); if(!el) return;
-el.innerHTML=MONTHS.map(function(m,i){
- var c='';
- if(i===PUBLIC) c+='<span class="ppuM-chip ppuM-chip--pub">One weekend<small>Public</small></span>';
- if(MEMBER.indexOf(i)>-1) c+='<span class="ppuM-chip ppuM-chip--mem"><b>Fri 14 \u2013 Sun 16</b>'+LOCK+'</span>';
- return '<div class="ppuM-mo"><p class="ppuM-mo__n">'+m+'</p>'+c+'</div>';
-}).join('');
-})();
+/* the year strip: one public weekend, the rest yours */
+(function(){var el=$('ppuM-yr');if(!el)return;var M=['J','F','M','A','M','J','J','A','S','O','N','D'],PUB=9;
+el.innerHTML=M.map(function(m,i){return '<i class="'+(i===PUB?'on':'')+'">'+m+'</i>'}).join('')})();
 /* blush highlight draws in on scroll (homepage behaviour) */
 window.ppuHl=function(root){[].forEach.call((root||document).querySelectorAll('.ppuH-hl:not(.on)'),function(el){if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){el.classList.add('on');io.disconnect()}})},{threshold:.6});io.observe(el)}else{el.classList.add('on')}})};
 window.ppuHl(document);
@@ -567,31 +580,36 @@ window.ppuHl(document);
 (function(){var s=$('ppuM-sticky'),hero=document.querySelector('.ppuH-hero'),box=$('ppuM-join');if(!('IntersectionObserver' in window))return;var hv=true,bv=false;function u(){s.classList.toggle('show',!hv&&!bv)}
 new IntersectionObserver(function(e){hv=e[0].isIntersecting;u()}).observe(hero);new IntersectionObserver(function(e){bv=e[0].isIntersecting;u()},{threshold:.05}).observe(box)})();
 
-/* ---- THE MEMBER WIDGET: two plan cards ---- */
+/* ---- PRICING: Full Access (monthly) + Membership (yearly, 1-4 sessions) ---- */
 (function(){
-var plan='annual',q=new URLSearchParams(location.search),segs=document.querySelectorAll('.ppuM-seg button'),wrap=$('ppuM-cards');
-function link(n){var u=(LINKS[plan]||{})[n]||'';if(!u)return '';return u+(u.indexOf('?')>-1?'&':'?')+'client_reference_id='+encodeURIComponent('members-'+n+'-'+plan)+'&utm_source=site&utm_medium=members_page'}
-function mo(c){var d=Math.round(c)/100,i=Math.floor(d),f=Math.round((d-i)*100);return '<b>$'+i.toLocaleString('en-US')+'</b><i>'+(f?'.'+(f<10?'0':'')+f:'')+'/mo</i>'}
-function card(p){var n=p.n,y=PRICE.annual*n,m=PRICE.monthly*n,u=link(n);
-var price=plan==='annual'?mo(y/12):mo(m);
-var bill=plan==='annual'?esc(money(y))+'/yr, billed yearly':esc(money(m))+'/month, billed monthly';
-var alt=plan==='annual'?esc(money(m))+'/month on the monthly plan.':esc(money(y))+'/yr on the yearly plan ('+esc(money(y/12))+'/mo).';
-return '<div class="ppuM-card'+(p.rec?' ppuM-card--rec':'')+'">'+(p.rec?'<div class="ppuM-card__rib">★ Recommended<span>'+esc(p.ribbon)+'</span></div>':'')+
-'<div class="ppuM-in"><div class="ppuM-hd"><h3>'+p.name+'</h3></div><p class="ppuM-sub">'+esc(p.sub)+'</p>'+
-'<div class="ppuM-price">'+price+'</div><p class="ppuM-bill">'+bill+'</p><p class="ppuM-alt">'+alt+'</p>'+
-'<a class="ppuM-btn" href="'+(u||'#')+'" target="_top" rel="noopener" aria-disabled="'+(u?'false':'true')+'" data-n="'+n+'">'+'Choose '+esc(p.short)+'</a>'+
-'<p class="ppuM-feat">'+esc(p.feat)+'</p><ul class="ppuM-list">'+p.list.map(function(x){return '<li><span>'+x+'</span></li>'}).join('')+'</ul></div></div>'}
-function show(){[].forEach.call(segs,function(b){b.setAttribute('aria-pressed',String(b.getAttribute('data-plan')===plan))});wrap.innerHTML=PLANS.map(card).join('');
-[].forEach.call(wrap.querySelectorAll('.ppuM-btn'),function(go){go.addEventListener('click',function(e){if(go.getAttribute('aria-disabled')==='true'){e.preventDefault();return}var n=+go.getAttribute('data-n'),v=(plan==='annual'?PRICE.annual:PRICE.monthly)*n/100;
-try{if(window.fbq)fbq('track','InitiateCheckout',{value:v,currency:'USD',content_name:'membership_'+plan+'_'+n})}catch(x){}
-try{if(window.gtag)gtag('event','begin_checkout',{value:v,currency:'USD',item_name:'membership_'+plan+'_'+n})}catch(x){}})})}
-[].forEach.call(segs,function(b){b.addEventListener('click',function(){plan=b.getAttribute('data-plan');show()})});
+var n=1,q=new URLSearchParams(location.search),nums=document.querySelectorAll('.ppuM-n__b button');
+var goA=$('ppuM-go-a'),goM=$('ppuM-go-m');
+setAll('door',esc(money(SESSION)));setAll('extra',esc(money(SESSION_EXTRA)));
+function total(k){return k<2?SESSION:SESSION_EXTRA*k}
+function link(u,ref){if(!u)return '';return u+(u.indexOf('?')>-1?'&':'?')+'client_reference_id='+encodeURIComponent(ref)+'&utm_source=site&utm_medium=members_page'}
+function show(){
+ var t=total(n),mo=t/12,saved=(SESSION*n)-t;
+ $('ppuM-amt').textContent=money(t);
+ $('ppuM-bill').textContent=n+' session'+(n>1?'s':'')+' a year, paid once';
+ $('ppuM-alt').textContent='That\u2019s '+money(Math.round(mo*100)/100)+' a month, paid once a year.';
+ $('ppuM-save').textContent=n>1?'You save '+money(saved):'Add a second and save';
+ [].forEach.call(nums,function(b){b.setAttribute('aria-pressed',String(+b.getAttribute('data-n')===n))});
+ var u=link((LINKS.membership||{})[n],'member-'+n);
+ goM.href=u||'#';goM.setAttribute('aria-disabled',u?'false':'true');
+ goM.textContent=n>1?'Become a Member \u00b7 '+money(t)+'/yr':'Become a Member';
+}
+[].forEach.call(nums,function(b){b.addEventListener('click',function(){n=+b.getAttribute('data-n');show()})});
+(function(){var u=link(LINKS.access,'access');goA.href=u||'#';goA.setAttribute('aria-disabled',u?'false':'true')})();
+function track(name,val){try{if(window.fbq)fbq('track','InitiateCheckout',{value:val,currency:'USD',content_name:name})}catch(e){}
+try{if(window.gtag)gtag('event','begin_checkout',{value:val,currency:'USD',item_name:name})}catch(e){}}
+goA.addEventListener('click',function(e){if(goA.getAttribute('aria-disabled')==='true'){e.preventDefault();return}track('full_access',ACCESS/100)});
+goM.addEventListener('click',function(e){if(goM.getAttribute('aria-disabled')==='true'){e.preventDefault();return}track('membership_'+n,total(n)/100)});
 if(PORTAL){$('ppuM-portal').href=PORTAL}
-if(q.get('joined')==='1'){var p=q.get('plan')==='monthly'?'monthly':'annual',k=Math.min(4,Math.max(1,+q.get('n')||1));$('ppuM-pick').hidden=true;$('ppuM-done').hidden=false;
-[].forEach.call(document.querySelectorAll('[data-cta]'),function(a){a.textContent='You’re a member 🎉';a.setAttribute('aria-disabled','true');a.style.pointerEvents='none'});
-var v=(p==='monthly'?PRICE.monthly*12:PRICE.annual)*k/100;
-try{if(window.fbq)fbq('track','Purchase',{value:v,currency:'USD',content_name:'membership_'+p+'_'+k})}catch(x){}
-try{if(window.gtag)gtag('event','purchase',{value:v,currency:'USD',item_name:'membership_'+p+'_'+k})}catch(x){}
+if(q.get('joined')==='1'){$('ppuM-pick').hidden=true;$('ppuM-done').hidden=false;
+[].forEach.call(document.querySelectorAll('[data-cta]'),function(a){a.textContent='You\u2019re in 🎉';a.setAttribute('aria-disabled','true');a.style.pointerEvents='none'});
+var p=q.get('plan')||'',k=Math.min(4,Math.max(1,+q.get('n')||1)),v=p==='access'?ACCESS*12/100:total(k)/100;
+try{if(window.fbq)fbq('track','Purchase',{value:v,currency:'USD',content_name:p==='access'?'full_access':'membership_'+k})}catch(x){}
+try{if(window.gtag)gtag('event','purchase',{value:v,currency:'USD',item_name:p==='access'?'full_access':'membership_'+k})}catch(x){}
 setTimeout(function(){$('ppuM-join').scrollIntoView({block:'start'})},50)}
 show();
 })();
