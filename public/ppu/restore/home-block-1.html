@@ -1,0 +1,149 @@
+<!-- PPU HOME v1 (test) · block 1 of 4 · ALL ppuH CSS + hero faces grid + city ticker + team · 2026-10-15
+     Block 2 = shared ppuR reviews slider (verbatim copy of the live homepage block). Block 3 = what to expect, proof, portfolio, quick FAQ, closing band (relies on this CSS). Block 4 = shared ppu-fof VIP form v1.3. -->
+<style>
+.block-custom-code:has(.ppuH,.ppuR,.ppu-fof) .element-container__content,.block-custom-code:has(.ppuH,.ppuR,.ppu-fof) .element-container__content-wrapper{display:block!important;line-height:0}
+.block-custom-code:has(.ppuH,.ppuR,.ppu-fof) .element-container__content > *{line-height:normal}
+.block-custom-code:has(.ppuH),.block-custom-code:has(.ppuR),.block-custom-code:has(.ppu-fof){padding-top:0!important;padding-bottom:0!important}
+.block-custom-code:has(.ppuR){margin-top:-1px!important;background:#FBDFD9}
+.ppuH{--ink:#2D2D2D;--text:#373737;--soft:#646363;--paper:#FFFFFF;--cream:#FAF9F5;--blush:#FBDFD9;
+--serif:"MADE Mirage","Orpheus Pro","Cormorant Garamond",Georgia,serif;--mono:"Roboto Mono","Courier New",Courier,monospace;
+--wrap:1180px;--gut:clamp(16px,4.75vw,67px);text-align:left}
+.ppuH,.ppuH *,.ppuH *::before,.ppuH *::after{box-sizing:border-box}
+.ppuH [class*="animatable"],[class*="animatable"]{opacity:1!important;transform:none!important}
+.ppuH h1,.ppuH h2,.ppuH h3,.ppuH p,.ppuH figure,.ppuH ol{margin:0;padding:0}
+.ppuH-sec{width:100vw;margin-left:calc(50% - 50vw);position:relative;background:var(--paper)}
+.ppuH-eyebrow{font:500 13px/1 var(--mono)!important;letter-spacing:.2em!important;text-transform:uppercase;color:var(--soft)!important}
+.ppuH-h{font:400 clamp(36px,4vw,58px)/1.08 var(--serif)!important;color:var(--ink)!important;letter-spacing:-.01em!important;text-transform:none!important;text-wrap:balance}
+.ppuH-p{font:400 17.5px/35px var(--mono)!important;letter-spacing:-.175px!important;color:var(--text)!important;max-width:58ch}
+.ppuH-btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;background:var(--ink);color:#fff!important;border-radius:380px;padding:22.5px 30px!important;
+font:600 18px/18px var(--mono)!important;letter-spacing:1.8px!important;text-transform:uppercase;text-decoration:none!important;transition:background .15s,transform .15s;white-space:nowrap}
+.ppuH-btn:hover{background:#1A1A1A;transform:translateY(-1px)}
+.ppuH-btn--white{background:#fff;color:var(--ink)!important}
+.ppuH-btn--white:hover{background:var(--blush)}
+.ppuH-link{font:600 14px/1.4 var(--mono)!important;letter-spacing:.12em!important;text-transform:uppercase;color:var(--ink)!important;text-decoration:underline!important;text-underline-offset:5px;white-space:nowrap}
+.ppuH-link:hover{opacity:.7}
+.ppuH a:focus-visible{outline:2px solid currentColor;outline-offset:3px}
+
+/* 1 · HERO — 6×2 rotating faces + current copy */
+.ppuH-hero{height:clamp(560px,calc(100vh - 110px),780px);overflow:hidden;background:#111}
+.ppuH-hero__grid{position:absolute;inset:0;display:grid;grid-template-columns:repeat(6,1fr);grid-template-rows:repeat(2,1fr)}
+.ppuH-tile{position:relative;overflow:hidden;filter:grayscale(1)}
+.ppuH-tile img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.ppuH-tile img+img{opacity:0;animation:ppuHfade 12s ease-in-out infinite;animation-delay:var(--d,0s)}
+@keyframes ppuHfade{0%,38%{opacity:0}50%,88%{opacity:1}100%{opacity:0}}
+.ppuH-hero__tint{position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(0,0,0,.74) 0%,rgba(0,0,0,.64) 60%,rgba(0,0,0,.56) 100%)}
+.ppuH-hero__in{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;padding:0 var(--gut);text-align:center}
+.ppuH-hero__eyebrow{font:500 16px/1 var(--mono)!important;letter-spacing:.2em!important;white-space:nowrap;text-transform:uppercase;color:#fff!important;border-bottom:1px solid rgba(255,255,255,.7);padding-bottom:6px!important}
+.ppuH-hero__h{font:400 clamp(46px,6.2vw,92px)/1.02 var(--serif)!important;color:#fff!important;letter-spacing:-.01em!important;max-width:none;text-wrap:balance}
+.ppuH-hero__sub{font:500 clamp(13px,1.15vw,16px)/1.7 var(--mono)!important;letter-spacing:.14em!important;text-transform:uppercase;color:rgba(255,255,255,.92)!important;max-width:none}
+.ppuH-hero__sub u{text-underline-offset:4px}
+.ppuH-hero__ctas{display:flex;flex-direction:column;align-items:center;gap:18px;margin-top:10px}
+.ppuH-hero__trust{display:inline-flex;align-items:center;gap:10px;color:#fff!important;font:500 12.5px/1 var(--mono)!important;letter-spacing:.14em!important;text-transform:uppercase;text-decoration:none!important;opacity:.92;transition:opacity .2s}
+.ppuH-hero__trust:hover{opacity:1}
+.ppuH-hero__trust .st{font-size:15px;letter-spacing:.1em;color:#FFD166}
+.ppuH-hero__fof{font:500 13px/1.4 var(--mono)!important;letter-spacing:.08em!important;color:rgba(255,255,255,.9)!important;text-decoration:none!important}
+.ppuH-hero__fof b{font-weight:600;text-decoration:underline;text-underline-offset:4px;color:#fff}
+.ppuH-hero__fof:hover b{color:var(--blush)}
+
+/* 2 · CITY TICKER — same bar as the Find Your City ticker (77px, 20px bold mono, pink plane separators facing the direction of travel), cities only */
+.ppuH-tick{height:77px;border-top:1px solid rgba(45,45,45,.08);border-bottom:1px solid rgba(45,45,45,.08);overflow:hidden;display:flex;align-items:center}
+.ppuH-tick__view{position:relative;flex:1;overflow:hidden;display:flex;align-items:center;height:100%}
+.ppuH-tick__view::before,.ppuH-tick__view::after{content:"";position:absolute;top:0;bottom:0;width:80px;pointer-events:none;z-index:2}
+.ppuH-tick__view::before{left:0;background:linear-gradient(to right,var(--paper) 0%,rgba(255,255,255,0) 100%)}
+.ppuH-tick__view::after{right:0;background:linear-gradient(to left,var(--paper) 0%,rgba(255,255,255,0) 100%)}
+.ppuH-tick__track{display:flex;align-items:center;width:max-content;animation:ppuHtick 95s linear infinite;will-change:transform}
+.ppuH-tick__view:hover .ppuH-tick__track{animation-play-state:paused}
+.ppuH-tick__item{font:700 20px/1 var(--mono)!important;letter-spacing:.08em!important;text-transform:uppercase;color:var(--ink)!important;white-space:nowrap}
+.ppuH-tick__sep{display:inline-flex;align-items:center;margin:0 26px;color:#E8A096}
+.ppuH-tick__sep svg{width:16px;height:16px;display:block;fill:currentColor}
+@keyframes ppuHtick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* 3 · TEAM */
+.ppuH-team{padding:96px 0 0}
+.ppuH-team__head{max-width:980px;margin:0 auto 56px;padding:0 var(--gut);display:flex;flex-direction:column;align-items:center;gap:22px;text-align:center}
+.ppuH-team__statement{font:400 clamp(34px,4.4vw,60px)/1.12 var(--serif)!important;color:var(--ink)!important;letter-spacing:-.01em!important;text-wrap:balance}
+.ppuH-team__statement em{font-style:italic;white-space:nowrap}
+.ppuH-hl{position:relative;z-index:0;padding:0 .06em;white-space:nowrap}
+.ppuH-hl::before{content:"";position:absolute;left:0;right:0;top:.14em;bottom:.04em;background:var(--blush);border-radius:4px;z-index:-1;transform:scaleX(0);transform-origin:left center;transition:transform .9s cubic-bezier(.2,.7,.2,1) .25s}
+.ppuH-hl.on::before{transform:scaleX(1)}
+.ppuH-tmsup{font-size:.38em!important;line-height:0;vertical-align:baseline;position:relative;top:-1.1em;margin-left:.08em;font-family:var(--serif)!important;color:var(--ink)!important}
+.ppuH-rail{overflow:hidden}
+.ppuH-rail__track{display:flex;width:max-content;animation:ppuHrail 80s linear infinite}
+.ppuH-rail:hover .ppuH-rail__track{animation-play-state:paused}
+.ppuH-rail__set{display:flex;flex:none}
+.ppuH-tm{width:clamp(220px,19vw,300px);flex:none}
+.ppuH-tm img{display:block;width:100%;aspect-ratio:2/3;object-fit:cover;background:#eceae6}
+@keyframes ppuHrail{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.ppuH-rail img{display:block}
+.ppuH-team::after{content:"";display:block;height:3px;margin-top:-1px;background:var(--blush)}
+
+@media (max-width:860px){
+.ppuH-hero{height:auto;min-height:640px}
+.ppuH-hero__grid{grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(4,1fr)}
+.ppuH-hero__in{position:relative;inset:auto;min-height:640px;padding:56px 20px}
+.ppuH-hero__eyebrow{font-size:14px!important;letter-spacing:.18em!important}
+.ppuH-hero__h{font-size:42px!important}.ppuH-hero__h br{display:none}
+.ppuH-hero__sub{font-size:12px!important;letter-spacing:.1em!important;max-width:34ch}.ppuH-hero__sub br{display:none}
+.ppuH-btn{font-size:15px!important;padding:19px 24px!important}
+.ppuH-p{font-size:15px!important;line-height:28px!important}
+.ppuH-tick{height:60px}
+.ppuH-tick__view::before,.ppuH-tick__view::after{width:48px}
+.ppuH-tick__item{font-size:15px!important;letter-spacing:.06em!important}
+.ppuH-tick__sep{margin:0 18px}.ppuH-tick__sep svg{width:13px;height:13px}
+.ppuH-team{padding-top:64px}
+.ppuH-tm{width:56vw}
+}
+
+@media (prefers-reduced-motion:reduce){.ppuH-tile img+img,.ppuH-rail__track,.ppuH-tick__track,.ppuH-logos__track{animation:none}.ppuH-hl::before{transition:none}}
+.ppuH-hero__trust{margin-top:0}
+</style>
+
+<div class="ppuH">
+<!-- 1 · HERO -->
+<section class="ppuH-sec ppuH-hero" aria-label="Personality Pop-Up">
+<div class="ppuH-hero__grid" aria-hidden="true"><div class="ppuH-tile" style="--d:-0s"><img src="https://images-pw.pixieset.com/elementfield/1zqrnP1/251011-PPU-NYC-3541-fd0815cc-1000.jpg" alt="" fetchpriority="high"><img src="https://images-pw.pixieset.com/elementfield/1zqrnP1/251101-PPU-NEWPORT-BEACH-1156-bf4cf4b5-1000.jpg" alt="" loading="lazy"></div><div class="ppuH-tile" style="--d:-7s"><img src="https://images-pw.pixieset.com/elementfield/1zqrnP1/260613-PPU-ALPHARETTA-0810-2b2ef79c-1000.jpg" alt="" fetchpriority="high"><img src="https://images-pw.pixieset.com/elementfield/1zqrnP1/260124-PPU-LOS-ALTOS-2294-d4fca44b-1000.jpg" alt="" loading="lazy"></div><div class="ppuH-tile" style="--d:-2s"><img src="https://images-pw.pixieset.com/elementfield/1zqrnP1/260221-PPU-BROOKLYN-0748-d6f48358-1000.jpg" alt="" fetchpriority="high"><img src="https://images-pw.pixieset.com/elementfield/1zqrnP1/260124-PPU-LOS-ALTOS-1810-264b26b8-1000.jpg" alt="" loading="lazy"></div><div class="ppuH-tile" style="--d:-9s"><img src="https://images-pw.pixieset.com/elementfield/1zqrnP1/260627-PPU-SANTA-CLARA-2292-676ede95-1000.jpg" alt="" fetchpriority="high"><img src="https://images-pw.pixieset.com/elementfield/1zqrnP1/260124-PPU-LOS-ALTOS-0638-a44eb833-1000.jpg" alt="" loading="lazy"></div><div class="ppuH-tile" style="--d:-4s"><img src="https://images-pw.pixieset.com/elementfield/1zqrnP1/260627-PPU-MIAMI-2182-1533bfac-1000.jpg" alt="" fetchpriority="high"><img src="https://images-pw.pixieset.com/elementfield/1zqrnP1/260315-PPU-LONDON-2367-cdaa3d26-1000.jpg" alt="" loading="lazy"></div><div class="ppuH-tile" style="--d:-11s"><img src="https://images-pw.pixieset.com/elementfield/1zqrnP1/260627-PPU-MIAMI-3184-7de35a7d-1000.jpg" alt="" fetchpriority="high"><img src="https://images-pw.pixieset.com/elementfield/1zqrnP1/PERSONALITY-POP-UP-LOS-ALTOS-2115-8f7d688c-1000.jpg" alt="" loading="lazy"></div><div class="ppuH-tile" style="--d:-6s"><img src="https://images-pw.pixieset.com/elementfield/1zqrnP1/260314-PPU-ORLANDO-2867-e31c2368-1000.jpg" alt="" fetchpriority="auto"><img src="https://images-pw.pixieset.com/elementfield/1zqrnP1/PERSONALITY-POP-UP-KNOXVILLE-0879-6c9c294e-1000.jpg" alt="" loading="lazy"></div><div class="ppuH-tile" style="--d:-1s"><img src="https://images-pw.pixieset.com/elementfield/1zqrnP1/260314-PPU-ORLANDO-2504-548885fe-1000.jpg" alt="" fetchpriority="auto"><img src="https://images-pw.pixieset.com/elementfield/1zqrnP1/PERSONALITY-POP-UP-IRVINE-DAY2-0673copy-3feeedad-1000.jpg" alt="" loading="lazy"></div><div class="ppuH-tile" style="--d:-8s"><img src="https://images-pw.pixieset.com/elementfield/1zqrnP1/260328-PPU-LONG-BEACH-0848-16c9231f-1000.jpg" alt="" fetchpriority="auto"><img src="https://images-pw.pixieset.com/elementfield/1zqrnP1/260613-PPU-ALPHARETTA-0594-ad647b02-1000.jpg" alt="" loading="lazy"></div><div class="ppuH-tile" style="--d:-3s"><img src="https://images-pw.pixieset.com/elementfield/1zqrnP1/260124-PPU-LOS-ALTOS-2936-783a3e27-1000.jpg" alt="" fetchpriority="auto"><img src="https://images-pw.pixieset.com/elementfield/1zqrnP1/PERSONALITY-POP-UP-GREENVILLE-0303-1bab6ee0-1000.jpg" alt="" loading="lazy"></div><div class="ppuH-tile" style="--d:-10s"><img src="https://images-pw.pixieset.com/elementfield/1zqrnP1/251011-PPU-NYC-1378-5b0d6404-1000.jpg" alt="" fetchpriority="auto"><img src="https://images-pw.pixieset.com/elementfield/1zqrnP1/240709-PP-CHARLOTTE-0020-a456c192-1000.jpg" alt="" loading="lazy"></div><div class="ppuH-tile" style="--d:-5s"><img src="https://images-pw.pixieset.com/elementfield/1zqrnP1/251101-PPU-NEWPORT-BEACH-2549-fdc77995-1000.jpg" alt="" fetchpriority="auto"><img src="https://images-pw.pixieset.com/elementfield/1zqrnP1/PERSONALITY-POP-UP-CHICAGO-0966-8488ef2d-1000.jpg" alt="" loading="lazy"></div></div>
+<div class="ppuH-hero__tint"></div>
+<div class="ppuH-hero__in">
+<p class="ppuH-hero__eyebrow">The Original • Est. 2013</p>
+<h1 class="ppuH-hero__h">Never forget the <br>faces you love most.</h1>
+<p class="ppuH-hero__sub">A simple 15-minute photo experience that <br>captures your child’s <u>real</u> personality.</p>
+<div class="ppuH-hero__ctas">
+<a class="ppuH-btn ppuH-btn--white" href="https://www.personalitypopup.com/book/">📍 Find Your City</a>
+<a class="ppuH-hero__trust" href="https://www.google.com/search?q=Personality+Pop-Up#lrd=0x89d5209ec3b5b81:0x332a7fee85847322,1" target="_blank" rel="noopener"><span class="st" aria-hidden="true">★★★★★</span>5.0 · <span data-ppu-review-count>418+</span> Google reviews</a>
+</div>
+</div>
+</section>
+
+<!-- 2 · CITY TICKER -->
+<section class="ppuH-sec ppuH-tick" aria-label="Cities we travel to">
+<div class="ppuH-tick__view"><div class="ppuH-tick__track" id="ppuH-tick"></div></div>
+</section>
+
+<!-- 3 · TEAM -->
+<section class="ppuH-sec ppuH-team" aria-label="Our team">
+<div class="ppuH-team__head">
+<p class="ppuH-eyebrow">The ladies behind the lens</p>
+<h2 class="ppuH-team__statement">We are a boutique team of <em>all-female</em> traveling kid photographers, certified in the <span class="ppuH-hl">Personality Method</span><sup class="ppuH-tmsup">™</sup></h2>
+</div>
+<div class="ppuH-rail"><div class="ppuH-rail__track"><div class="ppuH-rail__set"><figure class="ppuH-tm"><img src="https://images-pw.pixieset.com/site/gjknWE/DDyzXZ/PERSONALITY-POP-UP-TEAM-0032-c67d6e2f-1500.jpg" alt="Personality Pop-Up photographer" loading="lazy"></figure><figure class="ppuH-tm"><img src="https://images-pw.pixieset.com/site/gjknWE/q5M4eb/PERSONALITY-POP-UP-TEAM-0014-40605ba7-1500.jpg" alt="Personality Pop-Up photographer" loading="lazy"></figure><figure class="ppuH-tm"><img src="https://images-pw.pixieset.com/site/gjknWE/a5V9qR/PERSONALITY-POP-UP-TEAM-0039-c022b62f-1500.jpg" alt="Personality Pop-Up photographer" loading="lazy"></figure><figure class="ppuH-tm"><img src="https://images-pw.pixieset.com/site/gjknWE/7n5VO1/PERSONALITY-POP-UP-TEAM-0026-1489f9f3-1500.jpg" alt="Personality Pop-Up photographer" loading="lazy"></figure><figure class="ppuH-tm"><img src="https://images-pw.pixieset.com/site/gjknWE/zol1xZ/PERSONALITY-POP-UP-TEAM-0021-fdc16a88-1500.jpg" alt="Personality Pop-Up photographer" loading="lazy"></figure><figure class="ppuH-tm"><img src="https://raw.githubusercontent.com/jonathanconnolly/session-crm/main/public/ppu/team/photographer-11.jpg" alt="Personality Pop-Up photographer" loading="lazy"></figure><figure class="ppuH-tm"><img src="https://images-pw.pixieset.com/site/gjknWE/KDLzWk/PERSONALITY-POP-UP-TEAM-0002-218c0477-1500.jpg" alt="Personality Pop-Up photographer" loading="lazy"></figure><figure class="ppuH-tm"><img src="https://images-pw.pixieset.com/site/gjknWE/3a5Wdq/PERSONALITY-POP-UP-TEAM-0019-9a361888-1500.jpg" alt="Personality Pop-Up photographer" loading="lazy"></figure><figure class="ppuH-tm"><img src="https://images-pw.pixieset.com/site/gjknWE/JDnRjo/PERSONALITY-POP-UP-TEAM-0016-3164e6f6-1500.jpg" alt="Personality Pop-Up photographer" loading="lazy"></figure><figure class="ppuH-tm"><img src="https://images-pw.pixieset.com/site/gjknWE/3a5y13/PERSONALITY-POP-UP-TEAM-0030-bb2d549f-1500.jpg" alt="Personality Pop-Up photographer" loading="lazy"></figure><figure class="ppuH-tm"><img src="https://images-pw.pixieset.com/site/gjknWE/ODO3Jk/PERSONALITY-POP-UP-TEAM-0008-e4359385-1500.jpg" alt="Personality Pop-Up photographer" loading="lazy"></figure></div><div class="ppuH-rail__set" aria-hidden="true"><figure class="ppuH-tm"><img src="https://images-pw.pixieset.com/site/gjknWE/DDyzXZ/PERSONALITY-POP-UP-TEAM-0032-c67d6e2f-1500.jpg" alt="" loading="lazy"></figure><figure class="ppuH-tm"><img src="https://images-pw.pixieset.com/site/gjknWE/q5M4eb/PERSONALITY-POP-UP-TEAM-0014-40605ba7-1500.jpg" alt="" loading="lazy"></figure><figure class="ppuH-tm"><img src="https://images-pw.pixieset.com/site/gjknWE/a5V9qR/PERSONALITY-POP-UP-TEAM-0039-c022b62f-1500.jpg" alt="" loading="lazy"></figure><figure class="ppuH-tm"><img src="https://images-pw.pixieset.com/site/gjknWE/7n5VO1/PERSONALITY-POP-UP-TEAM-0026-1489f9f3-1500.jpg" alt="" loading="lazy"></figure><figure class="ppuH-tm"><img src="https://images-pw.pixieset.com/site/gjknWE/zol1xZ/PERSONALITY-POP-UP-TEAM-0021-fdc16a88-1500.jpg" alt="" loading="lazy"></figure><figure class="ppuH-tm"><img src="https://raw.githubusercontent.com/jonathanconnolly/session-crm/main/public/ppu/team/photographer-11.jpg" alt="" loading="lazy"></figure><figure class="ppuH-tm"><img src="https://images-pw.pixieset.com/site/gjknWE/KDLzWk/PERSONALITY-POP-UP-TEAM-0002-218c0477-1500.jpg" alt="" loading="lazy"></figure><figure class="ppuH-tm"><img src="https://images-pw.pixieset.com/site/gjknWE/3a5Wdq/PERSONALITY-POP-UP-TEAM-0019-9a361888-1500.jpg" alt="" loading="lazy"></figure><figure class="ppuH-tm"><img src="https://images-pw.pixieset.com/site/gjknWE/JDnRjo/PERSONALITY-POP-UP-TEAM-0016-3164e6f6-1500.jpg" alt="" loading="lazy"></figure><figure class="ppuH-tm"><img src="https://images-pw.pixieset.com/site/gjknWE/3a5y13/PERSONALITY-POP-UP-TEAM-0030-bb2d549f-1500.jpg" alt="" loading="lazy"></figure><figure class="ppuH-tm"><img src="https://images-pw.pixieset.com/site/gjknWE/ODO3Jk/PERSONALITY-POP-UP-TEAM-0008-e4359385-1500.jpg" alt="" loading="lazy"></figure></div></div></div>
+</section>
+</div>
+
+<script>
+(function(){
+ var FALLBACK=["City, ST", "Ann Arbor, MI", "Atlanta, GA", "Austin, TX", "Birmingham, AL", "Boca Raton, FL", "Boise, ID", "Boston, MA", "Boulder, CO", "Brooklyn, NY", "Carlsbad, CA", "Charleston, SC", "Charlotte, NC", "Chicago, IL", "Cincinnati, OH", "Cleveland, OH", "Colorado Springs, CO", "Columbus, OH", "Dallas, TX", "Denver, CO", "Detroit, MI", "Fort Lauderdale, FL", "Fort Worth, TX", "Greenville, SC", "Houston, TX", "Indianapolis, IN", "Irvine, CA", "Jersey City, NJ", "Kansas City, MO", "Knoxville, TN", "Las Vegas, NV", "London, UK", "Long Beach, CA", "Long Island, NY", "Los Angeles, CA", "Louisville, KY", "Madison, WI", "Manhattan, NY", "Miami, FL", "Minneapolis, MN", "Nashville, TN", "New Haven, CT", "New Orleans, LA", "Oklahoma City, OK", "Orlando, FL", "Philadelphia, PA", "Phoenix, AZ", "Pittsburgh, PA", "Portland, OR", "Raleigh, NC", "Ridgewood, NJ", "Salt Lake City, UT", "San Diego, CA", "San Francisco, CA", "San Jose, CA", "Savannah, GA", "Seattle, WA", "Stamford, CT", "Tampa, FL", "Washington, DC", "West Palm Beach, FL"];
+ var SEP='<span class="ppuH-tick__sep" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z" transform="rotate(-90 12 12)"/></svg></span>';
+ var el=document.getElementById('ppuH-tick'); if(!el) return;
+ function render(list){
+  var a=list.slice(); for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=a[i];a[i]=a[j];a[j]=t;}
+  var set=a.map(function(n){var p=String(n).split(',');return '<span class="ppuH-tick__item">'+p[0].trim()+(p[1]?', '+p[1].trim():'')+'</span>'+SEP;}).join('');
+  el.innerHTML='<div style="display:flex;flex:none;align-items:center">'+set+'</div><div style="display:flex;flex:none;align-items:center" aria-hidden="true">'+set+'</div>';
+ }
+ render(FALLBACK);
+ function fromCities(){var c=window.CITIES;if(c&&c.length)render(c.map(function(x){return x.name;}).filter(function(n){return !/Summit/.test(n);}));}
+ if(window.CITIES) fromCities(); else {var s=document.createElement('script');s.src='https://cdn.jsdelivr.net/gh/jonathanconnolly/session-crm@main/public/cities.js';s.async=true;s.onload=fromCities;document.head.appendChild(s);}
+ window.ppuHl=function(root){ [].forEach.call((root||document).querySelectorAll('.ppuH-hl:not(.on)'),function(el){ if('IntersectionObserver' in window){ var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){el.classList.add('on');io.disconnect();}});},{threshold:.6}); io.observe(el); } else { el.classList.add('on'); } }); };
+ window.ppuHl(document);
+})();
+</script>
+
