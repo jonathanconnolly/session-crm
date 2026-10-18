@@ -81,7 +81,7 @@ font:500 12px/1 var(--mono)!important;letter-spacing:.14em!important;text-transf
 .ppuPA-steps{padding:clamp(72px,9vw,112px) 0}
 .ppuPA-steps__head{display:flex;flex-direction:column;gap:16px;align-items:center;text-align:center;margin-bottom:62px}
 .ppuPA-steps__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(28px,4vw,64px)}
-.ppuPA-step{display:flex;flex-direction:column;gap:14px;min-width:0;padding-top:26px;border-top:1px solid var(--hair)}
+.ppuPA-step{display:flex;flex-direction:column;gap:14px;min-width:0;padding-top:26px!important;border-top:1px solid var(--hair)}
 .ppuPA-step__n{font:600 12px/1 var(--mono)!important;letter-spacing:.24em!important;color:var(--rose)!important}
 .ppuPA-step__h{font:400 clamp(24px,2.3vw,30px)/1.15 var(--serif)!important;color:var(--ink)!important;text-transform:none!important}
 .ppuPA-step__p{font:400 15px/28px var(--mono)!important;letter-spacing:-.15px!important;color:var(--soft)!important;text-wrap:pretty}
@@ -91,7 +91,7 @@ font:500 12px/1 var(--mono)!important;letter-spacing:.14em!important;text-transf
 .ppuPA-why__in{display:grid;grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);gap:clamp(32px,6vw,86px);align-items:start}
 .ppuPA-why__head{display:flex;flex-direction:column;gap:18px}
 .ppuPA-why__list{display:flex;flex-direction:column}
-.ppuPA-why__item{display:flex;gap:18px;padding:26px 0;border-top:1px solid rgba(45,45,45,.16);min-width:0}
+.ppuPA-why__item{display:flex;gap:18px;padding:26px 0!important;border-top:1px solid rgba(45,45,45,.16);min-width:0}
 .ppuPA-why__item:last-child{border-bottom:1px solid rgba(45,45,45,.16)}
 .ppuPA-why__mark{flex:0 0 auto;width:26px;height:26px;margin-top:2px;border-radius:50%;background:var(--ink);color:var(--blush);display:flex;align-items:center;justify-content:center}
 .ppuPA-why__mark svg{width:13px;height:13px;fill:currentColor}
@@ -107,7 +107,7 @@ transform:scaleX(0);transform-origin:left center;transition:transform .9s cubic-
 .ppuPA-exp__in{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(34px,5.5vw,80px);align-items:center}
 .ppuPA-exp__copy{display:flex;flex-direction:column;gap:22px;min-width:0}
 .ppuPA-exp__list{display:flex;flex-direction:column;margin-top:4px}
-.ppuPA-exp__li{display:flex;align-items:baseline;gap:14px;padding:15px 0;border-bottom:1px solid var(--hair);
+.ppuPA-exp__li{display:flex;align-items:baseline;gap:14px;padding:15px 0!important;border-bottom:1px solid var(--hair);
 font:400 15px/25px var(--mono)!important;letter-spacing:-.15px!important;color:var(--text)!important;min-width:0}
 .ppuPA-exp__li span{flex:0 0 auto;color:var(--rose);font-weight:600}
 .ppuPA-exp__price{display:flex;align-items:baseline;gap:14px;padding-top:22px!important}
@@ -136,7 +136,7 @@ background-repeat:no-repeat;background-position:right 15px center;background-siz
 .ppuPA-fi input.bad,.ppuPA-fi select.bad{border-color:#C0564B;background:#FFF6F4}
 .ppuPA-seasons{display:flex;flex-wrap:wrap;gap:8px}
 .ppuPA-season{flex:1 1 auto;position:relative}
-.ppuPA-season input{position:absolute;opacity:0;pointer-events:none}
+.ppuPA-season input[type="radio"]{position:absolute!important;opacity:0!important;width:1px!important;height:1px!important;min-height:0!important;min-width:0!important;margin:0!important;padding:0!important;border:0!important;background:none!important;box-shadow:none!important;clip-path:inset(50%);pointer-events:none}
 .ppuPA-season span{display:block;text-align:center;cursor:pointer;background:var(--cream);border:1px solid var(--hair);border-radius:380px;
 padding:12px 16px;font:600 11.5px/1 var(--mono)!important;letter-spacing:.14em!important;text-transform:uppercase;color:var(--soft)!important;
 transition:background .15s,color .15s,border-color .15s;white-space:nowrap}
@@ -161,7 +161,7 @@ padding:clamp(34px,5vw,56px) clamp(20px,4vw,40px);box-shadow:0 14px 48px rgba(45
 .ppuPA-faq details{border-top:1px solid var(--hair)}
 .ppuPA-faq details:last-of-type{border-bottom:1px solid var(--hair)}
 .ppuPA-faq summary{list-style:none;cursor:pointer;display:flex;align-items:flex-start;justify-content:space-between;gap:20px;
-padding:23px 0;font:500 16px/1.5 var(--mono)!important;letter-spacing:-.2px!important;color:var(--ink)!important}
+padding:23px 0!important;font:500 16px/1.5 var(--mono)!important;letter-spacing:-.2px!important;color:var(--ink)!important}
 .ppuPA-faq summary::-webkit-details-marker{display:none}
 .ppuPA-faq summary::after{content:"";flex:0 0 auto;width:11px;height:11px;margin-top:7px;border-right:1.5px solid var(--rose);
 border-bottom:1.5px solid var(--rose);transform:rotate(45deg);transition:transform .22s}
@@ -205,7 +205,7 @@ padding:11px 16px calc(11px + env(safe-area-inset-bottom,0px))}
 .ppuPA-tick__item{font-size:15px!important;letter-spacing:.06em!important}
 .ppuPA-tick__sep{margin:0 18px}.ppuPA-tick__sep svg{width:13px;height:13px}
 .ppuPA-steps__grid{grid-template-columns:1fr;gap:0}
-.ppuPA-step{padding:26px 0 28px}
+.ppuPA-step{padding:26px 0 28px!important}
 .ppuPA-fgrid,.ppuPA-fgrid--3{grid-template-columns:1fr}
 .ppuPA-season{flex:1 1 44%}
 .ppuPA-close__grid{grid-template-columns:repeat(2,1fr)}
