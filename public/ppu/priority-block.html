@@ -1,7 +1,10 @@
-<!-- PPU · PRIORITY ACCESS ($50) · single Custom Code element · v2 · 2026-10-17
-     v2: white PPU logo in the hero, hero grid is all real B&W files, the How It Works
-     and Why Reserve sections are gone, and the $50 offer plus the form now sit together
-     immediately below the fold. Scope class .ppuPA.
+<!-- PPU · PRIORITY ACCESS ($50) · single Custom Code element · v3 · 2026-10-17
+     v3 (Jonathan's 2nd review): hero no longer repeats the brand name under the logo and
+     explains what this is for a first-time visitor; "The Original / Est. 2013" moved to the
+     footer; season board added above the offer; "Reserve in under a minute" removed;
+     What to Expect, the all-female team section, the real site footer and the B-roll
+     closing band brought in from the approved homepage.
+     Scope class .ppuPA.
      STRUCTURAL: the body must stay wrapped in <div class="ppuPA" id="ppuPA">
      immediately after </style> or every rule stops matching. -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,16 +22,18 @@
 --wrap:1120px;--gut:clamp(16px,4.75vw,67px);text-align:left}
 .ppuPA,.ppuPA *,.ppuPA *::before,.ppuPA *::after{box-sizing:border-box}
 .ppuPA [class*="animatable"],[class*="animatable"]{opacity:1!important;transform:none!important}
-.ppuPA h1,.ppuPA h2,.ppuPA h3,.ppuPA p,.ppuPA ol,.ppuPA ul,.ppuPA li,.ppuPA figure,.ppuPA fieldset,.ppuPA legend{margin:0;padding:0}
+.ppuPA h1,.ppuPA h2,.ppuPA h3,.ppuPA p,.ppuPA ol,.ppuPA ul,.ppuPA li,.ppuPA figure,.ppuPA fieldset,.ppuPA legend,.ppuPA blockquote{margin:0;padding:0}
 .ppuPA ol,.ppuPA ul{list-style:none}
 .ppuPA img{display:block;max-width:100%}
 .ppuPA a:focus-visible,.ppuPA button:focus-visible,.ppuPA input:focus-visible,.ppuPA select:focus-visible{outline:2px solid currentColor;outline-offset:3px}
 .ppuPA-sec{width:100vw;margin-left:calc(50% - 50vw);position:relative;background:var(--paper)}
 .ppuPA-sec--cream{background:var(--cream)}
 .ppuPA-sec--blush{background:var(--blush)}
+.ppuPA-sec--ink{background:#1A1A1A}
 .ppuPA-wrap{max-width:var(--wrap);margin:0 auto;padding-left:var(--gut);padding-right:var(--gut)}
 .ppuPA-eyebrow{font:500 12px/1 var(--mono)!important;letter-spacing:.22em!important;text-transform:uppercase;color:var(--soft)!important}
 .ppuPA-h{font:400 clamp(32px,4.4vw,52px)/1.1 var(--serif)!important;color:var(--ink)!important;letter-spacing:-.01em!important;text-transform:none!important;text-wrap:balance}
+.ppuPA-p{font:400 16.5px/30px var(--mono)!important;letter-spacing:-.2px!important;color:var(--text)!important;max-width:56ch;text-wrap:pretty}
 
 /* CTA */
 .ppuPA-btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:var(--ink);color:#fff!important;
@@ -47,14 +52,12 @@ text-transform:uppercase;text-decoration:none!important;cursor:pointer;transitio
 .ppuPA-tile img+img{opacity:0;animation:ppuPAfade 14s ease-in-out infinite;animation-delay:var(--d,0s)}
 @keyframes ppuPAfade{0%,38%{opacity:0}50%,88%{opacity:1}100%{opacity:0}}
 .ppuPA-hero__tint{position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(0,0,0,.76) 0%,rgba(0,0,0,.68) 58%,rgba(0,0,0,.6) 100%)}
-.ppuPA-hero__in{position:relative;z-index:2;margin:auto;display:flex;flex-direction:column;align-items:center;gap:20px;text-align:center;
+.ppuPA-hero__in{position:relative;z-index:2;margin:auto;display:flex;flex-direction:column;align-items:center;gap:22px;text-align:center;
 padding:clamp(64px,10vh,110px) var(--gut);max-width:var(--wrap)}
-.ppuPA-hero__logo{width:clamp(160px,17vw,210px);height:auto;margin-bottom:2px}
-.ppuPA-hero__eyebrow{font:500 14px/1 var(--mono)!important;letter-spacing:.22em!important;text-transform:uppercase;color:#fff!important;
-border-bottom:1px solid rgba(255,255,255,.65);padding-bottom:7px!important}
-.ppuPA-hero__h{font:400 clamp(42px,6.2vw,86px)/1.03 var(--serif)!important;color:#fff!important;letter-spacing:-.012em!important;text-wrap:balance;max-width:15ch}
+.ppuPA-hero__logo{width:clamp(150px,16vw,195px);height:auto}
+.ppuPA-hero__h{font:400 clamp(40px,5.8vw,80px)/1.04 var(--serif)!important;color:#fff!important;letter-spacing:-.012em!important;text-wrap:balance;max-width:16ch}
 .ppuPA-hero__sub{font:500 clamp(13px,1.2vw,15.5px)/1.7 var(--mono)!important;letter-spacing:.1em!important;text-transform:uppercase;
-color:rgba(255,255,255,.92)!important;max-width:34ch;text-wrap:pretty}
+color:rgba(255,255,255,.92)!important;max-width:40ch;text-wrap:pretty}
 .ppuPA-hero__trust{display:inline-flex;align-items:center;gap:9px;color:#fff!important;text-decoration:none!important;
 font:500 12px/1 var(--mono)!important;letter-spacing:.14em!important;text-transform:uppercase;opacity:.9}
 .ppuPA-hero__trust:hover{opacity:1}
@@ -76,7 +79,22 @@ font:500 12px/1 var(--mono)!important;letter-spacing:.14em!important;text-transf
 .ppuPA-tick__sep svg{width:15px;height:15px;display:block;fill:currentColor}
 @keyframes ppuPAtick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
-/* 3 · THE $50 OFFER + FORM */
+/* 3 · SEASON BOARD */
+.ppuPA-board{padding:clamp(56px,7vw,88px) 0}
+.ppuPA-board__head{display:flex;flex-direction:column;align-items:center;text-align:center;gap:14px;margin-bottom:38px}
+.ppuPA-board__grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.ppuPA-cardbtn{display:flex;flex-direction:column;gap:12px;text-align:left;background:var(--cream);border:1px solid var(--hair);
+border-radius:14px;padding:22px 20px!important;cursor:pointer;transition:border-color .18s,background .18s,transform .18s;min-width:0;-webkit-appearance:none;appearance:none}
+.ppuPA-cardbtn:hover{border-color:rgba(45,45,45,.4);transform:translateY(-2px)}
+.ppuPA-cardbtn[data-state="closed"]{cursor:default;opacity:.62}
+.ppuPA-cardbtn[data-state="closed"]:hover{transform:none;border-color:var(--hair)}
+.ppuPA-cardbtn b{font:400 clamp(21px,2.1vw,26px)/1.15 var(--serif)!important;color:var(--ink)!important;font-weight:400}
+.ppuPA-pill{align-self:flex-start;border-radius:380px;padding:7px 12px;font:600 10px/1 var(--mono)!important;letter-spacing:.15em!important;text-transform:uppercase}
+.ppuPA-pill--out{background:var(--ink);color:#fff!important}
+.ppuPA-pill--open{background:var(--blush);color:var(--ink)!important}
+.ppuPA-board__note{margin-top:22px!important;text-align:center;font:400 13px/1.7 var(--mono)!important;color:var(--soft)!important}
+
+/* 4 · THE $50 OFFER + FORM */
 .ppuPA-offer{padding:clamp(60px,7.5vw,96px) 0}
 .ppuPA-offer__in{display:grid;grid-template-columns:minmax(0,.86fr) minmax(0,1.14fr);gap:clamp(34px,5vw,72px);align-items:start}
 .ppuPA-offer__left{display:flex;flex-direction:column;gap:18px;min-width:0;position:sticky;top:30px}
@@ -84,7 +102,7 @@ font:500 12px/1 var(--mono)!important;letter-spacing:.14em!important;text-transf
 .ppuPA-price b{font:400 clamp(86px,12vw,156px)/.82 var(--serif)!important;color:var(--ink)!important;letter-spacing:-.03em!important}
 .ppuPA-price i{font-style:normal;font:600 12px/1.5 var(--mono)!important;letter-spacing:.18em!important;text-transform:uppercase;color:var(--ink)!important}
 .ppuPA-offer__h{font:400 clamp(26px,3vw,38px)/1.12 var(--serif)!important;color:var(--ink)!important;text-wrap:balance;max-width:17ch;text-transform:none!important}
-.ppuPA-facts{display:flex;flex-direction:column;gap:0;margin-top:2px}
+.ppuPA-facts{display:flex;flex-direction:column;margin-top:2px}
 .ppuPA-fact{display:flex;align-items:center;gap:13px;padding:13px 0!important;border-top:1px solid rgba(45,45,45,.18);
 font:600 14.5px/1.45 var(--mono)!important;letter-spacing:-.1px!important;color:var(--ink)!important;min-width:0}
 .ppuPA-fact:last-child{border-bottom:1px solid rgba(45,45,45,.18)}
@@ -92,7 +110,6 @@ font:600 14.5px/1.45 var(--mono)!important;letter-spacing:-.1px!important;color:
 .ppuPA-fact svg{width:11px;height:11px;fill:currentColor}
 
 .ppuPA-card{background:var(--paper);border-radius:18px;padding:clamp(20px,3vw,34px);box-shadow:0 14px 48px rgba(45,45,45,.1)}
-.ppuPA-card__h{font:600 11px/1 var(--mono)!important;letter-spacing:.2em!important;text-transform:uppercase;color:var(--soft)!important;margin-bottom:18px!important}
 .ppuPA-fgrid{display:grid;grid-template-columns:1fr 1fr;gap:11px;margin-bottom:11px}
 .ppuPA-fgrid--3{grid-template-columns:2fr 1fr 1fr}
 .ppuPA-fgrid--1{grid-template-columns:1fr}
@@ -123,22 +140,52 @@ padding:clamp(34px,5vw,56px) clamp(20px,4vw,40px);box-shadow:0 14px 48px rgba(45
 .ppuPA-done h3{font:400 clamp(28px,3.4vw,38px)/1.12 var(--serif)!important;color:var(--ink)!important;margin-bottom:12px!important;text-transform:none!important}
 .ppuPA-done p{font:400 14.5px/27px var(--mono)!important;color:var(--soft)!important;max-width:42ch;margin:0 auto!important;text-wrap:pretty}
 
-/* 4 · WHAT YOU GET */
+/* 5 · WHAT TO EXPECT (homepage section) */
 .ppuPA-exp{padding:clamp(60px,7.5vw,96px) 0}
-.ppuPA-exp__in{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,5vw,76px);align-items:center}
-.ppuPA-exp__copy{display:flex;flex-direction:column;gap:18px;min-width:0}
-.ppuPA-exp__list{display:flex;flex-direction:column;margin-top:2px}
-.ppuPA-exp__li{display:flex;align-items:baseline;gap:13px;padding:13px 0!important;border-bottom:1px solid var(--hair);
-font:400 15px/25px var(--mono)!important;letter-spacing:-.15px!important;color:var(--text)!important;min-width:0}
-.ppuPA-exp__li span{flex:0 0 auto;color:var(--rose);font-weight:600}
-.ppuPA-exp__price{display:flex;align-items:baseline;gap:13px;padding-top:20px!important}
-.ppuPA-exp__price b{font:400 clamp(32px,3.4vw,44px)/1 var(--serif)!important;color:var(--ink)!important}
-.ppuPA-exp__price i{font-style:normal;font:500 12px/1.5 var(--mono)!important;letter-spacing:.14em!important;text-transform:uppercase;color:var(--soft)!important}
-.ppuPA-exp__art{display:grid;grid-template-columns:1fr 1fr;gap:12px;min-width:0}
-.ppuPA-exp__art img{width:100%;height:auto;aspect-ratio:2/3;object-fit:cover;background:#eceae6}
-.ppuPA-exp__art figure:nth-child(2){margin-top:38px!important}
+.ppuPA-exp__in{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:clamp(36px,6vw,96px);align-items:center}
+.ppuPA-exp__copy{display:flex;flex-direction:column;align-items:flex-start;gap:24px;min-width:0}
+.ppuPA-exp__title{font:400 clamp(40px,5vw,66px)/1 var(--serif)!important;color:var(--ink)!important;letter-spacing:-.01em!important;text-transform:none!important;text-wrap:balance}
+.ppuPA-exp__vid{position:relative;width:320px;max-width:100%;aspect-ratio:310/577;overflow:hidden;border-radius:6px;background:#e9e6e1}
+.ppuPA-exp__vid iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.ppuPA-stats{display:grid;grid-template-columns:repeat(3,auto);gap:28px;padding-top:24px!important;border-top:1px solid rgba(45,45,45,.14);width:100%;justify-content:start}
+.ppuPA-stat b{display:block;font:400 32px/1 var(--serif)!important;color:var(--ink)!important;margin-bottom:8px!important;font-weight:400}
+.ppuPA-stat span{display:block;font:500 11px/1.35 var(--mono)!important;letter-spacing:.14em!important;text-transform:uppercase;color:var(--soft)!important}
 
-/* 5 · FAQ */
+/* 6 · TEAM (homepage section) */
+.ppuPA-team{padding:clamp(60px,7.5vw,92px) 0 0}
+.ppuPA-team__head{max-width:960px;margin:0 auto 48px;padding:0 var(--gut);display:flex;flex-direction:column;align-items:center;gap:20px;text-align:center}
+.ppuPA-team__statement{font:400 clamp(30px,4.1vw,54px)/1.12 var(--serif)!important;color:var(--ink)!important;letter-spacing:-.01em!important;text-wrap:balance;text-transform:none!important}
+.ppuPA-team__statement em{font-style:italic;white-space:nowrap}
+.ppuPA-hl{position:relative;z-index:0;padding:0 .06em;white-space:nowrap}
+.ppuPA-hl::before{content:"";position:absolute;left:0;right:0;top:.14em;bottom:.04em;background:var(--blush);border-radius:4px;z-index:-1;
+transform:scaleX(0);transform-origin:left center;transition:transform .9s cubic-bezier(.2,.7,.2,1) .25s}
+.ppuPA-hl.on::before{transform:scaleX(1)}
+.ppuPA-tmsup{font-size:.38em!important;line-height:0;vertical-align:baseline;position:relative;top:-1.1em;margin-left:.08em;font-family:var(--serif)!important;color:var(--ink)!important}
+.ppuPA-rail{overflow:hidden}
+.ppuPA-rail__track{display:flex;width:max-content;animation:ppuPArail 80s linear infinite}
+.ppuPA-rail:hover .ppuPA-rail__track{animation-play-state:paused}
+.ppuPA-rail__set{display:flex;flex:none}
+.ppuPA-tm{width:clamp(200px,17vw,275px);flex:none}
+.ppuPA-tm img{width:100%;height:auto;aspect-ratio:2/3;object-fit:cover;background:#eceae6}
+@keyframes ppuPArail{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.ppuPA-team::after{content:"";display:block;height:3px;margin-top:-1px;background:var(--blush)}
+
+/* 7 · WHAT YOU GET */
+.ppuPA-inc{padding:clamp(60px,7.5vw,96px) 0}
+.ppuPA-inc__in{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,5vw,76px);align-items:center}
+.ppuPA-inc__copy{display:flex;flex-direction:column;gap:18px;min-width:0}
+.ppuPA-inc__list{display:flex;flex-direction:column;margin-top:2px}
+.ppuPA-inc__li{display:flex;align-items:baseline;gap:13px;padding:13px 0!important;border-bottom:1px solid var(--hair);
+font:400 15px/25px var(--mono)!important;letter-spacing:-.15px!important;color:var(--text)!important;min-width:0}
+.ppuPA-inc__li span{flex:0 0 auto;color:var(--rose);font-weight:600}
+.ppuPA-inc__price{display:flex;align-items:baseline;gap:13px;padding-top:20px!important}
+.ppuPA-inc__price b{font:400 clamp(32px,3.4vw,44px)/1 var(--serif)!important;color:var(--ink)!important;font-weight:400}
+.ppuPA-inc__price i{font-style:normal;font:500 12px/1.5 var(--mono)!important;letter-spacing:.14em!important;text-transform:uppercase;color:var(--soft)!important}
+.ppuPA-inc__art{display:grid;grid-template-columns:1fr 1fr;gap:12px;min-width:0}
+.ppuPA-inc__art img{width:100%;height:auto;aspect-ratio:2/3;object-fit:cover;background:#eceae6}
+.ppuPA-inc__art figure:nth-child(2){margin-top:38px!important}
+
+/* 8 · FAQ */
 .ppuPA-faq{padding:clamp(60px,7.5vw,96px) 0}
 .ppuPA-faq__in{display:grid;grid-template-columns:minmax(0,.72fr) minmax(0,1.28fr);gap:clamp(28px,5vw,72px);align-items:start}
 .ppuPA-faq__head{display:flex;flex-direction:column;gap:14px}
@@ -154,19 +201,30 @@ border-bottom:1.5px solid var(--rose);transform:rotate(45deg);transition:transfo
 .ppuPA-faq__ask{font:600 13px/1.4 var(--mono)!important;letter-spacing:.12em!important;text-transform:uppercase;color:var(--ink)!important;
 text-decoration:underline!important;text-underline-offset:5px}
 
-/* 6 · CLOSE */
-.ppuPA-close{overflow:hidden;background:#111}
-.ppuPA-close__grid{position:absolute;inset:0;display:grid;grid-template-columns:repeat(4,1fr)}
-.ppuPA-close__grid img{width:100%;height:100%;object-fit:cover}
-.ppuPA-close__tint{position:absolute;inset:0;background:rgba(0,0,0,.68)}
-.ppuPA-close__in{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;gap:24px;text-align:center;
-padding:clamp(72px,9vw,112px) var(--gut);max-width:var(--wrap);margin:0 auto}
-.ppuPA-close__h{font:400 clamp(34px,5vw,62px)/1.06 var(--serif)!important;color:#fff!important;text-wrap:balance;max-width:17ch;text-transform:none!important}
-.ppuPA-close__meta{font:600 11.5px/1.7 var(--mono)!important;letter-spacing:.2em!important;text-transform:uppercase;color:rgba(255,255,255,.78)!important}
+/* 9 · CLOSE */
+.ppuPA-close{--bh:560px;height:var(--bh);overflow:hidden;background:#111}
+.ppuPA-close__media{position:absolute;inset:0;overflow:hidden;pointer-events:none}
+.ppuPA-close__poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.ppuPA-close__media iframe{position:absolute;top:50%;left:50%;width:max(100vw,calc(var(--bh) * 16 / 9));height:max(var(--bh),calc(100vw * 9 / 16));transform:translate(-50%,-50%) scale(1.12);border:0}
+.ppuPA-close__tint{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(26,26,26,.6),rgba(26,26,26,.48) 45%,rgba(26,26,26,.7))}
+.ppuPA-close__in{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:24px;padding:0 var(--gut);text-align:center}
+.ppuPA-close__h{font:400 clamp(36px,5vw,72px)/1.05 var(--serif)!important;color:#fff!important;max-width:14ch;text-wrap:balance;text-transform:none!important}
+.ppuPA-close__meta{font:600 11.5px/1.7 var(--mono)!important;letter-spacing:.2em!important;text-transform:uppercase;color:rgba(255,255,255,.8)!important}
 
-/* 7 · FOOT */
-.ppuPA-foot{padding:36px 0;text-align:center}
-.ppuPA-foot p{font:400 11.5px/1.9 var(--mono)!important;color:rgba(45,45,45,.45)!important;letter-spacing:.04em!important}
+/* 10 · FOOTER (matches the site footer) */
+.ppuPA-foot{padding:clamp(48px,6vw,72px) 0 44px;background:var(--cream)}
+.ppuPA-foot__in{display:flex;flex-direction:column;align-items:center;gap:26px;text-align:center}
+.ppuPA-foot__logo{width:140px;height:auto;opacity:.92}
+.ppuPA-foot__nav{display:flex;flex-wrap:wrap;justify-content:center;gap:10px 26px}
+.ppuPA-foot__nav a{font:600 11.5px/1 var(--mono)!important;letter-spacing:.16em!important;text-transform:uppercase;
+color:var(--ink)!important;text-decoration:none!important;opacity:.78;transition:opacity .15s}
+.ppuPA-foot__nav a:hover{opacity:1}
+.ppuPA-foot__social{display:flex;gap:16px}
+.ppuPA-foot__social a{width:34px;height:34px;border-radius:50%;border:1px solid rgba(45,45,45,.22);display:flex;align-items:center;justify-content:center;
+color:var(--ink)!important;transition:background .15s,border-color .15s}
+.ppuPA-foot__social a:hover{background:var(--blush);border-color:var(--blush)}
+.ppuPA-foot__social svg{width:15px;height:15px;fill:currentColor;display:block}
+.ppuPA-foot__legal{font:400 11px/1.9 var(--mono)!important;color:rgba(45,45,45,.5)!important;letter-spacing:.05em!important}
 
 /* STICKY */
 .ppuPA-sticky{position:fixed;left:0;right:0;bottom:0;z-index:40;display:none;background:rgba(255,255,255,.96);
@@ -175,15 +233,17 @@ padding:11px 16px calc(11px + env(safe-area-inset-bottom,0px))}
 .ppuPA-sticky .ppuPA-btn{width:100%;padding:18px 14px!important;font-size:13px!important;letter-spacing:.12em!important}
 
 @media (max-width:980px){
-.ppuPA-offer__in,.ppuPA-exp__in,.ppuPA-faq__in{grid-template-columns:1fr}
+.ppuPA-offer__in,.ppuPA-inc__in,.ppuPA-faq__in,.ppuPA-exp__in{grid-template-columns:1fr}
 .ppuPA-offer__left{position:static}
-.ppuPA-exp__art{order:-1;max-width:460px}
-.ppuPA-exp__art figure:nth-child(2){margin-top:26px!important}
+.ppuPA-exp__vid{width:min(300px,100%);justify-self:center;order:2}
+.ppuPA-inc__art{order:-1;max-width:460px}
+.ppuPA-inc__art figure:nth-child(2){margin-top:26px!important}
+.ppuPA-board__grid{grid-template-columns:repeat(2,1fr)}
 }
 @media (max-width:760px){
 .ppuPA-hero{min-height:0}
 .ppuPA-hero__grid{grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(4,1fr)}
-.ppuPA-hero__h{font-size:clamp(34px,9vw,46px)!important}
+.ppuPA-hero__h{font-size:clamp(33px,8.6vw,44px)!important}
 .ppuPA-hero__sub{font-size:12px!important;letter-spacing:.08em!important}
 .ppuPA-tick{height:56px}
 .ppuPA-tick__view::before,.ppuPA-tick__view::after{width:44px}
@@ -191,13 +251,18 @@ padding:11px 16px calc(11px + env(safe-area-inset-bottom,0px))}
 .ppuPA-tick__sep{margin:0 16px}.ppuPA-tick__sep svg{width:12px;height:12px}
 .ppuPA-fgrid,.ppuPA-fgrid--3{grid-template-columns:1fr}
 .ppuPA-season{flex:1 1 44%}
-.ppuPA-close__grid{grid-template-columns:repeat(2,1fr)}
+.ppuPA-stats{grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.ppuPA-stat b{font-size:25px!important}
+.ppuPA-stat span{font-size:10px!important;letter-spacing:.1em!important}
+.ppuPA-tm{width:52vw}
+.ppuPA-close{--bh:480px}
 .ppuPA-sticky{display:block}
-.ppuPA-foot{padding-bottom:96px}
+.ppuPA-foot{padding-bottom:104px}
 }
 @media (prefers-reduced-motion:reduce){
-.ppuPA-tile img+img,.ppuPA-chev,.ppuPA-tick__track{animation:none}
-.ppuPA-btn:hover{transform:none}
+.ppuPA-tile img+img,.ppuPA-chev,.ppuPA-tick__track,.ppuPA-rail__track{animation:none}
+.ppuPA-btn:hover,.ppuPA-cardbtn:hover{transform:none}
+.ppuPA-hl::before{transition:none}
 }
 </style>
 
@@ -209,13 +274,12 @@ padding:11px 16px calc(11px + env(safe-area-inset-bottom,0px))}
 <div class="ppuPA-hero__tint"></div>
 <div class="ppuPA-hero__in">
 <img class="ppuPA-hero__logo" src="https://axis-ppu.vercel.app/ppu/logo-white.png" alt="Personality Pop-Up" width="843" height="516" fetchpriority="high">
-<p class="ppuPA-hero__eyebrow">The Original &bull; Est. 2013</p>
-<h1 class="ppuPA-hero__h">Bring Personality Pop&#8209;Up to your city.</h1>
-<p class="ppuPA-hero__sub">Reserve your spot before dates are announced.</p>
+<h1 class="ppuPA-hero__h">Hold your spot before your city sells out.</h1>
+<p class="ppuPA-hero__sub">A 15 minute portrait session that captures your child's real personality.</p>
 <a class="ppuPA-btn ppuPA-btn--white" href="#ppuPA-reserve">Reserve Priority Access <span class="ppuPA-dot">&bull;</span> $50</a>
 <a class="ppuPA-hero__trust" href="https://www.google.com/search?q=Personality+Pop-Up#lrd=0x89d5209ec3b5b81:0x332a7fee85847322,1" target="_blank" rel="noopener"><span class="ppuPA-st" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>5.0 &bull; <span data-ppu-review-count>420+</span> Google reviews</a>
 </div>
-<a class="ppuPA-chev" href="#ppuPA-reserve" aria-label="Reserve priority access"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 9l6 6 6-6"></path></svg></a>
+<a class="ppuPA-chev" href="#ppuPA-when" aria-label="See upcoming seasons"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 9l6 6 6-6"></path></svg></a>
 </section>
 
 <!-- 2 · CITY TICKER -->
@@ -223,7 +287,19 @@ padding:11px 16px calc(11px + env(safe-area-inset-bottom,0px))}
 <div class="ppuPA-tick__view"><div class="ppuPA-tick__track" id="ppuPAtick"></div></div>
 </section>
 
-<!-- 3 · THE $50 + FORM -->
+<!-- 3 · SEASON BOARD -->
+<section class="ppuPA-sec ppuPA-board" id="ppuPA-when" aria-labelledby="ppuPAwhenH">
+<div class="ppuPA-wrap">
+<div class="ppuPA-board__head">
+<p class="ppuPA-eyebrow">Where we go next</p>
+<h2 class="ppuPA-h" id="ppuPAwhenH">We announce one season at a time.</h2>
+</div>
+<div class="ppuPA-board__grid" id="ppuPAboard"></div>
+<p class="ppuPA-board__note">Pick a season and we will come to you first when it opens.</p>
+</div>
+</section>
+
+<!-- 4 · THE $50 + FORM -->
 <section class="ppuPA-sec ppuPA-sec--blush ppuPA-offer" id="ppuPA-reserve" aria-labelledby="ppuPAofferH">
 <div class="ppuPA-wrap ppuPA-offer__in">
 
@@ -240,7 +316,6 @@ padding:11px 16px calc(11px + env(safe-area-inset-bottom,0px))}
 
 <div>
 <form class="ppuPA-card" id="ppuPAform" novalidate="">
-<p class="ppuPA-card__h">Reserve in under a minute</p>
 <div class="ppuPA-fgrid ppuPA-fgrid--1">
 <div class="ppuPA-fi"><label for="ppuPAname">Name</label><input id="ppuPAname" type="text" autocomplete="name" placeholder="Jane Doe"></div>
 </div>
@@ -258,13 +333,7 @@ padding:11px 16px calc(11px + env(safe-area-inset-bottom,0px))}
 </div>
 <fieldset class="ppuPA-fi" style="border:0">
 <legend>Preferred season</legend>
-<div class="ppuPA-seasons">
-<label class="ppuPA-season"><input type="radio" name="ppuPAseason" value="winter"><span>Winter</span></label>
-<label class="ppuPA-season"><input type="radio" name="ppuPAseason" value="spring"><span>Spring</span></label>
-<label class="ppuPA-season"><input type="radio" name="ppuPAseason" value="summer"><span>Summer</span></label>
-<label class="ppuPA-season"><input type="radio" name="ppuPAseason" value="fall"><span>Fall</span></label>
-<label class="ppuPA-season"><input type="radio" name="ppuPAseason" value="flexible" checked=""><span>Flexible</span></label>
-</div>
+<div class="ppuPA-seasons" id="ppuPAseasons"></div>
 </fieldset>
 <button class="ppuPA-btn ppuPA-submit" type="submit" id="ppuPAsubmit">Reserve Priority Access <span class="ppuPA-dot">&bull;</span> $50</button>
 <p class="ppuPA-fine">Dates are not announced yet. This holds your place in line, not an appointment time. Secure checkout by Stripe. <a href="https://www.personalitypopup.com/privacy-policy" target="_blank" rel="noopener">Privacy</a> and <a href="https://www.personalitypopup.com/terms-of-service/" target="_blank" rel="noopener">Terms</a>.</p>
@@ -279,29 +348,55 @@ padding:11px 16px calc(11px + env(safe-area-inset-bottom,0px))}
 </div>
 </section>
 
-<!-- 4 · WHAT YOU GET -->
+<!-- 5 · WHAT TO EXPECT -->
 <section class="ppuPA-sec ppuPA-exp" aria-labelledby="ppuPAexpH">
 <div class="ppuPA-wrap ppuPA-exp__in">
 <div class="ppuPA-exp__copy">
-<p class="ppuPA-eyebrow">The session</p>
-<h2 class="ppuPA-h" id="ppuPAexpH">Fifteen minutes. Every face they make.</h2>
-<ul class="ppuPA-exp__list">
-<li class="ppuPA-exp__li"><span>&bull;</span>15 minute Personality Portrait session</li>
-<li class="ppuPA-exp__li"><span>&bull;</span>Certified Personality Method&trade; photographer</li>
-<li class="ppuPA-exp__li"><span>&bull;</span>25+ high resolution images</li>
-<li class="ppuPA-exp__li"><span>&bull;</span>Every image in color and black &amp; white</li>
-<li class="ppuPA-exp__li"><span>&bull;</span>Private online gallery</li>
-</ul>
-<p class="ppuPA-exp__price"><b>$595</b><i>Regular session price</i></p>
+<p class="ppuPA-eyebrow">How it works</p>
+<h2 class="ppuPA-exp__title" id="ppuPAexpH">What to Expect</h2>
+<p class="ppuPA-p">Personality Pop-Up&trade; is taking the pain out of portraits by offering a delightful photo experience for kids in a stress-free studio environment for parents. Say goodbye to fake smiles and forced poses!</p>
+<div class="ppuPA-stats">
+<div class="ppuPA-stat"><b>18+</b><span>Years behind<br>the camera</span></div>
+<div class="ppuPA-stat"><b>2013</b><span>Personality<br>Portraits began</span></div>
+<div class="ppuPA-stat"><b data-ppu-review-count>420+</b><span>Five-star<br>Google reviews</span></div>
 </div>
-<div class="ppuPA-exp__art">
+</div>
+<div class="ppuPA-exp__vid"><iframe src="https://player.vimeo.com/video/1174234823?title=0&amp;byline=0&amp;portrait=0" title="What to Expect at Personality Pop-Up" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>
+</div>
+</section>
+
+<!-- 6 · TEAM -->
+<section class="ppuPA-sec ppuPA-team" aria-label="Our team">
+<div class="ppuPA-team__head">
+<p class="ppuPA-eyebrow">The ladies behind the lens</p>
+<h2 class="ppuPA-team__statement">We are a boutique team of <em>all-female</em> traveling kid photographers, certified in the <span class="ppuPA-hl">Personality Method</span><sup class="ppuPA-tmsup">&trade;</sup></h2>
+</div>
+<div class="ppuPA-rail"><div class="ppuPA-rail__track" id="ppuPArail"></div></div>
+</section>
+
+<!-- 7 · WHAT YOU GET -->
+<section class="ppuPA-sec ppuPA-inc" aria-labelledby="ppuPAincH">
+<div class="ppuPA-wrap ppuPA-inc__in">
+<div class="ppuPA-inc__copy">
+<p class="ppuPA-eyebrow">The session</p>
+<h2 class="ppuPA-h" id="ppuPAincH">Fifteen minutes. Every face they make.</h2>
+<ul class="ppuPA-inc__list">
+<li class="ppuPA-inc__li"><span>&bull;</span>15 minute Personality Portrait session</li>
+<li class="ppuPA-inc__li"><span>&bull;</span>Certified Personality Method&trade; photographer</li>
+<li class="ppuPA-inc__li"><span>&bull;</span>25+ high resolution images</li>
+<li class="ppuPA-inc__li"><span>&bull;</span>Every image in color and black &amp; white</li>
+<li class="ppuPA-inc__li"><span>&bull;</span>Private online gallery</li>
+</ul>
+<p class="ppuPA-inc__price"><b>$595</b><i>Regular session price</i></p>
+</div>
+<div class="ppuPA-inc__art">
 <figure><img src="https://cdn.jsdelivr.net/gh/jonathanconnolly/session-crm@main/public/ppu/img/260314-ppu-orlando-960.webp" alt="A young boy mid expression at a Personality Pop-Up session" loading="lazy" decoding="async" width="1000" height="1499"></figure>
 <figure><img src="https://cdn.jsdelivr.net/gh/jonathanconnolly/session-crm@main/public/ppu/img/personality-pop-up-los-altos-1032-960.webp" alt="A child laughing during a Personality Pop-Up portrait session" loading="lazy" decoding="async" width="1000" height="1499"></figure>
 </div>
 </div>
 </section>
 
-<!-- 5 · FAQ -->
+<!-- 8 · FAQ -->
 <section class="ppuPA-sec ppuPA-sec--cream ppuPA-faq" aria-labelledby="ppuPAfaqH">
 <div class="ppuPA-wrap ppuPA-faq__in">
 <div class="ppuPA-faq__head">
@@ -310,19 +405,26 @@ padding:11px 16px calc(11px + env(safe-area-inset-bottom,0px))}
 <a class="ppuPA-faq__ask" href="mailto:hello@personalitypopup.com">Ask us anything &rarr;</a>
 </div>
 <div>
-<details open=""><summary>Is this a confirmed appointment?</summary><p class="ppuPA-faq__a">No. You pick your time once dates are announced for your city.</p></details>
+<details open=""><summary>What is Personality Pop-Up?</summary><p class="ppuPA-faq__a">A traveling portrait studio for kids. We set up in one city at a time for a weekend, and every session is 15 minutes long. No posing, no cheese, no perfect kids required.</p></details>
+<details><summary>Is this a confirmed appointment?</summary><p class="ppuPA-faq__a">No. You pick your time once dates are announced for your city.</p></details>
 <details><summary>Is the $50 refundable?</summary><p class="ppuPA-faq__a">Yes. Ask any time, for any reason, and we refund it in full.</p></details>
 <details><summary>Does my $50 go toward my session?</summary><p class="ppuPA-faq__a">Yes. The full $50 comes off your session total.</p></details>
+<details><summary>What does a session cost?</summary><p class="ppuPA-faq__a">Most families spend $500 to $750 on their session, plus prints on top of that.</p></details>
+<details><summary>How many kids are allowed?</summary><p class="ppuPA-faq__a">Each 15 minute session is ideal for 1 to 2 children, ages 6 months to 18 years. You know them best.</p></details>
+<details><summary>What if my child will not cooperate?</summary><p class="ppuPA-faq__a">We never bribe kids to smile and we never say cheese. Sit back and trust the process. This is about personality, not perfection.</p></details>
 <details><summary>What if you do not visit my city?</summary><p class="ppuPA-faq__a">Take a full refund, or hold the credit for any city we visit.</p></details>
 <details><summary>Am I guaranteed a session?</summary><p class="ppuPA-faq__a">No. You book before the public, subject to availability. A weekend holds 40 sessions and they fill.</p></details>
 </div>
 </div>
 </section>
 
-<!-- 6 · CLOSE -->
+<!-- 9 · CLOSE -->
 <section class="ppuPA-sec ppuPA-close" aria-labelledby="ppuPAcloseH">
-<div class="ppuPA-close__grid" id="ppuPAclose" aria-hidden="true"></div>
+<div class="ppuPA-close__media" aria-hidden="true">
+<img class="ppuPA-close__poster" src="https://i.vimeocdn.com/video/1827227214-fd9dca692218d62fbfa38adcef0da68f3c94ff9a4de2fd839de8e4465d183006-d_1600" alt="" loading="lazy">
+<iframe src="https://player.vimeo.com/video/930488974?background=1&amp;autoplay=1&amp;muted=1&amp;loop=1&amp;autopause=0&amp;dnt=1" title="" tabindex="-1" allow="autoplay; encrypted-media" loading="lazy"></iframe>
 <div class="ppuPA-close__tint"></div>
+</div>
 <div class="ppuPA-close__in">
 <h2 class="ppuPA-close__h" id="ppuPAcloseH">They will not be little forever.</h2>
 <p class="ppuPA-close__meta">$50 &bull; Refundable &bull; Applies to your session</p>
@@ -330,8 +432,24 @@ padding:11px 16px calc(11px + env(safe-area-inset-bottom,0px))}
 </div>
 </section>
 
+<!-- 10 · FOOTER -->
 <footer class="ppuPA-sec ppuPA-foot">
-<div class="ppuPA-wrap"><p>Personality Pop&#8209;Up&trade; &bull; A Creative Volition, Inc. company &bull; Est. 2013</p></div>
+<div class="ppuPA-wrap ppuPA-foot__in">
+<img class="ppuPA-foot__logo" src="https://axis-ppu.vercel.app/ppu/logo-white.png" alt="Personality Pop-Up" width="843" height="516" loading="lazy" style="filter:invert(1)">
+<nav class="ppuPA-foot__nav" aria-label="Site">
+<a href="https://www.personalitypopup.com/about/">About</a>
+<a href="https://www.personalitypopup.com/faq/">FAQ</a>
+<a href="https://www.personalitypopup.com/portfolio/">Portfolio</a>
+<a href="https://www.personalitypopup.com/book/">Find Your City</a>
+<a href="https://www.personalitypopup.com/terms-of-service/">Terms</a>
+<a href="https://www.personalitypopup.com/privacy-policy">Privacy</a>
+</nav>
+<div class="ppuPA-foot__social">
+<a href="https://www.facebook.com/personalitypopup" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M13.5 21v-8h2.7l.4-3h-3.1V8.1c0-.9.3-1.5 1.5-1.5h1.7V3.9c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3V10H7.8v3h2.2v8h3.5z"></path></svg></a>
+<a href="https://www.instagram.com/personalitypopup" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.8.2 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1 .4 2.2.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.2 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1 .4-2.2.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.8-.2-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.4-1-.4-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.2-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1-.4 2.2-.4 1.3-.1 1.7-.1 4.8-.1zm0 1.8c-3.1 0-3.5 0-4.7.1-1.1.1-1.7.2-2.1.3-.5.2-.9.4-1.2.8-.4.3-.6.7-.8 1.2-.1.4-.3 1-.3 2.1-.1 1.2-.1 1.6-.1 4.7s0 3.5.1 4.7c.1 1.1.2 1.7.3 2.1.2.5.4.9.8 1.2.3.4.7.6 1.2.8.4.1 1 .3 2.1.3 1.2.1 1.6.1 4.7.1s3.5 0 4.7-.1c1.1-.1 1.7-.2 2.1-.3.5-.2.9-.4 1.2-.8.4-.3.6-.7.8-1.2.1-.4.3-1 .3-2.1.1-1.2.1-1.6.1-4.7s0-3.5-.1-4.7c-.1-1.1-.2-1.7-.3-2.1-.2-.5-.4-.9-.8-1.2-.3-.4-.7-.6-1.2-.8-.4-.1-1-.3-2.1-.3-1.2-.1-1.6-.1-4.7-.1zm0 3.1a4.9 4.9 0 1 1 0 9.8 4.9 4.9 0 0 1 0-9.8zm0 8.1a3.2 3.2 0 1 0 0-6.4 3.2 3.2 0 0 0 0 6.4zm6.2-8.3a1.1 1.1 0 1 1-2.3 0 1.1 1.1 0 0 1 2.3 0z"></path></svg></a>
+</div>
+<p class="ppuPA-foot__legal">The Original &bull; Est. 2013 &bull; &copy; 2026 Personality Pop-Up&trade; &bull; A Creative Volition, Inc. company</p>
+</div>
 </footer>
 
 <div class="ppuPA-sticky"><a class="ppuPA-btn" href="#ppuPA-reserve">Reserve Priority Access <span class="ppuPA-dot">&bull;</span> $50</a></div>
@@ -342,12 +460,20 @@ padding:11px 16px calc(11px + env(safe-area-inset-bottom,0px))}
 (function(){
 "use strict";
 
-/* Paste the live Stripe Payment Link here to turn checkout on. One-off $50.00 USD.
-   The page appends prefilled_email and client_reference_id=<season>__<city_state>. */
+/* Paste the live Stripe Payment Link here to turn checkout on. One-off $50.00 USD. */
 var STRIPE_LINK = "";
 
 /* Same GoHighLevel hook the site VIP form posts to. */
 var WEBHOOK = "https://services.leadconnectorhq.com/hooks/t9HiHMKOiD67UOAImmi4/webhook-trigger/6WjQsjrVx4WKvh2ijOVB";
+
+/* Season board. status: "out" = sold out, "open" = cities being chosen.
+   Edit this list as seasons close out. */
+var SEASONS = [
+  { key: "fall-2026",   label: "Fall 2026",   status: "out"  },
+  { key: "winter-2027", label: "Winter 2027", status: "open" },
+  { key: "spring-2027", label: "Spring 2027", status: "open" },
+  { key: "summer-2027", label: "Summer 2027", status: "open" }
+];
 
 var CDN = "https://cdn.jsdelivr.net/gh/jonathanconnolly/session-crm@main/public/ppu/img/";
 /* Hero: 24 real black and white files, no CSS filters. */
@@ -357,11 +483,15 @@ var BW = ["260613-ppu-alpharetta","260124-ppu-los-altos","260124-ppu-los-altos-2
 "personality-pop-up-cleveland","260328-ppu-long-beach","251018-ppu-salt-lake-city","personality-pop-up-chicago-2",
 "260307-ppu-charleston","260321-ppu-charlotte","260221-ppu-brooklyn","260131-ppu-la-jolla",
 "260228-ppu-seattle","260315-ppu-garden-city","260627-ppu-miami-1214","260124-ppu-los-altos-1272"];
-var CLOSERS = ["personality-pop-up-los-altos-1762","260627-ppu-santa-clara-1910","personality-pop-up-ann-arbor-0330","personality-pop-up-chicago-1162"];
+var TEAM = ["personality-pop-up-team-0032","personality-pop-up-team-0014","personality-pop-up-team-0039",
+"personality-pop-up-team-0026","personality-pop-up-team-0021","photographer-11","personality-pop-up-team-0002",
+"personality-pop-up-team-0019","personality-pop-up-team-0016","personality-pop-up-team-0030","personality-pop-up-team-0008"];
 
 function src(b){ return CDN + b + "-960.webp"; }
+function byId(id){ return document.getElementById(id); }
 
-var grid = document.getElementById("ppuPAgrid");
+/* hero grid */
+var grid = byId("ppuPAgrid");
 if (grid) {
   var h = "";
   for (var i = 0; i < 12; i++) {
@@ -373,14 +503,48 @@ if (grid) {
   }
   grid.innerHTML = h;
 }
-var cg = document.getElementById("ppuPAclose");
-if (cg) cg.innerHTML = CLOSERS.map(function(b){ return '<img src="' + src(b) + '" alt="" loading="lazy" decoding="async">'; }).join("");
 
-/* ---- city ticker ---- */
+/* team rail, two identical sets so the loop is seamless */
+var rail = byId("ppuPArail");
+if (rail) {
+  var set = TEAM.map(function(b){
+    return '<figure class="ppuPA-tm"><img src="' + src(b) + '" alt="Personality Pop-Up photographer" width="1500" height="2250" loading="lazy" decoding="async"></figure>';
+  }).join("");
+  rail.innerHTML = '<div class="ppuPA-rail__set">' + set + '</div><div class="ppuPA-rail__set" aria-hidden="true">' + set + '</div>';
+}
+
+/* season board + the matching radio pills in the form */
+var board = byId("ppuPAboard"), pills = byId("ppuPAseasons");
+if (pills) {
+  pills.innerHTML = SEASONS.filter(function(s){ return s.status === "open"; }).map(function(s, i){
+    return '<label class="ppuPA-season"><input type="radio" name="ppuPAseason" value="' + s.key + '"'
+         + (i === 0 ? ' checked=""' : '') + '><span>' + s.label.split(" ")[0] + '</span></label>';
+  }).join("") + '<label class="ppuPA-season"><input type="radio" name="ppuPAseason" value="flexible"><span>Flexible</span></label>';
+}
+if (board) {
+  board.innerHTML = SEASONS.map(function(s){
+    var out = s.status === "out";
+    return '<button type="button" class="ppuPA-cardbtn" data-state="' + (out ? "closed" : "open") + '" data-key="' + s.key + '"'
+         + (out ? ' disabled=""' : '') + '>'
+         + '<span class="ppuPA-pill ' + (out ? "ppuPA-pill--out" : "ppuPA-pill--open") + '">'
+         + (out ? "Sold out" : "Open") + '</span>'
+         + '<b>' + s.label + '</b></button>';
+  }).join("");
+  Array.prototype.forEach.call(board.querySelectorAll('.ppuPA-cardbtn:not([disabled])'), function(btn){
+    btn.addEventListener("click", function(){
+      var r = document.querySelector('input[name="ppuPAseason"][value="' + btn.getAttribute("data-key") + '"]');
+      if (r) r.checked = true;
+      var target = byId("ppuPA-reserve");
+      if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  });
+}
+
+/* city ticker */
 (function(){
   var FALLBACK=["Ann Arbor, MI","Atlanta, GA","Austin, TX","Birmingham, AL","Boca Raton, FL","Boise, ID","Boston, MA","Boulder, CO","Brooklyn, NY","Carlsbad, CA","Charleston, SC","Charlotte, NC","Chicago, IL","Cincinnati, OH","Cleveland, OH","Colorado Springs, CO","Columbus, OH","Dallas, TX","Denver, CO","Detroit, MI","Fort Lauderdale, FL","Fort Worth, TX","Greenville, SC","Houston, TX","Indianapolis, IN","Irvine, CA","Jacksonville, FL","Jersey City, NJ","Kansas City, MO","Knoxville, TN","Las Vegas, NV","London, UK","Long Beach, CA","Long Island, NY","Los Angeles, CA","Louisville, KY","Madison, WI","Manhattan, NY","Miami, FL","Minneapolis, MN","Nashville, TN","New Haven, CT","New Orleans, LA","Oklahoma City, OK","Orlando, FL","Philadelphia, PA","Phoenix, AZ","Pittsburgh, PA","Portland, OR","Raleigh, NC","Ridgewood, NJ","Salt Lake City, UT","San Diego, CA","San Francisco, CA","San Jose, CA","Savannah, GA","Seattle, WA","Stamford, CT","Tampa, FL","Washington, DC","West Palm Beach, FL"];
   var SEP='<span class="ppuPA-tick__sep" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z" transform="rotate(-90 12 12)"></path></svg></span>';
-  var el = document.getElementById("ppuPAtick");
+  var el = byId("ppuPAtick");
   if (!el) return;
   function render(list){
     var a = list.slice();
@@ -400,8 +564,17 @@ if (cg) cg.innerHTML = CLOSERS.map(function(b){ return '<img src="' + src(b) + '
   else { var s = document.createElement("script"); s.src = "https://cdn.jsdelivr.net/gh/jonathanconnolly/session-crm@main/public/cities.js"; s.async = true; s.onload = fromCities; document.head.appendChild(s); }
 })();
 
-/* ---- field helpers ---- */
-function byId(id){ return document.getElementById(id); }
+/* blush highlight bar */
+Array.prototype.forEach.call(document.querySelectorAll(".ppuPA-hl:not(.on)"), function(el){
+  if ("IntersectionObserver" in window) {
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){ if (e.isIntersecting) { el.classList.add("on"); io.disconnect(); } });
+    }, { threshold: .6 });
+    io.observe(el);
+  } else { el.classList.add("on"); }
+});
+
+/* field helpers */
 var phone = byId("ppuPAphone");
 if (phone) phone.addEventListener("input", function(){
   var v = phone.value.replace(/\D/g, "").slice(0, 10);
@@ -414,7 +587,7 @@ if (st) st.addEventListener("input", function(){ st.value = st.value.replace(/[^
 var zip = byId("ppuPAzip");
 if (zip) zip.addEventListener("input", function(){ zip.value = zip.value.replace(/\D/g, "").slice(0,5); });
 
-/* ---- area code tag, same convention as the VIP form ---- */
+/* area code tag, same convention as the VIP form */
 (function(){
   if (typeof window.AREA_CODES === "object" && window.AREA_CODES) return;
   var s = document.createElement("script");
@@ -433,7 +606,7 @@ function phoneTagFor(digits){
   return (c && s2) ? "phone_" + c + "_" + s2 : "";
 }
 
-/* ---- submit ---- */
+/* submit */
 var form = byId("ppuPAform"), btn = byId("ppuPAsubmit"), done = byId("ppuPAdone"), doneMsg = byId("ppuPAdoneMsg");
 var LABEL = 'Reserve Priority Access <span class="ppuPA-dot">&bull;</span> $50';
 function val(id){ var e = byId(id); return e ? e.value.trim() : ""; }
