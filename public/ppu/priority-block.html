@@ -56,8 +56,9 @@ text-transform:uppercase;text-decoration:none!important;cursor:pointer;transitio
 padding:clamp(64px,10vh,110px) var(--gut);max-width:var(--wrap)}
 .ppuPA-hero__logo{width:clamp(150px,16vw,195px);height:auto}
 .ppuPA-hero__h{font:400 clamp(40px,5.8vw,80px)/1.04 var(--serif)!important;color:#fff!important;letter-spacing:-.012em!important;text-wrap:balance;max-width:16ch}
-.ppuPA-hero__sub{font:500 clamp(13px,1.2vw,15.5px)/1.7 var(--mono)!important;letter-spacing:.1em!important;text-transform:uppercase;
-color:rgba(255,255,255,.92)!important;max-width:40ch;text-wrap:pretty}
+.ppuPA-hero__sub{font:500 clamp(13px,1.2vw,16px)/1.7 var(--mono)!important;letter-spacing:.14em!important;text-transform:uppercase;
+color:rgba(255,255,255,.92)!important;max-width:none;text-wrap:pretty}
+.ppuPA-hero__sub u{text-underline-offset:4px}
 .ppuPA-hero__trust{display:inline-flex;align-items:center;gap:9px;color:#fff!important;text-decoration:none!important;
 font:500 12px/1 var(--mono)!important;letter-spacing:.14em!important;text-transform:uppercase;opacity:.9}
 .ppuPA-hero__trust:hover{opacity:1}
@@ -83,14 +84,15 @@ font:500 12px/1 var(--mono)!important;letter-spacing:.14em!important;text-transf
 .ppuPA-board{padding:clamp(56px,7vw,88px) 0}
 .ppuPA-board__head{display:flex;flex-direction:column;align-items:center;text-align:center;gap:14px;margin-bottom:38px}
 .ppuPA-board__grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.ppuPA-cardbtn b{white-space:nowrap}
 .ppuPA-cardbtn{display:flex;flex-direction:column;gap:12px;text-align:left;background:var(--cream);border:1px solid var(--hair);
 border-radius:14px;padding:22px 20px!important;cursor:pointer;transition:border-color .18s,background .18s,transform .18s;min-width:0;-webkit-appearance:none;appearance:none}
 .ppuPA-cardbtn:hover{border-color:rgba(45,45,45,.4);transform:translateY(-2px)}
-.ppuPA-cardbtn[data-state="closed"]{cursor:default;opacity:.62}
+.ppuPA-cardbtn[data-state="closed"]{cursor:default;opacity:.34;background:transparent;border-style:dashed}
 .ppuPA-cardbtn[data-state="closed"]:hover{transform:none;border-color:var(--hair)}
 .ppuPA-cardbtn b{font:400 clamp(21px,2.1vw,26px)/1.15 var(--serif)!important;color:var(--ink)!important;font-weight:400}
 .ppuPA-pill{align-self:flex-start;border-radius:380px;padding:7px 12px;font:600 10px/1 var(--mono)!important;letter-spacing:.15em!important;text-transform:uppercase}
-.ppuPA-pill--out{background:var(--ink);color:#fff!important}
+.ppuPA-pill--out{background:transparent;border:1px solid rgba(45,45,45,.45);color:var(--soft)!important}
 .ppuPA-pill--open{background:var(--blush);color:var(--ink)!important}
 .ppuPA-board__note{margin-top:22px!important;text-align:center;font:400 13px/1.7 var(--mono)!important;color:var(--soft)!important}
 
@@ -244,7 +246,8 @@ padding:11px 16px calc(11px + env(safe-area-inset-bottom,0px))}
 .ppuPA-hero{min-height:0}
 .ppuPA-hero__grid{grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(4,1fr)}
 .ppuPA-hero__h{font-size:clamp(33px,8.6vw,44px)!important}
-.ppuPA-hero__sub{font-size:12px!important;letter-spacing:.08em!important}
+.ppuPA-hero__sub{font-size:12px!important;letter-spacing:.1em!important;max-width:34ch}
+.ppuPA-hero__sub br{display:none}
 .ppuPA-tick{height:56px}
 .ppuPA-tick__view::before,.ppuPA-tick__view::after{width:44px}
 .ppuPA-tick__item{font-size:14px!important;letter-spacing:.06em!important}
@@ -275,8 +278,8 @@ padding:11px 16px calc(11px + env(safe-area-inset-bottom,0px))}
 <div class="ppuPA-hero__in">
 <img class="ppuPA-hero__logo" src="https://axis-ppu.vercel.app/ppu/logo-white.png" alt="Personality Pop-Up" width="843" height="516" fetchpriority="high">
 <h1 class="ppuPA-hero__h">Hold your spot before your city sells out.</h1>
-<p class="ppuPA-hero__sub">A 15 minute portrait session that captures your child's real personality.</p>
-<a class="ppuPA-btn ppuPA-btn--white" href="#ppuPA-reserve">Reserve Priority Access <span class="ppuPA-dot">&bull;</span> $50</a>
+<p class="ppuPA-hero__sub">A simple 15-minute photo experience that <br>captures your child’s <u>real</u> personality.</p>
+<a class="ppuPA-btn ppuPA-btn--white" href="#ppuPA-reserve">Get Priority Access</a>
 <a class="ppuPA-hero__trust" href="https://www.google.com/search?q=Personality+Pop-Up#lrd=0x89d5209ec3b5b81:0x332a7fee85847322,1" target="_blank" rel="noopener"><span class="ppuPA-st" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>5.0 &bull; <span data-ppu-review-count>420+</span> Google reviews</a>
 </div>
 <a class="ppuPA-chev" href="#ppuPA-when" aria-label="See upcoming seasons"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 9l6 6 6-6"></path></svg></a>
@@ -335,7 +338,7 @@ padding:11px 16px calc(11px + env(safe-area-inset-bottom,0px))}
 <legend>Preferred season</legend>
 <div class="ppuPA-seasons" id="ppuPAseasons"></div>
 </fieldset>
-<button class="ppuPA-btn ppuPA-submit" type="submit" id="ppuPAsubmit">Reserve Priority Access <span class="ppuPA-dot">&bull;</span> $50</button>
+<button class="ppuPA-btn ppuPA-submit" type="submit" id="ppuPAsubmit">Get Priority Access</button>
 <p class="ppuPA-fine">Dates are not announced yet. This holds your place in line, not an appointment time. Secure checkout by Stripe. <a href="https://www.personalitypopup.com/privacy-policy" target="_blank" rel="noopener">Privacy</a> and <a href="https://www.personalitypopup.com/terms-of-service/" target="_blank" rel="noopener">Terms</a>.</p>
 </form>
 
@@ -428,7 +431,7 @@ padding:11px 16px calc(11px + env(safe-area-inset-bottom,0px))}
 <div class="ppuPA-close__in">
 <h2 class="ppuPA-close__h" id="ppuPAcloseH">They will not be little forever.</h2>
 <p class="ppuPA-close__meta">$50 &bull; Refundable &bull; Applies to your session</p>
-<a class="ppuPA-btn ppuPA-btn--white" href="#ppuPA-reserve">Reserve Priority Access <span class="ppuPA-dot">&bull;</span> $50</a>
+<a class="ppuPA-btn ppuPA-btn--white" href="#ppuPA-reserve">Get Priority Access</a>
 </div>
 </section>
 
@@ -452,7 +455,7 @@ padding:11px 16px calc(11px + env(safe-area-inset-bottom,0px))}
 </div>
 </footer>
 
-<div class="ppuPA-sticky"><a class="ppuPA-btn" href="#ppuPA-reserve">Reserve Priority Access <span class="ppuPA-dot">&bull;</span> $50</a></div>
+<div class="ppuPA-sticky"><a class="ppuPA-btn" href="#ppuPA-reserve">Get Priority Access</a></div>
 
 </div>
 
@@ -466,13 +469,17 @@ var STRIPE_LINK = "";
 /* Same GoHighLevel hook the site VIP form posts to. */
 var WEBHOOK = "https://services.leadconnectorhq.com/hooks/t9HiHMKOiD67UOAImmi4/webhook-trigger/6WjQsjrVx4WKvh2ijOVB";
 
-/* Season board. status: "out" = sold out, "open" = cities being chosen.
-   Edit this list as seasons close out. */
+/* Season board. status: "out" = sold out (dimmed, not selectable),
+   "open" = opens soon. Edit this list as seasons close out. */
 var SEASONS = [
+  { key: "winter-2026", label: "Winter 2026", status: "out"  },
+  { key: "spring-2026", label: "Spring 2026", status: "out"  },
+  { key: "summer-2026", label: "Summer 2026", status: "out"  },
   { key: "fall-2026",   label: "Fall 2026",   status: "out"  },
   { key: "winter-2027", label: "Winter 2027", status: "open" },
   { key: "spring-2027", label: "Spring 2027", status: "open" },
-  { key: "summer-2027", label: "Summer 2027", status: "open" }
+  { key: "summer-2027", label: "Summer 2027", status: "open" },
+  { key: "fall-2027",   label: "Fall 2027",   status: "open" }
 ];
 
 var CDN = "https://cdn.jsdelivr.net/gh/jonathanconnolly/session-crm@main/public/ppu/img/";
@@ -527,7 +534,7 @@ if (board) {
     return '<button type="button" class="ppuPA-cardbtn" data-state="' + (out ? "closed" : "open") + '" data-key="' + s.key + '"'
          + (out ? ' disabled=""' : '') + '>'
          + '<span class="ppuPA-pill ' + (out ? "ppuPA-pill--out" : "ppuPA-pill--open") + '">'
-         + (out ? "Sold out" : "Open") + '</span>'
+         + (out ? "Sold out" : "Opens soon") + '</span>'
          + '<b>' + s.label + '</b></button>';
   }).join("");
   Array.prototype.forEach.call(board.querySelectorAll('.ppuPA-cardbtn:not([disabled])'), function(btn){
@@ -608,7 +615,7 @@ function phoneTagFor(digits){
 
 /* submit */
 var form = byId("ppuPAform"), btn = byId("ppuPAsubmit"), done = byId("ppuPAdone"), doneMsg = byId("ppuPAdoneMsg");
-var LABEL = 'Reserve Priority Access <span class="ppuPA-dot">&bull;</span> $50';
+var LABEL = 'Get Priority Access';
 function val(id){ var e = byId(id); return e ? e.value.trim() : ""; }
 function mark(id, bad){ var e = byId(id); if (e) e.classList.toggle("bad", !!bad); }
 
