@@ -1,6 +1,6 @@
 {
  "_comment": "PPU review pool for every ppuR slider on personalitypopup.com. Order = rank (best first). q = full review text (verbatim), s = optional short excerpt for compact sliders (Book). Pages pull this live; the daily ppu-google-review-count task adds new 5-star Google reviews here.",
- "updated": "2026-10-16",
+ "updated": "2026-10-18",
  "reviews": [
   {
    "n": "Jessica",
@@ -44,6 +44,12 @@
    "q": "As an avid family that does 3-5 sets of photo sessions a year if not more — there is a difference with this product. The quality, style, experience of the photography is unmatched.",
    "s": "There is a difference with this product. The quality, style, experience is unmatched.",
    "added": "2026-10-15"
+  },
+  {
+   "n": "Janelle A.",
+   "q": "The warmest and kindest team with the best experience! Laura made it so easy for my daughter to feel comfortable and get her shots. I was so eager to get her portraits back and was blown away with the results!",
+   "s": "The warmest and kindest team with the best experience! Laura made it so easy for my daughter to feel comfortable and get her shots.",
+   "added": "2026-10-18"
   },
   {
    "n": "Sandy",
@@ -176,6 +182,11 @@
    "q": "Wonderful experience! 15 minutes in and out. They are great with the littles and the photos are adorable! Will definitely book again when they come back to Houston.",
    "s": "15 minutes in and out. They are great with the littles and the photos are adorable.",
    "added": "2026-10-15"
+  },
+  {
+   "n": "Nicole A.",
+   "q": "Obsessed with these photos! An easy and fun experience for the kids and amazing pictures in return. Highly recommend!",
+   "added": "2026-10-18"
   },
   {
    "n": "Samantha",
