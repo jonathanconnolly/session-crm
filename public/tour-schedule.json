@@ -1,20 +1,7 @@
 {
-  "_comment": "Auto-synced 2026-10-17 from Session. Bookings: Washington, DC 14->13, Miami Shores, FL 7->5. No sell-outs, reopens or new cities; slugs and thumbnails unchanged; 14 Now Booking rows (7 sold out / 7 open). Opening Soon carried over unchanged (Schedule tab not re-pulled). Capacity 20/day.",
-  "updated": "2026-10-17",
+  "_comment": "Auto-synced 2026-10-18 from Session. Alpharetta, GA (Oct 17) rolled off after the event. Bookings: Denver, CO 3->2 spots left, Orange County, CA 12->10. No new sell-outs, reopens or new cities; slugs and thumbnails unchanged; 13 Now Booking rows (7 sold out / 6 open). Opening Soon carried over unchanged (Schedule tab Dec is placeholder only; Boston, Dublin for Nov). Capacity 20/day.",
+  "updated": "2026-10-18",
   "scheduled": [
-    {
-      "city": "Alpharetta, GA",
-      "metro": "Atlanta, GA",
-      "metroTag": "city_atlanta_ga",
-      "weekend": "Oct 17",
-      "weekendStart": "2026-10-17",
-      "days": 1,
-      "booked": 18,
-      "spotsLeft": 2,
-      "status": "now_open",
-      "sessionUrl": "https://book.usesession.com/s/6WU0B8k-Hf",
-      "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/927aa9f7-61bd-48c2-835d-6e7a431f60a3-sm.jpg"
-    },
     {
       "city": "West Palm Beach, FL",
       "metro": "West Palm Beach, FL",
@@ -74,8 +61,8 @@
       "weekend": "Nov 7-8",
       "weekendStart": "2026-11-07",
       "days": 2,
-      "booked": 37,
-      "spotsLeft": 3,
+      "booked": 38,
+      "spotsLeft": 2,
       "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/wxLeD6B3b8",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/aa594339-2f09-4865-ba0d-eb30675927c2-sm.jpg"
@@ -113,8 +100,8 @@
       "weekend": "Nov 14-15",
       "weekendStart": "2026-11-14",
       "days": 2,
-      "booked": 28,
-      "spotsLeft": 12,
+      "booked": 30,
+      "spotsLeft": 10,
       "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/z1DO7vqo7w",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/ae96d067-e8c0-4a0f-b2cb-46967368e8e8-sm.jpg"
