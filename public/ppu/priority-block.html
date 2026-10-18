@@ -88,7 +88,9 @@ font:500 12px/1 var(--mono)!important;letter-spacing:.14em!important;text-transf
 .ppuPA-cardbtn{display:flex;flex-direction:column;gap:12px;text-align:left;background:var(--cream);border:1px solid var(--hair);
 border-radius:14px;padding:22px 20px!important;cursor:pointer;transition:border-color .18s,background .18s,transform .18s;min-width:0;-webkit-appearance:none;appearance:none}
 .ppuPA-cardbtn:hover{border-color:rgba(45,45,45,.4);transform:translateY(-2px)}
-.ppuPA-cardbtn[data-state="closed"]{cursor:default;opacity:.34;background:transparent;border-style:dashed}
+.ppuPA-cardbtn[data-state="closed"]{cursor:default;opacity:.34!important;background:transparent!important;border-style:dashed;border-color:rgba(45,45,45,.3)!important}
+.ppuPA-cardbtn[data-state="closed"] b{color:rgba(45,45,45,.55)!important}
+.ppuPA-cardbtn[data-state="closed"] .ppuPA-pill{color:rgba(45,45,45,.5)!important;border-color:rgba(45,45,45,.3)!important}
 .ppuPA-cardbtn[data-state="closed"]:hover{transform:none;border-color:var(--hair)}
 .ppuPA-cardbtn b{font:400 clamp(21px,2.1vw,26px)/1.15 var(--serif)!important;color:var(--ink)!important;font-weight:400}
 .ppuPA-pill{align-self:flex-start;border-radius:380px;padding:7px 12px;font:600 10px/1 var(--mono)!important;letter-spacing:.15em!important;text-transform:uppercase}
