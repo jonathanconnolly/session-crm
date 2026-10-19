@@ -1,503 +1,798 @@
-<!-- ==================================================================
-  PERSONALITY POP-UP — MEMBERSHIP (/members)              v3.0 2026-10-16
-  -------------------------------------------------------------------
-  ONE Pixieset Custom Code block = the whole page. Written for families
-  who have already had a session: the sell is ACCESS, not the session.
-
-    1. Hero      "Never miss another year." · no price
-    2. Pricing   straight under the fold. TWO packages, both billed once
-                 a year (never monthly: a monthly plan lets someone shoot
-                 in February and cancel in March).
-                 ACCESS $300/yr, shown as $25/mo. The calendar and first
-                 booking. Sessions bought separately at the local price,
-                 which is deliberately not quoted here because it varies.
-                 ACCESS PLUS $895/yr. Access plus one session prepaid at a
-                 FIXED $595 in any city (sessions really run $495-$749, so
-                 the product is price certainty). Second session 10% off.
-                 Capped at 2, and sessions expire with the membership year.
-    3. See       the difference, in the brand's big-serif facts row plus a
-                 thin 12-month strip (one month dark = the public weekend)
-    4. Why       four reasons · 5. Reviews · 6. FAQ · 7. Close · 8. Sticky
-
-  Dropped on purpose (brand and work are already established for this
-  audience): team rail, portfolio strip, press ticker, what-to-expect.
-
-  CONFIG (bottom script): ACCESS (per year), LOCKED (fixed session price
-  on Plus), MULTI_PCT, LINKS.access + LINKS.plus[1-2], PORTAL.
-  No city: a membership is good at any pop-up (asked at checkout).
-  ?joined=1&plan=…&n=… → the "You're a member" state.
-  Built by scripts/build-ppu-members.py (+ docs/embeds/parts/reviews.html).
-=================================================================== -->
+<!-- PPU · MEMBERSHIP (/members) · single Custom Code element · v10 · 2026-10-19
+     Built on the approved Priority Access layout, rescoped .ppuPA -> .ppuMB.
+     THE OFFER: $300 a year per session, billed annually, choose 1, 2 or 4 a year.
+     The $295 balance for each session is charged 14 days before that session.
+     $595 a session in total, locked while the membership runs. Season chosen at signup.
+     Priority Access ($50, refundable) stays the low-commitment national offer; this is
+     the commitment version.
+     STRUCTURAL: the body must stay wrapped in <div class="ppuMB" id="ppuMB">
+     immediately after </style> or every rule stops matching. -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500&amp;family=Roboto+Mono:wght@400;500;600;700&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&amp;family=Roboto+Mono:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+
 <style>
-/* ---- shared ppuH system (verbatim from the approved homepage blocks) ---- */
-.block-custom-code:has(.ppuH,.ppuR) .element-container__content,.block-custom-code:has(.ppuH,.ppuR) .element-container__content-wrapper{display:block!important;line-height:0}
-.block-custom-code:has(.ppuH,.ppuR) .element-container__content > *{line-height:normal}
-.block-custom-code:has(.ppuH),.block-custom-code:has(.ppuR){padding-top:0!important;padding-bottom:0!important}
-.ppuH{--ui:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;--ink:#2D2D2D;--text:#373737;--soft:#646363;--paper:#FFFFFF;--cream:#FAF9F5;--blush:#FBDFD9;--red:#D64530;
---serif:"MADE Mirage","Orpheus Pro","Cormorant Garamond",Georgia,serif;--mono:"Roboto Mono","Courier New",Courier,monospace;
---wrap:1180px;--gut:clamp(16px,4.75vw,67px);text-align:left;font-family:var(--mono);color:var(--ink);-webkit-font-smoothing:antialiased}
-.ppuH,.ppuH *,.ppuH *::before,.ppuH *::after{box-sizing:border-box}
-.ppuH [class*="animatable"],[class*="animatable"]{opacity:1!important;transform:none!important}
-.ppuH h1,.ppuH h2,.ppuH h3,.ppuH p,.ppuH figure,.ppuH ol,.ppuH ul,.ppuH blockquote{margin:0;padding:0}
-.ppuH [hidden]{display:none!important}
-.ppuH :where(button){cursor:pointer;background:none;border:0;font:inherit;color:inherit}
-.ppuH-sec{width:100vw;margin-left:calc(50% - 50vw);position:relative;background:var(--paper)}
-.ppuH-eyebrow{font:500 13px/1 var(--mono)!important;letter-spacing:.2em!important;text-transform:uppercase;color:var(--soft)!important}
-.ppuH-h{font:400 clamp(36px,4vw,58px)/1.08 var(--serif)!important;color:var(--ink)!important;letter-spacing:-.01em!important;text-transform:none!important;text-wrap:balance}
-.ppuH-p{font:400 17.5px/35px var(--mono)!important;letter-spacing:-.175px!important;color:var(--text)!important;max-width:58ch}
-.ppuH-btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;background:var(--ink);color:#fff!important;border-radius:380px;padding:22.5px 30px!important;
-font:600 18px/18px var(--mono)!important;letter-spacing:1.8px!important;text-transform:uppercase;text-decoration:none!important;transition:background .15s,transform .15s;white-space:nowrap}
-.ppuH-btn:hover{background:#1A1A1A;transform:translateY(-1px)}
-.ppuH-btn--white{background:#fff;color:var(--ink)!important}
-.ppuH-btn--white:hover{background:var(--blush)}
-.ppuH-link{font:600 14px/1.4 var(--mono)!important;letter-spacing:.12em!important;text-transform:uppercase;color:var(--ink)!important;text-decoration:underline!important;text-underline-offset:5px;white-space:nowrap}
-.ppuH-link:hover{opacity:.7}
-.ppuH a:focus-visible,.ppuH button:focus-visible{outline:2px solid currentColor;outline-offset:3px}
+.block-custom-code:has(.ppuMB) .element-container__content,.block-custom-code:has(.ppuMB) .element-container__content-wrapper{display:block!important;line-height:0}
+.block-custom-code:has(.ppuMB) .element-container__content > *{line-height:normal}
+.block-custom-code:has(.ppuMB){padding-top:0!important;padding-bottom:0!important}
+.ppuMB{--ink:#2D2D2D;--text:#373737;--soft:#646363;--hair:rgba(45,45,45,.12);
+--paper:#FFFFFF;--cream:#FAF9F5;--blush:#FBDFD9;--rose:#E8A096;
+--serif:"MADE Mirage","Orpheus Pro","Cormorant Garamond",Georgia,serif;
+--mono:"Roboto Mono","Courier New",Courier,monospace;
+--wrap:1120px;--gut:clamp(16px,4.75vw,67px);text-align:left}
+.ppuMB,.ppuMB *,.ppuMB *::before,.ppuMB *::after{box-sizing:border-box}
+.ppuMB [class*="animatable"],[class*="animatable"]{opacity:1!important;transform:none!important}
+.ppuMB h1,.ppuMB h2,.ppuMB h3,.ppuMB p,.ppuMB ol,.ppuMB ul,.ppuMB li,.ppuMB figure,.ppuMB fieldset,.ppuMB legend,.ppuMB blockquote{margin:0;padding:0}
+.ppuMB ol,.ppuMB ul{list-style:none}
+.ppuMB img{display:block;max-width:100%}
+.ppuMB a:focus-visible,.ppuMB button:focus-visible,.ppuMB input:focus-visible,.ppuMB select:focus-visible{outline:2px solid currentColor;outline-offset:3px}
+.ppuMB-sec{width:100vw;margin-left:calc(50% - 50vw);position:relative;background:var(--paper)}
+.ppuMB-sec--cream{background:var(--cream)}
+.ppuMB-sec--blush{background:var(--blush)}
+.ppuMB-sec--ink{background:#1A1A1A}
+.ppuMB-wrap{max-width:var(--wrap);margin:0 auto;padding-left:var(--gut);padding-right:var(--gut)}
+.ppuMB-eyebrow{font:500 12px/1 var(--mono)!important;letter-spacing:.22em!important;text-transform:uppercase;color:var(--soft)!important}
+.ppuMB-h{font:400 clamp(32px,4.4vw,52px)/1.1 var(--serif)!important;color:var(--ink)!important;letter-spacing:-.01em!important;text-transform:none!important;text-wrap:balance}
+.ppuMB-p{font:400 16.5px/30px var(--mono)!important;letter-spacing:-.2px!important;color:var(--text)!important;max-width:56ch;text-wrap:pretty}
 
-/* 1 · HERO — 6×2 rotating faces (all real black & white files) */
-.ppuH-hero{height:clamp(620px,calc(100vh - 24px),820px);overflow:hidden;background:#111}
-.ppuH-hero__grid{position:absolute;inset:0;display:grid;grid-template-columns:repeat(6,1fr);grid-template-rows:repeat(2,1fr)}
-.ppuH-tile{position:relative;overflow:hidden;background:#2a2a2a}
-.ppuH-tile img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 18%;display:block}
-.ppuH-tile img+img{opacity:0;animation:ppuHfade 12s ease-in-out infinite;animation-delay:var(--d,0s)}
-@keyframes ppuHfade{0%,38%{opacity:0}50%,88%{opacity:1}100%{opacity:0}}
-.ppuH-hero__tint{position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(0,0,0,.74) 0%,rgba(0,0,0,.64) 60%,rgba(0,0,0,.56) 100%)}
-.ppuH-hero__in{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;padding:0 var(--gut);text-align:center}
-.ppuH-hero__eyebrow{font:500 16px/1 var(--mono)!important;letter-spacing:.2em!important;white-space:nowrap;text-transform:uppercase;color:#fff!important;border-bottom:1px solid rgba(255,255,255,.7);padding-bottom:6px!important}
-.ppuH-hero__h{font:400 clamp(46px,6.2vw,92px)/1.02 var(--serif)!important;color:#fff!important;letter-spacing:-.01em!important;max-width:none;text-wrap:balance}
-.ppuH-hero__sub{font:500 clamp(13px,1.15vw,16px)/1.7 var(--mono)!important;letter-spacing:.14em!important;text-transform:uppercase;color:rgba(255,255,255,.92)!important;max-width:none}
-.ppuH-hero__sub u{text-underline-offset:4px}
-.ppuH-hero__ctas{display:flex;flex-direction:column;align-items:center;gap:18px;margin-top:10px}
-.ppuH-hero__trust{display:inline-flex;align-items:center;gap:10px;color:#fff!important;font:500 12.5px/1 var(--mono)!important;letter-spacing:.14em!important;text-transform:uppercase;text-decoration:none!important;opacity:.92;transition:opacity .2s}
-.ppuH-hero__trust:hover{opacity:1}
-.ppuH-hero__trust .st{font-size:15px;letter-spacing:.1em;color:#FFD166}
-.ppuJ-hero__logo{width:clamp(150px,18vw,210px);height:auto;display:block;margin-bottom:6px}
-.ppuH .ppuJ-hero__dates{font:700 clamp(15px,1.5vw,20px)/1.4 var(--mono)!important;letter-spacing:.18em!important;text-transform:uppercase;color:#fff!important;margin-top:-6px}
-.ppuJ-hero__dates i{font-style:normal;opacity:.5;margin:0 10px}
+/* CTA */
+.ppuMB-btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:var(--ink);color:#fff!important;
+border:0;border-radius:380px;padding:21px 32px!important;font:600 15px/1 var(--mono)!important;letter-spacing:.14em!important;
+text-transform:uppercase;text-decoration:none!important;cursor:pointer;transition:background .15s,transform .15s;text-align:center}
+.ppuMB-btn:hover{background:#1A1A1A;transform:translateY(-1px)}
+.ppuMB-btn--white{background:#fff;color:var(--ink)!important}
+.ppuMB-btn--white:hover{background:var(--blush)}
+.ppuMB-dot{color:var(--rose)}
 
-/* 2 · JOIN — the city-page "Now Booking" layout: facts, the widget, reassurance */
-.ppuJ-book{padding:96px var(--gut) 104px;scroll-margin-top:8px}
-.ppuJ-book__head{max-width:900px;margin:0 auto 40px;display:flex;flex-direction:column;align-items:center;gap:18px;text-align:center}
-.ppuJ-book__head .ppuH-p{text-align:center;max-width:60ch}
-.ppuJ-ev{max-width:900px;margin:0 auto 44px;display:grid;grid-template-columns:repeat(4,1fr);gap:16px;border-top:1px solid rgba(45,45,45,.14);border-bottom:1px solid rgba(45,45,45,.14);padding:28px 0}
-.ppuJ-ev div{text-align:center}
-.ppuJ-ev b{display:block;font:400 clamp(30px,3vw,40px)/1 var(--serif)!important;color:var(--ink)!important;margin-bottom:9px;letter-spacing:-.01em;white-space:nowrap}
-.ppuJ-ev span{display:block;font:500 11px/1.4 var(--mono)!important;letter-spacing:.14em!important;text-transform:uppercase;color:var(--soft)!important}
-.ppuJ-assure{list-style:none!important;max-width:720px;margin:26px auto 0!important;padding:0!important;display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.ppuJ-assure li{list-style:none!important;margin:0!important;display:flex;gap:9px;align-items:flex-start;font:400 12.5px/1.5 var(--mono);color:var(--soft);text-wrap:pretty}
-.ppuJ-assure li span{display:block}
-.ppuJ-assure li::before{content:"\2713";font-weight:700;color:var(--ink);flex:none;margin-top:1px}
-.ppuJ-assure b{font-weight:600;color:var(--ink)}
+/* 1 · HERO */
+.ppuMB-hero{background:#111;overflow:hidden;min-height:clamp(600px,84vh,800px);display:flex}
+.ppuMB-hero__grid{position:absolute;inset:0;display:grid;grid-template-columns:repeat(6,1fr);grid-template-rows:repeat(2,1fr)}
+.ppuMB-tile{position:relative;overflow:hidden}
+.ppuMB-tile img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.ppuMB-tile img+img{opacity:0;animation:ppuMBfade 14s ease-in-out infinite;animation-delay:var(--d,0s)}
+@keyframes ppuMBfade{0%,38%{opacity:0}50%,88%{opacity:1}100%{opacity:0}}
+.ppuMB-hero__tint{position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(0,0,0,.76) 0%,rgba(0,0,0,.68) 58%,rgba(0,0,0,.6) 100%)}
+.ppuMB-hero__in{position:relative;z-index:2;margin:auto;display:flex;flex-direction:column;align-items:center;gap:22px;text-align:center;
+padding:clamp(64px,10vh,110px) var(--gut);max-width:var(--wrap)}
+.ppuMB-hero__logo{width:clamp(150px,16vw,195px);height:auto}
+.ppuMB-hero__h{font:400 clamp(40px,5.8vw,80px)/1.04 var(--serif)!important;color:#fff!important;letter-spacing:-.012em!important;text-wrap:balance;max-width:16ch}
+.ppuMB-hero__sub{font:500 clamp(13px,1.2vw,16px)/1.7 var(--mono)!important;letter-spacing:.14em!important;text-transform:uppercase;
+color:rgba(255,255,255,.92)!important;max-width:none;text-wrap:pretty}
+.ppuMB-hero__sub u{text-underline-offset:4px}
+.ppuMB-hero__trust{display:inline-flex;align-items:center;gap:9px;color:#fff!important;text-decoration:none!important;
+font:500 12px/1 var(--mono)!important;letter-spacing:.14em!important;text-transform:uppercase;opacity:.9}
+.ppuMB-hero__trust:hover{opacity:1}
+.ppuMB-st{color:#FFD166;font-size:14px;letter-spacing:.08em}
+.ppuMB-chev{position:absolute;left:50%;bottom:22px;transform:translateX(-50%);z-index:3;color:#fff;opacity:.75;animation:ppuMBbob 2.4s ease-in-out infinite}
+.ppuMB-chev svg{width:22px;height:22px;display:block}
+@keyframes ppuMBbob{0%,100%{transform:translate(-50%,0)}50%{transform:translate(-50%,7px)}}
 
-/* 2b · PRICING — centred head (Jacksonville rhythm) + two tier cards */
-.ppuM-pr{max-width:1000px;margin:0 auto}
-.ppuM-pr__head{margin:0 auto 40px;display:flex;flex-direction:column;align-items:center;gap:18px;text-align:center}
-.ppuM-pr__head .ppuH-p{text-align:center;max-width:56ch}
-.ppuM-w{--wink:#0E0E0E;--mut:#737373;--ln:#EBEBEB;--wsoft:#F5F5F5;--ui:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;width:100%;color:var(--wink);font-family:var(--ui);font-size:15px;line-height:1.4;text-align:left}
-.ppuM-w *,.ppuM-w *::before,.ppuM-w *::after{box-sizing:border-box}
-.ppuM-w p{margin:0!important;padding:0!important;text-wrap:pretty}
-.ppuM-cards{display:grid;grid-template-columns:1fr 1.1fr;gap:18px;align-items:start}
-.ppuM-cards--one{grid-template-columns:minmax(0,640px);justify-content:center}
-.ppuM-card{background:#fff;border:1.5px solid var(--ln);border-radius:24px;box-shadow:0 30px 70px -45px rgba(0,0,0,.3);overflow:hidden}
-.ppuM-card--rec{border-color:var(--ink);box-shadow:0 30px 70px -36px rgba(0,0,0,.45)}
-.ppuM-card__rib{background:var(--ink);color:#fff;padding:10px 20px;font:600 12.5px/1.2 var(--ui);white-space:nowrap}
-.ppuM-card__rib span{font-weight:400;opacity:.78}
-.ppuM-in{padding:24px 24px 26px}
-.ppuM-hd h3{font:700 22px/1.15 var(--ui)!important;letter-spacing:-.02em!important;color:var(--wink)!important;text-transform:none!important;margin:0 0 5px!important}
-.ppuH .ppuM-sub{font:400 13.5px/1.5 var(--ui)!important;color:var(--mut)!important;margin:0 0 18px!important;letter-spacing:0!important}
-.ppuM-price{display:flex;align-items:baseline;gap:2px;margin:0 0 6px}
-.ppuM-price b{font:800 44px/1 var(--ui)!important;letter-spacing:-.04em!important;color:var(--wink)!important;font-variant-numeric:tabular-nums}
-.ppuM-price i{font:700 20px/1 var(--ui);font-style:normal;color:var(--wink);letter-spacing:-.02em}
-.ppuH .ppuM-bill{font:500 13.5px/1.45 var(--ui)!important;color:var(--wink)!important;letter-spacing:0!important}
-.ppuH .ppuM-alt{font:400 12.5px/1.45 var(--ui)!important;color:var(--mut)!important;letter-spacing:0!important;margin:2px 0 0!important}
-.ppuM-n{margin:18px 0 0}
-.ppuH .ppuM-n__l{display:flex;justify-content:space-between;align-items:baseline;gap:10px;font:600 12px/1.3 var(--ui)!important;letter-spacing:.05em!important;text-transform:uppercase;color:var(--mut)!important;margin:0 0 9px!important}
-.ppuH .ppuM-n__l em{font:400 12px/1.3 var(--ui)!important;font-style:normal;letter-spacing:0!important;text-transform:none;color:var(--mut)!important}
-.ppuM-n__b{display:grid;grid-template-columns:1fr 1fr;gap:6px}
-.ppuM-n__b button{border:1.5px solid var(--ln)!important;border-radius:11px!important;padding:13px 0!important;font:600 14px/1 var(--ui)!important;color:var(--wink)!important;background:#fff!important;text-align:center!important;letter-spacing:0!important;min-height:0!important;width:100%!important;transition:border-color .15s,background .15s,color .15s}
-.ppuM-n__b button[aria-pressed="true"]{background:var(--wink)!important;border-color:var(--wink)!important;color:#fff!important}
-.ppuM-sess{margin:20px 0 0;padding:18px 20px;border-radius:16px;background:var(--wsoft)}
-.ppuH .ppuM-sess__h{font:600 12px/1.3 var(--ui)!important;letter-spacing:.05em!important;text-transform:uppercase;color:var(--mut)!important;margin:0 0 10px!important}
-.ppuM-sess__r{display:flex;justify-content:space-between;align-items:baseline;gap:14px;font:400 13.5px/1.5 var(--ui);color:var(--wink);padding:6px 0}
-.ppuM-sess__r + .ppuM-sess__r{border-top:1px solid rgba(45,45,45,.08)}
-.ppuM-sess__r b{font-weight:600;white-space:nowrap}
-.ppuM-sess__r em{font-style:normal;color:var(--mut);font-size:12.5px}
-.ppuM-btn{display:flex!important;width:100%!important;align-items:center;justify-content:center;background:var(--wink)!important;color:#fff!important;border-radius:999px!important;padding:16px 20px!important;margin:18px 0 0!important;font:600 15px/1 var(--ui)!important;letter-spacing:0!important;text-transform:none!important;text-decoration:none!important;transition:opacity .15s}
-.ppuM-btn:hover{opacity:.9}
-.ppuM-btn--alt{background:#fff!important;color:var(--wink)!important;border:1.5px solid var(--wink)!important}
-.ppuM-btn[aria-disabled="true"]{opacity:.35;pointer-events:none}
-.ppuH .ppuM-feat{font:600 13px/1.4 var(--ui)!important;color:var(--wink)!important;margin:20px 0 10px!important;letter-spacing:0!important}
-.ppuM-list{list-style:none!important;margin:0!important;padding:0!important;display:grid;gap:9px}
-.ppuM-list li{list-style:none!important;margin:0!important;display:flex;gap:10px;align-items:flex-start;font:400 13.5px/1.45 var(--ui);color:var(--wink)}
-.ppuM-list li::before{content:"";flex:none;width:17px;height:17px;border-radius:50%;background:var(--blush) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%232D2D2D' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7.5'/%3E%3C/svg%3E") center/11px no-repeat;margin-top:1px}
-.ppuH .ppuM-fine{display:flex;align-items:flex-start;justify-content:center;gap:8px;margin:20px 0 0!important;font:400 12px/1.5 var(--ui)!important;color:var(--mut)!important;letter-spacing:0!important;text-align:center;text-wrap:pretty}
-.ppuM-fine svg{width:13px;height:13px;flex:none;margin-top:2px}
-.ppuH .ppuM-manage{text-align:center;margin:10px 0 0!important;font:400 12.5px/1.4 var(--ui)!important;color:var(--mut)!important;letter-spacing:0!important}
-.ppuM-manage a{color:var(--wink)!important;font:inherit!important;letter-spacing:0!important;text-decoration:underline!important;text-underline-offset:2px}
-.ppuM-ok{background:#fff;border:1.5px solid var(--ln);border-radius:24px;padding:24px;max-width:600px;margin:0 auto}
-.ppuM-ok h3{font:700 24px/1.15 var(--ui)!important;letter-spacing:-.02em!important;color:var(--wink)!important;text-transform:none!important;margin:0 0 8px!important}
-.ppuH .ppuM-ok p{font:400 14.5px/1.55 var(--ui)!important;color:var(--mut)!important;letter-spacing:0!important}
-.ppuM-ok ol{margin:18px 0 0!important;padding:0!important;list-style:none!important;display:grid;gap:12px}
-.ppuM-ok li{list-style:none!important;margin:0!important;display:grid;grid-template-columns:28px minmax(0,1fr);gap:12px;align-items:start;font:400 14px/1.45 var(--ui);color:var(--wink)}
-.ppuM-ok li b{display:flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:var(--blush);font:600 12px/1 var(--ui);color:var(--ink)}
+/* 2 · CITY TICKER */
+.ppuMB-tick{height:70px;border-bottom:1px solid rgba(45,45,45,.08);overflow:hidden;display:flex;align-items:center}
+.ppuMB-tick__view{position:relative;flex:1;overflow:hidden;display:flex;align-items:center;height:100%}
+.ppuMB-tick__view::before,.ppuMB-tick__view::after{content:"";position:absolute;top:0;bottom:0;width:80px;pointer-events:none;z-index:2}
+.ppuMB-tick__view::before{left:0;background:linear-gradient(to right,var(--paper) 0%,rgba(255,255,255,0) 100%)}
+.ppuMB-tick__view::after{right:0;background:linear-gradient(to left,var(--paper) 0%,rgba(255,255,255,0) 100%)}
+.ppuMB-tick__track{display:flex;align-items:center;width:max-content;animation:ppuMBtick 95s linear infinite;will-change:transform}
+.ppuMB-tick__view:hover .ppuMB-tick__track{animation-play-state:paused}
+.ppuMB-tick__item{font:700 18px/1 var(--mono)!important;letter-spacing:.08em!important;text-transform:uppercase;color:var(--ink)!important;white-space:nowrap}
+.ppuMB-tick__sep{display:inline-flex;align-items:center;margin:0 24px;color:#E8A096}
+.ppuMB-tick__sep svg{width:15px;height:15px;display:block;fill:currentColor}
+@keyframes ppuMBtick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
-/* 3 · WHAT YOU SEE — the brand's big-serif facts row + a thin 12-month strip */
-.ppuM-see{padding:96px var(--gut) 104px;background:var(--cream)}
-.ppuM-see__in{max-width:980px;margin:0 auto}
-.ppuM-see__head{margin:0 auto 44px;display:flex;flex-direction:column;align-items:center;gap:18px;text-align:center}
-.ppuM-see__head .ppuH-p{text-align:center;max-width:56ch}
-.ppuM-f{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;border-top:1px solid rgba(45,45,45,.14);border-bottom:1px solid rgba(45,45,45,.14);padding:34px 0}
-.ppuM-f div{text-align:center}
-.ppuM-f b{display:block;font:400 clamp(32px,3.4vw,46px)/1 var(--serif)!important;color:var(--ink)!important;margin-bottom:10px;letter-spacing:-.01em;white-space:nowrap}
-.ppuM-f span{display:block;font:500 11px/1.5 var(--mono)!important;letter-spacing:.14em!important;text-transform:uppercase;color:var(--soft)!important}
-.ppuM-yr{display:flex;gap:6px;margin:34px 0 0}
-.ppuM-yr i{flex:1;height:52px;border-radius:8px;background:var(--blush);display:flex;align-items:flex-end;justify-content:center;padding-bottom:7px;font:600 9.5px/1 var(--mono);font-style:normal;letter-spacing:.06em;text-transform:uppercase;color:rgba(45,45,45,.5)}
-.ppuM-yr i.on{background:var(--ink);color:rgba(255,255,255,.75)}
-.ppuH .ppuM-yr__k{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 24px;margin:16px 0 0!important}
-.ppuH .ppuM-yr__k span{display:inline-flex;align-items:center;gap:8px;font:500 12px/1.4 var(--mono)!important;color:var(--soft)!important;letter-spacing:0!important}
-.ppuM-yr__k em{width:13px;height:13px;border-radius:4px;flex:none;font-style:normal}
-.ppuM-yr__k em.a{background:var(--ink)}.ppuM-yr__k em.b{background:var(--blush)}
+/* 3 · SEASON BOARD */
+.ppuMB-board{padding:clamp(56px,7vw,88px) 0}
+.ppuMB-board__head{display:flex;flex-direction:column;align-items:center;text-align:center;gap:14px;margin-bottom:38px}
+.ppuMB-board__grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.ppuMB-cardbtn b{white-space:nowrap}
+.ppuMB-cardbtn{display:flex;flex-direction:column;gap:12px;text-align:left;background:var(--cream);border:1px solid var(--hair);
+border-radius:14px;padding:22px 20px!important;cursor:pointer;transition:border-color .18s,background .18s,transform .18s;min-width:0;-webkit-appearance:none;appearance:none}
+.ppuMB-cardbtn:hover{border-color:rgba(45,45,45,.4);transform:translateY(-2px)}
+.ppuMB-cardbtn[data-state="closed"]{cursor:default;opacity:.62!important;background:transparent!important;border-style:dashed;border-color:rgba(45,45,45,.34)!important}
+.ppuMB-cardbtn[data-state="closed"] b{color:rgba(45,45,45,.78)!important}
+.ppuMB-cardbtn[data-state="closed"] .ppuMB-pill{color:rgba(45,45,45,.68)!important;border-color:rgba(45,45,45,.38)!important}
+.ppuMB-cardbtn[data-state="closed"]:hover{transform:none;border-color:var(--hair)}
+.ppuMB-cardbtn b{font:400 clamp(21px,2.1vw,26px)/1.15 var(--serif)!important;color:var(--ink)!important;font-weight:400}
+.ppuMB-pill{align-self:flex-start;border-radius:380px;padding:7px 12px;font:600 10px/1 var(--mono)!important;letter-spacing:.15em!important;text-transform:uppercase}
+.ppuMB-pill--out{background:transparent;border:1px solid rgba(45,45,45,.45);color:var(--soft)!important}
+.ppuMB-pill--open{background:var(--blush);color:var(--ink)!important}
+.ppuMB-board__note{margin-top:22px!important;text-align:center;font:400 13px/1.7 var(--mono)!important;color:var(--soft)!important}
 
-/* 3b · WHY — four reasons */
-.ppuM-why{padding:104px var(--gut)}
-.ppuM-why__in{max-width:1080px;margin:0 auto}
-.ppuM-why__head{max-width:720px;margin:0 0 56px;display:flex;flex-direction:column;align-items:flex-start;gap:20px}
-.ppuM-why__h{font:400 clamp(40px,5vw,68px)/1.04 var(--serif)!important;color:var(--ink)!important;letter-spacing:-.01em!important;text-transform:none!important;text-wrap:balance}
-.ppuM-r{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:rgba(45,45,45,.14);border-top:1px solid rgba(45,45,45,.14);border-bottom:1px solid rgba(45,45,45,.14)}
-.ppuM-r > div{background:var(--paper);padding:30px 30px 32px;display:flex;flex-direction:column;gap:10px}
-.ppuM-r h3{font:400 27px/1.15 var(--serif)!important;color:var(--ink)!important;letter-spacing:0!important;text-transform:none!important}
-.ppuM-r p{font:400 14.5px/1.7 var(--mono)!important;color:var(--text)!important;letter-spacing:0!important;max-width:42ch}
-.ppuH .ppuM-r__n{font:600 11px/1 var(--mono)!important;letter-spacing:.16em!important;text-transform:uppercase;color:var(--soft)!important}
+/* 4 · THE $50 OFFER + FORM */
+.ppuMB-offer{padding:clamp(60px,7.5vw,96px) 0}
+.ppuMB-offer__in{display:grid;grid-template-columns:minmax(0,.86fr) minmax(0,1.14fr);gap:clamp(34px,5vw,72px);align-items:start}
+.ppuMB-offer__left{display:flex;flex-direction:column;gap:18px;min-width:0;position:sticky;top:30px}
+.ppuMB-price{display:flex;flex-direction:column;align-items:flex-start;gap:6px}
+.ppuMB-price b{font:400 clamp(86px,12vw,156px)/.82 var(--serif)!important;color:var(--ink)!important;letter-spacing:-.03em!important}
+.ppuMB-price i{font-style:normal;font:500 12px/1 var(--mono)!important;letter-spacing:.22em!important;text-transform:uppercase;color:var(--soft)!important;white-space:nowrap}
+.ppuMB-sub2{font:400 14.5px/1.62 var(--mono)!important;color:var(--soft)!important;margin:16px 0 4px!important;max-width:36ch}
+.ppuMB-offer__h{font:400 clamp(26px,3vw,38px)/1.12 var(--serif)!important;color:var(--ink)!important;text-wrap:balance;max-width:17ch;text-transform:none!important}
+.ppuMB-facts{display:flex;flex-direction:column;margin-top:2px}
+.ppuMB-fact{display:flex;align-items:center;gap:13px;padding:13px 0!important;border-top:1px solid rgba(45,45,45,.18);
+font:600 14.5px/1.45 var(--mono)!important;letter-spacing:-.1px!important;color:var(--ink)!important;min-width:0}
+.ppuMB-fact:last-child{border-bottom:1px solid rgba(45,45,45,.18)}
+.ppuMB-fact span{flex:0 0 auto;width:22px;height:22px;border-radius:50%;background:var(--ink);color:var(--blush);display:flex;align-items:center;justify-content:center}
+.ppuMB-fact svg{width:11px;height:11px;fill:currentColor}
 
-/* 7 · FAQ — the homepage quick-FAQ layout */
-.ppuH-faq{padding:104px var(--gut)}
-.ppuH-faq__in{max-width:1080px;margin:0 auto;display:grid;grid-template-columns:300px minmax(0,1fr);column-gap:clamp(32px,6vw,96px)}
-.ppuH-faq__side{display:flex;flex-direction:column;gap:22px;align-items:flex-start}
-.ppuH-faq__list{border-top:1px solid rgba(45,45,45,.14)}
-.ppuH-q{border-bottom:1px solid rgba(45,45,45,.14)}
-.ppuH-q summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:24px 0;font:400 24px/1.3 var(--serif)!important;letter-spacing:0!important;text-transform:none!important;color:var(--ink)!important}
-.ppuH-q summary::-webkit-details-marker{display:none}
-.ppuH-ico{flex:none;width:34px;height:34px;border-radius:50%;border:1px solid rgba(45,45,45,.22);position:relative;transition:background .2s,border-color .2s}
-.ppuH-ico::before,.ppuH-ico::after{content:"";position:absolute;left:50%;top:50%;width:12px;height:1.5px;background:var(--ink);transform:translate(-50%,-50%);transition:transform .25s}
-.ppuH-ico::after{transform:translate(-50%,-50%) rotate(90deg)}
-.ppuH-q[open] .ppuH-ico{background:var(--blush);border-color:var(--blush)}
-.ppuH-q[open] .ppuH-ico::after{transform:translate(-50%,-50%) rotate(0)}
-.ppuH-q__a{padding:0 64px 26px 0}
-.ppuH-q__a p{font:400 16px/30px var(--mono)!important;color:var(--text)!important;max-width:62ch;letter-spacing:0!important}
-.ppuH-q__a b{font-weight:600;color:var(--ink)}
+.ppuMB-card{background:var(--paper);border-radius:18px;padding:clamp(20px,3vw,34px);box-shadow:0 14px 48px rgba(45,45,45,.1)}
+.ppuMB-fgrid{display:grid;grid-template-columns:1fr 1fr;gap:11px;margin-bottom:11px}
+.ppuMB-fgrid--3{grid-template-columns:2fr 1fr 1fr}
+.ppuMB-fgrid--1{grid-template-columns:1fr}
+.ppuMB-fi{min-width:0}
+.ppuMB-fi label,.ppuMB-card legend{display:block;font:600 10px/1 var(--mono)!important;letter-spacing:.17em!important;
+text-transform:uppercase!important;color:var(--soft)!important;margin-bottom:7px!important}
+.ppuMB-fi input,.ppuMB-fi select{width:100%;background:var(--cream);border:1px solid var(--hair);border-radius:12px;color:var(--ink)!important;
+font:400 14.5px/1.2 var(--mono)!important;padding:14px 15px!important;outline:none;transition:border-color .18s,background .18s;-webkit-appearance:none;appearance:none}
+.ppuMB-fi select{cursor:pointer;background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath fill='none' stroke='%23646363' stroke-width='1.5' d='M1 1.5 6 6.5l5-5'/%3E%3C/svg%3E");
+background-repeat:no-repeat;background-position:right 15px center;background-size:11px;padding-right:38px!important}
+.ppuMB-fi input::placeholder{color:rgba(45,45,45,.4)}
+.ppuMB-fi input:focus,.ppuMB-fi select:focus{border-color:var(--ink);background:var(--paper)}
+.ppuMB-fi input.bad,.ppuMB-fi select.bad{border-color:#C0564B;background:#FFF6F4}
+.ppuMB-ac{position:relative}
+.ppuMB-acList{position:absolute;top:calc(100% + 5px);left:0;right:0;z-index:12;background:var(--paper);
+border:1px solid rgba(45,45,45,.14);border-radius:12px;padding:6px;max-height:232px;overflow-y:auto;
+box-shadow:0 14px 40px rgba(45,45,45,.18);display:none}
+.ppuMB-acList.on{display:block}
+.ppuMB-acItem{font:400 13.5px/1.4 var(--mono)!important;padding:10px 12px;color:var(--ink)!important;border-radius:8px;cursor:pointer}
+.ppuMB-acItem:hover,.ppuMB-acItem.sel{background:var(--cream)}
+.ppuMB-seasons{display:flex;flex-wrap:wrap;gap:7px}
+.ppuMB-season{flex:1 1 auto;position:relative}
+.ppuMB-season input[type="radio"]{position:absolute!important;opacity:0!important;width:1px!important;height:1px!important;min-height:0!important;min-width:0!important;margin:0!important;padding:0!important;border:0!important;background:none!important;box-shadow:none!important;clip-path:inset(50%);pointer-events:none}
+.ppuMB-season span{display:block;text-align:center;cursor:pointer;background:var(--cream);border:1px solid var(--hair);border-radius:380px;
+padding:12px 14px;font:600 11px/1 var(--mono)!important;letter-spacing:.13em!important;text-transform:uppercase;color:var(--soft)!important;
+transition:background .15s,color .15s,border-color .15s;white-space:nowrap}
+.ppuMB-season input:checked+span{background:var(--ink);border-color:var(--ink);color:#fff!important}
+.ppuMB-submit{width:100%;margin-top:18px;padding:23px 20px!important;font-size:15.5px!important;letter-spacing:.15em!important}
+.ppuMB-submit:disabled{opacity:.55;cursor:not-allowed;transform:none}
+.ppuMB-fine{margin-top:13px!important;text-align:center;font:400 11.5px/1.65 var(--mono)!important;color:rgba(45,45,45,.52)!important;text-wrap:pretty}
+.ppuMB-fine a{color:inherit!important;font:inherit!important;letter-spacing:inherit!important;text-decoration:none!important;border-bottom:1px solid rgba(45,45,45,.25)}
+.ppuMB-done{display:none;text-align:center;background:var(--paper);border-radius:18px;
+padding:clamp(34px,5vw,56px) clamp(20px,4vw,40px);box-shadow:0 14px 48px rgba(45,45,45,.1)}
+.ppuMB-done.on{display:block}
+.ppuMB-done h3{font:400 clamp(28px,3.4vw,38px)/1.12 var(--serif)!important;color:var(--ink)!important;margin-bottom:12px!important;text-transform:none!important}
+.ppuMB-done p{font:400 14.5px/27px var(--mono)!important;color:var(--soft)!important;max-width:42ch;margin:0 auto!important;text-wrap:pretty}
 
-/* 8 · CLOSING BAND — the event B-roll behind the headline (Vimeo 930488974) */
-.ppuH-close{--bh:600px;height:var(--bh);overflow:hidden;background:#111}
-.ppuH-close__media{position:absolute;inset:0;overflow:hidden;pointer-events:none}
-.ppuH-close__poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.ppuH-close__media iframe{position:absolute;top:50%;left:50%;width:max(100vw,calc(var(--bh) * 16 / 9));height:max(var(--bh),calc(100vw * 9 / 16));transform:translate(-50%,-50%) scale(1.12);border:0}
-.ppuH-close__tint{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(26,26,26,.58),rgba(26,26,26,.46) 45%,rgba(26,26,26,.68))}
-.ppuH-close__in{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:28px;padding:0 var(--gut);text-align:center}
-.ppuH-close__h{font:400 clamp(42px,5.6vw,84px)/1.05 var(--serif)!important;color:#fff!important;max-width:14ch;text-wrap:balance}
-.ppuH .ppuJ-close__sub{font:500 clamp(12px,1.1vw,15px)/1.7 var(--mono)!important;letter-spacing:.14em!important;text-transform:uppercase;color:rgba(255,255,255,.9)!important;margin-top:-10px;max-width:none;white-space:nowrap}
+/* 5 · WHAT TO EXPECT (homepage section) */
+.ppuMB-exp{padding:clamp(60px,7.5vw,96px) 0}
+.ppuMB-exp__in{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:clamp(36px,6vw,96px);align-items:center}
+.ppuMB-exp__copy{display:flex;flex-direction:column;align-items:flex-start;gap:24px;min-width:0}
+.ppuMB-exp__title{font:400 clamp(40px,5vw,66px)/1 var(--serif)!important;color:var(--ink)!important;letter-spacing:-.01em!important;text-transform:none!important;text-wrap:balance}
+.ppuMB-exp__vid{position:relative;width:320px;max-width:100%;aspect-ratio:310/577;overflow:hidden;border-radius:6px;background:#e9e6e1}
+.ppuMB-exp__vid iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.ppuMB-stats{display:grid;grid-template-columns:repeat(3,auto);gap:28px;padding-top:24px!important;border-top:1px solid rgba(45,45,45,.14);width:100%;justify-content:start}
+.ppuMB-stat b{display:block;font:400 32px/1 var(--serif)!important;color:var(--ink)!important;margin-bottom:8px!important;font-weight:400}
+.ppuMB-stat span{display:block;font:500 11px/1.35 var(--mono)!important;letter-spacing:.14em!important;text-transform:uppercase;color:var(--soft)!important}
 
-/* 9 · STICKY CTA (phones) */
-.ppuJ-sticky{position:fixed;left:12px;right:12px;bottom:12px;z-index:50;display:none}
-.ppuJ-sticky .ppuH-btn{width:100%;box-shadow:0 12px 30px rgba(0,0,0,.25)}
+/* 6 · TEAM (homepage section) */
+.ppuMB-team{padding:clamp(60px,7.5vw,92px) 0 0}
+.ppuMB-team__head{max-width:960px;margin:0 auto 48px;padding:0 var(--gut);display:flex;flex-direction:column;align-items:center;gap:20px;text-align:center}
+.ppuMB-team__statement{font:400 clamp(34px,4.4vw,60px)/1.12 var(--serif)!important;color:var(--ink)!important;letter-spacing:-.01em!important;text-wrap:balance;text-transform:none!important}
+.ppuMB-team__statement em{font-style:italic;white-space:nowrap}
+.ppuMB-hl{position:relative;z-index:0;padding:0 .06em;white-space:nowrap}
+.ppuMB-hl::before{content:"";position:absolute;left:0;right:0;top:.14em;bottom:.04em;background:var(--blush);border-radius:4px;z-index:-1;
+transform:scaleX(0);transform-origin:left center;transition:transform .9s cubic-bezier(.2,.7,.2,1) .25s}
+.ppuMB-hl.on::before{transform:scaleX(1)}
+.ppuMB-tmsup{font-size:.38em!important;line-height:0;vertical-align:baseline;position:relative;top:-1.1em;margin-left:.08em;font-family:var(--serif)!important;color:var(--ink)!important}
+.ppuMB-rail{overflow:hidden}
+.ppuMB-rail__track{display:flex;width:max-content;animation:ppuMBrail 80s linear infinite}
+.ppuMB-rail:hover .ppuMB-rail__track{animation-play-state:paused}
+.ppuMB-rail__set{display:flex;flex:none}
+.ppuMB-tm{width:clamp(200px,17vw,275px);flex:none}
+.ppuMB-tm img{width:100%;height:auto;aspect-ratio:2/3;object-fit:cover;background:#eceae6}
+@keyframes ppuMBrail{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.ppuMB-team::after{content:"";display:block;height:3px;margin-top:-1px;background:var(--blush)}
 
-@media (max-width:1000px){.ppuJ-ev{grid-template-columns:repeat(2,1fr);row-gap:26px}}
-@media (max-width:860px){
-.ppuH-hero{height:auto;min-height:640px}
-.ppuH-hero__grid{grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(4,1fr)}
-.ppuH-hero__in{position:relative;inset:auto;min-height:640px;padding:48px 20px 56px;gap:16px}
-.ppuH-hero__eyebrow{font-size:13px!important;letter-spacing:.18em!important}
-.ppuH-hero__h{font-size:48px!important}
-.ppuH .ppuJ-hero__dates{font-size:13.5px!important;letter-spacing:.14em!important}
-.ppuJ-hero__dates i{margin:0 7px}
-.ppuH-hero__sub{font-size:12px!important;letter-spacing:.1em!important;max-width:34ch}.ppuH-hero__sub br{display:none}
-.ppuJ-hero__logo{width:150px}
-.ppuH-btn{font-size:15px!important;padding:19px 24px!important}
-.ppuH-p{font-size:15px!important;line-height:28px!important}
-.ppuJ-book{padding:56px var(--gut) 64px}
-.ppuJ-book__head{margin-bottom:28px;gap:14px}
-.ppuJ-ev{gap:12px;row-gap:22px;padding:22px 0;margin-bottom:30px}
-.ppuJ-ev b{font-size:28px!important}
-.ppuJ-ev span{font-size:10px!important;letter-spacing:.1em!important}
-.ppuJ-assure{grid-template-columns:1fr;gap:9px;margin-top:20px!important;max-width:360px}
-.ppuM-see{padding:60px var(--gut) 64px}
-.ppuM-see__head{margin-bottom:30px;gap:14px}
-.ppuM-f{grid-template-columns:minmax(0,1fr);gap:26px;padding:26px 0}
-.ppuM-f b{font-size:34px!important}
-.ppuM-yr{gap:4px;margin-top:26px}
-.ppuM-yr i{height:40px;font-size:0;padding:0}
-.ppuM-why{padding:64px var(--gut)}
-.ppuM-why__head{margin-bottom:36px;gap:16px}
-.ppuM-r{grid-template-columns:minmax(0,1fr)}
-.ppuM-r > div{padding:24px 22px 26px}
-.ppuM-r h3{font-size:24px!important}
-.ppuM-pr{grid-template-columns:minmax(0,1fr);row-gap:28px}
-.ppuM-top{grid-template-columns:minmax(0,1fr)}
-.ppuM-cards{grid-template-columns:minmax(0,1fr)}
-.ppuM-price b{font-size:38px!important}
-.ppuM-in{padding:20px 18px 22px}
-.ppuM-price b{font-size:40px!important}
-.ppuH-team{padding-top:64px}
-.ppuH-team__head{margin-bottom:36px;gap:16px}
-.ppuH-tm{width:56vw}
-.ppuH-exp{padding:64px var(--gut)}
-.ppuH-exp__in{grid-template-columns:minmax(0,1fr);row-gap:40px}
-.ppuH-exp__vid{width:min(300px,100%);justify-self:center;order:2}
-.ppuH-facts{grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
-.ppuH-fact b{font-size:26px!important}
-.ppuH-fact span{font-size:10px!important;letter-spacing:.1em!important}
-.ppuJ-steps li{grid-template-columns:44px minmax(0,1fr);column-gap:12px;padding:16px 0}
-.ppuJ-steps b{font-size:24px!important}
-.ppuJ-steps h3{font-size:21px!important}
-.ppuJ-steps p{font-size:14px!important}
-.ppuH-port{padding-top:64px}
-.ppuH-port__head{margin-bottom:32px;gap:20px}
-.ppuH-port__img,.ppuJ-rule{height:300px}
-.ppuH-port__nav{width:38px;height:38px}.ppuH-port__nav--prev{left:10px}.ppuH-port__nav--next{right:10px}
-.ppuH-faq{padding:64px var(--gut)}
-.ppuH-faq__in{grid-template-columns:minmax(0,1fr);row-gap:28px}
-.ppuH-q summary{font-size:20px!important;padding:20px 0}
-.ppuH-q__a{padding-right:0}
-.ppuH-q__a p{font-size:15px!important;line-height:28px!important}
-.ppuH-close{--bh:520px}
-.ppuH .ppuJ-close__sub{white-space:normal;max-width:30ch}
-.ppuJ-sticky.show{display:block}
+/* 7 · WHAT YOU GET */
+.ppuMB-inc{padding:clamp(60px,7.5vw,96px) 0}
+.ppuMB-inc__in{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,5vw,76px);align-items:center}
+.ppuMB-inc__copy{display:flex;flex-direction:column;gap:18px;min-width:0}
+.ppuMB-inc__list{display:flex;flex-direction:column;margin-top:2px}
+.ppuMB-inc__li{display:flex;align-items:baseline;gap:13px;padding:13px 0!important;border-bottom:1px solid var(--hair);
+font:400 15px/25px var(--mono)!important;letter-spacing:-.15px!important;color:var(--text)!important;min-width:0}
+.ppuMB-inc__li span{flex:0 0 auto;color:var(--rose);font-weight:600}
+.ppuMB-inc__price{display:flex;align-items:baseline;gap:13px;padding-top:20px!important}
+.ppuMB-inc__price b{font:400 clamp(32px,3.4vw,44px)/1 var(--serif)!important;color:var(--ink)!important;font-weight:400}
+.ppuMB-inc__price i{font-style:normal;font:500 12px/1.5 var(--mono)!important;letter-spacing:.14em!important;text-transform:uppercase;color:var(--soft)!important}
+.ppuMB-inc__art{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;min-width:0;align-items:start}
+.ppuMB-inc__art img{width:100%;height:auto;aspect-ratio:2/3;object-fit:cover;background:#eceae6}
+.ppuMB-inc__art figure:nth-child(3n+2){margin-top:30px!important}
+
+/* 8 · FAQ */
+.ppuMB-faq{padding:clamp(60px,7.5vw,96px) 0}
+.ppuMB-faq__in{display:grid;grid-template-columns:minmax(0,.72fr) minmax(0,1.28fr);gap:clamp(28px,5vw,72px);align-items:start}
+.ppuMB-faq__head{display:flex;flex-direction:column;gap:14px}
+.ppuMB-faq details{border-top:1px solid var(--hair)}
+.ppuMB-faq details:last-of-type{border-bottom:1px solid var(--hair)}
+.ppuMB-faq summary{list-style:none;cursor:pointer;display:flex;align-items:flex-start;justify-content:space-between;gap:20px;
+padding:21px 0!important;font:500 15.5px/1.5 var(--mono)!important;letter-spacing:-.2px!important;color:var(--ink)!important}
+.ppuMB-faq summary::-webkit-details-marker{display:none}
+.ppuMB-faq summary::after{content:"";flex:0 0 auto;width:11px;height:11px;margin-top:7px;border-right:1.5px solid var(--rose);
+border-bottom:1.5px solid var(--rose);transform:rotate(45deg);transition:transform .22s}
+.ppuMB-faq details[open] summary::after{transform:rotate(-135deg)}
+.ppuMB-faq__a{padding:0 0 22px!important;font:400 14.5px/27px var(--mono)!important;color:var(--soft)!important;max-width:58ch;text-wrap:pretty}
+.ppuMB-faq__ask{font:600 13px/1.4 var(--mono)!important;letter-spacing:.12em!important;text-transform:uppercase;color:var(--ink)!important;
+text-decoration:underline!important;text-underline-offset:5px}
+
+/* 9 · CLOSE */
+.ppuMB-close{--bh:560px;height:var(--bh);overflow:hidden;background:#111}
+.ppuMB-close__media{position:absolute;inset:0;overflow:hidden;pointer-events:none}
+.ppuMB-close__poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.ppuMB-close__media iframe{position:absolute;top:50%;left:50%;width:max(100vw,calc(var(--bh) * 16 / 9));height:max(var(--bh),calc(100vw * 9 / 16));transform:translate(-50%,-50%) scale(1.12);border:0}
+.ppuMB-close__tint{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(26,26,26,.6),rgba(26,26,26,.48) 45%,rgba(26,26,26,.7))}
+.ppuMB-close__in{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:24px;padding:0 var(--gut);text-align:center}
+.ppuMB-close__h{font:400 clamp(36px,5vw,72px)/1.05 var(--serif)!important;color:#fff!important;max-width:14ch;text-wrap:balance;text-transform:none!important}
+.ppuMB-close__meta{font:600 11.5px/1.7 var(--mono)!important;letter-spacing:.2em!important;text-transform:uppercase;color:rgba(255,255,255,.8)!important}
+
+/* 10 · FOOTER (matches the site footer) */
+.ppuMB-foot{padding:clamp(48px,6vw,72px) 0 44px;background:var(--cream)}
+.ppuMB-foot__in{display:flex;flex-direction:column;align-items:center;gap:26px;text-align:center}
+.ppuMB-foot__logo{width:140px;height:auto;opacity:.92}
+.ppuMB-foot__nav{display:flex;flex-wrap:wrap;justify-content:center;gap:10px 26px}
+.ppuMB-foot__nav a{font:600 11.5px/1 var(--mono)!important;letter-spacing:.16em!important;text-transform:uppercase;
+color:var(--ink)!important;text-decoration:none!important;opacity:.78;transition:opacity .15s}
+.ppuMB-foot__nav a:hover{opacity:1}
+.ppuMB-foot__social{display:flex;gap:16px}
+.ppuMB-foot__social a{width:34px;height:34px;border-radius:50%;border:1px solid rgba(45,45,45,.22);display:flex;align-items:center;justify-content:center;
+color:var(--ink)!important;transition:background .15s,border-color .15s}
+.ppuMB-foot__social a:hover{background:var(--blush);border-color:var(--blush)}
+.ppuMB-foot__social svg{width:15px;height:15px;fill:currentColor;display:block}
+.ppuMB-foot__legal{font:400 11px/1.9 var(--mono)!important;color:rgba(45,45,45,.5)!important;letter-spacing:.05em!important}
+
+/* STICKY */
+.ppuMB-sticky{position:fixed;left:0;right:0;bottom:0;z-index:40;display:none;background:rgba(255,255,255,.96);
+border-top:1px solid var(--hair);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);
+padding:11px 16px calc(11px + env(safe-area-inset-bottom,0px))}
+.ppuMB-sticky .ppuMB-btn{width:100%;padding:18px 14px!important;font-size:13px!important;letter-spacing:.12em!important}
+
+@media (max-width:980px){
+.ppuMB-offer__in,.ppuMB-inc__in,.ppuMB-faq__in,.ppuMB-exp__in{grid-template-columns:1fr}
+.ppuMB-offer__left{position:static}
+.ppuMB-exp__vid{width:min(300px,100%);justify-self:center;order:2}
+.ppuMB-inc__art{order:-1;max-width:560px}
+.ppuMB-inc__art figure:nth-child(3n+2){margin-top:22px!important}
+.ppuMB-board__grid{grid-template-columns:repeat(2,1fr)}
 }
-@media (prefers-reduced-motion:reduce){.ppuH-tile img+img,.ppuH-rail__track{animation:none}.ppuH-hl::before,.ppuH-port__nav{transition:none}}
+@media (max-width:760px){
+.ppuMB-hero{min-height:0}
+.ppuMB-hero__grid{grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(4,1fr)}
+.ppuMB-hero__h{font-size:clamp(33px,8.6vw,44px)!important}
+.ppuMB-hero__sub{font-size:12px!important;letter-spacing:.1em!important;max-width:34ch}
+.ppuMB-hero__sub br{display:none}
+.ppuMB-tick{height:56px}
+.ppuMB-tick__view::before,.ppuMB-tick__view::after{width:44px}
+.ppuMB-tick__item{font-size:14px!important;letter-spacing:.06em!important}
+.ppuMB-tick__sep{margin:0 16px}.ppuMB-tick__sep svg{width:12px;height:12px}
+.ppuMB-fgrid,.ppuMB-fgrid--3{grid-template-columns:1fr}
+.ppuMB-season{flex:1 1 44%}
+.ppuMB-stats{grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.ppuMB-stat b{font-size:25px!important}
+.ppuMB-stat span{font-size:10px!important;letter-spacing:.1em!important}
+.ppuMB-tm{width:52vw}
+.ppuMB-close{--bh:480px}
+.ppuMB-sticky{display:block}
+.ppuMB-foot{padding-bottom:104px}
+}
+@media (prefers-reduced-motion:reduce){
+.ppuMB-tile img+img,.ppuMB-chev,.ppuMB-tick__track,.ppuMB-rail__track{animation:none}
+.ppuMB-btn:hover,.ppuMB-cardbtn:hover{transform:none}
+.ppuMB-hl::before{transition:none}
+}
 </style>
 
-<div class="ppuH ppuJ ppuM" id="ppuM">
+<div class="ppuMB" id="ppuMB">
+
 <!-- 1 · HERO -->
-<section class="ppuH-sec ppuH-hero" aria-label="Hold your spot with Personality Pop-Up">
-<div class="ppuH-hero__grid" id="ppuM-grid" aria-hidden="true"></div>
-<div class="ppuH-hero__tint"></div>
-<div class="ppuH-hero__in">
-<img class="ppuJ-hero__logo" src="https://axis-ppu.vercel.app/ppu/logo-white.png" alt="Personality Pop-Up" loading="eager" fetchpriority="high">
-<p class="ppuH-hero__eyebrow">Hold Your Spot</p>
-<h1 class="ppuH-hero__h">They&rsquo;ve changed<br>since last time.</h1>
-<p class="ppuJ-hero__dates"><span>Pick a season. We&rsquo;ll hold it.</span></p>
-<div class="ppuH-hero__ctas">
-<a class="ppuH-btn ppuH-btn--white" href="#ppuM-join" data-cta>👉 Hold My Spot</a>
-<a class="ppuH-hero__trust" href="https://www.google.com/search?q=Personality+Pop-Up#lrd=0x89d5209ec3b5b81:0x332a7fee85847322,1" target="_blank" rel="noopener"><span class="st" aria-hidden="true">★★★★★</span>5.0 · <span data-ppu-review-count>418+</span> Google reviews</a>
+<section class="ppuMB-sec ppuMB-hero" aria-label="Personality Pop-Up Priority Access">
+<div class="ppuMB-hero__grid" id="ppuMBgrid" aria-hidden="true"></div>
+<div class="ppuMB-hero__tint"></div>
+<div class="ppuMB-hero__in">
+<img class="ppuMB-hero__logo" src="https://axis-ppu.vercel.app/ppu/logo-white.png" alt="Personality Pop-Up" width="843" height="516" fetchpriority="high">
+<h1 class="ppuMB-hero__h">The same spot, held for you every year.</h1>
+<p class="ppuMB-hero__sub">Choose your season once. We hold it for you <br>every year, before any date goes public.</p>
+<a class="ppuMB-btn ppuMB-btn--white" href="#ppuMB-reserve">Start Your Membership</a>
+<a class="ppuMB-hero__trust" href="https://www.google.com/search?q=Personality+Pop-Up#lrd=0x89d5209ec3b5b81:0x332a7fee85847322,1" target="_blank" rel="noopener"><span class="ppuMB-st" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>5.0 &bull; <span data-ppu-review-count>420+</span> Google reviews</a>
 </div>
+<a class="ppuMB-chev" href="#ppuMB-when" aria-label="See upcoming seasons"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 9l6 6 6-6"></path></svg></a>
+</section>
+
+<!-- 2 · CITY TICKER -->
+<section class="ppuMB-sec ppuMB-tick" aria-label="Cities we travel to">
+<div class="ppuMB-tick__view"><div class="ppuMB-tick__track" id="ppuMBtick"></div></div>
+</section>
+
+<!-- 3 · SEASON BOARD -->
+<section class="ppuMB-sec ppuMB-board" id="ppuMB-when" aria-labelledby="ppuMBwhenH">
+<div class="ppuMB-wrap">
+<div class="ppuMB-board__head">
+<p class="ppuMB-eyebrow">Where we go next</p>
+<h2 class="ppuMB-h" id="ppuMBwhenH">Pick the season that suits your family.</h2>
+</div>
+<div class="ppuMB-board__grid" id="ppuMBboard"></div>
+<p class="ppuMB-board__note">Members are booked into their season before dates go public, every year.</p>
 </div>
 </section>
 
-<!-- 2 · THE OFFER -->
-<section class="ppuH-sec ppuJ-book" id="ppuM-join" aria-label="Hold your spot">
-<div class="ppuM-pr">
-<div class="ppuM-pr__head">
-<p class="ppuH-eyebrow">How it works</p>
-<h2 class="ppuH-h">Tell us when.</h2>
-<p class="ppuH-p">Put a deposit down and choose the season you want. When we set those dates in your city, you hear first and you pick first. The rest is due when you book.</p>
-</div>
+<!-- 4 · THE $50 + FORM -->
+<section class="ppuMB-sec ppuMB-sec--blush ppuMB-offer" id="ppuMB-reserve" aria-labelledby="ppuMBofferH">
+<div class="ppuMB-wrap ppuMB-offer__in">
 
-<div class="ppuM-w" id="ppuM-w">
-<div id="ppuM-pick">
-<div class="ppuM-cards ppuM-cards--one">
-
-<div class="ppuM-card ppuM-card--rec">
-<div class="ppuM-card__rib">★ Your spot, held before anything goes public</div>
-<div class="ppuM-in">
-<div class="ppuM-hd"><h3>Hold Your Spot</h3></div>
-<p class="ppuM-sub">One deposit now, the season of your choosing, and the price fixed wherever we end up seeing you.</p>
-
-<div class="ppuM-price"><b id="ppuM-amt">$300</b><i>today</i></div>
-<p class="ppuM-bill"><span id="ppuM-bal">$295</span> when you book &mdash; <span data-m="locked">$595</span> in total</p>
-<p class="ppuM-alt">That price is locked in any city, however far out you book.</p>
-
-<div class="ppuM-n">
-<p class="ppuM-n__l">Which season?<em id="ppuM-note">Move it later if plans change</em></p>
-<div class="ppuM-n__b" id="ppuM-seasons" role="group" aria-label="Which season"></div>
-</div>
-
-<a class="ppuM-btn" id="ppuM-go-m" href="#" target="_top" rel="noopener" aria-disabled="true">Hold My Spot</a>
-
-<p class="ppuM-feat">What the deposit does</p>
-<ul class="ppuM-list">
-<li><span><b>You hear first.</b> Your season&rsquo;s dates reach you before they go public</span></li>
-<li><span><b>You pick first</b>, from the whole weekend, not what&rsquo;s left</span></li>
-<li><span><b>One fixed price</b> of <span data-m="locked">$595</span>, whichever city you catch us in</span></li>
-<li><span>Change your season, your city, or your mind &mdash; the deposit moves with you</span></li>
+<div class="ppuMB-offer__left">
+<p class="ppuMB-eyebrow">Membership</p>
+<p class="ppuMB-price"><b id="ppuMBamt">$300</b><i id="ppuMBper">A year &middot; one session held</i></p>
+<p class="ppuMB-sub2" id="ppuMBsub2">Then $295 a session, charged 14 days before you shoot. $595 a session in total, locked for as long as you stay.</p>
+<h2 class="ppuMB-offer__h" id="ppuMBofferH">Stop hoping the dates work.</h2>
+<ul class="ppuMB-facts">
+<li class="ppuMB-fact"><span aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"></path></svg></span>Your spot held every year</li>
+<li class="ppuMB-fact"><span aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"></path></svg></span>Nothing else charged today</li>
+<li class="ppuMB-fact"><span aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"></path></svg></span>$595 a session, price locked</li>
 </ul>
-
-<div class="ppuM-sess">
-<p class="ppuM-sess__h">Good to know</p>
-<div class="ppuM-sess__r"><span>If the timing never works<em><br>It stays on your account until it does</em></span><b>Never expires</b></div>
-<div class="ppuM-sess__r"><span>Where it works<em><br>Every pop-up, every city</em></span><b>Anywhere</b></div>
-</div>
-</div>
 </div>
 
+<div>
+<form class="ppuMB-card" id="ppuMBform" novalidate="">
+<div class="ppuMB-fgrid">
+<div class="ppuMB-fi"><label for="ppuMBfirst">First name</label><input id="ppuMBfirst" type="text" autocomplete="given-name" placeholder="Jane"></div>
+<div class="ppuMB-fi"><label for="ppuMBlast">Last name</label><input id="ppuMBlast" type="text" autocomplete="family-name" placeholder="Doe"></div>
 </div>
-<p class="ppuM-fine"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>Stripe secure checkout · Apple Pay &amp; Google Pay · One session covers 1 or 2 kids · Good at any pop-up, in any city · Your deposit is always yours</p>
-<p class="ppuM-manage">Already holding a spot? <a href="mailto:hello@personalitypopup.com?subject=My%20held%20spot" id="ppuM-portal">Move it or ask us anything</a></p>
+<div class="ppuMB-fgrid">
+<div class="ppuMB-fi"><label for="ppuMBemail">Email</label><input id="ppuMBemail" type="email" autocomplete="email" placeholder="jane@email.com"></div>
+<div class="ppuMB-fi"><label for="ppuMBphone">Phone</label><input id="ppuMBphone" type="tel" autocomplete="tel" placeholder="555-123-4567"></div>
 </div>
-<div class="ppuM-ok" id="ppuM-done" hidden>
-<h3>Your spot is held. 🎉</h3>
-<p>Here&rsquo;s what happens next:</p>
-<ol>
-<li><b>1</b><span>Your receipt is on its way.</span></li>
-<li><b>2</b><span>When we set that season&rsquo;s dates in your city, you get them before anyone else.</span></li>
-<li><b>3</b><span>Pick your time, pay the balance, done.</span></li>
-</ol>
+<div class="ppuMB-fgrid ppuMB-fgrid--3">
+<div class="ppuMB-fi ppuMB-ac"><label for="ppuMBcity">City</label><input id="ppuMBcity" type="text" autocomplete="off" placeholder="Charlotte"><div class="ppuMB-acList" id="ppuMBcityList"></div></div>
+<div class="ppuMB-fi"><label for="ppuMBstate">State</label><input id="ppuMBstate" type="text" autocomplete="address-level1" placeholder="NC" maxlength="2"></div>
+<div class="ppuMB-fi"><label for="ppuMBzip">ZIP</label><input id="ppuMBzip" type="text" inputmode="numeric" autocomplete="postal-code" placeholder="28202" maxlength="5"></div>
 </div>
+<div class="ppuMB-fgrid ppuMB-fgrid--1">
+<div class="ppuMB-fi"><label for="ppuMBkids">Sessions a year</label><select id="ppuMBkids"><option value="1">1 a year</option><option value="2">2 a year</option><option value="4">4 a year</option></select></div>
+</div>
+<fieldset class="ppuMB-fi" style="border:0">
+<legend>Your season</legend>
+<div class="ppuMB-seasons" id="ppuMBseasons"></div>
+</fieldset>
+<button class="ppuMB-btn ppuMB-submit" type="submit" id="ppuMBsubmit">Start My Membership</button>
+<p class="ppuMB-fine">Your membership renews once a year and you can cancel any time before it does. Each session’s $295 balance is charged 14 days before that session. Secure checkout by Stripe. <a href="https://www.personalitypopup.com/privacy-policy" target="_blank" rel="noopener">Privacy</a> and <a href="https://www.personalitypopup.com/terms-of-service/" target="_blank" rel="noopener">Terms</a>.</p>
+</form>
+
+<div class="ppuMB-done" id="ppuMBdone" role="status">
+<h3>You’re a member.</h3>
+<p id="ppuMBdoneMsg">Taking you to secure checkout to start your membership.</p>
+</div>
+</div>
+
+</div>
+</section>
+
+<!-- 5 · WHAT TO EXPECT -->
+<section class="ppuMB-sec ppuMB-exp" aria-labelledby="ppuMBexpH">
+<div class="ppuMB-wrap ppuMB-exp__in">
+<div class="ppuMB-exp__copy">
+<p class="ppuMB-eyebrow">How it works</p>
+<h2 class="ppuMB-exp__title" id="ppuMBexpH">What to Expect</h2>
+<p class="ppuMB-p">Personality Pop-Up&trade; is taking the pain out of portraits by offering a delightful photo experience for kids in a stress-free studio environment for parents. Say goodbye to fake smiles and forced poses!</p>
+<div class="ppuMB-stats">
+<div class="ppuMB-stat"><b>18+</b><span>Years behind<br>the camera</span></div>
+<div class="ppuMB-stat"><b>2013</b><span>Personality<br>Portraits began</span></div>
+<div class="ppuMB-stat"><b data-ppu-review-count>420+</b><span>Five-star<br>Google reviews</span></div>
+</div>
+</div>
+<div class="ppuMB-exp__vid"><iframe src="https://player.vimeo.com/video/1174234823?title=0&amp;byline=0&amp;portrait=0" title="What to Expect at Personality Pop-Up" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>
+</div>
+</section>
+
+<!-- 6 · TEAM -->
+<section class="ppuMB-sec ppuMB-team" aria-label="Our team">
+<div class="ppuMB-team__head">
+<p class="ppuMB-eyebrow">The ladies behind the lens</p>
+<h2 class="ppuMB-team__statement">We are a boutique team of <em>all-female</em> traveling kid photographers, certified in the <span class="ppuMB-hl">Personality Method</span><sup class="ppuMB-tmsup">&trade;</sup></h2>
+</div>
+<div class="ppuMB-rail"><div class="ppuMB-rail__track" id="ppuMBrail"></div></div>
+</section>
+
+<!-- 7 · WHAT YOU GET -->
+<section class="ppuMB-sec ppuMB-inc" aria-labelledby="ppuMBincH">
+<div class="ppuMB-wrap ppuMB-inc__in">
+<div class="ppuMB-inc__copy">
+<p class="ppuMB-eyebrow">The session</p>
+<h2 class="ppuMB-h" id="ppuMBincH">What you get.</h2>
+<ul class="ppuMB-inc__list">
+<li class="ppuMB-inc__li"><span>&bull;</span>15 minute Personality Portrait session</li>
+<li class="ppuMB-inc__li"><span>&bull;</span>Certified Personality Method&trade; photographer</li>
+<li class="ppuMB-inc__li"><span>&bull;</span>25+ high resolution images</li>
+<li class="ppuMB-inc__li"><span>&bull;</span>Every image in color and black &amp; white</li>
+<li class="ppuMB-inc__li"><span>&bull;</span>Private online gallery</li>
+</ul>
+</div>
+<div class="ppuMB-inc__art" id="ppuMBincArt"></div>
+</div>
+</section>
+
+<!-- 8 · FAQ -->
+<section class="ppuMB-sec ppuMB-sec--cream ppuMB-faq" aria-labelledby="ppuMBfaqH">
+<div class="ppuMB-wrap ppuMB-faq__in">
+<div class="ppuMB-faq__head">
+<p class="ppuMB-eyebrow">Before you join</p>
+<h2 class="ppuMB-h" id="ppuMBfaqH">Questions parents ask.</h2>
+<a class="ppuMB-faq__ask" href="mailto:hello@personalitypopup.com">Ask us anything &rarr;</a>
+</div>
+<div>
+<details open=""><summary>What am I paying for today?</summary><p class="ppuMB-faq__a">Your spot. $300 a year holds one session for you in the season you choose, before any date is public. It comes straight off the session price.</p></details>
+<details><summary>When do I pay the rest?</summary><p class="ppuMB-faq__a">14 days before you shoot. The remaining $295 is charged then, so a session you booked eight months ago is not paid for until it is nearly here.</p></details>
+<details><summary>What does a session cost in total?</summary><p class="ppuMB-faq__a">$595, wherever we see you. Sessions normally run $495 to $749 depending on the city, and those prices rise. Yours is locked while you stay a member.</p></details>
+<details><summary>Can I have more than one session a year?</summary><p class="ppuMB-faq__a">Yes. Choose 1, 2 or 4 a year and the membership is $300 for each, so 2 a year is $600 and 4 a year is $1,200. Each one is held in your season.</p></details>
+<details><summary>Do I pick the exact date now?</summary><p class="ppuMB-faq__a">No, and that is the point. You choose the season. When we set those dates in your city, you pick your time before anyone else sees them.</p></details>
+<details><summary>What if the dates still do not work?</summary><p class="ppuMB-faq__a">Move to another season or another city, as often as you need. Nothing is lost and nothing expires while you are a member.</p></details>
+<details><summary>What if you do not come to my city?</summary><p class="ppuMB-faq__a">Your membership is good at any Personality Pop-Up, anywhere we go. If we never reach you, tell us and we refund the year in full.</p></details>
+<details><summary>Can I cancel?</summary><p class="ppuMB-faq__a">Any time before it renews. You keep the session you have already paid for that year, and every image you have ever received.</p></details>
+<details><summary>How many kids are in a session?</summary><p class="ppuMB-faq__a">Each 15 minute session suits 1 to 2 children, ages 6 months to 18 years. You know them best.</p></details>
 </div>
 </div>
 </section>
 
-<!-- 3 · THE THREE STEPS -->
-<section class="ppuH-sec ppuM-see" aria-label="How holding a spot works">
-<div class="ppuM-see__in">
-<div class="ppuM-see__head">
-<p class="ppuH-eyebrow">Three steps</p>
-<h2 class="ppuH-h">That&rsquo;s the whole thing.</h2>
-<p class="ppuH-p">No subscription, no window to miss, nothing that disappears if the year gets away from you.</p>
-</div>
-<div class="ppuM-f">
-<div><b>You choose</b><span>A deposit and<br>the season you want</span></div>
-<div><b>We tell you</b><span>Those dates, before<br>they go public</span></div>
-<div><b>You book</b><span>Pay the rest.<br>The price can&rsquo;t move</span></div>
-</div>
-</div>
-</section>
-
-<!-- 4 · WHY -->
-<section class="ppuH-sec ppuM-why" aria-label="Why hold a spot">
-<div class="ppuM-why__in">
-<div class="ppuM-why__head">
-<p class="ppuH-eyebrow">Why plan it now</p>
-<h2 class="ppuM-why__h">Four is only four <em class="ppuH-hl">once.</em></h2>
-<p class="ppuH-p">Open last year&rsquo;s gallery. That child doesn&rsquo;t exist any more. You can photograph them again, but you can&rsquo;t photograph them <em>then</em> &mdash; and a year is exactly long enough for the change to show. The whole reason people miss a year isn&rsquo;t cost. It&rsquo;s that the dates appeared at the wrong moment and the moment passed.</p>
-</div>
-<div class="ppuM-r">
-<div><span class="ppuM-r__n">01</span><h3>You name the season, not us</h3><p>We go to most cities a few times a year. Tell us which stretch suits you and we&rsquo;ll bring those dates to you first, instead of you catching an announcement by luck.</p></div>
-<div><span class="ppuM-r__n">02</span><h3>Nothing expires</h3><p>Life happens, dates don&rsquo;t work, you skip a season. Your deposit sits there waiting. Move it to another season or another city as often as you need.</p></div>
-<div><span class="ppuM-r__n">03</span><h3>The good times go first</h3><p>Mid-morning on a Saturday goes before anything else. Holding a spot means you&rsquo;re choosing from the whole weekend rather than whatever survived the first day.</p></div>
-<div><span class="ppuM-r__n">04</span><h3>One price, every city</h3><p>Sessions cost different amounts in different places, and those numbers move every year. Yours is fixed at <span data-m="locked">$595</span> from the day you put the deposit down.</p></div>
-</div>
-</div>
-</section>
-</div>
-
-<div class="ppuH ppuJ ppuM">
-<!-- 5 · FAQ -->
-<section class="ppuH-sec ppuH-faq" id="ppuM-faq" aria-label="Before you hold a spot">
-<div class="ppuH-faq__in">
-<div class="ppuH-faq__side">
-<p class="ppuH-eyebrow">Questions</p>
-<h2 class="ppuH-h">Before you do.</h2>
-<a class="ppuH-link" href="mailto:hello@personalitypopup.com?subject=Holding%20a%20spot">Ask us anything →</a>
-</div>
-<div class="ppuH-faq__list">
-<details class="ppuH-q" open><summary>I&rsquo;ve already shot with you. What&rsquo;s different?<i class="ppuH-ico"></i></summary><div class="ppuH-q__a"><p>The session is exactly the one you know &mdash; same studio, same team, same fifteen minutes. What changes is the order of things. Instead of waiting to see whether we announce a weekend that works, you tell us the season, and we come to you with those dates before anyone else sees them.</p></div></details>
-<details class="ppuH-q"><summary>What am I actually paying for?<i class="ppuH-ico"></i></summary><div class="ppuH-q__a"><p>Your session, started early. The <span data-m="dep">$300</span> comes straight off the price &mdash; it isn&rsquo;t a fee, a membership, or a booking charge. When you book, you pay the remaining <span data-m="bal">$295</span> and that&rsquo;s the whole cost.</p></div></details>
-<details class="ppuH-q"><summary>Do I have to know the date now?<i class="ppuH-ico"></i></summary><div class="ppuH-q__a"><p>No &mdash; that&rsquo;s the point. A season is as specific as you need to be. We&rsquo;ll come to you when those dates are set and you pick the day and time then, with the whole weekend still open.</p></div></details>
-<details class="ppuH-q"><summary>What if the dates still don&rsquo;t work?<i class="ppuH-ico"></i></summary><div class="ppuH-q__a"><p>Move it. Another season, another city, as many times as you need. Your deposit stays on your account with no expiry date. This is the part most places get wrong and it&rsquo;s the reason we built it this way.</p></div></details>
-<details class="ppuH-q"><summary>What if you don&rsquo;t come to my city?<i class="ppuH-ico"></i></summary><div class="ppuH-q__a"><p>Your deposit and your fixed price are good at any Personality Pop-Up, anywhere we go. Plenty of families catch us in a neighbouring city or while they&rsquo;re travelling. Tell us your city when you check out and we&rsquo;ll tell you first about everything within reach of you. <a class="ppuH-link" style="font-size:13px!important" href="https://www.personalitypopup.com/book/">See where we go →</a></p></div></details>
-<details class="ppuH-q"><summary>What if the price goes up?<i class="ppuH-ico"></i></summary><div class="ppuH-q__a"><p>Not for you. Sessions run a few hundred dollars either side of <span data-m="locked">$595</span> depending on the city, and those numbers climb. Yours is fixed at <span data-m="locked">$595</span> from the day you put the deposit down, however far out you end up booking.</p></div></details>
-<details class="ppuH-q"><summary>Can I get it back?<i class="ppuH-ico"></i></summary><div class="ppuH-q__a"><p>Email us within 14 days and we&rsquo;ll refund it, no questions. After that it stays as credit toward a session rather than coming back to your card &mdash; but it never expires and you can move it as often as you like.</p></div></details>
-<details class="ppuH-q"><summary>Can I hold more than one?<i class="ppuH-ico"></i></summary><div class="ppuH-q__a"><p>Yes. Some families hold two in a year, or one each for siblings shooting separately. Put down a deposit for each and tell us the seasons &mdash; one session covers one or two kids together, so you only need a second if you want a second sitting.</p></div></details>
-</div>
-</div>
-</section>
-
-<!-- 6 · CLOSING BAND -->
-<section class="ppuH-sec ppuH-close" aria-label="Hold your spot">
-<div class="ppuH-close__media" aria-hidden="true">
-<img class="ppuH-close__poster" src="https://i.vimeocdn.com/video/1827227214-fd9dca692218d62fbfa38adcef0da68f3c94ff9a4de2fd839de8e4465d183006-d_1600" alt="" loading="lazy">
+<!-- 9 · CLOSE -->
+<section class="ppuMB-sec ppuMB-close" aria-labelledby="ppuMBcloseH">
+<div class="ppuMB-close__media" aria-hidden="true">
+<img class="ppuMB-close__poster" src="https://i.vimeocdn.com/video/1827227214-fd9dca692218d62fbfa38adcef0da68f3c94ff9a4de2fd839de8e4465d183006-d_1600" alt="" loading="lazy">
 <iframe src="https://player.vimeo.com/video/930488974?background=1&amp;autoplay=1&amp;muted=1&amp;loop=1&amp;autopause=0&amp;dnt=1" title="" tabindex="-1" allow="autoplay; encrypted-media" loading="lazy"></iframe>
-<div class="ppuH-close__tint"></div>
+<div class="ppuMB-close__tint"></div>
 </div>
-<div class="ppuH-close__in">
-<h2 class="ppuH-close__h">They won&rsquo;t be little forever.</h2>
-<p class="ppuJ-close__sub">Pick a season · Never expires · Your price, fixed</p>
-<a class="ppuH-btn ppuH-btn--white" href="#ppuM-join" data-cta>👉 Hold My Spot</a>
+<div class="ppuMB-close__in">
+<h2 class="ppuMB-close__h" id="ppuMBcloseH">They will not be little forever.</h2>
+<p class="ppuMB-close__meta">$300 a year &bull; Balance 14 days before &bull; Cancel any time</p>
+<a class="ppuMB-btn ppuMB-btn--white" href="#ppuMB-reserve">Start Your Membership</a>
 </div>
 </section>
 
-<div class="ppuJ-sticky" id="ppuM-sticky"><a class="ppuH-btn" href="#ppuM-join" data-cta>Hold My Spot</a></div>
+<!-- 10 · FOOTER -->
+<footer class="ppuMB-sec ppuMB-foot">
+<div class="ppuMB-wrap ppuMB-foot__in">
+<img class="ppuMB-foot__logo" src="https://axis-ppu.vercel.app/ppu/logo-white.png" alt="Personality Pop-Up" width="843" height="516" loading="lazy" style="filter:invert(1)">
+<nav class="ppuMB-foot__nav" aria-label="Site">
+<a href="https://www.personalitypopup.com/about/">About</a>
+<a href="https://www.personalitypopup.com/faq/">FAQ</a>
+<a href="https://www.personalitypopup.com/portfolio/">Portfolio</a>
+<a href="https://www.personalitypopup.com/book/">Find Your City</a>
+<a href="https://www.personalitypopup.com/terms-of-service/">Terms</a>
+<a href="https://www.personalitypopup.com/privacy-policy">Privacy</a>
+</nav>
+<div class="ppuMB-foot__social">
+<a href="https://www.facebook.com/personalitypopup" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M13.5 21v-8h2.7l.4-3h-3.1V8.1c0-.9.3-1.5 1.5-1.5h1.7V3.9c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3V10H7.8v3h2.2v8h3.5z"></path></svg></a>
+<a href="https://www.instagram.com/personalitypopup" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.8.2 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1 .4 2.2.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.2 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1 .4-2.2.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.8-.2-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.4-1-.4-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.2-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1-.4 2.2-.4 1.3-.1 1.7-.1 4.8-.1zm0 1.8c-3.1 0-3.5 0-4.7.1-1.1.1-1.7.2-2.1.3-.5.2-.9.4-1.2.8-.4.3-.6.7-.8 1.2-.1.4-.3 1-.3 2.1-.1 1.2-.1 1.6-.1 4.7s0 3.5.1 4.7c.1 1.1.2 1.7.3 2.1.2.5.4.9.8 1.2.3.4.7.6 1.2.8.4.1 1 .3 2.1.3 1.2.1 1.6.1 4.7.1s3.5 0 4.7-.1c1.1-.1 1.7-.2 2.1-.3.5-.2.9-.4 1.2-.8.4-.3.6-.7.8-1.2.1-.4.3-1 .3-2.1.1-1.2.1-1.6.1-4.7s0-3.5-.1-4.7c-.1-1.1-.2-1.7-.3-2.1-.2-.5-.4-.9-.8-1.2-.3-.4-.7-.6-1.2-.8-.4-.1-1-.3-2.1-.3-1.2-.1-1.6-.1-4.7-.1zm0 3.1a4.9 4.9 0 1 1 0 9.8 4.9 4.9 0 0 1 0-9.8zm0 8.1a3.2 3.2 0 1 0 0-6.4 3.2 3.2 0 0 0 0 6.4zm6.2-8.3a1.1 1.1 0 1 1-2.3 0 1.1 1.1 0 0 1 2.3 0z"></path></svg></a>
+</div>
+<p class="ppuMB-foot__legal">The Original &bull; Est. 2013 &bull; &copy; 2026 Personality Pop-Up&trade; &bull; A Creative Volition, Inc. company</p>
+</div>
+</footer>
+
+<div class="ppuMB-sticky"><a class="ppuMB-btn" href="#ppuMB-reserve">Start Your Membership</a></div>
+
 </div>
 
 <script>
 (function(){
-'use strict';
-/* ---- CONFIG ---- */
-var LOCKED=59500;      /* the fixed session price, any city */
-var DEPOSIT=30000;     /* due today, comes straight off the price */
-var LINK='';/* one Stripe Payment Link; season rides in client_reference_id */
-var PORTAL='';                  /* Stripe customer portal login link ('' = email us) */
+"use strict";
 
-var P='https://images-pw.pixieset.com/elementfield/1zqrnP1/', S='https://images-pw.pixieset.com/site/gjknWE/';
-/* hero: 12 tiles, two real black & white files each (no CSS filters anywhere) */
-var HERO=[['251101-PPU-NEWPORT-BEACH-1156-bf4cf4b5','260627-PPU-MIAMI-1214-f01479eb'],['260613-PPU-ALPHARETTA-0810-2b2ef79c','260124-PPU-LOS-ALTOS-1272-515ef658'],['260124-PPU-LOS-ALTOS-2294-d4fca44b','260124-PPU-LOS-ALTOS-3386-8a8dbcd4'],['260221-PPU-BROOKLYN-0748-d6f48358','PERSONALITY-POP-UP-LOS-ALTOS-1762-3f41675f'],['260124-PPU-LOS-ALTOS-1810-264b26b8','260627-PPU-SANTA-CLARA-1910-c6ab9885'],['260627-PPU-SANTA-CLARA-2292-676ede95','240709-PP-CHARLOTTE-0020-a456c192'],['260124-PPU-LOS-ALTOS-0638-a44eb833','PERSONALITY-POP-UP-ANN-ARBOR-0330-973146a4'],['260627-PPU-MIAMI-2182-1533bfac','PERSONALITY-POP-UP-LOS-ALTOS-1032-9e84214f'],['260627-PPU-MIAMI-3184-7de35a7d','PPU-GREENVILLE-0966_websize-6e988994'],['260314-PPU-ORLANDO-2504-548885fe','PERSONALITY-POP-UP-LOS-ALTOS-0656-6c33a3bc'],['PERSONALITY-POP-UP-IRVINE-DAY2-0673copy-3feeedad','PERSONALITY-POP-UP-CHICAGO-1162-33f9735a'],['260328-PPU-LONG-BEACH-0848-16c9231f','PERSONALITY-POP-UP-CLEVELAND-1032-83c57c89']];
-var DELAYS=[0,7,2,9,4,11,6,1,8,3,10,5];
+/* Live Stripe Payment Links, one per plan. Each is a RECURRING yearly subscription:
+   1 -> $300.00/yr, 2 -> $600.00/yr, 4 -> $1,200.00/yr. Empty = checkout stays off
+   and the form still captures the lead. */
+var STRIPE_LINKS = { "1": "", "2": "", "4": "" };
 
-function $(id){return document.getElementById(id)}
-function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
-function money(c){var d=Math.round(c)/100;return '$'+(d%1?d.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2}):d.toLocaleString('en-US'))}
-function setAll(key,html){[].forEach.call(document.querySelectorAll('[data-m="'+key+'"]'),function(el){el.innerHTML=html})}
-function slug(s){return String(s).toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'')}
+var DEPOSIT = 300;   /* per session, per year, charged today and on each renewal */
+var BALANCE = 295;   /* per session, charged 14 days before that session */
+var SESSION = DEPOSIT + BALANCE;  /* locked session price, any city */
 
-/* numbers everywhere come from CONFIG */
+/* Same GoHighLevel hook the site VIP form posts to. */
+var WEBHOOK = "https://services.leadconnectorhq.com/hooks/t9HiHMKOiD67UOAImmi4/webhook-trigger/6WjQsjrVx4WKvh2ijOVB";
+
+/* Season board. status: "out" = sold out (dimmed, not selectable),
+   "open" = opens soon. Edit this list as seasons close out. */
+var SEASONS = [
+  { key: "winter-2026", label: "Winter 2026", status: "out"  },
+  { key: "spring-2026", label: "Spring 2026", status: "out"  },
+  { key: "summer-2026", label: "Summer 2026", status: "out"  },
+  { key: "fall-2026",   label: "Fall 2026",   status: "out"  },
+  { key: "winter-2027", label: "Winter 2027", status: "open" },
+  { key: "spring-2027", label: "Spring 2027", status: "open" },
+  { key: "summer-2027", label: "Summer 2027", status: "open" },
+  { key: "fall-2027",   label: "Fall 2027",   status: "open" }
+];
+
+var CDN = "https://cdn.jsdelivr.net/gh/jonathanconnolly/session-crm@main/public/ppu/img/";
+/* Hero: 24 real black and white files, no CSS filters. */
+var BW = ["260613-ppu-alpharetta","260124-ppu-los-altos","260124-ppu-los-altos-2","260627-ppu-santa-clara",
+"260124-ppu-los-altos-3","260627-ppu-miami-2","260314-ppu-orlando-2","260613-ppu-alpharetta-2",
+"260124-ppu-los-altos-4","251011-ppu-nyc-2","240709-pp-charlotte","personality-pop-up-chicago",
+"personality-pop-up-cleveland","260328-ppu-long-beach","251018-ppu-salt-lake-city","personality-pop-up-chicago-2",
+"260307-ppu-charleston","260321-ppu-charlotte","260221-ppu-brooklyn","260131-ppu-la-jolla",
+"260228-ppu-seattle","260315-ppu-garden-city","260627-ppu-miami-1214","260124-ppu-los-altos-1272"];
+var INC = [["260314-ppu-orlando","A boy mid expression at a Personality Pop-Up session"],
+["personality-pop-up-los-altos-1032","A child laughing during a session"],
+["personality-pop-up-knoxville","A girl laughing during a session"],
+["260321-ppu-charlotte","A toddler in a cap that says DUDE"],
+["260328-ppu-dallas","A boy in a white polo laughing"],
+["personality-pop-up-detroit-0882","A child pulling a face for the camera"]];
+var TEAM = ["personality-pop-up-team-0032","personality-pop-up-team-0014","personality-pop-up-team-0039",
+"personality-pop-up-team-0026","personality-pop-up-team-0021","photographer-11","personality-pop-up-team-0002",
+"personality-pop-up-team-0019","personality-pop-up-team-0016","personality-pop-up-team-0030","personality-pop-up-team-0008"];
+
+function src(b){ return CDN + b + "-960.webp"; }
+function byId(id){ return document.getElementById(id); }
 
 /* hero grid */
-$('ppuM-grid').innerHTML=HERO.map(function(p,i){return '<div class="ppuH-tile" style="--d:-'+DELAYS[i]+'s"><img src="'+P+p[0]+'-1000.jpg" alt=""'+(i<6?' fetchpriority="high"':'')+'><img src="'+P+p[1]+'-1000.jpg" alt="" loading="lazy"></div>'}).join('');
-/* blush highlight draws in on scroll (homepage behaviour) */
-window.ppuHl=function(root){[].forEach.call((root||document).querySelectorAll('.ppuH-hl:not(.on)'),function(el){if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){el.classList.add('on');io.disconnect()}})},{threshold:.6});io.observe(el)}else{el.classList.add('on')}})};
-window.ppuHl(document);
-
-
-/* buttons drop to the join box; sticky CTA on phones once the hero is gone and the box isn't on screen */
-[].forEach.call(document.querySelectorAll('a[href="#ppuM-join"]'),function(a){a.addEventListener('click',function(e){e.preventDefault();$('ppuM-join').scrollIntoView({behavior:'smooth',block:'start'})})});
-(function(){var s=$('ppuM-sticky'),hero=document.querySelector('.ppuH-hero'),box=$('ppuM-join');if(!('IntersectionObserver' in window))return;var hv=true,bv=false;function u(){s.classList.toggle('show',!hv&&!bv)}
-new IntersectionObserver(function(e){hv=e[0].isIntersecting;u()}).observe(hero);new IntersectionObserver(function(e){bv=e[0].isIntersecting;u()},{threshold:.05}).observe(box)})();
-
-/* ---- OFFER: one deposit, pick a season ---- */
-(function(){
-var q=new URLSearchParams(location.search), box=$('ppuM-seasons'), goM=$('ppuM-go-m');
-var BAL=LOCKED-DEPOSIT, sel=0;
-setAll('locked',esc(money(LOCKED)));setAll('dep',esc(money(DEPOSIT)));setAll('bal',esc(money(BAL)));
-$('ppuM-amt').textContent=money(DEPOSIT);
-$('ppuM-bal').textContent=money(BAL);
-
-/* the next four seasons, computed so the page never goes stale */
-function nextSeasons(n){
- var now=new Date(), y=now.getFullYear(), defs=[['Winter',0],['Spring',2],['Summer',5],['Fall',8]], out=[];
- for(var yy=y; yy<=y+2 && out.length<n; yy++){
-  for(var i=0;i<4 && out.length<n;i++){
-   if(new Date(yy,defs[i][1],1) > now) out.push({name:defs[i][0], year:yy});
+var grid = byId("ppuMBgrid");
+if (grid) {
+  var h = "";
+  for (var i = 0; i < 12; i++) {
+    h += '<div class="ppuMB-tile" style="--d:-' + (i * 1.1).toFixed(1) + 's">'
+       + '<img src="' + src(BW[i]) + '" alt="" width="1000" height="1499" decoding="async"'
+       + (i < 6 ? ' fetchpriority="high"' : ' loading="lazy"') + '>'
+       + '<img src="' + src(BW[i + 12]) + '" alt="" width="1000" height="1499" decoding="async" loading="lazy">'
+       + '</div>';
   }
- }
- return out;
+  grid.innerHTML = h;
 }
-var SEASONS=nextSeasons(4);
-box.innerHTML=SEASONS.map(function(s,i){
- return '<button type="button" data-i="'+i+'" aria-pressed="'+(i===0)+'">'+esc(s.name)+' <span style="opacity:.62;font-weight:400">'+s.year+'</span></button>';
-}).join('');
 
-function link(u,ref){if(!u)return '';return u+(u.indexOf('?')>-1?'&':'?')+'client_reference_id='+encodeURIComponent(ref)+'&utm_source=site&utm_medium=members_page'}
-function show(){
- var s=SEASONS[sel];
- [].forEach.call(box.querySelectorAll('button'),function(b){b.setAttribute('aria-pressed',String(+b.getAttribute('data-i')===sel))});
- $('ppuM-note').textContent='Holding '+s.name+' '+s.year+' \u00b7 move it later';
- var u=link(LINK, slug(s.name+'-'+s.year));
- goM.href=u||'#'; goM.setAttribute('aria-disabled',u?'false':'true');
+/* team rail, two identical sets so the loop is seamless */
+var incArt = byId("ppuMBincArt");
+if (incArt) {
+  incArt.innerHTML = INC.map(function(x){
+    return '<figure><img src="' + src(x[0]) + '" alt="' + x[1] + '" width="1000" height="1499" loading="lazy" decoding="async"></figure>';
+  }).join("");
 }
-box.addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;sel=+b.getAttribute('data-i');show()});
 
-function track(name,val){try{if(window.fbq)fbq('track','InitiateCheckout',{value:val,currency:'USD',content_name:name})}catch(e){}
-try{if(window.gtag)gtag('event','begin_checkout',{value:val,currency:'USD',item_name:name})}catch(e){}}
-goM.addEventListener('click',function(e){if(goM.getAttribute('aria-disabled')==='true'){e.preventDefault();return}
- var s=SEASONS[sel]; track('deposit_'+slug(s.name+'-'+s.year), DEPOSIT/100)});
+var rail = byId("ppuMBrail");
+if (rail) {
+  var set = TEAM.map(function(b){
+    return '<figure class="ppuMB-tm"><img src="' + src(b) + '" alt="Personality Pop-Up photographer" width="1500" height="2250" loading="lazy" decoding="async"></figure>';
+  }).join("");
+  rail.innerHTML = '<div class="ppuMB-rail__set">' + set + '</div><div class="ppuMB-rail__set" aria-hidden="true">' + set + '</div>';
+}
 
-if(q.get('joined')==='1'){$('ppuM-pick').hidden=true;$('ppuM-done').hidden=false;
-[].forEach.call(document.querySelectorAll('[data-cta]'),function(a){a.textContent='Spot held \ud83c\udf89';a.setAttribute('aria-disabled','true');a.style.pointerEvents='none'});
-try{if(window.fbq)fbq('track','Purchase',{value:DEPOSIT/100,currency:'USD',content_name:'deposit'})}catch(x){}
-try{if(window.gtag)gtag('event','purchase',{value:DEPOSIT/100,currency:'USD',item_name:'deposit'})}catch(x){}
-setTimeout(function(){$('ppuM-join').scrollIntoView({block:'start'})},50)}
-show();
+/* season board + the matching radio pills in the form */
+var board = byId("ppuMBboard"), pills = byId("ppuMBseasons");
+if (pills) {
+  pills.innerHTML = SEASONS.filter(function(s){ return s.status === "open"; }).map(function(s, i){
+    return '<label class="ppuMB-season"><input type="radio" name="ppuMBseason" value="' + s.key + '"'
+         + (i === 0 ? ' checked=""' : '') + '><span>' + s.label.split(" ")[0] + '</span></label>';
+  }).join("") + '<label class="ppuMB-season"><input type="radio" name="ppuMBseason" value="flexible"><span>Flexible</span></label>';
+}
+if (board) {
+  board.innerHTML = SEASONS.map(function(s){
+    var out = s.status === "out";
+    return '<button type="button" class="ppuMB-cardbtn" data-state="' + (out ? "closed" : "open") + '" data-key="' + s.key + '"'
+         + (out ? ' disabled=""' : '') + '>'
+         + '<span class="ppuMB-pill ' + (out ? "ppuMB-pill--out" : "ppuMB-pill--open") + '">'
+         + (out ? "Sold out" : "Opens soon") + '</span>'
+         + '<b>' + s.label + '</b></button>';
+  }).join("");
+  Array.prototype.forEach.call(board.querySelectorAll('.ppuMB-cardbtn:not([disabled])'), function(btn){
+    btn.addEventListener("click", function(){
+      var r = document.querySelector('input[name="ppuMBseason"][value="' + btn.getAttribute("data-key") + '"]');
+      if (r) r.checked = true;
+      var target = byId("ppuMB-reserve");
+      if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  });
+}
+
+/* city ticker */
+(function(){
+  var FALLBACK=["Ann Arbor, MI","Atlanta, GA","Austin, TX","Birmingham, AL","Boca Raton, FL","Boise, ID","Boston, MA","Boulder, CO","Brooklyn, NY","Carlsbad, CA","Charleston, SC","Charlotte, NC","Chicago, IL","Cincinnati, OH","Cleveland, OH","Colorado Springs, CO","Columbus, OH","Dallas, TX","Denver, CO","Detroit, MI","Fort Lauderdale, FL","Fort Worth, TX","Greenville, SC","Houston, TX","Indianapolis, IN","Irvine, CA","Jacksonville, FL","Jersey City, NJ","Kansas City, MO","Knoxville, TN","Las Vegas, NV","London, UK","Long Beach, CA","Long Island, NY","Los Angeles, CA","Louisville, KY","Madison, WI","Manhattan, NY","Miami, FL","Minneapolis, MN","Nashville, TN","New Haven, CT","New Orleans, LA","Oklahoma City, OK","Orlando, FL","Philadelphia, PA","Phoenix, AZ","Pittsburgh, PA","Portland, OR","Raleigh, NC","Ridgewood, NJ","Salt Lake City, UT","San Diego, CA","San Francisco, CA","San Jose, CA","Savannah, GA","Seattle, WA","Stamford, CT","Tampa, FL","Washington, DC","West Palm Beach, FL"];
+  var SEP='<span class="ppuMB-tick__sep" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z" transform="rotate(-90 12 12)"></path></svg></span>';
+  var el = byId("ppuMBtick");
+  if (!el) return;
+  function render(list){
+    var a = list.slice();
+    for (var i = a.length - 1; i > 0; i--) { var j = Math.floor(Math.random() * (i + 1)); var t = a[i]; a[i] = a[j]; a[j] = t; }
+    var set = a.map(function(n){
+      var p = String(n).split(",");
+      return '<span class="ppuMB-tick__item">' + p[0].trim() + (p[1] ? ", " + p[1].trim() : "") + "</span>" + SEP;
+    }).join("");
+    el.innerHTML = '<div style="display:flex;flex:none;align-items:center">' + set + '</div><div style="display:flex;flex:none;align-items:center" aria-hidden="true">' + set + "</div>";
+  }
+  render(FALLBACK);
+  function fromCities(){
+    var c = window.CITIES;
+    if (c && c.length) render(c.map(function(x){ return x.name; }).filter(function(n){ return !/Summit/.test(n); }));
+  }
+  if (window.CITIES) fromCities();
+  else { var s = document.createElement("script"); s.src = "https://cdn.jsdelivr.net/gh/jonathanconnolly/session-crm@main/public/cities.js"; s.async = true; s.onload = fromCities; document.head.appendChild(s); }
 })();
+
+/* blush highlight bar */
+Array.prototype.forEach.call(document.querySelectorAll(".ppuMB-hl:not(.on)"), function(el){
+  if ("IntersectionObserver" in window) {
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){ if (e.isIntersecting) { el.classList.add("on"); io.disconnect(); } });
+    }, { threshold: .6 });
+    io.observe(el);
+  } else { el.classList.add("on"); }
+});
+
+/* field helpers */
+var phone = byId("ppuMBphone");
+if (phone) phone.addEventListener("input", function(){
+  var v = phone.value.replace(/\D/g, "").slice(0, 10);
+  if (v.length <= 3) phone.value = v;
+  else if (v.length <= 6) phone.value = v.slice(0,3) + "-" + v.slice(3);
+  else phone.value = v.slice(0,3) + "-" + v.slice(3,6) + "-" + v.slice(6);
+});
+var st = byId("ppuMBstate");
+if (st) st.addEventListener("input", function(){ st.value = st.value.replace(/[^a-zA-Z]/g, "").toUpperCase().slice(0,2); });
+
+/* City autocomplete off the shared cities.js list. Free text is still allowed
+   for a city we have not visited yet. Picking a suggestion fills State too. */
+(function(){
+  var input = byId("ppuMBcity"), list = byId("ppuMBcityList");
+  if (!input || !list) return;
+  var idx = -1, items = [];
+
+  function close(){ list.classList.remove("on"); list.innerHTML = ""; idx = -1; items = []; }
+
+  function pick(name){
+    var parts = String(name).split(",");
+    input.value = parts[0].trim();
+    if (st && parts[1]) st.value = parts[1].trim().toUpperCase().slice(0,2);
+    input.classList.remove("bad");
+    if (st) st.classList.remove("bad");
+    close();
+  }
+
+  function lookup(q){
+    var c = window.CITIES;
+    if (!c || !c.length) return [];
+    q = q.toLowerCase();
+    var starts = [], has = [];
+    c.forEach(function(x){
+      var n = String(x.name || "");
+      var l = n.toLowerCase();
+      if (l.indexOf(q) === 0) { starts.push(n); return; }
+      if (l.indexOf(q) > 0) { has.push(n); return; }
+      (x.aliases || []).forEach(function(a){
+        if (String(a).toLowerCase().indexOf(q) === 0 && has.indexOf(n) === -1) has.push(n);
+      });
+    });
+    return starts.concat(has).slice(0, 7);
+  }
+
+  function render(q){
+    items = lookup(q);
+    if (!items.length) { close(); return; }
+    list.innerHTML = items.map(function(n, i){
+      return '<div class="ppuMB-acItem" data-i="' + i + '">' + n + '</div>';
+    }).join("");
+    list.classList.add("on");
+    idx = -1;
+    Array.prototype.forEach.call(list.children, function(el){
+      el.addEventListener("mousedown", function(e){ e.preventDefault(); pick(items[+el.getAttribute("data-i")]); });
+    });
+  }
+
+  function highlight(){
+    Array.prototype.forEach.call(list.children, function(el, i){ el.classList.toggle("sel", i === idx); });
+  }
+
+  input.addEventListener("input", function(){
+    var q = input.value.trim();
+    if (q.length < 2) { close(); return; }
+    render(q);
+  });
+  input.addEventListener("keydown", function(e){
+    if (!list.classList.contains("on")) return;
+    if (e.key === "ArrowDown") { e.preventDefault(); idx = Math.min(idx + 1, items.length - 1); highlight(); }
+    else if (e.key === "ArrowUp") { e.preventDefault(); idx = Math.max(idx - 1, 0); highlight(); }
+    else if (e.key === "Enter") { if (idx > -1) { e.preventDefault(); pick(items[idx]); } }
+    else if (e.key === "Escape") { close(); }
+  });
+  input.addEventListener("blur", function(){ setTimeout(close, 130); });
+})();
+var zip = byId("ppuMBzip");
+if (zip) zip.addEventListener("input", function(){ zip.value = zip.value.replace(/\D/g, "").slice(0,5); });
+
+/* area code tag, same convention as the VIP form */
+(function(){
+  if (typeof window.AREA_CODES === "object" && window.AREA_CODES) return;
+  var s = document.createElement("script");
+  s.src = "https://cdn.jsdelivr.net/gh/jonathanconnolly/session-crm@main/public/area-codes.js";
+  s.async = true;
+  document.head.appendChild(s);
+})();
+function phoneTagFor(digits){
+  if (typeof window.AREA_CODES !== "object" || !window.AREA_CODES) return "";
+  var d = String(digits || "").replace(/\D/g, "");
+  if (d.length < 10) return "";
+  var look = window.AREA_CODES[d.slice(d.length - 10, d.length - 7)];
+  if (!look) return "";
+  var c = String(look.city || "").toLowerCase().replace(/[^a-z0-9]+/g, "_").replace(/(^_|_$)/g, "");
+  var s2 = String(look.state || "").toLowerCase();
+  return (c && s2) ? "phone_" + c + "_" + s2 : "";
+}
+
+/* submit */
+var form = byId("ppuMBform"), btn = byId("ppuMBsubmit"), done = byId("ppuMBdone"), doneMsg = byId("ppuMBdoneMsg");
+var LABEL = 'Start My Membership';
+/* the big number follows the sessions-a-year choice */
+function money(v){ return "$" + v.toLocaleString("en-US"); }
+function renderPrice(){
+  var sel = byId("ppuMBkids"), nSess = parseInt(sel && sel.value, 10) || 1;
+  var amt = byId("ppuMBamt"), per = byId("ppuMBper"), sub = byId("ppuMBsub2");
+  if (amt) amt.textContent = money(DEPOSIT * nSess);
+  if (per) per.innerHTML = "A year &middot; " + (nSess === 1 ? "one session held" : nSess + " sessions held");
+  if (sub) sub.textContent = "Then " + money(BALANCE) + " a session, charged 14 days before you shoot. "
+    + money(SESSION) + " a session in total, locked for as long as you stay.";
+}
+(function(){ var sel = byId("ppuMBkids"); if (sel) sel.addEventListener("change", renderPrice); renderPrice(); })();
+
+function val(id){ var e = byId(id); return e ? e.value.trim() : ""; }
+function mark(id, bad){ var e = byId(id); if (e) e.classList.toggle("bad", !!bad); }
+
+if (form) form.addEventListener("submit", function(e){
+  e.preventDefault();
+  var first = val("ppuMBfirst"), last = val("ppuMBlast");
+  var email = val("ppuMBemail"), ph = val("ppuMBphone").replace(/\D/g, "");
+  var city = val("ppuMBcity"), state = val("ppuMBstate"), z = val("ppuMBzip");
+
+  ["ppuMBfirst","ppuMBlast","ppuMBemail","ppuMBphone","ppuMBcity","ppuMBstate","ppuMBzip"].forEach(function(id){ mark(id, false); });
+  var miss = [];
+  if (!first) { mark("ppuMBfirst", true); miss.push("ppuMBfirst"); }
+  if (!last) { mark("ppuMBlast", true); miss.push("ppuMBlast"); }
+  if (!email || email.indexOf("@") < 1 || email.indexOf(".") < 0) { mark("ppuMBemail", true); miss.push("ppuMBemail"); }
+  if (ph.length < 10) { mark("ppuMBphone", true); miss.push("ppuMBphone"); }
+  if (!city) { mark("ppuMBcity", true); miss.push("ppuMBcity"); }
+  if (state.length !== 2) { mark("ppuMBstate", true); miss.push("ppuMBstate"); }
+  if (z.length !== 5) { mark("ppuMBzip", true); miss.push("ppuMBzip"); }
+  if (miss.length) {
+    var el = byId(miss[0]); if (el) el.focus();
+    btn.innerHTML = "Please check the fields in red";
+    setTimeout(function(){ btn.innerHTML = LABEL; }, 2400);
+    return;
+  }
+
+  var seasonEl = document.querySelector('input[name="ppuMBseason"]:checked');
+  var season = seasonEl ? seasonEl.value : "flexible";
+  var kids = val("ppuMBkids") || "1";
+  var citySlug = (city + "_" + state).toLowerCase().replace(/[^a-z0-9]+/g, "_").replace(/(^_|_$)/g, "");
+  var pTag = phoneTagFor(ph);
+
+  btn.disabled = true;
+  btn.innerHTML = "Starting your membership&hellip;";
+
+  var tags = ["source_website","status_lead","form_membership","city_" + citySlug,"season_" + season,"plan_" + kids + "x_year"];
+  if (pTag) tags.push(pTag);
+
+  var payload = {
+    first_name: first, last_name: last, email: email, phone: ph,
+    city: city, state: state, postal_code: z,
+    requested_cities: city + ", " + state,
+    sessions_per_year: kids, session_count: kids, preferred_season: season,
+    plan_annual_total: DEPOSIT * (parseInt(kids, 10) || 1),
+    balance_per_session: BALANCE, session_price: SESSION,
+    offer: "membership_annual", source_widget: "members_page",
+    phone_tag: pTag, tags: tags.join(", "), page: location.href
+  };
+
+  try {
+    if (window.fbq) window.fbq("track", "Lead", { content_name: "membership_annual" });
+    if (window.gtag) window.gtag("event", "generate_lead", { event_label: "membership_annual" });
+  } catch (err) {}
+
+  fetch(WEBHOOK, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(payload), keepalive: true })
+    .catch(function(){})
+    .then(function(){
+      form.style.display = "none";
+      done.classList.add("on");
+      var plan = STRIPE_LINKS[kids] || "";
+      var yearly = DEPOSIT * (parseInt(kids, 10) || 1);
+      if (plan) {
+        var u = plan + (plan.indexOf("?") > -1 ? "&" : "?")
+              + "prefilled_email=" + encodeURIComponent(email)
+              + "&client_reference_id=" + encodeURIComponent(season + "__" + citySlug + "__" + kids + "x");
+        try { if (window.fbq) window.fbq("track", "InitiateCheckout", { value: yearly, currency: "USD" }); } catch (err) {}
+        setTimeout(function(){ location.href = u; }, 900);
+      } else {
+        doneMsg.textContent = "We have your details. Membership checkout is being switched on and we will email you your link shortly.";
+      }
+      done.scrollIntoView({ behavior: "smooth", block: "center" });
+    });
+});
 })();
 </script>
