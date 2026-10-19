@@ -111,6 +111,7 @@ border-radius:14px;padding:22px 20px!important;cursor:pointer;transition:border-
 .ppuMB-fact{display:flex;align-items:center;gap:13px;padding:13px 0!important;border-top:1px solid rgba(45,45,45,.18);
 font:600 14.5px/1.45 var(--mono)!important;letter-spacing:-.1px!important;color:var(--ink)!important;min-width:0}
 .ppuMB-fact:last-child{border-bottom:1px solid rgba(45,45,45,.18)}
+.ppuMB-fact b{font:inherit!important;color:inherit!important;min-width:0}
 .ppuMB-fact span{flex:0 0 auto;width:22px;height:22px;border-radius:50%;background:var(--ink);color:var(--blush);display:flex;align-items:center;justify-content:center}
 .ppuMB-fact svg{width:11px;height:11px;fill:currentColor}
 
@@ -318,13 +319,13 @@ padding:11px 16px calc(11px + env(safe-area-inset-bottom,0px))}
 
 <div class="ppuMB-offer__left">
 <p class="ppuMB-eyebrow">Membership</p>
-<p class="ppuMB-price"><b id="ppuMBamt">$295</b><i id="ppuMBper">Every year &middot; one session held</i></p>
-<p class="ppuMB-sub2" id="ppuMBsub2">Unlocks the year’s dates before they go public and holds your spot in your season. $300 a session when you book &mdash; $595 in total, locked for as long as you stay.</p>
+<p class="ppuMB-price"><b id="ppuMBamt">$299</b><i id="ppuMBper">Every year &middot; one session held</i></p>
+<p class="ppuMB-sub2" id="ppuMBsub2">Unlocks the year’s dates before they go public and holds your spot in your season. $299 a session when you book &mdash; $598 a session in total, locked for as long as you stay.</p>
 <h2 class="ppuMB-offer__h" id="ppuMBofferH">Stop hoping the dates work.</h2>
 <ul class="ppuMB-facts">
 <li class="ppuMB-fact"><span aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"></path></svg></span>The year’s dates, before anyone</li>
 <li class="ppuMB-fact"><span aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"></path></svg></span>Your spot held in your season</li>
-<li class="ppuMB-fact"><span aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"></path></svg></span>$595 a session, price locked</li>
+<li class="ppuMB-fact"><span aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"></path></svg></span><b id="ppuMBfact3">$598 a session, price locked</b></li>
 </ul>
 </div>
 
@@ -351,7 +352,7 @@ padding:11px 16px calc(11px + env(safe-area-inset-bottom,0px))}
 <div class="ppuMB-seasons" id="ppuMBseasons"></div>
 </fieldset>
 <button class="ppuMB-btn ppuMB-submit" type="submit" id="ppuMBsubmit">Start My Membership</button>
-<p class="ppuMB-fine">Your membership renews once a year and you can cancel any time before it does. Each session’s $300 balance is charged 14 days before that session. Secure checkout by Stripe. <a href="https://www.personalitypopup.com/privacy-policy" target="_blank" rel="noopener">Privacy</a> and <a href="https://www.personalitypopup.com/terms-of-service/" target="_blank" rel="noopener">Terms</a>.</p>
+<p class="ppuMB-fine">Your membership renews once a year and you can cancel any time before it does. The matching second payment for each session is charged 14 days before that session. Secure checkout by Stripe. <a href="https://www.personalitypopup.com/privacy-policy" target="_blank" rel="noopener">Privacy</a> and <a href="https://www.personalitypopup.com/terms-of-service/" target="_blank" rel="noopener">Terms</a>.</p>
 </form>
 
 <div class="ppuMB-done" id="ppuMBdone" role="status">
@@ -416,10 +417,10 @@ padding:11px 16px calc(11px + env(safe-area-inset-bottom,0px))}
 <a class="ppuMB-faq__ask" href="mailto:hello@personalitypopup.com">Ask us anything &rarr;</a>
 </div>
 <div>
-<details open=""><summary>What am I paying for today?</summary><p class="ppuMB-faq__a">$295 a year, which does two things: it opens the year’s dates to you before they are public, and it holds a spot for you in the season you choose. It also comes straight off the price of that session.</p></details>
-<details><summary>When do I pay the rest?</summary><p class="ppuMB-faq__a">14 days before you shoot. The remaining $300 is charged then, so a session you booked eight months ago is not paid for until it is nearly here.</p></details>
-<details><summary>What does a session cost in total?</summary><p class="ppuMB-faq__a">$595, wherever we see you. Sessions normally run $495 to $749 depending on the city, and those prices rise. Yours is locked while you stay a member.</p></details>
-<details><summary>Can I have more than one session a year?</summary><p class="ppuMB-faq__a">Yes. Choose one, two, three or four a year. The membership is $295 for each, so two a year is $590, three is $885 and four is $1,180. Each one is held in your season.</p></details>
+<details open=""><summary>What am I paying for today?</summary><p class="ppuMB-faq__a">$299, which does two things: it opens the year’s dates to you before they are public, and it holds a spot for you in the season you choose. It also comes straight off the price of that session. It renews once a year.</p></details>
+<details><summary>When do I pay the rest?</summary><p class="ppuMB-faq__a">14 days before you shoot. The second payment is the same as the first, $299, so a session you booked eight months ago is only half paid until it is nearly here.</p></details>
+<details><summary>What does a session cost in total?</summary><p class="ppuMB-faq__a">$598 — two payments of $299 — wherever we see you, or $538 if you take two or more a year. Sessions normally run $495 to $749 depending on the city, and those prices rise. Yours is locked while you stay a member.</p></details>
+<details><summary>Can I have more than one session a year?</summary><p class="ppuMB-faq__a">Yes, and it is cheaper. From two a year every payment drops 10%, from $299 to $269, so each session costs $538 instead of $598. Two a year is $538 up front, three is $807, four is $1,076, with a matching payment before each session. Each one is held in your season.</p></details>
 <details><summary>Do I pick the exact date now?</summary><p class="ppuMB-faq__a">No, and that is the point. You choose the season. When we set those dates in your city, you pick your time before anyone else sees them.</p></details>
 <details><summary>What if the dates still do not work?</summary><p class="ppuMB-faq__a">Move to another season or another city, as often as you need. Nothing is lost and nothing expires while you are a member.</p></details>
 <details><summary>What if you do not come to my city?</summary><p class="ppuMB-faq__a">Your membership is good at any Personality Pop-Up, anywhere we go. If we never reach you, tell us and we refund the year in full.</p></details>
@@ -438,7 +439,7 @@ padding:11px 16px calc(11px + env(safe-area-inset-bottom,0px))}
 </div>
 <div class="ppuMB-close__in">
 <h2 class="ppuMB-close__h" id="ppuMBcloseH">They will not be little forever.</h2>
-<p class="ppuMB-close__meta">$295 a year &bull; Your season held &bull; Cancel any time</p>
+<p class="ppuMB-close__meta">$299 a year &bull; Your season held &bull; Cancel any time</p>
 <a class="ppuMB-btn ppuMB-btn--white" href="#ppuMB-reserve">Start Your Membership</a>
 </div>
 </section>
@@ -472,13 +473,15 @@ padding:11px 16px calc(11px + env(safe-area-inset-bottom,0px))}
 "use strict";
 
 /* Live Stripe Payment Links, one per plan. Each is a RECURRING yearly subscription:
-   1 -> $295.00/yr, 2 -> $590.00/yr, 3 -> $885.00/yr, 4 -> $1,180.00/yr. Empty = checkout stays off
+   1 -> $299.00/yr, 2 -> $538.00/yr, 3 -> $807.00/yr, 4 -> $1,076.00/yr. Empty = checkout stays off
    and the form still captures the lead. */
 var STRIPE_LINKS = { "1": "", "2": "", "3": "", "4": "" };
 
-var DEPOSIT = 295;   /* the membership, per session, per year — charged today and on each renewal */
-var BALANCE = 300;   /* per session, charged 14 days before that session */
-var SESSION = DEPOSIT + BALANCE;  /* locked session price, any city */
+var HALF = 299;      /* each of the two equal payments for a session */
+var MULTI_PCT = 10;  /* off every payment, from two sessions a year */
+/* one session: $299 now + $299 at booking = $598.
+   two or more: 10% off both halves, so $269 + $269 = $538 a session. */
+function perPayment(n){ return n > 1 ? Math.round(HALF * (100 - MULTI_PCT) / 100) : HALF; }
 
 /* Same GoHighLevel hook the site VIP form posts to. */
 var WEBHOOK = "https://services.leadconnectorhq.com/hooks/t9HiHMKOiD67UOAImmi4/webhook-trigger/6WjQsjrVx4WKvh2ijOVB";
@@ -715,13 +718,18 @@ function money(v){ return "$" + v.toLocaleString("en-US"); }
 function renderPrice(){
   var sel = byId("ppuMBkids"), nSess = parseInt(sel && sel.value, 10) || 1;
   var amt = byId("ppuMBamt"), per = byId("ppuMBper"), sub = byId("ppuMBsub2");
-  var yearly = DEPOSIT * nSess;
+  var pay = perPayment(nSess), yearly = pay * nSess, total = pay * 2;
   if (amt) amt.textContent = money(yearly);
   if (per) per.innerHTML = "Every year &middot; " + (nSess === 1 ? "one session held" : nSess + " sessions held");
   if (sub) sub.textContent = "Unlocks the year\u2019s dates before they go public and holds your "
     + (nSess === 1 ? "spot" : "spots") + " in your season. "
-    + money(BALANCE) + " a session when you book \u2014 " + money(SESSION)
-    + " in total, locked for as long as you stay.";
+    + (nSess > 1 ? "Two or more take " + MULTI_PCT + "% off every payment, so " : "")
+    + money(pay) + " a session when you book \u2014 " + money(total)
+    + " a session in total, locked for as long as you stay.";
+  var f3 = document.getElementById("ppuMBfact3");
+  if (f3) f3.textContent = nSess > 1
+    ? money(total) + " a session \u2014 " + MULTI_PCT + "% off"
+    : money(total) + " a session, price locked";
 }
 (function(){ var sel = byId("ppuMBkids"); if (sel) sel.addEventListener("change", renderPrice); renderPrice(); })();
 
@@ -767,8 +775,10 @@ if (form) form.addEventListener("submit", function(e){
     city: city, state: state, postal_code: z,
     requested_cities: city + ", " + state,
     sessions_per_year: kids, session_count: kids, preferred_season: season,
-    plan_annual_total: DEPOSIT * (parseInt(kids, 10) || 1),
-    balance_per_session: BALANCE, session_price: SESSION,
+    plan_annual_total: perPayment(parseInt(kids, 10) || 1) * (parseInt(kids, 10) || 1),
+    balance_per_session: perPayment(parseInt(kids, 10) || 1),
+    session_price: perPayment(parseInt(kids, 10) || 1) * 2,
+    multi_discount_pct: (parseInt(kids, 10) || 1) > 1 ? MULTI_PCT : 0,
     offer: "membership_annual", source_widget: "members_page",
     phone_tag: pTag, tags: tags.join(", "), page: location.href
   };
@@ -784,7 +794,7 @@ if (form) form.addEventListener("submit", function(e){
       form.style.display = "none";
       done.classList.add("on");
       var plan = STRIPE_LINKS[kids] || "";
-      var yearly = DEPOSIT * (parseInt(kids, 10) || 1);
+      var yearly = perPayment(parseInt(kids, 10) || 1) * (parseInt(kids, 10) || 1);
       if (plan) {
         var u = plan + (plan.indexOf("?") > -1 ? "&" : "?")
               + "prefilled_email=" + encodeURIComponent(email)
