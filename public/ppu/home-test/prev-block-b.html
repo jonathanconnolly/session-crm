@@ -1,0 +1,192 @@
+<!-- PPU HOME v1 (test) · block 3 of 4 · what to expect, proof, portfolio, quick FAQ, closing band · relies on block 1 CSS · 2026-10-15 -->
+<style>
+/* 4 · WHAT TO EXPECT — same layout as the About hero: copy left, 9:16 Vimeo right, facts row */
+.ppuH-exp{padding:104px var(--gut)}
+.ppuH-exp__in{max-width:1080px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1fr) 330px;column-gap:clamp(40px,7vw,110px);align-items:center}
+.ppuH-exp__copy{display:flex;flex-direction:column;align-items:flex-start;gap:26px;min-width:0}
+.ppuH-exp__title{font:400 clamp(44px,5.4vw,76px)/1.0 var(--serif)!important;color:var(--ink)!important;letter-spacing:-.01em!important;text-transform:none!important;text-wrap:balance}
+.ppuH-exp__vid{position:relative;width:330px;aspect-ratio:310/577;overflow:hidden;border-radius:6px;background:#e9e6e1}
+.ppuH-exp__vid iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.ppuH-facts{display:grid;grid-template-columns:repeat(3,auto);gap:28px;padding-top:26px;border-top:1px solid rgba(45,45,45,.14);width:100%;justify-content:start}
+.ppuH-fact b{display:block;font:400 34px/1 var(--serif)!important;color:var(--ink)!important;margin-bottom:8px}
+.ppuH-fact span{display:block;font:500 11px/1.3 var(--mono)!important;letter-spacing:.14em!important;text-transform:uppercase;color:var(--soft)!important}
+
+/* 5 · GIGI HADID / CELEBRITY SUBSTITUTE (the Worked-with-&-featured-in logo bar was removed 2026-10-17) */
+.ppuH-gigi{padding:0 var(--gut) 104px}
+.ppuH-gigi__in{max-width:1080px;margin:0 auto;display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);column-gap:clamp(32px,5vw,72px);align-items:center}
+.ppuH-gigi__copy{display:flex;flex-direction:column;gap:22px;align-items:flex-start}
+.ppuH-gigi__sub{font:italic 400 15px/1.75 var(--mono)!important;letter-spacing:.12em!important;text-transform:uppercase;color:var(--text)!important;max-width:36ch}
+.ppuH-gigi__vid{position:relative;aspect-ratio:16/9;background:#111;overflow:hidden;border-radius:6px}
+.ppuH-gigi__vid iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+
+/* 6 · PORTFOLIO — white, no visual break; one strip of untouched 2:3 photos alternating colour / black & white, flush at the base; auto-scrolls, arrows + drag to scrub */
+.ppuH-port{background:var(--paper);padding:8px 0 0;overflow:hidden}
+.ppuH-port__head{max-width:900px;margin:0 auto 56px;padding:0 var(--gut);display:flex;flex-direction:column;align-items:center;text-align:center;gap:28px}
+.ppuH-port__h{font:400 clamp(42px,5.4vw,78px)/1.04 var(--serif)!important;color:var(--ink)!important;letter-spacing:-.01em!important;text-transform:none!important;text-wrap:balance}
+.ppuH-port__h em{font-style:italic}
+.ppuH-port__link{font:600 13px/1 var(--mono)!important;letter-spacing:.14em!important;text-transform:uppercase;color:var(--ink)!important;text-decoration:none!important;border-bottom:1px solid rgba(45,45,45,.4);padding-bottom:7px;transition:border-color .2s}
+.ppuH-port__link:hover{border-color:var(--ink)}
+.ppuH-port__strip{position:relative;overflow:hidden;cursor:grab;touch-action:pan-y;user-select:none;-webkit-user-select:none}
+.ppuH-port__strip.is-drag{cursor:grabbing}
+.ppuH-port__track{display:flex;width:max-content;will-change:transform}
+.ppuH-port__img{display:block;height:clamp(340px,34vw,480px);width:auto;aspect-ratio:2/3;object-fit:cover;background:#f1efeb;-webkit-user-drag:none;pointer-events:none}
+.ppuH-rule{height:clamp(340px,34vw,480px);aspect-ratio:2/3;flex:none;position:relative;background:#1A1A1A;color:#fff;container-type:inline-size;margin:0;pointer-events:none}
+.ppuH-rule__in{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;padding:13cqw 11cqw}
+.ppuH-rule__num{display:block;font:600 5.2cqw/1 var(--mono)!important;letter-spacing:.16em!important;text-transform:uppercase;opacity:.85;color:#fff!important}
+.ppuH-rule blockquote{font:400 15cqw/1.08 var(--serif)!important;color:#fff!important;letter-spacing:-.005em;text-wrap:balance;margin:7cqw 0 0!important;padding:0!important;border:0!important;background:none!important;quotes:none}
+.ppuH-rule blockquote::before,.ppuH-rule blockquote::after{content:none!important}
+.ppuH-rule figcaption{margin-top:9cqw;font:600 4.8cqw/1.3 var(--mono)!important;letter-spacing:.16em!important;text-transform:uppercase;opacity:.85;color:#fff!important}
+.ppuH-port__nav{position:absolute;top:50%;transform:translateY(-50%);width:46px;height:46px;border-radius:50%;border:1px solid rgba(45,45,45,.35);background:rgba(255,255,255,.6);color:var(--ink);display:grid;place-items:center;cursor:pointer;opacity:.75;transition:opacity .2s,background .2s;-webkit-appearance:none;appearance:none;padding:0!important;z-index:2}
+.ppuH-port__nav:hover{opacity:1;background:rgba(255,255,255,.9)}
+.ppuH-port__nav:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+.ppuH-port__nav--prev{left:18px}.ppuH-port__nav--next{right:18px}
+.ppuH-port__nav svg{width:14px;height:14px;display:block}
+
+/* 7 · QUICK FAQ */
+.ppuH-faq{padding:104px var(--gut)}
+.ppuH-faq__in{max-width:1080px;margin:0 auto;display:grid;grid-template-columns:300px minmax(0,1fr);column-gap:clamp(32px,6vw,96px)}
+.ppuH-faq__side{display:flex;flex-direction:column;gap:22px;align-items:flex-start}
+.ppuH-faq__list{border-top:1px solid rgba(45,45,45,.14)}
+.ppuH-q{border-bottom:1px solid rgba(45,45,45,.14)}
+.ppuH-q summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:24px 0;font:400 24px/1.3 var(--serif)!important;letter-spacing:0!important;text-transform:none!important;color:var(--ink)!important}
+.ppuH-q summary::-webkit-details-marker{display:none}
+.ppuH-ico{flex:none;width:34px;height:34px;border-radius:50%;border:1px solid rgba(45,45,45,.22);position:relative;transition:background .2s,border-color .2s}
+.ppuH-ico::before,.ppuH-ico::after{content:"";position:absolute;left:50%;top:50%;width:12px;height:1.5px;background:var(--ink);transform:translate(-50%,-50%);transition:transform .25s}
+.ppuH-ico::after{transform:translate(-50%,-50%) rotate(90deg)}
+.ppuH-q[open] .ppuH-ico{background:var(--blush);border-color:var(--blush)}
+.ppuH-q[open] .ppuH-ico::after{transform:translate(-50%,-50%) rotate(0)}
+.ppuH-q__a{padding:0 64px 26px 0}
+.ppuH-q__a p{font:400 16px/30px var(--mono)!important;color:var(--text)!important;max-width:62ch}
+.ppuH-q__a a{color:var(--ink)!important;font-weight:600!important;text-decoration:underline!important;text-underline-offset:4px;font-family:inherit!important;font-size:inherit!important}
+
+/* 8 · CLOSING BAND — event B-roll (Vimeo 930488974) autoplaying behind the headline, as on the current homepage */
+.ppuH-close{--bh:600px;height:var(--bh);overflow:hidden;background:#111}
+.ppuH-close__media{position:absolute;inset:0;overflow:hidden;pointer-events:none}
+.ppuH-close__poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.ppuH-close__media iframe{position:absolute;top:50%;left:50%;width:max(100vw,calc(var(--bh) * 16 / 9));height:max(var(--bh),calc(100vw * 9 / 16));transform:translate(-50%,-50%) scale(1.12);border:0}
+.ppuH-close__tint{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(26,26,26,.58),rgba(26,26,26,.46) 45%,rgba(26,26,26,.68))}
+.ppuH-close__in{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:28px;padding:0 var(--gut);text-align:center}
+.ppuH-close__h{font:400 clamp(42px,5.6vw,84px)/1.05 var(--serif)!important;color:#fff!important;max-width:14ch;text-wrap:balance}
+
+@media (max-width:1000px){.ppuH-gigi__in{grid-template-columns:minmax(0,1fr);row-gap:36px}}
+@media (max-width:860px){
+.ppuH-exp{padding:64px var(--gut)}
+.ppuH-exp__in{grid-template-columns:minmax(0,1fr);row-gap:40px}
+.ppuH-exp__vid{width:min(300px,100%);justify-self:center;order:2}
+.ppuH-facts{grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.ppuH-fact b{font-size:26px!important}
+.ppuH-fact span{font-size:10px!important;letter-spacing:.1em!important}
+.ppuH-gigi{padding:0 var(--gut) 72px}
+.ppuH-port{padding:0}
+.ppuH-port__head{margin-bottom:32px;gap:20px}
+.ppuH-port__img,.ppuH-rule{height:300px}
+.ppuH-port__nav{width:38px;height:38px}.ppuH-port__nav--prev{left:10px}.ppuH-port__nav--next{right:10px}
+.ppuH-faq{padding:64px var(--gut)}
+.ppuH-faq__in{grid-template-columns:minmax(0,1fr);row-gap:28px}
+.ppuH-q summary{font-size:20px!important;padding:20px 0}
+.ppuH-q__a{padding-right:0}
+.ppuH-q__a p{font-size:15px!important;line-height:28px!important}
+.ppuH-close{--bh:520px}
+}
+@media (prefers-reduced-motion:reduce){.ppuH-port__nav{transition:none}}
+</style>
+<div class="ppuH">
+<!-- 4 · WHAT TO EXPECT -->
+<section class="ppuH-sec ppuH-exp" id="ppuH-expect">
+<div class="ppuH-exp__in">
+<div class="ppuH-exp__copy">
+<p class="ppuH-eyebrow">How it works</p>
+<h2 class="ppuH-exp__title">What to Expect</h2>
+<p class="ppuH-p">Personality Pop-Up™ is taking the pain out of portraits by offering a delightful photo experience for kids in a stress-free studio environment for parents. Say goodbye to fake smiles and forced poses!</p>
+<a class="ppuH-btn" href="https://www.personalitypopup.com/book/">👉 Find Your City</a>
+<div class="ppuH-facts">
+<div class="ppuH-fact"><b>18+</b><span>Years behind<br>the camera</span></div>
+<div class="ppuH-fact"><b>2013</b><span>Personality<br>Portraits began</span></div>
+<div class="ppuH-fact"><b data-ppu-review-count>418+</b><span>Five-star<br>Google reviews</span></div>
+</div>
+</div>
+<div class="ppuH-exp__vid"><iframe src="https://player.vimeo.com/video/1174234823?title=0&amp;byline=0&amp;portrait=0" title="What to Expect — Personality Pop-Up" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>
+</div>
+</section>
+
+<!-- 5 · GIGI HADID / CELEBRITY SUBSTITUTE -->
+<section class="ppuH-sec ppuH-gigi">
+<div class="ppuH-gigi__in">
+<div class="ppuH-gigi__copy">
+<h2 class="ppuH-h">School Picture Day. Reimagined.</h2>
+<p class="ppuH-gigi__sub">See how Gigi Hadid turns School Picture Day into a Personality Pop-Up™ on Celebrity Substitute.</p>
+</div>
+<div class="ppuH-gigi__vid"><iframe src="https://www.youtube.com/embed/2hkonPrhGZA?start=732&amp;autoplay=1&amp;mute=1&amp;rel=0&amp;playsinline=1" title="Gigi Hadid — School Picture Day on Celebrity Substitute" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>
+</div>
+</section>
+
+<!-- 6 · PORTFOLIO -->
+<section class="ppuH-sec ppuH-port" aria-label="Portfolio and Studio Rules">
+<div class="ppuH-port__head">
+<h2 class="ppuH-port__h">Less Perfection.<br>More <em class="ppuH-hl">Personality.</em></h2>
+<a class="ppuH-port__link" href="https://www.personalitypopup.com/portfolio/">See the portfolio →</a>
+</div>
+<div class="ppuH-port__strip" id="ppuH-strip">
+<div class="ppuH-port__track" id="ppuH-strip-track"><img decoding="async" width="1000" height="1499" class="ppuH-port__img" src="https://cdn.jsdelivr.net/gh/jonathanconnolly/session-crm@main/public/ppu/img/251108-ppu-chicago-480.webp" alt="Girl in a tan sweater resting her chin on her hand" loading="lazy" draggable="false"><img decoding="async" width="1000" height="1500" class="ppuH-port__img" src="https://cdn.jsdelivr.net/gh/jonathanconnolly/session-crm@main/public/ppu/img/personality-pop-up-cleveland-480.webp" alt="Toddler mid-laugh, black and white" loading="lazy" draggable="false"><figure class="ppuH-rule"><div class="ppuH-rule__in"><span class="ppuH-rule__num">No. 1</span><blockquote>No<br>perfect kids allowed.</blockquote><figcaption>Studio Rules</figcaption></div></figure><img decoding="async" width="1000" height="1499" class="ppuH-port__img" src="https://cdn.jsdelivr.net/gh/jonathanconnolly/session-crm@main/public/ppu/img/260315-ppu-london-2-480.webp" alt="Boy in a denim jacket with a sideways smile" loading="lazy" draggable="false"><img decoding="async" width="1000" height="1499" class="ppuH-port__img" src="https://cdn.jsdelivr.net/gh/jonathanconnolly/session-crm@main/public/ppu/img/260329-ppu-ft-worth-480.webp" alt="Girl laughing with her hands on her face, black and white" loading="lazy" draggable="false"><img decoding="async" width="1000" height="1499" class="ppuH-port__img" src="https://cdn.jsdelivr.net/gh/jonathanconnolly/session-crm@main/public/ppu/img/260411-ppu-phoenix-480.webp" alt="Girl in red crouching with her arms crossed" loading="lazy" draggable="false"><figure class="ppuH-rule"><div class="ppuH-rule__in"><span class="ppuH-rule__num">No. 2</span><blockquote>Don’t say cheese.</blockquote><figcaption>Studio Rules</figcaption></div></figure><img decoding="async" width="1000" height="1499" class="ppuH-port__img" src="https://cdn.jsdelivr.net/gh/jonathanconnolly/session-crm@main/public/ppu/img/251018-ppu-salt-lake-city-480.webp" alt="Boy in round glasses pressing a finger to his nose, black and white" loading="lazy" draggable="false"><img decoding="async" width="1000" height="1499" class="ppuH-port__img" src="https://cdn.jsdelivr.net/gh/jonathanconnolly/session-crm@main/public/ppu/img/260328-ppu-dallas-480.webp" alt="Boy in a white polo laughing" loading="lazy" draggable="false"><img decoding="async" width="1000" height="1500" class="ppuH-port__img" src="https://cdn.jsdelivr.net/gh/jonathanconnolly/session-crm@main/public/ppu/img/personality-pop-up-chicago-2-480.webp" alt="Girl with curly hair laughing, black and white" loading="lazy" draggable="false"><figure class="ppuH-rule"><div class="ppuH-rule__in"><span class="ppuH-rule__num">No. 3</span><blockquote>No forced poses.</blockquote><figcaption>Studio Rules</figcaption></div></figure><img decoding="async" width="1000" height="1499" class="ppuH-port__img" src="https://cdn.jsdelivr.net/gh/jonathanconnolly/session-crm@main/public/ppu/img/260307-ppu-charleston-480.webp" alt="Blonde girl crouching and smiling" loading="lazy" draggable="false"><img decoding="async" width="1000" height="1499" class="ppuH-port__img" src="https://cdn.jsdelivr.net/gh/jonathanconnolly/session-crm@main/public/ppu/img/260321-ppu-charlotte-480.webp" alt="Toddler in a cap that says DUDE, black and white" loading="lazy" draggable="false"><img decoding="async" width="1000" height="1499" class="ppuH-port__img" src="https://cdn.jsdelivr.net/gh/jonathanconnolly/session-crm@main/public/ppu/img/251108-ppu-chicago-2-480.webp" alt="Boy in a beanie with his hands behind his head" loading="lazy" draggable="false"><figure class="ppuH-rule"><div class="ppuH-rule__in"><span class="ppuH-rule__num">No. 4</span><blockquote>Let them be them.</blockquote><figcaption>Studio Rules</figcaption></div></figure><img decoding="async" width="1000" height="1499" class="ppuH-port__img" src="https://cdn.jsdelivr.net/gh/jonathanconnolly/session-crm@main/public/ppu/img/260131-ppu-la-jolla-480.webp" alt="Girl with her hair flying, black and white" loading="lazy" draggable="false"><img decoding="async" width="1000" height="1499" class="ppuH-port__img" src="https://cdn.jsdelivr.net/gh/jonathanconnolly/session-crm@main/public/ppu/img/251108-ppu-chicago-480.webp" alt="" loading="lazy" draggable="false" aria-hidden="true"><img decoding="async" width="1000" height="1500" class="ppuH-port__img" src="https://cdn.jsdelivr.net/gh/jonathanconnolly/session-crm@main/public/ppu/img/personality-pop-up-cleveland-480.webp" alt="" loading="lazy" draggable="false" aria-hidden="true"><figure class="ppuH-rule" aria-hidden="true"><div class="ppuH-rule__in"><span class="ppuH-rule__num">No. 1</span><blockquote>No<br>perfect kids allowed.</blockquote><figcaption>Studio Rules</figcaption></div></figure><img decoding="async" width="1000" height="1499" class="ppuH-port__img" src="https://cdn.jsdelivr.net/gh/jonathanconnolly/session-crm@main/public/ppu/img/260315-ppu-london-2-480.webp" alt="" loading="lazy" draggable="false" aria-hidden="true"><img decoding="async" width="1000" height="1499" class="ppuH-port__img" src="https://cdn.jsdelivr.net/gh/jonathanconnolly/session-crm@main/public/ppu/img/260329-ppu-ft-worth-480.webp" alt="" loading="lazy" draggable="false" aria-hidden="true"><img decoding="async" width="1000" height="1499" class="ppuH-port__img" src="https://cdn.jsdelivr.net/gh/jonathanconnolly/session-crm@main/public/ppu/img/260411-ppu-phoenix-480.webp" alt="" loading="lazy" draggable="false" aria-hidden="true"><figure class="ppuH-rule" aria-hidden="true"><div class="ppuH-rule__in"><span class="ppuH-rule__num">No. 2</span><blockquote>Don’t say cheese.</blockquote><figcaption>Studio Rules</figcaption></div></figure><img decoding="async" width="1000" height="1499" class="ppuH-port__img" src="https://cdn.jsdelivr.net/gh/jonathanconnolly/session-crm@main/public/ppu/img/251018-ppu-salt-lake-city-480.webp" alt="" loading="lazy" draggable="false" aria-hidden="true"><img decoding="async" width="1000" height="1499" class="ppuH-port__img" src="https://cdn.jsdelivr.net/gh/jonathanconnolly/session-crm@main/public/ppu/img/260328-ppu-dallas-480.webp" alt="" loading="lazy" draggable="false" aria-hidden="true"><img decoding="async" width="1000" height="1500" class="ppuH-port__img" src="https://cdn.jsdelivr.net/gh/jonathanconnolly/session-crm@main/public/ppu/img/personality-pop-up-chicago-2-480.webp" alt="" loading="lazy" draggable="false" aria-hidden="true"><figure class="ppuH-rule" aria-hidden="true"><div class="ppuH-rule__in"><span class="ppuH-rule__num">No. 3</span><blockquote>No forced poses.</blockquote><figcaption>Studio Rules</figcaption></div></figure><img decoding="async" width="1000" height="1499" class="ppuH-port__img" src="https://cdn.jsdelivr.net/gh/jonathanconnolly/session-crm@main/public/ppu/img/260307-ppu-charleston-480.webp" alt="" loading="lazy" draggable="false" aria-hidden="true"><img decoding="async" width="1000" height="1499" class="ppuH-port__img" src="https://cdn.jsdelivr.net/gh/jonathanconnolly/session-crm@main/public/ppu/img/260321-ppu-charlotte-480.webp" alt="" loading="lazy" draggable="false" aria-hidden="true"><img decoding="async" width="1000" height="1499" class="ppuH-port__img" src="https://cdn.jsdelivr.net/gh/jonathanconnolly/session-crm@main/public/ppu/img/251108-ppu-chicago-2-480.webp" alt="" loading="lazy" draggable="false" aria-hidden="true"><figure class="ppuH-rule" aria-hidden="true"><div class="ppuH-rule__in"><span class="ppuH-rule__num">No. 4</span><blockquote>Let them be them.</blockquote><figcaption>Studio Rules</figcaption></div></figure><img decoding="async" width="1000" height="1499" class="ppuH-port__img" src="https://cdn.jsdelivr.net/gh/jonathanconnolly/session-crm@main/public/ppu/img/260131-ppu-la-jolla-480.webp" alt="" loading="lazy" draggable="false" aria-hidden="true"></div>
+<button class="ppuH-port__nav ppuH-port__nav--prev" type="button" aria-label="Previous photos"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 4 L7 12 L15 20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+<button class="ppuH-port__nav ppuH-port__nav--next" type="button" aria-label="Next photos"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 4 L17 12 L9 20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+</div>
+</section>
+
+<!-- 7 · QUICK FAQ -->
+<section class="ppuH-sec ppuH-faq" aria-label="Common questions">
+<div class="ppuH-faq__in">
+<div class="ppuH-faq__side">
+<p class="ppuH-eyebrow">Still deciding?</p>
+<h2 class="ppuH-h">Before you book.</h2>
+<a class="ppuH-link" href="https://www.personalitypopup.com/faq/">All FAQs →</a>
+</div>
+<div class="ppuH-faq__list">
+<details class="ppuH-q"><summary>What is the price?<i class="ppuH-ico"></i></summary><div class="ppuH-q__a"><p>Since we are a travel based studio not all events are priced the same. Most families spend between $500 and $1,000 on their session, with prints available on top of that. For details on what's included, see the offer on your <a href="https://www.personalitypopup.com/book/">city's booking page</a>.</p></div></details>
+<details class="ppuH-q"><summary>How many kids are allowed?<i class="ppuH-ico"></i></summary><div class="ppuH-q__a"><p>Each 15 minute session is ideal for 1-2 children (ages 6mo–18yrs), but you know them best and what they will need!</p></div></details>
+<details class="ppuH-q"><summary>What if my child won’t cooperate?<i class="ppuH-ico"></i></summary><div class="ppuH-q__a"><p>We don’t bribe kids to smile or act silly — and we definitely don’t say “cheese.” Our approach is calm, honest, and all about letting your child just be. The best thing you can do? Sit back, relax, and trust the process. This is about personality, not perfection!</p></div></details>
+<details class="ppuH-q"><summary>When will you be in my city?<i class="ppuH-ico"></i></summary><div class="ppuH-q__a"><p>To be the first to know when we'll be in your city, fill out the <a href="#ppu-fof">Find Out First</a> form below or join the waitlist on any city booking page.</p></div></details>
+</div>
+</div>
+</section>
+
+<!-- 8 · CLOSING BAND -->
+<section class="ppuH-sec ppuH-close" aria-label="Book your session">
+<div class="ppuH-close__media" aria-hidden="true">
+<img class="ppuH-close__poster" src="https://i.vimeocdn.com/video/1827227214-fd9dca692218d62fbfa38adcef0da68f3c94ff9a4de2fd839de8e4465d183006-d_1600" alt="" loading="lazy">
+<iframe src="https://player.vimeo.com/video/930488974?background=1&amp;autoplay=1&amp;muted=1&amp;loop=1&amp;autopause=0&amp;dnt=1" title="" tabindex="-1" allow="autoplay; encrypted-media" loading="lazy"></iframe>
+<div class="ppuH-close__tint"></div>
+</div>
+<div class="ppuH-close__in">
+<h2 class="ppuH-close__h">They won’t be little forever.</h2>
+<a class="ppuH-btn ppuH-btn--white" href="https://www.personalitypopup.com/book/">📍 Find Your City</a>
+</div>
+</section>
+</div>
+<script>
+(function(){
+ var strip=document.getElementById('ppuH-strip'), track=document.getElementById('ppuH-strip-track'); if(!strip||!track) return;
+ var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+ var x=0, speed=reduce?0:42, last=null, hold=false, setW=0, drag={on:false,x0:0,xs:0,moved:0}, holdTimer=null;
+ function measure(){ setW=track.scrollWidth/2; }
+ function render(){ if(setW){ x=((x%setW)+setW)%setW; } track.style.transform='translate3d('+(-x)+'px,0,0)'; }
+ function tick(t){ if(last!==null&&!hold&&!drag.on){ x+=speed*Math.min(50,t-last)/1000; } last=t; render(); requestAnimationFrame(tick); }
+ function pause(ms){ hold=true; clearTimeout(holdTimer); holdTimer=setTimeout(function(){hold=false;},ms); }
+ function step(dir){
+  var img=track.querySelector('img'); var w=img?img.getBoundingClientRect().width:320;
+  var from=x, to=x+dir*w*2, t0=performance.now(), D=560; pause(2200);
+  (function anim(now){ var p=Math.min(1,(now-t0)/D); var e=1-Math.pow(1-p,3); x=from+(to-from)*e; render(); if(p<1) requestAnimationFrame(anim); })(t0);
+ }
+ strip.querySelector('.ppuH-port__nav--prev').addEventListener('click',function(){step(-1);});
+ strip.querySelector('.ppuH-port__nav--next').addEventListener('click',function(){step(1);});
+ strip.addEventListener('pointerdown',function(e){ if(e.target.closest('.ppuH-port__nav')) return; drag.on=true; drag.x0=e.clientX; drag.xs=x; drag.moved=0; strip.classList.add('is-drag'); try{strip.setPointerCapture(e.pointerId);}catch(err){} });
+ strip.addEventListener('pointermove',function(e){ if(!drag.on) return; var dx=e.clientX-drag.x0; drag.moved=Math.max(drag.moved,Math.abs(dx)); x=drag.xs-dx; render(); });
+ function endDrag(){ if(!drag.on) return; drag.on=false; strip.classList.remove('is-drag'); pause(1500); }
+ strip.addEventListener('pointerup',endDrag); strip.addEventListener('pointercancel',endDrag); strip.addEventListener('lostpointercapture',endDrag);
+ strip.addEventListener('mouseenter',function(){ hold=true; clearTimeout(holdTimer); }); strip.addEventListener('mouseleave',function(){ hold=false; });
+ window.addEventListener('resize',measure);
+ [].forEach.call(track.querySelectorAll('img'),function(i){ i.addEventListener('load',measure); });
+ measure(); requestAnimationFrame(tick);
+ if(window.ppuHl) window.ppuHl(document);
+})();
+</script>
