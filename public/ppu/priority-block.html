@@ -102,9 +102,9 @@ border-radius:14px;padding:22px 20px!important;cursor:pointer;transition:border-
 .ppuPA-offer{padding:clamp(60px,7.5vw,96px) 0}
 .ppuPA-offer__in{display:grid;grid-template-columns:minmax(0,.86fr) minmax(0,1.14fr);gap:clamp(34px,5vw,72px);align-items:start}
 .ppuPA-offer__left{display:flex;flex-direction:column;gap:18px;min-width:0;position:sticky;top:30px}
-.ppuPA-price{display:flex;align-items:baseline;gap:16px;flex-wrap:wrap}
+.ppuPA-price{display:flex;flex-direction:column;align-items:flex-start;gap:6px}
 .ppuPA-price b{font:400 clamp(86px,12vw,156px)/.82 var(--serif)!important;color:var(--ink)!important;letter-spacing:-.03em!important}
-.ppuPA-price i{font-style:normal;font:600 12px/1.5 var(--mono)!important;letter-spacing:.18em!important;text-transform:uppercase;color:var(--ink)!important}
+.ppuPA-price i{font-style:normal;font:500 12px/1 var(--mono)!important;letter-spacing:.22em!important;text-transform:uppercase;color:var(--soft)!important;white-space:nowrap}
 .ppuPA-offer__h{font:400 clamp(26px,3vw,38px)/1.12 var(--serif)!important;color:var(--ink)!important;text-wrap:balance;max-width:17ch;text-transform:none!important}
 .ppuPA-facts{display:flex;flex-direction:column;margin-top:2px}
 .ppuPA-fact{display:flex;align-items:center;gap:13px;padding:13px 0!important;border-top:1px solid rgba(45,45,45,.18);
@@ -127,6 +127,13 @@ background-repeat:no-repeat;background-position:right 15px center;background-siz
 .ppuPA-fi input::placeholder{color:rgba(45,45,45,.4)}
 .ppuPA-fi input:focus,.ppuPA-fi select:focus{border-color:var(--ink);background:var(--paper)}
 .ppuPA-fi input.bad,.ppuPA-fi select.bad{border-color:#C0564B;background:#FFF6F4}
+.ppuPA-ac{position:relative}
+.ppuPA-acList{position:absolute;top:calc(100% + 5px);left:0;right:0;z-index:12;background:var(--paper);
+border:1px solid rgba(45,45,45,.14);border-radius:12px;padding:6px;max-height:232px;overflow-y:auto;
+box-shadow:0 14px 40px rgba(45,45,45,.18);display:none}
+.ppuPA-acList.on{display:block}
+.ppuPA-acItem{font:400 13.5px/1.4 var(--mono)!important;padding:10px 12px;color:var(--ink)!important;border-radius:8px;cursor:pointer}
+.ppuPA-acItem:hover,.ppuPA-acItem.sel{background:var(--cream)}
 .ppuPA-seasons{display:flex;flex-wrap:wrap;gap:7px}
 .ppuPA-season{flex:1 1 auto;position:relative}
 .ppuPA-season input[type="radio"]{position:absolute!important;opacity:0!important;width:1px!important;height:1px!important;min-height:0!important;min-width:0!important;margin:0!important;padding:0!important;border:0!important;background:none!important;box-shadow:none!important;clip-path:inset(50%);pointer-events:none}
@@ -158,7 +165,7 @@ padding:clamp(34px,5vw,56px) clamp(20px,4vw,40px);box-shadow:0 14px 48px rgba(45
 /* 6 · TEAM (homepage section) */
 .ppuPA-team{padding:clamp(60px,7.5vw,92px) 0 0}
 .ppuPA-team__head{max-width:960px;margin:0 auto 48px;padding:0 var(--gut);display:flex;flex-direction:column;align-items:center;gap:20px;text-align:center}
-.ppuPA-team__statement{font:400 clamp(30px,4.1vw,54px)/1.12 var(--serif)!important;color:var(--ink)!important;letter-spacing:-.01em!important;text-wrap:balance;text-transform:none!important}
+.ppuPA-team__statement{font:400 clamp(34px,4.4vw,60px)/1.12 var(--serif)!important;color:var(--ink)!important;letter-spacing:-.01em!important;text-wrap:balance;text-transform:none!important}
 .ppuPA-team__statement em{font-style:italic;white-space:nowrap}
 .ppuPA-hl{position:relative;z-index:0;padding:0 .06em;white-space:nowrap}
 .ppuPA-hl::before{content:"";position:absolute;left:0;right:0;top:.14em;bottom:.04em;background:var(--blush);border-radius:4px;z-index:-1;
@@ -185,9 +192,9 @@ font:400 15px/25px var(--mono)!important;letter-spacing:-.15px!important;color:v
 .ppuPA-inc__price{display:flex;align-items:baseline;gap:13px;padding-top:20px!important}
 .ppuPA-inc__price b{font:400 clamp(32px,3.4vw,44px)/1 var(--serif)!important;color:var(--ink)!important;font-weight:400}
 .ppuPA-inc__price i{font-style:normal;font:500 12px/1.5 var(--mono)!important;letter-spacing:.14em!important;text-transform:uppercase;color:var(--soft)!important}
-.ppuPA-inc__art{display:grid;grid-template-columns:1fr 1fr;gap:12px;min-width:0}
+.ppuPA-inc__art{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;min-width:0;align-items:start}
 .ppuPA-inc__art img{width:100%;height:auto;aspect-ratio:2/3;object-fit:cover;background:#eceae6}
-.ppuPA-inc__art figure:nth-child(2){margin-top:38px!important}
+.ppuPA-inc__art figure:nth-child(3n+2){margin-top:30px!important}
 
 /* 8 · FAQ */
 .ppuPA-faq{padding:clamp(60px,7.5vw,96px) 0}
@@ -240,8 +247,8 @@ padding:11px 16px calc(11px + env(safe-area-inset-bottom,0px))}
 .ppuPA-offer__in,.ppuPA-inc__in,.ppuPA-faq__in,.ppuPA-exp__in{grid-template-columns:1fr}
 .ppuPA-offer__left{position:static}
 .ppuPA-exp__vid{width:min(300px,100%);justify-self:center;order:2}
-.ppuPA-inc__art{order:-1;max-width:460px}
-.ppuPA-inc__art figure:nth-child(2){margin-top:26px!important}
+.ppuPA-inc__art{order:-1;max-width:560px}
+.ppuPA-inc__art figure:nth-child(3n+2){margin-top:22px!important}
 .ppuPA-board__grid{grid-template-columns:repeat(2,1fr)}
 }
 @media (max-width:760px){
@@ -310,7 +317,7 @@ padding:11px 16px calc(11px + env(safe-area-inset-bottom,0px))}
 
 <div class="ppuPA-offer__left">
 <p class="ppuPA-eyebrow">Priority access</p>
-<p class="ppuPA-price"><b>$50</b><i>Holds your place<br>in line</i></p>
+<p class="ppuPA-price"><b>$50</b><i>Holds your place in line</i></p>
 <h2 class="ppuPA-offer__h" id="ppuPAofferH">Book before we announce your city.</h2>
 <ul class="ppuPA-facts">
 <li class="ppuPA-fact"><span aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"></path></svg></span>Applies to your session</li>
@@ -321,20 +328,21 @@ padding:11px 16px calc(11px + env(safe-area-inset-bottom,0px))}
 
 <div>
 <form class="ppuPA-card" id="ppuPAform" novalidate="">
-<div class="ppuPA-fgrid ppuPA-fgrid--1">
-<div class="ppuPA-fi"><label for="ppuPAname">Name</label><input id="ppuPAname" type="text" autocomplete="name" placeholder="Jane Doe"></div>
+<div class="ppuPA-fgrid">
+<div class="ppuPA-fi"><label for="ppuPAfirst">First name</label><input id="ppuPAfirst" type="text" autocomplete="given-name" placeholder="Jane"></div>
+<div class="ppuPA-fi"><label for="ppuPAlast">Last name</label><input id="ppuPAlast" type="text" autocomplete="family-name" placeholder="Doe"></div>
 </div>
 <div class="ppuPA-fgrid">
 <div class="ppuPA-fi"><label for="ppuPAemail">Email</label><input id="ppuPAemail" type="email" autocomplete="email" placeholder="jane@email.com"></div>
 <div class="ppuPA-fi"><label for="ppuPAphone">Phone</label><input id="ppuPAphone" type="tel" autocomplete="tel" placeholder="555-123-4567"></div>
 </div>
 <div class="ppuPA-fgrid ppuPA-fgrid--3">
-<div class="ppuPA-fi"><label for="ppuPAcity">City</label><input id="ppuPAcity" type="text" autocomplete="address-level2" placeholder="Charlotte"></div>
+<div class="ppuPA-fi ppuPA-ac"><label for="ppuPAcity">City</label><input id="ppuPAcity" type="text" autocomplete="off" placeholder="Start typing your city"><div class="ppuPA-acList" id="ppuPAcityList"></div></div>
 <div class="ppuPA-fi"><label for="ppuPAstate">State</label><input id="ppuPAstate" type="text" autocomplete="address-level1" placeholder="NC" maxlength="2"></div>
 <div class="ppuPA-fi"><label for="ppuPAzip">ZIP</label><input id="ppuPAzip" type="text" inputmode="numeric" autocomplete="postal-code" placeholder="28202" maxlength="5"></div>
 </div>
 <div class="ppuPA-fgrid ppuPA-fgrid--1">
-<div class="ppuPA-fi"><label for="ppuPAkids">Children</label><select id="ppuPAkids"><option value="1">1 child</option><option value="2">2 children</option><option value="3">3 children</option><option value="4+">4 or more</option></select></div>
+<div class="ppuPA-fi"><label for="ppuPAkids">Sessions</label><select id="ppuPAkids"><option value="1">1 session</option><option value="2">2 sessions</option><option value="3">3 sessions</option><option value="4+">4 or more</option></select></div>
 </div>
 <fieldset class="ppuPA-fi" style="border:0">
 <legend>Preferred season</legend>
@@ -384,7 +392,7 @@ padding:11px 16px calc(11px + env(safe-area-inset-bottom,0px))}
 <div class="ppuPA-wrap ppuPA-inc__in">
 <div class="ppuPA-inc__copy">
 <p class="ppuPA-eyebrow">The session</p>
-<h2 class="ppuPA-h" id="ppuPAincH">Fifteen minutes. Every face they make.</h2>
+<h2 class="ppuPA-h" id="ppuPAincH">What you get.</h2>
 <ul class="ppuPA-inc__list">
 <li class="ppuPA-inc__li"><span>&bull;</span>15 minute Personality Portrait session</li>
 <li class="ppuPA-inc__li"><span>&bull;</span>Certified Personality Method&trade; photographer</li>
@@ -392,12 +400,8 @@ padding:11px 16px calc(11px + env(safe-area-inset-bottom,0px))}
 <li class="ppuPA-inc__li"><span>&bull;</span>Every image in color and black &amp; white</li>
 <li class="ppuPA-inc__li"><span>&bull;</span>Private online gallery</li>
 </ul>
-<p class="ppuPA-inc__price"><b>$595</b><i>Regular session price</i></p>
 </div>
-<div class="ppuPA-inc__art">
-<figure><img src="https://cdn.jsdelivr.net/gh/jonathanconnolly/session-crm@main/public/ppu/img/260314-ppu-orlando-960.webp" alt="A young boy mid expression at a Personality Pop-Up session" loading="lazy" decoding="async" width="1000" height="1499"></figure>
-<figure><img src="https://cdn.jsdelivr.net/gh/jonathanconnolly/session-crm@main/public/ppu/img/personality-pop-up-los-altos-1032-960.webp" alt="A child laughing during a Personality Pop-Up portrait session" loading="lazy" decoding="async" width="1000" height="1499"></figure>
-</div>
+<div class="ppuPA-inc__art" id="ppuPAincArt"></div>
 </div>
 </section>
 
@@ -492,6 +496,12 @@ var BW = ["260613-ppu-alpharetta","260124-ppu-los-altos","260124-ppu-los-altos-2
 "personality-pop-up-cleveland","260328-ppu-long-beach","251018-ppu-salt-lake-city","personality-pop-up-chicago-2",
 "260307-ppu-charleston","260321-ppu-charlotte","260221-ppu-brooklyn","260131-ppu-la-jolla",
 "260228-ppu-seattle","260315-ppu-garden-city","260627-ppu-miami-1214","260124-ppu-los-altos-1272"];
+var INC = [["260314-ppu-orlando","A boy mid expression at a Personality Pop-Up session"],
+["personality-pop-up-los-altos-1032","A child laughing during a session"],
+["personality-pop-up-knoxville","A girl laughing during a session"],
+["260321-ppu-charlotte","A toddler in a cap that says DUDE"],
+["260328-ppu-dallas","A boy in a white polo laughing"],
+["personality-pop-up-detroit-0882","A child pulling a face for the camera"]];
 var TEAM = ["personality-pop-up-team-0032","personality-pop-up-team-0014","personality-pop-up-team-0039",
 "personality-pop-up-team-0026","personality-pop-up-team-0021","photographer-11","personality-pop-up-team-0002",
 "personality-pop-up-team-0019","personality-pop-up-team-0016","personality-pop-up-team-0030","personality-pop-up-team-0008"];
@@ -514,6 +524,13 @@ if (grid) {
 }
 
 /* team rail, two identical sets so the loop is seamless */
+var incArt = byId("ppuPAincArt");
+if (incArt) {
+  incArt.innerHTML = INC.map(function(x){
+    return '<figure><img src="' + src(x[0]) + '" alt="' + x[1] + '" width="1000" height="1499" loading="lazy" decoding="async"></figure>';
+  }).join("");
+}
+
 var rail = byId("ppuPArail");
 if (rail) {
   var set = TEAM.map(function(b){
@@ -593,6 +610,73 @@ if (phone) phone.addEventListener("input", function(){
 });
 var st = byId("ppuPAstate");
 if (st) st.addEventListener("input", function(){ st.value = st.value.replace(/[^a-zA-Z]/g, "").toUpperCase().slice(0,2); });
+
+/* City autocomplete off the shared cities.js list. Free text is still allowed
+   for a city we have not visited yet. Picking a suggestion fills State too. */
+(function(){
+  var input = byId("ppuPAcity"), list = byId("ppuPAcityList");
+  if (!input || !list) return;
+  var idx = -1, items = [];
+
+  function close(){ list.classList.remove("on"); list.innerHTML = ""; idx = -1; items = []; }
+
+  function pick(name){
+    var parts = String(name).split(",");
+    input.value = parts[0].trim();
+    if (st && parts[1]) st.value = parts[1].trim().toUpperCase().slice(0,2);
+    input.classList.remove("bad");
+    if (st) st.classList.remove("bad");
+    close();
+  }
+
+  function lookup(q){
+    var c = window.CITIES;
+    if (!c || !c.length) return [];
+    q = q.toLowerCase();
+    var starts = [], has = [];
+    c.forEach(function(x){
+      var n = String(x.name || "");
+      var l = n.toLowerCase();
+      if (l.indexOf(q) === 0) { starts.push(n); return; }
+      if (l.indexOf(q) > 0) { has.push(n); return; }
+      (x.aliases || []).forEach(function(a){
+        if (String(a).toLowerCase().indexOf(q) === 0 && has.indexOf(n) === -1) has.push(n);
+      });
+    });
+    return starts.concat(has).slice(0, 7);
+  }
+
+  function render(q){
+    items = lookup(q);
+    if (!items.length) { close(); return; }
+    list.innerHTML = items.map(function(n, i){
+      return '<div class="ppuPA-acItem" data-i="' + i + '">' + n + '</div>';
+    }).join("");
+    list.classList.add("on");
+    idx = -1;
+    Array.prototype.forEach.call(list.children, function(el){
+      el.addEventListener("mousedown", function(e){ e.preventDefault(); pick(items[+el.getAttribute("data-i")]); });
+    });
+  }
+
+  function highlight(){
+    Array.prototype.forEach.call(list.children, function(el, i){ el.classList.toggle("sel", i === idx); });
+  }
+
+  input.addEventListener("input", function(){
+    var q = input.value.trim();
+    if (q.length < 2) { close(); return; }
+    render(q);
+  });
+  input.addEventListener("keydown", function(e){
+    if (!list.classList.contains("on")) return;
+    if (e.key === "ArrowDown") { e.preventDefault(); idx = Math.min(idx + 1, items.length - 1); highlight(); }
+    else if (e.key === "ArrowUp") { e.preventDefault(); idx = Math.max(idx - 1, 0); highlight(); }
+    else if (e.key === "Enter") { if (idx > -1) { e.preventDefault(); pick(items[idx]); } }
+    else if (e.key === "Escape") { close(); }
+  });
+  input.addEventListener("blur", function(){ setTimeout(close, 130); });
+})();
 var zip = byId("ppuPAzip");
 if (zip) zip.addEventListener("input", function(){ zip.value = zip.value.replace(/\D/g, "").slice(0,5); });
 
@@ -623,12 +707,14 @@ function mark(id, bad){ var e = byId(id); if (e) e.classList.toggle("bad", !!bad
 
 if (form) form.addEventListener("submit", function(e){
   e.preventDefault();
-  var name = val("ppuPAname"), email = val("ppuPAemail"), ph = val("ppuPAphone").replace(/\D/g, "");
+  var first = val("ppuPAfirst"), last = val("ppuPAlast");
+  var email = val("ppuPAemail"), ph = val("ppuPAphone").replace(/\D/g, "");
   var city = val("ppuPAcity"), state = val("ppuPAstate"), z = val("ppuPAzip");
 
-  ["ppuPAname","ppuPAemail","ppuPAphone","ppuPAcity","ppuPAstate","ppuPAzip"].forEach(function(id){ mark(id, false); });
+  ["ppuPAfirst","ppuPAlast","ppuPAemail","ppuPAphone","ppuPAcity","ppuPAstate","ppuPAzip"].forEach(function(id){ mark(id, false); });
   var miss = [];
-  if (!name) { mark("ppuPAname", true); miss.push("ppuPAname"); }
+  if (!first) { mark("ppuPAfirst", true); miss.push("ppuPAfirst"); }
+  if (!last) { mark("ppuPAlast", true); miss.push("ppuPAlast"); }
   if (!email || email.indexOf("@") < 1 || email.indexOf(".") < 0) { mark("ppuPAemail", true); miss.push("ppuPAemail"); }
   if (ph.length < 10) { mark("ppuPAphone", true); miss.push("ppuPAphone"); }
   if (!city) { mark("ppuPAcity", true); miss.push("ppuPAcity"); }
@@ -641,9 +727,6 @@ if (form) form.addEventListener("submit", function(e){
     return;
   }
 
-  var parts = name.split(/\s+/);
-  var first = parts.shift();
-  var last = parts.join(" ");
   var seasonEl = document.querySelector('input[name="ppuPAseason"]:checked');
   var season = seasonEl ? seasonEl.value : "flexible";
   var kids = val("ppuPAkids") || "1";
@@ -660,7 +743,7 @@ if (form) form.addEventListener("submit", function(e){
     first_name: first, last_name: last, email: email, phone: ph,
     city: city, state: state, postal_code: z,
     requested_cities: city + ", " + state,
-    children_count: kids, preferred_season: season,
+    session_count: kids, children_count: kids, preferred_season: season,
     offer: "priority_access_50", source_widget: "priority_access",
     phone_tag: pTag, tags: tags.join(", "), page: location.href
   };
