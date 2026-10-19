@@ -318,8 +318,8 @@ padding:11px 16px calc(11px + env(safe-area-inset-bottom,0px))}
 
 <div class="ppuMB-offer__left">
 <p class="ppuMB-eyebrow">Membership</p>
-<p class="ppuMB-price"><b id="ppuMBamt">$300</b><i id="ppuMBper">A year &middot; one session held</i></p>
-<p class="ppuMB-sub2" id="ppuMBsub2">Then $295 a session, charged 14 days before you shoot. $595 a session in total, locked for as long as you stay.</p>
+<p class="ppuMB-price"><b id="ppuMBamt">$25</b><i id="ppuMBper">A month &middot; billed $300 a year</i></p>
+<p class="ppuMB-sub2" id="ppuMBsub2">One session held for you every year. Then $295 a session, charged 14 days before you shoot &mdash; $595 a session in total, locked for as long as you stay.</p>
 <h2 class="ppuMB-offer__h" id="ppuMBofferH">Stop hoping the dates work.</h2>
 <ul class="ppuMB-facts">
 <li class="ppuMB-fact"><span aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"></path></svg></span>Your spot held every year</li>
@@ -416,7 +416,7 @@ padding:11px 16px calc(11px + env(safe-area-inset-bottom,0px))}
 <a class="ppuMB-faq__ask" href="mailto:hello@personalitypopup.com">Ask us anything &rarr;</a>
 </div>
 <div>
-<details open=""><summary>What am I paying for today?</summary><p class="ppuMB-faq__a">Your spot. $300 a year holds one session for you in the season you choose, before any date is public. It comes straight off the session price.</p></details>
+<details open=""><summary>What am I paying for today?</summary><p class="ppuMB-faq__a">Your spot. It works out at $25 a month and is billed once a year at $300, which holds one session for you in the season you choose, before any date is public. It comes straight off the session price.</p></details>
 <details><summary>When do I pay the rest?</summary><p class="ppuMB-faq__a">14 days before you shoot. The remaining $295 is charged then, so a session you booked eight months ago is not paid for until it is nearly here.</p></details>
 <details><summary>What does a session cost in total?</summary><p class="ppuMB-faq__a">$595, wherever we see you. Sessions normally run $495 to $749 depending on the city, and those prices rise. Yours is locked while you stay a member.</p></details>
 <details><summary>Can I have more than one session a year?</summary><p class="ppuMB-faq__a">Yes. Choose 1, 2 or 4 a year and the membership is $300 for each, so 2 a year is $600 and 4 a year is $1,200. Each one is held in your season.</p></details>
@@ -438,7 +438,7 @@ padding:11px 16px calc(11px + env(safe-area-inset-bottom,0px))}
 </div>
 <div class="ppuMB-close__in">
 <h2 class="ppuMB-close__h" id="ppuMBcloseH">They will not be little forever.</h2>
-<p class="ppuMB-close__meta">$300 a year &bull; Balance 14 days before &bull; Cancel any time</p>
+<p class="ppuMB-close__meta">$25 a month, billed yearly &bull; Balance 14 days before &bull; Cancel any time</p>
 <a class="ppuMB-btn ppuMB-btn--white" href="#ppuMB-reserve">Start Your Membership</a>
 </div>
 </section>
@@ -715,9 +715,11 @@ function money(v){ return "$" + v.toLocaleString("en-US"); }
 function renderPrice(){
   var sel = byId("ppuMBkids"), nSess = parseInt(sel && sel.value, 10) || 1;
   var amt = byId("ppuMBamt"), per = byId("ppuMBper"), sub = byId("ppuMBsub2");
-  if (amt) amt.textContent = money(DEPOSIT * nSess);
-  if (per) per.innerHTML = "A year &middot; " + (nSess === 1 ? "one session held" : nSess + " sessions held");
-  if (sub) sub.textContent = "Then " + money(BALANCE) + " a session, charged 14 days before you shoot. "
+  var yearly = DEPOSIT * nSess, monthly = Math.round(yearly / 12);
+  if (amt) amt.textContent = money(monthly);
+  if (per) per.innerHTML = "A month &middot; billed " + money(yearly) + " a year";
+  if (sub) sub.textContent = (nSess === 1 ? "One session held for you every year. " : nSess + " sessions held for you every year. ")
+    + "Then " + money(BALANCE) + " a session, charged 14 days before you shoot \u2014 "
     + money(SESSION) + " a session in total, locked for as long as you stay.";
 }
 (function(){ var sel = byId("ppuMBkids"); if (sel) sel.addEventListener("change", renderPrice); renderPrice(); })();
