@@ -1,0 +1,43 @@
+<!-- PPU live Google review count — site-wide (every page, including new ones).
+     Source: jonathanconnolly/session-crm public/google-reviews.json (kept current by the daily task).
+     1) fills every [data-ppu-review-count] element
+     2) finds any hard-coded "NNN+ Google reviews" / "NNN+ Five-star Google reviews" text and swaps in the live number -->
+<script>
+(function(){
+  var SRC='https://raw.githubusercontent.com/jonathanconnolly/session-crm/main/public/google-reviews.json';
+  var PILL=/(\d{3,4})(\s*\+?\s*)(?:five[- ]star\s+|5[- ]star\s+)?google\s+reviews?/i;
+  var count=null;
+  function apply(root){
+    if(!count) return;
+    var c=String(count);
+    (root.querySelectorAll ? root : document).querySelectorAll('[data-ppu-review-count]').forEach(function(el){
+      if(el.textContent.trim()!==c) el.textContent=c;
+    });
+    var w=document.createTreeWalker(root.body||root,NodeFilter.SHOW_TEXT,null),n,todo=[];
+    while((n=w.nextNode())){
+      var p=n.parentNode; if(!p||/^(SCRIPT|STYLE|NOSCRIPT|TEXTAREA)$/.test(p.nodeName)) continue;
+      var m=n.nodeValue.match(/\b(\d{3,4})\b/); if(!m||m[1]===c) continue;
+      if(p.closest && p.closest('[data-ppu-review-count]')) continue;
+      // look up to 3 ancestors for "<this number>+ ... Google reviews"
+      var a=p,ok=false;
+      for(var i=0;i<4&&a;i++,a=a.parentNode){
+        var t=(a.textContent||'').replace(/\s+/g,' ');
+        if(t.length>400) break;
+        var pm=t.match(PILL); if(pm&&pm[1]===m[1]){ok=true;break;}
+      }
+      if(ok) todo.push([n,m[1]]);
+    }
+    todo.forEach(function(x){x[0].nodeValue=x[0].nodeValue.replace(new RegExp('\\b'+x[1]+'\\b'),c);});
+  }
+  function load(){
+    fetch(SRC,{cache:'no-store'}).then(function(r){return r.json();}).then(function(j){
+      var v=parseInt(j&&j.count,10); if(!v||v<100) return;
+      count=v; apply(document);
+      var mo=new MutationObserver(function(){apply(document);});
+      mo.observe(document.body,{childList:true,subtree:true,characterData:false});
+      setTimeout(function(){mo.disconnect();apply(document);},20000);
+    }).catch(function(){});
+  }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',load); else load();
+})();
+</script>
