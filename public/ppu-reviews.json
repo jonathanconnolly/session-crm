@@ -1,6 +1,6 @@
 {
  "_comment": "PPU review pool for every ppuR slider on personalitypopup.com. Order = rank (best first). q = full review text (verbatim), s = optional short excerpt for compact sliders (Book). Pages pull this live; the daily ppu-google-review-count task adds new 5-star Google reviews here.",
- "updated": "2026-10-18",
+ "updated": "2026-10-20",
  "reviews": [
   {
    "n": "Jessica",
@@ -178,6 +178,11 @@
    "added": "2026-10-15"
   },
   {
+   "n": "Christine H.",
+   "q": "Loved our experience with Personality Pop-up! Quick, easy, fun and couldn't have asked for a better outcome - the photos are perfect!",
+   "added": "2026-10-20"
+  },
+  {
    "n": "Megan",
    "q": "Wonderful experience! 15 minutes in and out. They are great with the littles and the photos are adorable! Will definitely book again when they come back to Houston.",
    "s": "15 minutes in and out. They are great with the littles and the photos are adorable.",
@@ -192,6 +197,11 @@
    "n": "Samantha",
    "q": "The photographer worked so well with our girls and our pictures are the best!! We are officially making this a tradition when they come to town!",
    "added": "2026-10-15"
+  },
+  {
+   "n": "Kristen H.",
+   "q": "Absolutely loved the experience with Personality pop-up. My kids had the best time and we got some amazing photos to cherish.",
+   "added": "2026-10-20"
   },
   {
    "n": "Hayley",
@@ -243,6 +253,11 @@
    "q": "We've done two sessions with our daughter over the past year, and we'll continue every year we can.",
    "s": "We've done two sessions over the past year, and we'll continue every year we can.",
    "added": "2026-10-15"
+  },
+  {
+   "n": "Larissa U.",
+   "q": "I had a great experience and they capture my son so well. Highly recommend",
+   "added": "2026-10-20"
   },
   {
    "n": "Antonia",
