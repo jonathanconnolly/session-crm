@@ -1,6 +1,6 @@
 {
-  "_comment": "Auto-synced 2026-10-18 from Session. Alpharetta, GA (Oct 17) rolled off after the event. Bookings: Denver, CO 3->2 spots left, Orange County, CA 12->10. No new sell-outs, reopens or new cities; slugs and thumbnails unchanged; 13 Now Booking rows (7 sold out / 6 open). Opening Soon carried over unchanged (Schedule tab Dec is placeholder only; Boston, Dublin for Nov). Capacity 20/day.",
-  "updated": "2026-10-18",
+  "_comment": "Last synced 2026-10-20 (PPU, capacity 20/event day). Miami Shores 5->4 booked; Phoenix AZ reopened 0->1 (cancellation). No sell-outs or new cities; thumbnails unchanged. 13 Now Booking (6 sold out / 7 open). Opening Soon: November (Boston, Dublin) carried over, December has no rows yet. Prior sync 2026-10-18.",
+  "updated": "2026-10-20",
   "scheduled": [
     {
       "city": "West Palm Beach, FL",
@@ -22,9 +22,9 @@
       "weekend": "Oct 24-25",
       "weekendStart": "2026-10-24",
       "days": 2,
-      "booked": 40,
-      "spotsLeft": 0,
-      "status": "sold_out",
+      "booked": 39,
+      "spotsLeft": 1,
+      "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/Q_Nx9pUHmp",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/c94c208c-a2c6-48d5-8126-556b89e77af5-sm.jpg"
     },
@@ -126,8 +126,8 @@
       "weekend": "Nov 21",
       "weekendStart": "2026-11-21",
       "days": 1,
-      "booked": 15,
-      "spotsLeft": 5,
+      "booked": 16,
+      "spotsLeft": 4,
       "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/Ptp9XpWzeT",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/68b75d9d-9f87-49fe-914b-d899a5376df6-sm.jpg"
