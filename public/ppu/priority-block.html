@@ -634,6 +634,14 @@ var PASS_EVENT = "PriorityPass";
 
 function applyCityParam(){
   var raw = qp("city");
+  /* Remember the city for the rest of the visit. Some apps and redirects strip the
+     query string on the hop into the site, so a later load in the same tab would
+     otherwise fall back to the generic headline. The query always wins when present. */
+  if (raw) {
+    try { sessionStorage.setItem("ppuPA_city", raw); } catch (e) {}
+  } else {
+    try { raw = sessionStorage.getItem("ppuPA_city") || ""; } catch (e) { raw = ""; }
+  }
   if (!raw) return;
   var input = byId("ppuPAcity"), stateEl = byId("ppuPAstate"), h1 = byId("ppuPAheroH");
   var label = raw;
