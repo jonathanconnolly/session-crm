@@ -1,6 +1,6 @@
 {
  "_comment": "PPU review pool for every ppuR slider on personalitypopup.com. Order = rank (best first). q = full review text (verbatim), s = optional short excerpt for compact sliders (Book). Pages pull this live; the daily ppu-google-review-count task adds new 5-star Google reviews here.",
- "updated": "2026-10-20",
+ "updated": "2026-10-21",
  "reviews": [
   {
    "n": "Jessica",
@@ -68,6 +68,12 @@
    "q": "I could NOT RECOMMEND this more for incredible photos. I have wanted to have these photos done for ages and I was thrilled to finally have Personality Pop-Up come to our city. I've had lots of photos taken of our kids over the years and these are my absolute favorite!!!",
    "s": "My absolute favorite photos of our kids ever. I could NOT recommend this more.",
    "added": "2026-10-15"
+  },
+  {
+   "n": "KC M.",
+   "q": "We’ve used Personality Pop Up twice now, and these pictures are priceless!! They do such a great job of capturing my kids’ personalities and make what can be a painful process for all involved so fun and seamless",
+   "s": "They do such a great job of capturing my kids’ personalities and make what can be a painful process for all involved so fun and seamless",
+   "added": "2026-10-21"
   },
   {
    "n": "Vanessa",
@@ -142,6 +148,12 @@
    "q": "They were incredible with our kids who can be slow to trust. Thrilled with the photos we got. Family heirlooms!",
    "s": "They were incredible with our kids who can be slow to trust. Family heirlooms!",
    "added": "2026-10-15"
+  },
+  {
+   "n": "Marissa L.",
+   "q": "Extremely happy with our photos by Personality Pop-Up! They captured incredible pictures of our two kids that I can't wait to share with friends and family.",
+   "s": "They captured incredible pictures of our two kids that I can't wait to share with friends and family.",
+   "added": "2026-10-21"
   },
   {
    "n": "Mollie",
