@@ -134,6 +134,7 @@ box-shadow:0 14px 40px rgba(45,45,45,.18);display:none}
 .ppuPA-acList.on{display:block}
 .ppuPA-acItem{font:400 13.5px/1.4 var(--mono)!important;padding:10px 12px;color:var(--ink)!important;border-radius:8px;cursor:pointer}
 .ppuPA-acItem:hover,.ppuPA-acItem.sel{background:var(--cream)}
+.ppuPA-acMeta{color:rgba(45,45,45,.5);font-size:11px;margin-left:6px}
 .ppuPA-seasons{display:flex;flex-wrap:wrap;gap:7px}
 .ppuPA-season{flex:1 1 auto;position:relative}
 .ppuPA-season input[type="radio"]{position:absolute!important;opacity:0!important;width:1px!important;height:1px!important;min-height:0!important;min-width:0!important;margin:0!important;padding:0!important;border:0!important;background:none!important;box-shadow:none!important;clip-path:inset(50%);pointer-events:none}
@@ -611,8 +612,11 @@ if (phone) phone.addEventListener("input", function(){
 var st = byId("ppuPAstate");
 if (st) st.addEventListener("input", function(){ st.value = st.value.replace(/[^a-zA-Z]/g, "").toUpperCase().slice(0,2); });
 
-/* City autocomplete off the shared cities.js list. Free text is still allowed
-   for a city we have not visited yet. Picking a suggestion fills State too. */
+/* City autocomplete off the shared cities.js list — the same list and the same
+   alias matching the VIP / Find Out First form uses, so a city resolves to the
+   same metro tag here as it does anywhere else on the site. Free text is still
+   allowed for a city we have not visited yet. */
+var cityTag = "";
 (function(){
   var input = byId("ppuPAcity"), list = byId("ppuPAcityList");
   if (!input || !list) return;
@@ -620,37 +624,58 @@ if (st) st.addEventListener("input", function(){ st.value = st.value.replace(/[^
 
   function close(){ list.classList.remove("on"); list.innerHTML = ""; idx = -1; items = []; }
 
-  function pick(name){
-    var parts = String(name).split(",");
-    input.value = parts[0].trim();
-    if (st && parts[1]) st.value = parts[1].trim().toUpperCase().slice(0,2);
+  function pick(it){
+    input.value = it.display;
+    cityTag = it.metroTag || "";
+    var parts = String(it.metro || "").split(",");
+    if (st && parts[1]) st.value = parts[1].trim().toUpperCase().slice(0, 2);
     input.classList.remove("bad");
     if (st) st.classList.remove("bad");
     close();
   }
 
-  function lookup(q){
-    var c = window.CITIES;
-    if (!c || !c.length) return [];
-    q = q.toLowerCase();
-    var starts = [], has = [];
-    c.forEach(function(x){
-      var n = String(x.name || "");
-      var l = n.toLowerCase();
-      if (l.indexOf(q) === 0) { starts.push(n); return; }
-      if (l.indexOf(q) > 0) { has.push(n); return; }
-      (x.aliases || []).forEach(function(a){
-        if (String(a).toLowerCase().indexOf(q) === 0 && has.indexOf(n) === -1) has.push(n);
+  /* Same match order as the VIP form: exact name, name prefix, alias prefix
+     (shown with its metro), then name contains. */
+  function lookup(query){
+    var q = String(query || "").trim().toLowerCase();
+    var cities = window.CITIES;
+    if (!q || !cities || !cities.length) return [];
+    var out = [];
+    function has(tag){ return out.some(function(m){ return m.metroTag === tag; }); }
+    function cityName(full){ return String(full || "").split(",")[0].trim(); }
+
+    cities.forEach(function(c){
+      if (c.name.toLowerCase() === q) out.push({ display: c.name, metro: c.name, metroTag: c.tag, hint: "" });
+    });
+    cities.forEach(function(c){
+      if (c.name.toLowerCase().indexOf(q) === 0 && !has(c.tag)) out.push({ display: c.name, metro: c.name, metroTag: c.tag, hint: "" });
+    });
+    cities.forEach(function(c){
+      (c.aliases || []).forEach(function(a){
+        if (String(a).toLowerCase().indexOf(q) === 0) {
+          var disp = String(a).replace(/\b\w/g, function(ch){ return ch.toUpperCase(); });
+          if (!out.some(function(m){ return m.display.toLowerCase() === String(a).toLowerCase() && m.metroTag === c.tag; })) {
+            out.push({ display: disp, metro: c.name, metroTag: c.tag, hint: "\u00b7 " + cityName(c.name) + " metro" });
+          }
+        }
       });
     });
-    return starts.concat(has).slice(0, 7);
+    cities.forEach(function(c){
+      if (c.name.toLowerCase().indexOf(q) > 0 && !has(c.tag)) out.push({ display: c.name, metro: c.name, metroTag: c.tag, hint: "" });
+    });
+    return out.slice(0, 8);
+  }
+
+  function esc(t){
+    return String(t).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
   }
 
   function render(q){
     items = lookup(q);
     if (!items.length) { close(); return; }
-    list.innerHTML = items.map(function(n, i){
-      return '<div class="ppuPA-acItem" data-i="' + i + '">' + n + '</div>';
+    list.innerHTML = items.map(function(it, i){
+      return '<div class="ppuPA-acItem" data-i="' + i + '">' + esc(it.display)
+           + (it.hint ? '<span class="ppuPA-acMeta">' + esc(it.hint) + '</span>' : '') + '</div>';
     }).join("");
     list.classList.add("on");
     idx = -1;
@@ -664,6 +689,7 @@ if (st) st.addEventListener("input", function(){ st.value = st.value.replace(/[^
   }
 
   input.addEventListener("input", function(){
+    cityTag = "";
     var q = input.value.trim();
     if (q.length < 2) { close(); return; }
     render(q);
@@ -676,29 +702,6 @@ if (st) st.addEventListener("input", function(){ st.value = st.value.replace(/[^
     else if (e.key === "Escape") { close(); }
   });
   input.addEventListener("blur", function(){ setTimeout(close, 130); });
-})();
-var zip = byId("ppuPAzip");
-if (zip) zip.addEventListener("input", function(){ zip.value = zip.value.replace(/\D/g, "").slice(0,5); });
-
-/* Deposit follows the session count: $50 a session. */
-var DEPOSIT_EACH = 50;
-function sessionQty(){
-  var n = parseInt(val("ppuPAkids"), 10);
-  return (n > 0 && n < 10) ? n : 1;
-}
-function depositTotal(){ return DEPOSIT_EACH * sessionQty(); }
-(function(){
-  var sel = byId("ppuPAkids"), amount = byId("ppuPAdep"), note = byId("ppuPAdepNote");
-  if (!sel || !amount || !note) return;
-  function sync(){
-    var q = sessionQty();
-    amount.textContent = "$" + depositTotal();
-    note.textContent = q === 1
-      ? "Holds your place in line"
-      : "$" + DEPOSIT_EACH + " per session \u00b7 " + q + " sessions";
-  }
-  sel.addEventListener("change", sync);
-  sync();
 })();
 
 /* area code tag, same convention as the VIP form */
@@ -752,18 +755,21 @@ if (form) form.addEventListener("submit", function(e){
   var season = seasonEl ? seasonEl.value : "flexible";
   var kids = val("ppuPAkids") || "1";
   var citySlug = (city + "_" + state).toLowerCase().replace(/[^a-z0-9]+/g, "_").replace(/(^_|_$)/g, "");
+  /* cityTag is the shared cities.js metro tag (city_atlanta_ga), set when the
+     visitor picked a suggestion; it keeps tagging identical to the other forms. */
+  var cityTagOut = cityTag || ("city_" + citySlug);
   var pTag = phoneTagFor(ph);
 
   btn.disabled = true;
   btn.innerHTML = "Reserving your place&hellip;";
 
-  var tags = ["source_website","status_lead","form_priority_access","city_" + citySlug,"season_" + season];
+  var tags = ["source_website","status_lead","form_priority_access",cityTagOut,"season_" + season];
   if (pTag) tags.push(pTag);
 
   var payload = {
     first_name: first, last_name: last, email: email, phone: ph,
     city: city, state: state, postal_code: z,
-    requested_cities: city + ", " + state,
+    requested_cities: city + ", " + state, city_tags: cityTagOut,
     session_count: kids, children_count: kids, preferred_season: season,
     deposit_each: DEPOSIT_EACH, deposit_total: depositTotal(),
     offer: "priority_access_50", source_widget: "priority_access",
