@@ -287,7 +287,7 @@ padding:11px 16px calc(11px + env(safe-area-inset-bottom,0px))}
 <div class="ppuPA-hero__tint"></div>
 <div class="ppuPA-hero__in">
 <img class="ppuPA-hero__logo" src="https://axis-ppu.vercel.app/ppu/logo-white.png" alt="Personality Pop-Up" width="843" height="516" fetchpriority="high">
-<h1 class="ppuPA-hero__h">Hold your spot before your city sells out.</h1>
+<h1 class="ppuPA-hero__h" id="ppuPAheroH">Hold your spot before your city sells out.</h1>
 <p class="ppuPA-hero__sub">A simple 15-minute photo experience that <br>captures your child’s <u>real</u> personality.</p>
 <a class="ppuPA-btn ppuPA-btn--white" href="#ppuPA-reserve">Get Priority Access</a>
 <a class="ppuPA-hero__trust" href="https://www.google.com/search?q=Personality+Pop-Up#lrd=0x89d5209ec3b5b81:0x332a7fee85847322,1" target="_blank" rel="noopener"><span class="ppuPA-st" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>5.0 &bull; <span data-ppu-review-count>420+</span> Google reviews</a>
@@ -588,8 +588,15 @@ if (board) {
     var c = window.CITIES;
     if (c && c.length) render(c.map(function(x){ return x.name; }).filter(function(n){ return !/Summit/.test(n); }));
   }
-  if (window.CITIES) fromCities();
-  else { var s = document.createElement("script"); s.src = "https://cdn.jsdelivr.net/gh/jonathanconnolly/session-crm@main/public/cities.js"; s.async = true; s.onload = fromCities; document.head.appendChild(s); }
+  if (window.CITIES) { fromCities(); applyCityParam(); }
+  else {
+    var s = document.createElement("script");
+    s.src = "https://cdn.jsdelivr.net/gh/jonathanconnolly/session-crm@main/public/cities.js";
+    s.async = true;
+    s.onload = function(){ fromCities(); applyCityParam(); };
+    s.onerror = function(){ applyCityParam(); };
+    document.head.appendChild(s);
+  }
 })();
 
 /* blush highlight bar */
@@ -612,6 +619,76 @@ if (phone) phone.addEventListener("input", function(){
 });
 var st = byId("ppuPAstate");
 if (st) st.addEventListener("input", function(){ st.value = st.value.replace(/[^a-zA-Z]/g, "").toUpperCase().slice(0,2); });
+
+/* ---- Ad landing support ----
+   ?city=Tampa Bay  prefills the form and names the city in the hero, so an ad that
+   says Tampa lands on a page that says Tampa. The value is resolved against
+   cities.js where possible so the lead still carries the shared metro tag.
+   ?paid=1          is where the Stripe success URL returns; it fires the
+   PriorityPass conversion event once, with the real amount. */
+function qp(name){
+  var m = new RegExp("[?&]" + name + "=([^&#]*)").exec(location.search);
+  return m ? decodeURIComponent(m[1].replace(/\+/g, " ")).trim() : "";
+}
+
+var PASS_EVENT = "PriorityPass";
+
+function applyCityParam(){
+  var raw = qp("city");
+  if (!raw) return;
+  var input = byId("ppuPAcity"), stateEl = byId("ppuPAstate"), h1 = byId("ppuPAheroH");
+  var label = raw;
+
+  /* Resolve against the shared list so the tag matches the other forms.
+     An unlisted area (Tampa Bay) still names itself, it just carries no metro tag. */
+  var cities = window.CITIES || [];
+  var q = raw.toLowerCase();
+  var hit = null;
+  cities.forEach(function(c){
+    if (hit) return;
+    var n = String(c.name || "").toLowerCase();
+    if (n === q || n.split(",")[0].trim() === q) hit = c;
+  });
+  if (!hit) {
+    cities.forEach(function(c){
+      if (hit) return;
+      (c.aliases || []).forEach(function(a){
+        if (!hit && String(a).toLowerCase() === q) hit = c;
+      });
+    });
+  }
+
+  if (input && !input.value) {
+    input.value = hit ? String(hit.name).split(",")[0].trim() : raw;
+    if (hit) {
+      cityTag = hit.tag || "";
+      var parts = String(hit.name).split(",");
+      if (stateEl && parts[1]) stateEl.value = parts[1].trim().toUpperCase().slice(0, 2);
+    }
+  }
+  if (h1) h1.textContent = "Hold your spot before " + label + " sells out.";
+}
+
+function firePassConversion(){
+  if (qp("paid") !== "1") return;
+  var amount = 0;
+  try { amount = parseInt(sessionStorage.getItem("ppuPA_amount"), 10) || 0; } catch (e) {}
+  if (!amount) amount = DEPOSIT_EACH;
+  var done = false;
+  try { done = sessionStorage.getItem("ppuPA_fired") === "1"; } catch (e) {}
+  if (done) return;
+  try {
+    if (window.fbq) window.fbq("trackCustom", PASS_EVENT, { value: amount, currency: "USD" });
+    if (window.gtag) window.gtag("event", "priority_pass", { value: amount, currency: "USD" });
+  } catch (e) {}
+  try { sessionStorage.setItem("ppuPA_fired", "1"); } catch (e) {}
+  var card = byId("ppuPAform"), ok = byId("ppuPAdone"), msg = byId("ppuPAdoneMsg");
+  if (card && ok && msg) {
+    card.style.display = "none";
+    ok.classList.add("on");
+    msg.textContent = "Your $" + amount + " Priority Pass is confirmed. Watch your email for your city's dates.";
+  }
+}
 
 /* Deposit follows the session count: $50 a session. */
 var DEPOSIT_EACH = 50;
@@ -751,6 +828,8 @@ var LABEL = 'Get Priority Access';
 function val(id){ var e = byId(id); return e ? e.value.trim() : ""; }
 function mark(id, bad){ var e = byId(id); if (e) e.classList.toggle("bad", !!bad); }
 
+firePassConversion();
+
 if (form) form.addEventListener("submit", function(e){
   e.preventDefault();
   var first = val("ppuPAfirst"), last = val("ppuPAlast");
@@ -814,6 +893,7 @@ if (form) form.addEventListener("submit", function(e){
               + "prefilled_email=" + encodeURIComponent(email)
               + "&quantity=" + sessionQty()
               + "&client_reference_id=" + encodeURIComponent(season + "__" + citySlug);
+        try { sessionStorage.setItem("ppuPA_amount", String(depositTotal())); sessionStorage.removeItem("ppuPA_fired"); } catch (err) {}
         try { if (window.fbq) window.fbq("track", "InitiateCheckout", { value: depositTotal(), currency: "USD" }); } catch (err) {}
         setTimeout(function(){ location.href = u; }, 900);
       } else {
