@@ -317,7 +317,7 @@ padding:11px 16px calc(11px + env(safe-area-inset-bottom,0px))}
 
 <div class="ppuPA-offer__left">
 <p class="ppuPA-eyebrow">Priority access</p>
-<p class="ppuPA-price"><b>$50</b><i>Holds your place in line</i></p>
+<p class="ppuPA-price"><b id="ppuPAdep">$50</b><i id="ppuPAdepNote">Holds your place in line</i></p>
 <h2 class="ppuPA-offer__h" id="ppuPAofferH">Book before we announce your city.</h2>
 <ul class="ppuPA-facts">
 <li class="ppuPA-fact"><span aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"></path></svg></span>Applies to your session</li>
@@ -342,7 +342,7 @@ padding:11px 16px calc(11px + env(safe-area-inset-bottom,0px))}
 <div class="ppuPA-fi"><label for="ppuPAzip">ZIP</label><input id="ppuPAzip" type="text" inputmode="numeric" autocomplete="postal-code" placeholder="28202" maxlength="5"></div>
 </div>
 <div class="ppuPA-fgrid ppuPA-fgrid--1">
-<div class="ppuPA-fi"><label for="ppuPAkids">Sessions</label><select id="ppuPAkids"><option value="1">1 session</option><option value="2">2 sessions</option><option value="3">3 sessions</option><option value="4+">4 or more</option></select></div>
+<div class="ppuPA-fi"><label for="ppuPAkids">Sessions</label><select id="ppuPAkids"><option value="1">1 session</option><option value="2">2 sessions</option><option value="3">3 sessions</option><option value="4">4 sessions</option></select></div>
 </div>
 <fieldset class="ppuPA-fi" style="border:0">
 <legend>Preferred season</legend>
@@ -354,7 +354,7 @@ padding:11px 16px calc(11px + env(safe-area-inset-bottom,0px))}
 
 <div class="ppuPA-done" id="ppuPAdone" role="status">
 <h3>You are on the priority list.</h3>
-<p id="ppuPAdoneMsg">Taking you to secure checkout to complete your $50 reservation.</p>
+<p id="ppuPAdoneMsg">Taking you to secure checkout to complete your reservation.</p>
 </div>
 </div>
 
@@ -680,6 +680,27 @@ if (st) st.addEventListener("input", function(){ st.value = st.value.replace(/[^
 var zip = byId("ppuPAzip");
 if (zip) zip.addEventListener("input", function(){ zip.value = zip.value.replace(/\D/g, "").slice(0,5); });
 
+/* Deposit follows the session count: $50 a session. */
+var DEPOSIT_EACH = 50;
+function sessionQty(){
+  var n = parseInt(val("ppuPAkids"), 10);
+  return (n > 0 && n < 10) ? n : 1;
+}
+function depositTotal(){ return DEPOSIT_EACH * sessionQty(); }
+(function(){
+  var sel = byId("ppuPAkids"), amount = byId("ppuPAdep"), note = byId("ppuPAdepNote");
+  if (!sel || !amount || !note) return;
+  function sync(){
+    var q = sessionQty();
+    amount.textContent = "$" + depositTotal();
+    note.textContent = q === 1
+      ? "Holds your place in line"
+      : "$" + DEPOSIT_EACH + " per session \u00b7 " + q + " sessions";
+  }
+  sel.addEventListener("change", sync);
+  sync();
+})();
+
 /* area code tag, same convention as the VIP form */
 (function(){
   if (typeof window.AREA_CODES === "object" && window.AREA_CODES) return;
@@ -744,6 +765,7 @@ if (form) form.addEventListener("submit", function(e){
     city: city, state: state, postal_code: z,
     requested_cities: city + ", " + state,
     session_count: kids, children_count: kids, preferred_season: season,
+    deposit_each: DEPOSIT_EACH, deposit_total: depositTotal(),
     offer: "priority_access_50", source_widget: "priority_access",
     phone_tag: pTag, tags: tags.join(", "), page: location.href
   };
@@ -758,14 +780,16 @@ if (form) form.addEventListener("submit", function(e){
     .then(function(){
       form.style.display = "none";
       done.classList.add("on");
+      doneMsg.textContent = "Taking you to secure checkout to complete your $" + depositTotal() + " reservation.";
       if (STRIPE_LINK) {
         var u = STRIPE_LINK + (STRIPE_LINK.indexOf("?") > -1 ? "&" : "?")
               + "prefilled_email=" + encodeURIComponent(email)
+              + "&quantity=" + sessionQty()
               + "&client_reference_id=" + encodeURIComponent(season + "__" + citySlug);
-        try { if (window.fbq) window.fbq("track", "InitiateCheckout", { value: 50, currency: "USD" }); } catch (err) {}
+        try { if (window.fbq) window.fbq("track", "InitiateCheckout", { value: depositTotal(), currency: "USD" }); } catch (err) {}
         setTimeout(function(){ location.href = u; }, 900);
       } else {
-        doneMsg.textContent = "We have your details. Checkout for the $50 is being switched on and we will email you the link shortly.";
+        doneMsg.textContent = "We have your details. Checkout for the $" + depositTotal() + " is being switched on and we will email you the link shortly.";
       }
       done.scrollIntoView({ behavior: "smooth", block: "center" });
     });
