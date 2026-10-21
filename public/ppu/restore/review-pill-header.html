@@ -1,0 +1,17 @@
+
+<!-- PPU review pill (2026-10-21): shared look + one count source -->
+<style>
+.ppuRX{display:inline-flex;align-items:center;gap:14px;background:#fff;border:1px solid rgba(45,45,45,.12);border-radius:999px;padding:20px 32px;text-transform:uppercase;white-space:nowrap;box-shadow:0 2px 10px rgba(0,0,0,.08);transition:transform .2s,box-shadow .2s;color:#2D2D2D!important;font:600 15px/1 "Roboto Mono","Courier New",Courier,monospace!important;letter-spacing:.12em!important;text-decoration:none!important}
+.ppuRX:hover{transform:translateY(-1px);box-shadow:0 6px 22px rgba(0,0,0,.2);color:#2D2D2D!important}
+.ppuRX .st{font-size:18px;letter-spacing:.12em}
+.ppuRX .sp{width:1px;height:18px;background:currentColor;opacity:.25}
+.ppuRX svg{width:18px;height:18px;flex:0 0 auto;display:block}
+@media (max-width:640px){.ppuRX{gap:8px;padding:14px 18px;font-size:11px!important;letter-spacing:.08em!important}.ppuRX .st{font-size:13px;letter-spacing:.06em}.ppuRX svg{width:14px;height:14px}.ppuRX .sp{height:14px}}
+.ppuF-hero__in .ppuRX{margin-top:24px}
+</style>
+<script>
+(function(){
+ function sync(){try{fetch('https://raw.githubusercontent.com/jonathanconnolly/session-crm/main/public/google-reviews.json',{cache:'no-store'}).then(function(r){return r.json()}).then(function(j){var n=parseInt(j&&j.count,10);if(!(n>0))return;var t=n+'+';[].forEach.call(document.querySelectorAll('[data-ppu-review-count]'),function(e){if(e.textContent!==t)e.textContent=t})}).catch(function(){})}catch(e){}}
+ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',sync);else sync();
+})();
+</script>
