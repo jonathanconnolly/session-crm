@@ -612,6 +612,27 @@ if (phone) phone.addEventListener("input", function(){
 var st = byId("ppuPAstate");
 if (st) st.addEventListener("input", function(){ st.value = st.value.replace(/[^a-zA-Z]/g, "").toUpperCase().slice(0,2); });
 
+/* Deposit follows the session count: $50 a session. */
+var DEPOSIT_EACH = 50;
+function sessionQty(){
+  var n = parseInt(val("ppuPAkids"), 10);
+  return (n > 0 && n < 10) ? n : 1;
+}
+function depositTotal(){ return DEPOSIT_EACH * sessionQty(); }
+(function(){
+  var sel = byId("ppuPAkids"), amount = byId("ppuPAdep"), note = byId("ppuPAdepNote");
+  if (!sel || !amount || !note) return;
+  function sync(){
+    var q = sessionQty();
+    amount.textContent = "$" + depositTotal();
+    note.textContent = q === 1
+      ? "Holds your place in line"
+      : "$" + DEPOSIT_EACH + " per session \u00b7 " + q + " sessions";
+  }
+  sel.addEventListener("change", sync);
+  sync();
+})();
+
 /* City autocomplete off the shared cities.js list — the same list and the same
    alias matching the VIP / Find Out First form uses, so a city resolves to the
    same metro tag here as it does anywhere else on the site. Free text is still
