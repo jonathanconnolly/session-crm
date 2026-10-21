@@ -308,7 +308,7 @@ padding:11px 16px calc(11px + env(safe-area-inset-bottom,0px))}
 <h2 class="ppuPA-h" id="ppuPAwhenH">We announce one season at a time.</h2>
 </div>
 <div class="ppuPA-board__grid" id="ppuPAboard"></div>
-<p class="ppuPA-board__note">Pick a season and we will come to you first when it opens.</p>
+<p class="ppuPA-board__note">Your pass is good for the season you pick. We come to you first when it opens.</p>
 </div>
 </section>
 
@@ -317,7 +317,7 @@ padding:11px 16px calc(11px + env(safe-area-inset-bottom,0px))}
 <div class="ppuPA-wrap ppuPA-offer__in">
 
 <div class="ppuPA-offer__left">
-<p class="ppuPA-eyebrow">Priority access</p>
+<p class="ppuPA-eyebrow">The Priority Pass</p>
 <p class="ppuPA-price"><b id="ppuPAdep">$50</b><i id="ppuPAdepNote">Holds your place in line</i></p>
 <h2 class="ppuPA-offer__h" id="ppuPAofferH">Book before we announce your city.</h2>
 <ul class="ppuPA-facts">
@@ -350,11 +350,11 @@ padding:11px 16px calc(11px + env(safe-area-inset-bottom,0px))}
 <div class="ppuPA-seasons" id="ppuPAseasons"></div>
 </fieldset>
 <button class="ppuPA-btn ppuPA-submit" type="submit" id="ppuPAsubmit">Get Priority Access</button>
-<p class="ppuPA-fine">Dates are not announced yet. This holds your place in line, not an appointment time. Secure checkout by Stripe. <a href="https://www.personalitypopup.com/privacy-policy" target="_blank" rel="noopener">Privacy</a> and <a href="https://www.personalitypopup.com/terms-of-service/" target="_blank" rel="noopener">Terms</a>.</p>
+<p class="ppuPA-fine">Dates are not announced yet. Your pass holds your place in line, not an appointment time. Secure checkout by Stripe. <a href="https://www.personalitypopup.com/privacy-policy" target="_blank" rel="noopener">Privacy</a> and <a href="https://www.personalitypopup.com/terms-of-service/" target="_blank" rel="noopener">Terms</a>.</p>
 </form>
 
 <div class="ppuPA-done" id="ppuPAdone" role="status">
-<h3>You are on the priority list.</h3>
+<h3>Your Priority Pass is reserved.</h3>
 <p id="ppuPAdoneMsg">Taking you to secure checkout to complete your reservation.</p>
 </div>
 </div>
@@ -416,7 +416,8 @@ padding:11px 16px calc(11px + env(safe-area-inset-bottom,0px))}
 </div>
 <div>
 <details open=""><summary>What is Personality Pop-Up?</summary><p class="ppuPA-faq__a">A traveling portrait studio for kids. We set up in one city at a time for a weekend, and every session is 15 minutes long. No posing, no cheese, no perfect kids required.</p></details>
-<details><summary>Is this a confirmed appointment?</summary><p class="ppuPA-faq__a">No. You pick your time once dates are announced for your city.</p></details>
+<details><summary>What is the Priority Pass?</summary><p class="ppuPA-faq__a">It is your place at the front of the booking line for a season you choose. When we announce dates for your city, pass holders pick their time before anyone else. It is $50 a session, fully refundable, and it comes off your session total.</p></details>
+<details><summary>Is this a confirmed appointment?</summary><p class="ppuPA-faq__a">No. The pass holds your place in line. You pick your time once dates are announced for your city.</p></details>
 <details><summary>Is the $50 refundable?</summary><p class="ppuPA-faq__a">Yes. Ask any time, for any reason, and we refund it in full.</p></details>
 <details><summary>Does my $50 go toward my session?</summary><p class="ppuPA-faq__a">Yes. The full $50 comes off your session total.</p></details>
 <details><summary>What does a session cost?</summary><p class="ppuPA-faq__a">Most families spend $500 to $750 on their session, plus prints on top of that.</p></details>
@@ -633,7 +634,7 @@ function depositTotal(){ return DEPOSIT_EACH * sessionQty(); }
   sync();
 })();
 
-/* City autocomplete off the shared cities.js list — the same list and the same
+/* City autocomplete off the shared cities.js list: the same list and the same
    alias matching the VIP / Find Out First form uses, so a city resolves to the
    same metro tag here as it does anywhere else on the site. Free text is still
    allowed for a city we have not visited yet. */
