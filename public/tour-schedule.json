@@ -1,6 +1,6 @@
 {
-  "_comment": "Last synced 2026-10-21 (PPU, capacity 20/event day). Booked: Miami Shores 4->3, Washington DC 13->12. Reopened (cancellations): Dallas TX 0->2, Charlotte NC 0->1; Phoenix AZ 1->2. No sell-outs or new cities; thumbnails unchanged. 13 Now Booking (4 sold out / 9 open). Opening Soon: November (Boston, Dublin) carried over, December has no rows yet. Prior sync 2026-10-20.",
-  "updated": "2026-10-21",
+  "_comment": "Last synced 2026-10-22 (PPU, capacity 20/event day). Booked: Dallas TX 2->1, Denver CO 2->1, Manhattan NY 3->1, Washington DC 12->11. Charlotte NC SOLD OUT (1->0). No reopens or new cities; thumbnails unchanged. 13 Now Booking (5 sold out / 8 open). Opening Soon: November (Boston, Dublin) carried over - December block still empty.",
+  "updated": "2026-10-22",
   "scheduled": [
     {
       "city": "West Palm Beach, FL",
@@ -35,8 +35,8 @@
       "weekend": "Oct 24-25",
       "weekendStart": "2026-10-24",
       "days": 2,
-      "booked": 38,
-      "spotsLeft": 2,
+      "booked": 39,
+      "spotsLeft": 1,
       "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/wv2VHbpmES",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/3f261395-43e8-477f-885e-1a6e8745ee92-sm.png"
@@ -61,8 +61,8 @@
       "weekend": "Nov 7-8",
       "weekendStart": "2026-11-07",
       "days": 2,
-      "booked": 38,
-      "spotsLeft": 2,
+      "booked": 39,
+      "spotsLeft": 1,
       "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/wxLeD6B3b8",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/aa594339-2f09-4865-ba0d-eb30675927c2-sm.jpg"
@@ -87,9 +87,9 @@
       "weekend": "Nov 7-8",
       "weekendStart": "2026-11-07",
       "days": 2,
-      "booked": 39,
-      "spotsLeft": 1,
-      "status": "now_open",
+      "booked": 40,
+      "spotsLeft": 0,
+      "status": "sold_out",
       "sessionUrl": "https://book.usesession.com/s/p_enww-err",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/8dfe0d60-2f76-4cc0-bfb1-2c1ae88b357f-sm.jpg"
     },
@@ -139,8 +139,8 @@
       "weekend": "Nov 21-22",
       "weekendStart": "2026-11-21",
       "days": 2,
-      "booked": 37,
-      "spotsLeft": 3,
+      "booked": 39,
+      "spotsLeft": 1,
       "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/1xwpBmrgh1",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/a978464a-22f1-4f47-b4ff-8f3c7112d080-sm.jpg"
@@ -152,8 +152,8 @@
       "weekend": "Nov 21-22",
       "weekendStart": "2026-11-21",
       "days": 2,
-      "booked": 28,
-      "spotsLeft": 12,
+      "booked": 29,
+      "spotsLeft": 11,
       "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/5PnbHKGz1X",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/4501a8a8-c7d0-468d-bf6c-c38e38a00162-sm.jpg"
