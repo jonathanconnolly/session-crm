@@ -1,20 +1,7 @@
 {
-  "_comment": "Last synced 2026-10-24 (PPU, capacity 20/event day). Booked: Greenville SC 5->4, Washington DC 10->9. Dallas TX SOLD OUT (1->0). Reopened: West Palm Beach FL 0->1. No new cities; thumbnails unchanged. 13 Now Booking (6 sold out / 7 open). Opening Soon: November (Boston, Dublin) carried over - December block still empty.",
-  "updated": "2026-10-24",
+  "_comment": "Last synced 2026-10-25 (PPU, capacity 20/event day). Denver CO SOLD OUT (1->0). West Palm Beach FL rolled off (event Oct 24 passed). No new cities; thumbnails unchanged. 12 Now Booking (7 sold out / 5 open). Opening Soon: November (Boston, Dublin) carried over - December block still empty.",
+  "updated": "2026-10-25",
   "scheduled": [
-    {
-      "city": "West Palm Beach, FL",
-      "metro": "West Palm Beach, FL",
-      "metroTag": "city_west_palm_beach_fl",
-      "weekend": "Oct 24",
-      "weekendStart": "2026-10-24",
-      "days": 1,
-      "booked": 19,
-      "spotsLeft": 1,
-      "status": "now_open",
-      "sessionUrl": "https://book.usesession.com/s/LWxQxadG6D",
-      "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/7a3787c2-4d48-4f6e-a33d-22775a94caa4-sm.jpg"
-    },
     {
       "city": "Phoenix, AZ",
       "metro": "Phoenix, AZ",
@@ -61,9 +48,9 @@
       "weekend": "Nov 7-8",
       "weekendStart": "2026-11-07",
       "days": 2,
-      "booked": 39,
-      "spotsLeft": 1,
-      "status": "now_open",
+      "booked": 40,
+      "spotsLeft": 0,
+      "status": "sold_out",
       "sessionUrl": "https://book.usesession.com/s/wxLeD6B3b8",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/aa594339-2f09-4865-ba0d-eb30675927c2-sm.jpg"
     },
