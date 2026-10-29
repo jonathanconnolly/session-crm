@@ -1,6 +1,6 @@
 {
  "_comment": "PPU review pool for every ppuR slider on personalitypopup.com. Order = rank (best first). q = full review text (verbatim), s = optional short excerpt for compact sliders (Book). Pages pull this live; the daily ppu-google-review-count task adds new 5-star Google reviews here.",
- "updated": "2026-10-25",
+ "updated": "2026-10-29",
  "reviews": [
   {
    "n": "Jessica",
@@ -171,6 +171,12 @@
    "n": "Allie",
    "q": "My little guy does not sit still, & she still managed to capture the most PERFECT photos! The 15 minute session was the perfect length. I can't stop staring at these photos & can't wait to do it again! 10/10 recommend!",
    "added": "2026-10-15"
+  },
+  {
+   "n": "Olga N.",
+   "q": "Personality Pop Up was such an amazing experience for our little one! Their team captured the cutest photos full of his personality, and the entire process was so fun and effortless. We already can't wait to do more photos with them!",
+   "s": "Their team captured the cutest photos full of his personality, and the entire process was so fun and effortless.",
+   "added": "2026-10-29"
   },
   {
    "n": "Sara A.",
