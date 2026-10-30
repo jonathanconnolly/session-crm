@@ -1,6 +1,6 @@
 {
-  "_comment": "Last synced 2026-10-29 (PPU, capacity 20/event day; prior sync 10/27). Miami Shores FL SOLD OUT (1->0). Booked: Orange County 9->8. Washington DC (7) and Greenville (4) unchanged. No new cities; thumbnails unchanged. 9 Now Booking (6 sold out / 3 open). Opening Soon: November (Boston, Dublin) carried over - December block still empty.",
-  "updated": "2026-10-29",
+  "_comment": "Last synced 2026-10-30 (PPU, capacity 20/event day; prior sync 10/29). Booked: Orange County 8->7, Washington DC 7->6. Greenville (4) unchanged; no sell-outs/reopens/new cities; thumbnails unchanged. 9 Now Booking (6 sold out / 3 open). Opening Soon: November (Boston, Dublin) carried over - December block still empty.",
+  "updated": "2026-10-30",
   "scheduled": [
     {
       "city": "Denver, CO",
@@ -48,8 +48,8 @@
       "weekend": "Nov 14-15",
       "weekendStart": "2026-11-14",
       "days": 2,
-      "booked": 32,
-      "spotsLeft": 8,
+      "booked": 33,
+      "spotsLeft": 7,
       "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/z1DO7vqo7w",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/ae96d067-e8c0-4a0f-b2cb-46967368e8e8-sm.jpg"
@@ -100,8 +100,8 @@
       "weekend": "Nov 21-22",
       "weekendStart": "2026-11-21",
       "days": 2,
-      "booked": 33,
-      "spotsLeft": 7,
+      "booked": 34,
+      "spotsLeft": 6,
       "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/5PnbHKGz1X",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/4501a8a8-c7d0-468d-bf6c-c38e38a00162-sm.jpg"
