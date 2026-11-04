@@ -1,6 +1,6 @@
 {
  "_comment": "PPU review pool for every ppuR slider on personalitypopup.com. Order = rank (best first). q = full review text (verbatim), s = optional short excerpt for compact sliders (Book). Pages pull this live; the daily ppu-google-review-count task adds new 5-star Google reviews here.",
- "updated": "2026-10-29",
+ "updated": "2026-11-04",
  "reviews": [
   {
    "n": "Jessica",
@@ -118,6 +118,12 @@
    "added": "2026-10-15"
   },
   {
+   "n": "Kate C.",
+   "q": "What a treat! The photographers were professional and engaging. My 8 and 11 year-old daughters had a blast and the photos came out great! We will be back for another shoot soon!",
+   "s": "What a treat! The photographers were professional and engaging. My 8 and 11 year-old daughters had a blast and the photos came out great!",
+   "added": "2026-11-04"
+  },
+  {
    "n": "Kristi S.",
    "q": "Worth every penny!! They captured the most precious photos of our kiddos that we will cherish forever. They’re so sweet with the kids and make them feel so comfortable. Couldn’t recommend more!!",
    "s": "Worth every penny!! They captured the most precious photos of our kiddos that we will cherish forever.",
@@ -127,6 +133,12 @@
    "n": "Madeline",
    "q": "Our photographer, Lauren, was so great with our daughter and captured her PERFECTLY! When we left, our toddler was saying 'More! More!' — If you're on the fence, do it, it was TOTALLY worth it!",
    "added": "2026-10-15"
+  },
+  {
+   "n": "Ashton W.",
+   "q": "Obsessed with our kids pictures and the entire Personality Pop-Up Team! We will cherish these photos forever and I can’t thank you all enough for making the experience so fun!",
+   "s": "We will cherish these photos forever and I can’t thank you all enough for making the experience so fun!",
+   "added": "2026-11-04"
   },
   {
    "n": "Catherine K.",
@@ -226,6 +238,11 @@
    "n": "Kristen H.",
    "q": "Absolutely loved the experience with Personality pop-up. My kids had the best time and we got some amazing photos to cherish.",
    "added": "2026-10-20"
+  },
+  {
+   "n": "Erin C.",
+   "q": "Wow! I’m so grateful for these pictures! Absolutely love! Wish I would’ve had these pictures taken sooner. Highly recommend!",
+   "added": "2026-11-04"
   },
   {
    "n": "Hayley",
