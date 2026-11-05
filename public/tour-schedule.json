@@ -1,6 +1,6 @@
 {
-  "_comment": "Last synced 2026-11-04 (PPU, capacity 20/event day; prior sync 11/03). Booked: Orange County 7->6 spots left. No sell-outs/reopens/new cities; thumbnails unchanged. 9 Now Booking (6 sold out / 3 open). Opening Soon: November (Boston, Dublin) carried over - December block still empty.",
-  "updated": "2026-11-04",
+  "_comment": "Last synced 2026-11-05 (PPU, capacity 20/event day; prior sync 11/04). Booked: Greenville 4->1, Orange County 6->5 spots left. No sell-outs/reopens/new cities; thumbnails unchanged. 9 Now Booking (6 sold out / 3 open). Opening Soon: November (Boston, Dublin) carried over - December block still empty.",
+  "updated": "2026-11-05",
   "scheduled": [
     {
       "city": "Denver, CO",
@@ -22,8 +22,8 @@
       "weekend": "Nov 7",
       "weekendStart": "2026-11-07",
       "days": 1,
-      "booked": 16,
-      "spotsLeft": 4,
+      "booked": 19,
+      "spotsLeft": 1,
       "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/PBhnr6UNgm",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/09cf9065-1a76-4b8a-86bb-5210c0bdb633-sm.jpg"
@@ -48,8 +48,8 @@
       "weekend": "Nov 14-15",
       "weekendStart": "2026-11-14",
       "days": 2,
-      "booked": 34,
-      "spotsLeft": 6,
+      "booked": 35,
+      "spotsLeft": 5,
       "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/z1DO7vqo7w",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/ae96d067-e8c0-4a0f-b2cb-46967368e8e8-sm.jpg"
