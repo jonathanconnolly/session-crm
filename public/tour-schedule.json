@@ -1,6 +1,6 @@
 {
-  "_comment": "Last synced 2026-11-09 (PPU, capacity 20/event day; prior sync 11/07). Orange County 5->1 spots left; Washington DC 2->1. Denver, Greenville, Charlotte rolled off (events passed). No new cities; thumbnails unchanged. 6 Now Booking (4 sold out / 2 open, 1 spot each). Opening Soon: November (Boston, Dublin) carried over - December block still empty.",
-  "updated": "2026-11-09",
+  "_comment": "Last synced 2026-11-10 (PPU, capacity 20/event day; prior sync 11/09). Orange County 1->0 spots left (SOLD OUT). Washington DC unchanged at 1 spot left. No new cities; thumbnails unchanged. 6 Now Booking (5 sold out / 1 open). Opening Soon: November (Boston, Dublin) carried over - December block still empty.",
+  "updated": "2026-11-10",
   "scheduled": [
     {
       "city": "Orange County, CA",
@@ -9,9 +9,9 @@
       "weekend": "Nov 14-15",
       "weekendStart": "2026-11-14",
       "days": 2,
-      "booked": 39,
-      "spotsLeft": 1,
-      "status": "now_open",
+      "booked": 40,
+      "spotsLeft": 0,
+      "status": "sold_out",
       "sessionUrl": "https://book.usesession.com/s/z1DO7vqo7w",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/ae96d067-e8c0-4a0f-b2cb-46967368e8e8-sm.jpg"
     },
