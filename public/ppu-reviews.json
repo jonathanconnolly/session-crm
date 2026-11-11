@@ -1,6 +1,6 @@
 {
   "_comment": "PPU review pool for every ppuR slider on personalitypopup.com. Order = rank (best first). q = full review text (verbatim), s = optional short excerpt for compact sliders (Book). Pages pull this live; the daily ppu-google-review-count task adds new 5-star Google reviews here.",
-  "updated": "2026-11-06",
+  "updated": "2026-11-11",
   "reviews": [
     {
       "n": "Jessica",
@@ -28,6 +28,12 @@
       "n": "Lindsay",
       "q": "I got Instagram targeted for the Personality Popup coming to our area and, against my better judgement, shelled out for the expensive 15 minute session. My husband was less than enthused. We just got the photos back and I am floored. They are better than I even imagined. I would do this shoot every year if I could! 10/10 recommend",
       "added": "2026-10-15"
+    },
+    {
+      "n": "Brittany C.",
+      "q": "Some kids are born for the camera - mine is not. As soon as a photographer is around, she shuts down and does not have interest in smiling. That is, until we found Personality Pop-Up. I’m not sure what magic they have, but I got a whole album full of absolute gems that we will cherish forever.",
+      "s": "I’m not sure what magic they have, but I got a whole album full of absolute gems that we will cherish forever.",
+      "added": "2026-11-11"
     },
     {
       "n": "Sara",
@@ -80,6 +86,11 @@
       "q": "I'm literally weeping! These pictures are absolutely priceless. Best photography experience yet! Personality Pop-up crew was so friendly and approachable! 10/10 recommend!",
       "s": "I'm literally weeping! These pictures are absolutely priceless.",
       "added": "2026-10-15"
+    },
+    {
+      "n": "Christina B.",
+      "q": "Best money spent on pictures. Captures how your children make you feel, not just what they looked like.",
+      "added": "2026-11-11"
     },
     {
       "n": "Amanda",
