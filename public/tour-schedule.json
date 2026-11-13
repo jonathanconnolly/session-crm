@@ -1,6 +1,6 @@
 {
-  "_comment": "Last synced 2026-11-10 (PPU, capacity 20/event day; prior sync 11/09). Orange County 1->0 spots left (SOLD OUT). Washington DC unchanged at 1 spot left. No new cities; thumbnails unchanged. 6 Now Booking (5 sold out / 1 open). Opening Soon: November (Boston, Dublin) carried over - December block still empty.",
-  "updated": "2026-11-10",
+  "_comment": "Last synced 2026-11-13 (PPU, capacity 20/event day; prior sync 11/12, file last changed 11/10). NEW: Sausalito, CA (SF metro) and Winter Garden, FL (Orlando metro) Jan 9-10 added - 28 of 40 spots left each. Washington DC unchanged at 1 spot left; OC, Austin, Miami Shores, Manhattan, Coconut Grove sold out. 8 Now Booking (5 sold out / 3 open). Opening Soon: November (Boston, Dublin) carried over - December block still empty.",
+  "updated": "2026-11-13",
   "scheduled": [
     {
       "city": "Orange County, CA",
@@ -79,6 +79,32 @@
       "status": "sold_out",
       "sessionUrl": "https://book.usesession.com/s/LIBuOz3heI",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/ad0153ca-76ca-4fac-b14b-07ebc8d3e339-sm.jpg"
+    },
+    {
+      "city": "Sausalito, CA",
+      "metro": "San Francisco, CA",
+      "metroTag": "city_san_francisco_ca",
+      "weekend": "Jan 9-10",
+      "weekendStart": "2027-01-09",
+      "days": 2,
+      "booked": 12,
+      "spotsLeft": 28,
+      "status": "now_open",
+      "sessionUrl": "https://book.usesession.com/s/LOh8nn_6U3",
+      "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/fb58f56f-1362-45a0-92d9-6cd5f9196634-sm.jpg"
+    },
+    {
+      "city": "Winter Garden, FL",
+      "metro": "Orlando, FL",
+      "metroTag": "city_orlando_fl",
+      "weekend": "Jan 9-10",
+      "weekendStart": "2027-01-09",
+      "days": 2,
+      "booked": 12,
+      "spotsLeft": 28,
+      "status": "now_open",
+      "sessionUrl": "https://book.usesession.com/s/EQ0yNCU1sr",
+      "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/796cdb3e-9d70-4c95-a8c0-b9f6fbb9224c-sm.jpg"
     },
 
     {
