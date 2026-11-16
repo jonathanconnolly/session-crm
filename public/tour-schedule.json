@@ -1,5 +1,5 @@
 {
-  "_comment": "Last synced 2026-11-16 (PPU, capacity 20/event day; prior sync 11/13). Washington DC SOLD OUT (1->0). Sausalito, CA 28->23 and Winter Garden, FL 28->26 (Jan 9-10). Orange County, CA rolled off (Nov 14-15 event passed). Austin, Miami Shores, Manhattan, Coconut Grove sold out. 7 Now Booking (5 sold out / 2 open). Opening Soon: November (Boston, Dublin) carried over - December block still empty.",
+  "_comment": "Last synced 2026-11-16 13:40Z (PPU, capacity 20/event day; prior sync 11/16 earlier run). Sausalito, CA reopened 23->24 (1 booking released). Winter Garden, FL 26 flat. Austin, Miami Shores, Manhattan, Washington DC, Coconut Grove sold out. 7 Now Booking (5 sold out / 2 open). Opening Soon: November (Boston, Dublin) carried over - December block still empty.",
   "updated": "2026-11-16",
   "scheduled": [
     {
@@ -74,8 +74,8 @@
       "weekend": "Jan 9-10",
       "weekendStart": "2027-01-09",
       "days": 2,
-      "booked": 17,
-      "spotsLeft": 23,
+      "booked": 16,
+      "spotsLeft": 24,
       "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/LOh8nn_6U3",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/fb58f56f-1362-45a0-92d9-6cd5f9196634-sm.jpg"
