@@ -1,6 +1,6 @@
 {
   "_comment": "PPU review pool for every ppuR slider on personalitypopup.com. Order = rank (best first). q = full review text (verbatim), s = optional short excerpt for compact sliders (Book). Pages pull this live; the daily ppu-google-review-count task adds new 5-star Google reviews here.",
-  "updated": "2026-11-11",
+  "updated": "2026-11-16",
   "reviews": [
     {
       "n": "Jessica",
@@ -82,6 +82,12 @@
       "added": "2026-10-21"
     },
     {
+      "n": "Diana K.",
+      "q": "This is already our second time this year having our kids photographed by Personality Pop, and once again, it was such a wonderful experience! The energy is amazing, and the photographers are incredibly kind, patient, and professional.",
+      "s": "The energy is amazing, and the photographers are incredibly kind, patient, and professional.",
+      "added": "2026-11-16"
+    },
+    {
       "n": "Vanessa",
       "q": "I'm literally weeping! These pictures are absolutely priceless. Best photography experience yet! Personality Pop-up crew was so friendly and approachable! 10/10 recommend!",
       "s": "I'm literally weeping! These pictures are absolutely priceless.",
@@ -91,6 +97,12 @@
       "n": "Christina B.",
       "q": "Best money spent on pictures. Captures how your children make you feel, not just what they looked like.",
       "added": "2026-11-11"
+    },
+    {
+      "n": "Jana S.",
+      "q": "We love Personality Pop Up! It captures the true essence of our kids at this moment and helps us remember just how they were! The entire experience is so relaxed and easy, would book this again and again!",
+      "s": "We love Personality Pop Up! It captures the true essence of our kids at this moment and helps us remember just how they were!",
+      "added": "2026-11-16"
     },
     {
       "n": "Amanda",
@@ -194,6 +206,11 @@
       "n": "Allie",
       "q": "My little guy does not sit still, & she still managed to capture the most PERFECT photos! The 15 minute session was the perfect length. I can't stop staring at these photos & can't wait to do it again! 10/10 recommend!",
       "added": "2026-10-15"
+    },
+    {
+      "n": "Adaline B.",
+      "q": "We had the BEST time at Personality Pop-up! Came away with memories captured for a lifetime and can’t wait for the next one!",
+      "added": "2026-11-16"
     },
     {
       "n": "Olga N.",
