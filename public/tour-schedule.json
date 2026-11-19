@@ -1,5 +1,5 @@
 {
-  "_comment": "Last synced 2026-11-19 (PPU, capacity 20/event day; prior sync 11/17 a157832, 11/18 no changes). Reopened: Washington, DC 0->1 spot, Miami Shores, FL 0->1 spot. Winter Garden, FL 25->24 (1 booking). Sausalito, CA 22 flat. Austin, Manhattan, Coconut Grove sold out. 7 Now Booking (3 sold out / 4 open). Opening Soon: November (Boston, Dublin) carried over",
+  "_comment": "Last synced 2026-11-19 (PPU, capacity 20/event day; prior sync 11/17 a157832, 11/18 no changes). Reopened: Washington, DC 0->1 spot, Miami Shores, FL 0->1 spot. Winter Garden, FL 25->24 (1 booking). Sausalito, CA 22 flat. Austin, Manhattan, Coconut Grove sold out. 8 Now Booking (3 sold out / 5 open). Opening Soon: November (Boston, Dublin) carried over. Added Summit, NJ Dec 4 (label \"Dec 4 & 6\"; Dec 6 is a separate deactivated Session event linked from the Dec 4 page)",
   "updated": "2026-11-19",
   "scheduled": [
     {
@@ -66,6 +66,19 @@
       "status": "sold_out",
       "sessionUrl": "https://book.usesession.com/s/LIBuOz3heI",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/ad0153ca-76ca-4fac-b14b-07ebc8d3e339-sm.jpg"
+    },
+    {
+      "city": "Summit, NJ",
+      "metro": "Summit, NJ",
+      "metroTag": "city_summit_nj",
+      "weekend": "Dec 4 & 6",
+      "weekendStart": "2026-12-04",
+      "days": 1,
+      "booked": 10,
+      "spotsLeft": 10,
+      "status": "now_open",
+      "sessionUrl": "https://book.usesession.com/s/AEQTwLeg_F",
+      "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/f2fe0782-8bba-4587-bc0c-df8f1c672609-sm.jpg"
     },
     {
       "city": "Sausalito, CA",
