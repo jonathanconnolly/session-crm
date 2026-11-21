@@ -1,6 +1,6 @@
 {
-  "_comment": "Last synced 2026-11-20 (PPU, capacity 20/event day; prior 5487531). Sold out: Washington, DC 1->0, Miami Shores, FL 1->0. Booked: Summit, NJ 10->8, Sausalito, CA 22->20, Winter Garden, FL 24->23. Austin, Manhattan, Coconut Grove sold out. 8 Now Booking (5 sold out / 3 open). Opening Soon: November (Boston, Dublin) carried over. Summit, NJ Dec 4 label \"Dec 4 & 6\" (Dec 6 is a separate deactivated Session event)",
-  "updated": "2026-11-20",
+  "_comment": "Last synced 2026-11-21 (PPU, capacity 20/event day; prior 5aef30c). Booked: Summit, NJ 8->7, Sausalito, CA 20->18, Winter Garden, FL 23->20. Austin, Manhattan, Washington DC, Miami Shores, Coconut Grove sold out (events this weekend). 8 Now Booking (5 sold out / 3 open). Opening Soon carried over (Boston, Dublin).",
+  "updated": "2026-11-21",
   "scheduled": [
     {
       "city": "Austin, TX",
@@ -74,8 +74,8 @@
       "weekend": "Dec 4 & 6",
       "weekendStart": "2026-12-04",
       "days": 1,
-      "booked": 12,
-      "spotsLeft": 8,
+      "booked": 13,
+      "spotsLeft": 7,
       "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/AEQTwLeg_F",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/f2fe0782-8bba-4587-bc0c-df8f1c672609-sm.jpg"
@@ -87,8 +87,8 @@
       "weekend": "Jan 9-10",
       "weekendStart": "2027-01-09",
       "days": 2,
-      "booked": 20,
-      "spotsLeft": 20,
+      "booked": 22,
+      "spotsLeft": 18,
       "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/LOh8nn_6U3",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/fb58f56f-1362-45a0-92d9-6cd5f9196634-sm.jpg"
@@ -100,8 +100,8 @@
       "weekend": "Jan 9-10",
       "weekendStart": "2027-01-09",
       "days": 2,
-      "booked": 17,
-      "spotsLeft": 23,
+      "booked": 20,
+      "spotsLeft": 20,
       "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/EQ0yNCU1sr",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/796cdb3e-9d70-4c95-a8c0-b9f6fbb9224c-sm.jpg"
