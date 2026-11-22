@@ -1,6 +1,6 @@
 {
-  "_comment": "Last synced 2026-11-21 (PPU, capacity 20/event day; prior 5aef30c). Booked: Summit, NJ 8->7, Sausalito, CA 20->18, Winter Garden, FL 23->20. Austin, Manhattan, Washington DC, Miami Shores, Coconut Grove sold out (events this weekend). 8 Now Booking (5 sold out / 3 open). Opening Soon carried over (Boston, Dublin).",
-  "updated": "2026-11-21",
+  "_comment": "Last synced 2026-11-22 (PPU, capacity 20/event day; prior 860852c). Booked: Winter Garden, FL 20->19. Miami Shores rolled off (Nov 21 event passed). Austin, Manhattan, Washington DC, Coconut Grove sold out (events this weekend). 7 Now Booking (4 sold out / 3 open). Opening Soon carried over (Boston, Dublin).",
+  "updated": "2026-11-22",
   "scheduled": [
     {
       "city": "Austin, TX",
@@ -14,19 +14,6 @@
       "status": "sold_out",
       "sessionUrl": "https://book.usesession.com/s/6h9VAcfZT4",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/80e75133-ede2-4c35-bad6-c2b37161a1fa-sm.jpg"
-    },
-    {
-      "city": "Miami Shores, FL",
-      "metro": "Miami, FL",
-      "metroTag": "city_miami_fl",
-      "weekend": "Nov 21",
-      "weekendStart": "2026-11-21",
-      "days": 1,
-      "booked": 20,
-      "spotsLeft": 0,
-      "status": "sold_out",
-      "sessionUrl": "https://book.usesession.com/s/Ptp9XpWzeT",
-      "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/68b75d9d-9f87-49fe-914b-d899a5376df6-sm.jpg"
     },
     {
       "city": "Manhattan, NY",
@@ -100,8 +87,8 @@
       "weekend": "Jan 9-10",
       "weekendStart": "2027-01-09",
       "days": 2,
-      "booked": 20,
-      "spotsLeft": 20,
+      "booked": 21,
+      "spotsLeft": 19,
       "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/EQ0yNCU1sr",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/796cdb3e-9d70-4c95-a8c0-b9f6fbb9224c-sm.jpg"
