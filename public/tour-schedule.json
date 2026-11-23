@@ -1,5 +1,5 @@
 {
-  "_comment": "Last synced 2026-11-23 (PPU, capacity 20/event day; prior 43241cb). Booked: Sausalito, CA 18->15, Winter Garden, FL 19->16. Austin, Manhattan, Washington DC, Coconut Grove rolled off (Nov 21-22 events passed). 3 Now Booking (0 sold out / 3 open). Opening Soon carried over (Boston, Dublin).",
+  "_comment": "Last synced 2026-11-23 (PPU, capacity 20/event day; prior 43241cb). Booked: Sausalito, CA 18->15, Winter Garden, FL 19->16. Austin, Manhattan, Washington DC, Coconut Grove rolled off (Nov 21-22 events passed). 3 Now Booking (0 sold out / 3 open). Opening Soon carried over (Boston, Dublin). Added Jacksonville Beach, FL Jan 16 (12 left) on request.",
   "updated": "2026-11-23",
   "scheduled": [
     {
@@ -40,6 +40,19 @@
       "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/EQ0yNCU1sr",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/796cdb3e-9d70-4c95-a8c0-b9f6fbb9224c-sm.jpg"
+    },
+    {
+      "city": "Jacksonville Beach, FL",
+      "metro": "Orlando, FL",
+      "metroTag": "city_orlando_fl",
+      "weekend": "Jan 16",
+      "weekendStart": "2027-01-16",
+      "days": 1,
+      "booked": 8,
+      "spotsLeft": 12,
+      "status": "now_open",
+      "sessionUrl": "https://book.usesession.com/s/pCj9EWxpWQ",
+      "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/ac82bc98-6b1a-4e10-ac79-55d43397395e-sm.jpg"
     },
 
     {
