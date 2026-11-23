@@ -1,59 +1,7 @@
 {
-  "_comment": "Last synced 2026-11-22 (PPU, capacity 20/event day; prior 860852c). Booked: Winter Garden, FL 20->19. Miami Shores rolled off (Nov 21 event passed). Austin, Manhattan, Washington DC, Coconut Grove sold out (events this weekend). 7 Now Booking (4 sold out / 3 open). Opening Soon carried over (Boston, Dublin).",
-  "updated": "2026-11-22",
+  "_comment": "Last synced 2026-11-23 (PPU, capacity 20/event day; prior 43241cb). Booked: Sausalito, CA 18->15, Winter Garden, FL 19->16. Austin, Manhattan, Washington DC, Coconut Grove rolled off (Nov 21-22 events passed). 3 Now Booking (0 sold out / 3 open). Opening Soon carried over (Boston, Dublin).",
+  "updated": "2026-11-23",
   "scheduled": [
-    {
-      "city": "Austin, TX",
-      "metro": "Austin, TX",
-      "metroTag": "city_austin_tx",
-      "weekend": "Nov 21-22",
-      "weekendStart": "2026-11-21",
-      "days": 2,
-      "booked": 40,
-      "spotsLeft": 0,
-      "status": "sold_out",
-      "sessionUrl": "https://book.usesession.com/s/6h9VAcfZT4",
-      "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/80e75133-ede2-4c35-bad6-c2b37161a1fa-sm.jpg"
-    },
-    {
-      "city": "Manhattan, NY",
-      "metro": "Manhattan, NY",
-      "metroTag": "city_manhattan_ny",
-      "weekend": "Nov 21-22",
-      "weekendStart": "2026-11-21",
-      "days": 2,
-      "booked": 40,
-      "spotsLeft": 0,
-      "status": "sold_out",
-      "sessionUrl": "https://book.usesession.com/s/1xwpBmrgh1",
-      "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/a978464a-22f1-4f47-b4ff-8f3c7112d080-sm.jpg"
-    },
-    {
-      "city": "Washington, DC",
-      "metro": "Washington, DC",
-      "metroTag": "city_washington_dc",
-      "weekend": "Nov 21-22",
-      "weekendStart": "2026-11-21",
-      "days": 2,
-      "booked": 40,
-      "spotsLeft": 0,
-      "status": "sold_out",
-      "sessionUrl": "https://book.usesession.com/s/5PnbHKGz1X",
-      "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/4501a8a8-c7d0-468d-bf6c-c38e38a00162-sm.jpg"
-    },
-    {
-      "city": "Coconut Grove, FL",
-      "metro": "Miami, FL",
-      "metroTag": "city_miami_fl",
-      "weekend": "Nov 22",
-      "weekendStart": "2026-11-22",
-      "days": 1,
-      "booked": 20,
-      "spotsLeft": 0,
-      "status": "sold_out",
-      "sessionUrl": "https://book.usesession.com/s/LIBuOz3heI",
-      "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/ad0153ca-76ca-4fac-b14b-07ebc8d3e339-sm.jpg"
-    },
     {
       "city": "Summit, NJ",
       "metro": "Summit, NJ",
@@ -74,8 +22,8 @@
       "weekend": "Jan 9-10",
       "weekendStart": "2027-01-09",
       "days": 2,
-      "booked": 22,
-      "spotsLeft": 18,
+      "booked": 25,
+      "spotsLeft": 15,
       "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/LOh8nn_6U3",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/fb58f56f-1362-45a0-92d9-6cd5f9196634-sm.jpg"
@@ -87,8 +35,8 @@
       "weekend": "Jan 9-10",
       "weekendStart": "2027-01-09",
       "days": 2,
-      "booked": 21,
-      "spotsLeft": 19,
+      "booked": 24,
+      "spotsLeft": 16,
       "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/EQ0yNCU1sr",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/796cdb3e-9d70-4c95-a8c0-b9f6fbb9224c-sm.jpg"
