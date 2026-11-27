@@ -1,5 +1,5 @@
 {
-  "_comment": "Now Booking sync 2026-11-27 (prior file eb88f80; last data sync 2026-11-23 6d95afc). NEW: La Jolla, CA Jan 16-17 (San Diego metro) 22/40 left. Spot moves since 11/23: Sausalito 15->9, Winter Garden 16->13, Summit 7->6, Jacksonville Beach 12->10. Capacity 20/day. Opening Soon carried over (Schedule tab not parseable for Feb).",
+  "_comment": "Now Booking sync 2026-11-27 (prior file eb88f80; last data sync 2026-11-23 6d95afc). NEW: La Jolla, CA Jan 16-17 (San Diego metro) 22/40 left. Spot moves since 11/23: Sausalito 15->9, Winter Garden 16->13, Summit 7->6, Jacksonville Beach 12->10. Capacity 20/day. Opening Soon carried over (Schedule tab not parseable for Feb). Added Ann Arbor, MI Jan 9 (17 left) and Birmingham, MI Jan 10 (20 left) on request 11/27.",
   "updated": "2026-11-27",
   "scheduled": [
     {
@@ -14,6 +14,19 @@
       "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/AEQTwLeg_F",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/316386de-3144-41c6-b242-15bc0fe74b9d-sm.png"
+    },
+    {
+      "city": "Ann Arbor, MI",
+      "metro": "Ann Arbor, MI",
+      "metroTag": "city_ann_arbor_mi",
+      "weekend": "Jan 9",
+      "weekendStart": "2027-01-09",
+      "days": 1,
+      "booked": 3,
+      "spotsLeft": 17,
+      "status": "now_open",
+      "sessionUrl": "https://book.usesession.com/s/Rbh9gUthuQ",
+      "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/fb1830e1-d21c-49bc-8e12-e289928de36b-sm.jpg"
     },
     {
       "city": "Sausalito, CA",
@@ -40,6 +53,19 @@
       "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/EQ0yNCU1sr",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/796cdb3e-9d70-4c95-a8c0-b9f6fbb9224c-sm.jpg"
+    },
+    {
+      "city": "Birmingham, MI",
+      "metro": "Detroit, MI",
+      "metroTag": "city_detroit_mi",
+      "weekend": "Jan 10",
+      "weekendStart": "2027-01-10",
+      "days": 1,
+      "booked": 0,
+      "spotsLeft": 20,
+      "status": "now_open",
+      "sessionUrl": "https://book.usesession.com/s/n-zVO9lHY4",
+      "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/9ed73c6b-e076-4b2b-80c3-4328a6a90bf1-sm.jpg"
     },
     {
       "city": "La Jolla, CA",
