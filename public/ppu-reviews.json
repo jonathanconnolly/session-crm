@@ -1,6 +1,6 @@
 {
   "_comment": "PPU review pool for every ppuR slider on personalitypopup.com. Order = rank (best first). q = full review text (verbatim), s = optional short excerpt for compact sliders (Book). Pages pull this live; the daily ppu-google-review-count task adds new 5-star Google reviews here.",
-  "updated": "2026-11-20",
+  "updated": "2026-11-27",
   "reviews": [
     {
       "n": "Jessica",
@@ -373,6 +373,11 @@
       "n": "Stephanie",
       "q": "The warmest experience and such talented women. Thank you for making it so easy and fun.",
       "added": "2026-10-15"
+    },
+    {
+      "n": "Virginia K.",
+      "q": "Our kids love these photo shoots and the results are always amazing!",
+      "added": "2026-11-27"
     },
     {
       "n": "Yuliya",
