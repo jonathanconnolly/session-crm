@@ -1,6 +1,6 @@
 {
-  "_comment": "Now Booking sync 2026-11-27 (prior file eb88f80; last data sync 2026-11-23 6d95afc). NEW: La Jolla, CA Jan 16-17 (San Diego metro) 22/40 left. Spot moves since 11/23: Sausalito 15->9, Winter Garden 16->13, Summit 7->6, Jacksonville Beach 12->10. Capacity 20/day. Opening Soon carried over (Schedule tab not parseable for Feb). Added Ann Arbor, MI Jan 9 (17 left) and Birmingham, MI Jan 10 (20 left) on request 11/27.",
-  "updated": "2026-11-27",
+  "_comment": "Synced 2026-11-28 on request (PPU, capacity 20/event day). Spots: Winter Garden 12, Sausalito 8, Ann Arbor 9, Birmingham 14, La Jolla 19; Summit 6 and Jacksonville Beach 10 flat. Added Atlanta, GA Jan 23-24 (30 left). 9 Now Booking (0 sold out / 9 open). Opening Soon carried over (Boston, Dublin).",
+  "updated": "2026-11-28",
   "scheduled": [
     {
       "city": "Summit, NJ",
@@ -22,8 +22,8 @@
       "weekend": "Jan 9",
       "weekendStart": "2027-01-09",
       "days": 1,
-      "booked": 3,
-      "spotsLeft": 17,
+      "booked": 11,
+      "spotsLeft": 9,
       "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/Rbh9gUthuQ",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/fb1830e1-d21c-49bc-8e12-e289928de36b-sm.jpg"
@@ -35,8 +35,8 @@
       "weekend": "Jan 9-10",
       "weekendStart": "2027-01-09",
       "days": 2,
-      "booked": 31,
-      "spotsLeft": 9,
+      "booked": 32,
+      "spotsLeft": 8,
       "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/LOh8nn_6U3",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/091bd343-da11-4274-9fd4-e56fe4e13fdc-sm.jpg"
@@ -48,8 +48,8 @@
       "weekend": "Jan 9-10",
       "weekendStart": "2027-01-09",
       "days": 2,
-      "booked": 27,
-      "spotsLeft": 13,
+      "booked": 28,
+      "spotsLeft": 12,
       "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/EQ0yNCU1sr",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/796cdb3e-9d70-4c95-a8c0-b9f6fbb9224c-sm.jpg"
@@ -61,8 +61,8 @@
       "weekend": "Jan 10",
       "weekendStart": "2027-01-10",
       "days": 1,
-      "booked": 0,
-      "spotsLeft": 20,
+      "booked": 6,
+      "spotsLeft": 14,
       "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/n-zVO9lHY4",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/9ed73c6b-e076-4b2b-80c3-4328a6a90bf1-sm.jpg"
@@ -74,8 +74,8 @@
       "weekend": "Jan 16-17",
       "weekendStart": "2027-01-16",
       "days": 2,
-      "booked": 18,
-      "spotsLeft": 22,
+      "booked": 21,
+      "spotsLeft": 19,
       "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/2zIHJWk2pP",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/6021469e-1b28-4651-bd86-fdee439abc99-sm.jpg"
@@ -92,6 +92,19 @@
       "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/pCj9EWxpWQ",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/ac82bc98-6b1a-4e10-ac79-55d43397395e-sm.jpg"
+    },
+    {
+      "city": "Atlanta, GA",
+      "metro": "Atlanta, GA",
+      "metroTag": "city_atlanta_ga",
+      "weekend": "Jan 23-24",
+      "weekendStart": "2027-01-23",
+      "days": 2,
+      "booked": 10,
+      "spotsLeft": 30,
+      "status": "now_open",
+      "sessionUrl": "https://book.usesession.com/s/XqY--ggIAM",
+      "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/1096e2c0-03c9-4e25-9ef0-b42746a266d2-sm.jpg"
     },
 
     {
