@@ -1,5 +1,5 @@
 {
-  "_comment": "Synced 2026-11-28 on request (PPU, capacity 20/event day). Spots: Winter Garden 12, Sausalito 8, Ann Arbor 9, Birmingham 14, La Jolla 19; Summit 6 and Jacksonville Beach 10 flat. Added Atlanta, GA Jan 23-24 (30 left). 9 Now Booking (0 sold out / 9 open). Opening Soon carried over (Boston, Dublin).",
+  "_comment": "Synced 2026-11-28 on request (PPU, capacity 20/event day). Spots: Winter Garden 12, Sausalito 8, Ann Arbor 9, Birmingham 14, La Jolla 19; Summit 6 and Jacksonville Beach 10 flat. Added Atlanta, GA Jan 23-24 (30 left). 9 Now Booking (0 sold out / 9 open). Opening Soon carried over (Boston, Dublin). Added West Palm Beach, FL Jan 23-24 (40 left) on request.",
   "updated": "2026-11-28",
   "scheduled": [
     {
@@ -105,6 +105,19 @@
       "status": "now_open",
       "sessionUrl": "https://book.usesession.com/s/XqY--ggIAM",
       "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/1096e2c0-03c9-4e25-9ef0-b42746a266d2-sm.jpg"
+    },
+    {
+      "city": "West Palm Beach, FL",
+      "metro": "West Palm Beach, FL",
+      "metroTag": "city_west_palm_beach_fl",
+      "weekend": "Jan 23-24",
+      "weekendStart": "2027-01-23",
+      "days": 2,
+      "booked": 0,
+      "spotsLeft": 40,
+      "status": "now_open",
+      "sessionUrl": "https://book.usesession.com/s/VB4tEZFeQz",
+      "imageUrl": "https://session.nyc3.cdn.digitaloceanspaces.com/79477/ce9f9dca-1316-4ffd-b477-f45fe2adde39-sm.jpg"
     },
 
     {
